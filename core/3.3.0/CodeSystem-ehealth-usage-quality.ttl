@@ -1,0 +1,120 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/ehealth-usage-quality> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ehealth-usage-quality"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-sensitive code system <code>http://ehealth.sundhed.dk/cs/usage-quality</code> defines the following codes in an undefined hierarchy:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">none<a name=\"ehealth-usage-quality-none\"> </a></td><td>No quality needed</td><td>Quality value where no derivation rule logic nor values are expected</td><td>Ingen betjeningskvalitet krævet/ventet</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  unknown<a name=\"ehealth-usage-quality-unknown\"> </a></td><td>Unknown quality</td><td>Unknown quality (Unlikely to be adequate if a quality value is expected)</td><td>Ukendt betjeningskvalitet</td></tr><tr><td>3</td><td style=\"white-space:nowrap\">    derivation-error<a name=\"ehealth-usage-quality-derivation-error\"> </a></td><td>Error in deriving or determining the quality</td><td>Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error</td><td>Betjeningskvaliteten kunne ikke bestemmes grundet manglende input, utilgængelig logik, eller anden fejl.</td></tr><tr><td>4</td><td style=\"white-space:nowrap\">      normal<a name=\"ehealth-usage-quality-normal\"> </a></td><td>Normal/neutral usage quality</td><td>Normal/neutral usage quality</td><td>Normal eller neutral betjeningskvalitet</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        instructions-followed<a name=\"ehealth-usage-quality-instructions-followed\"> </a></td><td>Performed in accordance with instructions</td><td>Performed in accordance with instructions</td><td>Brugsvejledning fulgt</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        instructions-not-followed<a name=\"ehealth-usage-quality-instructions-not-followed\"> </a></td><td>Performed without following instructions</td><td>Performed without following instructions</td><td>Brugsvejledning ej fulgt</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        entered-manually<a name=\"ehealth-usage-quality-entered-manually\"> </a></td><td>Manually entered measurement</td><td>Manually entered measurement</td><td>Manuelt indtastet måling</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        automatically-transferred<a name=\"ehealth-usage-quality-automatically-transferred\"> </a></td><td>Automatically transferred measurement</td><td>Automatically transferred measurement</td><td>Automatisk overført måling</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">TBD<a name=\"ehealth-usage-quality-TBD\"> </a></td><td>Example value - Under construction</td><td>Example value - Under construction</td><td/></tr><tr><td>1</td><td style=\"white-space:nowrap\">TBD2<a name=\"ehealth-usage-quality-TBD2\"> </a></td><td>Example value2 - Under construction</td><td>Example value2 - Under construction</td><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/cs/usage-quality"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "UsageQuality"] ; # 
+  fhir:title [ fhir:v "Usage Quality"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2019-01-29T00:00:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Quality codes for usage or operating of measuring device"] ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "none" ] ;
+     fhir:display [ fhir:v "No quality needed" ] ;
+     fhir:definition [ fhir:v "Quality value where no derivation rule logic nor values are expected" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:value [ fhir:v "Ingen betjeningskvalitet krævet/ventet" ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "Unknown quality" ] ;
+       fhir:definition [ fhir:v "Unknown quality (Unlikely to be adequate if a quality value is expected)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:value [ fhir:v "Ukendt betjeningskvalitet" ]
+       ] ) ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "derivation-error" ] ;
+         fhir:display [ fhir:v "Error in deriving or determining the quality" ] ;
+         fhir:definition [ fhir:v "Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error" ] ;
+         fhir:designation ( [
+           fhir:language [ fhir:v "da" ] ;
+           fhir:value [ fhir:v "Betjeningskvaliteten kunne ikke bestemmes grundet manglende input, utilgængelig logik, eller anden fejl." ]
+         ] ) ;
+         fhir:concept ( [
+           fhir:code [ fhir:v "normal" ] ;
+           fhir:display [ fhir:v "Normal/neutral usage quality" ] ;
+           fhir:definition [ fhir:v "Normal/neutral usage quality" ] ;
+           fhir:designation ( [
+             fhir:language [ fhir:v "da" ] ;
+             fhir:value [ fhir:v "Normal eller neutral betjeningskvalitet" ]
+           ] ) ;
+           fhir:concept ( [
+             fhir:code [ fhir:v "instructions-followed" ] ;
+             fhir:display [ fhir:v "Performed in accordance with instructions" ] ;
+             fhir:definition [ fhir:v "Performed in accordance with instructions" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Brugsvejledning fulgt" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "instructions-not-followed" ] ;
+             fhir:display [ fhir:v "Performed without following instructions" ] ;
+             fhir:definition [ fhir:v "Performed without following instructions" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Brugsvejledning ej fulgt" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "entered-manually" ] ;
+             fhir:display [ fhir:v "Manually entered measurement" ] ;
+             fhir:definition [ fhir:v "Manually entered measurement" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Manuelt indtastet måling" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "automatically-transferred" ] ;
+             fhir:display [ fhir:v "Automatically transferred measurement" ] ;
+             fhir:definition [ fhir:v "Automatically transferred measurement" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Automatisk overført måling" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:code [ fhir:v "TBD" ] ;
+     fhir:display [ fhir:v "Example value - Under construction" ] ;
+     fhir:definition [ fhir:v "Example value - Under construction" ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "deprecated" ] ;
+       fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "TBD2" ] ;
+     fhir:display [ fhir:v "Example value2 - Under construction" ] ;
+     fhir:definition [ fhir:v "Example value2 - Under construction" ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "deprecated" ] ;
+       fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

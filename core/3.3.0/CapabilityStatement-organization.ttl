@@ -1,0 +1,665 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "organization"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2 id=\"title\"/><ul><li>Implementation Guide Version: 3.3.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 02:37:33+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div class=\"lead\"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET past versions of resources (vread interaction)\">V-R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"PATCH a new resource version (patch interaction)\">P</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th class=\"text-center\"><b title=\"DELETE a resource (delete interaction)\">D</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#CareTeam1-1\">CareTeam</a></td><td><a href=\"StructureDefinition-ehealth-careteam.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, category, context, date, encounter, identifier, managingOrganization, participant, patient, reasonCode, status, subject</td><td><code>CareTeam:managingOrganization</code>, <code>CareTeam:participant</code>, <code>CareTeam:subject</code></td><td><code>CareTeam:context</code>, <code>CareTeam:encounter</code>, <code>CareTeam:managingOrganization</code>, <code>CareTeam:participant</code>, <code>CareTeam:patient</code>, <code>CareTeam:subject</code>, <code>Organization:endpoint</code>, <code>Organization:partof</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:service</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href=\"#OperationDefinition1-2\">OperationDefinition</a></td><td><a href=\"http://hl7.org/fhir/R4/operationdefinition.html\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td></td><td><code>*</code></td><td><code>CareTeam:context</code>, <code>CareTeam:encounter</code>, <code>CareTeam:managingOrganization</code>, <code>CareTeam:participant</code>, <code>CareTeam:patient</code>, <code>CareTeam:subject</code>, <code>Organization:endpoint</code>, <code>Organization:partof</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:service</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href=\"#Organization1-3\">Organization</a></td><td><a href=\"StructureDefinition-ehealth-organization.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, active, address, address-city, address-country, address-postalcode, address-state, address-use, contactName, cvrNumber, endpoint, identifier, municipalityCode, name, partof, phonetic, providerIdentifier, regionCode, source, specialty, type</td><td><code>Organization:partof</code></td><td><code>CareTeam:managingOrganization</code>, <code>Organization:partof</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href=\"#Practitioner1-4\">Practitioner</a></td><td><a href=\"StructureDefinition-ehealth-practitioner.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, active, address, address-city, address-country, address-postalcode, address-state, address-use, communication, email, family, gender, given, identifier, name, phone, phonetic, telecom</td><td><code>*</code></td><td><code>CareTeam:context</code>, <code>CareTeam:encounter</code>, <code>CareTeam:managingOrganization</code>, <code>CareTeam:participant</code>, <code>CareTeam:patient</code>, <code>CareTeam:subject</code>, <code>Organization:endpoint</code>, <code>Organization:partof</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:service</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href=\"#PractitionerRole1-5\">PractitionerRole</a></td><td><a href=\"StructureDefinition-ehealth-practitionerrole.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, active, date, email, endpoint, identifier, location, organization, phone, practitioner, role, service, specialty, telecom</td><td><code>*</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:service</code></td><td><code>CareTeam:context</code>, <code>CareTeam:encounter</code>, <code>CareTeam:managingOrganization</code>, <code>CareTeam:participant</code>, <code>CareTeam:patient</code>, <code>CareTeam:subject</code>, <code>Organization:endpoint</code>, <code>Organization:partof</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:service</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href=\"#Provenance1-6\">Provenance</a></td><td><a href=\"StructureDefinition-ehealth-provenance.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td>_id, recorded, target</td><td/><td><code>CareTeam:context</code>, <code>CareTeam:encounter</code>, <code>CareTeam:managingOrganization</code>, <code>CareTeam:participant</code>, <code>CareTeam:patient</code>, <code>CareTeam:subject</code>, <code>Organization:endpoint</code>, <code>Organization:partof</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:service</code>, <code>Provenance:target</code></td><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"CareTeam1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>CareTeam</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-careteam.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Type of team</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>reference</code></td><td><div><p>Encounter or episode associated with CareTeam</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>Time period team covers</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div><p>Encounter or episode associated with CareTeam</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External Ids for this team</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>managingOrganization</td><td><code>reference</code></td><td><div><p>Managing organization of a care team</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>participant</td><td><code>reference</code></td><td><div><p>Who is involved</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Who care team is for</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>reasonCode</td><td><code>token</code></td><td><div><p>Reason care team exists</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>proposed | active | suspended | inactive | entered-in-error</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Who care team is for</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"OperationDefinition1-2\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>OperationDefinition</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/operationdefinition.html\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Organization1-3\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Organization</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-organization.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address</td><td><code>string</code></td><td><div><p>A (part of the) address of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-city</td><td><code>string</code></td><td><div><p>A city specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-country</td><td><code>string</code></td><td><div><p>A country specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-postalcode</td><td><code>string</code></td><td><div><p>A postal code specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-state</td><td><code>string</code></td><td><div><p>A state specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-use</td><td><code>token</code></td><td><div><p>A use code specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>contactName</td><td><code>string</code></td><td><div><p>Contact name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>cvrNumber</td><td><code>string</code></td><td><div><p>Cvr number of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>endpoint</td><td><code>reference</code></td><td><div><p>Technical endpoints providing access to services operated for the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Any identifier for the organization (not the accreditation issuer's identifier)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>municipalityCode</td><td><code>string</code></td><td><div><p>Municipality code of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>A portion of the organization's name or alias</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>partof</td><td><code>reference</code></td><td><div><p>An organization of which this organization forms a part</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>phonetic</td><td><code>string</code></td><td><div><p>A portion of the organization's name using some kind of phonetic matching algorithm</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>providerIdentifier</td><td><code>string</code></td><td><div><p>Provider identifier of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>regionCode</td><td><code>string</code></td><td><div><p>Region code of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>source</td><td><code>token</code></td><td><div><p>Source of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>specialty</td><td><code>token</code></td><td><div><p>Specialty of the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>A code for the type of organization</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href=\"OperationDefinition-Organization-i-traverse-to-sor.html\">$traverse-to-sor</a></td><td><div><p>Traverse upforwards to the first SOR organization\nHttp response code 404 will be returned if no related SOR organization could be found</p>\n</div></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Practitioner1-4\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Practitioner</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-practitioner.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Whether the practitioner record is active</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address</td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-city</td><td><code>string</code></td><td><div><p>A city specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-country</td><td><code>string</code></td><td><div><p>A country specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-postalcode</td><td><code>string</code></td><td><div><p>A postalCode specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-state</td><td><code>string</code></td><td><div><p>A state specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-use</td><td><code>token</code></td><td><div><p>A use code specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>communication</td><td><code>token</code></td><td><div><p>One of the languages that the practitioner can communicate with</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>email</td><td><code>token</code></td><td><div><p>A value in an email contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>family</td><td><code>string</code></td><td><div><p>A portion of the family name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>gender</td><td><code>token</code></td><td><div><p>Gender of the practitioner</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>given</td><td><code>string</code></td><td><div><p>A portion of the given name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>A practitioner's Identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>phone</td><td><code>token</code></td><td><div><p>A value in a phone contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>phonetic</td><td><code>string</code></td><td><div><p>A portion of either family or given name using some kind of phonetic matching algorithm</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>telecom</td><td><code>token</code></td><td><div><p>The value in any kind of contact</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"PractitionerRole1-5\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>PractitionerRole</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-practitionerrole.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Whether this practitioner's record is in active use</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The period during which the practitioner is authorized to perform in these role(s)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>email</td><td><code>token</code></td><td><div><p>A value in an email contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>endpoint</td><td><code>reference</code></td><td><div><p>Technical endpoints providing access to services operated for the practitioner with this role</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>A practitioner's Identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>location</td><td><code>reference</code></td><td><div><p>One of the locations at which this practitioner provides care</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>organization</td><td><code>reference</code></td><td><div><p>The identity of the organization the practitioner represents / acts on behalf of</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>phone</td><td><code>token</code></td><td><div><p>A value in a phone contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>practitioner</td><td><code>reference</code></td><td><div><p>Practitioner that is able to provide the defined services for the organation</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>role</td><td><code>token</code></td><td><div><p>The practitioner can perform this role at for the organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>service</td><td><code>reference</code></td><td><div><p>The list of healthcare services that this worker provides for this role's Organization/Location(s)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>specialty</td><td><code>token</code></td><td><div><p>The practitioner has this specialty at an organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>telecom</td><td><code>token</code></td><td><div><p>The value in any kind of contact</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Provenance1-6\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Provenance</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-provenance.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>recorded</td><td><code>date</code></td><td><div><p>When the activity was recorded / updated</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>target</td><td><code>reference</code></td><td><div><p>Target Reference(s) (usually version specific)</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div></div></div></div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "organization"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-04-29T02:37:33.458+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:software [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:version [ fhir:v "1.12.3" ]
+  ] ; # 
+  fhir:implementation [
+     fhir:description [ fhir:v "eHealth organization service" ] ;
+     fhir:url [ fhir:v "https://organization.devtest.systematic-ehealth.com/fhir"^^xsd:anyURI ]
+  ] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+xml"] [ fhir:v "xml"] [ fhir:v "application/fhir+json"] [ fhir:v "json"] [ fhir:v "application/x-turtle"] [ fhir:v "ttl"] [ fhir:v "html/json"] [ fhir:v "html/xml"] [ fhir:v "html/turtle"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "CareTeam" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "CareTeam:participant" ] [ fhir:v "CareTeam:subject" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CareTeam:context" ] [ fhir:v "CareTeam:encounter" ] [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "CareTeam:participant" ] [ fhir:v "CareTeam:patient" ] [ fhir:v "CareTeam:subject" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:endpoint" ] [ fhir:v "PractitionerRole:location" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] [ fhir:v "PractitionerRole:service" ] [ fhir:v "Provenance:target" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_language" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The language of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Type of team" ]
+       ] [
+         fhir:name [ fhir:v "context" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Encounter or episode associated with CareTeam" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Time period team covers" ]
+       ] [
+         fhir:name [ fhir:v "encounter" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Encounter or episode associated with CareTeam" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "External Ids for this team" ]
+       ] [
+         fhir:name [ fhir:v "managingOrganization" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Managing organization of a care team" ]
+       ] [
+         fhir:name [ fhir:v "participant" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Who is involved" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Who care team is for" ]
+       ] [
+         fhir:name [ fhir:v "reasonCode" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Reason care team exists" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "proposed | active | suspended | inactive | entered-in-error" ]
+       ] [
+         fhir:name [ fhir:v "subject" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Who care team is for" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "OperationDefinition" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/OperationDefinition>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CareTeam:context" ] [ fhir:v "CareTeam:encounter" ] [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "CareTeam:participant" ] [ fhir:v "CareTeam:patient" ] [ fhir:v "CareTeam:subject" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:endpoint" ] [ fhir:v "PractitionerRole:location" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] [ fhir:v "PractitionerRole:service" ] [ fhir:v "Provenance:target" ] )
+     ] [
+       fhir:type [ fhir:v "Organization" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:searchInclude ( [ fhir:v "Organization:partof" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "Organization:partof" ] [ fhir:v "Provenance:target" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_language" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The language of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text" ]
+       ] [
+         fhir:name [ fhir:v "address" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A (part of the) address of the organization" ]
+       ] [
+         fhir:name [ fhir:v "address-city" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A city specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-country" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A country specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-postalcode" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A postal code specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-state" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A state specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-use" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use code specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "contactName" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Contact name" ]
+       ] [
+         fhir:name [ fhir:v "cvrNumber" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Cvr number of the organization" ]
+       ] [
+         fhir:name [ fhir:v "endpoint" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Technical endpoints providing access to services operated for the organization" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Any identifier for the organization (not the accreditation issuer's identifier)" ]
+       ] [
+         fhir:name [ fhir:v "municipalityCode" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Municipality code of the organization" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of the organization's name or alias" ]
+       ] [
+         fhir:name [ fhir:v "partof" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "An organization of which this organization forms a part" ]
+       ] [
+         fhir:name [ fhir:v "phonetic" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of the organization's name using some kind of phonetic matching algorithm" ]
+       ] [
+         fhir:name [ fhir:v "providerIdentifier" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Provider identifier of the organization" ]
+       ] [
+         fhir:name [ fhir:v "regionCode" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Region code of the organization" ]
+       ] [
+         fhir:name [ fhir:v "source" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Source of the organization" ]
+       ] [
+         fhir:name [ fhir:v "specialty" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Specialty of the organization" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A code for the type of organization" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "traverse-to-sor" ] ;
+         fhir:definition [
+           fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Organization-i-traverse-to-sor"^^xsd:anyURI ;
+           fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Organization-i-traverse-to-sor>
+         ] ;
+         fhir:documentation [ fhir:v "Traverse upforwards to the first SOR organization\nHttp response code 404 will be returned if no related SOR organization could be found" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Practitioner" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CareTeam:context" ] [ fhir:v "CareTeam:encounter" ] [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "CareTeam:participant" ] [ fhir:v "CareTeam:patient" ] [ fhir:v "CareTeam:subject" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:endpoint" ] [ fhir:v "PractitionerRole:location" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] [ fhir:v "PractitionerRole:service" ] [ fhir:v "Provenance:target" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_language" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The language of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Whether the practitioner record is active" ]
+       ] [
+         fhir:name [ fhir:v "address" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text" ]
+       ] [
+         fhir:name [ fhir:v "address-city" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A city specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-country" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A country specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-postalcode" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A postalCode specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-state" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A state specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-use" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use code specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "communication" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "One of the languages that the practitioner can communicate with" ]
+       ] [
+         fhir:name [ fhir:v "email" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A value in an email contact" ]
+       ] [
+         fhir:name [ fhir:v "family" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of the family name" ]
+       ] [
+         fhir:name [ fhir:v "gender" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Gender of the practitioner" ]
+       ] [
+         fhir:name [ fhir:v "given" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of the given name" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A practitioner's Identifier" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text" ]
+       ] [
+         fhir:name [ fhir:v "phone" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A value in a phone contact" ]
+       ] [
+         fhir:name [ fhir:v "phonetic" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of either family or given name using some kind of phonetic matching algorithm" ]
+       ] [
+         fhir:name [ fhir:v "telecom" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The value in any kind of contact" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "PractitionerRole" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "PractitionerRole:endpoint" ] [ fhir:v "PractitionerRole:location" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] [ fhir:v "PractitionerRole:service" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CareTeam:context" ] [ fhir:v "CareTeam:encounter" ] [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "CareTeam:participant" ] [ fhir:v "CareTeam:patient" ] [ fhir:v "CareTeam:subject" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:endpoint" ] [ fhir:v "PractitionerRole:location" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] [ fhir:v "PractitionerRole:service" ] [ fhir:v "Provenance:target" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_language" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The language of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Whether this practitioner's record is in active use" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "The period during which the practitioner is authorized to perform in these role(s)" ]
+       ] [
+         fhir:name [ fhir:v "email" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A value in an email contact" ]
+       ] [
+         fhir:name [ fhir:v "endpoint" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Technical endpoints providing access to services operated for the practitioner with this role" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A practitioner's Identifier" ]
+       ] [
+         fhir:name [ fhir:v "location" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "One of the locations at which this practitioner provides care" ]
+       ] [
+         fhir:name [ fhir:v "organization" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The identity of the organization the practitioner represents / acts on behalf of" ]
+       ] [
+         fhir:name [ fhir:v "phone" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A value in a phone contact" ]
+       ] [
+         fhir:name [ fhir:v "practitioner" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Practitioner that is able to provide the defined services for the organation" ]
+       ] [
+         fhir:name [ fhir:v "role" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The practitioner can perform this role at for the organization" ]
+       ] [
+         fhir:name [ fhir:v "service" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The list of healthcare services that this worker provides for this role's Organization/Location(s)" ]
+       ] [
+         fhir:name [ fhir:v "specialty" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The practitioner has this specialty at an organization" ]
+       ] [
+         fhir:name [ fhir:v "telecom" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The value in any kind of contact" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Provenance" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CareTeam:context" ] [ fhir:v "CareTeam:encounter" ] [ fhir:v "CareTeam:managingOrganization" ] [ fhir:v "CareTeam:participant" ] [ fhir:v "CareTeam:patient" ] [ fhir:v "CareTeam:subject" ] [ fhir:v "Organization:endpoint" ] [ fhir:v "Organization:partof" ] [ fhir:v "PractitionerRole:endpoint" ] [ fhir:v "PractitionerRole:location" ] [ fhir:v "PractitionerRole:organization" ] [ fhir:v "PractitionerRole:practitioner" ] [ fhir:v "PractitionerRole:service" ] [ fhir:v "Provenance:target" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "recorded" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "When the activity was recorded / updated" ]
+       ] [
+         fhir:name [ fhir:v "target" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Target Reference(s) (usually version specific)" ]
+       ] )
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "transaction" ]
+     ] [
+       fhir:code [ fhir:v "history-system" ]
+     ] ) ;
+     fhir:operation ( [
+       fhir:name [ fhir:v "migrate-list" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate-list"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate-list>
+       ] ;
+       fhir:documentation [ fhir:v "Data migration" ]
+     ] [
+       fhir:name [ fhir:v "persist-login" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-persist-login"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-persist-login>
+       ] ;
+       fhir:documentation [ fhir:v "This operation persists login information into CareTeams and PractitionerRoles\nThe following elements of each careteam are mandatory:\n- id: Reference based on the careteam from the saml security token\n- status: any\n- name: any\n- reasonCode: any\n- participant: 1 for each careteam-role in the saml security token\n-- role: from the saml security token\n-- member: reference to the practitioner\n-- onBehalfOf: reference to organization (cannot be set currently because of a bug in hapi)\n\nPersist-login will find each careteam, and update it with any new participants and roles from the input bundle.\nThe input careteam resources are are used as a container for the participant list. The rest of the fields are not used.\nThe following elements of each PractitionerRole are mandatory:\n- practitioner\n- organization\n- code: roles from the saml security token (CareteamParticipantRole valueset)\n\nPersist-login will search for practitionerRoles for each combination of (practitioner, organization) and create it if it doesn't already exists." ]
+     ] [
+       fhir:name [ fhir:v "import-organizations" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-import-organizations"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-import-organizations>
+       ] ;
+       fhir:documentation [ fhir:v "Import a bundle containing at least one organization tree." ]
+     ] [
+       fhir:name [ fhir:v "process-message" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message>
+       ] ;
+       fhir:documentation [ fhir:v "Accept a FHIR Message Bundle for processing" ]
+     ] [
+       fhir:name [ fhir:v "perform-reindexing-pass" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass>
+       ] ;
+       fhir:documentation [ fhir:v "Forces a single pass of the resource reindexing processor" ]
+     ] [
+       fhir:name [ fhir:v "meta" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta>
+       ]
+     ] [
+       fhir:name [ fhir:v "get-resource-counts" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts>
+       ] ;
+       fhir:documentation [ fhir:v "Provides the number of resources currently stored on the server, broken down by resource type" ]
+     ] [
+       fhir:name [ fhir:v "reindex-terminology" ] ;
+       fhir:definition [
+         fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"^^xsd:anyURI ;
+         fhir:link <https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology>
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

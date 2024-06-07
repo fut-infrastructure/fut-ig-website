@@ -1,0 +1,109 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/hl7.org-fhir-publication-status> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hl7.org-fhir-publication-status"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p/><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">draft<a name=\"publication-status-dk-supplement-draft\"> </a></td><td>Draft</td><td>This resource is still under development and is not yet considered to be ready for normal use.</td></tr><tr><td style=\"white-space:nowrap\">active<a name=\"publication-status-dk-supplement-active\"> </a></td><td>Active</td><td>This resource is ready for normal use.</td></tr><tr><td style=\"white-space:nowrap\">retired<a name=\"publication-status-dk-supplement-retired\"> </a></td><td>Retired</td><td>This resource has been withdrawn or superseded and should no longer be used.</td></tr><tr><td style=\"white-space:nowrap\">unknown<a name=\"publication-status-dk-supplement-unknown\"> </a></td><td>Unknown</td><td>The authoring system does not know which of the status values currently applies for this resource.  Note: This concept is not to be used for &quot;other&quot; - one of the listed statuses is presumed to apply, it's just not known which one.</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Dansk (Danish, da)</b></td><td><b>Nederlands (Dutch, nl)</b></td><td><b>Русский (Russian, ru)</b></td></tr><tr><td>draft</td><td>Udkast</td><td>ontwerp</td><td>черновик</td></tr><tr><td>active</td><td>Aktiv</td><td>actief</td><td>активный</td></tr><tr><td>retired</td><td>Udgået</td><td>verouderd</td><td>удалён</td></tr><tr><td>unknown</td><td>Ukendt</td><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/publication-status"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "PublicationStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2021-10-27T13:27:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The lifecycle status of a Value Set or Concept Map."] ; # 
+  fhir:content [ fhir:v "supplement"] ; # 
+  fhir:supplements [
+     fhir:v "http://hl7.org/fhir/publication-status"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/publication-status>
+  ] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "draft" ] ;
+     fhir:display [ fhir:v "Draft" ] ;
+     fhir:definition [ fhir:v "This resource is still under development and is not yet considered to be ready for normal use." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "ru" ] ;
+       fhir:value [ fhir:v "черновик" ]
+     ] [
+       fhir:language [ fhir:v "nl" ] ;
+       fhir:value [ fhir:v "ontwerp" ]
+     ] [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Udkast" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "active" ] ;
+     fhir:display [ fhir:v "Active" ] ;
+     fhir:definition [ fhir:v "This resource is ready for normal use." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "ru" ] ;
+       fhir:value [ fhir:v "активный" ]
+     ] [
+       fhir:language [ fhir:v "nl" ] ;
+       fhir:value [ fhir:v "actief" ]
+     ] [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Aktiv" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "retired" ] ;
+     fhir:display [ fhir:v "Retired" ] ;
+     fhir:definition [ fhir:v "This resource has been withdrawn or superseded and should no longer be used." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "ru" ] ;
+       fhir:value [ fhir:v "удалён" ]
+     ] [
+       fhir:language [ fhir:v "nl" ] ;
+       fhir:value [ fhir:v "verouderd" ]
+     ] [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Udgået" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "unknown" ] ;
+     fhir:display [ fhir:v "Unknown" ] ;
+     fhir:definition [ fhir:v "The authoring system does not know which of the status values currently applies for this resource.  Note: This concept is not to be used for \"other\" - one of the listed statuses is presumed to apply, it's just not known which one." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Ukendt" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

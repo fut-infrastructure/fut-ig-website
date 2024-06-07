@@ -1,0 +1,166 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/ehealth-situation-quality> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ehealth-situation-quality"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This case-sensitive code system <code>http://ehealth.sundhed.dk/cs/situation-quality</code> defines the following codes in a Is-A hierarchy:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">none<a name=\"ehealth-situation-quality-none\"> </a></td><td>No quality needed</td><td>Quality value where no derivation rule logic nor values are expected</td><td>Ingen situationskvalitet krævet/ventet</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  unknown<a name=\"ehealth-situation-quality-unknown\"> </a></td><td>Unknown quality</td><td>Unknown quality (Unlikely to be adequate if a quality value is expected)</td><td>Ukendt situationskvalitet</td></tr><tr><td>3</td><td style=\"white-space:nowrap\">    derivation-error<a name=\"ehealth-situation-quality-derivation-error\"> </a></td><td>Error in deriving or determining the quality</td><td>Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error</td><td>Situationskvaliteten kunne ikke bestemmes grundet manglende input, utilgængelig logik, eller anden fejl.</td></tr><tr><td>4</td><td style=\"white-space:nowrap\">      normal<a name=\"ehealth-situation-quality-normal\"> </a></td><td>Normal/neutral situation quality</td><td>Normal/neutral situation quality</td><td>Normalt/neutralt situationskvalitetsniveau</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        finger-not-cold<a name=\"ehealth-situation-quality-finger-not-cold\"> </a></td><td>Finger is not cold</td><td>Finger is not cold</td><td>Finger ej kold</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        supported-by-armrest<a name=\"ehealth-situation-quality-supported-by-armrest\"> </a></td><td>Performed with armrest support</td><td>Performed with armrest support</td><td>Udført med støtte fra armlæn</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        arms-crossed<a name=\"ehealth-situation-quality-arms-crossed\"> </a></td><td>Performed with arms crossed</td><td>Performed with arms crossed</td><td>udført med korslagte arme</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        lying-down<a name=\"ehealth-situation-quality-lying-down\"> </a></td><td>Performed lying down</td><td>Performed lying down</td><td>Udført liggende</td></tr><tr><td>5</td><td style=\"white-space:nowrap\">        sitting<a name=\"ehealth-situation-quality-sitting\"> </a></td><td>Performed sitting</td><td>Performed sitting</td><td>Udført siddende</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">Unknown<a name=\"ehealth-situation-quality-Unknown\"> </a></td><td>Unknown quality</td><td>Unknown quality (Unlikely to be adequate if a quality value is expected)</td><td/></tr><tr><td>2</td><td style=\"white-space:nowrap\">  None<a name=\"ehealth-situation-quality-None\"> </a></td><td>No quality needed</td><td>Quality value where no derivation rule logic nor values are expected</td><td/></tr><tr><td>3</td><td style=\"white-space:nowrap\">    DerivationError<a name=\"ehealth-situation-quality-DerivationError\"> </a></td><td>Error in deriving or determining the quality</td><td>Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error</td><td/></tr><tr><td>4</td><td style=\"white-space:nowrap\">      SQ1<a name=\"ehealth-situation-quality-SQ1\"> </a></td><td>Situation quality 1 (example)</td><td>Example, needs further clarification.</td><td/></tr><tr><td>5</td><td style=\"white-space:nowrap\">        SQ2<a name=\"ehealth-situation-quality-SQ2\"> </a></td><td>Situation quality 2 (example)</td><td>Example, needs further clarification.</td><td/></tr><tr><td>6</td><td style=\"white-space:nowrap\">          SQ3<a name=\"ehealth-situation-quality-SQ3\"> </a></td><td>Situation quality 3 (example)</td><td>Example, needs further clarification.</td><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/cs/situation-quality"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "SituationQuality"] ; # 
+  fhir:title [ fhir:v "Situation Quality"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2019-01-29T00:00:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Codes stating the quality of a measurement situation"] ; # 
+  fhir:caseSensitive [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:hierarchyMeaning [ fhir:v "is-a"] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "none" ] ;
+     fhir:display [ fhir:v "No quality needed" ] ;
+     fhir:definition [ fhir:v "Quality value where no derivation rule logic nor values are expected" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:value [ fhir:v "Ingen situationskvalitet krævet/ventet" ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "Unknown quality" ] ;
+       fhir:definition [ fhir:v "Unknown quality (Unlikely to be adequate if a quality value is expected)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:value [ fhir:v "Ukendt situationskvalitet" ]
+       ] ) ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "derivation-error" ] ;
+         fhir:display [ fhir:v "Error in deriving or determining the quality" ] ;
+         fhir:definition [ fhir:v "Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error" ] ;
+         fhir:designation ( [
+           fhir:language [ fhir:v "da" ] ;
+           fhir:value [ fhir:v "Situationskvaliteten kunne ikke bestemmes grundet manglende input, utilgængelig logik, eller anden fejl." ]
+         ] ) ;
+         fhir:concept ( [
+           fhir:code [ fhir:v "normal" ] ;
+           fhir:display [ fhir:v "Normal/neutral situation quality" ] ;
+           fhir:definition [ fhir:v "Normal/neutral situation quality" ] ;
+           fhir:designation ( [
+             fhir:language [ fhir:v "da" ] ;
+             fhir:value [ fhir:v "Normalt/neutralt situationskvalitetsniveau" ]
+           ] ) ;
+           fhir:concept ( [
+             fhir:code [ fhir:v "finger-not-cold" ] ;
+             fhir:display [ fhir:v "Finger is not cold" ] ;
+             fhir:definition [ fhir:v "Finger is not cold" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Finger ej kold" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "supported-by-armrest" ] ;
+             fhir:display [ fhir:v "Performed with armrest support" ] ;
+             fhir:definition [ fhir:v "Performed with armrest support" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Udført med støtte fra armlæn" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "arms-crossed" ] ;
+             fhir:display [ fhir:v "Performed with arms crossed" ] ;
+             fhir:definition [ fhir:v "Performed with arms crossed" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "udført med korslagte arme" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "lying-down" ] ;
+             fhir:display [ fhir:v "Performed lying down" ] ;
+             fhir:definition [ fhir:v "Performed lying down" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Udført liggende" ]
+             ] )
+           ] [
+             fhir:code [ fhir:v "sitting" ] ;
+             fhir:display [ fhir:v "Performed sitting" ] ;
+             fhir:definition [ fhir:v "Performed sitting" ] ;
+             fhir:designation ( [
+               fhir:language [ fhir:v "da" ] ;
+               fhir:value [ fhir:v "Udført siddende" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:code [ fhir:v "Unknown" ] ;
+     fhir:display [ fhir:v "Unknown quality" ] ;
+     fhir:definition [ fhir:v "Unknown quality (Unlikely to be adequate if a quality value is expected)" ] ;
+     fhir:property ( [
+       fhir:code [ fhir:v "deprecated" ] ;
+       fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "None" ] ;
+       fhir:display [ fhir:v "No quality needed" ] ;
+       fhir:definition [ fhir:v "Quality value where no derivation rule logic nor values are expected" ] ;
+       fhir:property ( [
+         fhir:code [ fhir:v "deprecated" ] ;
+         fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+       ] ) ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "DerivationError" ] ;
+         fhir:display [ fhir:v "Error in deriving or determining the quality" ] ;
+         fhir:definition [ fhir:v "Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error" ] ;
+         fhir:property ( [
+           fhir:code [ fhir:v "deprecated" ] ;
+           fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+         ] ) ;
+         fhir:concept ( [
+           fhir:code [ fhir:v "SQ1" ] ;
+           fhir:display [ fhir:v "Situation quality 1 (example)" ] ;
+           fhir:definition [ fhir:v "Example, needs further clarification." ] ;
+           fhir:property ( [
+             fhir:code [ fhir:v "deprecated" ] ;
+             fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+           ] ) ;
+           fhir:concept ( [
+             fhir:code [ fhir:v "SQ2" ] ;
+             fhir:display [ fhir:v "Situation quality 2 (example)" ] ;
+             fhir:definition [ fhir:v "Example, needs further clarification." ] ;
+             fhir:property ( [
+               fhir:code [ fhir:v "deprecated" ] ;
+               fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+             ] ) ;
+             fhir:concept ( [
+               fhir:code [ fhir:v "SQ3" ] ;
+               fhir:display [ fhir:v "Situation quality 3 (example)" ] ;
+               fhir:definition [ fhir:v "Example, needs further clarification." ] ;
+               fhir:property ( [
+                 fhir:code [ fhir:v "deprecated" ] ;
+                 fhir:value [ fhir:v "2020-02-03"^^xsd:date ]
+               ] )
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

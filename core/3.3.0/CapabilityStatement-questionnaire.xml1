@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="questionnaire"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2 id="title"/><ul><li>Implementation Guide Version: 3.3.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 02:47:14+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th class="text-center"><b title="DELETE a resource (delete interaction)">D</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Basic1-1">Basic</a></td><td><a href="http://hl7.org/fhir/R4/basic.html">http://hl7.org/fhir/StructureDefinition/Basic</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, actionGuidanceForReference, actionGuidanceForType, actionGuidanceType, code, identifier, intendedAudience, recommendation, reference, role, status, viewForReference, viewForType, viewType</td><td><code>*</code></td><td><code>Basic:actionGuidanceForReference</code>, <code>Basic:intendedAudience</code>, <code>Basic:reference</code>, <code>Basic:viewForReference</code>, <code>Questionnaire:reference</code>, <code>StructureDefinition:valueset</code></td><td/></tr><tr><td><a href="#OperationDefinition1-2">OperationDefinition</a></td><td><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>Basic:actionGuidanceForReference</code>, <code>Basic:intendedAudience</code>, <code>Basic:reference</code>, <code>Basic:viewForReference</code>, <code>Questionnaire:reference</code>, <code>StructureDefinition:valueset</code></td><td/></tr><tr><td><a href="#Questionnaire1-3">Questionnaire</a></td><td><a href="http://hl7.org/fhir/R4/questionnaire.html">http://hl7.org/fhir/StructureDefinition/Questionnaire</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, base, baseEnvironment, code, date, description, effective, ehealthPredecessor, employeeTitle, identifier, jurisdiction, name, publisher, reference, role, status, title, type, url, version</td><td><code>*</code></td><td><code>Basic:actionGuidanceForReference</code>, <code>Basic:intendedAudience</code>, <code>Basic:reference</code>, <code>Basic:viewForReference</code>, <code>Questionnaire:reference</code>, <code>StructureDefinition:valueset</code></td><td/></tr><tr><td><a href="#StructureDefinition1-4">StructureDefinition</a></td><td><a href="StructureDefinition-ehealth-definedquestion.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _filter, _has, _id, _language, _lastUpdated, _profile, _security, _source, _tag, _text, abstract, base, base-path, context-type, date, derivation, description, experimental, ext-context, identifier, jurisdiction, keyword, kind, name, path, publisher, status, title, type, url, valueset, version</td><td><code>*</code>, <code>StructureDefinition:valueset</code></td><td><code>Basic:actionGuidanceForReference</code>, <code>Basic:intendedAudience</code>, <code>Basic:reference</code>, <code>Basic:viewForReference</code>, <code>Questionnaire:reference</code>, <code>StructureDefinition:valueset</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Basic1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Basic</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/basic.html">http://hl7.org/fhir/StructureDefinition/Basic</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>actionGuidanceForReference</td><td><code>reference</code></td><td><div><p>Action guidance for reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>actionGuidanceForType</td><td><code>token</code></td><td><div><p>The action guidance for type</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>actionGuidanceType</td><td><code>token</code></td><td><div><p>The action guidance type</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>The code</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>The identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>intendedAudience</td><td><code>reference</code></td><td><div><p>The intended audience</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>recommendation</td><td><code>token</code></td><td><div><p>The recommendation</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>reference</td><td><code>reference</code></td><td><div><p>The modifier reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>role</td><td><code>token</code></td><td><div><p>The modifier role</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>viewForReference</td><td><code>reference</code></td><td><div><p>View for reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>viewForType</td><td><code>token</code></td><td><div><p>The view for type</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>viewType</td><td><code>token</code></td><td><div><p>The view type</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="OperationDefinition1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>OperationDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Questionnaire1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Questionnaire</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/questionnaire.html">http://hl7.org/fhir/StructureDefinition/Questionnaire</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>token</code></td><td><div><p>Base of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>baseEnvironment</td><td><code>token</code></td><td><div><p>Base Environment of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>A code that corresponds to one of its items in the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The questionnaire publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>effective</td><td><code>date</code></td><td><div><p>The time during which the questionnaire is intended to be in use</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>ehealthPredecessor</td><td><code>token</code></td><td><div><p>Predecessor of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>employeeTitle</td><td><code>string</code></td><td><div><p>Title intended for clinicians</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>reference</td><td><code>reference</code></td><td><div><p>Modifier reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>role</td><td><code>token</code></td><td><div><p>Modifier role</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Questionnaire type</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the questionnaire</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the questionnaire</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-Questionnaire-i-create-clone.html">$create-clone</a></td><td><div><h3>Input</h3>
+<ul>
+<li>resourceId: reference to the Questionnaire resource that should be cloned</li>
+<li>clone-operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation</li>
+</ul>
+<h3>Output</h3>
+<p>Bundle containing all resources that were created during the operation.</p>
+<h3>Validation</h3>
+<ul>
+<li>New business versions require that the user has modifier-role: owner or co-author for the resource</li>
+<li>New copy does not require that the user has a modifier-role.</li>
+<li>New business version can be made only when no draft resource exists (having identical base identifier).</li>
+<li>Read/search/create privileges are required for the resource types affected by $create-clone</li>
+</ul>
+</div></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="StructureDefinition1-4" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>StructureDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-definedquestion.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>abstract</td><td><code>token</code></td><td><div><p>Whether the structure is abstract</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>uri</code></td><td><div><p>Definition that this type is constrained/specialized from</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base-path</td><td><code>token</code></td><td><div><p>Path that identifies the base element</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>resource | datatype | extension</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The structure definition publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>derivation</td><td><code>token</code></td><td><div><p>specialization | constraint - How relates to base definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>experimental</td><td><code>token</code></td><td><div><p>For testing purposes, not real usage</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>ext-context</td><td><code>string</code></td><td><div><p>Where the extension can be used in instances</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>keyword</td><td><code>token</code></td><td><div><p>A code for the profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>kind</td><td><code>token</code></td><td><div><p>primitive-type | complex-type | resource | logical</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>path</td><td><code>token</code></td><td><div><p>A path that is constrained in the profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Type defined or constrained by this structure</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>valueset</td><td><code>reference</code></td><td><div><p>A vocabulary binding reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the structure definition</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/questionnaire"/>
+  <version value="3.3.0"/>
+  <name value="questionnaire"/>
+  <status value="active"/>
+  <date value="2024-04-29T02:47:14.155+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <kind value="instance"/>
+  <software>
+    <name value="questionnaire"/>
+    <version value="2.2.1"/>
+  </software>
+  <implementation>
+    <description value="eHealth questionnaire service"/>
+    <url value="https://questionnaire.devtest.systematic-ehealth.com/fhir"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="xml"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <format value="application/x-turtle"/>
+  <format value="ttl"/>
+  <format value="html/json"/>
+  <format value="html/xml"/>
+  <format value="html/turtle"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="Basic"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/Basic"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchRevInclude value="Basic:actionGuidanceForReference"/>
+      <searchRevInclude value="Basic:intendedAudience"/>
+      <searchRevInclude value="Basic:reference"/>
+      <searchRevInclude value="Basic:viewForReference"/>
+      <searchRevInclude value="Questionnaire:reference"/>
+      <searchRevInclude value="StructureDefinition:valueset"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="actionGuidanceForReference"/>
+        <type value="reference"/>
+        <documentation value="Action guidance for reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="actionGuidanceForType"/>
+        <type value="token"/>
+        <documentation value="The action guidance for type"/>
+      </searchParam>
+      <searchParam>
+        <name value="actionGuidanceType"/>
+        <type value="token"/>
+        <documentation value="The action guidance type"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+        <documentation value="The code"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="The identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="intendedAudience"/>
+        <type value="reference"/>
+        <documentation value="The intended audience"/>
+      </searchParam>
+      <searchParam>
+        <name value="recommendation"/>
+        <type value="token"/>
+        <documentation value="The recommendation"/>
+      </searchParam>
+      <searchParam>
+        <name value="reference"/>
+        <type value="reference"/>
+        <documentation value="The modifier reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="role"/>
+        <type value="token"/>
+        <documentation value="The modifier role"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="The current status"/>
+      </searchParam>
+      <searchParam>
+        <name value="viewForReference"/>
+        <type value="reference"/>
+        <documentation value="View for reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="viewForType"/>
+        <type value="token"/>
+        <documentation value="The view for type"/>
+      </searchParam>
+      <searchParam>
+        <name value="viewType"/>
+        <type value="token"/>
+        <documentation value="The view type"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="OperationDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchRevInclude value="Basic:actionGuidanceForReference"/>
+      <searchRevInclude value="Basic:intendedAudience"/>
+      <searchRevInclude value="Basic:reference"/>
+      <searchRevInclude value="Basic:viewForReference"/>
+      <searchRevInclude value="Questionnaire:reference"/>
+      <searchRevInclude value="StructureDefinition:valueset"/>
+    </resource>
+    <resource>
+      <type value="Questionnaire"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/Questionnaire"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchRevInclude value="Basic:actionGuidanceForReference"/>
+      <searchRevInclude value="Basic:intendedAudience"/>
+      <searchRevInclude value="Basic:reference"/>
+      <searchRevInclude value="Basic:viewForReference"/>
+      <searchRevInclude value="Questionnaire:reference"/>
+      <searchRevInclude value="StructureDefinition:valueset"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <type value="token"/>
+        <documentation value="Base of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="baseEnvironment"/>
+        <type value="token"/>
+        <documentation value="Base Environment of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+        <documentation value="A code that corresponds to one of its items in the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="The questionnaire publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <type value="string"/>
+        <documentation value="The description of the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="effective"/>
+        <type value="date"/>
+        <documentation value="The time during which the questionnaire is intended to be in use"/>
+      </searchParam>
+      <searchParam>
+        <name value="ehealthPredecessor"/>
+        <type value="token"/>
+        <documentation value="Predecessor of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="employeeTitle"/>
+        <type value="string"/>
+        <documentation value="Title intended for clinicians"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="reference"/>
+        <type value="reference"/>
+        <documentation value="Modifier reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="role"/>
+        <type value="token"/>
+        <documentation value="Modifier role"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="The current status of the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="Questionnaire type"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the questionnaire"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <type value="token"/>
+        <documentation value="The business version of the questionnaire"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+      <operation>
+        <name value="create-clone"/>
+        <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Questionnaire-i-create-clone"/>
+        <documentation value="### Input&#xA;- resourceId: reference to the Questionnaire resource that should be cloned&#xA;- clone-operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation &#xA;&#xA;### Output&#xA;Bundle containing all resources that were created during the operation.&#xA;&#xA;### Validation&#xA;- New business versions require that the user has modifier-role: owner or co-author for the resource&#xA;- New copy does not require that the user has a modifier-role.&#xA;- New business version can be made only when no draft resource exists (having identical base identifier).&#xA;- Read/search/create privileges are required for the resource types affected by $create-clone"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="StructureDefinition"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <conditionalDelete value="single"/>
+      <searchInclude value="*"/>
+      <searchInclude value="StructureDefinition:valueset"/>
+      <searchRevInclude value="Basic:actionGuidanceForReference"/>
+      <searchRevInclude value="Basic:intendedAudience"/>
+      <searchRevInclude value="Basic:reference"/>
+      <searchRevInclude value="Basic:viewForReference"/>
+      <searchRevInclude value="Questionnaire:reference"/>
+      <searchRevInclude value="StructureDefinition:valueset"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="abstract"/>
+        <type value="token"/>
+        <documentation value="Whether the structure is abstract"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <type value="uri"/>
+        <documentation value="Definition that this type is constrained/specialized from"/>
+      </searchParam>
+      <searchParam>
+        <name value="base-path"/>
+        <type value="token"/>
+        <documentation value="Path that identifies the base element"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <type value="token"/>
+        <documentation value="resource | datatype | extension"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="The structure definition publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="derivation"/>
+        <type value="token"/>
+        <documentation value="specialization | constraint - How relates to base definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <type value="string"/>
+        <documentation value="The description of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="experimental"/>
+        <type value="token"/>
+        <documentation value="For testing purposes, not real usage"/>
+      </searchParam>
+      <searchParam>
+        <name value="ext-context"/>
+        <type value="string"/>
+        <documentation value="Where the extension can be used in instances"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="keyword"/>
+        <type value="token"/>
+        <documentation value="A code for the profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="kind"/>
+        <type value="token"/>
+        <documentation value="primitive-type | complex-type | resource | logical"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="path"/>
+        <type value="token"/>
+        <documentation value="A path that is constrained in the profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="The current status of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="Type defined or constrained by this structure"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="valueset"/>
+        <type value="reference"/>
+        <documentation value="A vocabulary binding reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <type value="token"/>
+        <documentation value="The business version of the structure definition"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <interaction>
+      <code value="transaction"/>
+    </interaction>
+    <interaction>
+      <code value="history-system"/>
+    </interaction>
+    <operation>
+      <name value="migrate"/>
+      <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate"/>
+      <documentation value="Data migration"/>
+    </operation>
+    <operation>
+      <name value="process-message"/>
+      <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"/>
+      <documentation value="Accept a FHIR Message Bundle for processing"/>
+    </operation>
+    <operation>
+      <name value="perform-reindexing-pass"/>
+      <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"/>
+      <documentation value="Forces a single pass of the resource reindexing processor"/>
+    </operation>
+    <operation>
+      <name value="meta"/>
+      <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"/>
+    </operation>
+    <operation>
+      <name value="get-resource-counts"/>
+      <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"/>
+      <documentation value="Provides the number of resources currently stored on the server, broken down by resource type"/>
+    </operation>
+    <operation>
+      <name value="reindex-terminology"/>
+      <definition value="https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"/>
+    </operation>
+  </rest>
+</CapabilityStatement>

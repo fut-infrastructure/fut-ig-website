@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="plan"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2 id="title"/><ul><li>Implementation Guide Version: 3.3.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 02:42:23+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#ActivityDefinition1-1">ActivityDefinition</a></td><td><a href="StructureDefinition-ehealth-activitydefinition.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _source, _tag, _text, base, baseEnvironment, composed-of, context, context-quantity, context-type, date, depends-on, derived-from, description, effective, ehealthPredecessor, employeeTitle, identifier, intendedAudience, jurisdiction, modifier_role_reference, modifier_role_role, name, predecessor, publisher, recommendation, status, successor, title, topic, url, version</td><td><code>ActivityDefinition:composed-of</code>, <code>ActivityDefinition:depends-on</code>, <code>ActivityDefinition:derived-from</code>, <code>ActivityDefinition:predecessor</code>, <code>ActivityDefinition:successor</code></td><td><code>ActivityDefinition:composed-of</code>, <code>ActivityDefinition:depends-on</code>, <code>ActivityDefinition:derived-from</code>, <code>ActivityDefinition:intendedAudience</code>, <code>ActivityDefinition:modifier_role_reference</code>, <code>ActivityDefinition:predecessor</code>, <code>ActivityDefinition:successor</code>, <code>DocumentReference:authenticator</code>, <code>DocumentReference:author</code>, <code>DocumentReference:custodian</code>, <code>DocumentReference:encounter</code>, <code>DocumentReference:patient</code>, <code>DocumentReference:related</code>, <code>DocumentReference:relatesto</code>, <code>DocumentReference:subject</code>, <code>PlanDefinition:composed-of</code>, <code>PlanDefinition:definition</code>, <code>PlanDefinition:depends-on</code>, <code>PlanDefinition:derived-from</code>, <code>PlanDefinition:documentation</code>, <code>PlanDefinition:intendedAudience</code>, <code>PlanDefinition:modifier_role_reference</code>, <code>PlanDefinition:predecessor</code>, <code>PlanDefinition:successor</code></td><td/></tr><tr><td><a href="#DocumentReference1-2">DocumentReference</a></td><td><a href="StructureDefinition-ehealth-documentreference.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _filter, _has, _id, _language, _lastUpdated, _profile, _security, _source, _tag, _text, authenticator, author, category, contenttype, custodian, date, description, encounter, event, facility, format, identifier, language, location, patient, period, related, relatesto, relation, relationship, security-label, setting, status, subject, type</td><td><code>*</code>, <code>DocumentReference:authenticator</code>, <code>DocumentReference:author</code>, <code>DocumentReference:custodian</code>, <code>DocumentReference:encounter</code>, <code>DocumentReference:patient</code>, <code>DocumentReference:related</code>, <code>DocumentReference:relatesto</code>, <code>DocumentReference:subject</code></td><td><code>ActivityDefinition:composed-of</code>, <code>ActivityDefinition:depends-on</code>, <code>ActivityDefinition:derived-from</code>, <code>ActivityDefinition:intendedAudience</code>, <code>ActivityDefinition:modifier_role_reference</code>, <code>ActivityDefinition:predecessor</code>, <code>ActivityDefinition:successor</code>, <code>DocumentReference:authenticator</code>, <code>DocumentReference:author</code>, <code>DocumentReference:custodian</code>, <code>DocumentReference:encounter</code>, <code>DocumentReference:patient</code>, <code>DocumentReference:related</code>, <code>DocumentReference:relatesto</code>, <code>DocumentReference:subject</code>, <code>PlanDefinition:composed-of</code>, <code>PlanDefinition:definition</code>, <code>PlanDefinition:depends-on</code>, <code>PlanDefinition:derived-from</code>, <code>PlanDefinition:documentation</code>, <code>PlanDefinition:intendedAudience</code>, <code>PlanDefinition:modifier_role_reference</code>, <code>PlanDefinition:predecessor</code>, <code>PlanDefinition:successor</code></td><td/></tr><tr><td><a href="#OperationDefinition1-3">OperationDefinition</a></td><td><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>ActivityDefinition:composed-of</code>, <code>ActivityDefinition:depends-on</code>, <code>ActivityDefinition:derived-from</code>, <code>ActivityDefinition:intendedAudience</code>, <code>ActivityDefinition:modifier_role_reference</code>, <code>ActivityDefinition:predecessor</code>, <code>ActivityDefinition:successor</code>, <code>DocumentReference:authenticator</code>, <code>DocumentReference:author</code>, <code>DocumentReference:custodian</code>, <code>DocumentReference:encounter</code>, <code>DocumentReference:patient</code>, <code>DocumentReference:related</code>, <code>DocumentReference:relatesto</code>, <code>DocumentReference:subject</code>, <code>PlanDefinition:composed-of</code>, <code>PlanDefinition:definition</code>, <code>PlanDefinition:depends-on</code>, <code>PlanDefinition:derived-from</code>, <code>PlanDefinition:documentation</code>, <code>PlanDefinition:intendedAudience</code>, <code>PlanDefinition:modifier_role_reference</code>, <code>PlanDefinition:predecessor</code>, <code>PlanDefinition:successor</code></td><td/></tr><tr><td><a href="#PlanDefinition1-4">PlanDefinition</a></td><td><a href="StructureDefinition-ehealth-plandefinition.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _source, _tag, _text, base, baseEnvironment, composed-of, context, context-quantity, context-type, date, definition, depends-on, derived-from, description, documentation, effective, ehealthPredecessor, employeeTitle, identifier, intendedAudience, jurisdiction, modifier_role_reference, modifier_role_role, name, predecessor, publisher, recommendation, status, successor, title, topic, type, url, version</td><td><code>*</code>, <code>PlanDefinition:composed-of</code>, <code>PlanDefinition:definition</code>, <code>PlanDefinition:depends-on</code>, <code>PlanDefinition:derived-from</code>, <code>PlanDefinition:documentation</code>, <code>PlanDefinition:predecessor</code>, <code>PlanDefinition:successor</code></td><td><code>ActivityDefinition:composed-of</code>, <code>ActivityDefinition:depends-on</code>, <code>ActivityDefinition:derived-from</code>, <code>ActivityDefinition:intendedAudience</code>, <code>ActivityDefinition:modifier_role_reference</code>, <code>ActivityDefinition:predecessor</code>, <code>ActivityDefinition:successor</code>, <code>DocumentReference:authenticator</code>, <code>DocumentReference:author</code>, <code>DocumentReference:custodian</code>, <code>DocumentReference:encounter</code>, <code>DocumentReference:patient</code>, <code>DocumentReference:related</code>, <code>DocumentReference:relatesto</code>, <code>DocumentReference:subject</code>, <code>PlanDefinition:composed-of</code>, <code>PlanDefinition:definition</code>, <code>PlanDefinition:depends-on</code>, <code>PlanDefinition:derived-from</code>, <code>PlanDefinition:documentation</code>, <code>PlanDefinition:intendedAudience</code>, <code>PlanDefinition:modifier_role_reference</code>, <code>PlanDefinition:predecessor</code>, <code>PlanDefinition:successor</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="ActivityDefinition1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>ActivityDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-activitydefinition.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>token</code></td><td><div><p>Base of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>baseEnvironment</td><td><code>token</code></td><td><div><p>Base Environment of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>composed-of</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The activity definition publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>depends-on</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>derived-from</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>effective</td><td><code>date</code></td><td><div><p>The time during which the activity definition is intended to be in use</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>ehealthPredecessor</td><td><code>token</code></td><td><div><p>Predecessor of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>employeeTitle</td><td><code>string</code></td><td><div><p>Title intented for clinicians</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>intendedAudience</td><td><code>reference</code></td><td><div><p>The intended audience of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>modifier_role_reference</td><td><code>reference</code></td><td><div><p>Reference to either Organization, CareTeam, Practitioner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>modifier_role_role</td><td><code>token</code></td><td><div><p>Role of Organization, CareTeam, Practitioner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>predecessor</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>recommendation</td><td><code>token</code></td><td><div><p>Recommendation for the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>successor</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>topic</td><td><code>token</code></td><td><div><p>Topics associated with the module</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the activity definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the activity definition</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-ActivityDefinitionPlanDefinition-i-create-clone.html">$create-clone</a></td><td><div><h3>Input</h3>
+<ul>
+<li>resourceId: reference to the ActivityDefinition resource that should be cloned</li>
+<li>clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation</li>
+<li>default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned</li>
+<li>deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.</li>
+</ul>
+<h3>Output</h3>
+<p>Bundle containing all resources that were created during the operation.</p>
+<h3>Validation</h3>
+<ul>
+<li>New business versions require that the user has modifier-role: owner or co-author for the resource</li>
+<li>New copy does not require that the user has a modifier-role.</li>
+<li>New business version can be made only when no draft resource exists (having identical base identifier).</li>
+<li>Read/search/create privileges are required for the resource types affected by $create-clone</li>
+</ul>
+</div></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="DocumentReference1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>DocumentReference</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-documentreference.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>authenticator</td><td><code>reference</code></td><td><div><p>Who/what authenticated the document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>author</td><td><code>reference</code></td><td><div><p>Who and/or what authored the document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Categorization of document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>contenttype</td><td><code>token</code></td><td><div><p>Mime type of the content, with charset etc.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>custodian</td><td><code>reference</code></td><td><div><p>Organization which maintains the document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>When this document reference was created</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>Human-readable description</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div><p>Context of the document  content</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>event</td><td><code>token</code></td><td><div><p>Main clinical acts documented</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>facility</td><td><code>token</code></td><td><div><p>Kind of facility where patient was seen</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>format</td><td><code>token</code></td><td><div><p>Format/content rules for the document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Master Version Specific Identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>language</td><td><code>token</code></td><td><div><p>Human language of the content (BCP-47)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>location</td><td><code>uri</code></td><td><div><p>Uri where the data can be found</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Who/what is the subject of the document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>period</td><td><code>date</code></td><td><div><p>Time of service that is being documented</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>related</td><td><code>reference</code></td><td><div><p>Related identifiers or resources</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>relatesto</td><td><code>reference</code></td><td><div><p>Target of the relationship</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>relation</td><td><code>token</code></td><td><div><p>replaces | transforms | signs | appends</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>relationship</td><td><code>composite</code></td><td><div><p>Combination of relation and relatesTo</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>security-label</td><td><code>token</code></td><td><div><p>Document security-tags</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>setting</td><td><code>token</code></td><td><div><p>Additional details about where the content was created (e.g. clinical specialty)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>current | superseded | entered-in-error</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Who/what is the subject of the document</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Kind of document (LOINC if possible)</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="OperationDefinition1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>OperationDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="PlanDefinition1-4" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>PlanDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-plandefinition.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>token</code></td><td><div><p>Base of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>baseEnvironment</td><td><code>token</code></td><td><div><p>Base Environment of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>composed-of</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The plan definition publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>definition</td><td><code>reference</code></td><td><div><p>Activity or plan definitions used by plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>depends-on</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>derived-from</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>documentation</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>effective</td><td><code>date</code></td><td><div><p>The time during which the plan definition is intended to be in use</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>ehealthPredecessor</td><td><code>token</code></td><td><div><p>Predecessor of resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>employeeTitle</td><td><code>string</code></td><td><div><p>Title intented for clinicians</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>intendedAudience</td><td><code>reference</code></td><td><div><p>The intended audience of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>modifier_role_reference</td><td><code>reference</code></td><td><div><p>Reference to either Organization, CareTeam, Practitioner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>modifier_role_role</td><td><code>token</code></td><td><div><p>Role of Organization, CareTeam, Practitioner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>predecessor</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>recommendation</td><td><code>token</code></td><td><div><p>Recommendation for the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>successor</td><td><code>reference</code></td><td><div><p>What resource is being referenced</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>topic</td><td><code>token</code></td><td><div><p>Topics associated with the module</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>The type of artifact the plan (e.g. order-set, eca-rule, protocol)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the plan definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the plan definition</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-PlanDefinition-t-import.html">$import</a></td><td><div><p>Import a Plandefinition</p>
+<h3>Parameters</h3>
+<ul>
+<li>planDefinitionPackage: Binary package produced by the export operation</li>
+</ul>
+<h3>Output</h3>
+<p>Bundle containing the created resources. PlanDefinitions, ActivityDefinitions, and Questionnaires will be created. Imports QFFD DocumentReference into Document-Transformation service.Libraries and Organizations are used to find the corresponding resources on the target system.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-PlanDefinition-i-export.html">$export</a></td><td><div><p>Export a PlanDefinition.</p>
+<h3>Export Contents</h3>
+<p>The export contains the PlanDefinition including referenced resources:- PlanDefinitions</p>
+<ul>
+<li>ActivityDefinitions</li>
+<li>Questionnaires</li>
+<li>Libraries</li>
+<li>Organizations</li>
+<li>DocumentReference + QFDD</li>
+</ul>
+<p>Each resource is returned in a separate JSon file.</p>
+<h3>Parameters</h3>
+<ul>
+<li>exclude: references to ActivityDefinitions or PlanDefinitions to exclude from the export.</li>
+</ul>
+<h3>Output</h3>
+<p>Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files.
+All returned objects are Fhir resources. See the implementation guide for details</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-ActivityDefinitionPlanDefinition-i-create-clone.html">$create-clone</a></td><td><div><h3>Input</h3>
+<ul>
+<li>resourceId: reference to the PlanDefinition resource that should be cloned</li>
+<li>clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation</li>
+<li>default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned</li>
+<li>deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.</li>
+</ul>
+<h3>Output</h3>
+<p>Bundle containing all resources that were created during the operation.</p>
+<h3>Validation</h3>
+<ul>
+<li>New business versions require that the user has modifier-role: owner or co-author for the resource</li>
+<li>New copy does not require that the user has a modifier-role.</li>
+<li>New business version can be made only when no draft resource exists (having identical base identifier).</li>
+<li>Read/search/create privileges are required for the resource types affected by $create-clone</li>
+</ul>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-PlanDefinition-i-apply.html">$apply</a></td><td><div><p>Create a careplan for a specific episodeOfCare using this PlanDefinition as a template.</p>
+</div></td></tr></tbody></table></div></div></div></div></div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/plan"/>
+  <version value="3.3.0"/>
+  <name value="plan"/>
+  <status value="active"/>
+  <date value="2024-04-29T02:42:23.634+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <kind value="instance"/>
+  <software>
+    <name value="plan"/>
+    <version value="2.2.0"/>
+  </software>
+  <implementation>
+    <description value="eHealth plan service"/>
+    <url value="https://plan.devtest.systematic-ehealth.com/fhir"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="xml"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <format value="application/x-turtle"/>
+  <format value="ttl"/>
+  <format value="html/json"/>
+  <format value="html/xml"/>
+  <format value="html/turtle"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="ActivityDefinition"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="ActivityDefinition:composed-of"/>
+      <searchInclude value="ActivityDefinition:depends-on"/>
+      <searchInclude value="ActivityDefinition:derived-from"/>
+      <searchInclude value="ActivityDefinition:predecessor"/>
+      <searchInclude value="ActivityDefinition:successor"/>
+      <searchRevInclude value="ActivityDefinition:composed-of"/>
+      <searchRevInclude value="ActivityDefinition:depends-on"/>
+      <searchRevInclude value="ActivityDefinition:derived-from"/>
+      <searchRevInclude value="ActivityDefinition:intendedAudience"/>
+      <searchRevInclude value="ActivityDefinition:modifier_role_reference"/>
+      <searchRevInclude value="ActivityDefinition:predecessor"/>
+      <searchRevInclude value="ActivityDefinition:successor"/>
+      <searchRevInclude value="DocumentReference:authenticator"/>
+      <searchRevInclude value="DocumentReference:author"/>
+      <searchRevInclude value="DocumentReference:custodian"/>
+      <searchRevInclude value="DocumentReference:encounter"/>
+      <searchRevInclude value="DocumentReference:patient"/>
+      <searchRevInclude value="DocumentReference:related"/>
+      <searchRevInclude value="DocumentReference:relatesto"/>
+      <searchRevInclude value="DocumentReference:subject"/>
+      <searchRevInclude value="PlanDefinition:composed-of"/>
+      <searchRevInclude value="PlanDefinition:definition"/>
+      <searchRevInclude value="PlanDefinition:depends-on"/>
+      <searchRevInclude value="PlanDefinition:derived-from"/>
+      <searchRevInclude value="PlanDefinition:documentation"/>
+      <searchRevInclude value="PlanDefinition:intendedAudience"/>
+      <searchRevInclude value="PlanDefinition:modifier_role_reference"/>
+      <searchRevInclude value="PlanDefinition:predecessor"/>
+      <searchRevInclude value="PlanDefinition:successor"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <type value="token"/>
+        <documentation value="Base of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="baseEnvironment"/>
+        <type value="token"/>
+        <documentation value="Base Environment of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="composed-of"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="The activity definition publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="depends-on"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="derived-from"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <type value="string"/>
+        <documentation value="The description of the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="effective"/>
+        <type value="date"/>
+        <documentation value="The time during which the activity definition is intended to be in use"/>
+      </searchParam>
+      <searchParam>
+        <name value="ehealthPredecessor"/>
+        <type value="token"/>
+        <documentation value="Predecessor of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="employeeTitle"/>
+        <type value="string"/>
+        <documentation value="Title intented for clinicians"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="intendedAudience"/>
+        <type value="reference"/>
+        <documentation value="The intended audience of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="modifier_role_reference"/>
+        <type value="reference"/>
+        <documentation value="Reference to either Organization, CareTeam, Practitioner"/>
+      </searchParam>
+      <searchParam>
+        <name value="modifier_role_role"/>
+        <type value="token"/>
+        <documentation value="Role of Organization, CareTeam, Practitioner"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="predecessor"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="recommendation"/>
+        <type value="token"/>
+        <documentation value="Recommendation for the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="The current status of the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="successor"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="topic"/>
+        <type value="token"/>
+        <documentation value="Topics associated with the module"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the activity definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <type value="token"/>
+        <documentation value="The business version of the activity definition"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+      <operation>
+        <name value="create-clone"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone"/>
+        <documentation value="### Input&#xA;- resourceId: reference to the ActivityDefinition resource that should be cloned&#xA;- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation &#xA;- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned &#xA;- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.&#xA;&#xA;### Output&#xA;Bundle containing all resources that were created during the operation.&#xA;&#xA;### Validation&#xA;- New business versions require that the user has modifier-role: owner or co-author for the resource&#xA;- New copy does not require that the user has a modifier-role.&#xA;- New business version can be made only when no draft resource exists (having identical base identifier).&#xA;- Read/search/create privileges are required for the resource types affected by $create-clone"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="DocumentReference"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchInclude value="DocumentReference:authenticator"/>
+      <searchInclude value="DocumentReference:author"/>
+      <searchInclude value="DocumentReference:custodian"/>
+      <searchInclude value="DocumentReference:encounter"/>
+      <searchInclude value="DocumentReference:patient"/>
+      <searchInclude value="DocumentReference:related"/>
+      <searchInclude value="DocumentReference:relatesto"/>
+      <searchInclude value="DocumentReference:subject"/>
+      <searchRevInclude value="ActivityDefinition:composed-of"/>
+      <searchRevInclude value="ActivityDefinition:depends-on"/>
+      <searchRevInclude value="ActivityDefinition:derived-from"/>
+      <searchRevInclude value="ActivityDefinition:intendedAudience"/>
+      <searchRevInclude value="ActivityDefinition:modifier_role_reference"/>
+      <searchRevInclude value="ActivityDefinition:predecessor"/>
+      <searchRevInclude value="ActivityDefinition:successor"/>
+      <searchRevInclude value="DocumentReference:authenticator"/>
+      <searchRevInclude value="DocumentReference:author"/>
+      <searchRevInclude value="DocumentReference:custodian"/>
+      <searchRevInclude value="DocumentReference:encounter"/>
+      <searchRevInclude value="DocumentReference:patient"/>
+      <searchRevInclude value="DocumentReference:related"/>
+      <searchRevInclude value="DocumentReference:relatesto"/>
+      <searchRevInclude value="DocumentReference:subject"/>
+      <searchRevInclude value="PlanDefinition:composed-of"/>
+      <searchRevInclude value="PlanDefinition:definition"/>
+      <searchRevInclude value="PlanDefinition:depends-on"/>
+      <searchRevInclude value="PlanDefinition:derived-from"/>
+      <searchRevInclude value="PlanDefinition:documentation"/>
+      <searchRevInclude value="PlanDefinition:intendedAudience"/>
+      <searchRevInclude value="PlanDefinition:modifier_role_reference"/>
+      <searchRevInclude value="PlanDefinition:predecessor"/>
+      <searchRevInclude value="PlanDefinition:successor"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="authenticator"/>
+        <type value="reference"/>
+        <documentation value="Who/what authenticated the document"/>
+      </searchParam>
+      <searchParam>
+        <name value="author"/>
+        <type value="reference"/>
+        <documentation value="Who and/or what authored the document"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="Categorization of document"/>
+      </searchParam>
+      <searchParam>
+        <name value="contenttype"/>
+        <type value="token"/>
+        <documentation value="Mime type of the content, with charset etc."/>
+      </searchParam>
+      <searchParam>
+        <name value="custodian"/>
+        <type value="reference"/>
+        <documentation value="Organization which maintains the document"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="When this document reference was created"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <type value="string"/>
+        <documentation value="Human-readable description"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <type value="reference"/>
+        <documentation value="Context of the document  content"/>
+      </searchParam>
+      <searchParam>
+        <name value="event"/>
+        <type value="token"/>
+        <documentation value="Main clinical acts documented"/>
+      </searchParam>
+      <searchParam>
+        <name value="facility"/>
+        <type value="token"/>
+        <documentation value="Kind of facility where patient was seen"/>
+      </searchParam>
+      <searchParam>
+        <name value="format"/>
+        <type value="token"/>
+        <documentation value="Format/content rules for the document"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Master Version Specific Identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="language"/>
+        <type value="token"/>
+        <documentation value="Human language of the content (BCP-47)"/>
+      </searchParam>
+      <searchParam>
+        <name value="location"/>
+        <type value="uri"/>
+        <documentation value="Uri where the data can be found"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Who/what is the subject of the document"/>
+      </searchParam>
+      <searchParam>
+        <name value="period"/>
+        <type value="date"/>
+        <documentation value="Time of service that is being documented"/>
+      </searchParam>
+      <searchParam>
+        <name value="related"/>
+        <type value="reference"/>
+        <documentation value="Related identifiers or resources"/>
+      </searchParam>
+      <searchParam>
+        <name value="relatesto"/>
+        <type value="reference"/>
+        <documentation value="Target of the relationship"/>
+      </searchParam>
+      <searchParam>
+        <name value="relation"/>
+        <type value="token"/>
+        <documentation value="replaces | transforms | signs | appends"/>
+      </searchParam>
+      <searchParam>
+        <name value="relationship"/>
+        <type value="composite"/>
+        <documentation value="Combination of relation and relatesTo"/>
+      </searchParam>
+      <searchParam>
+        <name value="security-label"/>
+        <type value="token"/>
+        <documentation value="Document security-tags"/>
+      </searchParam>
+      <searchParam>
+        <name value="setting"/>
+        <type value="token"/>
+        <documentation value="Additional details about where the content was created (e.g. clinical specialty)"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="current | superseded | entered-in-error"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <type value="reference"/>
+        <documentation value="Who/what is the subject of the document"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="Kind of document (LOINC if possible)"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="OperationDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchRevInclude value="ActivityDefinition:composed-of"/>
+      <searchRevInclude value="ActivityDefinition:depends-on"/>
+      <searchRevInclude value="ActivityDefinition:derived-from"/>
+      <searchRevInclude value="ActivityDefinition:intendedAudience"/>
+      <searchRevInclude value="ActivityDefinition:modifier_role_reference"/>
+      <searchRevInclude value="ActivityDefinition:predecessor"/>
+      <searchRevInclude value="ActivityDefinition:successor"/>
+      <searchRevInclude value="DocumentReference:authenticator"/>
+      <searchRevInclude value="DocumentReference:author"/>
+      <searchRevInclude value="DocumentReference:custodian"/>
+      <searchRevInclude value="DocumentReference:encounter"/>
+      <searchRevInclude value="DocumentReference:patient"/>
+      <searchRevInclude value="DocumentReference:related"/>
+      <searchRevInclude value="DocumentReference:relatesto"/>
+      <searchRevInclude value="DocumentReference:subject"/>
+      <searchRevInclude value="PlanDefinition:composed-of"/>
+      <searchRevInclude value="PlanDefinition:definition"/>
+      <searchRevInclude value="PlanDefinition:depends-on"/>
+      <searchRevInclude value="PlanDefinition:derived-from"/>
+      <searchRevInclude value="PlanDefinition:documentation"/>
+      <searchRevInclude value="PlanDefinition:intendedAudience"/>
+      <searchRevInclude value="PlanDefinition:modifier_role_reference"/>
+      <searchRevInclude value="PlanDefinition:predecessor"/>
+      <searchRevInclude value="PlanDefinition:successor"/>
+    </resource>
+    <resource>
+      <type value="PlanDefinition"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchInclude value="PlanDefinition:composed-of"/>
+      <searchInclude value="PlanDefinition:definition"/>
+      <searchInclude value="PlanDefinition:depends-on"/>
+      <searchInclude value="PlanDefinition:derived-from"/>
+      <searchInclude value="PlanDefinition:documentation"/>
+      <searchInclude value="PlanDefinition:predecessor"/>
+      <searchInclude value="PlanDefinition:successor"/>
+      <searchRevInclude value="ActivityDefinition:composed-of"/>
+      <searchRevInclude value="ActivityDefinition:depends-on"/>
+      <searchRevInclude value="ActivityDefinition:derived-from"/>
+      <searchRevInclude value="ActivityDefinition:intendedAudience"/>
+      <searchRevInclude value="ActivityDefinition:modifier_role_reference"/>
+      <searchRevInclude value="ActivityDefinition:predecessor"/>
+      <searchRevInclude value="ActivityDefinition:successor"/>
+      <searchRevInclude value="DocumentReference:authenticator"/>
+      <searchRevInclude value="DocumentReference:author"/>
+      <searchRevInclude value="DocumentReference:custodian"/>
+      <searchRevInclude value="DocumentReference:encounter"/>
+      <searchRevInclude value="DocumentReference:patient"/>
+      <searchRevInclude value="DocumentReference:related"/>
+      <searchRevInclude value="DocumentReference:relatesto"/>
+      <searchRevInclude value="DocumentReference:subject"/>
+      <searchRevInclude value="PlanDefinition:composed-of"/>
+      <searchRevInclude value="PlanDefinition:definition"/>
+      <searchRevInclude value="PlanDefinition:depends-on"/>
+      <searchRevInclude value="PlanDefinition:derived-from"/>
+      <searchRevInclude value="PlanDefinition:documentation"/>
+      <searchRevInclude value="PlanDefinition:intendedAudience"/>
+      <searchRevInclude value="PlanDefinition:modifier_role_reference"/>
+      <searchRevInclude value="PlanDefinition:predecessor"/>
+      <searchRevInclude value="PlanDefinition:successor"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <type value="token"/>
+        <documentation value="Base of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="baseEnvironment"/>
+        <type value="token"/>
+        <documentation value="Base Environment of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="composed-of"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="The plan definition publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="definition"/>
+        <type value="reference"/>
+        <documentation value="Activity or plan definitions used by plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="depends-on"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="derived-from"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <type value="string"/>
+        <documentation value="The description of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="documentation"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="effective"/>
+        <type value="date"/>
+        <documentation value="The time during which the plan definition is intended to be in use"/>
+      </searchParam>
+      <searchParam>
+        <name value="ehealthPredecessor"/>
+        <type value="token"/>
+        <documentation value="Predecessor of resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="employeeTitle"/>
+        <type value="string"/>
+        <documentation value="Title intented for clinicians"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="intendedAudience"/>
+        <type value="reference"/>
+        <documentation value="The intended audience of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="modifier_role_reference"/>
+        <type value="reference"/>
+        <documentation value="Reference to either Organization, CareTeam, Practitioner"/>
+      </searchParam>
+      <searchParam>
+        <name value="modifier_role_role"/>
+        <type value="token"/>
+        <documentation value="Role of Organization, CareTeam, Practitioner"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="predecessor"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="recommendation"/>
+        <type value="token"/>
+        <documentation value="Recommendation for the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="The current status of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="successor"/>
+        <type value="reference"/>
+        <documentation value="What resource is being referenced"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="topic"/>
+        <type value="token"/>
+        <documentation value="Topics associated with the module"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="The type of artifact the plan (e.g. order-set, eca-rule, protocol)"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the plan definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <type value="token"/>
+        <documentation value="The business version of the plan definition"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+      <operation>
+        <name value="import"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-t-import"/>
+        <documentation value="Import a Plandefinition&#xA;### Parameters&#xA;- planDefinitionPackage: Binary package produced by the export operation&#xA;### Output&#xA;Bundle containing the created resources. PlanDefinitions, ActivityDefinitions, and Questionnaires will be created. Imports QFFD DocumentReference into Document-Transformation service.Libraries and Organizations are used to find the corresponding resources on the target system."/>
+      </operation>
+      <operation>
+        <name value="export"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-i-export"/>
+        <documentation value="Export a PlanDefinition.&#xA;### Export Contents&#xA;The export contains the PlanDefinition including referenced resources:- PlanDefinitions&#xA;- ActivityDefinitions&#xA;- Questionnaires&#xA;- Libraries&#xA;- Organizations&#xA;- DocumentReference + QFDD&#xA;&#xA;Each resource is returned in a separate JSon file.&#xA;### Parameters&#xA;- exclude: references to ActivityDefinitions or PlanDefinitions to exclude from the export.&#xA;### Output&#xA;Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files.&#xA;All returned objects are Fhir resources. See the implementation guide for details"/>
+      </operation>
+      <operation>
+        <name value="create-clone"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone"/>
+        <documentation value="### Input&#xA;- resourceId: reference to the PlanDefinition resource that should be cloned&#xA;- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation &#xA;- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned &#xA;- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.&#xA;&#xA;### Output&#xA;Bundle containing all resources that were created during the operation.&#xA;&#xA;### Validation&#xA;- New business versions require that the user has modifier-role: owner or co-author for the resource&#xA;- New copy does not require that the user has a modifier-role.&#xA;- New business version can be made only when no draft resource exists (having identical base identifier).&#xA;- Read/search/create privileges are required for the resource types affected by $create-clone"/>
+      </operation>
+      <operation>
+        <name value="apply"/>
+        <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-i-apply"/>
+        <documentation value="Create a careplan for a specific episodeOfCare using this PlanDefinition as a template."/>
+      </operation>
+    </resource>
+    <interaction>
+      <code value="transaction"/>
+    </interaction>
+    <interaction>
+      <code value="history-system"/>
+    </interaction>
+    <operation>
+      <name value="migrate-list"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate-list"/>
+      <documentation value="Data migration"/>
+    </operation>
+    <operation>
+      <name value="migrate"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate"/>
+      <documentation value="Data migration"/>
+    </operation>
+    <operation>
+      <name value="process-message"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"/>
+      <documentation value="Accept a FHIR Message Bundle for processing"/>
+    </operation>
+    <operation>
+      <name value="perform-reindexing-pass"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"/>
+      <documentation value="Forces a single pass of the resource reindexing processor"/>
+    </operation>
+    <operation>
+      <name value="meta"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"/>
+    </operation>
+    <operation>
+      <name value="get-resource-counts"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"/>
+      <documentation value="Provides the number of resources currently stored on the server, broken down by resource type"/>
+    </operation>
+    <operation>
+      <name value="reindex-terminology"/>
+      <definition value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"/>
+    </operation>
+  </rest>
+</CapabilityStatement>

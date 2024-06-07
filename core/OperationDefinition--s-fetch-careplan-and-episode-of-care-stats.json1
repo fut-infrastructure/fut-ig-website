@@ -1,0 +1,58 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-fetch-careplan-and-episode-of-care-stats",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/$fetch-careplan-and-episode-of-care-stats</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>anonymization</p>\n</div></td></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td/></tr></table></div>"
+  },
+  "url" : "https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-fetch-careplan-and-episode-of-care-stats",
+  "version" : "3.3.0",
+  "name" : "fetch-careplan-and-episode-of-care-stats",
+  "title" : "Fetch careplan and episode of care stats",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2024-06-07T14:37:02+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "### Report Contents\nThis report contains a count of active EpisodeOfCare and CarePlans.\n### Grouping \nThis report is grouped by ConditionCode. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on EpisodeOfCare.managingOrganization match\n- period: Filter on CarePlan.period overlap\n\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nThe ConditionCode is a Fhir CodeableConcept. See the implementation guide for details\n\n    {\n        'ConditionCode': {\n            'valueCodeableConcept': {\n                'coding': [{\n                        'system': 'urn:oid:1.2.208.176.2.4',\n                        'code': 'DJ44'\n                    }\n                ]\n            }\n        },\n        'ConditionSummary': {\n            'activeEpisodeOfCareCount': 1,\n            'activeCarePlanCount': 1\n        }\n    }",
+  "affectsState" : true,
+  "code" : "fetch-careplan-and-episode-of-care-stats",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "anonymization",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "anonymization",
+    "type" : "string"
+  },
+  {
+    "name" : "organization",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "type" : "Reference"
+  },
+  {
+    "name" : "period",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "type" : "Period"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "type" : "Binary"
+  }]
+}

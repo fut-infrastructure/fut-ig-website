@@ -1,0 +1,261 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/data-absent-reason> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "data-absent-reason"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system <code>http://terminology.hl7.org/CodeSystem/data-absent-reason</code> defines displays on the following codes:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Comments</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-unknown\">unknown</a><a name=\"data-absent-reason-unknown\"> </a></td><td>Unknown</td><td>The value is expected to exist but is not known.</td><td/><td>Ukendt</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-asked-unknown\">asked-unknown</a><a name=\"data-absent-reason-asked-unknown\"> </a></td><td>Asked But Unknown</td><td>The source was asked but does not know the value.</td><td/><td>Svaret ukendt</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-temp-unknown\">temp-unknown</a><a name=\"data-absent-reason-temp-unknown\"> </a></td><td>Temporarily Unknown</td><td>There is reason to expect (from the workflow) that the value may become known.</td><td/><td>Midlertidigt ukendt</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-asked\">not-asked</a><a name=\"data-absent-reason-not-asked\"> </a></td><td>Not Asked</td><td>The workflow didn't lead to this value being known.</td><td/><td>Ikke spurgt</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-asked-declined\">asked-declined</a><a name=\"data-absent-reason-asked-declined\"> </a></td><td>Asked But Declined</td><td>The source was asked but declined to answer.</td><td/><td>Spurgt men sprunget over</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-masked\">masked</a><a name=\"data-absent-reason-masked\"> </a></td><td>Masked</td><td>The information is not available due to security, privacy or related reasons.</td><td>Using &quot;masked&quot; may be breach of security or confidentiality, but there are times when its use is required to support alternate workflows for gaining access to denied information.</td><td>Skjult</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-applicable\">not-applicable</a><a name=\"data-absent-reason-not-applicable\"> </a></td><td>Not Applicable</td><td>There is no proper value for this element (e.g. last menstrual period for a male).</td><td/><td>Ikke brugbar</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-unsupported\">unsupported</a><a name=\"data-absent-reason-unsupported\"> </a></td><td>Unsupported</td><td>The source system wasn't capable of supporting this element.</td><td/><td>Ikke understøttet</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-as-text\">as-text</a><a name=\"data-absent-reason-as-text\"> </a></td><td>As Text</td><td>The content of the data is represented in the resource narrative.</td><td>It may be linked by internal references (e.g. xml:id). This usually implies that the value could not be represented in the correct format - this may be due to system limitations, or this particular data value.</td><td>Svaret er givet som text i narrative</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-error\">error</a><a name=\"data-absent-reason-error\"> </a></td><td>Error</td><td>Some system or workflow process error means that the information is not available.</td><td/><td>Fejl</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-a-number\">not-a-number</a><a name=\"data-absent-reason-not-a-number\"> </a></td><td>Not a Number (NaN)</td><td>The numeric value is undefined or unrepresentable due to a floating point processing error.</td><td>This is sometimes an output value from measuring devices.</td><td>Udefinerbar</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-negative-infinity\">negative-infinity</a><a name=\"data-absent-reason-negative-infinity\"> </a></td><td>Negative Infinity (NINF)</td><td>The numeric value is excessively low and unrepresentable due to a floating point processing error.</td><td>This is sometimes an output value from measuring devices.</td><td>Negativ uendelig</td></tr><tr><td>2</td><td>  <a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-positive-infinity\">positive-infinity</a><a name=\"data-absent-reason-positive-infinity\"> </a></td><td>Positive Infinity (PINF)</td><td>The numeric value is excessively high and unrepresentable due to a floating point processing error.</td><td>This is sometimes an output value from measuring devices.</td><td>Positiv uendelig</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-performed\">not-performed</a><a name=\"data-absent-reason-not-performed\"> </a></td><td>Not Performed</td><td>The value is not available because the observation procedure (test, etc.) was not performed.</td><td/><td>Sprunget over</td></tr><tr><td>1</td><td><a style=\"white-space:nowrap\" href=\"http://terminology.hl7.org/5.5.0/CodeSystem-data-absent-reason.html#data-absent-reason-not-permitted\">not-permitted</a><a name=\"data-absent-reason-not-permitted\"> </a></td><td>Not Permitted</td><td>The value is not permitted in this context (e.g. due to profiles, or the base data types).</td><td>This is most often associated with required bindings that do not include the actual code used, but may be used with other data types.</td><td>Ikke tilladt</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "DataAbsentReason"] ; # 
+  fhir:title [ fhir:v "DataAbsentReason"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-04-24T09:40:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Used to specify why the normally expected content of the data element is missing."] ; # 
+  fhir:content [ fhir:v "supplement"] ; # 
+  fhir:supplements [
+     fhir:v "http://terminology.hl7.org/CodeSystem/data-absent-reason"^^xsd:anyURI ;
+     fhir:link <http://terminology.hl7.org/CodeSystem/data-absent-reason>
+  ] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "unknown" ] ;
+     fhir:display [ fhir:v "Unknown" ] ;
+     fhir:definition [ fhir:v "The value is expected to exist but is not known." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Ukendt" ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "asked-unknown" ] ;
+       fhir:display [ fhir:v "Asked But Unknown" ] ;
+       fhir:definition [ fhir:v "The source was asked but does not know the value." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Svaret ukendt" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "temp-unknown" ] ;
+       fhir:display [ fhir:v "Temporarily Unknown" ] ;
+       fhir:definition [ fhir:v "There is reason to expect (from the workflow) that the value may become known." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Midlertidigt ukendt" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "not-asked" ] ;
+       fhir:display [ fhir:v "Not Asked" ] ;
+       fhir:definition [ fhir:v "The workflow didn't lead to this value being known." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Ikke spurgt" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "asked-declined" ] ;
+       fhir:display [ fhir:v "Asked But Declined" ] ;
+       fhir:definition [ fhir:v "The source was asked but declined to answer." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Spurgt men sprunget over" ]
+       ] )
+     ] )
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/codesystem-concept-comments"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Using \"masked\" may be breach of security or confidentiality, but there are times when its use is required to support alternate workflows for gaining access to denied information." ]
+     ] ) ;
+     fhir:code [ fhir:v "masked" ] ;
+     fhir:display [ fhir:v "Masked" ] ;
+     fhir:definition [ fhir:v "The information is not available due to security, privacy or related reasons." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Skjult" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "not-applicable" ] ;
+     fhir:display [ fhir:v "Not Applicable" ] ;
+     fhir:definition [ fhir:v "There is no proper value for this element (e.g. last menstrual period for a male)." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Ikke brugbar" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "unsupported" ] ;
+     fhir:display [ fhir:v "Unsupported" ] ;
+     fhir:definition [ fhir:v "The source system wasn't capable of supporting this element." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Ikke understøttet" ]
+     ] )
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/codesystem-concept-comments"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "It may be linked by internal references (e.g. xml:id). This usually implies that the value could not be represented in the correct format - this may be due to system limitations, or this particular data value." ]
+     ] ) ;
+     fhir:code [ fhir:v "as-text" ] ;
+     fhir:display [ fhir:v "As Text" ] ;
+     fhir:definition [ fhir:v "The content of the data is represented in the resource narrative." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Svaret er givet som text i narrative" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "error" ] ;
+     fhir:display [ fhir:v "Error" ] ;
+     fhir:definition [ fhir:v "Some system or workflow process error means that the information is not available." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Fejl" ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/codesystem-concept-comments"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "This is sometimes an output value from measuring devices." ]
+       ] ) ;
+       fhir:code [ fhir:v "not-a-number" ] ;
+       fhir:display [ fhir:v "Not a Number (NaN)" ] ;
+       fhir:definition [ fhir:v "The numeric value is undefined or unrepresentable due to a floating point processing error." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Udefinerbar" ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/codesystem-concept-comments"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "This is sometimes an output value from measuring devices." ]
+       ] ) ;
+       fhir:code [ fhir:v "negative-infinity" ] ;
+       fhir:display [ fhir:v "Negative Infinity (NINF)" ] ;
+       fhir:definition [ fhir:v "The numeric value is excessively low and unrepresentable due to a floating point processing error." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Negativ uendelig" ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/codesystem-concept-comments"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "This is sometimes an output value from measuring devices." ]
+       ] ) ;
+       fhir:code [ fhir:v "positive-infinity" ] ;
+       fhir:display [ fhir:v "Positive Infinity (PINF)" ] ;
+       fhir:definition [ fhir:v "The numeric value is excessively high and unrepresentable due to a floating point processing error." ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Positiv uendelig" ]
+       ] )
+     ] )
+  ] [
+     fhir:code [ fhir:v "not-performed" ] ;
+     fhir:display [ fhir:v "Not Performed" ] ;
+     fhir:definition [ fhir:v "The value is not available because the observation procedure (test, etc.) was not performed." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Sprunget over" ]
+     ] )
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/codesystem-concept-comments"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "This is most often associated with required bindings that do not include the actual code used, but may be used with other data types." ]
+     ] ) ;
+     fhir:code [ fhir:v "not-permitted" ] ;
+     fhir:display [ fhir:v "Not Permitted" ] ;
+     fhir:definition [ fhir:v "The value is not permitted in this context (e.g. due to profiles, or the base data types)." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Ikke tilladt" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

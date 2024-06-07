@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-create-episode-of-care"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>URL: [base]/$create-episode-of-care</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>episodeOfCareAndProvenances</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-create-episode-of-care"/>
+  <version value="3.3.0"/>
+  <name value="create-episode-of-care"/>
+  <title value="Create an EpisodeOfCare"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2024-06-07T14:29:06+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input.&#xD;&#xA;## Input&#xD;&#xA;The input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance' (see below).&#xD;&#xA;### The EpisodeOfCare resource&#xD;&#xA;The EpisodeOfCare has to have `PLANNED` status &#xD;&#xA;The 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. &#xD;&#xA;The 'managingOrganization' property of the EpisodeOfCare references the GDPR Data Controller (Danish: 'Dataansvarlig').&#xD;&#xA;### The privacy-Provenance resource&#xD;&#xA;A privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/sundhedsloven'&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/serviceloven'&#xD;&#xA;### Diagnosis referenced Condition resource&#xD;&#xA;For any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.&#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.&#xD;&#xA;To get resources bodies in the output the request header has to contain parameter ```Prefer: return=representation```.&#xD;&#xA;### The origin-Provenance resource&#xD;&#xA;Whenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token.&#xD;&#xA;"/>
+  <affectsState value="true"/>
+  <code value="create-episode-of-care"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="episodeOfCareAndProvenances"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="Bundle"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Bundle"/>
+  </parameter>
+</OperationDefinition>

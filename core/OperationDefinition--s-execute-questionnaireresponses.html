@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Execute questionnare responses - eHealth Infrastructure v3.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"83.33"}
+    h3,h4,h5,h6{--heading-prefix:"83.33"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">3.3.0 - release
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Execute questionnare responses</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="OperationDefinition--s-execute-questionnaireresponses.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition--s-execute-questionnaireresponses.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition--s-execute-questionnaireresponses.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">OperationDefinition: Execute questionnare responses
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-execute-questionnaireresponses<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-execute-questionnaireresponses"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">3.3.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-execute-questionnaireresponses|3.3.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2024-06-07
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">execute-questionnaireresponses</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<p>
+<h3 id="report-contents">Report Contents</h3>
+<p>This report contains a collection of questionnaire responses and related resources</p>
+<ul>
+  <li>Organizations</li>
+  <li>CareTeams</li>
+  <li>PlanDefinitions</li>
+  <li>ActivityDefinitions</li>
+  <li>Questionnaires</li>
+  <li>QuestionnaireResponses</li>
+  <li>Communication</li>
+  <li>ServiceRequestSummary
+    <h3 id="grouping">Grouping</h3>
+    <p>This report is grouped by Questionnaire. Each group is returned as a FHIR bundle in a separate JSon file.</p>
+    <h3 id="parameters">Parameters</h3>
+  </li>
+  <li>organization: Filter on EpisodeOfCare.managingOrganization match</li>
+  <li>condition: Filter on CarePlan.addresses.code match</li>
+  <li>period: Filter on QuestionnaireResponse.authored within period</li>
+  <li>plan: Filter on Plan match</li>
+  <li>questionnaire: Filter on ActivityDefinition.composed-of match</li>
+  <li>careteam: Filter on careteam in CarePlan.careteam or EpisodeOfCare.team</li>
+  <li>tag: Filter on tag match</li>
+</ul>
+
+<h3 id="output">Output</h3>
+<p>Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.</p>
+<h3 id="example-output">Example output</h3>
+<h3 id="output-1">Output</h3>
+<p>{
+  ‘resourceType’ : ‘Bundle’,
+  ‘id’ : ‘Questionnaire/44529’,
+  ‘entry’ : [ {
+    ‘fullUrl’ : ‘https://plan.local.ehealth.sundhed.dk/fhir/PlanDefinition/24206/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘PlanDefinition’,
+      ‘id’ : ‘24206’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition’ ]
+      },
+      ‘extension’ : [ {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role’,
+        ‘extension’ : [ {
+          ‘url’ : ‘reference’,
+          ‘valueReference’ : {
+            ‘reference’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/Organization/14291’
+          }
+        }, {
+          ‘url’ : ‘role’,
+          ‘valueCodeableConcept’ : {
+            ‘coding’ : [ {
+              ‘system’ : ‘http://ehealth.sundhed.dk/cs/modifier-role’,
+              ‘code’ : ‘owner’
+            } ]
+          }
+        } ]
+      } ],
+      ‘version’ : ‘1.0’,
+      ‘status’ : ‘active’,
+      ‘action’ : [ {
+        ‘definitionCanonical’ : ‘https://plan.local.ehealth.sundhed.dk/fhir/ActivityDefinition/10919’
+      } ]
+    }
+  }, {
+    ‘fullUrl’ : ‘https://plan.local.ehealth.sundhed.dk/fhir/ActivityDefinition/10919/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘ActivityDefinition’,
+      ‘id’ : ‘10919’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition’ ]
+      },
+      ‘extension’ : [ {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingPolicy’,
+        ‘valueCodeableConcept’ : {
+          ‘coding’ : [ {
+            ‘system’ : ‘http://ehealth.sundhed.dk/cs/measurement-sharing-policies’,
+            ‘code’ : ‘noSharing’
+          } ]
+        }
+      }, {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role’,
+        ‘extension’ : [ {
+          ‘url’ : ‘reference’,
+          ‘valueReference’ : {
+            ‘reference’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/Organization/25403’
+          }
+        }, {
+          ‘url’ : ‘role’,
+          ‘valueCodeableConcept’ : {
+            ‘coding’ : [ {
+              ‘system’ : ‘http://ehealth.sundhed.dk/cs/modifier-role’,
+              ‘code’ : ‘owner’
+            } ]
+          }
+        } ]
+      } ],
+      ‘version’ : ‘1.0’,
+      ‘name’ : ‘0ca879ed-678c-4439-aa4a-efc597f92dfb’,
+      ‘status’ : ‘active’,
+      ‘topic’ : [ {
+        ‘coding’ : [ {
+          ‘system’ : ‘http://terminology.hl7.org/CodeSystem/definition-topic’,
+          ‘code’ : ‘treatment’
+        } ]
+      } ],
+      ‘relatedArtifact’ : [ {
+        ‘type’ : ‘composed-of’,
+        ‘resource’ : ‘https://questionnaire.local.ehealth.sundhed.dk/fhir/Questionnaire/44529’
+      } ],
+      ‘code’ : {
+        ‘coding’ : [ {
+          ‘system’ : ‘http://ehealth.sundhed.dk/cs/activitydefinition-code’,
+          ‘code’ : ‘273586006’
+        } ]
+      }
+    }
+  }, {
+    ‘fullUrl’ : ‘https://questionnaire.local.ehealth.sundhed.dk/fhir/Questionnaire/44529/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘Questionnaire’,
+      ‘id’ : ‘44529’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire’ ]
+      },
+      ‘extension’ : [ {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-type’,
+        ‘valueCodeableConcept’ : {
+          ‘coding’ : [ {
+            ‘system’ : ‘http://ehealth.sundhed.dk/cs/questionnaire-types’,
+            ‘code’ : ‘QQ’
+          } ]
+        }
+      }, {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role’,
+        ‘extension’ : [ {
+          ‘url’ : ‘reference’,
+          ‘valueReference’ : {
+            ‘reference’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/Organization/24153’
+          }
+        }, {
+          ‘url’ : ‘role’,
+          ‘valueCodeableConcept’ : {
+            ‘coding’ : [ {
+              ‘system’ : ‘http://ehealth.sundhed.dk/cs/modifier-role’,
+              ‘code’ : ‘owner’
+            } ]
+          }
+        } ]
+      } ],
+      ‘version’ : ‘1.0’,
+      ‘name’ : ‘090b990e-046a-4374-b7c6-b08613a41cce’,
+      ‘status’ : ‘active’
+    }
+  }, {
+    ‘fullUrl’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/Organization/98618/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘Organization’,
+      ‘id’ : ‘98618’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization’ ]
+      },
+      ‘extension’ : [ {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-source’,
+        ‘valueCodeableConcept’ : {
+          ‘coding’ : [ {
+            ‘system’ : ‘http://ehealth.sundhed.dk/cs/organization-source’,
+            ‘code’ : ‘manual’
+          } ]
+        }
+      }, {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-synchronizationStatus’,
+        ‘valueCodeableConcept’ : {
+          ‘coding’ : [ {
+            ‘system’ : ‘http://ehealth.sundhed.dk/cs/organization-synchronization-status’,
+            ‘code’ : ‘NotSynchronized’
+          } ]
+        }
+      } ],
+      ‘identifier’ : [ {
+        ‘use’ : ‘official’,
+        ‘system’ : ‘urn:oid:2.16.840.1.113883.2.24.1.1’,
+        ‘value’ : ‘11111111’,
+        ‘period’ : {
+          ‘start’ : ‘2023-10-10T14:49:12+02:00’
+        }
+      } ],
+      ‘active’ : false,
+      ‘name’ : ‘defaultTestFactory-be16f47b-1f8a-4440-a02e-23da1219b0ca’,
+      ‘partOf’ : {
+        ‘reference’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/Organization/22124’
+      }
+    }
+  }, {
+    ‘fullUrl’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/CareTeam/87455/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘CareTeam’,
+      ‘id’ : ‘87455’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam’ ]
+      },
+      ‘identifier’ : [ {
+        ‘system’ : ‘urn:ietf:rfc:3986’,
+        ‘value’ : ‘urn:uuid:9658ef5f-019a-4c90-9c41-f3ad14a31777’
+      } ],
+      ‘status’ : ‘active’,
+      ‘name’ : ‘1b900db5-09dd-4563-b612-2b81201fab16’,
+      ‘reasonCode’ : [ {
+        ‘coding’ : [ {
+          ‘system’ : ‘urn:oid:1.2.208.176.2.4’,
+          ‘code’ : ‘DJ44’
+        } ]
+      } ]
+    }
+  }, {
+    ‘fullUrl’ : ‘https://measurement.local.ehealth.sundhed.dk/fhir/QuestionnaireResponse/92491/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘QuestionnaireResponse’,
+      ‘id’ : ‘92491’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse’ ]
+      },
+      ‘extension’ : [ {
+        ‘url’ : ‘http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare’,
+        ‘valueReference’ : {
+          ‘reference’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/EpisodeOfCare/22208’
+        }
+      }, {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing’,
+        ‘extension’ : [ {
+          ‘url’ : ‘serviceRequestVersionId’,
+          ‘valueId’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/ServiceRequest/79439/_history/1’
+        }, {
+          ‘url’ : ‘start’,
+          ‘valueDateTime’ : ‘2023-10-10T14:49:12+02:00’
+        }, {
+          ‘url’ : ‘end’,
+          ‘valueDateTime’ : ‘2023-10-10T14:49:12+02:00’
+        }, {
+          ‘url’ : ‘type’,
+          ‘valueCodeableConcept’ : {
+            ‘coding’ : [ {
+              ‘system’ : ‘http://ehealth.sundhed.dk/cs/resolved-timing-type’,
+              ‘code’ : ‘Resolved’
+            } ]
+          }
+        } ]
+      } ],
+      ‘basedOn’ : [ {
+        ‘reference’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/ServiceRequest/79439’
+      } ],
+      ‘questionnaire’ : ‘https://questionnaire.local.ehealth.sundhed.dk/fhir/Questionnaire/44529’,
+      ‘status’ : ‘completed’,
+      ‘subject’ : {
+        ‘reference’ : ‘https://patient.local.ehealth.sundhed.dk/fhir/Patient/64465’
+      },
+      ‘authored’ : ‘2023-10-10T14:49:12+02:00’,
+      ‘source’ : {
+        ‘reference’ : ‘https://patient.local.ehealth.sundhed.dk/fhir/Patient/75218’
+      }
+    }
+  }, {
+    ‘fullUrl’ : ‘https://patient.local.ehealth.sundhed.dk/fhir/Communication/97180/_history/1’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘Communication’,
+      ‘id’ : ‘97180’,
+      ‘meta’ : {
+        ‘versionId’ : ‘1’,
+        ‘profile’ : [ ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication’ ]
+      },
+      ‘extension’ : [ {
+        ‘url’ : ‘http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare’,
+        ‘valueReference’ : {
+          ‘reference’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/EpisodeOfCare/14233’
+        }
+      }, {
+        ‘url’ : ‘http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-restriction-category’,
+        ‘valueCodeableConcept’ : {
+          ‘coding’ : [ {
+            ‘system’ : ‘http://ehealth.sundhed.dk/cs/restriction-category’,
+            ‘code’ : ‘None’
+          } ]
+        }
+      } ],
+      ‘basedOn’ : [ {
+        ‘reference’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/ServiceRequest/79439’
+      } ],
+      ‘status’ : ‘in-progress’,
+      ‘category’ : [ {
+        ‘coding’ : [ {
+          ‘system’ : ‘http://ehealth.sundhed.dk/cs/communication-category’,
+          ‘code’ : ‘annotation’
+        } ]
+      }, {
+        ‘coding’ : [ {
+          ‘system’ : ‘http://ehealth.sundhed.dk/cs/message-category’,
+          ‘code’ : ‘advice’
+        } ]
+      } ],
+      ‘subject’ : {
+        ‘reference’ : ‘https://patient.local.ehealth.sundhed.dk/fhir/Patient/35194’
+      },
+      ‘topic’ : {
+        ‘coding’ : [ {
+          ‘system’ : ‘http://terminology.hl7.org/CodeSystem/communication-topic’,
+          ‘code’ : ‘report-labs’
+        } ]
+      },
+      ‘sent’ : ‘2023-10-10T14:49:12+02:00’,
+      ‘reasonCode’ : [ {
+        ‘coding’ : [ {
+          ‘system’ : ‘http://ehealth.sundhed.dk/cs/message-reasonCode’,
+          ‘code’ : ‘ReminderSubmitMeasurement’
+        } ]
+      } ]
+    }
+  }, {
+    ‘fullUrl’ : ‘urn:uuid:57cfd6a7-dd43-4caa-8220-d50c77aebd8b’,
+    ‘resource’ : {
+      ‘resourceType’ : ‘Parameters’,
+      ‘parameter’ : [ {
+        ‘name’ : ‘serviceRequestResponseSummary’,
+        ‘part’ : [ {
+          ‘name’ : ‘serviceRequest’,
+          ‘valueReference’ : {
+            ‘reference’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/ServiceRequest/79439’
+          },
+          ‘part’ : [ {
+            ‘name’ : ‘condition’,
+            ‘valueCoding’ : {
+              ‘system’ : ‘urn:oid:1.2.208.176.2.4’,
+              ‘code’ : ‘DJ44’,
+              ‘display’ : ‘Kronisk obstruktiv lungesygdom’
+            }
+          }, {
+            ‘name’ : ‘episodeOfCareManagingOrganization’,
+            ‘valueReference’ : {
+              ‘reference’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/Organization/98618’
+            }
+          }, {
+            ‘name’ : ‘episodeOfCarePeriod’,
+            ‘valuePeriod’ : {
+              ‘start’ : ‘1970-01-01T01:00:01+01:00’,
+              ‘end’ : ‘1970-01-01T01:01:40+01:00’
+            }
+          }, {
+            ‘name’ : ‘patientIdentifier’,
+            ‘valueIdentifier’ : {
+              ‘system’ : ‘urn:oid:1.2.208.176.1.2’,
+              ‘value’ : ‘0101010001’
+            }
+          }, {
+            ‘name’ : ‘statusHistory’,
+            ‘part’ : [ {
+              ‘name’ : ‘statusPeriod’,
+              ‘part’ : [ {
+                ‘name’ : ‘status’,
+                ‘valueCoding’ : {
+                  ‘system’ : ‘http://hl7.org/fhir/request-status’,
+                  ‘code’ : ‘draft’
+                }
+              }, {
+                ‘name’ : ‘period’,
+                ‘valuePeriod’ : {
+                  ‘start’ : ‘2023-10-02T12:49:12+00:00’,
+                  ‘end’ : ‘2023-10-03T12:49:12+00:00’
+                }
+              } ]
+            }, {
+              ‘name’ : ‘statusPeriod’,
+              ‘part’ : [ {
+                ‘name’ : ‘status’,
+                ‘valueCoding’ : {
+                  ‘system’ : ‘http://hl7.org/fhir/request-status’,
+                  ‘code’ : ‘active’
+                }
+              }, {
+                ‘name’ : ‘period’,
+                ‘valuePeriod’ : {
+                  ‘start’ : ‘2023-10-03T12:49:12+00:00’,
+                  ‘end’ : ‘2023-10-04T12:49:12+00:00’
+                }
+              } ]
+            }, {
+              ‘name’ : ‘statusPeriod’,
+              ‘part’ : [ {
+                ‘name’ : ‘status’,
+                ‘valueCoding’ : {
+                  ‘system’ : ‘http://hl7.org/fhir/request-status’,
+                  ‘code’ : ‘on-hold’
+                }
+              }, {
+                ‘name’ : ‘period’,
+                ‘valuePeriod’ : {
+                  ‘start’ : ‘2023-10-04T12:49:12+00:00’,
+                  ‘end’ : ‘2023-10-05T12:49:12+00:00’
+                }
+              } ]
+            }, {
+              ‘name’ : ‘statusPeriod’,
+              ‘part’ : [ {
+                ‘name’ : ‘status’,
+                ‘valueCoding’ : {
+                  ‘system’ : ‘http://hl7.org/fhir/request-status’,
+                  ‘code’ : ‘active’
+                }
+              }, {
+                ‘name’ : ‘period’,
+                ‘valuePeriod’ : {
+                  ‘start’ : ‘2023-10-05T12:49:12+00:00’,
+                  ‘end’ : ‘2023-10-08T12:49:12+00:00’
+                }
+              } ]
+            }, {
+              ‘name’ : ‘statusPeriod’,
+              ‘part’ : [ {
+                ‘name’ : ‘status’,
+                ‘valueCoding’ : {
+                  ‘system’ : ‘http://hl7.org/fhir/request-status’,
+                  ‘code’ : ‘on-hold’
+                }
+              }, {
+                ‘name’ : ‘period’,
+                ‘valuePeriod’ : {
+                  ‘start’ : ‘2023-10-08T12:49:12+00:00’
+                }
+              } ]
+            } ]
+          }, {
+            ‘name’ : ‘involvedCareTeams’,
+            ‘part’ : [ {
+              ‘name’ : ‘careTeam’,
+              ‘valueReference’ : {
+                ‘reference’ : ‘https://organization.local.ehealth.sundhed.dk/fhir/CareTeam/87455’
+              }
+            } ]
+          }, {
+            ‘name’ : ‘responses’,
+            ‘part’ : [ {
+              ‘name’ : ‘response’,
+              ‘part’ : [ {
+                ‘name’ : ‘occurrence’,
+                ‘part’ : [ {
+                  ‘name’ : ‘serviceRequestVersionId’,
+                  ‘valueId’ : ‘https://careplan.local.ehealth.sundhed.dk/fhir/ServiceRequest/79439/_history/1’
+                }, {
+                  ‘name’ : ‘start’,
+                  ‘valueDateTime’ : ‘2023-10-10T14:49:12+02:00’
+                }, {
+                  ‘name’ : ‘end’,
+                  ‘valueDateTime’ : ‘2023-10-10T14:49:12+02:00’
+                }, {
+                  ‘name’ : ‘type’,
+                  ‘valueCodeableConcept’ : {
+                    ‘coding’ : [ {
+                      ‘system’ : ‘http://ehealth.sundhed.dk/cs/resolved-timing-type’,
+                      ‘code’ : ‘Resolved’
+                    } ]
+                  }
+                } ]
+              }, {
+                ‘name’ : ‘questionnaireResponse’,
+                ‘valueReference’ : {
+                  ‘reference’ : ‘https://measurement.local.ehealth.sundhed.dk/fhir/QuestionnaireResponse/92491’
+                }
+              }, {
+                ‘name’ : ‘submitted’,
+                ‘valueDateTime’ : ‘2023-10-10T12:49:12+00:00’
+              } ]
+            } ]
+          }, {
+            ‘name’ : ‘communications’,
+            ‘part’ : [ {
+              ‘name’ : ‘communication’,
+              ‘valueReference’ : {
+                ‘reference’ : ‘https://patient.local.ehealth.sundhed.dk/fhir/Communication/97180’
+              }
+            } ]
+          } ]
+        } ]
+      } ]
+    }
+  } ]
+}</p>
+
+</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="OperationDefinition--s-execute-questionnaireresponses.xml.html">XML</a>, <a href="OperationDefinition--s-execute-questionnaireresponses.json.html">JSON</a>, <a href="OperationDefinition--s-execute-questionnaireresponses.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p>URL: [base]/$execute-questionnaireresponses</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr><tr><td>IN</td><td>_partition</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#integer">integer</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>condition</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td/></tr><tr><td>IN</td><td>plan</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>questionnaire</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>careteam</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>tag</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td><td/><td/></tr></table></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 7, 2024 14:37+0000">2024-06-07</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

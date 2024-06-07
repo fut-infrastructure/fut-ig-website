@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-upload-QFDD"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>URL: [base]/$upload-QFDD</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>documentReference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a></td><td/><td/></tr><tr><td>OUT</td><td>documentReference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-upload-QFDD"/>
+  <version value="3.3.0"/>
+  <name value="upload-QFDD"/>
+  <title value="Upload QFDD"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2024-06-07T14:37:02+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="Uploads an DK-HL7 Questionnaire Form Definition Document (QFDD). The input FHIR DocumentReference must be of type QFDD (74468-0) and the status set to current. Include an attachment which contains the base64 encoded QFDD XML document with contentType application/xml. The QFDD XML document must contain a unique id which is used as the the masterIdentifier in the DocumentReference. The returned FHIR DocumentReference contains a masterIdentifier, a type and the description all pulled from the attachment. "/>
+  <affectsState value="false"/>
+  <code value="upload-QFDD"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="documentReference"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="DocumentReference"/>
+  </parameter>
+  <parameter>
+    <name value="documentReference"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="DocumentReference"/>
+  </parameter>
+</OperationDefinition>

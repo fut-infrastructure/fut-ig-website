@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/hl7.org-fhir-address-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hl7.org-fhir-address-type"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p/><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">postal<a name=\"address-type-dk-supplement-postal\"> </a></td><td>Postal</td><td>Mailing addresses - PO Boxes and care-of addresses.</td></tr><tr><td style=\"white-space:nowrap\">physical<a name=\"address-type-dk-supplement-physical\"> </a></td><td>Physical</td><td>A physical address that can be visited.</td></tr><tr><td style=\"white-space:nowrap\">both<a name=\"address-type-dk-supplement-both\"> </a></td><td>Postal &amp; Physical</td><td>An address that is both physical and postal.</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td>postal</td><td>Post</td></tr><tr><td>physical</td><td>Fysisk</td></tr><tr><td>both</td><td>Post &amp; fysisk</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/address-type"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "AddressType"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2021-10-27T13:27:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The type of an address (physical / postal)"] ; # 
+  fhir:content [ fhir:v "supplement"] ; # 
+  fhir:supplements [
+     fhir:v "http://hl7.org/fhir/address-type"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/address-type>
+  ] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "postal" ] ;
+     fhir:display [ fhir:v "Postal" ] ;
+     fhir:definition [ fhir:v "Mailing addresses - PO Boxes and care-of addresses." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Post" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "physical" ] ;
+     fhir:display [ fhir:v "Physical" ] ;
+     fhir:definition [ fhir:v "A physical address that can be visited." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Fysisk" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "both" ] ;
+     fhir:display [ fhir:v "Postal & Physical" ] ;
+     fhir:definition [ fhir:v "An address that is both physical and postal." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Post & fysisk" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

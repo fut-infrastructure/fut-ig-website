@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-devices> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-fetch-patient-devices"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/$fetch-patient-devices</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td/><td/></tr><tr><td>IN</td><td>devicetype</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-fetch-patient-devices"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.3.0"] ; # 
+  fhir:name [ fhir:v "fetch-patient-devices"] ; # 
+  fhir:title [ fhir:v "Fetch patient devices"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-06-07T14:29:06+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Report Contents\nThis report contains Device information for each EpisodeOfCare:\n- Device\n- DeviceUseStatement\n- DeviceMetrics\n### Grouping \nThis report is grouped by EpsiodeOfCare. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on EpisodeOfCare.managingOrganization match\n- period: Filter on DeviceUseStatement.whenUsed overlap\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nAll returned objects are Fhir resources. See the implementation guide for details\n\n    {\n        'EHealthEpisodeOfCare': {\n            'resourceType': 'EpisodeOfCare',\n            'id': 'F417C17F9FDE24C9090BD629C8EE1697',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare']\n            },\n            'extension': [{\n                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare-caremanagerOrganization',\n                    'valueReference': {\n                        'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/313D8B0E0AC8EA8169D1DA45ECEEACB9'\n                    }\n                }\n            ],\n            'status': 'active',\n            'diagnosis': [{\n                    'condition': {\n                        'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/Condition/9A7FCD55CA3031585A8F1690DB1D8034'\n                    },\n                    'rank': 1\n                }\n            ],\n            'patient': {\n                'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/A1D94F323D8EF09E5D913D9522FD83C4'\n            },\n            'managingOrganization': {\n                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/8DC75F2B12BCC832F92CC065C3D0B451'\n            },\n            'period': {\n                'start': '1970-01-01T01:00:01+01:00',\n                'end': '1970-01-01T01:01:40+01:00'\n            }\n        },\n        'EHealthDeviceUseStatement': [{\n                'resourceType': 'DeviceUseStatement',\n                'id': '9541E8EAEAD24376F208D5CD8A4D25F5',\n                'meta': {\n                    'versionId': '1',\n                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement']\n                },\n                'extension': [{\n                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement-context',\n                        'valueReference': {\n                            'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/CarePlan/23D34B29DD02EB232B6575537FE8ADC5'\n                        }\n                    }\n                ],\n                'status': 'active',\n                'subject': {\n                    'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/AC38B1F6391F256002E5A7BE69CB2586'\n                },\n                'device': {\n                    'reference': 'https://device.local.ehealth.sundhed.dk/fhir/Device/08D51B81A7FE5B480278150A94D4048A'\n                }\n            }\n        ],\n        'EHealthDevice': [{\n                'resourceType': 'Device',\n                'id': '08D51B81A7FE5B480278150A94D4048A',\n                'meta': {\n                    'versionId': '1',\n                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device']\n                },\n                'extension': [{\n                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device-privatelyOwned',\n                        'valueBoolean': true\n                    }\n                ],\n                'status': 'active'\n            }\n        ],\n        'EHealthDeviceMetric': [{\n                'resourceType': 'DeviceMetric',\n                'id': '7EA21ACD27EE012439F1440574A6BB21',\n                'meta': {\n                    'versionId': '1',\n                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric']\n                },\n                'extension': [{\n                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-qualities',\n                        'extension': [{\n                                'url': 'category',\n                                'valueCodeableConcept': {\n                                    'coding': [{\n                                            'system': 'http://ehealth.sundhed.dk/cs/devicemetric-quality-types',\n                                            'code': 'initial'\n                                        }\n                                    ]\n                                }\n                            }, {\n                                'url': 'value',\n                                'valueInteger': 5\n                            }\n                        ]\n                    }, {\n                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-templateQualities',\n                        'extension': [{\n                                'url': 'category',\n                                'valueCodeableConcept': {\n                                    'coding': [{\n                                            'system': 'http://ehealth.sundhed.dk/cs/devicemetric-quality-types',\n                                            'code': 'initial'\n                                        }\n                                    ]\n                                }\n                            }, {\n                                'url': 'value',\n                                'valueInteger': 10\n                            }\n                        ]\n                    }, {\n                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-templateQualities',\n                        'extension': [{\n                                'url': 'category',\n                                'valueCodeableConcept': {\n                                    'coding': [{\n                                            'system': 'http://ehealth.sundhed.dk/cs/devicemetric-quality-types',\n                                            'code': 'initial'\n                                        }\n                                    ]\n                                }\n                            }, {\n                                'url': 'value',\n                                'valueInteger': 12\n                            }\n                        ]\n                    }, {\n                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-templateQualities',\n                        'extension': [{\n                                'url': 'category',\n                                'valueCodeableConcept': {\n                                    'coding': [{\n                                            'system': 'http://ehealth.sundhed.dk/cs/devicemetric-quality-types',\n                                            'code': 'initial'\n                                        }\n                                    ]\n                                }\n                            }, {\n                                'url': 'value',\n                                'valueInteger': 14\n                            }\n                        ]\n                    }\n                ],\n                'identifier': {\n                    'value': 'Foo'\n                },\n                'type': {\n                    'text': 'code'\n                },\n                'source': {\n                    'reference': 'https://device.local.ehealth.sundhed.dk/fhir/Device/08D51B81A7FE5B480278150A94D4048A'\n                },\n                'category': 'calculation'\n            }\n        ]\n    }\n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "fetch-patient-devices"] ; # 
+  fhir:system [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "anonymization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "period" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Period" ]
+  ] [
+     fhir:name [ fhir:v "devicetype" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Coding" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
