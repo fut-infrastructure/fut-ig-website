@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Appointment xmlns="http://hl7.org/fhir">
+  <id value="appointment01"/>
+  <meta>
+    <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Appointment appointment01</b></p><a name="appointment01"> </a><a name="hcappointment01"> </a><a name="hcappointment01-en-US"> </a><p><b>status</b>: Proposed</p><p><b>serviceType</b>: <span title="Codes:{http://ehealth.sundhed.dk/cs/appointment-servicetype regular}">A regular appointment</span></p><p><b>appointmentType</b>: <span title="Codes:{http://ehealth.sundhed.dk/cs/appointmenttype-codes FOLLOWUP}">A follow up visit from a previous appointment</span></p><p><b>reasonCode</b>: <span title="Codes:{http://ehealth.sundhed.dk/cs/appointment-reason 412776001}">Clinical Review</span></p><p><b>supportingInformation</b>: <a href="http://inttest.ehealth.sundhed.dk/EpisodeOfCare/42">http://inttest.ehealth.sundhed.dk/EpisodeOfCare/42</a></p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href="http://inttest.ehealth.sundhed.dk/organization/fhir/Practitioner/42">Tove Jensen</a></p><p><b>status</b>: Needs Action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href="http://inttest.ehealth.sundhed.dk/organization/fhir/Practitioner/123">http://inttest.ehealth.sundhed.dk/organization/fhir/Practitioner/123</a></p><p><b>status</b>: Needs Action</p></blockquote><blockquote><p><b>participant</b></p><p><b>type</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType ATND}">attender</span></p><p><b>status</b>: Needs Action</p></blockquote></div>
+  </text>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performing-organization">
+    <valueReference>
+      <reference value="https://organization.fut.trifork.com/fhir/Organization/108752"/>
+    </valueReference>
+  </extension>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible-organization">
+    <valueReference>
+      <reference value="https://organization.fut.trifork.com/fhir/Organization/108752"/>
+    </valueReference>
+  </extension>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible">
+    <valueReference>
+      <reference value="http://inttest.ehealth.sundhed.dk/CareTeam/42"/>
+      <display value="CareTeam Aarhus"/>
+    </valueReference>
+  </extension>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-legalBasis">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://ehealth.sundhed.dk/cs/jurisdiction"/>
+        <code value="service-act"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="proposed"/>
+  <serviceType>
+    <coding>
+      <system value="http://ehealth.sundhed.dk/cs/appointment-servicetype"/>
+      <code value="regular"/>
+    </coding>
+  </serviceType>
+  <appointmentType>
+    <coding>
+      <system value="http://ehealth.sundhed.dk/cs/appointmenttype-codes"/>
+      <code value="FOLLOWUP"/>
+    </coding>
+  </appointmentType>
+  <reasonCode>
+    <coding>
+      <system value="http://ehealth.sundhed.dk/cs/appointment-reason"/>
+      <code value="412776001"/>
+    </coding>
+    <text value="Clinical Review"/>
+  </reasonCode>
+  <supportingInformation>
+    <reference value="http://inttest.ehealth.sundhed.dk/EpisodeOfCare/42"/>
+  </supportingInformation>
+  <participant>
+    <actor>
+      <reference value="http://inttest.ehealth.sundhed.dk/organization/fhir/Practitioner/42"/>
+      <display value="Tove Jensen"/>
+    </actor>
+    <status value="needs-action"/>
+  </participant>
+  <participant>
+    <actor>
+      <reference value="http://inttest.ehealth.sundhed.dk/organization/fhir/Practitioner/123"/>
+    </actor>
+    <status value="needs-action"/>
+  </participant>
+  <participant>
+    <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam">
+      <valueReference>
+        <reference value="http://inttest.ehealth.sundhed.dk/CareTeam/42"/>
+        <display value="CareTeam Aarhus"/>
+      </valueReference>
+    </extension>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+        <code value="ATND"/>
+      </coding>
+    </type>
+    <status value="needs-action"/>
+  </participant>
+</Appointment>

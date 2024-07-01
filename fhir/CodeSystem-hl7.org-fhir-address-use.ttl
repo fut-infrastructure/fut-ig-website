@@ -1,0 +1,91 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/hl7.org-fhir-address-use> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hl7.org-fhir-address-use"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p/><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">home<a name=\"address-use-dk-supplement-home\"> </a></td><td>Home</td><td>A communication address at a home.</td></tr><tr><td style=\"white-space:nowrap\">work<a name=\"address-use-dk-supplement-work\"> </a></td><td>Work</td><td>An office address. First choice for business related contacts during business hours.</td></tr><tr><td style=\"white-space:nowrap\">temp<a name=\"address-use-dk-supplement-temp\"> </a></td><td>Temporary</td><td>A temporary address. The period can provide more detailed information.</td></tr><tr><td style=\"white-space:nowrap\">old<a name=\"address-use-dk-supplement-old\"> </a></td><td>Old / Incorrect</td><td>This address is no longer in use (or was never correct, but retained for records).</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td>home</td><td>Hjem</td></tr><tr><td>work</td><td>Arbejde</td></tr><tr><td>temp</td><td>Midlertidig</td></tr><tr><td>old</td><td>Gammel / forkert</td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/address-use"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "AddressUse"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2021-10-27T13:27:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The use of an address"] ; # 
+  fhir:content [ fhir:v "supplement"] ; # 
+  fhir:supplements [
+     fhir:v "http://hl7.org/fhir/address-use"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/address-use>
+  ] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "home" ] ;
+     fhir:display [ fhir:v "Home" ] ;
+     fhir:definition [ fhir:v "A communication address at a home." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Hjem" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "work" ] ;
+     fhir:display [ fhir:v "Work" ] ;
+     fhir:definition [ fhir:v "An office address. First choice for business related contacts during business hours." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Arbejde" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "temp" ] ;
+     fhir:display [ fhir:v "Temporary" ] ;
+     fhir:definition [ fhir:v "A temporary address. The period can provide more detailed information." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Midlertidig" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "old" ] ;
+     fhir:display [ fhir:v "Old / Incorrect" ] ;
+     fhir:definition [ fhir:v "This address is no longer in use (or was never correct, but retained for records)." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Gammel / forkert" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

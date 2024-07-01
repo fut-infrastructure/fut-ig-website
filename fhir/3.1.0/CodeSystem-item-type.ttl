@@ -1,0 +1,284 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/item-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "item-type"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2019-10-24T11:53:00+11:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem item-type</b></p><a name=\"item-type\"> </a><a name=\"hcitem-type\"> </a><a name=\"hcitem-type-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2019-10-24 11:53:00+1100</p></div><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>URI</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>Not Selectable</td><td>notSelectable</td><td>http://hl7.org/fhir/concept-properties#notSelectable</td><td>boolean</td><td>Indicates that the code is abstract - only intended to be used as a selector for other concepts</td></tr></table><p><b>Concepts</b></p><p>This code system <code>http://hl7.org/fhir/item-type</code> defines displays and properties on the following codes:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Not Selectable</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">group<a name=\"item-type-group\"> </a></td><td>Group</td><td>An item with no direct answer but should have at least one child item.</td><td/><td>Gruppe</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">display<a name=\"item-type-display\"> </a></td><td>Display</td><td>Text for display that will not capture an answer or have child items.</td><td/><td>Visning</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">question<a name=\"item-type-question\"> </a></td><td>Question</td><td>An item that defines a specific answer to be captured, and may have child items. (the answer provided in the QuestionnaireResponse should be of the defined datatype)</td><td>true</td><td>Spørgsmål</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  boolean<a name=\"item-type-boolean\"> </a></td><td>Boolean</td><td>Question with a yes/no answer (valueBoolean)</td><td/><td>Boolsk</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  decimal<a name=\"item-type-decimal\"> </a></td><td>Decimal</td><td>Question with is a real number answer (valueDecimal)</td><td/><td>Decimal</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  integer<a name=\"item-type-integer\"> </a></td><td>Integer</td><td>Question with an integer answer (valueInteger)</td><td/><td>Heltal</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  date<a name=\"item-type-date\"> </a></td><td>Date</td><td>Question with a date answer (valueDate)</td><td/><td>Dato</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  dateTime<a name=\"item-type-dateTime\"> </a></td><td>Date Time</td><td>Question with a date and time answer (valueDateTime)</td><td/><td>Dato &amp; tidspunkt</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  time<a name=\"item-type-time\"> </a></td><td>Time</td><td>Question with a time (hour:minute:second) answer independent of date. (valueTime)</td><td/><td>Tidspunkt</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  string<a name=\"item-type-string\"> </a></td><td>String</td><td>Question with a short (few words to short sentence) free-text entry answer (valueString)</td><td/><td>Tekststreng</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  text<a name=\"item-type-text\"> </a></td><td>Text</td><td>Question with a long (potentially multi-paragraph) free-text entry answer (valueString)</td><td/><td>Fritekst</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  url<a name=\"item-type-url\"> </a></td><td>Url</td><td>Question with a URL (website, FTP site, etc.) answer (valueUri)</td><td/><td>URL</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  choice<a name=\"item-type-choice\"> </a></td><td>Choice</td><td>Question with a Coding drawn from a list of options (specified in either the option property, or via the valueset referenced in the options property) as an answer (valueCoding)</td><td/><td>Valg</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  open-choice<a name=\"item-type-open-choice\"> </a></td><td>Open Choice</td><td>Answer is a Coding drawn from a list of options (as with the choice type) or a free-text entry in a string (valueCoding or valueString)</td><td/><td>Åbent valg</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  attachment<a name=\"item-type-attachment\"> </a></td><td>Attachment</td><td>Question with binary content such as a image, PDF, etc. as an answer (valueAttachment)</td><td/><td>Vedhæftet fil</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  reference<a name=\"item-type-reference\"> </a></td><td>Reference</td><td>Question with a reference to another resource (practitioner, organization, etc.) as an answer (valueReference)</td><td/><td>Reference</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">  quantity<a name=\"item-type-quantity\"> </a></td><td>Quantity</td><td>Question with a combination of a numeric value and unit, potentially with a comparator (&lt;, &gt;, etc.) as an answer. (valueQuantity) There is an extension 'http://hl7.org/fhir/StructureDefinition/questionnaire-unit' that can be used to define what unit whould be captured (or the a unit that has a ucum conversion from the provided unit)</td><td/><td>Antal</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-ballot-status"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Informative" ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "3"^^xsd:integer ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "fhir" ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://hl7.org/fhir/item-type"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "Questionnaire Item Type"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2019-10-24T11:53:00+11:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Distinguishes groups from questions and display text and indicates data type for questions"] ; # 
+  fhir:content [ fhir:v "supplement"] ; # 
+  fhir:supplements [
+     fhir:v "http://hl7.org/fhir/ValueSet/item-type"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/ValueSet/item-type>
+  ] ; # 
+  fhir:property ( [
+     fhir:code [ fhir:v "notSelectable" ] ;
+     fhir:uri [ fhir:v "http://hl7.org/fhir/concept-properties#notSelectable"^^xsd:anyURI ] ;
+     fhir:description [ fhir:v "Indicates that the code is abstract - only intended to be used as a selector for other concepts" ] ;
+     fhir:type [ fhir:v "boolean" ]
+  ] ) ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "group" ] ;
+     fhir:display [ fhir:v "Group" ] ;
+     fhir:definition [ fhir:v "An item with no direct answer but should have at least one child item." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Gruppe" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "display" ] ;
+     fhir:display [ fhir:v "Display" ] ;
+     fhir:definition [ fhir:v "Text for display that will not capture an answer or have child items." ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Visning" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "question" ] ;
+     fhir:display [ fhir:v "Question" ] ;
+     fhir:definition [ fhir:v "An item that defines a specific answer to be captured, and may have child items. (the answer provided in the QuestionnaireResponse should be of the defined datatype)" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "da" ] ;
+       fhir:use [
+         a sct:900000000000013009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "900000000000013009" ]
+       ] ;
+       fhir:value [ fhir:v "Spørgsmål" ]
+     ] ) ;
+     fhir:property ( [
+       fhir:code [ fhir:v "notSelectable" ] ;
+       fhir:value [ fhir:v "true"^^xsd:boolean ]
+     ] ) ;
+     fhir:concept ( [
+       fhir:code [ fhir:v "boolean" ] ;
+       fhir:display [ fhir:v "Boolean" ] ;
+       fhir:definition [ fhir:v "Question with a yes/no answer (valueBoolean)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Boolsk" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "decimal" ] ;
+       fhir:display [ fhir:v "Decimal" ] ;
+       fhir:definition [ fhir:v "Question with is a real number answer (valueDecimal)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Decimal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "integer" ] ;
+       fhir:display [ fhir:v "Integer" ] ;
+       fhir:definition [ fhir:v "Question with an integer answer (valueInteger)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Heltal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "date" ] ;
+       fhir:display [ fhir:v "Date" ] ;
+       fhir:definition [ fhir:v "Question with a date answer (valueDate)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Dato" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "dateTime" ] ;
+       fhir:display [ fhir:v "Date Time" ] ;
+       fhir:definition [ fhir:v "Question with a date and time answer (valueDateTime)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Dato & tidspunkt" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "time" ] ;
+       fhir:display [ fhir:v "Time" ] ;
+       fhir:definition [ fhir:v "Question with a time (hour:minute:second) answer independent of date. (valueTime)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Tidspunkt" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "string" ] ;
+       fhir:display [ fhir:v "String" ] ;
+       fhir:definition [ fhir:v "Question with a short (few words to short sentence) free-text entry answer (valueString)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Tekststreng" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "text" ] ;
+       fhir:display [ fhir:v "Text" ] ;
+       fhir:definition [ fhir:v "Question with a long (potentially multi-paragraph) free-text entry answer (valueString)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Fritekst" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "url" ] ;
+       fhir:display [ fhir:v "Url" ] ;
+       fhir:definition [ fhir:v "Question with a URL (website, FTP site, etc.) answer (valueUri)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "URL" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "choice" ] ;
+       fhir:display [ fhir:v "Choice" ] ;
+       fhir:definition [ fhir:v "Question with a Coding drawn from a list of options (specified in either the option property, or via the valueset referenced in the options property) as an answer (valueCoding)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Valg" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "open-choice" ] ;
+       fhir:display [ fhir:v "Open Choice" ] ;
+       fhir:definition [ fhir:v "Answer is a Coding drawn from a list of options (as with the choice type) or a free-text entry in a string (valueCoding or valueString)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Åbent valg" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "attachment" ] ;
+       fhir:display [ fhir:v "Attachment" ] ;
+       fhir:definition [ fhir:v "Question with binary content such as a image, PDF, etc. as an answer (valueAttachment)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Vedhæftet fil" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "reference" ] ;
+       fhir:display [ fhir:v "Reference" ] ;
+       fhir:definition [ fhir:v "Question with a reference to another resource (practitioner, organization, etc.) as an answer (valueReference)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Reference" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "quantity" ] ;
+       fhir:display [ fhir:v "Quantity" ] ;
+       fhir:definition [ fhir:v "Question with a combination of a numeric value and unit, potentially with a comparator (<, >, etc.) as an answer. (valueQuantity) There is an extension 'http://hl7.org/fhir/StructureDefinition/questionnaire-unit' that can be used to define what unit whould be captured (or the a unit that has a ucum conversion from the provided unit)" ] ;
+       fhir:designation ( [
+         fhir:language [ fhir:v "da" ] ;
+         fhir:use [
+           a sct:900000000000013009 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "900000000000013009" ]
+         ] ;
+         fhir:value [ fhir:v "Antal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>POST Fetch Patient Gdpr - eHealth Infrastructure v3.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"25"}
+    h3,h4,h5,h6{--heading-prefix:"25"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">3.1.0 - release
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>POST Fetch Patient Gdpr</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>POST Fetch Patient Gdpr</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p><code class="language-plaintext highlighter-rouge">POST [base]/$fetch-patient-gdpr</code></p>
+
+<p><strong>Header</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiZWQ4NzQ0ZjAtY2UwOC00ZmJiLWE1YTQtNzdiYWI5ZWZiMWRmIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIiRmZXRjaC1wYXRpZW50LWdkcHIiLCJyZXBvcnQtbm9uLWFub255bWl6ZWQiLCJCaW5hcnkucmVhZCJdfSwiY29udGV4dCI6eyJvcmdhbml6YXRpb25faWQiOiJodHRwczovL29yZ2FuaXphdGlvbi5jaXQtcmVwb3J0aW5nLTExMTMubG9jYWwvZmhpci9Pcmdhbml6YXRpb24vNzU3OTMiLCJ0ZWFtX29uX2VvYyI6ZmFsc2V9LCJ1c2VyX3R5cGUiOiJQUkFDVElUSU9ORVIifQ.
+Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
+User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+Accept-Encoding: gzip
+Content-Type: application/fhir+json; charset=UTF-8
+</code></pre></div></div>
+
+<p><strong>Body</strong>:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anonymization"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-reporting-1113.local/fhir/Organization/75793"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patient"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-reporting-1113.local/fhir/Patient/6815"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Response</strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binary"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/Binary"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/gzip-json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"securityContext"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ed8744f0-ce08-4fbb-a5a4-77bab9efb1df"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"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"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:04+0000">2024-07-01</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

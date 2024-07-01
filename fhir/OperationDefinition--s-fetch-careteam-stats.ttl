@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-fetch-careteam-stats"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-fetch-careteam-stats</b></p><a name=\"-s-fetch-careteam-stats\"> </a><a name=\"hc-s-fetch-careteam-stats\"> </a><a name=\"hc-s-fetch-careteam-stats-en-US\"> </a><p>URL: [base]/$fetch-careteam-stats</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-fetch-careteam-stats"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "fetch-careteam-stats"] ; # 
+  fhir:title [ fhir:v "Fetch careteam stats"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-07-01T11:09:52+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Report Contents\nThis report contains counts of resources associated with CareTeams:\n- EpisodeOfCare\n- CarePlan\n- Task: Count for each task category\n### Grouping \nThis report is grouped by CareTeam. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on CareTeam.managingOrganization match\n- period: Filter on:\n    - CarePlan.period overlap for CarePlans\n    - EpisodeOfCare.period overlap for EpisodeOfCare\n    - Task.authoredOn inside period for Tasks\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nEHealthCareTeam is a Fhir resource. See the implementation guide for details\n\n    {\n        'EHealthCareTeam': {\n            'resourceType': 'CareTeam',\n            'id': '12958',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam']\n            },\n            'identifier': [{\n                    'id': '59f70e4e-1c31-4647-8c91-404939b6b14e',\n                    'system': 'urn:ietf:rfc:3986'\n                }\n            ],\n            'status': 'active',\n            'name': '0cea5c11-af39-4e5c-8733-9f532ea9961a',\n            'reasonCode': [{\n                    'coding': [{\n                            'system': 'http://ehealth.sundhed.dk/cs/conditions',\n                            'code': 'TBD'\n                        }\n                    ]\n                }\n            ],\n            'managingOrganization': [{\n                    'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/66642'\n                }\n            ]\n        },\n        'CareTeamSummary': {\n            'episodeOfCareCount': 2,\n            'carePlanCount': 6,\n            'taskCountByCategory': {\n                'MissingMeasurementResolving': 2\n            }\n        }\n    }"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "fetch-careteam-stats"] ; # 
+  fhir:system [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "anonymization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "period" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Period" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

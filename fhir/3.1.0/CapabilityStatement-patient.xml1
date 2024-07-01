@@ -1,0 +1,2597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="patient"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement patient</b></p><a name="patient"> </a><a name="hcpatient"> </a><a name="hcpatient-en-US"> </a><h2 id="title"/><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: <code>application/json-patch+json</code></li><li>Published on: 2021-08-20 13:16:14+0200 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Security</em></div><div class="row"><div class="col-lg-6">Enable CORS: no</div><div class="col-lg-6">Security services supported: <code/></div></div><div class="lead"><em>Summary of System-wide Interactions</em></div></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="PATCH a new resource version (patch interaction)">P</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th class="text-center"><b title="DELETE a resource (delete interaction)">D</b></th><th class="text-center"><b title="GET changes to a resource (history interaction on instance)">H-I</b></th><th class="text-center"><b title="GET changes for all resources of the type (history interaction on type)">H-T</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Appointment1-1">Appointment</a></td><td><a href="http://hl7.org/fhir/R4/appointment.html">http://hl7.org/fhir/StructureDefinition/Appointment</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-ehealth-appointment.html">ehealth-appointment</a><br/>  <a href="StructureDefinition-ehealth-group-appointment.html">ehealth-group-appointment</a><br/>  <a href="StructureDefinition-ehealth-group-videoappointment.html">ehealth-group-videoappointment</a><br/>  <a href="StructureDefinition-ehealth-videoappointment.html">ehealth-videoappointment</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, date, specialty, service-category, _lastUpdated, slot, reason-code, based-on, appointmentGroupId, patient, responsible, supporting-info, careteamParticipant, identifier, practitioner, appointment-type, part-status, service-type, _security, _filter, actor, _profile, intended-audience, _has, _tag, reason-reference, location, _id, _content, _text, status</td><td><code>*</code>, <code>Appointment:actor</code>, <code>Appointment:patient</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code></td><td/></tr><tr><td><a href="#CodeSystem1-2">CodeSystem</a></td><td><a href="http://hl7.org/fhir/R4/codesystem.html">http://hl7.org/fhir/StructureDefinition/CodeSystem</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, date, code, context-type-value, jurisdiction, _lastUpdated, description, context-type, language, title, context-quantity, context, context-type-quantity, identifier, content-mode, _security, version, url, _filter, supplements, system, _profile, _has, _tag, name, publisher, _source, _id, _content, _text, status</td><td><code>*</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>CodeSystem:supplements</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code></td><td/></tr><tr><td><a href="#Communication1-3">Communication</a></td><td><a href="StructureDefinition-ehealth-message.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-ehealth-communication.html">ehealth-communication</a><br/>  <a href="StructureDefinition-ehealth-message.html">ehealth-message</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td>_language, administrativeStatus, subject, _lastUpdated, part-of, medium, on-behalf-of, threadId, based-on, patient, instantiates-uri, identifier, period, _security, instantiates-canonical, communicationCategory, received, encounter, communicationGroupId, careTeamRecipient, sent, _filter, careTeamSender, communicationParticipant, _profile, sender, _has, _tag, recipient, _id, category, restrictionCategory, _content, _text, status</td><td><code>*</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:encounter</code>, <code>Communication:instantiates-canonical</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>Communication:patient</code>, <code>Communication:recipient</code>, <code>Communication:sender</code>, <code>Communication:subject</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code></td><td/></tr><tr><td><a href="#OperationDefinition1-4">OperationDefinition</a></td><td><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, date, code, instance, context-type-value, jurisdiction, description, context-type, title, type, context-quantity, output-profile, context, context-type-quantity, kind, version, url, input-profile, system, name, publisher, _id, base, status</td><td><code>*</code>, <code>OperationDefinition:base</code>, <code>OperationDefinition:input-profile</code>, <code>OperationDefinition:output-profile</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:instantiates-canonical</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>OperationDefinition:base</code></td><td/></tr><tr><td><a href="#Patient1-5">Patient</a></td><td><a href="StructureDefinition-ehealth-patient.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-ehealth-patient.html">ehealth-patient</a><br/>  <code>http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrsPatient</code></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, birthdate, deceased, address-state, gender, link, language, address-country, death-date, phonetic, telecom, address-city, email, given, identifier, address, general-practitioner, _security, active, address-postalcode, phone, organization, address-use, name, _id, family</td><td><code>*</code>, <code>Patient:link</code></td><td><code>Appointment:actor</code>, <code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:patient</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>Communication:patient</code>, <code>Communication:recipient</code>, <code>Communication:sender</code>, <code>Communication:subject</code>, <code>Patient:link</code>, <code>Person:link</code>, <code>Person:patient</code>, <code>RelatedPerson:patient</code></td><td/></tr><tr><td><a href="#Person1-6">Person</a></td><td><a href="http://hl7.org/fhir/R4/person.html">http://hl7.org/fhir/StructureDefinition/Person</a></td><td></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, identifier, address, birthdate, address-state, gender, practitioner, link, relatedperson, address-postalcode, address-country, phonetic, phone, patient, organization, address-use, name, telecom, _id, address-city, email</td><td><code>*</code>, <code>Person:link</code>, <code>Person:organization</code>, <code>Person:patient</code>, <code>Person:practitioner</code>, <code>Person:relatedperson</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>Person:link</code></td><td/></tr><tr><td><a href="#RelatedPerson1-7">RelatedPerson</a></td><td><a href="StructureDefinition-ehealth-relatedperson.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-ehealth-relatedperson.html">ehealth-relatedperson</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td>_language, birthdate, address-state, gender, _lastUpdated, address-country, phonetic, patient, telecom, address-city, relationship, email, identifier, address, _security, active, address-postalcode, _profile, phone, _has, _tag, address-use, name, _id, _content, _text</td><td><code>*</code>, <code>RelatedPerson:patient</code></td><td><code>Appointment:actor</code>, <code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>Communication:recipient</code>, <code>Communication:sender</code>, <code>Patient:link</code>, <code>Person:link</code>, <code>Person:relatedperson</code></td><td/></tr><tr><td><a href="#SearchParameter1-8">SearchParameter</a></td><td><a href="http://hl7.org/fhir/R4/searchparameter.html">http://hl7.org/fhir/StructureDefinition/SearchParameter</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_language, date, code, context-type-value, jurisdiction, _lastUpdated, derived-from, description, context-type, type, context-quantity, context, context-type-quantity, _security, sp-unique-url, version, url, target, _filter, component, _profile, _has, _tag, name, publisher, _source, _id, _content, _text, base, status</td><td><code>*</code>, <code>SearchParameter:component</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>SearchParameter:component</code>, <code>SearchParameter:derived-from</code></td><td/></tr><tr><td><a href="#StructureDefinition1-9">StructureDefinition</a></td><td><a href="http://hl7.org/fhir/R4/structuredefinition.html">http://hl7.org/fhir/StructureDefinition/StructureDefinition</a><br/><em>Additional supported profiles:</em><br/>  <a href="StructureDefinition-ehealth-definedquestion.html">ehealth-definedquestion</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, date, context-type-value, jurisdiction, _lastUpdated, description, context-type, experimental, title, type, context-quantity, path, base-path, context, sd-unique-url, keyword, context-type-quantity, identifier, valueset, kind, _security, abstract, version, url, _filter, _profile, ext-context, _has, _tag, name, publisher, derivation, _source, _id, _content, _text, base, status</td><td><code>*</code>, <code>StructureDefinition:valueset</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>OperationDefinition:input-profile</code>, <code>OperationDefinition:output-profile</code>, <code>StructureDefinition:base</code></td><td/></tr><tr><td><a href="#ValueSet1-10">ValueSet</a></td><td><a href="http://hl7.org/fhir/R4/valueset.html">http://hl7.org/fhir/StructureDefinition/ValueSet</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_language, date, code, context-type-value, jurisdiction, _lastUpdated, description, context-type, title, reference, context-quantity, context, context-type-quantity, identifier, _security, version, url, expansion, _filter, _profile, _has, _tag, name, publisher, _source, _id, _content, _text, status</td><td><code>*</code></td><td><code>Appointment:careteamParticipant</code>, <code>Appointment:intended-audience</code>, <code>Appointment:responsible</code>, <code>Appointment:supporting-info</code>, <code>Communication:based-on</code>, <code>Communication:careTeamRecipient</code>, <code>Communication:careTeamSender</code>, <code>Communication:on-behalf-of</code>, <code>Communication:part-of</code>, <code>StructureDefinition:valueset</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Appointment1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Appointment</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/appointment.html">http://hl7.org/fhir/StructureDefinition/Appointment</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ehealth-appointment.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment</a><br/><a href="StructureDefinition-ehealth-group-appointment.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-appointment</a><br/><a href="StructureDefinition-ehealth-group-videoappointment.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-videoappointment</a><br/><a href="StructureDefinition-ehealth-videoappointment.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-videoappointment</a></p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>create</code>, <code>patch</code>, <code>search-type</code>, <code>update</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">date</a></td><td><code>date</code></td><td><div><p>Appointment date/time.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">specialty</a></td><td><code>token</code></td><td><div><p>The specialty of a practitioner that would be required to perform the service requested in this appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">service-category</a></td><td><code>token</code></td><td><div><p>A broad categorization of the service that is to be performed during this appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">slot</a></td><td><code>reference</code></td><td><div><p>The slots that this appointment is filling</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">reason-code</a></td><td><code>token</code></td><td><div><p>Coded reason this appointment is scheduled</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">based-on</a></td><td><code>reference</code></td><td><div><p>The service request this appointment is allocated to assess</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-appointment-search-groupId.html">appointmentGroupId</a></td><td><code>string</code></td><td><div><p>Search parameter for finding resources based on group id</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">patient</a></td><td><code>reference</code></td><td><div><p>One of the individuals of the appointment is this patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-appointment-search-responsible.html">responsible</a></td><td><code>reference</code></td><td><div><p>Search parameter for finding responsible entity on Appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">supporting-info</a></td><td><code>reference</code></td><td><div><p>Additional information to support the appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-appointment-search-careteam-participant.html">careteamParticipant</a></td><td><code>reference</code></td><td><div><p>Search parameter for finding appointments based on careteam participants</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">identifier</a></td><td><code>token</code></td><td><div><p>An Identifier of the Appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">practitioner</a></td><td><code>reference</code></td><td><div><p>One of the individuals of the appointment is this practitioner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">appointment-type</a></td><td><code>token</code></td><td><div><p>The style of appointment or patient that has been booked in the slot (not service type)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">part-status</a></td><td><code>token</code></td><td><div><p>The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">service-type</a></td><td><code>token</code></td><td><div><p>The specific service that is to be performed during this appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">actor</a></td><td><code>reference</code></td><td><div><p>Any one of the individuals participating in the appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-appointment-search-intended-audience.html">intended-audience</a></td><td><code>reference</code></td><td><div><p>Search parameter for finding intended audience on Appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">reason-reference</a></td><td><code>reference</code></td><td><div><p>Reason the appointment is to take place (resource)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">location</a></td><td><code>reference</code></td><td><div><p>This location is listed in the participants of the appointment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/appointment.html#search">status</a></td><td><code>token</code></td><td><div><p>The overall status of the appointment</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$exportAsiCal</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="CodeSystem1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>CodeSystem</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/codesystem.html">http://hl7.org/fhir/StructureDefinition/CodeSystem</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The code system publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>A code defined in the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>language</td><td><code>token</code></td><td><div><p>A language in which a designation is provided</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>content-mode</td><td><code>token</code></td><td><div><p>not-present | example | fragment | complete | supplement</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>supplements</td><td><code>reference</code></td><td><div><p>Find code system supplements for the referenced code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>system</td><td><code>uri</code></td><td><div><p>The system for any codes defined by this code system (same as 'url')</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the code system</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_source</a></td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the code system</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$lookup</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$subsumes</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Communication1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Communication</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-message.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ehealth-communication.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication</a><br/><a href="StructureDefinition-ehealth-message.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message</a></p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>create</code>, <code>patch</code>, <code>search-type</code>, <code>delete</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-administrativeStatus.html">administrativeStatus</a></td><td><code>token</code></td><td><div><p>Search parameter for finding communication based on administrative status</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">subject</a></td><td><code>reference</code></td><td><div><p>Focus of message</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">part-of</a></td><td><code>reference</code></td><td><div><p>Part of this action</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">medium</a></td><td><code>token</code></td><td><div><p>A channel of communication</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-on-behalf-of.html">on-behalf-of</a></td><td><code>reference</code></td><td><div><p>Search parameter for finding communication based on on-behalf-of</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-threadId.html">threadId</a></td><td><code>string</code></td><td><div><p>Search parameter for finding communication based on thread id</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">based-on</a></td><td><code>reference</code></td><td><div><p>Request fulfilled by this communication</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">patient</a></td><td><code>reference</code></td><td><div><p>Focus of message</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">instantiates-uri</a></td><td><code>uri</code></td><td><div><p>Instantiates external protocol or definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">identifier</a></td><td><code>token</code></td><td><div><p>Unique identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-period.html">period</a></td><td><code>date</code></td><td><div><p>Search parameter for finding communication based on period</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">instantiates-canonical</a></td><td><code>reference</code></td><td><div><p>Instantiates FHIR protocol or definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-communicationCategory.html">communicationCategory</a></td><td><code>token</code></td><td><div><p>Search parameter for finding communication based on the category code</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">received</a></td><td><code>date</code></td><td><div><p>When received</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">encounter</a></td><td><code>reference</code></td><td><div><p>Encounter created as part of</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-groupId.html">communicationGroupId</a></td><td><code>string</code></td><td><div><p>Search parameter for finding resources based on group id</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-careTeamRecipient.html">careTeamRecipient</a></td><td><code>reference</code></td><td><div><p>Search parameter for finding communication based on CareTeam recipient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">sent</a></td><td><code>date</code></td><td><div><p>When sent</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-careTeamSender.html">careTeamSender</a></td><td><code>reference</code></td><td><div><p>Search parameter for finding communication based on CareTeam sender</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>communicationParticipant</td><td><code>reference</code></td><td><div><p>Search parameter for finding communication based on participant</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">sender</a></td><td><code>reference</code></td><td><div><p>Message sender</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">recipient</a></td><td><code>reference</code></td><td><div><p>Message recipient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">category</a></td><td><code>token</code></td><td><div><p>Message category</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="SearchParameter-ehealth-communication-search-restrictionCategory.html">restrictionCategory</a></td><td><code>token</code></td><td><div><p>Search parameter for finding communication based on CareTeam recipient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/communication.html#search">status</a></td><td><code>token</code></td><td><div><p>preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="OperationDefinition1-4" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>OperationDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The operation definition publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>Name used to invoke the operation</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>instance</td><td><code>token</code></td><td><div><p>Invoke on an instance?</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Invoke at the type level?</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>output-profile</td><td><code>reference</code></td><td><div><p>Validation information for out parameters</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>kind</td><td><code>token</code></td><td><div><p>operation | query</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>input-profile</td><td><code>reference</code></td><td><div><p>Validation information for in parameters</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>system</td><td><code>token</code></td><td><div><p>Invoke at the system level?</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the operation definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>reference</code></td><td><div><p>Marks this as a profile of the base</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the operation definition</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Patient1-5" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Patient</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-patient.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ehealth-patient.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient</a><br/>http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrsPatient</p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>patch</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">birthdate</a></td><td><code>date</code></td><td><div><p>The patient's date of birth</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">deceased</a></td><td><code>token</code></td><td><div><p>This patient has been marked as deceased, or as a death date entered</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-state</a></td><td><code>string</code></td><td><div><p>A state specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">gender</a></td><td><code>token</code></td><td><div><p>Gender of the patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">link</a></td><td><code>reference</code></td><td><div><p>All patients linked to the given patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">language</a></td><td><code>token</code></td><td><div><p>Language code (irrespective of use value)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-country</a></td><td><code>string</code></td><td><div><p>A country specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">death-date</a></td><td><code>date</code></td><td><div><p>The date of death has been provided and satisfies this search value</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">phonetic</a></td><td><code>string</code></td><td><div><p>A portion of either family or given name using some kind of phonetic matching algorithm</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">telecom</a></td><td><code>token</code></td><td><div><p>The value in any kind of telecom details of the patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-city</a></td><td><code>string</code></td><td><div><p>A city specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">email</a></td><td><code>token</code></td><td><div><p>A value in an email contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">given</a></td><td><code>string</code></td><td><div><p>A portion of the given name of the patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">identifier</a></td><td><code>token</code></td><td><div><p>A patient identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address</a></td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">general-practitioner</a></td><td><code>reference</code></td><td><div><p>Patient's nominated general practitioner, not the organization that manages the record</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_security</a></td><td><code>token</code></td><td><div><p>The Security Label of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">active</a></td><td><code>token</code></td><td><div><p>Whether the patient record is active</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-postalcode</a></td><td><code>string</code></td><td><div><p>A postalCode specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">phone</a></td><td><code>token</code></td><td><div><p>A value in a phone contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">organization</a></td><td><code>reference</code></td><td><div><p>The organization that is the custodian of the patient record</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-use</a></td><td><code>token</code></td><td><div><p>A use code specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">name</a></td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">family</a></td><td><code>string</code></td><td><div><p>A portion of the family name of the patient</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$createPatient</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$updatePatientWithSKRSData</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Person1-6" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Person</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/person.html">http://hl7.org/fhir/StructureDefinition/Person</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul/></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">identifier</a></td><td><code>token</code></td><td><div><p>A person Identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">address</a></td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">birthdate</a></td><td><code>date</code></td><td><div><p>The person's date of birth</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">address-state</a></td><td><code>string</code></td><td><div><p>A state specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">gender</a></td><td><code>token</code></td><td><div><p>The gender of the person</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">practitioner</a></td><td><code>reference</code></td><td><div><p>The Person links to this Practitioner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">link</a></td><td><code>reference</code></td><td><div><p>Any link has this Patient, Person, RelatedPerson or Practitioner reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">relatedperson</a></td><td><code>reference</code></td><td><div><p>The Person links to this RelatedPerson</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">address-postalcode</a></td><td><code>string</code></td><td><div><p>A postal code specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">address-country</a></td><td><code>string</code></td><td><div><p>A country specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">phonetic</a></td><td><code>string</code></td><td><div><p>A portion of name using some kind of phonetic matching algorithm</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">phone</a></td><td><code>token</code></td><td><div><p>A value in a phone contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">patient</a></td><td><code>reference</code></td><td><div><p>The Person links to this Patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">organization</a></td><td><code>reference</code></td><td><div><p>The organization at which this person record is being managed</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">address-use</a></td><td><code>token</code></td><td><div><p>A use code specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">name</a></td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">telecom</a></td><td><code>token</code></td><td><div><p>The value in any kind of contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">address-city</a></td><td><code>string</code></td><td><div><p>A city specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/person.html#search">email</a></td><td><code>token</code></td><td><div><p>A value in an email contact</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$match</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="RelatedPerson1-7" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>RelatedPerson</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-relatedperson.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ehealth-relatedperson.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson</a></p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">birthdate</a></td><td><code>date</code></td><td><div><p>The Related Person's date of birth</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">address-state</a></td><td><code>string</code></td><td><div><p>A state specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">gender</a></td><td><code>token</code></td><td><div><p>Gender of the related person</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address-country</td><td><code>string</code></td><td><div><p>A country specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>phonetic</td><td><code>string</code></td><td><div><p>A portion of name using some kind of phonetic matching algorithm</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">patient</a></td><td><code>reference</code></td><td><div><p>The patient this related person is related to</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">telecom</a></td><td><code>token</code></td><td><div><p>The value in any kind of contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address-city</td><td><code>string</code></td><td><div><p>A city specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">relationship</a></td><td><code>token</code></td><td><div><p>The relationship between the patient and the relatedperson</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>email</td><td><code>token</code></td><td><div><p>A value in an email contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">identifier</a></td><td><code>token</code></td><td><div><p>An Identifier of the RelatedPerson</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address</td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">active</a></td><td><code>token</code></td><td><div><p>Indicates if the related person record is active</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address-postalcode</td><td><code>string</code></td><td><div><p>A postal code specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>phone</td><td><code>token</code></td><td><div><p>A value in a phone contact</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>address-use</td><td><code>token</code></td><td><div><p>A use code specified in an address</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/relatedperson.html#search">name</a></td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="SearchParameter1-8" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>SearchParameter</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/searchparameter.html">http://hl7.org/fhir/StructureDefinition/SearchParameter</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>create</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>, <code>patch</code>, <code>vread</code>, <code>read</code>, <code>update</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The search parameter publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>Code used in URL</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>derived-from</td><td><code>reference</code></td><td><div><p>Original definition for the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/searchparameter.html#search">type</a></td><td><code>token</code></td><td><div><p>number | date | string | token | reference | composite | quantity | uri | special</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>sp-unique-url</td><td><code>composite</code></td><td><div><p>Search parameter for making a SearchParameter unique by URL</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>Search parameter for finding a searchparameter by URL</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>target</td><td><code>token</code></td><td><div><p>Types of resource (if a resource reference)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>component</td><td><code>reference</code></td><td><div><p>Defines how the part works</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the search parameter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_source</a></td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>token</code></td><td><div><p>The resource type(s) this search parameter applies to</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the search parameter</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a global list of tags, profiles, and security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="StructureDefinition1-9" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>StructureDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/structuredefinition.html">http://hl7.org/fhir/StructureDefinition/StructureDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ehealth-definedquestion.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion</a></p></div><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>create</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The structure definition publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>experimental</td><td><code>token</code></td><td><div><p>For testing purposes, not real usage</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>uri</code></td><td><div><p>Type defined or constrained by this structure</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>path</td><td><code>token</code></td><td><div><p>A path that is constrained in the StructureDefinition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base-path</td><td><code>token</code></td><td><div><p>Path that identifies the base element</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>sd-unique-url</td><td><code>composite</code></td><td><div><p>Search parameter for making a structureDefinition unique by URL</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>keyword</td><td><code>token</code></td><td><div><p>A code for the StructureDefinition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>valueset</td><td><code>reference</code></td><td><div><p>A vocabulary binding reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>kind</td><td><code>token</code></td><td><div><p>primitive-type | complex-type | resource | logical</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>abstract</td><td><code>token</code></td><td><div><p>Whether the structure is abstract</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>Search parameter for finding a structureDefinition by URL</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>ext-context</td><td><code>token</code></td><td><div><p>The system is the URL for the context-type: e.g. http://hl7.org/fhir/extension-context-type#element|CodeableConcept.text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the structure definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>derivation</td><td><code>token</code></td><td><div><p>specialization | constraint - How relates to base definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_source</a></td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>base</td><td><code>reference</code></td><td><div><p>Definition that this type is constrained/specialized from</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the structure definition</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$generateSnapshot</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$snapshot</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="ValueSet1-10" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>ValueSet</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/valueset.html">http://hl7.org/fhir/StructureDefinition/ValueSet</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The value set publication date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/valueset.html#search">code</a></td><td><code>token</code></td><td><div><p>This special parameter searches for codes in the value set. See additional notes on the ValueSet resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_lastUpdated</a></td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/valueset.html#search">reference</a></td><td><code>uri</code></td><td><div><p>A code system included or excluded in the value set or an imported value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/valueset.html#search">expansion</a></td><td><code>uri</code></td><td><div><p>Identifies the value set expansion (business identifier)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_tag</a></td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the value set</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_source</a></td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_content</a></td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the value set</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$expand</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate-code</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient"/>
+  <version value="3.1.0"/>
+  <name value="patient"/>
+  <status value="active"/>
+  <date value="2021-08-20T13:16:14.216+02:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <kind value="instance"/>
+  <software>
+    <name value="patient"/>
+    <version value="1.3.4-SNAPSHOT"/>
+  </software>
+  <implementation>
+    <description value="eHealth Patient service"/>
+    <url value="http://localhost:8080/fhir/"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="xml"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <format value="application/x-turtle"/>
+  <format value="ttl"/>
+  <format value="html/json"/>
+  <format value="html/xml"/>
+  <format value="html/turtle"/>
+  <patchFormat value="application/json-patch+json"/>
+  <rest>
+    <mode value="server"/>
+    <security>
+      <extension url="http://ehealth.sundhed.dk/security/oauth-uris">
+        <extension url="token">
+          <valueUri value="https://saml.inttest.ehealth.sundhed.dk/auth/realms/ehealth/protocol/openid-connect/token"/>
+        </extension>
+        <extension url="authorize">
+          <valueUri value="https://saml.inttest.ehealth.sundhed.dk/auth/realms/ehealth/protocol/openid-connect/auth"/>
+        </extension>
+        <extension url="revoke">
+          <valueUri value="https://saml.inttest.ehealth.sundhed.dk/auth/realms/ehealth/protocol/openid-connect/revoke"/>
+        </extension>
+      </extension>
+      <service>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/restful-security-service"/>
+          <display value="OAuth"/>
+        </coding>
+      </service>
+    </security>
+    <resource>
+      <type value="Appointment"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/Appointment"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-appointment"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-videoappointment"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-videoappointment"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchInclude value="Appointment:actor"/>
+      <searchInclude value="Appointment:patient"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/appointment-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-date"/>
+        <type value="date"/>
+        <documentation value="Appointment date/time."/>
+      </searchParam>
+      <searchParam>
+        <name value="specialty"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-specialty"/>
+        <type value="token"/>
+        <documentation value="The specialty of a practitioner that would be required to perform the service requested in this appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="service-category"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-service-category"/>
+        <type value="token"/>
+        <documentation value="A broad categorization of the service that is to be performed during this appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="slot"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-slot"/>
+        <type value="reference"/>
+        <documentation value="The slots that this appointment is filling"/>
+      </searchParam>
+      <searchParam>
+        <name value="reason-code"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-reason-code"/>
+        <type value="token"/>
+        <documentation value="Coded reason this appointment is scheduled"/>
+      </searchParam>
+      <searchParam>
+        <name value="based-on"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-based-on"/>
+        <type value="reference"/>
+        <documentation value="The service request this appointment is allocated to assess"/>
+      </searchParam>
+      <searchParam>
+        <name value="appointmentGroupId"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/groupId"/>
+        <type value="string"/>
+        <documentation value="Search parameter for finding resources based on group id"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-patient"/>
+        <type value="reference"/>
+        <documentation value="One of the individuals of the appointment is this patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="responsible"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/responsible"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding responsible entity on Appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="supporting-info"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-supporting-info"/>
+        <type value="reference"/>
+        <documentation value="Additional information to support the appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="careteamParticipant"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/careteamParticipant"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding appointments based on careteam participants"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-identifier"/>
+        <type value="token"/>
+        <documentation value="An Identifier of the Appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="practitioner"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-practitioner"/>
+        <type value="reference"/>
+        <documentation value="One of the individuals of the appointment is this practitioner"/>
+      </searchParam>
+      <searchParam>
+        <name value="appointment-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-appointment-type"/>
+        <type value="token"/>
+        <documentation value="The style of appointment or patient that has been booked in the slot (not service type)"/>
+      </searchParam>
+      <searchParam>
+        <name value="part-status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-part-status"/>
+        <type value="token"/>
+        <documentation value="The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests."/>
+      </searchParam>
+      <searchParam>
+        <name value="service-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-service-type"/>
+        <type value="token"/>
+        <documentation value="The specific service that is to be performed during this appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Appointment-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Appointment-_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="actor"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-actor"/>
+        <type value="reference"/>
+        <documentation value="Any one of the individuals participating in the appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Appointment-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="intended-audience"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/intended-audience"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding intended audience on Appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="reason-reference"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-reason-reference"/>
+        <type value="reference"/>
+        <documentation value="Reason the appointment is to take place (resource)"/>
+      </searchParam>
+      <searchParam>
+        <name value="location"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-location"/>
+        <type value="reference"/>
+        <documentation value="This location is listed in the participants of the appointment"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Appointment-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Appointment-status"/>
+        <type value="token"/>
+        <documentation value="The overall status of the appointment"/>
+      </searchParam>
+      <operation>
+        <name value="exportAsiCal"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Appointment-i-exportAsiCal"/>
+      </operation>
+      <operation>
+        <name value="meta"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-its-meta"/>
+      </operation>
+      <operation>
+        <name value="meta-add"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-i-meta-add"/>
+      </operation>
+      <operation>
+        <name value="meta-delete"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-i-meta-delete"/>
+      </operation>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <extension url="http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount">
+        <valueDecimal value="65"/>
+      </extension>
+      <type value="CodeSystem"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/CodeSystem"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <searchInclude value="*"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="CodeSystem:supplements"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-date"/>
+        <type value="date"/>
+        <documentation value="The code system publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-code"/>
+        <type value="token"/>
+        <documentation value="A code defined in the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-value"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-context-type-value"/>
+        <type value="composite"/>
+        <documentation value="A use context type and value assigned to the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-description"/>
+        <type value="string"/>
+        <documentation value="The description of the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-language"/>
+        <type value="token"/>
+        <documentation value="A language in which a designation is provided"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-context-type-quantity"/>
+        <type value="composite"/>
+        <documentation value="A use context type and quantity- or range-based value assigned to the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="content-mode"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-content-mode"/>
+        <type value="token"/>
+        <documentation value="not-present | example | fragment | complete | supplement"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/CodeSystem-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-version"/>
+        <type value="token"/>
+        <documentation value="The business version of the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/CodeSystem-_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="supplements"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-supplements"/>
+        <type value="reference"/>
+        <documentation value="Find code system supplements for the referenced code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="system"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-system"/>
+        <type value="uri"/>
+        <documentation value="The system for any codes defined by this code system (same as 'url')"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/CodeSystem-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the code system"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/CodeSystem-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Codesystem-status"/>
+        <type value="token"/>
+        <documentation value="The current status of the code system"/>
+      </searchParam>
+      <operation>
+        <name value="lookup"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/CodeSystem-t-lookup"/>
+      </operation>
+      <operation>
+        <name value="subsumes"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/CodeSystem-t-subsumes"/>
+      </operation>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Communication"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <conditionalCreate value="true"/>
+      <conditionalDelete value="multiple"/>
+      <searchInclude value="*"/>
+      <searchInclude value="Communication:based-on"/>
+      <searchInclude value="Communication:careTeamRecipient"/>
+      <searchInclude value="Communication:careTeamSender"/>
+      <searchInclude value="Communication:encounter"/>
+      <searchInclude value="Communication:instantiates-canonical"/>
+      <searchInclude value="Communication:on-behalf-of"/>
+      <searchInclude value="Communication:part-of"/>
+      <searchInclude value="Communication:patient"/>
+      <searchInclude value="Communication:recipient"/>
+      <searchInclude value="Communication:sender"/>
+      <searchInclude value="Communication:subject"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="administrativeStatus"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/administrativeStatus"/>
+        <type value="token"/>
+        <documentation value="Search parameter for finding communication based on administrative status"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-subject"/>
+        <type value="reference"/>
+        <documentation value="Focus of message"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="part-of"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-part-of"/>
+        <type value="reference"/>
+        <documentation value="Part of this action"/>
+      </searchParam>
+      <searchParam>
+        <name value="medium"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-medium"/>
+        <type value="token"/>
+        <documentation value="A channel of communication"/>
+      </searchParam>
+      <searchParam>
+        <name value="on-behalf-of"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/on-behalf-of"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding communication based on on-behalf-of"/>
+      </searchParam>
+      <searchParam>
+        <name value="threadId"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/threadId"/>
+        <type value="string"/>
+        <documentation value="Search parameter for finding communication based on thread id"/>
+      </searchParam>
+      <searchParam>
+        <name value="based-on"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-based-on"/>
+        <type value="reference"/>
+        <documentation value="Request fulfilled by this communication"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-patient"/>
+        <type value="reference"/>
+        <documentation value="Focus of message"/>
+      </searchParam>
+      <searchParam>
+        <name value="instantiates-uri"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-instantiates-uri"/>
+        <type value="uri"/>
+        <documentation value="Instantiates external protocol or definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-identifier"/>
+        <type value="token"/>
+        <documentation value="Unique identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="period"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/period"/>
+        <type value="date"/>
+        <documentation value="Search parameter for finding communication based on period"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Communication-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="instantiates-canonical"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-instantiates-canonical"/>
+        <type value="reference"/>
+        <documentation value="Instantiates FHIR protocol or definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="communicationCategory"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/category"/>
+        <type value="token"/>
+        <documentation value="Search parameter for finding communication based on the category code"/>
+      </searchParam>
+      <searchParam>
+        <name value="received"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-received"/>
+        <type value="date"/>
+        <documentation value="When received"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-encounter"/>
+        <type value="reference"/>
+        <documentation value="Encounter created as part of"/>
+      </searchParam>
+      <searchParam>
+        <name value="communicationGroupId"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/groupId"/>
+        <type value="string"/>
+        <documentation value="Search parameter for finding resources based on group id"/>
+      </searchParam>
+      <searchParam>
+        <name value="careTeamRecipient"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careTeamRecipient"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding communication based on CareTeam recipient"/>
+      </searchParam>
+      <searchParam>
+        <name value="sent"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-sent"/>
+        <type value="date"/>
+        <documentation value="When sent"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Communication-_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="careTeamSender"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careTeamSender"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding communication based on CareTeam sender"/>
+      </searchParam>
+      <searchParam>
+        <name value="communicationParticipant"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/participant"/>
+        <type value="reference"/>
+        <documentation value="Search parameter for finding communication based on participant"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Communication-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="sender"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-sender"/>
+        <type value="reference"/>
+        <documentation value="Message sender"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="recipient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-recipient"/>
+        <type value="reference"/>
+        <documentation value="Message recipient"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-category"/>
+        <type value="token"/>
+        <documentation value="Message category"/>
+      </searchParam>
+      <searchParam>
+        <name value="restrictionCategory"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/restrictionCategory"/>
+        <type value="token"/>
+        <documentation value="Search parameter for finding communication based on CareTeam recipient"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/Communication-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Communication-status"/>
+        <type value="token"/>
+        <documentation value="preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="OperationDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <searchInclude value="*"/>
+      <searchInclude value="OperationDefinition:base"/>
+      <searchInclude value="OperationDefinition:input-profile"/>
+      <searchInclude value="OperationDefinition:output-profile"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:instantiates-canonical"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="OperationDefinition:base"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-date"/>
+        <type value="date"/>
+        <documentation value="The operation definition publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-code"/>
+        <type value="token"/>
+        <documentation value="Name used to invoke the operation"/>
+      </searchParam>
+      <searchParam>
+        <name value="instance"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-instance"/>
+        <type value="token"/>
+        <documentation value="Invoke on an instance?"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-value"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-context-type-value"/>
+        <type value="composite"/>
+        <documentation value="A use context type and value assigned to the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-description"/>
+        <type value="string"/>
+        <documentation value="The description of the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-type"/>
+        <type value="token"/>
+        <documentation value="Invoke at the type level?"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="output-profile"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-output-profile"/>
+        <type value="reference"/>
+        <documentation value="Validation information for out parameters"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-context-type-quantity"/>
+        <type value="composite"/>
+        <documentation value="A use context type and quantity- or range-based value assigned to the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="kind"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-kind"/>
+        <type value="token"/>
+        <documentation value="operation | query"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-version"/>
+        <type value="token"/>
+        <documentation value="The business version of the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="input-profile"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-input-profile"/>
+        <type value="reference"/>
+        <documentation value="Validation information for in parameters"/>
+      </searchParam>
+      <searchParam>
+        <name value="system"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-system"/>
+        <type value="token"/>
+        <documentation value="Invoke at the system level?"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the operation definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-base"/>
+        <type value="reference"/>
+        <documentation value="Marks this as a profile of the base"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Operationdefinition-status"/>
+        <type value="token"/>
+        <documentation value="The current status of the operation definition"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Patient"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrsPatient"/>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <searchInclude value="*"/>
+      <searchInclude value="Patient:link"/>
+      <searchRevInclude value="Appointment:actor"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:patient"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="Communication:patient"/>
+      <searchRevInclude value="Communication:recipient"/>
+      <searchRevInclude value="Communication:sender"/>
+      <searchRevInclude value="Communication:subject"/>
+      <searchRevInclude value="Patient:link"/>
+      <searchRevInclude value="Person:link"/>
+      <searchRevInclude value="Person:patient"/>
+      <searchRevInclude value="RelatedPerson:patient"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="birthdate"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-birthdate"/>
+        <type value="date"/>
+        <documentation value="The patient's date of birth"/>
+      </searchParam>
+      <searchParam>
+        <name value="deceased"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-deceased"/>
+        <type value="token"/>
+        <documentation value="This patient has been marked as deceased, or as a death date entered"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-state"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-state"/>
+        <type value="string"/>
+        <documentation value="A state specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="gender"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-gender"/>
+        <type value="token"/>
+        <documentation value="Gender of the patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="link"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-link"/>
+        <type value="reference"/>
+        <documentation value="All patients linked to the given patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-language"/>
+        <type value="token"/>
+        <documentation value="Language code (irrespective of use value)"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-country"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-country"/>
+        <type value="string"/>
+        <documentation value="A country specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="death-date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-death-date"/>
+        <type value="date"/>
+        <documentation value="The date of death has been provided and satisfies this search value"/>
+      </searchParam>
+      <searchParam>
+        <name value="phonetic"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-phonetic"/>
+        <type value="string"/>
+        <documentation value="A portion of either family or given name using some kind of phonetic matching algorithm"/>
+      </searchParam>
+      <searchParam>
+        <name value="telecom"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-telecom"/>
+        <type value="token"/>
+        <documentation value="The value in any kind of telecom details of the patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-city"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-city"/>
+        <type value="string"/>
+        <documentation value="A city specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="email"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-email"/>
+        <type value="token"/>
+        <documentation value="A value in an email contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="given"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-given"/>
+        <type value="string"/>
+        <documentation value="A portion of the given name of the patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-identifier"/>
+        <type value="token"/>
+        <documentation value="A patient identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="address"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"/>
+      </searchParam>
+      <searchParam>
+        <name value="general-practitioner"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-general-practitioner"/>
+        <type value="reference"/>
+        <documentation value="Patient's nominated general practitioner, not the organization that manages the record"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-security"/>
+        <type value="token"/>
+        <documentation value="The Security Label of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="active"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-active"/>
+        <type value="token"/>
+        <documentation value="Whether the patient record is active"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-postalcode"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-postalcode"/>
+        <type value="string"/>
+        <documentation value="A postalCode specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="phone"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-phone"/>
+        <type value="token"/>
+        <documentation value="A value in a phone contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-organization"/>
+        <type value="reference"/>
+        <documentation value="The organization that is the custodian of the patient record"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-use"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-use"/>
+        <type value="token"/>
+        <documentation value="A use code specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Patient-name"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="family"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-family"/>
+        <type value="string"/>
+        <documentation value="A portion of the family name of the patient"/>
+      </searchParam>
+      <operation>
+        <name value="createPatient"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Patient-t-createPatient"/>
+      </operation>
+      <operation>
+        <name value="updatePatientWithSKRSData"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Patient-t-updatePatientWithSKRSData"/>
+      </operation>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Person"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/Person"/>
+      <versioning value="versioned-update"/>
+      <searchInclude value="*"/>
+      <searchInclude value="Person:link"/>
+      <searchInclude value="Person:organization"/>
+      <searchInclude value="Person:patient"/>
+      <searchInclude value="Person:practitioner"/>
+      <searchInclude value="Person:relatedperson"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="Person:link"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-identifier"/>
+        <type value="token"/>
+        <documentation value="A person Identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="address"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"/>
+      </searchParam>
+      <searchParam>
+        <name value="birthdate"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-birthdate"/>
+        <type value="date"/>
+        <documentation value="The person's date of birth"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-state"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-state"/>
+        <type value="string"/>
+        <documentation value="A state specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="gender"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-gender"/>
+        <type value="token"/>
+        <documentation value="The gender of the person"/>
+      </searchParam>
+      <searchParam>
+        <name value="practitioner"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-practitioner"/>
+        <type value="reference"/>
+        <documentation value="The Person links to this Practitioner"/>
+      </searchParam>
+      <searchParam>
+        <name value="link"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-link"/>
+        <type value="reference"/>
+        <documentation value="Any link has this Patient, Person, RelatedPerson or Practitioner reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="relatedperson"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-relatedperson"/>
+        <type value="reference"/>
+        <documentation value="The Person links to this RelatedPerson"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-postalcode"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-postalcode"/>
+        <type value="string"/>
+        <documentation value="A postal code specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-country"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-country"/>
+        <type value="string"/>
+        <documentation value="A country specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="phonetic"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-phonetic"/>
+        <type value="string"/>
+        <documentation value="A portion of name using some kind of phonetic matching algorithm"/>
+      </searchParam>
+      <searchParam>
+        <name value="phone"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-phone"/>
+        <type value="token"/>
+        <documentation value="A value in a phone contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-patient"/>
+        <type value="reference"/>
+        <documentation value="The Person links to this Patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-organization"/>
+        <type value="reference"/>
+        <documentation value="The organization at which this person record is being managed"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-use"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-use"/>
+        <type value="token"/>
+        <documentation value="A use code specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Person-name"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"/>
+      </searchParam>
+      <searchParam>
+        <name value="telecom"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-telecom"/>
+        <type value="token"/>
+        <documentation value="The value in any kind of contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-city"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-city"/>
+        <type value="string"/>
+        <documentation value="A city specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="email"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-email"/>
+        <type value="token"/>
+        <documentation value="A value in an email contact"/>
+      </searchParam>
+      <operation>
+        <name value="match"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Person-t-match"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="RelatedPerson"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <conditionalDelete value="multiple"/>
+      <searchInclude value="*"/>
+      <searchInclude value="RelatedPerson:patient"/>
+      <searchRevInclude value="Appointment:actor"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="Communication:recipient"/>
+      <searchRevInclude value="Communication:sender"/>
+      <searchRevInclude value="Patient:link"/>
+      <searchRevInclude value="Person:link"/>
+      <searchRevInclude value="Person:relatedperson"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="birthdate"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-birthdate"/>
+        <type value="date"/>
+        <documentation value="The Related Person's date of birth"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-state"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-address-state"/>
+        <type value="string"/>
+        <documentation value="A state specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="gender"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-gender"/>
+        <type value="token"/>
+        <documentation value="Gender of the related person"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-country"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-address-country"/>
+        <type value="string"/>
+        <documentation value="A country specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="phonetic"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-phonetic"/>
+        <type value="string"/>
+        <documentation value="A portion of name using some kind of phonetic matching algorithm"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-patient"/>
+        <type value="reference"/>
+        <documentation value="The patient this related person is related to"/>
+      </searchParam>
+      <searchParam>
+        <name value="telecom"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/individual-telecom"/>
+        <type value="token"/>
+        <documentation value="The value in any kind of contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-city"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-address-city"/>
+        <type value="string"/>
+        <documentation value="A city specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="relationship"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-relationship"/>
+        <type value="token"/>
+        <documentation value="The relationship between the patient and the relatedperson"/>
+      </searchParam>
+      <searchParam>
+        <name value="email"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-email"/>
+        <type value="token"/>
+        <documentation value="A value in an email contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-identifier"/>
+        <type value="token"/>
+        <documentation value="An Identifier of the RelatedPerson"/>
+      </searchParam>
+      <searchParam>
+        <name value="address"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-address"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/RelatedPerson-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="active"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-active"/>
+        <type value="token"/>
+        <documentation value="Indicates if the related person record is active"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-postalcode"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-address-postalcode"/>
+        <type value="string"/>
+        <documentation value="A postal code specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/RelatedPerson-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="phone"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-phone"/>
+        <type value="token"/>
+        <documentation value="A value in a phone contact"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="address-use"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-address-use"/>
+        <type value="token"/>
+        <documentation value="A use code specified in an address"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/RelatedPerson-name"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/RelatedPerson-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <extension url="http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount">
+        <valueDecimal value="17"/>
+      </extension>
+      <type value="SearchParameter"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/SearchParameter"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="history-instance"/>
+      </interaction>
+      <interaction>
+        <code value="history-type"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <conditionalDelete value="multiple"/>
+      <searchInclude value="*"/>
+      <searchInclude value="SearchParameter:component"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="SearchParameter:component"/>
+      <searchRevInclude value="SearchParameter:derived-from"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-date"/>
+        <type value="date"/>
+        <documentation value="The search parameter publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-code"/>
+        <type value="token"/>
+        <documentation value="Code used in URL"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-value"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-context-type-value"/>
+        <type value="composite"/>
+        <documentation value="A use context type and value assigned to the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="derived-from"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-derived-from"/>
+        <type value="reference"/>
+        <documentation value="Original definition for the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-description"/>
+        <type value="string"/>
+        <documentation value="The description of the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/SearchParameter-type"/>
+        <type value="token"/>
+        <documentation value="number | date | string | token | reference | composite | quantity | uri | special"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-context-type-quantity"/>
+        <type value="composite"/>
+        <documentation value="A use context type and quantity- or range-based value assigned to the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/SearchParameter-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="sp-unique-url"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/SearchParameter/url-unique"/>
+        <type value="composite"/>
+        <documentation value="Search parameter for making a SearchParameter unique by URL"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-version"/>
+        <type value="token"/>
+        <documentation value="The business version of the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/SearchParameter/url"/>
+        <type value="uri"/>
+        <documentation value="Search parameter for finding a searchparameter by URL"/>
+      </searchParam>
+      <searchParam>
+        <name value="target"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-target"/>
+        <type value="token"/>
+        <documentation value="Types of resource (if a resource reference)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/SearchParameter-_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="component"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-component"/>
+        <type value="reference"/>
+        <documentation value="Defines how the part works"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/SearchParameter-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the search parameter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/SearchParameter-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-base"/>
+        <type value="token"/>
+        <documentation value="The resource type(s) this search parameter applies to"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/searchparameter-status"/>
+        <type value="token"/>
+        <documentation value="The current status of the search parameter"/>
+      </searchParam>
+      <operation>
+        <name value="expunge"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/SearchParameter-its-expunge"/>
+      </operation>
+      <operation>
+        <name value="meta"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-its-meta"/>
+        <documentation value="Request a global list of tags, profiles, and security labels"/>
+      </operation>
+      <operation>
+        <name value="meta-add"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-i-meta-add"/>
+        <documentation value="Add tags, profiles, and/or security labels to a resource"/>
+      </operation>
+      <operation>
+        <name value="meta-delete"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-i-meta-delete"/>
+        <documentation value="Delete tags, profiles, and/or security labels from a resource"/>
+      </operation>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <extension url="http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount">
+        <valueDecimal value="121"/>
+      </extension>
+      <type value="StructureDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+      <supportedProfile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion"/>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <conditionalCreate value="true"/>
+      <searchInclude value="*"/>
+      <searchInclude value="StructureDefinition:valueset"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="OperationDefinition:input-profile"/>
+      <searchRevInclude value="OperationDefinition:output-profile"/>
+      <searchRevInclude value="StructureDefinition:base"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-date"/>
+        <type value="date"/>
+        <documentation value="The structure definition publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-value"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-context-type-value"/>
+        <type value="composite"/>
+        <documentation value="A use context type and value assigned to the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-description"/>
+        <type value="string"/>
+        <documentation value="The description of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="experimental"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-experimental"/>
+        <type value="token"/>
+        <documentation value="For testing purposes, not real usage"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-type"/>
+        <type value="uri"/>
+        <documentation value="Type defined or constrained by this structure"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="path"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-path"/>
+        <type value="token"/>
+        <documentation value="A path that is constrained in the StructureDefinition"/>
+      </searchParam>
+      <searchParam>
+        <name value="base-path"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-base-path"/>
+        <type value="token"/>
+        <documentation value="Path that identifies the base element"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="sd-unique-url"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/StructureDefinition/url-unique"/>
+        <type value="composite"/>
+        <documentation value="Search parameter for making a structureDefinition unique by URL"/>
+      </searchParam>
+      <searchParam>
+        <name value="keyword"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-keyword"/>
+        <type value="token"/>
+        <documentation value="A code for the StructureDefinition"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-context-type-quantity"/>
+        <type value="composite"/>
+        <documentation value="A use context type and quantity- or range-based value assigned to the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="valueset"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-valueset"/>
+        <type value="reference"/>
+        <documentation value="A vocabulary binding reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="kind"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-kind"/>
+        <type value="token"/>
+        <documentation value="primitive-type | complex-type | resource | logical"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/StructureDefinition-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="abstract"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-abstract"/>
+        <type value="token"/>
+        <documentation value="Whether the structure is abstract"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-version"/>
+        <type value="token"/>
+        <documentation value="The business version of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <definition value="http://ehealth.sundhed.dk/fhir/SearchParameter/StructureDefinition/url"/>
+        <type value="uri"/>
+        <documentation value="Search parameter for finding a structureDefinition by URL"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/StructureDefinition-_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/StructureDefinition-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="ext-context"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-ext-context"/>
+        <type value="token"/>
+        <documentation value="The system is the URL for the context-type: e.g. http://hl7.org/fhir/extension-context-type#element|CodeableConcept.text"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the structure definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="derivation"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-derivation"/>
+        <type value="token"/>
+        <documentation value="specialization | constraint - How relates to base definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/StructureDefinition-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="base"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-base"/>
+        <type value="reference"/>
+        <documentation value="Definition that this type is constrained/specialized from"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/structuredefinition-status"/>
+        <type value="token"/>
+        <documentation value="The current status of the structure definition"/>
+      </searchParam>
+      <operation>
+        <name value="generateSnapshot"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/StructureDefinition-t-generateSnapshot"/>
+      </operation>
+      <operation>
+        <name value="snapshot"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/StructureDefinition-it-snapshot"/>
+      </operation>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <extension url="http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount">
+        <valueDecimal value="57"/>
+      </extension>
+      <type value="ValueSet"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <versioning value="versioned-update"/>
+      <searchInclude value="*"/>
+      <searchRevInclude value="Appointment:careteamParticipant"/>
+      <searchRevInclude value="Appointment:intended-audience"/>
+      <searchRevInclude value="Appointment:responsible"/>
+      <searchRevInclude value="Appointment:supporting-info"/>
+      <searchRevInclude value="Communication:based-on"/>
+      <searchRevInclude value="Communication:careTeamRecipient"/>
+      <searchRevInclude value="Communication:careTeamSender"/>
+      <searchRevInclude value="Communication:on-behalf-of"/>
+      <searchRevInclude value="Communication:part-of"/>
+      <searchRevInclude value="StructureDefinition:valueset"/>
+      <searchParam>
+        <name value="_language"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-date"/>
+        <type value="date"/>
+        <documentation value="The value set publication date"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-code"/>
+        <type value="token"/>
+        <documentation value="This special parameter searches for codes in the value set. See additional notes on the ValueSet resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-value"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-context-type-value"/>
+        <type value="composite"/>
+        <documentation value="A use context type and value assigned to the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="jurisdiction"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-jurisdiction"/>
+        <type value="token"/>
+        <documentation value="Intended jurisdiction for the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="description"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-description"/>
+        <type value="string"/>
+        <documentation value="The description of the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-context-type"/>
+        <type value="token"/>
+        <documentation value="A type of use context assigned to the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="title"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-title"/>
+        <type value="string"/>
+        <documentation value="The human-friendly name of the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="reference"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-reference"/>
+        <type value="uri"/>
+        <documentation value="A code system included or excluded in the value set or an imported value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-context-quantity"/>
+        <type value="quantity"/>
+        <documentation value="A quantity- or range-valued use context assigned to the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-context"/>
+        <type value="token"/>
+        <documentation value="A use context assigned to the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="context-type-quantity"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-context-type-quantity"/>
+        <type value="composite"/>
+        <documentation value="A use context type and quantity- or range-based value assigned to the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-identifier"/>
+        <type value="token"/>
+        <documentation value="External identifier for the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/ValueSet-_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="version"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-version"/>
+        <type value="token"/>
+        <documentation value="The business version of the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-url"/>
+        <type value="uri"/>
+        <documentation value="The uri that identifies the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="expansion"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-expansion"/>
+        <type value="uri"/>
+        <documentation value="Identifies the value set expansion (business identifier)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/ValueSet-_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/ValueSet-_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="name"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-name"/>
+        <type value="string"/>
+        <documentation value="Computationally friendly name of the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="publisher"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-publisher"/>
+        <type value="string"/>
+        <documentation value="Name of the publisher of the value set"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_content"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/Resource-content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <definition value="http://localhost:8080/fhir//SearchParameter/ValueSet-_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <definition value="http://hl7.org/fhir/SearchParameter/ValueSet-status"/>
+        <type value="token"/>
+        <documentation value="The current status of the value set"/>
+      </searchParam>
+      <operation>
+        <name value="expand"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/ValueSet-it-expand"/>
+      </operation>
+      <operation>
+        <name value="validate-code"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/ValueSet-it-validate-code"/>
+      </operation>
+      <operation>
+        <name value="validate"/>
+        <definition value="http://localhost:8080/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <operation>
+      <name value="expunge"/>
+      <definition value="http://localhost:8080/fhir/OperationDefinition/SearchParameter-its-expunge"/>
+    </operation>
+    <operation>
+      <name value="get-resource-counts"/>
+      <definition value="http://localhost:8080/fhir/OperationDefinition/-s-get-resource-counts"/>
+      <documentation value="Provides the number of resources currently stored on the server, broken down by resource type"/>
+    </operation>
+    <operation>
+      <name value="mark-all-resources-for-reindexing"/>
+      <definition value="http://localhost:8080/fhir/OperationDefinition/-s-mark-all-resources-for-reindexing"/>
+    </operation>
+    <operation>
+      <name value="meta"/>
+      <definition value="http://localhost:8080/fhir/OperationDefinition/AppointmentSearchParameter-its-meta"/>
+    </operation>
+    <operation>
+      <name value="process-message"/>
+      <definition value="http://localhost:8080/fhir/OperationDefinition/-s-process-message"/>
+    </operation>
+  </rest>
+</CapabilityStatement>
