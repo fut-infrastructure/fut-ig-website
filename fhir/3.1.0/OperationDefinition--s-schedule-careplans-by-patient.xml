@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-schedule-careplans-by-patient"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-schedule-careplans-by-patient</b></p><a name="-s-schedule-careplans-by-patient"> </a><a name="hc-s-schedule-careplans-by-patient"> </a><a name="-s-schedule-careplans-by-patient-en-US"> </a><p>URL: [base]/$schedule-careplans-by-patient</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-schedule-careplans-by-patient"/>
+  <version value="3.1.0"/>
+  <name value="schedule-careplans-by-patient"/>
+  <title value="Schedule careplans-by patient"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2024-08-29T10:30:24+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="### Report Contents&#xA;This report contains the following resources:&#xA;- EpisodeOfCare&#xA;- PlanDefinition&#xA;- CarePlan&#xA;- ServiceRequest&#xA;### Grouping &#xA;This report is grouped by EpisodeOfCare. Each group is returned in a separate JSon file.&#xA;### Parameters&#xA;- organization: Filter on EpisodeOfCare.managingOrganization match&#xA;- period: Filter on CarePlan.period overlap&#xA;### Output&#xA;Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.&#xA;### Example output&#xA;All returned objects are Fhir resources. See the implementation guide for details&#xA;&#xA;    {&#xA;        'EHealthEpisodeOfCare': {&#xA;            'resourceType': 'EpisodeOfCare',&#xA;            'id': '30254',&#xA;            'meta': {&#xA;                'versionId': '1',&#xA;                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare']&#xA;            },&#xA;            'extension': [{&#xA;                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare-caremanagerOrganization',&#xA;                    'valueReference': {&#xA;                        'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/88873'&#xA;                    }&#xA;                }&#xA;            ],&#xA;            'status': 'active',&#xA;            'diagnosis': [{&#xA;                    'condition': {&#xA;                        'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/Condition/66740'&#xA;                    },&#xA;                    'rank': 1&#xA;                }&#xA;            ],&#xA;            'patient': {&#xA;                'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/18637'&#xA;            },&#xA;            'managingOrganization': {&#xA;                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/16046'&#xA;            },&#xA;            'period': {&#xA;                'start': '1970-01-01T01:00:01+01:00',&#xA;                'end': '1970-01-01T01:01:40+01:00'&#xA;            }&#xA;        },&#xA;        'EHealthCarePlan': [{&#xA;                'resourceType': 'CarePlan',&#xA;                'id': '1597',&#xA;                'meta': {&#xA;                    'versionId': '1',&#xA;                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan']&#xA;                },&#xA;                'definition': [{&#xA;                        'reference': 'https://plan.local.ehealth.sundhed.dk/fhir/PlanDefinition/59578'&#xA;                    }&#xA;                ],&#xA;                'status': 'draft',&#xA;                'intent': 'option',&#xA;                'category': [{&#xA;                        'coding': [{&#xA;                                'system': 'http://ehealth.sundhed.dk/cs/careplan-category',&#xA;                                'code': 'TBD'&#xA;                            }&#xA;                        ]&#xA;                    }&#xA;                ],&#xA;                'subject': {&#xA;                    'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/57779'&#xA;                },&#xA;                'context': {&#xA;                    'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/EpisodeOfCare/30254'&#xA;                },&#xA;                'period': {&#xA;                    'start': '1970-01-01T01:00:01+01:00',&#xA;                    'end': '1970-01-01T01:01:40+01:00'&#xA;                },&#xA;                'addresses': [{&#xA;                        'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/Condition/74721'&#xA;                    }&#xA;                ],&#xA;                'activity': [{&#xA;                        'reference': {&#xA;                            'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/ServiceRequest/76916'&#xA;                        }&#xA;                    }&#xA;                ]&#xA;            }&#xA;        ],&#xA;        'EHealthPlanDefinition': [{&#xA;                'resourceType': 'PlanDefinition',&#xA;                'id': '59578',&#xA;                'meta': {&#xA;                    'versionId': '1',&#xA;                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition']&#xA;                },&#xA;                'extension': [{&#xA;                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role',&#xA;                        'extension': [{&#xA;                                'url': 'reference',&#xA;                                'valueReference': {&#xA;                                    'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/41757'&#xA;                                }&#xA;                            }, {&#xA;                                'url': 'role',&#xA;                                'valueCodeableConcept': {&#xA;                                    'coding': [{&#xA;                                            'system': 'http://ehealth.sundhed.dk/cs/modifier-role',&#xA;                                            'code': 'owner'&#xA;                                        }&#xA;                                    ]&#xA;                                }&#xA;                            }&#xA;                        ]&#xA;                    }&#xA;                ],&#xA;                'version': 'c701b8e8-abe6-41bd-9db5-c05b94bc1e2b',&#xA;                'status': 'active'&#xA;            }&#xA;        ],&#xA;        'EHealthServiceRequest': [{&#xA;                'resourceType': 'ServiceRequest',&#xA;                'id': '76916',&#xA;                'meta': {&#xA;                    'versionId': '1',&#xA;                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest']&#xA;                },&#xA;                'extension': [{&#xA;                        'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingPolicy',&#xA;                        'valueCodeableConcept': {&#xA;                            'coding': [{&#xA;                                    'system': 'http://ehealth.sundhed.dk/cs/measurement-sharing-policies',&#xA;                                    'code': 'TBD'&#xA;                                }&#xA;                            ]&#xA;                        }&#xA;                    }&#xA;                ],&#xA;                'definition': [{&#xA;                        'reference': 'https://plan.local.ehealth.sundhed.dk/fhir/ActivityDefinition/13593'&#xA;                    }&#xA;                ],&#xA;                'status': 'completed',&#xA;                'intent': 'filler-order',&#xA;                'code': {&#xA;                    'coding': [{&#xA;                            'system': 'http://ehealth.sundhed.dk/cs/activitydefinition-code',&#xA;                            'code': 'TBD'&#xA;                        }&#xA;                    ],&#xA;                    'text': '31d136f2-0b98-4e0a-8f82-f0731b54893d'&#xA;                },&#xA;                'subject': {&#xA;                    'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/49397'&#xA;                },&#xA;                'context': {&#xA;                    'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/EpisodeOfCare/72791'&#xA;                }&#xA;            }&#xA;        ]&#xA;    }&#xA;"/>
+  <affectsState value="true"/>
+  <code value="schedule-careplans-by-patient"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="anonymization"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="organization"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Period"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Binary"/>
+  </parameter>
+</OperationDefinition>

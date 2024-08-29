@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="task"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement task</b></p><a name="task"> </a><a name="hctask"> </a><a name="task-en-US"> </a><h2 id="title"/><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 03:12:22+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="PATCH a new resource version (patch interaction)">P</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#ClinicalImpression1-1">ClinicalImpression</a></td><td><a href="StructureDefinition-ehealth-clinicalimpression.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, action, assessor, carePlan, date, decision, episodeOfCare, finding-code, finding-ref, identifier, investigation, patient, previous, problem, status, subject</td><td><code>ClinicalImpression:previous</code></td><td><code>ClinicalImpression:action</code>, <code>ClinicalImpression:assessor</code>, <code>ClinicalImpression:carePlan</code>, <code>ClinicalImpression:episodeOfCare</code>, <code>ClinicalImpression:finding-ref</code>, <code>ClinicalImpression:investigation</code>, <code>ClinicalImpression:patient</code>, <code>ClinicalImpression:previous</code>, <code>ClinicalImpression:problem</code>, <code>ClinicalImpression:subject</code>, <code>Task:based-on</code>, <code>Task:episodeOfCare</code>, <code>Task:focus</code>, <code>Task:owner</code>, <code>Task:part-of</code>, <code>Task:patient</code>, <code>Task:requester</code>, <code>Task:responsible</code>, <code>Task:subject</code></td><td/></tr><tr><td><a href="#OperationDefinition1-2">OperationDefinition</a></td><td><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>ClinicalImpression:action</code>, <code>ClinicalImpression:assessor</code>, <code>ClinicalImpression:carePlan</code>, <code>ClinicalImpression:episodeOfCare</code>, <code>ClinicalImpression:finding-ref</code>, <code>ClinicalImpression:investigation</code>, <code>ClinicalImpression:patient</code>, <code>ClinicalImpression:previous</code>, <code>ClinicalImpression:problem</code>, <code>ClinicalImpression:subject</code>, <code>Task:based-on</code>, <code>Task:episodeOfCare</code>, <code>Task:focus</code>, <code>Task:owner</code>, <code>Task:part-of</code>, <code>Task:patient</code>, <code>Task:requester</code>, <code>Task:responsible</code>, <code>Task:subject</code></td><td/></tr><tr><td><a href="#Task1-3">Task</a></td><td><a href="StructureDefinition-ehealth-task.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, authored-on, based-on, business-status, category, code, episodeOfCare, focus, group-identifier, identifier, intent, modified, owner, part-of, patient, performer, period, priority, requester, resolvedTimingEnd, resolvedTimingServiceRequestVersionId, resolvedTimingStart, resolvedTimingType, responsible, restriction-category, status, subject</td><td><code>Task:based-on</code>, <code>Task:focus</code>, <code>Task:part-of</code></td><td><code>ClinicalImpression:action</code>, <code>ClinicalImpression:assessor</code>, <code>ClinicalImpression:carePlan</code>, <code>ClinicalImpression:episodeOfCare</code>, <code>ClinicalImpression:finding-ref</code>, <code>ClinicalImpression:investigation</code>, <code>ClinicalImpression:patient</code>, <code>ClinicalImpression:previous</code>, <code>ClinicalImpression:problem</code>, <code>ClinicalImpression:subject</code>, <code>Task:based-on</code>, <code>Task:episodeOfCare</code>, <code>Task:focus</code>, <code>Task:owner</code>, <code>Task:part-of</code>, <code>Task:patient</code>, <code>Task:requester</code>, <code>Task:responsible</code>, <code>Task:subject</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="ClinicalImpression1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>ClinicalImpression</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-clinicalimpression.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>action</td><td><code>reference</code></td><td><div><p>Action taken as part of assessment procedure</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>assessor</td><td><code>reference</code></td><td><div><p>The clinician performing the assessment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>carePlan</td><td><code>reference</code></td><td><div><p>CarePlan</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>When the assessment was documented</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>decision</td><td><code>token</code></td><td><div><p>Decision</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>episodeOfCare</td><td><code>reference</code></td><td><div><p>Encounter or Episode created from</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>finding-code</td><td><code>token</code></td><td><div><p>What was found</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>finding-ref</td><td><code>reference</code></td><td><div><p>What was found</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Business identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>investigation</td><td><code>reference</code></td><td><div><p>Record of a specific investigation</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Patient or group assessed</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>previous</td><td><code>reference</code></td><td><div><p>Reference to last assessment</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>problem</td><td><code>reference</code></td><td><div><p>Relevant impressions of patient state</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>draft | completed | entered-in-error</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Patient or group assessed</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="OperationDefinition1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>OperationDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Task1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Task</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-task.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>authored-on</td><td><code>date</code></td><td><div><p>Search by creation date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>based-on</td><td><code>reference</code></td><td><div><p>Search by requests this task is based on</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>business-status</td><td><code>token</code></td><td><div><p>Search by business status</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Search by category</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>Search by task code</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>episodeOfCare</td><td><code>reference</code></td><td><div><p>Search by encounter or episode</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>focus</td><td><code>reference</code></td><td><div><p>Search by task focus</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>group-identifier</td><td><code>token</code></td><td><div><p>Search by group identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Search for a task instance by its business identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>intent</td><td><code>token</code></td><td><div><p>Search by task intent</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>modified</td><td><code>date</code></td><td><div><p>Search by last modification date</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>owner</td><td><code>reference</code></td><td><div><p>Search by task owner</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>part-of</td><td><code>reference</code></td><td><div><p>Search by task this task is part of</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Search by patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>performer</td><td><code>token</code></td><td><div><p>Search by recommended type of performer (e.g., Requester, Performer, Scheduler).</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>period</td><td><code>date</code></td><td><div><p>Search by period Task is/was underway</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>priority</td><td><code>token</code></td><td><div><p>Search by task priority</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>requester</td><td><code>reference</code></td><td><div><p>Search by task requester</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingEnd</td><td><code>date</code></td><td><div><p>Resolved Timing end</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingServiceRequestVersionId</td><td><code>token</code></td><td><div><p>Resolved Timing serviceRequestVersionID</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingStart</td><td><code>date</code></td><td><div><p>Resolved Timing start</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingType</td><td><code>token</code></td><td><div><p>Resolved Timing type</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>responsible</td><td><code>reference</code></td><td><div><p>Search by responsible</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>restriction-category</td><td><code>token</code></td><td><div><p>Search by restriction category</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>Search by task status</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Search by subject</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/task"/>
+  <version value="3.1.0"/>
+  <name value="task"/>
+  <status value="active"/>
+  <date value="2024-04-29T03:12:22.910+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <kind value="instance"/>
+  <software>
+    <name value="task"/>
+    <version value="1.13.1"/>
+  </software>
+  <implementation>
+    <description value="eHealth task service"/>
+    <url value="https://task.devtest.systematic-ehealth.com/fhir"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="xml"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <format value="application/x-turtle"/>
+  <format value="ttl"/>
+  <format value="html/json"/>
+  <format value="html/xml"/>
+  <format value="html/turtle"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="ClinicalImpression"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <searchInclude value="ClinicalImpression:previous"/>
+      <searchRevInclude value="ClinicalImpression:action"/>
+      <searchRevInclude value="ClinicalImpression:assessor"/>
+      <searchRevInclude value="ClinicalImpression:carePlan"/>
+      <searchRevInclude value="ClinicalImpression:episodeOfCare"/>
+      <searchRevInclude value="ClinicalImpression:finding-ref"/>
+      <searchRevInclude value="ClinicalImpression:investigation"/>
+      <searchRevInclude value="ClinicalImpression:patient"/>
+      <searchRevInclude value="ClinicalImpression:previous"/>
+      <searchRevInclude value="ClinicalImpression:problem"/>
+      <searchRevInclude value="ClinicalImpression:subject"/>
+      <searchRevInclude value="Task:based-on"/>
+      <searchRevInclude value="Task:episodeOfCare"/>
+      <searchRevInclude value="Task:focus"/>
+      <searchRevInclude value="Task:owner"/>
+      <searchRevInclude value="Task:part-of"/>
+      <searchRevInclude value="Task:patient"/>
+      <searchRevInclude value="Task:requester"/>
+      <searchRevInclude value="Task:responsible"/>
+      <searchRevInclude value="Task:subject"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="action"/>
+        <type value="reference"/>
+        <documentation value="Action taken as part of assessment procedure"/>
+      </searchParam>
+      <searchParam>
+        <name value="assessor"/>
+        <type value="reference"/>
+        <documentation value="The clinician performing the assessment"/>
+      </searchParam>
+      <searchParam>
+        <name value="carePlan"/>
+        <type value="reference"/>
+        <documentation value="CarePlan"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="When the assessment was documented"/>
+      </searchParam>
+      <searchParam>
+        <name value="decision"/>
+        <type value="token"/>
+        <documentation value="Decision"/>
+      </searchParam>
+      <searchParam>
+        <name value="episodeOfCare"/>
+        <type value="reference"/>
+        <documentation value="Encounter or Episode created from"/>
+      </searchParam>
+      <searchParam>
+        <name value="finding-code"/>
+        <type value="token"/>
+        <documentation value="What was found"/>
+      </searchParam>
+      <searchParam>
+        <name value="finding-ref"/>
+        <type value="reference"/>
+        <documentation value="What was found"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Business identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="investigation"/>
+        <type value="reference"/>
+        <documentation value="Record of a specific investigation"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Patient or group assessed"/>
+      </searchParam>
+      <searchParam>
+        <name value="previous"/>
+        <type value="reference"/>
+        <documentation value="Reference to last assessment"/>
+      </searchParam>
+      <searchParam>
+        <name value="problem"/>
+        <type value="reference"/>
+        <documentation value="Relevant impressions of patient state"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="draft | completed | entered-in-error"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <type value="reference"/>
+        <documentation value="Patient or group assessed"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="OperationDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchRevInclude value="ClinicalImpression:action"/>
+      <searchRevInclude value="ClinicalImpression:assessor"/>
+      <searchRevInclude value="ClinicalImpression:carePlan"/>
+      <searchRevInclude value="ClinicalImpression:episodeOfCare"/>
+      <searchRevInclude value="ClinicalImpression:finding-ref"/>
+      <searchRevInclude value="ClinicalImpression:investigation"/>
+      <searchRevInclude value="ClinicalImpression:patient"/>
+      <searchRevInclude value="ClinicalImpression:previous"/>
+      <searchRevInclude value="ClinicalImpression:problem"/>
+      <searchRevInclude value="ClinicalImpression:subject"/>
+      <searchRevInclude value="Task:based-on"/>
+      <searchRevInclude value="Task:episodeOfCare"/>
+      <searchRevInclude value="Task:focus"/>
+      <searchRevInclude value="Task:owner"/>
+      <searchRevInclude value="Task:part-of"/>
+      <searchRevInclude value="Task:patient"/>
+      <searchRevInclude value="Task:requester"/>
+      <searchRevInclude value="Task:responsible"/>
+      <searchRevInclude value="Task:subject"/>
+    </resource>
+    <resource>
+      <type value="Task"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <searchInclude value="Task:based-on"/>
+      <searchInclude value="Task:focus"/>
+      <searchInclude value="Task:part-of"/>
+      <searchRevInclude value="ClinicalImpression:action"/>
+      <searchRevInclude value="ClinicalImpression:assessor"/>
+      <searchRevInclude value="ClinicalImpression:carePlan"/>
+      <searchRevInclude value="ClinicalImpression:episodeOfCare"/>
+      <searchRevInclude value="ClinicalImpression:finding-ref"/>
+      <searchRevInclude value="ClinicalImpression:investigation"/>
+      <searchRevInclude value="ClinicalImpression:patient"/>
+      <searchRevInclude value="ClinicalImpression:previous"/>
+      <searchRevInclude value="ClinicalImpression:problem"/>
+      <searchRevInclude value="ClinicalImpression:subject"/>
+      <searchRevInclude value="Task:based-on"/>
+      <searchRevInclude value="Task:episodeOfCare"/>
+      <searchRevInclude value="Task:focus"/>
+      <searchRevInclude value="Task:owner"/>
+      <searchRevInclude value="Task:part-of"/>
+      <searchRevInclude value="Task:patient"/>
+      <searchRevInclude value="Task:requester"/>
+      <searchRevInclude value="Task:responsible"/>
+      <searchRevInclude value="Task:subject"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="authored-on"/>
+        <type value="date"/>
+        <documentation value="Search by creation date"/>
+      </searchParam>
+      <searchParam>
+        <name value="based-on"/>
+        <type value="reference"/>
+        <documentation value="Search by requests this task is based on"/>
+      </searchParam>
+      <searchParam>
+        <name value="business-status"/>
+        <type value="token"/>
+        <documentation value="Search by business status"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="Search by category"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+        <documentation value="Search by task code"/>
+      </searchParam>
+      <searchParam>
+        <name value="episodeOfCare"/>
+        <type value="reference"/>
+        <documentation value="Search by encounter or episode"/>
+      </searchParam>
+      <searchParam>
+        <name value="focus"/>
+        <type value="reference"/>
+        <documentation value="Search by task focus"/>
+      </searchParam>
+      <searchParam>
+        <name value="group-identifier"/>
+        <type value="token"/>
+        <documentation value="Search by group identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Search for a task instance by its business identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="intent"/>
+        <type value="token"/>
+        <documentation value="Search by task intent"/>
+      </searchParam>
+      <searchParam>
+        <name value="modified"/>
+        <type value="date"/>
+        <documentation value="Search by last modification date"/>
+      </searchParam>
+      <searchParam>
+        <name value="owner"/>
+        <type value="reference"/>
+        <documentation value="Search by task owner"/>
+      </searchParam>
+      <searchParam>
+        <name value="part-of"/>
+        <type value="reference"/>
+        <documentation value="Search by task this task is part of"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Search by patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="performer"/>
+        <type value="token"/>
+        <documentation value="Search by recommended type of performer (e.g., Requester, Performer, Scheduler)."/>
+      </searchParam>
+      <searchParam>
+        <name value="period"/>
+        <type value="date"/>
+        <documentation value="Search by period Task is/was underway"/>
+      </searchParam>
+      <searchParam>
+        <name value="priority"/>
+        <type value="token"/>
+        <documentation value="Search by task priority"/>
+      </searchParam>
+      <searchParam>
+        <name value="requester"/>
+        <type value="reference"/>
+        <documentation value="Search by task requester"/>
+      </searchParam>
+      <searchParam>
+        <name value="resolvedTimingEnd"/>
+        <type value="date"/>
+        <documentation value="Resolved Timing end"/>
+      </searchParam>
+      <searchParam>
+        <name value="resolvedTimingServiceRequestVersionId"/>
+        <type value="token"/>
+        <documentation value="Resolved Timing serviceRequestVersionID"/>
+      </searchParam>
+      <searchParam>
+        <name value="resolvedTimingStart"/>
+        <type value="date"/>
+        <documentation value="Resolved Timing start"/>
+      </searchParam>
+      <searchParam>
+        <name value="resolvedTimingType"/>
+        <type value="token"/>
+        <documentation value="Resolved Timing type"/>
+      </searchParam>
+      <searchParam>
+        <name value="responsible"/>
+        <type value="reference"/>
+        <documentation value="Search by responsible"/>
+      </searchParam>
+      <searchParam>
+        <name value="restriction-category"/>
+        <type value="token"/>
+        <documentation value="Search by restriction category"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="Search by task status"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <type value="reference"/>
+        <documentation value="Search by subject"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate"/>
+      </operation>
+    </resource>
+    <interaction>
+      <code value="transaction"/>
+    </interaction>
+    <interaction>
+      <code value="history-system"/>
+    </interaction>
+    <operation>
+      <name value="migrate"/>
+      <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate"/>
+      <documentation value="Data migration"/>
+    </operation>
+    <operation>
+      <name value="process-message"/>
+      <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"/>
+      <documentation value="Accept a FHIR Message Bundle for processing"/>
+    </operation>
+    <operation>
+      <name value="perform-reindexing-pass"/>
+      <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"/>
+      <documentation value="Forces a single pass of the resource reindexing processor"/>
+    </operation>
+    <operation>
+      <name value="meta"/>
+      <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"/>
+    </operation>
+    <operation>
+      <name value="get-resource-counts"/>
+      <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"/>
+      <documentation value="Provides the number of resources currently stored on the server, broken down by resource type"/>
+    </operation>
+    <operation>
+      <name value="reindex-terminology"/>
+      <definition value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"/>
+    </operation>
+  </rest>
+</CapabilityStatement>

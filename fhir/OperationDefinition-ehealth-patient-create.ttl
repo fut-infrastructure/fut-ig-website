@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-patient-create> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ehealth-patient-create"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ehealth-patient-create</b></p><a name=\"ehealth-patient-create\"> </a><a name=\"hcehealth-patient-create\"> </a><a name=\"ehealth-patient-create-en-US\"> </a><p>URL: [base]/Patient/$createPatient</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>crn</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>The social security number of the person on which this operation is executed.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/patient.html\">Patient</a></td><td/><td><div><p>The Patient resource that has been created on the server or an already created patient</p>\n</div></td></tr></table><div><p>See the wiki for examples on how to use the operation.</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-patient-create"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "Create Patient"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2019-02-02"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This operation is used to create a new Patient resource. Once executed successfully the Patient resource is created on the server and as well returned in the response parameter. The operation takes the input parameters listed and returns the Patient resource where the person having the provided civil registration number (crn) is used as the origin of the data. \r\n\r\n### Note\r\nThis operation is currently the only way to create Patient resources in the eHealth Infrastructure, as it ensures that the correct bindings from national registers"] ; # 
+  fhir:code [ fhir:v "createPatient"] ; # 
+  fhir:comment [ fhir:v "See the wiki for examples on how to use the operation."] ; # 
+  fhir:resource ( [ fhir:v "Patient"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "crn" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "The social security number of the person on which this operation is executed." ] ;
+     fhir:type [ fhir:v "Identifier" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "The Patient resource that has been created on the server or an already created patient" ] ;
+     fhir:type [ fhir:v "Patient" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

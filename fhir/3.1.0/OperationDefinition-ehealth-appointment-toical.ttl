@@ -1,0 +1,47 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-appointment-toical> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ehealth-appointment-toical"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ehealth-appointment-toical</b></p><a name=\"ehealth-appointment-toical\"> </a><a name=\"hcehealth-appointment-toical\"> </a><a name=\"ehealth-appointment-toical-en-US\"> </a><p>URL: [base]/Appointment/[id]/$exportAsiCal</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>A Binary resource that encapsulates the iCal file.</p>\n</div></td></tr></table><div><p>The iCal file is wrapped inside a Binary resource.</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-appointment-toical"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "Export Appointment to iCal"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2019-02-02"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This operation exports the Appointment to an iCal [RFC-5545](https://tools.ietf.org/html/rfc5545) format"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "exportAsiCal"] ; # 
+  fhir:comment [ fhir:v "The iCal file is wrapped inside a Binary resource."] ; # 
+  fhir:resource ( [ fhir:v "Appointment"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "A Binary resource that encapsulates the iCal file. " ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

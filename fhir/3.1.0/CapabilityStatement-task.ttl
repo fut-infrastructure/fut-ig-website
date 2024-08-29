@@ -1,0 +1,394 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CapabilityStatement/task> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "task"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement task</b></p><a name=\"task\"> </a><a name=\"hctask\"> </a><a name=\"task-en-US\"> </a><h2 id=\"title\"/><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 03:12:22+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div class=\"lead\"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET past versions of resources (vread interaction)\">V-R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"PATCH a new resource version (patch interaction)\">P</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#ClinicalImpression1-1\">ClinicalImpression</a></td><td><a href=\"StructureDefinition-ehealth-clinicalimpression.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, action, assessor, carePlan, date, decision, episodeOfCare, finding-code, finding-ref, identifier, investigation, patient, previous, problem, status, subject</td><td><code>ClinicalImpression:previous</code></td><td><code>ClinicalImpression:action</code>, <code>ClinicalImpression:assessor</code>, <code>ClinicalImpression:carePlan</code>, <code>ClinicalImpression:episodeOfCare</code>, <code>ClinicalImpression:finding-ref</code>, <code>ClinicalImpression:investigation</code>, <code>ClinicalImpression:patient</code>, <code>ClinicalImpression:previous</code>, <code>ClinicalImpression:problem</code>, <code>ClinicalImpression:subject</code>, <code>Task:based-on</code>, <code>Task:episodeOfCare</code>, <code>Task:focus</code>, <code>Task:owner</code>, <code>Task:part-of</code>, <code>Task:patient</code>, <code>Task:requester</code>, <code>Task:responsible</code>, <code>Task:subject</code></td><td/></tr><tr><td><a href=\"#OperationDefinition1-2\">OperationDefinition</a></td><td><a href=\"http://hl7.org/fhir/R4/operationdefinition.html\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td></td><td><code>*</code></td><td><code>ClinicalImpression:action</code>, <code>ClinicalImpression:assessor</code>, <code>ClinicalImpression:carePlan</code>, <code>ClinicalImpression:episodeOfCare</code>, <code>ClinicalImpression:finding-ref</code>, <code>ClinicalImpression:investigation</code>, <code>ClinicalImpression:patient</code>, <code>ClinicalImpression:previous</code>, <code>ClinicalImpression:problem</code>, <code>ClinicalImpression:subject</code>, <code>Task:based-on</code>, <code>Task:episodeOfCare</code>, <code>Task:focus</code>, <code>Task:owner</code>, <code>Task:part-of</code>, <code>Task:patient</code>, <code>Task:requester</code>, <code>Task:responsible</code>, <code>Task:subject</code></td><td/></tr><tr><td><a href=\"#Task1-3\">Task</a></td><td><a href=\"StructureDefinition-ehealth-task.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, authored-on, based-on, business-status, category, code, episodeOfCare, focus, group-identifier, identifier, intent, modified, owner, part-of, patient, performer, period, priority, requester, resolvedTimingEnd, resolvedTimingServiceRequestVersionId, resolvedTimingStart, resolvedTimingType, responsible, restriction-category, status, subject</td><td><code>Task:based-on</code>, <code>Task:focus</code>, <code>Task:part-of</code></td><td><code>ClinicalImpression:action</code>, <code>ClinicalImpression:assessor</code>, <code>ClinicalImpression:carePlan</code>, <code>ClinicalImpression:episodeOfCare</code>, <code>ClinicalImpression:finding-ref</code>, <code>ClinicalImpression:investigation</code>, <code>ClinicalImpression:patient</code>, <code>ClinicalImpression:previous</code>, <code>ClinicalImpression:problem</code>, <code>ClinicalImpression:subject</code>, <code>Task:based-on</code>, <code>Task:episodeOfCare</code>, <code>Task:focus</code>, <code>Task:owner</code>, <code>Task:part-of</code>, <code>Task:patient</code>, <code>Task:requester</code>, <code>Task:responsible</code>, <code>Task:subject</code></td><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"ClinicalImpression1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>ClinicalImpression</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-clinicalimpression.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>action</td><td><code>reference</code></td><td><div><p>Action taken as part of assessment procedure</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>assessor</td><td><code>reference</code></td><td><div><p>The clinician performing the assessment</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>carePlan</td><td><code>reference</code></td><td><div><p>CarePlan</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>When the assessment was documented</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>decision</td><td><code>token</code></td><td><div><p>Decision</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>episodeOfCare</td><td><code>reference</code></td><td><div><p>Encounter or Episode created from</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>finding-code</td><td><code>token</code></td><td><div><p>What was found</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>finding-ref</td><td><code>reference</code></td><td><div><p>What was found</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Business identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>investigation</td><td><code>reference</code></td><td><div><p>Record of a specific investigation</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Patient or group assessed</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>previous</td><td><code>reference</code></td><td><div><p>Reference to last assessment</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>problem</td><td><code>reference</code></td><td><div><p>Relevant impressions of patient state</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>draft | completed | entered-in-error</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Patient or group assessed</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"OperationDefinition1-2\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>OperationDefinition</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/operationdefinition.html\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Task1-3\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Task</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"StructureDefinition-ehealth-task.html\">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>authored-on</td><td><code>date</code></td><td><div><p>Search by creation date</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>based-on</td><td><code>reference</code></td><td><div><p>Search by requests this task is based on</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>business-status</td><td><code>token</code></td><td><div><p>Search by business status</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Search by category</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>Search by task code</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>episodeOfCare</td><td><code>reference</code></td><td><div><p>Search by encounter or episode</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>focus</td><td><code>reference</code></td><td><div><p>Search by task focus</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>group-identifier</td><td><code>token</code></td><td><div><p>Search by group identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Search for a task instance by its business identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>intent</td><td><code>token</code></td><td><div><p>Search by task intent</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>modified</td><td><code>date</code></td><td><div><p>Search by last modification date</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>owner</td><td><code>reference</code></td><td><div><p>Search by task owner</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>part-of</td><td><code>reference</code></td><td><div><p>Search by task this task is part of</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Search by patient</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>performer</td><td><code>token</code></td><td><div><p>Search by recommended type of performer (e.g., Requester, Performer, Scheduler).</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>period</td><td><code>date</code></td><td><div><p>Search by period Task is/was underway</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>priority</td><td><code>token</code></td><td><div><p>Search by task priority</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>requester</td><td><code>reference</code></td><td><div><p>Search by task requester</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingEnd</td><td><code>date</code></td><td><div><p>Resolved Timing end</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingServiceRequestVersionId</td><td><code>token</code></td><td><div><p>Resolved Timing serviceRequestVersionID</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingStart</td><td><code>date</code></td><td><div><p>Resolved Timing start</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>resolvedTimingType</td><td><code>token</code></td><td><div><p>Resolved Timing type</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>responsible</td><td><code>reference</code></td><td><div><p>Search by responsible</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>restriction-category</td><td><code>token</code></td><td><div><p>Search by restriction category</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>Search by task status</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Search by subject</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/CapabilityStatement/task"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "task"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-04-29T03:12:22.910+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:software [
+     fhir:name [ fhir:v "task" ] ;
+     fhir:version [ fhir:v "1.13.1" ]
+  ] ; # 
+  fhir:implementation [
+     fhir:description [ fhir:v "eHealth task service" ] ;
+     fhir:url [ fhir:v "https://task.devtest.systematic-ehealth.com/fhir"^^xsd:anyURI ]
+  ] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+xml"] [ fhir:v "xml"] [ fhir:v "application/fhir+json"] [ fhir:v "json"] [ fhir:v "application/x-turtle"] [ fhir:v "ttl"] [ fhir:v "html/json"] [ fhir:v "html/xml"] [ fhir:v "html/turtle"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "ClinicalImpression" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:searchInclude ( [ fhir:v "ClinicalImpression:previous" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "ClinicalImpression:action" ] [ fhir:v "ClinicalImpression:assessor" ] [ fhir:v "ClinicalImpression:carePlan" ] [ fhir:v "ClinicalImpression:episodeOfCare" ] [ fhir:v "ClinicalImpression:finding-ref" ] [ fhir:v "ClinicalImpression:investigation" ] [ fhir:v "ClinicalImpression:patient" ] [ fhir:v "ClinicalImpression:previous" ] [ fhir:v "ClinicalImpression:problem" ] [ fhir:v "ClinicalImpression:subject" ] [ fhir:v "Task:based-on" ] [ fhir:v "Task:episodeOfCare" ] [ fhir:v "Task:focus" ] [ fhir:v "Task:owner" ] [ fhir:v "Task:part-of" ] [ fhir:v "Task:patient" ] [ fhir:v "Task:requester" ] [ fhir:v "Task:responsible" ] [ fhir:v "Task:subject" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_language" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The language of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "action" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Action taken as part of assessment procedure" ]
+       ] [
+         fhir:name [ fhir:v "assessor" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The clinician performing the assessment" ]
+       ] [
+         fhir:name [ fhir:v "carePlan" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "CarePlan" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "When the assessment was documented" ]
+       ] [
+         fhir:name [ fhir:v "decision" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Decision" ]
+       ] [
+         fhir:name [ fhir:v "episodeOfCare" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Encounter or Episode created from" ]
+       ] [
+         fhir:name [ fhir:v "finding-code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "What was found" ]
+       ] [
+         fhir:name [ fhir:v "finding-ref" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "What was found" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Business identifier" ]
+       ] [
+         fhir:name [ fhir:v "investigation" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Record of a specific investigation" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Patient or group assessed" ]
+       ] [
+         fhir:name [ fhir:v "previous" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Reference to last assessment" ]
+       ] [
+         fhir:name [ fhir:v "problem" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Relevant impressions of patient state" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "draft | completed | entered-in-error" ]
+       ] [
+         fhir:name [ fhir:v "subject" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Patient or group assessed" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate"^^xsd:anyURI ;
+           fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "OperationDefinition" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/OperationDefinition>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "ClinicalImpression:action" ] [ fhir:v "ClinicalImpression:assessor" ] [ fhir:v "ClinicalImpression:carePlan" ] [ fhir:v "ClinicalImpression:episodeOfCare" ] [ fhir:v "ClinicalImpression:finding-ref" ] [ fhir:v "ClinicalImpression:investigation" ] [ fhir:v "ClinicalImpression:patient" ] [ fhir:v "ClinicalImpression:previous" ] [ fhir:v "ClinicalImpression:problem" ] [ fhir:v "ClinicalImpression:subject" ] [ fhir:v "Task:based-on" ] [ fhir:v "Task:episodeOfCare" ] [ fhir:v "Task:focus" ] [ fhir:v "Task:owner" ] [ fhir:v "Task:part-of" ] [ fhir:v "Task:patient" ] [ fhir:v "Task:requester" ] [ fhir:v "Task:responsible" ] [ fhir:v "Task:subject" ] )
+     ] [
+       fhir:type [ fhir:v "Task" ] ;
+       fhir:profile [
+         fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task"^^xsd:anyURI ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:searchInclude ( [ fhir:v "Task:based-on" ] [ fhir:v "Task:focus" ] [ fhir:v "Task:part-of" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "ClinicalImpression:action" ] [ fhir:v "ClinicalImpression:assessor" ] [ fhir:v "ClinicalImpression:carePlan" ] [ fhir:v "ClinicalImpression:episodeOfCare" ] [ fhir:v "ClinicalImpression:finding-ref" ] [ fhir:v "ClinicalImpression:investigation" ] [ fhir:v "ClinicalImpression:patient" ] [ fhir:v "ClinicalImpression:previous" ] [ fhir:v "ClinicalImpression:problem" ] [ fhir:v "ClinicalImpression:subject" ] [ fhir:v "Task:based-on" ] [ fhir:v "Task:episodeOfCare" ] [ fhir:v "Task:focus" ] [ fhir:v "Task:owner" ] [ fhir:v "Task:part-of" ] [ fhir:v "Task:patient" ] [ fhir:v "Task:requester" ] [ fhir:v "Task:responsible" ] [ fhir:v "Task:subject" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_language" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The language of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "authored-on" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Search by creation date" ]
+       ] [
+         fhir:name [ fhir:v "based-on" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by requests this task is based on" ]
+       ] [
+         fhir:name [ fhir:v "business-status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by business status" ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by category" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by task code" ]
+       ] [
+         fhir:name [ fhir:v "episodeOfCare" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by encounter or episode" ]
+       ] [
+         fhir:name [ fhir:v "focus" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by task focus" ]
+       ] [
+         fhir:name [ fhir:v "group-identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by group identifier" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for a task instance by its business identifier" ]
+       ] [
+         fhir:name [ fhir:v "intent" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by task intent" ]
+       ] [
+         fhir:name [ fhir:v "modified" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Search by last modification date" ]
+       ] [
+         fhir:name [ fhir:v "owner" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by task owner" ]
+       ] [
+         fhir:name [ fhir:v "part-of" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by task this task is part of" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by patient" ]
+       ] [
+         fhir:name [ fhir:v "performer" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by recommended type of performer (e.g., Requester, Performer, Scheduler)." ]
+       ] [
+         fhir:name [ fhir:v "period" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Search by period Task is/was underway" ]
+       ] [
+         fhir:name [ fhir:v "priority" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by task priority" ]
+       ] [
+         fhir:name [ fhir:v "requester" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by task requester" ]
+       ] [
+         fhir:name [ fhir:v "resolvedTimingEnd" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Resolved Timing end" ]
+       ] [
+         fhir:name [ fhir:v "resolvedTimingServiceRequestVersionId" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Resolved Timing serviceRequestVersionID" ]
+       ] [
+         fhir:name [ fhir:v "resolvedTimingStart" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Resolved Timing start" ]
+       ] [
+         fhir:name [ fhir:v "resolvedTimingType" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Resolved Timing type" ]
+       ] [
+         fhir:name [ fhir:v "responsible" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by responsible" ]
+       ] [
+         fhir:name [ fhir:v "restriction-category" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by restriction category" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search by task status" ]
+       ] [
+         fhir:name [ fhir:v "subject" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Search by subject" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate"^^xsd:anyURI ;
+           fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate>
+         ]
+       ] )
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "transaction" ]
+     ] [
+       fhir:code [ fhir:v "history-system" ]
+     ] ) ;
+     fhir:operation ( [
+       fhir:name [ fhir:v "migrate" ] ;
+       fhir:definition [
+         fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate"^^xsd:anyURI ;
+         fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate>
+       ] ;
+       fhir:documentation [ fhir:v "Data migration" ]
+     ] [
+       fhir:name [ fhir:v "process-message" ] ;
+       fhir:definition [
+         fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"^^xsd:anyURI ;
+         fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message>
+       ] ;
+       fhir:documentation [ fhir:v "Accept a FHIR Message Bundle for processing" ]
+     ] [
+       fhir:name [ fhir:v "perform-reindexing-pass" ] ;
+       fhir:definition [
+         fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"^^xsd:anyURI ;
+         fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass>
+       ] ;
+       fhir:documentation [ fhir:v "Forces a single pass of the resource reindexing processor" ]
+     ] [
+       fhir:name [ fhir:v "meta" ] ;
+       fhir:definition [
+         fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"^^xsd:anyURI ;
+         fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta>
+       ]
+     ] [
+       fhir:name [ fhir:v "get-resource-counts" ] ;
+       fhir:definition [
+         fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"^^xsd:anyURI ;
+         fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts>
+       ] ;
+       fhir:documentation [ fhir:v "Provides the number of resources currently stored on the server, broken down by resource type" ]
+     ] [
+       fhir:name [ fhir:v "reindex-terminology" ] ;
+       fhir:definition [
+         fhir:v "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"^^xsd:anyURI ;
+         fhir:link <https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology>
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

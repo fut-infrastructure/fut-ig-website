@@ -1,0 +1,1250 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CapabilityStatement/terminology> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "terminology"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CapabilityStatement terminology</b></p><a name=\"terminology\"> </a><a name=\"hcterminology\"> </a><a name=\"terminology-en-US\"> </a><h2 id=\"title\"/><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-28 18:26:53+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class=\"impl-note\"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id=\"rest\">FHIR RESTful Capabilities</h2><div class=\"panel panel-default\"><div class=\"panel-heading\"><h3 id=\"mode1\" class=\"panel-title\">Mode: <code>server</code></h3></div><div class=\"panel-body\"><div class=\"lead\"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id=\"resourcesCap1\">Capabilities by Resource/Profile</h3><h4 id=\"resourcesSummary1\">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class=\"bg-info\">R</span></b>ead, <b><span class=\"bg-info\">S</span></b>earch, <b><span class=\"bg-info\">U</span></b>pdate, and <b><span class=\"bg-info\">C</span></b>reate, are always shown, while <b><span class=\"bg-info\">VR</span></b>ead, <b><span class=\"bg-info\">P</span></b>atch, <b><span class=\"bg-info\">D</span></b>elete, <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">I</span></b>nstance, or <b><span class=\"bg-info\">H</span></b>istory on <b><span class=\"bg-info\">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class=\"table-responsive\"><table class=\"table table-condensed table-hover\"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class=\"text-center\"><b title=\"GET a resource (read interaction)\">R</b></th><th class=\"text-center\"><b title=\"GET past versions of resources (vread interaction)\">V-R</b></th><th class=\"text-center\"><b title=\"GET all set of resources of the type (search interaction)\">S</b></th><th class=\"text-center\"><b title=\"PUT a new resource version (update interaction)\">U</b></th><th class=\"text-center\"><b title=\"PATCH a new resource version (patch interaction)\">P</b></th><th class=\"text-center\"><b title=\"POST a new resource (create interaction)\">C</b></th><th class=\"text-center\"><b title=\"DELETE a resource (delete interaction)\">D</b></th><th class=\"text-center\"><b title=\"GET changes to a resource (history interaction on instance)\">H-I</b></th><th class=\"text-center\"><b title=\"GET changes for all resources of the type (history interaction on type)\">H-T</b></th><th><b title=\"Required and recommended search parameters\">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href=\"#CodeSystem1-1\">CodeSystem</a></td><td><a href=\"http://hl7.org/fhir/R4/codesystem.html\">http://hl7.org/fhir/StructureDefinition/CodeSystem</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _filter, _has, _id, _lastUpdated, _profile, _security, _source, _tag, _text, code, content-mode, context, context-quantity, context-type, context-type-quantity, context-type-value, date, description, identifier, jurisdiction, language, name, publisher, status, supplements, system, title, url, version</td><td><code>*</code>, <code>CodeSystem:supplements</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#ConceptMap1-2\">ConceptMap</a></td><td><a href=\"http://hl7.org/fhir/R4/conceptmap.html\">http://hl7.org/fhir/StructureDefinition/ConceptMap</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _filter, _has, _id, _lastUpdated, _profile, _security, _source, _tag, _text, context, context-quantity, context-type, context-type-quantity, context-type-value, date, dependson, description, identifier, jurisdiction, name, other, product, publisher, source, source-code, source-system, source-uri, status, target, target-code, target-system, target-uri, title, url, version</td><td><code>*</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#Group1-3\">Group</a></td><td><a href=\"http://hl7.org/fhir/R4/group.html\">http://hl7.org/fhir/StructureDefinition/Group</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _filter, _has, _id, _lastUpdated, _profile, _security, _source, _tag, _text, actual, characteristic, characteristic-value, code, exclude, identifier, managing-entity, member, type, value</td><td><code>*</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#NamingSystem1-4\">NamingSystem</a></td><td><a href=\"http://hl7.org/fhir/R4/namingsystem.html\">http://hl7.org/fhir/StructureDefinition/NamingSystem</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _filter, _has, _id, _lastUpdated, _profile, _security, _source, _tag, _text, contact, context, context-quantity, context-type, context-type-quantity, context-type-value, date, description, id-type, jurisdiction, kind, name, period, publisher, responsible, status, telecom, type, value</td><td><code>*</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#OperationDefinition1-5\">OperationDefinition</a></td><td><a href=\"http://hl7.org/fhir/R4/operationdefinition.html\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td></td><td><code>*</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#Practitioner1-6\">Practitioner</a></td><td><a href=\"http://hl7.org/fhir/R4/practitioner.html\">http://hl7.org/fhir/StructureDefinition/Practitioner</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _filter, _has, _id, _lastUpdated, _profile, _security, _source, _tag, _text, active, address, address-city, address-country, address-postalcode, address-state, address-use, communication, email, family, gender, given, identifier, name, phone, phonetic, telecom</td><td><code>*</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#StructureDefinition1-7\">StructureDefinition</a></td><td><a href=\"http://hl7.org/fhir/R4/structuredefinition.html\">http://hl7.org/fhir/StructureDefinition/StructureDefinition</a></td><td>y</td><td class=\"text-center\"></td><td class=\"text-center\">y</td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td class=\"text-center\"></td><td>type</td><td><code>*</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr><tr><td><a href=\"#ValueSet1-8\">ValueSet</a></td><td><a href=\"http://hl7.org/fhir/R4/valueset.html\">http://hl7.org/fhir/StructureDefinition/ValueSet</a></td><td>y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td class=\"text-center\">y</td><td>_content, _filter, _has, _id, _lastUpdated, _profile, _security, _source, _tag, _text, code, context, context-quantity, context-type, context-type-quantity, context-type-value, date, description, expansion, identifier, jurisdiction, name, publisher, reference, status, title, url, version</td><td><code>*</code></td><td><code>CodeSystem:supplements</code>, <code>ConceptMap:other</code>, <code>ConceptMap:source</code>, <code>ConceptMap:source-uri</code>, <code>ConceptMap:target</code>, <code>ConceptMap:target-uri</code>, <code>Group:managing-entity</code>, <code>Group:member</code></td><td/></tr></tbody></table></div><hr/><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"CodeSystem1-1\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>CodeSystem</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/codesystem.html\">http://hl7.org/fhir/StructureDefinition/CodeSystem</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>history-type</code>, <code>history-instance</code>, <code>delete</code>, <code>create</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>A code defined in the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>content-mode</td><td><code>token</code></td><td><div><p>not-present | example | fragment | complete | supplement</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The code system publication date</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>language</td><td><code>token</code></td><td><div><p>A language in which a designation is provided</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>supplements</td><td><code>reference</code></td><td><div><p>Find code system supplements for the referenced code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>system</td><td><code>uri</code></td><td><div><p>The system for any codes defined by this code system (same as 'url')</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the code system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the code system</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$upload-external-code-system</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$apply-codesystem-delta-remove</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$apply-codesystem-delta-add</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a list of tags, profiles, and security labels for a specfic resource instance</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate-code</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$subsumes</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$lookup</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"ConceptMap1-2\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>ConceptMap</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/conceptmap.html\">http://hl7.org/fhir/StructureDefinition/ConceptMap</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>history-type</code>, <code>history-instance</code>, <code>delete</code>, <code>create</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The concept map publication date</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>dependson</td><td><code>uri</code></td><td><div><p>Reference to property mapping depends on</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>other</td><td><code>reference</code></td><td><div><p>canonical reference to an additional ConceptMap to use for mapping if the source concept is unmapped</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>product</td><td><code>uri</code></td><td><div><p>Reference to property mapping depends on</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>source</td><td><code>reference</code></td><td><div><p>The source value set that contains the concepts that are being mapped</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>source-code</td><td><code>token</code></td><td><div><p>Identifies element being mapped</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>source-system</td><td><code>uri</code></td><td><div><p>Source system where concepts to be mapped are defined</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>source-uri</td><td><code>reference</code></td><td><div><p>The source value set that contains the concepts that are being mapped</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>target</td><td><code>reference</code></td><td><div><p>The target value set which provides context for the mappings</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>target-code</td><td><code>token</code></td><td><div><p>Code that identifies the target element</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>target-system</td><td><code>uri</code></td><td><div><p>Target system that the concepts are to be mapped to</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>target-uri</td><td><code>reference</code></td><td><div><p>The target value set which provides context for the mappings</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the concept map</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the concept map</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a list of tags, profiles, and security labels for a specfic resource instance</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$translate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Group1-3\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Group</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/group.html\">http://hl7.org/fhir/StructureDefinition/Group</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>update</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>history-type</code>, <code>history-instance</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>actual</td><td><code>token</code></td><td><div><p>Descriptive or actual</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>characteristic</td><td><code>token</code></td><td><div><p>Kind of characteristic</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>characteristic-value</td><td><code>composite</code></td><td><div><p>A composite of both characteristic and value</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>The kind of resources contained</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>exclude</td><td><code>token</code></td><td><div><p>Group includes or excludes</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Unique id</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>managing-entity</td><td><code>reference</code></td><td><div><p>Entity that is the custodian of the Group's definition</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>member</td><td><code>reference</code></td><td><div><p>Reference to the group member</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>The type of resources the group contains</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>value</td><td><code>token</code></td><td><div><p>Value held by characteristic</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a list of tags, profiles, and security labels for a specfic resource instance</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"NamingSystem1-4\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>NamingSystem</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/namingsystem.html\">http://hl7.org/fhir/StructureDefinition/NamingSystem</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>history-type</code>, <code>history-instance</code>, <code>delete</code>, <code>create</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>contact</td><td><code>string</code></td><td><div><p>Name of an individual to contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The naming system publication date</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>id-type</td><td><code>token</code></td><td><div><p>oid | uuid | uri | other</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>kind</td><td><code>token</code></td><td><div><p>codesystem | identifier | root</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>period</td><td><code>date</code></td><td><div><p>When is identifier valid?</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>responsible</td><td><code>string</code></td><td><div><p>Who maintains system namespace?</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the naming system</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>telecom</td><td><code>token</code></td><td><div><p>Contact details for individual or organization</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>e.g. driver,  provider,  patient, bank etc.</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>value</td><td><code>string</code></td><td><div><p>The unique identifier</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a list of tags, profiles, and security labels for a specfic resource instance</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"OperationDefinition1-5\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>OperationDefinition</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/operationdefinition.html\">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"Practitioner1-6\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>Practitioner</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/practitioner.html\">http://hl7.org/fhir/StructureDefinition/Practitioner</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>update</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>history-type</code>, <code>history-instance</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>active</td><td><code>token</code></td><td><div><p>Whether the practitioner record is active</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address</td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-city</td><td><code>string</code></td><td><div><p>A city specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-country</td><td><code>string</code></td><td><div><p>A country specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-postalcode</td><td><code>string</code></td><td><div><p>A postalCode specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-state</td><td><code>string</code></td><td><div><p>A state specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>address-use</td><td><code>token</code></td><td><div><p>A use code specified in an address</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>communication</td><td><code>token</code></td><td><div><p>One of the languages that the practitioner can communicate with</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>email</td><td><code>token</code></td><td><div><p>A value in an email contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>family</td><td><code>string</code></td><td><div><p>A portion of the family name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>gender</td><td><code>token</code></td><td><div><p>Gender of the practitioner</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>given</td><td><code>string</code></td><td><div><p>A portion of the given name</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>A practitioner's Identifier</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>phone</td><td><code>token</code></td><td><div><p>A value in a phone contact</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>phonetic</td><td><code>string</code></td><td><div><p>A portion of either family or given name using some kind of phonetic matching algorithm</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>telecom</td><td><code>token</code></td><td><div><p>The value in any kind of contact</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a list of tags, profiles, and security labels for a specfic resource instance</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"StructureDefinition1-7\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>StructureDefinition</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/structuredefinition.html\">http://hl7.org/fhir/StructureDefinition/StructureDefinition</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>read</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>Type defined or constrained by this structure</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div></div></div></div><div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 id=\"ValueSet1-8\" class=\"panel-title\"><span style=\"float: right;\">Resource Conformance: supported </span>ValueSet</h4></div><div class=\"panel-body\"><div class=\"container\"><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Base System Profile</span><br/><a href=\"http://hl7.org/fhir/R4/valueset.html\">http://hl7.org/fhir/StructureDefinition/ValueSet</a></div><div class=\"col-lg-3\"><span class=\"lead\">Profile Conformance</span><br/><b>SHALL</b></div><div class=\"col-lg-3\"><span class=\"lead\">Reference Policy</span><br/></div></div><p/><div class=\"row\"><div class=\"col-lg-6\"><span class=\"lead\">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>vread</code>, <code>read</code>, <code>patch</code>, <code>history-type</code>, <code>history-instance</code>, <code>delete</code>, <code>create</code>, <code>search-type</code>.</li></ul></div></div><p/><div class=\"row\"><div class=\"col-lg-7\"><span class=\"lead\">Search Parameters</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>code</td><td><code>token</code></td><td><div><p>This special parameter searches for codes in the value set. See additional notes on the ValueSet resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>token</code></td><td><div><p>A use context assigned to the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-quantity</td><td><code>quantity</code></td><td><div><p>A quantity- or range-valued use context assigned to the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type</td><td><code>token</code></td><td><div><p>A type of use context assigned to the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-quantity</td><td><code>composite</code></td><td><div><p>A use context type and quantity- or range-based value assigned to the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>context-type-value</td><td><code>composite</code></td><td><div><p>A use context type and value assigned to the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>The value set publication date</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>description</td><td><code>string</code></td><td><div><p>The description of the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>expansion</td><td><code>uri</code></td><td><div><p>Identifies the value set expansion (business identifier)</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External identifier for the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>jurisdiction</td><td><code>token</code></td><td><div><p>Intended jurisdiction for the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>name</td><td><code>string</code></td><td><div><p>Computationally friendly name of the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>publisher</td><td><code>string</code></td><td><div><p>Name of the publisher of the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>reference</td><td><code>uri</code></td><td><div><p>A code system included or excluded in the value set or an imported value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>title</td><td><code>string</code></td><td><div><p>The human-friendly name of the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>The uri that identifies the value set</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>version</td><td><code>token</code></td><td><div><p>The business version of the value set</p>\n</div></td></tr></tbody></table></div><div class=\"col-lg-5\"> </div></div><div class=\"row\"><div class=\"col-12\"><span class=\"lead\">Extended Operations</span><table class=\"table table-condensed table-hover\"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate-code</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$invalidate-expansion</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$expand</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$meta-delete</td><td><div><p>Delete tags, profiles, and/or security labels from a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta-add</td><td><div><p>Add tags, profiles, and/or security labels to a resource</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$meta</td><td><div><p>Request a list of tags, profiles, and security labels for a specfic resource instance</p>\n</div></td></tr><tr><td><b>SHALL</b></td><td>$expunge</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/CapabilityStatement/terminology"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.1.0"] ; # 
+  fhir:name [ fhir:v "terminology"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-04-28T18:26:53.266+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:software [
+     fhir:name [ fhir:v "terminology" ] ;
+     fhir:version [ fhir:v "1.11.3" ]
+  ] ; # 
+  fhir:implementation [
+     fhir:description [ fhir:v "eHealth terminology service" ] ;
+     fhir:url [ fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir"^^xsd:anyURI ]
+  ] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+xml"] [ fhir:v "xml"] [ fhir:v "application/fhir+json"] [ fhir:v "json"] [ fhir:v "application/x-turtle"] [ fhir:v "ttl"] [ fhir:v "html/json"] [ fhir:v "html/xml"] [ fhir:v "html/turtle"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "CodeSystem" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/CodeSystem"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/CodeSystem>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "history-type" ]
+       ] [
+         fhir:code [ fhir:v "history-instance" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "CodeSystem:supplements" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_filter" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a filter" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_source" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given source value (Resource.meta.source)" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A code defined in the code system" ]
+       ] [
+         fhir:name [ fhir:v "content-mode" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "not-present | example | fragment | complete | supplement" ]
+       ] [
+         fhir:name [ fhir:v "context" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use context assigned to the code system" ]
+       ] [
+         fhir:name [ fhir:v "context-quantity" ] ;
+         fhir:type [ fhir:v "quantity" ] ;
+         fhir:documentation [ fhir:v "A quantity- or range-valued use context assigned to the code system" ]
+       ] [
+         fhir:name [ fhir:v "context-type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A type of use context assigned to the code system" ]
+       ] [
+         fhir:name [ fhir:v "context-type-quantity" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and quantity- or range-based value assigned to the code system" ]
+       ] [
+         fhir:name [ fhir:v "context-type-value" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and value assigned to the code system" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "The code system publication date" ]
+       ] [
+         fhir:name [ fhir:v "description" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The description of the code system" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "External identifier for the code system" ]
+       ] [
+         fhir:name [ fhir:v "jurisdiction" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Intended jurisdiction for the code system" ]
+       ] [
+         fhir:name [ fhir:v "language" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A language in which a designation is provided" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Computationally friendly name of the code system" ]
+       ] [
+         fhir:name [ fhir:v "publisher" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Name of the publisher of the code system" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The current status of the code system" ]
+       ] [
+         fhir:name [ fhir:v "supplements" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Find code system supplements for the referenced code system" ]
+       ] [
+         fhir:name [ fhir:v "system" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "The system for any codes defined by this code system (same as 'url')" ]
+       ] [
+         fhir:name [ fhir:v "title" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The human-friendly name of the code system" ]
+       ] [
+         fhir:name [ fhir:v "url" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "The uri that identifies the code system" ]
+       ] [
+         fhir:name [ fhir:v "version" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The business version of the code system" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "upload-external-code-system" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-upload-external-code-system"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-upload-external-code-system>
+         ]
+       ] [
+         fhir:name [ fhir:v "apply-codesystem-delta-remove" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-apply-codesystem-delta-remove"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-apply-codesystem-delta-remove>
+         ]
+       ] [
+         fhir:name [ fhir:v "apply-codesystem-delta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-apply-codesystem-delta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-apply-codesystem-delta-add>
+         ]
+       ] [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "meta-delete" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete>
+         ] ;
+         fhir:documentation [ fhir:v "Delete tags, profiles, and/or security labels from a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add>
+         ] ;
+         fhir:documentation [ fhir:v "Add tags, profiles, and/or security labels to a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+         ] ;
+         fhir:documentation [ fhir:v "Request a list of tags, profiles, and security labels for a specfic resource instance" ]
+       ] [
+         fhir:name [ fhir:v "expunge" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge>
+         ]
+       ] [
+         fhir:name [ fhir:v "validate-code" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystemValueSet-it-validate-code"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystemValueSet-it-validate-code>
+         ]
+       ] [
+         fhir:name [ fhir:v "subsumes" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-subsumes"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-subsumes>
+         ]
+       ] [
+         fhir:name [ fhir:v "lookup" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-lookup"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystem-t-lookup>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "ConceptMap" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/ConceptMap"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ConceptMap>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "history-type" ]
+       ] [
+         fhir:code [ fhir:v "history-instance" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_filter" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a filter" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_source" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given source value (Resource.meta.source)" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "context" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use context assigned to the concept map" ]
+       ] [
+         fhir:name [ fhir:v "context-quantity" ] ;
+         fhir:type [ fhir:v "quantity" ] ;
+         fhir:documentation [ fhir:v "A quantity- or range-valued use context assigned to the concept map" ]
+       ] [
+         fhir:name [ fhir:v "context-type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A type of use context assigned to the concept map" ]
+       ] [
+         fhir:name [ fhir:v "context-type-quantity" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and quantity- or range-based value assigned to the concept map" ]
+       ] [
+         fhir:name [ fhir:v "context-type-value" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and value assigned to the concept map" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "The concept map publication date" ]
+       ] [
+         fhir:name [ fhir:v "dependson" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Reference to property mapping depends on" ]
+       ] [
+         fhir:name [ fhir:v "description" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The description of the concept map" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "External identifier for the concept map" ]
+       ] [
+         fhir:name [ fhir:v "jurisdiction" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Intended jurisdiction for the concept map" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Computationally friendly name of the concept map" ]
+       ] [
+         fhir:name [ fhir:v "other" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "canonical reference to an additional ConceptMap to use for mapping if the source concept is unmapped" ]
+       ] [
+         fhir:name [ fhir:v "product" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Reference to property mapping depends on" ]
+       ] [
+         fhir:name [ fhir:v "publisher" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Name of the publisher of the concept map" ]
+       ] [
+         fhir:name [ fhir:v "source" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The source value set that contains the concepts that are being mapped" ]
+       ] [
+         fhir:name [ fhir:v "source-code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Identifies element being mapped" ]
+       ] [
+         fhir:name [ fhir:v "source-system" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Source system where concepts to be mapped are defined" ]
+       ] [
+         fhir:name [ fhir:v "source-uri" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The source value set that contains the concepts that are being mapped" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The current status of the concept map" ]
+       ] [
+         fhir:name [ fhir:v "target" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The target value set which provides context for the mappings" ]
+       ] [
+         fhir:name [ fhir:v "target-code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Code that identifies the target element" ]
+       ] [
+         fhir:name [ fhir:v "target-system" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Target system that the concepts are to be mapped to" ]
+       ] [
+         fhir:name [ fhir:v "target-uri" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "The target value set which provides context for the mappings" ]
+       ] [
+         fhir:name [ fhir:v "title" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The human-friendly name of the concept map" ]
+       ] [
+         fhir:name [ fhir:v "url" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "The uri that identifies the concept map" ]
+       ] [
+         fhir:name [ fhir:v "version" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The business version of the concept map" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "meta-delete" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete>
+         ] ;
+         fhir:documentation [ fhir:v "Delete tags, profiles, and/or security labels from a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add>
+         ] ;
+         fhir:documentation [ fhir:v "Add tags, profiles, and/or security labels to a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+         ] ;
+         fhir:documentation [ fhir:v "Request a list of tags, profiles, and security labels for a specfic resource instance" ]
+       ] [
+         fhir:name [ fhir:v "expunge" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge>
+         ]
+       ] [
+         fhir:name [ fhir:v "translate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/ConceptMap-it-translate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/ConceptMap-it-translate>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Group" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Group"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Group>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "history-type" ]
+       ] [
+         fhir:code [ fhir:v "history-instance" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_filter" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a filter" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_source" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given source value (Resource.meta.source)" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "actual" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Descriptive or actual" ]
+       ] [
+         fhir:name [ fhir:v "characteristic" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Kind of characteristic" ]
+       ] [
+         fhir:name [ fhir:v "characteristic-value" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A composite of both characteristic and value" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The kind of resources contained" ]
+       ] [
+         fhir:name [ fhir:v "exclude" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Group includes or excludes" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Unique id" ]
+       ] [
+         fhir:name [ fhir:v "managing-entity" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Entity that is the custodian of the Group's definition" ]
+       ] [
+         fhir:name [ fhir:v "member" ] ;
+         fhir:type [ fhir:v "reference" ] ;
+         fhir:documentation [ fhir:v "Reference to the group member" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The type of resources the group contains" ]
+       ] [
+         fhir:name [ fhir:v "value" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Value held by characteristic" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "meta-delete" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete>
+         ] ;
+         fhir:documentation [ fhir:v "Delete tags, profiles, and/or security labels from a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add>
+         ] ;
+         fhir:documentation [ fhir:v "Add tags, profiles, and/or security labels to a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+         ] ;
+         fhir:documentation [ fhir:v "Request a list of tags, profiles, and security labels for a specfic resource instance" ]
+       ] [
+         fhir:name [ fhir:v "expunge" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "NamingSystem" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/NamingSystem"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/NamingSystem>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "history-type" ]
+       ] [
+         fhir:code [ fhir:v "history-instance" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_filter" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a filter" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_source" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given source value (Resource.meta.source)" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "contact" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Name of an individual to contact" ]
+       ] [
+         fhir:name [ fhir:v "context" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use context assigned to the naming system" ]
+       ] [
+         fhir:name [ fhir:v "context-quantity" ] ;
+         fhir:type [ fhir:v "quantity" ] ;
+         fhir:documentation [ fhir:v "A quantity- or range-valued use context assigned to the naming system" ]
+       ] [
+         fhir:name [ fhir:v "context-type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A type of use context assigned to the naming system" ]
+       ] [
+         fhir:name [ fhir:v "context-type-quantity" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and quantity- or range-based value assigned to the naming system" ]
+       ] [
+         fhir:name [ fhir:v "context-type-value" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and value assigned to the naming system" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "The naming system publication date" ]
+       ] [
+         fhir:name [ fhir:v "description" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The description of the naming system" ]
+       ] [
+         fhir:name [ fhir:v "id-type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "oid | uuid | uri | other" ]
+       ] [
+         fhir:name [ fhir:v "jurisdiction" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Intended jurisdiction for the naming system" ]
+       ] [
+         fhir:name [ fhir:v "kind" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "codesystem | identifier | root" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Computationally friendly name of the naming system" ]
+       ] [
+         fhir:name [ fhir:v "period" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "When is identifier valid?" ]
+       ] [
+         fhir:name [ fhir:v "publisher" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Name of the publisher of the naming system" ]
+       ] [
+         fhir:name [ fhir:v "responsible" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Who maintains system namespace?" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The current status of the naming system" ]
+       ] [
+         fhir:name [ fhir:v "telecom" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Contact details for individual or organization" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "e.g. driver,  provider,  patient, bank etc." ]
+       ] [
+         fhir:name [ fhir:v "value" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The unique identifier" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "meta-delete" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete>
+         ] ;
+         fhir:documentation [ fhir:v "Delete tags, profiles, and/or security labels from a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add>
+         ] ;
+         fhir:documentation [ fhir:v "Add tags, profiles, and/or security labels to a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+         ] ;
+         fhir:documentation [ fhir:v "Request a list of tags, profiles, and security labels for a specfic resource instance" ]
+       ] [
+         fhir:name [ fhir:v "expunge" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "OperationDefinition" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/OperationDefinition"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/OperationDefinition>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] )
+     ] [
+       fhir:type [ fhir:v "Practitioner" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Practitioner"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Practitioner>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "history-type" ]
+       ] [
+         fhir:code [ fhir:v "history-instance" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_filter" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a filter" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_source" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given source value (Resource.meta.source)" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "active" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Whether the practitioner record is active" ]
+       ] [
+         fhir:name [ fhir:v "address" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text" ]
+       ] [
+         fhir:name [ fhir:v "address-city" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A city specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-country" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A country specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-postalcode" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A postalCode specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-state" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A state specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "address-use" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use code specified in an address" ]
+       ] [
+         fhir:name [ fhir:v "communication" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "One of the languages that the practitioner can communicate with" ]
+       ] [
+         fhir:name [ fhir:v "email" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A value in an email contact" ]
+       ] [
+         fhir:name [ fhir:v "family" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of the family name" ]
+       ] [
+         fhir:name [ fhir:v "gender" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Gender of the practitioner" ]
+       ] [
+         fhir:name [ fhir:v "given" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of the given name" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A practitioner's Identifier" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text" ]
+       ] [
+         fhir:name [ fhir:v "phone" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A value in a phone contact" ]
+       ] [
+         fhir:name [ fhir:v "phonetic" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "A portion of either family or given name using some kind of phonetic matching algorithm" ]
+       ] [
+         fhir:name [ fhir:v "telecom" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The value in any kind of contact" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "meta-delete" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete>
+         ] ;
+         fhir:documentation [ fhir:v "Delete tags, profiles, and/or security labels from a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add>
+         ] ;
+         fhir:documentation [ fhir:v "Add tags, profiles, and/or security labels to a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+         ] ;
+         fhir:documentation [ fhir:v "Request a list of tags, profiles, and security labels for a specfic resource instance" ]
+       ] [
+         fhir:name [ fhir:v "expunge" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "StructureDefinition" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/StructureDefinition"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/StructureDefinition>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Type defined or constrained by this structure" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "ValueSet" ] ;
+       fhir:profile [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/ValueSet"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/ValueSet>
+       ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "update" ]
+       ] [
+         fhir:code [ fhir:v "vread" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] [
+         fhir:code [ fhir:v "patch" ]
+       ] [
+         fhir:code [ fhir:v "history-type" ]
+       ] [
+         fhir:code [ fhir:v "history-instance" ]
+       ] [
+         fhir:code [ fhir:v "delete" ]
+       ] [
+         fhir:code [ fhir:v "create" ]
+       ] [
+         fhir:code [ fhir:v "search-type" ]
+       ] ) ;
+       fhir:conditionalCreate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalUpdate [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:conditionalDelete [ fhir:v "multiple" ] ;
+       fhir:searchInclude ( [ fhir:v "*" ] ) ;
+       fhir:searchRevInclude ( [ fhir:v "CodeSystem:supplements" ] [ fhir:v "ConceptMap:other" ] [ fhir:v "ConceptMap:source" ] [ fhir:v "ConceptMap:source-uri" ] [ fhir:v "ConceptMap:target" ] [ fhir:v "ConceptMap:target-uri" ] [ fhir:v "Group:managing-entity" ] [ fhir:v "Group:member" ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "_content" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "_filter" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's data using a filter" ]
+       ] [
+         fhir:name [ fhir:v "_has" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Return resources linked to by the given target" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The ID of the resource" ]
+       ] [
+         fhir:name [ fhir:v "_lastUpdated" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "Only return resources which were last updated as specified by the given range" ]
+       ] [
+         fhir:name [ fhir:v "_profile" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given profile" ]
+       ] [
+         fhir:name [ fhir:v "_security" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given security labels" ]
+       ] [
+         fhir:name [ fhir:v "_source" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given source value (Resource.meta.source)" ]
+       ] [
+         fhir:name [ fhir:v "_tag" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Search for resources which have the given tag" ]
+       ] [
+         fhir:name [ fhir:v "_text" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Search the contents of the resource's narrative using a fulltext search" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "This special parameter searches for codes in the value set. See additional notes on the ValueSet resource" ]
+       ] [
+         fhir:name [ fhir:v "context" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A use context assigned to the value set" ]
+       ] [
+         fhir:name [ fhir:v "context-quantity" ] ;
+         fhir:type [ fhir:v "quantity" ] ;
+         fhir:documentation [ fhir:v "A quantity- or range-valued use context assigned to the value set" ]
+       ] [
+         fhir:name [ fhir:v "context-type" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "A type of use context assigned to the value set" ]
+       ] [
+         fhir:name [ fhir:v "context-type-quantity" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and quantity- or range-based value assigned to the value set" ]
+       ] [
+         fhir:name [ fhir:v "context-type-value" ] ;
+         fhir:type [ fhir:v "composite" ] ;
+         fhir:documentation [ fhir:v "A use context type and value assigned to the value set" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "date" ] ;
+         fhir:documentation [ fhir:v "The value set publication date" ]
+       ] [
+         fhir:name [ fhir:v "description" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The description of the value set" ]
+       ] [
+         fhir:name [ fhir:v "expansion" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "Identifies the value set expansion (business identifier)" ]
+       ] [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "External identifier for the value set" ]
+       ] [
+         fhir:name [ fhir:v "jurisdiction" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "Intended jurisdiction for the value set" ]
+       ] [
+         fhir:name [ fhir:v "name" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Computationally friendly name of the value set" ]
+       ] [
+         fhir:name [ fhir:v "publisher" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "Name of the publisher of the value set" ]
+       ] [
+         fhir:name [ fhir:v "reference" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "A code system included or excluded in the value set or an imported value set" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The current status of the value set" ]
+       ] [
+         fhir:name [ fhir:v "title" ] ;
+         fhir:type [ fhir:v "string" ] ;
+         fhir:documentation [ fhir:v "The human-friendly name of the value set" ]
+       ] [
+         fhir:name [ fhir:v "url" ] ;
+         fhir:type [ fhir:v "uri" ] ;
+         fhir:documentation [ fhir:v "The uri that identifies the value set" ]
+       ] [
+         fhir:name [ fhir:v "version" ] ;
+         fhir:type [ fhir:v "token" ] ;
+         fhir:documentation [ fhir:v "The business version of the value set" ]
+       ] ) ;
+       fhir:operation ( [
+         fhir:name [ fhir:v "validate-code" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystemValueSet-it-validate-code"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/CodeSystemValueSet-it-validate-code>
+         ]
+       ] [
+         fhir:name [ fhir:v "invalidate-expansion" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/ValueSet-i-invalidate-expansion"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/ValueSet-i-invalidate-expansion>
+         ]
+       ] [
+         fhir:name [ fhir:v "expand" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/ValueSet-it-expand"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/ValueSet-it-expand>
+         ]
+       ] [
+         fhir:name [ fhir:v "validate" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate>
+         ]
+       ] [
+         fhir:name [ fhir:v "meta-delete" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-delete>
+         ] ;
+         fhir:documentation [ fhir:v "Delete tags, profiles, and/or security labels from a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta-add" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-i-meta-add>
+         ] ;
+         fhir:documentation [ fhir:v "Add tags, profiles, and/or security labels to a resource" ]
+       ] [
+         fhir:name [ fhir:v "meta" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+         ] ;
+         fhir:documentation [ fhir:v "Request a list of tags, profiles, and security labels for a specfic resource instance" ]
+       ] [
+         fhir:name [ fhir:v "expunge" ] ;
+         fhir:definition [
+           fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge"^^xsd:anyURI ;
+           fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-expunge>
+         ]
+       ] )
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "transaction" ]
+     ] [
+       fhir:code [ fhir:v "history-system" ]
+     ] ) ;
+     fhir:operation ( [
+       fhir:name [ fhir:v "import" ] ;
+       fhir:definition [
+         fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-import"^^xsd:anyURI ;
+         fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-import>
+       ] ;
+       fhir:documentation [ fhir:v "Import terminology resources" ]
+     ] [
+       fhir:name [ fhir:v "process-message" ] ;
+       fhir:definition [
+         fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"^^xsd:anyURI ;
+         fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message>
+       ] ;
+       fhir:documentation [ fhir:v "Accept a FHIR Message Bundle for processing" ]
+     ] [
+       fhir:name [ fhir:v "perform-reindexing-pass" ] ;
+       fhir:definition [
+         fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"^^xsd:anyURI ;
+         fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass>
+       ] ;
+       fhir:documentation [ fhir:v "Forces a single pass of the resource reindexing processor" ]
+     ] [
+       fhir:name [ fhir:v "meta" ] ;
+       fhir:definition [
+         fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta"^^xsd:anyURI ;
+         fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-its-meta>
+       ]
+     ] [
+       fhir:name [ fhir:v "get-resource-counts" ] ;
+       fhir:definition [
+         fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"^^xsd:anyURI ;
+         fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts>
+       ] ;
+       fhir:documentation [ fhir:v "Provides the number of resources currently stored on the server, broken down by resource type" ]
+     ] [
+       fhir:name [ fhir:v "reindex-terminology" ] ;
+       fhir:definition [
+         fhir:v "https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"^^xsd:anyURI ;
+         fhir:link <https://terminology.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology>
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

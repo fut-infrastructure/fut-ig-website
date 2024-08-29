@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="device"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement device</b></p><a name="device"> </a><a name="hcdevice"> </a><a name="device-en-US"> </a><h2 id="title"/><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 02:07:23+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#Device1-1">Device</a></td><td><a href="StructureDefinition-ehealth-device.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, device-name, identifier, location, manufacturer, model, organization, patient, status, type, udi-carrier, udi-di, url</td><td/><td><code>Device:location</code>, <code>Device:organization</code>, <code>Device:patient</code>, <code>DeviceMetric:parent</code>, <code>DeviceMetric:source</code>, <code>DeviceUseStatement:context</code>, <code>DeviceUseStatement:device</code>, <code>DeviceUseStatement:patient</code>, <code>DeviceUseStatement:subject</code></td><td/></tr><tr><td><a href="#DeviceMetric1-2">DeviceMetric</a></td><td><a href="StructureDefinition-ehealth-devicemetric.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, category, identifier, parent, qualityCategory, source, type</td><td><code>DeviceMetric:source</code></td><td><code>Device:location</code>, <code>Device:organization</code>, <code>Device:patient</code>, <code>DeviceMetric:parent</code>, <code>DeviceMetric:source</code>, <code>DeviceUseStatement:context</code>, <code>DeviceUseStatement:device</code>, <code>DeviceUseStatement:patient</code>, <code>DeviceUseStatement:subject</code></td><td/></tr><tr><td><a href="#DeviceUseStatement1-3">DeviceUseStatement</a></td><td><a href="StructureDefinition-ehealth-deviceusestatement.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, context, device, identifier, patient, status, subject, timing</td><td><code>DeviceUseStatement:device</code></td><td><code>Device:location</code>, <code>Device:organization</code>, <code>Device:patient</code>, <code>DeviceMetric:parent</code>, <code>DeviceMetric:source</code>, <code>DeviceUseStatement:context</code>, <code>DeviceUseStatement:device</code>, <code>DeviceUseStatement:patient</code>, <code>DeviceUseStatement:subject</code></td><td/></tr><tr><td><a href="#OperationDefinition1-4">OperationDefinition</a></td><td><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>Device:location</code>, <code>Device:organization</code>, <code>Device:patient</code>, <code>DeviceMetric:parent</code>, <code>DeviceMetric:source</code>, <code>DeviceUseStatement:context</code>, <code>DeviceUseStatement:device</code>, <code>DeviceUseStatement:patient</code>, <code>DeviceUseStatement:subject</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="Device1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Device</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-device.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>device-name</td><td><code>string</code></td><td><div><p>A server defined search that may match any of the string fields in the Device.udi.name  or Device.type.coding.display or  Device.type.text</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Instance id from manufacturer, owner, and others</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>location</td><td><code>reference</code></td><td><div><p>A location, where the resource is found</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>manufacturer</td><td><code>string</code></td><td><div><p>The manufacturer of the device</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>model</td><td><code>string</code></td><td><div><p>The model of the device</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>organization</td><td><code>reference</code></td><td><div><p>The organization responsible for the device</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Patient information, if the resource is affixed to a person</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>active | inactive | entered-in-error | unknown</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>The type of the device</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>udi-carrier</td><td><code>string</code></td><td><div><p>UDI Barcode (RFID or other technology) string either in HRF format or AIDC format converted to base64 string.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>udi-di</td><td><code>string</code></td><td><div><p>The udi Device Identifier (DI)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>url</td><td><code>uri</code></td><td><div><p>Network address to contact device</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="DeviceMetric1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>DeviceMetric</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-devicemetric.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>The category of the metric</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>The identifier of the metric</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>parent</td><td><code>reference</code></td><td><div><p>The parent DeviceMetric resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>qualityCategory</td><td><code>token</code></td><td><div><p>The device metric quality</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>source</td><td><code>reference</code></td><td><div><p>The device resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>type</td><td><code>token</code></td><td><div><p>The component type</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="DeviceUseStatement1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>DeviceUseStatement</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-deviceusestatement.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>context</td><td><code>reference</code></td><td><div><p>Search by context</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>device</td><td><code>reference</code></td><td><div><p>Search by device</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Search by identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Search by subject - a patient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>active | completed | entered-in-error +</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Search by subject</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>timing</td><td><code>date</code></td><td><div><p>Period device was used</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="OperationDefinition1-4" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>OperationDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/device"/>
+  <version value="3.1.0"/>
+  <name value="device"/>
+  <status value="active"/>
+  <date value="2024-04-29T02:07:23.240+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <kind value="instance"/>
+  <software>
+    <name value="device"/>
+    <version value="1.10.7"/>
+  </software>
+  <implementation>
+    <description value="eHealth device service"/>
+    <url value="https://device.devtest.systematic-ehealth.com/fhir"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="xml"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <format value="application/x-turtle"/>
+  <format value="ttl"/>
+  <format value="html/json"/>
+  <format value="html/xml"/>
+  <format value="html/turtle"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="Device"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchRevInclude value="Device:location"/>
+      <searchRevInclude value="Device:organization"/>
+      <searchRevInclude value="Device:patient"/>
+      <searchRevInclude value="DeviceMetric:parent"/>
+      <searchRevInclude value="DeviceMetric:source"/>
+      <searchRevInclude value="DeviceUseStatement:context"/>
+      <searchRevInclude value="DeviceUseStatement:device"/>
+      <searchRevInclude value="DeviceUseStatement:patient"/>
+      <searchRevInclude value="DeviceUseStatement:subject"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="device-name"/>
+        <type value="string"/>
+        <documentation value="A server defined search that may match any of the string fields in the Device.udi.name  or Device.type.coding.display or  Device.type.text"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Instance id from manufacturer, owner, and others"/>
+      </searchParam>
+      <searchParam>
+        <name value="location"/>
+        <type value="reference"/>
+        <documentation value="A location, where the resource is found"/>
+      </searchParam>
+      <searchParam>
+        <name value="manufacturer"/>
+        <type value="string"/>
+        <documentation value="The manufacturer of the device"/>
+      </searchParam>
+      <searchParam>
+        <name value="model"/>
+        <type value="string"/>
+        <documentation value="The model of the device"/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <type value="reference"/>
+        <documentation value="The organization responsible for the device"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Patient information, if the resource is affixed to a person"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="active | inactive | entered-in-error | unknown"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="The type of the device"/>
+      </searchParam>
+      <searchParam>
+        <name value="udi-carrier"/>
+        <type value="string"/>
+        <documentation value="UDI Barcode (RFID or other technology) string either in HRF format or AIDC format converted to base64 string."/>
+      </searchParam>
+      <searchParam>
+        <name value="udi-di"/>
+        <type value="string"/>
+        <documentation value="The udi Device Identifier (DI)"/>
+      </searchParam>
+      <searchParam>
+        <name value="url"/>
+        <type value="uri"/>
+        <documentation value="Network address to contact device"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/DeviceDeviceUseStatement-t-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="DeviceMetric"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="DeviceMetric:source"/>
+      <searchRevInclude value="Device:location"/>
+      <searchRevInclude value="Device:organization"/>
+      <searchRevInclude value="Device:patient"/>
+      <searchRevInclude value="DeviceMetric:parent"/>
+      <searchRevInclude value="DeviceMetric:source"/>
+      <searchRevInclude value="DeviceUseStatement:context"/>
+      <searchRevInclude value="DeviceUseStatement:device"/>
+      <searchRevInclude value="DeviceUseStatement:patient"/>
+      <searchRevInclude value="DeviceUseStatement:subject"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="The category of the metric"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="The identifier of the metric"/>
+      </searchParam>
+      <searchParam>
+        <name value="parent"/>
+        <type value="reference"/>
+        <documentation value="The parent DeviceMetric resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="qualityCategory"/>
+        <type value="token"/>
+        <documentation value="The device metric quality"/>
+      </searchParam>
+      <searchParam>
+        <name value="source"/>
+        <type value="reference"/>
+        <documentation value="The device resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+        <documentation value="The component type"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="DeviceUseStatement"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="DeviceUseStatement:device"/>
+      <searchRevInclude value="Device:location"/>
+      <searchRevInclude value="Device:organization"/>
+      <searchRevInclude value="Device:patient"/>
+      <searchRevInclude value="DeviceMetric:parent"/>
+      <searchRevInclude value="DeviceMetric:source"/>
+      <searchRevInclude value="DeviceUseStatement:context"/>
+      <searchRevInclude value="DeviceUseStatement:device"/>
+      <searchRevInclude value="DeviceUseStatement:patient"/>
+      <searchRevInclude value="DeviceUseStatement:subject"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="context"/>
+        <type value="reference"/>
+        <documentation value="Search by context"/>
+      </searchParam>
+      <searchParam>
+        <name value="device"/>
+        <type value="reference"/>
+        <documentation value="Search by device"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Search by identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Search by subject - a patient"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="active | completed | entered-in-error +"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <type value="reference"/>
+        <documentation value="Search by subject"/>
+      </searchParam>
+      <searchParam>
+        <name value="timing"/>
+        <type value="date"/>
+        <documentation value="Period device was used"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/DeviceDeviceUseStatement-t-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="OperationDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchRevInclude value="Device:location"/>
+      <searchRevInclude value="Device:organization"/>
+      <searchRevInclude value="Device:patient"/>
+      <searchRevInclude value="DeviceMetric:parent"/>
+      <searchRevInclude value="DeviceMetric:source"/>
+      <searchRevInclude value="DeviceUseStatement:context"/>
+      <searchRevInclude value="DeviceUseStatement:device"/>
+      <searchRevInclude value="DeviceUseStatement:patient"/>
+      <searchRevInclude value="DeviceUseStatement:subject"/>
+    </resource>
+    <interaction>
+      <code value="transaction"/>
+    </interaction>
+    <interaction>
+      <code value="history-system"/>
+    </interaction>
+    <operation>
+      <name value="process-message"/>
+      <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"/>
+      <documentation value="Accept a FHIR Message Bundle for processing"/>
+    </operation>
+    <operation>
+      <name value="perform-reindexing-pass"/>
+      <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"/>
+      <documentation value="Forces a single pass of the resource reindexing processor"/>
+    </operation>
+    <operation>
+      <name value="meta"/>
+      <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"/>
+    </operation>
+    <operation>
+      <name value="get-resource-counts"/>
+      <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"/>
+      <documentation value="Provides the number of resources currently stored on the server, broken down by resource type"/>
+    </operation>
+    <operation>
+      <name value="reindex-terminology"/>
+      <definition value="https://device.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"/>
+    </operation>
+  </rest>
+</CapabilityStatement>

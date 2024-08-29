@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="careplan"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement careplan</b></p><a name="careplan"> </a><a name="hccareplan"> </a><a name="careplan-en-US"> </a><h2 id="title"/><ul><li>Implementation Guide Version: 3.1.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Supported Patch Formats: </li><li>Published on: 2024-04-29 07:54:13+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li>Supports the <code>transaction</code>interaction.</li><li>Supports the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="PATCH a new resource version (patch interaction)">P</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th class="text-center"><b title="DELETE a resource (delete interaction)">D</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#CarePlan1-1">CarePlan</a></td><td><a href="StructureDefinition-ehealth-careplan.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>_id, _lastUpdated, _tag, activity-reference, care-team, category, condition, date, episodeOfCare, goal, identifier, instantiates-canonical, part-of, patient, status, status-history-end-time, status-history-start-time, status-history-status, status-scheduled-status, status-scheduled-time, team-scheduled-time</td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:part-of</code></td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#CommunicationRequest1-2">CommunicationRequest</a></td><td><a href="StructureDefinition-ehealth-communication-request.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-request</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center">y</td><td>_content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, authored, based-on, category, encounter, episodeOfCare, group-identifier, identifier, medium, occurrence, patient, priority, reasonCode, recipient, replaces, requester, sender, status, subject</td><td><code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:context</code></td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Condition1-3">Condition</a></td><td><a href="http://hl7.org/fhir/R4/condition.html">http://hl7.org/fhir/StructureDefinition/Condition</a></td><td>y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Consent1-4">Consent</a></td><td><a href="StructureDefinition-ehealth-consent.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td>data, _tag, actor, category, identifier, patient, period, status</td><td/><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#EpisodeOfCare1-5">EpisodeOfCare</a></td><td><a href="StructureDefinition-ehealth-episodeofcare.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td>_tag, condition, identifier, organization, patient, status, status-scheduled-time, team, team-scheduled-time</td><td><code>EpisodeOfCare:condition</code></td><td><code>CarePlan:episodeOfCare</code></td><td/></tr><tr><td><a href="#Goal1-6">Goal</a></td><td><a href="StructureDefinition-ehealth-goal.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td>_content, _filter, _has, _id, _language, _lastUpdated, _profile, _security, _source, _tag, _text, addresses, category, identifier, lifecycle-status, patient, start-date, subject, target-date</td><td><code>*</code>, <code>Goal:patient</code>, <code>Goal:subject</code></td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#OperationDefinition1-7">OperationDefinition</a></td><td><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></td><td>y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Provenance1-8">Provenance</a></td><td><a href="StructureDefinition-ehealth-provenance.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance</a></td><td>y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>target, _tag</td><td/><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#ServiceRequest1-9">ServiceRequest</a></td><td><a href="StructureDefinition-ehealth-servicerequest.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest</a></td><td>y</td><td class="text-center">y</td><td class="text-center"></td><td class="text-center">y</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td></td><td><code>*</code></td><td><code>CarePlan:activity-reference</code>, <code>CarePlan:care-team</code>, <code>CarePlan:condition</code>, <code>CarePlan:episodeOfCare</code>, <code>CarePlan:goal</code>, <code>CarePlan:instantiates-canonical</code>, <code>CarePlan:part-of</code>, <code>CarePlan:patient</code>, <code>CommunicationRequest:based-on</code>, <code>CommunicationRequest:encounter</code>, <code>CommunicationRequest:episodeOfCare</code>, <code>CommunicationRequest:patient</code>, <code>CommunicationRequest:recipient</code>, <code>CommunicationRequest:replaces</code>, <code>CommunicationRequest:requester</code>, <code>CommunicationRequest:sender</code>, <code>CommunicationRequest:subject</code>, <code>Consent:actor</code>, <code>Consent:data</code>, <code>Consent:patient</code>, <code>EpisodeOfCare:condition</code>, <code>EpisodeOfCare:organization</code>, <code>EpisodeOfCare:patient</code>, <code>EpisodeOfCare:team</code>, <code>Goal:addresses</code>, <code>Goal:patient</code>, <code>Goal:subject</code>, <code>Provenance:target</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="CarePlan1-1" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>CarePlan</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-careplan.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>activity-reference</td><td><code>reference</code></td><td><div><p>Activity details defined in specific resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>care-team</td><td><code>reference</code></td><td><div><p>Who's involved in plan?</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Type of plan</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>condition</td><td><code>reference</code></td><td><div><p>Health issues this plan addresses</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>date</td><td><code>date</code></td><td><div><p>Time period plan covers</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>episodeOfCare</td><td><code>reference</code></td><td><div><p>EpisodeOfCare</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>goal</td><td><code>reference</code></td><td><div><p>Goal of the care plan</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External Ids for this plan</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>instantiates-canonical</td><td><code>reference</code></td><td><div><p>Instantiates FHIR protocol or definition</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>part-of</td><td><code>reference</code></td><td><div><p>Part of referenced CarePlan</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Who care plan is for</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>draft | active | suspended | completed | entered-in-error | cancelled | unknown</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status-history-end-time</td><td><code>date</code></td><td><div><p>end time of historic status change</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status-history-start-time</td><td><code>date</code></td><td><div><p>start time of historic status change</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status-history-status</td><td><code>token</code></td><td><div><p>status of historic status change</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status-scheduled-status</td><td><code>token</code></td><td><div><p>Scheduled status for status change</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status-scheduled-time</td><td><code>date</code></td><td><div><p>Scheduled time for status change</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>team-scheduled-time</td><td><code>date</code></td><td><div><p>Scheduled time for team change</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-CarePlanEpisodeOfCare-i-update-care-teams.html">$update-care-teams</a></td><td><div><p>The operation modifies the care team assignment of the care plan and all of its sub plans.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-CarePlan-i-suggest-care-teams.html">$suggest-care-teams</a></td><td><div><p>Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations.</p>
+</div></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="CommunicationRequest1-2" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>CommunicationRequest</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-communication-request.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-request</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>delete</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>authored</td><td><code>date</code></td><td><div><p>When request transitioned to being actionable</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>based-on</td><td><code>reference</code></td><td><div><p>Fulfills plan or proposal</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Message category</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>encounter</td><td><code>reference</code></td><td><div><p>Encounter leading to message</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>episodeOfCare</td><td><code>reference</code></td><td><div><p>Episode leading to message</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>group-identifier</td><td><code>token</code></td><td><div><p>Composite request this is part of</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Unique identifier</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>medium</td><td><code>token</code></td><td><div><p>A channel of communication</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>occurrence</td><td><code>date</code></td><td><div><p>When scheduled</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Focus of message</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>priority</td><td><code>token</code></td><td><div><p>Message urgency</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>reasonCode</td><td><code>token</code></td><td><div><p>ReasonCode</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>recipient</td><td><code>reference</code></td><td><div><p>Message recipient</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>replaces</td><td><code>reference</code></td><td><div><p>Request(s) replaced by this request</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>requester</td><td><code>reference</code></td><td><div><p>Individual making the request</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>sender</td><td><code>reference</code></td><td><div><p>Message sender</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>draft | active | suspended | cancelled | completed | entered-in-error | unknown</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Focus of message</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Condition1-3" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Condition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/condition.html">http://hl7.org/fhir/StructureDefinition/Condition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>vread</code>, <code>read</code>, <code>patch</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Consent1-4" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Consent</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-consent.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>data</td><td><code>reference</code></td><td><div><p>The actual data reference</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>actor</td><td><code>reference</code></td><td><div><p>Resource for the actor (or group, by role)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>Classification of the consent statement - for indexing/retrieval</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Identifier for this record (external references)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Who the consent applies to</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>period</td><td><code>date</code></td><td><div><p>Period that this consent applies</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>draft | proposed | active | rejected | inactive | entered-in-error</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="EpisodeOfCare1-5" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>EpisodeOfCare</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-episodeofcare.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>patch</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>condition</td><td><code>reference</code></td><td><div><p>Conditions/problems/diagnoses this episode of care is for</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>Business Identifier(s) relevant for this EpisodeOfCare</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>organization</td><td><code>reference</code></td><td><div><p>The organization that has assumed the specific responsibilities of this EpisodeOfCare</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>The patient who is the focus of this episode of care</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status</td><td><code>token</code></td><td><div><p>The current status of the Episode of Care as provided (does not check the status history collection)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>status-scheduled-time</td><td><code>date</code></td><td><div><p>Scheduled time for status change</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>team</td><td><code>reference</code></td><td><div><p>The list of practitioners that may be facilitating this episode of care for specific purposes.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>team-scheduled-time</td><td><code>date</code></td><td><div><p>Scheduled time for team change</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-CarePlanEpisodeOfCare-i-update-care-teams.html">$update-care-teams</a></td><td><div><p>Modify the care team assignment of the episode of care and all care plans that has the episode of care as context.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="OperationDefinition-EpisodeOfCare-i-is-context-allowed.html">$is-context-allowed</a></td><td><div><p>Checks that it is allowed to set an EpisodeOfCare as context.
+If the user requesting context is a patient, then the patient input parameter should be specified.
+If the user requesting context is a practitioner, then the careTeam input parameter should be specified.
+Throws an exception if it is not allowed to select the Episode Of Care context.</p>
+<h2>Output</h2>
+<p>For valid Episode of Care is returned references that cause the Episode of Care to be valid context.
+For a practitioner, two output parameters will be returned on success:</p>
+<ul>
+<li>CareTeam: The Careteam that gave access</li>
+<li>EpisodeOfCare/CarePlan: The EpisodeOfCare or CarePlan that referenced the CareTeam</li>
+</ul>
+</div></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Goal1-6" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Goal</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-goal.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>search-type</code>, <code>vread</code>, <code>read</code>, <code>create</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>_content</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_filter</td><td><code>string</code></td><td><div><p>Search the contents of the resource's data using a filter</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_has</td><td><code>string</code></td><td><div><p>Return resources linked to by the given target</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_id</td><td><code>token</code></td><td><div><p>The ID of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_language</td><td><code>string</code></td><td><div><p>The language of the resource</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_lastUpdated</td><td><code>date</code></td><td><div><p>Only return resources which were last updated as specified by the given range</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_profile</td><td><code>uri</code></td><td><div><p>Search for resources which have the given profile</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_security</td><td><code>token</code></td><td><div><p>Search for resources which have the given security labels</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_source</td><td><code>uri</code></td><td><div><p>Search for resources which have the given source value (Resource.meta.source)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_text</td><td><code>string</code></td><td><div><p>Search the contents of the resource's narrative using a fulltext search</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>addresses</td><td><code>reference</code></td><td><div><p>What the goal addresses</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>category</td><td><code>token</code></td><td><div><p>E.g. Treatment, dietary, behavioral, etc.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>identifier</td><td><code>token</code></td><td><div><p>External Ids for this goal</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>lifecycle-status</td><td><code>token</code></td><td><div><p>proposed | accepted | planned | in-progress | on-target | ahead-of-target | behind-target | sustaining | achieved | on-hold | cancelled | entered-in-error | rejected</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>patient</td><td><code>reference</code></td><td><div><p>Who this goal is intended for</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>start-date</td><td><code>date</code></td><td><div><p>When goal pursuit begins</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>subject</td><td><code>reference</code></td><td><div><p>Who this goal is intended for</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>target-date</td><td><code>date</code></td><td><div><p>Reach goal on or before</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="OperationDefinition1-7" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>OperationDefinition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="http://hl7.org/fhir/R4/operationdefinition.html">http://hl7.org/fhir/StructureDefinition/OperationDefinition</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>read</code>.</li></ul></div></div><p/></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Provenance1-8" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>Provenance</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-provenance.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>search-type</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>target</td><td><code>reference</code></td><td><div><p>Target Reference(s) (usually version specific)</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td>_tag</td><td><code>token</code></td><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="ServiceRequest1-9" class="panel-title"><span style="float: right;">Resource Conformance: supported </span>ServiceRequest</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-6"><span class="lead">Base System Profile</span><br/><a href="StructureDefinition-ehealth-servicerequest.html">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest</a></div><div class="col-lg-3"><span class="lead">Profile Conformance</span><br/><b>SHALL</b></div><div class="col-lg-3"><span class="lead">Reference Policy</span><br/></div></div><p/><div class="row"><div class="col-lg-6"><span class="lead">Interaction summary</span><br/><ul><li>Supports <code>update</code>, <code>vread</code>, <code>read</code>.</li></ul></div></div><p/><div class="row"><div class="col-12"><span class="lead">Extended Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$validate</td><td><div/></td></tr></tbody></table></div></div></div></div></div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/careplan"/>
+  <version value="3.1.0"/>
+  <name value="careplan"/>
+  <status value="active"/>
+  <date value="2024-04-29T07:54:13.143+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <kind value="instance"/>
+  <software>
+    <name value="careplan"/>
+    <version value="1.18.0"/>
+  </software>
+  <implementation>
+    <description value="eHealth careplan service"/>
+    <url value="https://careplan.devtest.systematic-ehealth.com/fhir"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+xml"/>
+  <format value="xml"/>
+  <format value="application/fhir+json"/>
+  <format value="json"/>
+  <format value="application/x-turtle"/>
+  <format value="ttl"/>
+  <format value="html/json"/>
+  <format value="html/xml"/>
+  <format value="html/turtle"/>
+  <rest>
+    <mode value="server"/>
+    <resource>
+      <type value="CarePlan"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="CarePlan:activity-reference"/>
+      <searchInclude value="CarePlan:condition"/>
+      <searchInclude value="CarePlan:episodeOfCare"/>
+      <searchInclude value="CarePlan:goal"/>
+      <searchInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="activity-reference"/>
+        <type value="reference"/>
+        <documentation value="Activity details defined in specific resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="care-team"/>
+        <type value="reference"/>
+        <documentation value="Who's involved in plan?"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="Type of plan"/>
+      </searchParam>
+      <searchParam>
+        <name value="condition"/>
+        <type value="reference"/>
+        <documentation value="Health issues this plan addresses"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="date"/>
+        <documentation value="Time period plan covers"/>
+      </searchParam>
+      <searchParam>
+        <name value="episodeOfCare"/>
+        <type value="reference"/>
+        <documentation value="EpisodeOfCare"/>
+      </searchParam>
+      <searchParam>
+        <name value="goal"/>
+        <type value="reference"/>
+        <documentation value="Goal of the care plan"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="External Ids for this plan"/>
+      </searchParam>
+      <searchParam>
+        <name value="instantiates-canonical"/>
+        <type value="reference"/>
+        <documentation value="Instantiates FHIR protocol or definition"/>
+      </searchParam>
+      <searchParam>
+        <name value="part-of"/>
+        <type value="reference"/>
+        <documentation value="Part of referenced CarePlan"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Who care plan is for"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="draft | active | suspended | completed | entered-in-error | cancelled | unknown"/>
+      </searchParam>
+      <searchParam>
+        <name value="status-history-end-time"/>
+        <type value="date"/>
+        <documentation value="end time of historic status change"/>
+      </searchParam>
+      <searchParam>
+        <name value="status-history-start-time"/>
+        <type value="date"/>
+        <documentation value="start time of historic status change"/>
+      </searchParam>
+      <searchParam>
+        <name value="status-history-status"/>
+        <type value="token"/>
+        <documentation value="status of historic status change"/>
+      </searchParam>
+      <searchParam>
+        <name value="status-scheduled-status"/>
+        <type value="token"/>
+        <documentation value="Scheduled status for status change"/>
+      </searchParam>
+      <searchParam>
+        <name value="status-scheduled-time"/>
+        <type value="date"/>
+        <documentation value="Scheduled time for status change"/>
+      </searchParam>
+      <searchParam>
+        <name value="team-scheduled-time"/>
+        <type value="date"/>
+        <documentation value="Scheduled time for team change"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+      <operation>
+        <name value="update-care-teams"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams"/>
+        <documentation value="The operation modifies the care team assignment of the care plan and all of its sub plans."/>
+      </operation>
+      <operation>
+        <name value="suggest-care-teams"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/CarePlan-i-suggest-care-teams"/>
+        <documentation value="Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations."/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="CommunicationRequest"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-request"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="delete"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="CommunicationRequest:based-on"/>
+      <searchInclude value="CommunicationRequest:context"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="authored"/>
+        <type value="date"/>
+        <documentation value="When request transitioned to being actionable"/>
+      </searchParam>
+      <searchParam>
+        <name value="based-on"/>
+        <type value="reference"/>
+        <documentation value="Fulfills plan or proposal"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="Message category"/>
+      </searchParam>
+      <searchParam>
+        <name value="encounter"/>
+        <type value="reference"/>
+        <documentation value="Encounter leading to message"/>
+      </searchParam>
+      <searchParam>
+        <name value="episodeOfCare"/>
+        <type value="reference"/>
+        <documentation value="Episode leading to message"/>
+      </searchParam>
+      <searchParam>
+        <name value="group-identifier"/>
+        <type value="token"/>
+        <documentation value="Composite request this is part of"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Unique identifier"/>
+      </searchParam>
+      <searchParam>
+        <name value="medium"/>
+        <type value="token"/>
+        <documentation value="A channel of communication"/>
+      </searchParam>
+      <searchParam>
+        <name value="occurrence"/>
+        <type value="date"/>
+        <documentation value="When scheduled"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Focus of message"/>
+      </searchParam>
+      <searchParam>
+        <name value="priority"/>
+        <type value="token"/>
+        <documentation value="Message urgency"/>
+      </searchParam>
+      <searchParam>
+        <name value="reasonCode"/>
+        <type value="token"/>
+        <documentation value="ReasonCode"/>
+      </searchParam>
+      <searchParam>
+        <name value="recipient"/>
+        <type value="reference"/>
+        <documentation value="Message recipient"/>
+      </searchParam>
+      <searchParam>
+        <name value="replaces"/>
+        <type value="reference"/>
+        <documentation value="Request(s) replaced by this request"/>
+      </searchParam>
+      <searchParam>
+        <name value="requester"/>
+        <type value="reference"/>
+        <documentation value="Individual making the request"/>
+      </searchParam>
+      <searchParam>
+        <name value="sender"/>
+        <type value="reference"/>
+        <documentation value="Message sender"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="draft | active | suspended | cancelled | completed | entered-in-error | unknown"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <type value="reference"/>
+        <documentation value="Focus of message"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Condition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/Condition"/>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <searchInclude value="*"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Consent"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <searchParam>
+        <name value="data"/>
+        <type value="reference"/>
+        <documentation value="The actual data reference"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="actor"/>
+        <type value="reference"/>
+        <documentation value="Resource for the actor (or group, by role)"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="Classification of the consent statement - for indexing/retrieval"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Identifier for this record (external references)"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Who the consent applies to"/>
+      </searchParam>
+      <searchParam>
+        <name value="period"/>
+        <type value="date"/>
+        <documentation value="Period that this consent applies"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="draft | proposed | active | rejected | inactive | entered-in-error"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="EpisodeOfCare"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="patch"/>
+      </interaction>
+      <searchInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="condition"/>
+        <type value="reference"/>
+        <documentation value="Conditions/problems/diagnoses this episode of care is for"/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="Business Identifier(s) relevant for this EpisodeOfCare"/>
+      </searchParam>
+      <searchParam>
+        <name value="organization"/>
+        <type value="reference"/>
+        <documentation value="The organization that has assumed the specific responsibilities of this EpisodeOfCare"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="The patient who is the focus of this episode of care"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+        <documentation value="The current status of the Episode of Care as provided (does not check the status history collection)"/>
+      </searchParam>
+      <searchParam>
+        <name value="status-scheduled-time"/>
+        <type value="date"/>
+        <documentation value="Scheduled time for status change"/>
+      </searchParam>
+      <searchParam>
+        <name value="team"/>
+        <type value="reference"/>
+        <documentation value="The list of practitioners that may be facilitating this episode of care for specific purposes."/>
+      </searchParam>
+      <searchParam>
+        <name value="team-scheduled-time"/>
+        <type value="date"/>
+        <documentation value="Scheduled time for team change"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+      <operation>
+        <name value="update-care-teams"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams"/>
+        <documentation value="Modify the care team assignment of the episode of care and all care plans that has the episode of care as context."/>
+      </operation>
+      <operation>
+        <name value="is-context-allowed"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed"/>
+        <documentation value="Checks that it is allowed to set an EpisodeOfCare as context.&#xD;&#xA;If the user requesting context is a patient, then the patient input parameter should be specified.&#xD;&#xA;If the user requesting context is a practitioner, then the careTeam input parameter should be specified.&#xD;&#xA;Throws an exception if it is not allowed to select the Episode Of Care context.&#xD;&#xA;## Output&#xD;&#xA;For valid Episode of Care is returned references that cause the Episode of Care to be valid context. &#xD;&#xA;For a practitioner, two output parameters will be returned on success:&#xD;&#xA;- CareTeam: The Careteam that gave access&#xD;&#xA;- EpisodeOfCare/CarePlan: The EpisodeOfCare or CarePlan that referenced the CareTeam"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="Goal"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <interaction>
+        <code value="create"/>
+      </interaction>
+      <conditionalCreate value="true"/>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchInclude value="Goal:patient"/>
+      <searchInclude value="Goal:subject"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <searchParam>
+        <name value="_content"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="_filter"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's data using a filter"/>
+      </searchParam>
+      <searchParam>
+        <name value="_has"/>
+        <type value="string"/>
+        <documentation value="Return resources linked to by the given target"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+        <documentation value="The ID of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_language"/>
+        <type value="string"/>
+        <documentation value="The language of the resource"/>
+      </searchParam>
+      <searchParam>
+        <name value="_lastUpdated"/>
+        <type value="date"/>
+        <documentation value="Only return resources which were last updated as specified by the given range"/>
+      </searchParam>
+      <searchParam>
+        <name value="_profile"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given profile"/>
+      </searchParam>
+      <searchParam>
+        <name value="_security"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given security labels"/>
+      </searchParam>
+      <searchParam>
+        <name value="_source"/>
+        <type value="uri"/>
+        <documentation value="Search for resources which have the given source value (Resource.meta.source)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <searchParam>
+        <name value="_text"/>
+        <type value="string"/>
+        <documentation value="Search the contents of the resource's narrative using a fulltext search"/>
+      </searchParam>
+      <searchParam>
+        <name value="addresses"/>
+        <type value="reference"/>
+        <documentation value="What the goal addresses"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+        <documentation value="E.g. Treatment, dietary, behavioral, etc."/>
+      </searchParam>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+        <documentation value="External Ids for this goal"/>
+      </searchParam>
+      <searchParam>
+        <name value="lifecycle-status"/>
+        <type value="token"/>
+        <documentation value="proposed | accepted | planned | in-progress | on-target | ahead-of-target | behind-target | sustaining | achieved | on-hold | cancelled | entered-in-error | rejected"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="reference"/>
+        <documentation value="Who this goal is intended for"/>
+      </searchParam>
+      <searchParam>
+        <name value="start-date"/>
+        <type value="date"/>
+        <documentation value="When goal pursuit begins"/>
+      </searchParam>
+      <searchParam>
+        <name value="subject"/>
+        <type value="reference"/>
+        <documentation value="Who this goal is intended for"/>
+      </searchParam>
+      <searchParam>
+        <name value="target-date"/>
+        <type value="date"/>
+        <documentation value="Reach goal on or before"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="OperationDefinition"/>
+      <profile value="http://hl7.org/fhir/StructureDefinition/OperationDefinition"/>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchInclude value="*"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+    </resource>
+    <resource>
+      <type value="Provenance"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <searchParam>
+        <name value="target"/>
+        <type value="reference"/>
+        <documentation value="Target Reference(s) (usually version specific)"/>
+      </searchParam>
+      <searchParam>
+        <name value="_tag"/>
+        <type value="token"/>
+        <documentation value="Search for resources which have the given tag"/>
+      </searchParam>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <resource>
+      <type value="ServiceRequest"/>
+      <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"/>
+      <interaction>
+        <code value="update"/>
+      </interaction>
+      <interaction>
+        <code value="vread"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <conditionalUpdate value="true"/>
+      <searchInclude value="*"/>
+      <searchRevInclude value="CarePlan:activity-reference"/>
+      <searchRevInclude value="CarePlan:care-team"/>
+      <searchRevInclude value="CarePlan:condition"/>
+      <searchRevInclude value="CarePlan:episodeOfCare"/>
+      <searchRevInclude value="CarePlan:goal"/>
+      <searchRevInclude value="CarePlan:instantiates-canonical"/>
+      <searchRevInclude value="CarePlan:part-of"/>
+      <searchRevInclude value="CarePlan:patient"/>
+      <searchRevInclude value="CommunicationRequest:based-on"/>
+      <searchRevInclude value="CommunicationRequest:encounter"/>
+      <searchRevInclude value="CommunicationRequest:episodeOfCare"/>
+      <searchRevInclude value="CommunicationRequest:patient"/>
+      <searchRevInclude value="CommunicationRequest:recipient"/>
+      <searchRevInclude value="CommunicationRequest:replaces"/>
+      <searchRevInclude value="CommunicationRequest:requester"/>
+      <searchRevInclude value="CommunicationRequest:sender"/>
+      <searchRevInclude value="CommunicationRequest:subject"/>
+      <searchRevInclude value="Consent:actor"/>
+      <searchRevInclude value="Consent:data"/>
+      <searchRevInclude value="Consent:patient"/>
+      <searchRevInclude value="EpisodeOfCare:condition"/>
+      <searchRevInclude value="EpisodeOfCare:organization"/>
+      <searchRevInclude value="EpisodeOfCare:patient"/>
+      <searchRevInclude value="EpisodeOfCare:team"/>
+      <searchRevInclude value="Goal:addresses"/>
+      <searchRevInclude value="Goal:patient"/>
+      <searchRevInclude value="Goal:subject"/>
+      <searchRevInclude value="Provenance:target"/>
+      <operation>
+        <name value="validate"/>
+        <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"/>
+      </operation>
+    </resource>
+    <interaction>
+      <code value="transaction"/>
+    </interaction>
+    <interaction>
+      <code value="history-system"/>
+    </interaction>
+    <operation>
+      <name value="migrate"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate"/>
+      <documentation value="Data migration"/>
+    </operation>
+    <operation>
+      <name value="get-patient-procedures"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-patient-procedures"/>
+      <documentation value="This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.&#xD;&#xA;## Input&#xD;&#xA;The operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.&#xD;&#xA;### Patient reference&#xD;&#xA;Mandatory reference for the Patient which the procedure overview is computed for.&#xD;&#xA;### Start and end datetimes&#xD;&#xA;Start and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.&#xD;&#xA;### EpisodeOfCare list&#xD;&#xA;The list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.&#xD;&#xA;### Condition Coding list&#xD;&#xA;The list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.&#xD;&#xA;### Tag Coding list&#xD;&#xA;The list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.&#xD;&#xA;### Extra boolean&#xD;&#xA;This is an optional parameter that can be set to true if activities allowing 'Extra' submissions should be included in the response. &#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.&#xD;&#xA;### Output Parameters&#xD;&#xA;The output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. &#xD;&#xA;&#xD;&#xA;Rows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value &#xD;&#xA;```&#xD;&#xA;Example:&#xD;&#xA;'resource': {&#xD;&#xA;    'resourceType': 'Parameters',&#xD;&#xA;    'parameter': [{&#xD;&#xA;            'name': 'item_1',&#xD;&#xA;            'part': [{&#xD;&#xA;                    'name': 'CarePlan',&#xD;&#xA;                    'valueReference': {&#xD;&#xA;                        'reference': 'https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581'&#xD;&#xA;                    }&#xD;&#xA;            }]&#xD;&#xA;    }]&#xD;&#xA;}&#xD;&#xA; ```&#xD;&#xA;&#xD;&#xA;### Columns&#xD;&#xA;&#xD;&#xA;- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.&#xD;&#xA;- ServiceRequest: Reference to the ServiceRequest.&#xD;&#xA;- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).&#xD;&#xA;- Activity: Description of the planned activity.&#xD;&#xA;- ResolvedTimingStart: A planned start time for the activity in the requested period.&#xD;&#xA;- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.&#xD;&#xA;- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.&#xD;&#xA;- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.&#xD;&#xA;- TimingType:&#xD;&#xA;    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.&#xD;&#xA;    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.&#xD;&#xA;    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.&#xD;&#xA;- OccurencesRequested: Expected number of measurements."/>
+    </operation>
+    <operation>
+      <name value="create-episode-of-care"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-create-episode-of-care"/>
+      <documentation value="This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input.&#xD;&#xA;## Input&#xD;&#xA;The input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance' (see below).&#xD;&#xA;### The EpisodeOfCare resource&#xD;&#xA;The EpisodeOfCare has to have `PLANNED` status &#xD;&#xA;The 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. &#xD;&#xA;The 'managingOrganization' property of the EpisodeOfCare references the GDPR Data Controller (Danish: 'Dataansvarlig').&#xD;&#xA;### The privacy-Provenance resource&#xD;&#xA;A privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/sundhedsloven'&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/serviceloven'&#xD;&#xA;### Diagnosis referenced Condition resource&#xD;&#xA;For any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.&#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.&#xD;&#xA;To get resources bodies in the output the request header has to contain parameter ```Prefer: return=representation```.&#xD;&#xA;### The origin-Provenance resource&#xD;&#xA;Whenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token."/>
+    </operation>
+    <operation>
+      <name value="apply"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-apply"/>
+      <documentation value="This operation creates a careplan for a specific episodeOfCare using this PlanDefinition as a template."/>
+    </operation>
+    <operation>
+      <name value="process-message"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-process-message"/>
+      <documentation value="Accept a FHIR Message Bundle for processing"/>
+    </operation>
+    <operation>
+      <name value="perform-reindexing-pass"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-perform-reindexing-pass"/>
+      <documentation value="Forces a single pass of the resource reindexing processor"/>
+    </operation>
+    <operation>
+      <name value="meta"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"/>
+    </operation>
+    <operation>
+      <name value="get-resource-counts"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts"/>
+      <documentation value="Provides the number of resources currently stored on the server, broken down by resource type"/>
+    </operation>
+    <operation>
+      <name value="reindex-terminology"/>
+      <definition value="https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"/>
+    </operation>
+  </rest>
+</CapabilityStatement>
