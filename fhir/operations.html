@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Operations - eHealth Infrastructure v3.1.0</title>
+    <title>Operations - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,7 +39,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"9"}
     h3,h4,h5,h6{--heading-prefix:"9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -58,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -216,7 +217,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Operations</h2>
   
 
@@ -248,7 +249,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
  <li><a href="OperationDefinition--s-execute-patient-devices.html">Execute patient devices</a></li>
  <li><a href="OperationDefinition--s-execute-patient-gdpr.html">Execute patient GDPR</a></li>
  <li><a href="OperationDefinition--s-execute-patient-total.html">Execute patient total</a></li>
- <li><a href="OperationDefinition--s-execute-patient-usage-stats.html">Execute unique active cititzens total</a></li>
+ <li><a href="OperationDefinition--s-execute-patient-usage-stats.html">Execute unique active citizens total</a></li>
  <li><a href="OperationDefinition--s-execute-practitioner-gdpr.html">Execute practitioner GDPR</a></li>
  <li><a href="OperationDefinition--s-execute-practitioner-stats.html">Execute practitioner stats</a></li>
  <li><a href="OperationDefinition--s-execute-questionnaireresponses.html">Execute questionnare responses</a></li>
@@ -262,7 +263,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
  <li><a href="OperationDefinition--s-fetch-patient-devices.html">Fetch patient devices</a></li>
  <li><a href="OperationDefinition--s-fetch-patient-gdpr.html">Fetch patient GDPR</a></li>
  <li><a href="OperationDefinition--s-fetch-patient-total.html">Fetch patient total</a></li>
- <li><a href="OperationDefinition--s-fetch-patient-usage-stats.html">Fetch unique active cititzens total</a></li>
+ <li><a href="OperationDefinition--s-fetch-patient-usage-stats.html">Fetch unique active citizens total</a></li>
  <li><a href="OperationDefinition--s-fetch-practitioner-gdpr.html">Fetch practitioner GDPR</a></li>
  <li><a href="OperationDefinition--s-fetch-practitioner-stats.html">Fetch practitioner stats</a></li>
  <li><a href="OperationDefinition--s-fetch-questionnaireresponses.html">Fetch questionnare responses</a></li>
@@ -286,21 +287,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
  <li><a href="OperationDefinition--s-schedule-practitioner-stats.html">Schedule practitioner stats</a></li>
  <li><a href="OperationDefinition--s-schedule-questionnaireresponses.html">Schedule questionnare responses</a></li>
  <li><a href="OperationDefinition--s-schedule-ssl-orders.html">Schedule ssl orders</a></li>
+ <li><a href="OperationDefinition--s-search-measurements-bundle-limit.html">Search measurements bundle limit</a></li>
  <li><a href="OperationDefinition--s-search-measurements.html">Search measurements</a></li>
  <li><a href="OperationDefinition--s-submit-measurement.html">Submit measurement</a></li>
  <li><a href="OperationDefinition--s-transform-from-APD.html">Transform from APD</a></li>
  <li><a href="OperationDefinition--s-transform-from-PHMR.html">Transform from PHMR</a></li>
  <li><a href="OperationDefinition--s-transform-from-QFDD.html">Transform from QFDD</a></li>
+ <li><a href="OperationDefinition--s-transform-from-QRD-based-on-questionnaire.html">Transform from QRD based on FHIR Questionnaire</a></li>
  <li><a href="OperationDefinition--s-transform-from-QRD.html">Transform from QRD</a></li>
  <li><a href="OperationDefinition--s-transform-to-APD.html">Transform to APD</a></li>
  <li><a href="OperationDefinition--s-transform-to-PHMR.html">Transform to PHMR</a></li>
  <li><a href="OperationDefinition--s-transform-to-QFDD.html">Transform to QFDD</a></li>
  <li><a href="OperationDefinition--s-transform-to-QRD.html">Transform to QRD</a></li>
+ <li><a href="OperationDefinition--s-upload-QFDD.html">Upload QFDD</a></li>
  <li><a href="OperationDefinition--s-upload-external-code-system.html">upload-external-code-system</a></li>
  <li><a href="OperationDefinition-ActivityDefinitionPlanDefinition-i-create-clone.html">Create a clone of an ActivityDefinition</a></li>
  <li><a href="OperationDefinition-Binary-t-retrieve-document.html">Retrieve document</a></li>
+ <li><a href="OperationDefinition-Bundle-t-retrieve-and-transform-APD.html">Retrieve and transform APD document</a></li>
+ <li><a href="OperationDefinition-Bundle-t-retrieve-and-transform-PHMR.html">Retrieve and transform PHMR document</a></li>
+ <li><a href="OperationDefinition-Bundle-t-retrieve-and-transform-QRD.html">Retrieve and transform QRD document</a></li>
  <li><a href="OperationDefinition-CarePlan-i-suggest-care-teams.html">Suggest care teams</a></li>
  <li><a href="OperationDefinition-CarePlanEpisodeOfCare-i-update-care-teams.html">Modify care team assignment</a></li>
+ <li><a href="OperationDefinition-DocumentReference-t-deprecate-document.html">Deprecate document</a></li>
  <li><a href="OperationDefinition-EpisodeOfCare-i-is-context-allowed.html">Is context allowed</a></li>
  <li><a href="OperationDefinition-Library-it-evaluate.html">Evaluate</a></li>
  <li><a href="OperationDefinition-Media-t-get-data.html">get-data</a></li>
@@ -335,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -371,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -382,7 +390,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

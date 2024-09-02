@@ -1,0 +1,37 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "Questionnaire-i-create-clone",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition Questionnaire-i-create-clone</b></p><a name=\"Questionnaire-i-create-clone\"> </a><a name=\"hcQuestionnaire-i-create-clone\"> </a><a name=\"Questionnaire-i-create-clone-en-US\"> </a><p>URL: [base]/Questionnaire/[id]/$create-clone</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>clone-operation</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr></table></div>"
+  },
+  "url" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Questionnaire-i-create-clone",
+  "version" : "3.2.0",
+  "name" : "create-clone",
+  "title" : "Create a clone of a Questionnaire",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2024-09-02T13:58:07+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "### Input\n- resourceId: reference to the Questionnaire resource that should be cloned\n- clone-operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone\n",
+  "affectsState" : true,
+  "code" : "create-clone",
+  "resource" : ["Questionnaire"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "clone-operation",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "type" : "Coding"
+  }]
+}

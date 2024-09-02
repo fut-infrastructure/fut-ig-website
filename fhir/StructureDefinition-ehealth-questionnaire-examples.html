@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title> - eHealth Infrastructure v3.1.0</title>
+    <title> - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,7 +43,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:""}
     h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -62,7 +63,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -213,7 +214,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -839,13 +840,29 @@
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <p><code class="language-plaintext highlighter-rouge">DELETE [base]/Questionnaire/104</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiaHR0cHM6Ly9vcmdhbml6YXRpb24uY2l0LXF1ZXN0aW9ubmFpcmUtMTI0My5sb2NhbC9maGlyL1ByYWN0aXRpb25lci85NTI3MSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJRdWVzdGlvbm5haXJlLmRlbGV0ZSJdfSwiY29udGV4dCI6eyJvcmdhbml6YXRpb25faWQiOiJodHRwczovL29yZ2FuaXphdGlvbi5jaXQtcXVlc3Rpb25uYWlyZS0xMjQzLmxvY2FsL2ZoaXIvT3JnYW5pemF0aW9uLzc4NzMwIiwicGF0aWVudF9pZCI6Imh0dHBzOi8vcGF0aWVudC5jaXQtcXVlc3Rpb25uYWlyZS0xMjQzLmxvY2FsL2ZoaXIvUGF0aWVudC81MDgzMyIsInRlYW1fb25fZW9jIjpmYWxzZX0sInVzZXJfdHlwZSI6IlBSQUNUSVRJT05FUiJ9.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiaHR0cHM6Ly9vcmdhbml6YXRpb24uY2l0LXF1ZXN0aW9ubmFpcmUtMTI3NC5sb2NhbC9maGlyL1ByYWN0aXRpb25lci8yMDg1MSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJRdWVzdGlvbm5haXJlLmRlbGV0ZSJdfSwiY29udGV4dCI6eyJvcmdhbml6YXRpb25faWQiOiJodHRwczovL29yZ2FuaXphdGlvbi5jaXQtcXVlc3Rpb25uYWlyZS0xMjc0LmxvY2FsL2ZoaXIvT3JnYW5pemF0aW9uLzE4ODU5IiwicGF0aWVudF9pZCI6Imh0dHBzOi8vcGF0aWVudC5jaXQtcXVlc3Rpb25uYWlyZS0xMjc0LmxvY2FsL2ZoaXIvUGF0aWVudC80MDUyOSIsInRlYW1fb25fZW9jIjpmYWxzZX0sInVzZXJfdHlwZSI6IlBSQUNUSVRJT05FUiJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -854,13 +871,22 @@ Accept-Encoding: gzip
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Successfully deleted 1 resource(s) in 25ms&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;Successfully deleted 1 resource(s). Took 63ms.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"information"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"informational"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted 1 resource(s) in 25ms"</span><span class="w">
+      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESSFUL_DELETE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delete succeeded."</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted 1 resource(s). Took 63ms."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -876,9 +902,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5zZWFyY2giLCJRdWVzdGlvbm5haXJlLnJlYWQiLCIkbWlncmF0ZSIsIiR0ZXN0LW9ubHktY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5yZWFkIiwiUXVlc3Rpb25uYWlyZS5zZWFyY2giLCIkbWlncmF0ZSIsIiR0ZXN0LW9ubHktY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -888,7 +914,7 @@ Accept-Encoding: gzip
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"213"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:33:49.402+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:29:08.738+00:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -911,7 +937,7 @@ Accept-Encoding: gzip
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/19039"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/54940"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -935,11 +961,11 @@ Accept-Encoding: gzip
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:0af0f9c2-bb7b-4c4f-a5a8-9d71d2f20928"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:9d7b1513-0deb-4117-9d41-c454420d991d"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"assigner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -948,14 +974,14 @@ Accept-Encoding: gzip
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:791a9808-5503-4513-8831-325c1b026c01"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:c48df59b-3b2d-404b-a9b5-99579a1151ad"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
@@ -970,41 +996,41 @@ Accept-Encoding: gzip
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/Questionnaire?name%3Aexact=32fc9c96-eb68-47df-ae5e-f2fb22417c8e&amp;ehealthPredecessor=urn%3Auuid%3A53fefa32-fcbb-4ff8-8a92-55ee120877b7</code></p>
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/Questionnaire?name%3Aexact=a15adc83-5caa-445f-9eba-c4b90cf772ff&amp;ehealthPredecessor=urn%3Auuid%3A53fefa32-fcbb-4ff8-8a92-55ee120877b7</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMTM2ZGU1MTYtNzNkZi00Mzg1LWE5NzgtMjY1Y2VhOTk2MjYxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlF1ZXN0aW9ubmFpcmUuc2VhcmNoIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiZjdhNTg5MzMtODU1Yi00ZTJjLWE1YWUtNDEyNGVmNWU4NzQ0IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIlF1ZXN0aW9ubmFpcmUuc2VhcmNoIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2491616e-9750-4550-9dc3-4d7c3f81878c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ec40680b-27a2-4fe2-b86d-8faba36d13c7"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:24:34.241+00:00"</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:19:58.037+00:00"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"relation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://questionnaire.cit-questionnaire-1243.local/fhir/Questionnaire?_format=json&amp;_pretty=true&amp;ehealthPredecessor=urn%3Auuid%3A53fefa32-fcbb-4ff8-8a92-55ee120877b7&amp;name%3Aexact=32fc9c96-eb68-47df-ae5e-f2fb22417c8e"</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://questionnaire.cit-questionnaire-1274.local/fhir/Questionnaire?_format=json&amp;_pretty=true&amp;ehealthPredecessor=urn%3Auuid%3A53fefa32-fcbb-4ff8-8a92-55ee120877b7&amp;name%3Aexact=a15adc83-5caa-445f-9eba-c4b90cf772ff"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://questionnaire.cit-questionnaire-1243.local/fhir/Questionnaire/127"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://questionnaire.cit-questionnaire-1274.local/fhir/Questionnaire/127"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Questionnaire"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:24:32.752+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#0466c642-7bf5-4a"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:19:57.302+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1f79a591-6ec7-4b"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -1027,7 +1053,7 @@ Accept-Encoding: gzip
               </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/41438"</span><span class="w">
+                  </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/60063"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="p">{</span><span class="w">
@@ -1051,14 +1077,14 @@ Accept-Encoding: gzip
               </span><span class="nl">"assigner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+                  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32fc9c96-eb68-47df-ae5e-f2fb22417c8e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a15adc83-5caa-445f-9eba-c4b90cf772ff"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1066,14 +1092,14 @@ Accept-Encoding: gzip
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://questionnaire.cit-questionnaire-1243.local/fhir/Questionnaire/129"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://questionnaire.cit-questionnaire-1274.local/fhir/Questionnaire/129"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Questionnaire"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"129"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:24:34.144+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#cc770656-d9f0-45"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:19:57.788+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#5bd08af7-07d9-45"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -1096,7 +1122,7 @@ Accept-Encoding: gzip
               </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/24984"</span><span class="w">
+                  </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/64435"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="p">{</span><span class="w">
@@ -1120,14 +1146,14 @@ Accept-Encoding: gzip
               </span><span class="nl">"assigner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                   </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+                  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32fc9c96-eb68-47df-ae5e-f2fb22417c8e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a15adc83-5caa-445f-9eba-c4b90cf772ff"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1148,9 +1174,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnJlYWQiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUucmVhZCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -1160,8 +1186,8 @@ Accept-Encoding: gzip
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"138"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:32:27.241+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#00577594-ec86-41"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:27:55.998+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#a2a8ff0d-8f14-41"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -1184,7 +1210,7 @@ Accept-Encoding: gzip
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/6315"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/90538"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1204,11 +1230,11 @@ Accept-Encoding: gzip
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:c436594e-b45f-4916-a740-cc8a5f3a46e8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:c59ea8bd-a4b5-4641-9c2a-f7caec57f8ed"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"assigner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1217,18 +1243,18 @@ Accept-Encoding: gzip
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:8247c836-2815-4294-92b9-28e2be4f8d65"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:09136ef1-796f-4bd0-ba95-5fea6db8f6ed"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eda84a14-a077-49e4-9209-e94c70ac5e1c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"597a7ae4-8b4e-44a0-b760-9ca7f69ab310"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1243,9 +1269,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnJlYWQiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUucmVhZCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -1276,7 +1302,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/64103"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/50015"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1294,7 +1320,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1f51e264-f5c2-42d7-bbd9-21ece85a3a63"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a070acb2-22eb-418c-b902-7d8ccfa9e2e8"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1346,7 +1372,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:24:34.600+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:19:58.584+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#535e7499-dab0-4dbd-8b02-30285248c4a3"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -1369,7 +1396,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/64103"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/50015"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1389,11 +1416,11 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:b20038ef-a1cc-4af0-a4fb-ebb5f9abf239"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:3e63b438-d108-4278-bdf9-9473d5ae10e3"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"assigner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1402,18 +1429,18 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:982db428-57dd-4728-8b00-ffb86e742e36"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:cf440dec-35b3-4337-9435-9fa44a0b7ba9"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1f51e264-f5c2-42d7-bbd9-21ece85a3a63"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a070acb2-22eb-418c-b902-7d8ccfa9e2e8"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1469,9 +1496,9 @@ Content-Type: application/fhir+json; charset=UTF-8
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnJlYWQiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUucmVhZCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -1507,7 +1534,7 @@ Content-Type: application/fhir+json; charset=UTF-8
               </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/32691"</span><span class="w">
+                  </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/22078"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">},</span><span class="w">
               </span><span class="p">{</span><span class="w">
@@ -1525,7 +1552,7 @@ Content-Type: application/fhir+json; charset=UTF-8
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59b69679-e788-4e68-afb3-4d819268489b"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5cdc14e7-9cc5-474c-b409-a96bdbc9ab5a"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1538,41 +1565,45 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;WARNING&lt;/td&gt;&lt;td&gt;[Parameters.parameter[0].resource.ofType(Questionnaire), Line 1, Col 113]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;WARNING&lt;/td&gt;&lt;td&gt;[Parameters.parameter[0].resource.ofType(Questionnaire), Line 1, Col 113]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;WARNING&lt;/td&gt;&lt;td&gt;[Parameters.parameter[0].resource/*Questionnaire/null*/, Line[1] Col[839]]&lt;/td&gt;&lt;td&gt;Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;WARNING&lt;/td&gt;&lt;td&gt;[Parameters.parameter[0].resource/*Questionnaire/null*/, Line[1] Col[839]]&lt;/td&gt;&lt;td&gt;Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="mi">839</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"warning"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/java-core-messageId"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Parameters.parameter[0].resource.ofType(Questionnaire)"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Line 1, Col 113"</span><span class="w">
+        </span><span class="s2">"Parameters.parameter[0].resource/*Questionnaire/null*/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Line[1] Col[839]"</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"valueInteger"</span><span class="p">:</span><span class="w"> </span><span class="mi">839</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"warning"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/java-core-messageId"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rule que-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Parameters.parameter[0].resource.ofType(Questionnaire)"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Line 1, Col 113"</span><span class="w">
+        </span><span class="s2">"Parameters.parameter[0].resource/*Questionnaire/null*/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Line[1] Col[839]"</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1589,10 +1620,10 @@ Content-Type: application/fhir+json; charset=UTF-8
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnJlYWQiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiUXVlc3Rpb25uYWlyZS5kZWxldGUiLCJRdWVzdGlvbm5haXJlLnNlYXJjaCIsIlF1ZXN0aW9ubmFpcmUucmVhZCIsIlF1ZXN0aW9ubmFpcmUuY3JlYXRlIiwiJHRlc3Qtb25seS1jcmVhdGUiLCJRdWVzdGlvbm5haXJlLnVwZGF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 If-Match: "1"
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -1603,7 +1634,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"138"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:32:22.481+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:27:51.466+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#abb256d6-5ff1-4f41-9833-21495f25bf0d"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -1626,7 +1658,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/6315"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/90538"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1644,7 +1676,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eda84a14-a077-49e4-9209-e94c70ac5e1c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"597a7ae4-8b4e-44a0-b760-9ca7f69ab310"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1655,7 +1687,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"138"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-18T15:32:27.241+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:27:55.998+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#a2a8ff0d-8f14-41bb-a207-bcc0d7388642"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -1678,7 +1711,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">{</span><span class="w">
           </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reference"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1243.local/fhir/Organization/6315"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-questionnaire-1274.local/fhir/Organization/90538"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1698,11 +1731,11 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:c436594e-b45f-4916-a740-cc8a5f3a46e8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:c59ea8bd-a4b5-4641-9c2a-f7caec57f8ed"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"assigner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1711,18 +1744,18 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://ehealth.sundhed.dk/id/ehealth-environment"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1243"</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cit-questionnaire-1274"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:8247c836-2815-4294-92b9-28e2be4f8d65"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:09136ef1-796f-4bd0-ba95-5fea6db8f6ed"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eda84a14-a077-49e4-9209-e94c70ac5e1c"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"597a7ae4-8b4e-44a0-b760-9ca7f69ab310"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1918,7 +1951,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -1954,7 +1987,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -1965,7 +1998,6 @@ Content-Type: application/fhir+json; charset=UTF-8
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

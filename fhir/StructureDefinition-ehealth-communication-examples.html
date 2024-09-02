@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title> - eHealth Infrastructure v3.1.0</title>
+    <title> - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,7 +43,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:""}
     h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -62,7 +63,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -213,7 +214,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -431,13 +432,29 @@
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <p><code class="language-plaintext highlighter-rouge">POST [base]/ClinicalImpression/323/$validate</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiJHRlc3Qtb25seS1jcmVhdGUiLCJDbGluaWNhbEltcHJlc3Npb24uc2VhcmNoIiwiQ2xpbmljYWxJbXByZXNzaW9uLnBhdGNoIiwiQ2xpbmljYWxJbXByZXNzaW9uLnJlYWQiLCJDbGluaWNhbEltcHJlc3Npb24uY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -453,7 +470,8 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"323"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-04T11:29:32.344+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:56:40.833+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#b1b5d935-3cf8-43ac-845e-e9471ddf7b1c"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -462,7 +480,7 @@ Content-Type: application/fhir+json; charset=UTF-8
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-task-1920.local/fhir/EpisodeOfCare/99114"</span><span class="w">
+              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-task-1940.local/fhir/EpisodeOfCare/48839"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
@@ -476,7 +494,7 @@ Content-Type: application/fhir+json; charset=UTF-8
           </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-task-1920.local/fhir/Patient/83278"</span><span class="w">
+          </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-task-1940.local/fhir/Patient/13978"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -489,7 +507,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -512,29 +530,29 @@ Content-Type: application/fhir+json; charset=UTF-8
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/Communication?episodeOfCare=https%3A%2F%2Fcareplan.cit-measurement-1730.local%2Ffhir%2FEpisodeOfCare%2F97423&amp;sender=https%3A%2F%2Fpatient.cit-measurement-1730.local%2Ffhir%2FPatient%2F18236</code></p>
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/Communication?episodeOfCare=https%3A%2F%2Fcareplan.cit-measurement-1826.local%2Ffhir%2FEpisodeOfCare%2F5345&amp;sender=https%3A%2F%2Fpatient.cit-measurement-1826.local%2Ffhir%2FPatient%2F37473</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiaHR0cHM6Ly9wYXRpZW50LmNpdC1tZWFzdXJlbWVudC0xNzMwLmxvY2FsL2ZoaXIvUGF0aWVudC8xODIzNiIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDb21tdW5pY2F0aW9uLnNlYXJjaCJdfSwiY29udGV4dCI6eyJlcGlzb2RlX29mX2NhcmVfaWQiOiJodHRwczovL2NhcmVwbGFuLmNpdC1tZWFzdXJlbWVudC0xNzMwLmxvY2FsL2ZoaXIvRXBpc29kZU9mQ2FyZS85NzQyMyIsInRlYW1fb25fZW9jIjpmYWxzZX0sInVzZXJfdHlwZSI6IlBSQUNUSVRJT05FUiJ9.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiaHR0cHM6Ly9wYXRpZW50LmNpdC1tZWFzdXJlbWVudC0xODI2LmxvY2FsL2ZoaXIvUGF0aWVudC8zNzQ3MyIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDb21tdW5pY2F0aW9uLnNlYXJjaCJdfSwiY29udGV4dCI6eyJlcGlzb2RlX29mX2NhcmVfaWQiOiJodHRwczovL2NhcmVwbGFuLmNpdC1tZWFzdXJlbWVudC0xODI2LmxvY2FsL2ZoaXIvRXBpc29kZU9mQ2FyZS81MzQ1IiwidGVhbV9vbl9lb2MiOmZhbHNlfSwidXNlcl90eXBlIjoiUFJBQ1RJVElPTkVSIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32080eb4-9486-4791-976f-e2189a3e7dbd"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d40e29a-d63e-4cb2-b140-06968134e429"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-23T12:54:19.311+00:00"</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:15:04.106+00:00"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"relation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://measurement.cit-measurement-1730.local/fhir/Communication?_format=json&amp;_pretty=true&amp;episodeOfCare=https%3A%2F%2Fcareplan.cit-measurement-1730.local%2Ffhir%2FEpisodeOfCare%2F97423&amp;sender=https%3A%2F%2Fpatient.cit-measurement-1730.local%2Ffhir%2FPatient%2F18236"</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://measurement.cit-measurement-1826.local/fhir/Communication?_format=json&amp;_pretty=true&amp;episodeOfCare=https%3A%2F%2Fcareplan.cit-measurement-1826.local%2Ffhir%2FEpisodeOfCare%2F5345&amp;sender=https%3A%2F%2Fpatient.cit-measurement-1826.local%2Ffhir%2FPatient%2F37473"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -546,24 +564,24 @@ Accept-Encoding: gzip
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/Communication/647/_history/1</code></p>
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/Communication/981/_history/1</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMjczZTNmNmQtOTU1YS00ZTc2LWE5ZjItN2ZmYWY1YjAzOGUxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNvbW11bmljYXRpb24ucmVhZCIsIkNvbW11bmljYXRpb24ucGF0Y2giLCJNZWRpYS5zZWFyY2giLCJRdWVzdGlvbm5haXJlUmVzcG9uc2UucmVhZCIsIk9ic2VydmF0aW9uLnNlYXJjaCIsIiRzZWFyY2gtbWVhc3VyZW1lbnRzIiwiT2JzZXJ2YXRpb24ucmVhZCIsIiRzdWJtaXQtbWVhc3VyZW1lbnQiLCIkdGVzdC1vbmx5LWNyZWF0ZSIsIlF1ZXN0aW9ubmFpcmVSZXNwb25zZS5zZWFyY2giLCJDb21tdW5pY2F0aW9uLmNyZWF0ZSIsIkNvbW11bmljYXRpb24uc2VhcmNoIiwiUHJvdmVuYW5jZS5yZWFkIiwiTWVkaWEucmVhZCJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNmYzMjQxYzQtMzUyOS00NmY4LTk4NGItNzQyYjYwOTEwOWJkIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNvbW11bmljYXRpb24ucmVhZCIsIkNvbW11bmljYXRpb24ucGF0Y2giLCJNZWRpYS5zZWFyY2giLCJRdWVzdGlvbm5haXJlUmVzcG9uc2UucmVhZCIsIk9ic2VydmF0aW9uLnNlYXJjaCIsIiRzZWFyY2gtbWVhc3VyZW1lbnRzIiwiT2JzZXJ2YXRpb24ucmVhZCIsIiRzdWJtaXQtbWVhc3VyZW1lbnQiLCIkdGVzdC1vbmx5LWNyZWF0ZSIsIkNvbW11bmljYXRpb24uY3JlYXRlIiwiUXVlc3Rpb25uYWlyZVJlc3BvbnNlLnNlYXJjaCIsIiRtaWdyYXRlIiwiQ29tbXVuaWNhdGlvbi5zZWFyY2giLCJQcm92ZW5hbmNlLnJlYWQiLCJNZWRpYS5yZWFkIiwiUHJvdmVuYW5jZS5zZWFyY2giXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Communication"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"647"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"981"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-23T12:59:09.805+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2be00064-bf2b-9c"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:01.723+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#763eb919-e018-4d"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -572,7 +590,7 @@ Accept-Encoding: gzip
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1730.local/fhir/EpisodeOfCare/1515"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1826.local/fhir/EpisodeOfCare/56324"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -599,15 +617,15 @@ Accept-Encoding: gzip
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/70140"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/26911"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"about"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/97999"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/94308"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/71447"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/89239"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -618,13 +636,13 @@ Accept-Encoding: gzip
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">PATCH [base]/Communication/103</code></p>
+      <p><code class="language-plaintext highlighter-rouge">PATCH [base]/Communication/860</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiaHR0cHM6Ly9vcmdhbml6YXRpb24uY2l0LW1lYXN1cmVtZW50LTE3MzAubG9jYWwvZmhpci9QcmFjdGl0aW9uZXIvODM5OCIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJDb21tdW5pY2F0aW9uLnJlYWQiLCJDb21tdW5pY2F0aW9uLnBhdGNoIl19LCJjb250ZXh0Ijp7ImVwaXNvZGVfb2ZfY2FyZV9pZCI6Imh0dHBzOi8vY2FyZXBsYW4uY2l0LW1lYXN1cmVtZW50LTE3MzAubG9jYWwvZmhpci9FcGlzb2RlT2ZDYXJlLzQxMDA4IiwicGF0aWVudF9pZCI6Imh0dHBzOi8vcGF0aWVudC5jaXQtbWVhc3VyZW1lbnQtMTczMC5sb2NhbC9maGlyL1BhdGllbnQvOTkxOTkiLCJ0ZWFtX29uX2VvYyI6ZmFsc2V9LCJ1c2VyX3R5cGUiOiJQUkFDVElUSU9ORVIifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiaHR0cHM6Ly9vcmdhbml6YXRpb24uY2l0LW1lYXN1cmVtZW50LTE4MjYubG9jYWwvZmhpci9QcmFjdGl0aW9uZXIvNjIxMDIiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQ29tbXVuaWNhdGlvbi5yZWFkIiwiQ29tbXVuaWNhdGlvbi5wYXRjaCJdfSwiY29udGV4dCI6eyJlcGlzb2RlX29mX2NhcmVfaWQiOiJodHRwczovL2NhcmVwbGFuLmNpdC1tZWFzdXJlbWVudC0xODI2LmxvY2FsL2ZoaXIvRXBpc29kZU9mQ2FyZS83NzA2MCIsInBhdGllbnRfaWQiOiJodHRwczovL3BhdGllbnQuY2l0LW1lYXN1cmVtZW50LTE4MjYubG9jYWwvZmhpci9QYXRpZW50LzY1Nzg2IiwidGVhbV9vbl9lb2MiOmZhbHNlfSwidXNlcl90eXBlIjoiUFJBQ1RJVElPTkVSIn0.
 Accept: application/fhir+xml;q=1.0, application/fhir+json;q=1.0, application/xml+fhir;q=0.9, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/json-patch+json; charset=UTF-8
 </code></pre></div></div>
@@ -642,11 +660,11 @@ Content-Type: application/json-patch+json; charset=UTF-8
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Communication"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"103"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"860"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-23T12:54:06.121+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#dcfed21b-21ff-49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:14:51.406+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#87cf5fea-d1df-442f-b8df-9e5ef6a023ec"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -655,7 +673,7 @@ Content-Type: application/json-patch+json; charset=UTF-8
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1730.local/fhir/EpisodeOfCare/41008"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1826.local/fhir/EpisodeOfCare/77060"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -682,7 +700,7 @@ Content-Type: application/json-patch+json; charset=UTF-8
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/99199"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/65786"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -693,7 +711,7 @@ Content-Type: application/json-patch+json; charset=UTF-8
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-measurement-1730.local/fhir/Practitioner/8398"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-measurement-1826.local/fhir/Practitioner/62102"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -708,9 +726,9 @@ Content-Type: application/json-patch+json; charset=UTF-8
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMjczZTNmNmQtOTU1YS00ZTc2LWE5ZjItN2ZmYWY1YjAzOGUxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNvbW11bmljYXRpb24ucmVhZCIsIkNvbW11bmljYXRpb24ucGF0Y2giLCJNZWRpYS5zZWFyY2giLCJRdWVzdGlvbm5haXJlUmVzcG9uc2UucmVhZCIsIk9ic2VydmF0aW9uLnNlYXJjaCIsIiRzZWFyY2gtbWVhc3VyZW1lbnRzIiwiT2JzZXJ2YXRpb24ucmVhZCIsIiRzdWJtaXQtbWVhc3VyZW1lbnQiLCIkdGVzdC1vbmx5LWNyZWF0ZSIsIlF1ZXN0aW9ubmFpcmVSZXNwb25zZS5zZWFyY2giLCJDb21tdW5pY2F0aW9uLmNyZWF0ZSIsIkNvbW11bmljYXRpb24uc2VhcmNoIiwiUHJvdmVuYW5jZS5yZWFkIiwiTWVkaWEucmVhZCJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNmYzMjQxYzQtMzUyOS00NmY4LTk4NGItNzQyYjYwOTEwOWJkIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNvbW11bmljYXRpb24ucmVhZCIsIkNvbW11bmljYXRpb24ucGF0Y2giLCJNZWRpYS5zZWFyY2giLCJRdWVzdGlvbm5haXJlUmVzcG9uc2UucmVhZCIsIk9ic2VydmF0aW9uLnNlYXJjaCIsIiRzZWFyY2gtbWVhc3VyZW1lbnRzIiwiT2JzZXJ2YXRpb24ucmVhZCIsIiRzdWJtaXQtbWVhc3VyZW1lbnQiLCIkdGVzdC1vbmx5LWNyZWF0ZSIsIkNvbW11bmljYXRpb24uY3JlYXRlIiwiUXVlc3Rpb25uYWlyZVJlc3BvbnNlLnNlYXJjaCIsIiRtaWdyYXRlIiwiQ29tbXVuaWNhdGlvbi5zZWFyY2giLCJQcm92ZW5hbmNlLnJlYWQiLCJNZWRpYS5yZWFkIiwiUHJvdmVuYW5jZS5zZWFyY2giXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -738,7 +756,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1730.local/fhir/EpisodeOfCare/1515"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1826.local/fhir/EpisodeOfCare/56324"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -754,15 +772,15 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/70140"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/26911"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"about"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/97999"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/94308"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/71447"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/89239"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -770,10 +788,11 @@ Content-Type: application/fhir+json; charset=UTF-8
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Communication"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"647"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"981"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-23T12:59:09.805+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:01.723+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#763eb919-e018-4d95-a25e-8dd68698ede8"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -782,7 +801,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1730.local/fhir/EpisodeOfCare/1515"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1826.local/fhir/EpisodeOfCare/56324"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -809,15 +828,15 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/70140"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/26911"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"about"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/97999"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/94308"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"sender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/71447"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/89239"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -828,13 +847,13 @@ Content-Type: application/fhir+json; charset=UTF-8
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">POST [base]/Communication/133/$validate</code></p>
+      <p><code class="language-plaintext highlighter-rouge">POST [base]/Communication/890/$validate</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMzBjNzY5OWEtNTk2Yi00ODc4LWEzYjAtNDIxNGZiODczMzJhIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNvbW11bmljYXRpb24ucmVhZCIsIkNvbW11bmljYXRpb24ucGF0Y2giLCJNZWRpYS5zZWFyY2giLCJRdWVzdGlvbm5haXJlUmVzcG9uc2UucmVhZCIsIk9ic2VydmF0aW9uLnNlYXJjaCIsIiRzZWFyY2gtbWVhc3VyZW1lbnRzIiwiT2JzZXJ2YXRpb24ucmVhZCIsIiRzdWJtaXQtbWVhc3VyZW1lbnQiLCIkdGVzdC1vbmx5LWNyZWF0ZSIsIlF1ZXN0aW9ubmFpcmVSZXNwb25zZS5zZWFyY2giLCJDb21tdW5pY2F0aW9uLmNyZWF0ZSIsIkNvbW11bmljYXRpb24uc2VhcmNoIiwiUHJvdmVuYW5jZS5yZWFkIiwiTWVkaWEucmVhZCJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNTZjNGZjYTYtZWM1NC00OGY4LWI4NjctMzEyOWVjZTliYzc5IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNvbW11bmljYXRpb24ucmVhZCIsIkNvbW11bmljYXRpb24ucGF0Y2giLCJNZWRpYS5zZWFyY2giLCJRdWVzdGlvbm5haXJlUmVzcG9uc2UucmVhZCIsIk9ic2VydmF0aW9uLnNlYXJjaCIsIiRzZWFyY2gtbWVhc3VyZW1lbnRzIiwiT2JzZXJ2YXRpb24ucmVhZCIsIiRzdWJtaXQtbWVhc3VyZW1lbnQiLCIkdGVzdC1vbmx5LWNyZWF0ZSIsIkNvbW11bmljYXRpb24uY3JlYXRlIiwiUXVlc3Rpb25uYWlyZVJlc3BvbnNlLnNlYXJjaCIsIiRtaWdyYXRlIiwiQ29tbXVuaWNhdGlvbi5zZWFyY2giLCJQcm92ZW5hbmNlLnJlYWQiLCJNZWRpYS5yZWFkIiwiUHJvdmVuYW5jZS5zZWFyY2giXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -847,10 +866,11 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"resource"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Communication"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"133"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"890"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-23T12:54:23.462+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:15:07.753+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#b3bf7212-98c5-4cf0-9266-0e35cdbd7c0c"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -859,7 +879,7 @@ Content-Type: application/fhir+json; charset=UTF-8
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1730.local/fhir/EpisodeOfCare/11850"</span><span class="w">
+              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://careplan.cit-measurement-1826.local/fhir/EpisodeOfCare/8231"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
@@ -886,7 +906,7 @@ Content-Type: application/fhir+json; charset=UTF-8
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1730.local/fhir/Patient/51247"</span><span class="w">
+          </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-measurement-1826.local/fhir/Patient/29949"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -907,7 +927,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1527,7 +1547,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -1563,7 +1583,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -1574,7 +1594,6 @@ Content-Type: application/fhir+json; charset=UTF-8
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

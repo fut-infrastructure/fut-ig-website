@@ -1,0 +1,46 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "DocumentReference-t-deprecate-document",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition DocumentReference-t-deprecate-document</b></p><a name=\"DocumentReference-t-deprecate-document\"> </a><a name=\"hcDocumentReference-t-deprecate-document\"> </a><a name=\"DocumentReference-t-deprecate-document-en-US\"> </a><p>URL: [base]/DocumentReference/$deprecate-document</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>documentId</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#token\">token</a>)</td><td/><td/></tr><tr><td>IN</td><td>cpr</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td/></tr></table></div>"
+  },
+  "url" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/DocumentReference-t-deprecate-document",
+  "version" : "3.2.0",
+  "name" : "deprecate-document",
+  "title" : "Deprecate document",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2024-09-02T14:02:47+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Deprecates a shared document. The operation takes a documentIdentifier and cpr-number as parameters and finds the DocumentReference with the corresponding masterIdentifier. masterIdentifier should be unique for DocumentReference so if less than 0 or more than 1 are found the operation throws and exception. If the found documentReference has a patient which cpr number matches the provided value the document is deprecated. iti-57 is used to deprecate the document on XDS. On successthe documentReference status is updated to superseded and updated in the database.",
+  "affectsState" : true,
+  "code" : "deprecate-document",
+  "resource" : ["DocumentReference"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "documentId",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "type" : "string",
+    "searchType" : "token"
+  },
+  {
+    "name" : "cpr",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "type" : "string",
+    "searchType" : "string"
+  }]
+}

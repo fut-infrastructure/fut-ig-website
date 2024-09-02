@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/DocumentReference-t-deprecate-document> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DocumentReference-t-deprecate-document"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition DocumentReference-t-deprecate-document</b></p><a name=\"DocumentReference-t-deprecate-document\"> </a><a name=\"hcDocumentReference-t-deprecate-document\"> </a><a name=\"DocumentReference-t-deprecate-document-en-US\"> </a><p>URL: [base]/DocumentReference/$deprecate-document</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>documentId</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#token\">token</a>)</td><td/><td/></tr><tr><td>IN</td><td>cpr</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a><br/>(<a href=\"http://hl7.org/fhir/R4/search.html#string\">string</a>)</td><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/DocumentReference-t-deprecate-document"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.2.0"] ; # 
+  fhir:name [ fhir:v "deprecate-document"] ; # 
+  fhir:title [ fhir:v "Deprecate document"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-09-02T13:58:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Deprecates a shared document. The operation takes a documentIdentifier and cpr-number as parameters and finds the DocumentReference with the corresponding masterIdentifier. masterIdentifier should be unique for DocumentReference so if less than 0 or more than 1 are found the operation throws and exception. If the found documentReference has a patient which cpr number matches the provided value the document is deprecated. iti-57 is used to deprecate the document on XDS. On successthe documentReference status is updated to superseded and updated in the database."] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "deprecate-document"] ; # 
+  fhir:resource ( [ fhir:v "DocumentReference"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "documentId" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "token" ]
+  ] [
+     fhir:name [ fhir:v "cpr" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ] ;
+     fhir:searchType [ fhir:v "string" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

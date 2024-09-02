@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>DAK-E Codes - eHealth Infrastructure v3.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"86.400"}
+    h3,h4,h5,h6{--heading-prefix:"86.400"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">3.2.0 - release
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>DAK-E Codes</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-oid-1.2.208.184.100.8.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-oid-1.2.208.184.100.8.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-oid-1.2.208.184.100.8.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: DAK-E Codes
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">urn:oid:1.2.208.184.100.8<button title="Click to copy URL" class="btn-copy" data-clipboard-text="urn:oid:1.2.208.184.100.8"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">3.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="urn:oid:1.2.208.184.100.8|3.2.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2020-01-05
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">DAK-E-Codes</span></td>
+    </tr>
+
+    <tr>
+      <td colspan="5">
+        <i>Other Identifiers:</i> OID:1.2.208.184.100.8
+      </td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Procedure and observation codes used for communication and administration of laboratory results in Denmark.</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-ehealth-observation-codes.html">ObservationCodes</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem urn-oid-1.2.208.184.100.8</b></p><a name="urn-oid-1.2.208.184.100.8"> </a><a name="hcurn-oid-1.2.208.184.100.8"> </a><a name="urn-oid-1.2.208.184.100.8-en-US"> </a>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">version: 5; Last updated: 2021-03-16 16:28:30+0000</p></div><p>This case-sensitive code system <code>urn:oid:1.2.208.184.100.8</code> defines the following codes:</p>
+<table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Dansk (Danish, da)</b></td></tr>
+<tr><td style="white-space:nowrap">DIB0010<a name="urn-oid-1.2.208.184.100.8-DIB0010"> </a></td>
+<td>Følsomhed højre;Fod</td>
+<td>Fod—Følsomhed højre arb.akt.(ingen; normal; reduceret) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DIB0011<a name="urn-oid-1.2.208.184.100.8-DIB0011"> </a></td>
+<td>Følsomhed venstre;Fod</td>
+<td>Fod—Følsomhed venstre arb.akt.(ingen; normal; reduceret) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DIB0014<a name="urn-oid-1.2.208.184.100.8-DIB0014"> </a></td>
+<td>Blodtryk højre,index;Ankel/Arm</td>
+<td>Ankel/Arm—Blodtryk højre,index  =  ? mmHg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DIB0015<a name="urn-oid-1.2.208.184.100.8-DIB0015"> </a></td>
+<td>Blodtryk venstre,index;Ankel/Arm</td>
+<td>Ankel/Arm—Blodtryk venstre,index  =  ? mmHg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DIB0018<a name="urn-oid-1.2.208.184.100.8-DIB0018"> </a></td>
+<td>Sår højre;Fod</td>
+<td>Fod—Sår højre; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DIB0019<a name="urn-oid-1.2.208.184.100.8-DIB0019"> </a></td>
+<td>Sår venstre;Fod</td>
+<td>Fod—Sår venstre; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK05219<a name="urn-oid-1.2.208.184.100.8-DNK05219"> </a></td>
+<td>Elektrokardiografi [EKG12];Pt</td>
+<td>Pt—Elektrokardiografi; egenskabsart(I II III V1-6 aVflr) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK05472<a name="urn-oid-1.2.208.184.100.8-DNK05472"> </a></td>
+<td>Blodtryk systolisk;Arm</td>
+<td>Arm—Blodtryk(systolisk); tryk = ? mmHg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK05473<a name="urn-oid-1.2.208.184.100.8-DNK05473"> </a></td>
+<td>Blodtryk diastolisk;Arm</td>
+<td>Arm—Blodtryk(diastolisk); tryk = ? mmHg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK35842<a name="urn-oid-1.2.208.184.100.8-DNK35842"> </a></td>
+<td>Glukose(diag.);P(vB; fPt)</td>
+<td>P(vB; fPt)—Glucose; stofk.(diagnostisk) = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88001<a name="urn-oid-1.2.208.184.100.8-MCS88001"> </a></td>
+<td>Ugentligt;Pt(motion)</td>
+<td>Pt(motion)—Ugentligt; tid = ? time/uge</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88002<a name="urn-oid-1.2.208.184.100.8-MCS88002"> </a></td>
+<td>Dagligt;Pt(rygning)</td>
+<td>Pt(rygning)—Dagligt; antal = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88005<a name="urn-oid-1.2.208.184.100.8-MCS88005"> </a></td>
+<td>Rygestop tilbudt;Pt(rygning)</td>
+<td>Pt(rygning)—Rygestop tilbudt; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88006<a name="urn-oid-1.2.208.184.100.8-MCS88006"> </a></td>
+<td>Tobaksrygning ophørt;Pt(rygning)</td>
+<td>Pt(rygning)—Ophørt = ? Årstal</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88008<a name="urn-oid-1.2.208.184.100.8-MCS88008"> </a></td>
+<td>Passiv tobaksrygning;Pt(rygning)</td>
+<td>Pt(rygning)—Udsættes du for passiv tobaksrygning; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88009<a name="urn-oid-1.2.208.184.100.8-MCS88009"> </a></td>
+<td>Rygestop hjælp ønskes;Pt(rygning)</td>
+<td>Pt(rygning)—Vil du gerne have hjælp til at holde op; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88010<a name="urn-oid-1.2.208.184.100.8-MCS88010"> </a></td>
+<td>Vil du gerne holde op;Pt(rygning)</td>
+<td>Pt(rygning)—Vil du gerne holde op; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88011<a name="urn-oid-1.2.208.184.100.8-MCS88011"> </a></td>
+<td>Ryger du tobak;Pt(rygning)</td>
+<td>Pt(rygning)—Ryger du tobak; arb.akt.(dagligt; lejlighedsvis; ophørt; aldrig røget) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88014<a name="urn-oid-1.2.208.184.100.8-MCS88014"> </a></td>
+<td>Diabeteskontrol aftalt;Pt(diabetes)</td>
+<td>Pt(diabetes)—Antal diabeteskontroller aftalt i det kommende år; antal (værdi 0-10) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88015<a name="urn-oid-1.2.208.184.100.8-MCS88015"> </a></td>
+<td>FEV1;Lunge</td>
+<td>Lunge—Lungefunktionsundersøgelse FEV1; vol. = ? L</td>
+<td>FEV1</td></tr>
+<tr><td style="white-space:nowrap">MCS88016<a name="urn-oid-1.2.208.184.100.8-MCS88016"> </a></td>
+<td>FVC;Lunge</td>
+<td>Lunge—Lungefunktionsundersøgelse vitalkapasitet FVC; vol. = ? L</td>
+<td>FVC</td></tr>
+<tr><td style="white-space:nowrap">MCS88017<a name="urn-oid-1.2.208.184.100.8-MCS88017"> </a></td>
+<td>FEV1/FVC;Lunge</td>
+<td>Lunge—FEV1/FVC; ratio = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU28404<a name="urn-oid-1.2.208.184.100.8-NPU28404"> </a></td>
+<td>Taljeomkreds;Pt</td>
+<td>Pt—Taljeomkreds; længde = ? m</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88019<a name="urn-oid-1.2.208.184.100.8-MCS88019"> </a></td>
+<td>Blodtryk hjemme systolisk;Arm</td>
+<td>Arm—Blodtryk(systolisk) hjemme; tryk = ? mmHg</td>
+<td>Systolisk blodtryk</td></tr>
+<tr><td style="white-space:nowrap">MCS88020<a name="urn-oid-1.2.208.184.100.8-MCS88020"> </a></td>
+<td>Blodtryk hjemme diastolisk;Arm</td>
+<td>Arm—Blodtryk(diastolisk) hjemme; tryk = ? mmHg</td>
+<td>Diastolisk blodtryk</td></tr>
+<tr><td style="white-space:nowrap">MCS88021<a name="urn-oid-1.2.208.184.100.8-MCS88021"> </a></td>
+<td>MRC skala;Pt(KOL)</td>
+<td>Pt(KOL) —MRC skala; arb.antal(værdi 1-5) = ?</td>
+<td>MRC</td></tr>
+<tr><td style="white-space:nowrap">MCS88022<a name="urn-oid-1.2.208.184.100.8-MCS88022"> </a></td>
+<td>Eksacerbationer;Pt(KOL)</td>
+<td>Pt(KOL)—Antal eksacerbationer i det sidst forløbne år; antal (værdi 1-20) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88023<a name="urn-oid-1.2.208.184.100.8-MCS88023"> </a></td>
+<td>FEV1 af forventet værdi;Pt(KOL)</td>
+<td>Pt(KOL) - FEV1 i % af den forventede værdi (efter højde,alder og køn); ratio = ?</td>
+<td>FEV1 af forventet værdi</td></tr>
+<tr><td style="white-space:nowrap">MCS88024<a name="urn-oid-1.2.208.184.100.8-MCS88024"> </a></td>
+<td>Pakkeår;Pt(rygning)</td>
+<td>Pt(rygning)—Antal pakkeår (20 cigaretter dagligt i et år) = ? År</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88025<a name="urn-oid-1.2.208.184.100.8-MCS88025"> </a></td>
+<td>HbA1c mål aftalt;Hb (B)(diabetes)</td>
+<td>Hb (B)(diabetes)—HBA1c mål aftalt for det kommende år; stofratio = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88026<a name="urn-oid-1.2.208.184.100.8-MCS88026"> </a></td>
+<td>LDL-Kolesterol, mål aftalt;P(mål)</td>
+<td>P(mål)—LDL Kolesterol mål aftalt for kommende år; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88027<a name="urn-oid-1.2.208.184.100.8-MCS88027"> </a></td>
+<td>BT(systolisk), mål aftalt;Arm(mål)</td>
+<td>Arm(mål)—Blodtryk(systolisk) mål aftalt for kommende år = ? mmHg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88028<a name="urn-oid-1.2.208.184.100.8-MCS88028"> </a></td>
+<td>Legeme vægt, mål aftalt;Pt(mål)</td>
+<td>Pt(mål)—Legeme; masse mål aftalt for kommende år = ? Kg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88030<a name="urn-oid-1.2.208.184.100.8-MCS88030"> </a></td>
+<td>FEV1 reversibilitet;Lunge</td>
+<td>Lunge—FEV1 reversibilitet = ? L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88032<a name="urn-oid-1.2.208.184.100.8-MCS88032"> </a></td>
+<td>Hjertesvigts funktionskl.;Pt(NYHA)</td>
+<td>Pt(NYHA)—Hjerteinsufficiens funktionsklasse; antal (værdi 0-4) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88033<a name="urn-oid-1.2.208.184.100.8-MCS88033"> </a></td>
+<td>BT(diatolisk), mål aftalt;Arm(mål)</td>
+<td>Arm(mål)—Blodtryk(diastolisk) mål aftalt for kommende år = ? mmHg</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88034<a name="urn-oid-1.2.208.184.100.8-MCS88034"> </a></td>
+<td>BMI, mål aftalt;Pt(mål)</td>
+<td>Pt(mål)—Legeme; massekoefficient(masse/kvadreret højde) mål aftalt for det kommende år  = ? kg/m</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88067<a name="urn-oid-1.2.208.184.100.8-MCS88067"> </a></td>
+<td>Taljeomkreds mål aftalt;Pt(diabet)</td>
+<td>Pt(diabetes)—Taljeomkreds mål aftalt for det kommende år; længde = ? M</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88036<a name="urn-oid-1.2.208.184.100.8-MCS88036"> </a></td>
+<td>Alkoholforbrug;Pt(alkohol)</td>
+<td>Pt(alkohol)—Alkoholforbrug ugentlig; antal = ? Uge</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88039<a name="urn-oid-1.2.208.184.100.8-MCS88039"> </a></td>
+<td>Til rådighed for arbejdsmark.;Pt</td>
+<td>Pt—Står til rådighed for arbejdsmarkedet; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88040<a name="urn-oid-1.2.208.184.100.8-MCS88040"> </a></td>
+<td>ASS score;Pt(angst)</td>
+<td>Pt(angst)—Angst scoreskema; antal (værdi 0-50) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88041<a name="urn-oid-1.2.208.184.100.8-MCS88041"> </a></td>
+<td>MDI score;Pt(depression)</td>
+<td>Pt(depression)—Major Depression Inventory; antal (værdi 0-50) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88042<a name="urn-oid-1.2.208.184.100.8-MCS88042"> </a></td>
+<td>MMSE score;Pt</td>
+<td>Pt—Mini-Mental State Examination score; antal (værdi 0-30) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88043<a name="urn-oid-1.2.208.184.100.8-MCS88043"> </a></td>
+<td>Er der talt om kost;Pt(kost)</td>
+<td>Pt(kost)—Er der talt om kost; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88044<a name="urn-oid-1.2.208.184.100.8-MCS88044"> </a></td>
+<td>Øjenus., fundusundersøgelse;Pt(øje)</td>
+<td>Pt(øje)—Øjenbaggrundsundersøgelse, fundusundersøgelse; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88050<a name="urn-oid-1.2.208.184.100.8-MCS88050"> </a></td>
+<td>Rejse sætte sig testen;Pt</td>
+<td>Pt—Rejse sætte sig testen; antal (værdi 0-50) =  × 1/ 30 sek</td>
+<td>Rejse-sætte-sig-test</td></tr>
+<tr><td style="white-space:nowrap">MCS88058<a name="urn-oid-1.2.208.184.100.8-MCS88058"> </a></td>
+<td>GOLD Inddeling;Pt(KOL)</td>
+<td>Pt(KOL) —GOLD Inddeling; arb.akt.(A; B; C; D) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88059<a name="urn-oid-1.2.208.184.100.8-MCS88059"> </a></td>
+<td>Symptom;Pt(CMDQ)</td>
+<td>Pt(CMDQ) —Symptom; antal (værdi 0-48) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88060<a name="urn-oid-1.2.208.184.100.8-MCS88060"> </a></td>
+<td>Helbredsangst;Pt(CMDQ)</td>
+<td>Pt(CMDQ) —Helbredsangst; antal (værdi 0-28)  = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88061<a name="urn-oid-1.2.208.184.100.8-MCS88061"> </a></td>
+<td>Angsttilstand;Pt(CMDQ)</td>
+<td>Pt(CMDQ) —Angsttilstand; antal (værdi 0-16) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88062<a name="urn-oid-1.2.208.184.100.8-MCS88062"> </a></td>
+<td>Depression;Pt(CMDQ)</td>
+<td>Pt(CMDQ) —Depression; antal (værdi 0-24) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88063<a name="urn-oid-1.2.208.184.100.8-MCS88063"> </a></td>
+<td>Alkohol;Pt(CMDQ)</td>
+<td>Pt(CMDQ) —Alkohol; antal (værdi 0-4) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88105<a name="urn-oid-1.2.208.184.100.8-MCS88105"> </a></td>
+<td>FEV1/FVC reversibilitet;Lunge</td>
+<td>Lunge—FEV1/FVC reversibilitet; ratio = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01443<a name="urn-oid-1.2.208.184.100.8-NPU01443"> </a></td>
+<td>Calcium;P</td>
+<td>P—Calcium(II); stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01566<a name="urn-oid-1.2.208.184.100.8-NPU01566"> </a></td>
+<td>Kolesterol;P</td>
+<td>P—Cholesterol+ester; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01549<a name="urn-oid-1.2.208.184.100.8-NPU01549"> </a></td>
+<td>Kolesterol;P</td>
+<td>P—Cholesterol(non-ester); stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU18412<a name="urn-oid-1.2.208.184.100.8-NPU18412"> </a></td>
+<td>Kolesterol;P(fPt)</td>
+<td>P(fPt)—Cholesterol+ester; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01567<a name="urn-oid-1.2.208.184.100.8-NPU01567"> </a></td>
+<td>Kolesterol HDL;P</td>
+<td>P—Cholesterol+ester, i HDL; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01568<a name="urn-oid-1.2.208.184.100.8-NPU01568"> </a></td>
+<td>Kolesterol LDL;P</td>
+<td>P—Cholesterol+ester, i LDL; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK35308<a name="urn-oid-1.2.208.184.100.8-DNK35308"> </a></td>
+<td>Kolesterol LDL (beregnet);P</td>
+<td>P—Cholesterol+ester, i LDL; stofk.(DSKB 2017) = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01700<a name="urn-oid-1.2.208.184.100.8-NPU01700"> </a></td>
+<td>Vitamin B12;P</td>
+<td>P—Cobalamin; stofk. = ? pmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01807<a name="urn-oid-1.2.208.184.100.8-NPU01807"> </a></td>
+<td>Kreatinin (Jaffe);P</td>
+<td>P—Creatininium; stofk.(Jaffe) = ? µmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU04998<a name="urn-oid-1.2.208.184.100.8-NPU04998"> </a></td>
+<td>Kreatinin;P</td>
+<td>P—Creatininium; stofk.(enz.) = ? µmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU18016<a name="urn-oid-1.2.208.184.100.8-NPU18016"> </a></td>
+<td>Kreatinin;P</td>
+<td>P—Creatininium; stofk. = ? µmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU02192<a name="urn-oid-1.2.208.184.100.8-NPU02192"> </a></td>
+<td>Glukose;P</td>
+<td>P—Glucose; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU02319<a name="urn-oid-1.2.208.184.100.8-NPU02319"> </a></td>
+<td>Hæmoglobin;B</td>
+<td>B—Hæmoglobin(Fe); stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU02593<a name="urn-oid-1.2.208.184.100.8-NPU02593"> </a></td>
+<td>Leukocytter;B</td>
+<td>B—Leukocytter; antalk. = ? × 10e9/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03011<a name="urn-oid-1.2.208.184.100.8-NPU03011"> </a></td>
+<td>O2 sat.;Hb(aB)</td>
+<td>Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</td>
+<td>Iltmætning</td></tr>
+<tr><td style="white-space:nowrap">NPU03230<a name="urn-oid-1.2.208.184.100.8-NPU03230"> </a></td>
+<td>Kalium;P</td>
+<td>P—Kalium-ion; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03429<a name="urn-oid-1.2.208.184.100.8-NPU03429"> </a></td>
+<td>Natrium;P</td>
+<td>P—Natrium-ion; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03568<a name="urn-oid-1.2.208.184.100.8-NPU03568"> </a></td>
+<td>Trombocytter;B</td>
+<td>B—Thrombocytter; antalk. = ? × 10e9/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03577<a name="urn-oid-1.2.208.184.100.8-NPU03577"> </a></td>
+<td>Thyrotropin [TSH];P</td>
+<td>P—Thyrotropin; arb.stofk.(IRP 80/558; proc.) = ? × 10e-3 IU/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03794<a name="urn-oid-1.2.208.184.100.8-NPU03794"> </a></td>
+<td>Legeme højde;Pt</td>
+<td>Pt—Legeme; højde = ? m</td>
+<td>Højde</td></tr>
+<tr><td style="white-space:nowrap">NPU03804<a name="urn-oid-1.2.208.184.100.8-NPU03804"> </a></td>
+<td>Legeme vægt;Pt</td>
+<td>Pt—Legeme; masse = ? kg</td>
+<td>Vægt</td></tr>
+<tr><td style="white-space:nowrap">NPU27281<a name="urn-oid-1.2.208.184.100.8-NPU27281"> </a></td>
+<td>BMI;Pt</td>
+<td>Pt—Legeme; massekoefficient(masse/kvadreret højde) = ? kg/m²</td>
+<td>BMI</td></tr>
+<tr><td style="white-space:nowrap">NPU03835<a name="urn-oid-1.2.208.184.100.8-NPU03835"> </a></td>
+<td>Hæmoglobin A1c;Hb(B)</td>
+<td>Hb(Fe; B)—Hæmoglobin A1c(Fe); stoffr. = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU04094<a name="urn-oid-1.2.208.184.100.8-NPU04094"> </a></td>
+<td>Triglycerid;P</td>
+<td>P—Triglycerid; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03620<a name="urn-oid-1.2.208.184.100.8-NPU03620"> </a></td>
+<td>Triglycerid;P(fPt)</td>
+<td>P(fPt)—Triglycerid; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU04207<a name="urn-oid-1.2.208.184.100.8-NPU04207"> </a></td>
+<td>Glukose(semikvant);U</td>
+<td>U—Glucose; arb.k.(proc.) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU04208<a name="urn-oid-1.2.208.184.100.8-NPU04208"> </a></td>
+<td>Hæmoglobin(semikvant);U</td>
+<td>U—Hæmoglobin; arb.k.(proc.) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU10171<a name="urn-oid-1.2.208.184.100.8-NPU10171"> </a></td>
+<td>Kolesterol LDL;P(fPt)</td>
+<td>P(fPt)—Cholesterol+ester, i LDL; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU10266<a name="urn-oid-1.2.208.184.100.8-NPU10266"> </a></td>
+<td>1,25-Dihydroxy-Vitamin D(D3+D2);P</td>
+<td>P—Calcitriol+1,25-Dihydroxyergocalciferol; stofk. = ? pmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU17181<a name="urn-oid-1.2.208.184.100.8-NPU17181"> </a></td>
+<td>Brain natriuretisk peptid [BNP];P</td>
+<td>P—Brain natriuretisk peptid; stofk. = ? pmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU17997<a name="urn-oid-1.2.208.184.100.8-NPU17997"> </a></td>
+<td>Albumin (semikvant);U</td>
+<td>U—Albumin; arb.k.(proc.) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU19651<a name="urn-oid-1.2.208.184.100.8-NPU19651"> </a></td>
+<td>Alanintransaminase [ALAT];P</td>
+<td>P—Alanintransaminase; kat.k.(IFCC 2002) = ? U/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU19657<a name="urn-oid-1.2.208.184.100.8-NPU19657"> </a></td>
+<td>gamma-Glutamyltransferase;P</td>
+<td>P—gamma-Glutamyltransferase; kat.k.(IFCC 2002) = ? U/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU19661<a name="urn-oid-1.2.208.184.100.8-NPU19661"> </a></td>
+<td>Albumin / Kreatinin-ratio;U</td>
+<td>U—Albumin/Creatininium; masseratio = ? × 10e-3</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU03918<a name="urn-oid-1.2.208.184.100.8-NPU03918"> </a></td>
+<td>Albumin / Kreatinin-ratio;U</td>
+<td>U—Albumin/Creatininium; stofratio = ? × 10e-3</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU19748<a name="urn-oid-1.2.208.184.100.8-NPU19748"> </a></td>
+<td>C-reaktivt protein [CRP];P</td>
+<td>P—C-reaktivt protein; massek. = ? mg/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU21692<a name="urn-oid-1.2.208.184.100.8-NPU21692"> </a></td>
+<td>Puls;Hjerte</td>
+<td>Hjerte—Systole; frekv. = ? × 1/min</td>
+<td>Puls</td></tr>
+<tr><td style="white-space:nowrap">NPU27300<a name="urn-oid-1.2.208.184.100.8-NPU27300"> </a></td>
+<td>Hæmoglobin A1c (IFCC);Hb(B)</td>
+<td>Hæmoglobin beta kæde(B)—N-(1-deoxyfructos-1-yl)hæmoglobin beta kæde; stoffr. = ? mmol/mol</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU27412<a name="urn-oid-1.2.208.184.100.8-NPU27412"> </a></td>
+<td>Glukose, middel (fra HbA1c);P</td>
+<td>P—Glucose; stofk.(gennemsnitlig; Hb A1c; proc.) = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU01685<a name="urn-oid-1.2.208.184.100.8-NPU01685"> </a></td>
+<td>Koagulationsfaktor II+VII+X [INR];P</td>
+<td>P—Koagulation, vævsfaktor-induceret; rel.tid(aktuel/norm; INR; IRP 67/40; proc.) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU27783<a name="urn-oid-1.2.208.184.100.8-NPU27783"> </a></td>
+<td>Basisk fosfatase;P</td>
+<td>P—Basisk phosphatase; kat.k.(37 °C; proc.) = ? U/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88071<a name="urn-oid-1.2.208.184.100.8-MCS88071"> </a></td>
+<td>30 minutter om dagen;Pt(motion)</td>
+<td>Pt(motion)—fysisk aktiv 30 minutter om dagen; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88068<a name="urn-oid-1.2.208.184.100.8-MCS88068"> </a></td>
+<td>Fysisk aktivitet fritid.;Pt(motion)</td>
+<td>Pt(motion)—fysisk aktivitet i fritiden; arb.akt.(konkurrence; motionsidræt, lettere motion, stillesiddende) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88052<a name="urn-oid-1.2.208.184.100.8-MCS88052"> </a></td>
+<td>Kostscore;Pt(kost)</td>
+<td>Pt(kost)—kostscore; antal (0-12) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88053<a name="urn-oid-1.2.208.184.100.8-MCS88053"> </a></td>
+<td>Helbred;Pt(selvvurderet helbred)</td>
+<td>Pt(selvvurderet helbred)—hvordan synes du dit helbred er alt i alt; arb.akt.(Fremragende, vældigt godt, godt, mindre godt, dårligt) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88069<a name="urn-oid-1.2.208.184.100.8-MCS88069"> </a></td>
+<td>Svangre us.;Pt(svangreundersøgelse)</td>
+<td>Pt(svangreundersøgelse)—Hvilken svangreundersøgelse;  arb.akt.(første; anden; tredje; fjerde) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88070<a name="urn-oid-1.2.208.184.100.8-MCS88070"> </a></td>
+<td>Børne us.;Pt(børneundersøgelse)</td>
+<td>Pt(børneundersøgelse)—Hvilken børneundersøgelse; arb.akt.( 1 uges; 5 ugers; 5 måneders; 1 års; 2 års; 3 års; 4 års; 5 års) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88100<a name="urn-oid-1.2.208.184.100.8-MCS88100"> </a></td>
+<td>FEV6;Lunge</td>
+<td>Lunge—Lungefunktionsundersøgelse COPD FEV6; vol. = ? L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88099<a name="urn-oid-1.2.208.184.100.8-MCS88099"> </a></td>
+<td>FEV1/FEV6;Lunge</td>
+<td>Lunge—FEV1/FEV6 ratio = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88104<a name="urn-oid-1.2.208.184.100.8-MCS88104"> </a></td>
+<td>FVC reversibilitet;Lunge</td>
+<td>Lunge—FVC reversibilitet = ? L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">NPU17559<a name="urn-oid-1.2.208.184.100.8-NPU17559"> </a></td>
+<td>Kreatinin;P</td>
+<td>P—Creatininium; stofk. = ? mmol/L</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88106<a name="urn-oid-1.2.208.184.100.8-MCS88106"> </a></td>
+<td>Stoffer;Pt(problematisk stofbrug)</td>
+<td>Pt(problematisk stofbrug)—Hash 4 eller flere dg inden for den seneste mnd og/eller andre euforiserende stoffer, som fx amfetamin, kokain og ecstasy 1 eller flere dg inden for den seneste mnd; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88116<a name="urn-oid-1.2.208.184.100.8-MCS88116"> </a></td>
+<td>Debutår;Pt(diabetes)</td>
+<td>Pt(diabetes)—Debutår = ? Årstal</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88117<a name="urn-oid-1.2.208.184.100.8-MCS88117"> </a></td>
+<td>Retinopati;Pt(diabetes)</td>
+<td>Pt(diabetes)—Retinopati; arb.k.(0 1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88120<a name="urn-oid-1.2.208.184.100.8-MCS88120"> </a></td>
+<td>Stabil Angina Pectoris;Pt(CCS)</td>
+<td>Pt(CCS)—Stabil Angina Pectoris; antal (værdi 1-4) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88137<a name="urn-oid-1.2.208.184.100.8-MCS88137"> </a></td>
+<td>CAT score;Pt</td>
+<td>Pt—CORD Assessment Test (CAT) score; antal(værdi 0-40) = ?</td>
+<td>CAT</td></tr>
+<tr><td style="white-space:nowrap">MCS88142<a name="urn-oid-1.2.208.184.100.8-MCS88142"> </a></td>
+<td>Inhalationsteknik kontrol;Pt</td>
+<td>Pt—Inhalationsteknik for indtagelse af inhalationsmedicin kontrolleret i praksis; antal(værdi 0-1) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88143<a name="urn-oid-1.2.208.184.100.8-MCS88143"> </a></td>
+<td>Lungefunktion undersøgt;Pt</td>
+<td>Pt—Lungefunktion undersøgt; arb.akt.(Ja; Nej; Ej relevant; Ej muligt) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88144<a name="urn-oid-1.2.208.184.100.8-MCS88144"> </a></td>
+<td>Henvist til Rehabilitering;Pt</td>
+<td>Pt—Henvist til Rehabilitering; arb.akt.(Ja; Nej; Ikke egnet; Ønsker ikke; Ej relevant; Ej spurgt) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88145<a name="urn-oid-1.2.208.184.100.8-MCS88145"> </a></td>
+<td>Fysisk træning/motion;Pt</td>
+<td>Pt—Fysisk anstrengende træning/motion; arb.akt.(Dagligt; Ugentligt; Månedligt; Ingen; Undgår; Ej spurgt) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK35302<a name="urn-oid-1.2.208.184.100.8-DNK35302"> </a></td>
+<td>eGFR / 1,73m²(CKD-EPI)</td>
+<td>Nyre—Glomerulær filtration; vol.hast.(ovfl.=1,73 m²; CKD-EPIkrea; DSKB-DNS-DPS 2015) = ? mL/min</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">DNK35131<a name="urn-oid-1.2.208.184.100.8-DNK35131"> </a></td>
+<td>eGFR ml/min per 1.73m²;Nyre</td>
+<td>Nyre—Glomerulær filtration; vol.hast.(ovfl.=1,73 m²; DSKB-DNS 2009) = ? mL/min</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88146<a name="urn-oid-1.2.208.184.100.8-MCS88146"> </a></td>
+<td>Heartscore;Pt</td>
+<td>Pt—Heartscore(køn,alder,systolisk blodtryk,cholesterol); ratio=?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88147<a name="urn-oid-1.2.208.184.100.8-MCS88147"> </a></td>
+<td>Manniche VAS-score(total);Pt</td>
+<td>Pt—Manniche VAS-score(total); antal(værdi 0-60) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88148<a name="urn-oid-1.2.208.184.100.8-MCS88148"> </a></td>
+<td>STarT score;Pt</td>
+<td>Pt—Subgroups for Targeted Treatment (STarT) score; arb.akt.(Lav; Middel; Høj) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88149<a name="urn-oid-1.2.208.184.100.8-MCS88149"> </a></td>
+<td>Motion, mål aftalt;Pt(mål)</td>
+<td>Pt(mål)—Motion, mål aftalt for kommende år; arb.akt.(Dagligt; Ugentligt; Månedligt; Ingen; Undgår; Ej spurgt) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88150<a name="urn-oid-1.2.208.184.100.8-MCS88150"> </a></td>
+<td>Alkohol, mål aftalt;Pt(mål)</td>
+<td>Pt(mål)—Alkoholforbrug, mål aftalt for kommende år; antal = ? genstand/uge</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88151<a name="urn-oid-1.2.208.184.100.8-MCS88151"> </a></td>
+<td>Rygning, mål aftalt;Pt(mål)</td>
+<td>Pt(mål)—Rygning, mål aftalt for kommende år; arb.akt.(dagligt; lejlighedsvis; ophørt; aldrig røget) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88152<a name="urn-oid-1.2.208.184.100.8-MCS88152"> </a></td>
+<td>Øjenlægekontrol;Pt(diatetes)</td>
+<td>Pt(diabetes)—Øjenlægekontrol; arb.akt.(ja;nej;ej relevant) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88153<a name="urn-oid-1.2.208.184.100.8-MCS88153"> </a></td>
+<td>Fodundersøgelse;Pt(diabetes)</td>
+<td>Pt(diabetes)—Fodundersøgelse; arb.akt.(ja;nej;ej relevant) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88192<a name="urn-oid-1.2.208.184.100.8-MCS88192"> </a></td>
+<td>Skridt per dag;Pt</td>
+<td>Pt—Skridt; antal per dag (værdi) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88193<a name="urn-oid-1.2.208.184.100.8-MCS88193"> </a></td>
+<td>Skridt per uge;Pt</td>
+<td>Pt—Skridt; antal per uge (værdi) = ?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">MCS88194<a name="urn-oid-1.2.208.184.100.8-MCS88194"> </a></td>
+<td>Skridt;Pt</td>
+<td>Pt—Skridt; antal (værdi) = ?</td>
+<td></td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 13:58+0000">2024-09-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

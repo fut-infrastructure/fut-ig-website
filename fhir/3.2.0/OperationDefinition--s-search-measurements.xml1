@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-search-measurements"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-search-measurements</b></p><a name="-s-search-measurements"> </a><a name="hc-s-search-measurements"> </a><a name="-s-search-measurements-en-US"> </a><p>URL: [base]/$search-measurements</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>patient</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Find resource(s) referring the specified patient - Reference(eHealth Patient).</p>
+</div></td></tr><tr><td>IN</td><td>episodeOfCare</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare)</p>
+</div></td></tr><tr><td>IN</td><td>device</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Find resource(s) referring the specified device - Reference(eHealth Device)</p>
+</div></td></tr><tr><td>IN</td><td>period</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td><div><p>Resource(s) must have either an instant or time period within or overlapping the given period.</p>
+</div></td></tr><tr><td>IN</td><td>based-on</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Resources(s) must be based on any of the specified procedure requests - Reference(eHealth ServiceRequest)</p>
+</div></td></tr><tr><td>IN</td><td>_tag</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td><div><p>Search for resources which have the given tag</p>
+</div></td></tr><tr><td>OUT</td><td>bundle</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-search-measurements"/>
+  <version value="3.2.0"/>
+  <name value="search-measurements"/>
+  <title value="Search measurements"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2024-09-02T13:58:07+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="The search-measurements operation searches for bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.&#xA;&#xA;&#xA;### Parameter description&#xA;- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).&#xA;- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).&#xA;- device: Find resource(s) referring the specified device - Reference(eHealth Device | eHealth DeviceMetric).&#xA;- period: Resource(s) must have either an instant or time period within or overlapping the given period. The used instant/time period varies with resource as follows: Element effective for eHealth Observation; Element authored for eHealth QuestionnaireResponse; Element occurrence for eHealth Media.&#xA;- based-on: Resources(s) must be based on any of the specified procedure requests - Reference(eHealth ServiceRequest).&#xA;- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.&#xA;&#xA;&#xA;&quot;period&quot; must always be specified.&#xA;&#xA;Additionally at least &quot;patient&quot; or &quot;episodeOfCare&quot; must be specified.&#xA;&#xA;### Output description&#xA;&#xA;The result of this operation will return a Bundle with a list of nested Bundles having resources matching the search parameters.&#xA;&#xA;Each of the nested bundles will contain the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources.&#xA;&#xA;If a eHealth QuestionnaireResponse is part of the nested bundle the referenced eHealth Questionnaire will also be included in the nested bundle.&#xA;&#xA;Related resources are the set of resources created by a single invocation of the submit-measurement operation.&#xA;&#xA;"/>
+  <affectsState value="false"/>
+  <code value="search-measurements"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="patient"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Find resource(s) referring the specified patient - Reference(eHealth Patient)."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="episodeOfCare"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare)"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="device"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Find resource(s) referring the specified device - Reference(eHealth Device)"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Resource(s) must have either an instant or time period within or overlapping the given period."/>
+    <type value="Period"/>
+  </parameter>
+  <parameter>
+    <name value="based-on"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Resources(s) must be based on any of the specified procedure requests - Reference(eHealth ServiceRequest)"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="_tag"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Search for resources which have the given tag"/>
+    <type value="Coding"/>
+  </parameter>
+  <parameter>
+    <name value="bundle"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Bundle"/>
+  </parameter>
+</OperationDefinition>

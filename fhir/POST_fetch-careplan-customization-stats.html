@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>POST Fetch Careplan Customization Stats - eHealth Infrastructure v3.1.0</title>
+    <title>POST Fetch Careplan Customization Stats - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,9 +39,10 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"19"}
-    h3,h4,h5,h6{--heading-prefix:"19"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"24"}
+    h3,h4,h5,h6{--heading-prefix:"24"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         
@@ -58,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -216,7 +217,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>POST Fetch Careplan Customization Stats</h2>
   
 
@@ -239,9 +240,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiJGZldGNoLWNhcmVwbGFuLWN1c3RvbWl6YXRpb24tc3RhdHMiLCJyZXBvcnQtbm9uLWFub255bWl6ZWQiLCIkdGVzdC1vbmx5LWNyZWF0ZSJdfSwiY29udGV4dCI6eyJvcmdhbml6YXRpb25faWQiOiJodHRwczovL29yZ2FuaXphdGlvbi5jaXQtcmVwb3J0aW5nLTExMTMubG9jYWwvZmhpci9Pcmdhbml6YXRpb24vNjYxOTAiLCJ0ZWFtX29uX2VvYyI6ZmFsc2V9LCJ1c2VyX3R5cGUiOiJQUkFDVElUSU9ORVIifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiJGZldGNoLWNhcmVwbGFuLWN1c3RvbWl6YXRpb24tc3RhdHMiLCJyZXBvcnQtbm9uLWFub255bWl6ZWQiLCIkdGVzdC1vbmx5LWNyZWF0ZSJdfSwiY29udGV4dCI6eyJvcmdhbml6YXRpb25faWQiOiJodHRwczovL29yZ2FuaXphdGlvbi5jaXQtcmVwb3J0aW5nLTExMjkubG9jYWwvZmhpci9Pcmdhbml6YXRpb24vOTEyMzAiLCJ0ZWFtX29uX2VvYyI6ZmFsc2V9LCJ1c2VyX3R5cGUiOiJQUkFDVElUSU9ORVIifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -257,7 +258,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"organization"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-reporting-1113.local/fhir/Organization/66190"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-reporting-1129.local/fhir/Organization/91230"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -273,7 +274,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/gzip-json"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UEsDBBQACAgIAHdAc1gAAAAAAAAAAAAAAABBAAAAQ2FyZVBsYW5DdXN0b21pemF0aW9uU3RhdHNSZXBvcnRfMjAyNF8wM18xOV8wOF8wM180Ny9SZXBvcnRIZWFkZXJdz01vwjAMBuD/kjNtkra0I1fuDEFPm3awKgORSlI57iSo8t+X0Y1VO1p+Xn9MgnDwxDu4ojBiC4T7Htx2DOyv9g5svTsycDg8mFj9+NY+fKGKKlNlpjetejGqNFWT63VRNXWjqrekB6A0mZGCMFPKBj9Sh+1t+E7v/5oLKcz7JNx8Dzjvbr93JPQJ/YhHJuvOqbvzDkVcPbWnM7h/+IAnJHQdzvufhbgwD8FIuQzlneVsfjBtyLTWZd77Dnp5uliSrwsq61pvlIjxI8YvUEsHCA5voerNAAAARQEAAFBLAwQUAAgICAB3QHNYAAAAAAAAAAAAAAAAUAAAAENhcmVQbGFuQ3VzdG9taXphdGlvblN0YXRzUmVwb3J0XzIwMjRfMDNfMTlfMDhfMDNfNDcvRUhlYWx0aFBsYW5EZWZpbml0aW9uLzY0Mzg1pZLJTsMwEED/xecsRF0EvQYkOIFablUPxpkkFo4djceFUuXfGafQQlVxQYoUzWK/l5nsxd09SEPtk5H2FmptNWlnxWIvELwLqOB514NYiLOGROiKs/Pp5HrGQQck46EtoOfyQ6wVnO/R1drw+bVoifpFnkM78jIfbNVClVWved1qzFeEQVFAOEG+e9Oe2dWJvRkSAe8E1o+q670IaBj4D0LnKl1rwBQd216+HqEGBKtifStNgOUxMY7rGIwink0cNtLqDxlRmdKUIvQOSdsmLYpikhmnpDnIPf5ozeeT2c1UDENyRB+sRmrpKpAvht8M6ymyFdvbZlT1O0/Q/TkM5fPzz+ULord7s4Bi2Az8bJLvZcZVZlfc5UlS8BxKRXoLgtdQSoT4Z5TBk+u+/Feh6yTuohnpjs1+VUsXLFsXyWlkS2kbuNg0DJ9QSwcI54meLkkBAACiAgAAUEsBAhQAFAAICAgAd0BzWA5voerNAAAARQEAAEEAAAAAAAAAAAAAAAAAAAAAAENhcmVQbGFuQ3VzdG9taXphdGlvblN0YXRzUmVwb3J0XzIwMjRfMDNfMTlfMDhfMDNfNDcvUmVwb3J0SGVhZGVyUEsBAhQAFAAICAgAd0BzWOeJni5JAQAAogIAAFAAAAAAAAAAAAAAAAAAPAEAAENhcmVQbGFuQ3VzdG9taXphdGlvblN0YXRzUmVwb3J0XzIwMjRfMDNfMTlfMDhfMDNfNDcvRUhlYWx0aFBsYW5EZWZpbml0aW9uLzY0Mzg1UEsFBgAAAAACAAIA7QAAAAMDAAAAAA=="</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UEsDBBQACAgIAARJ/VgAAAAAAAAAAAAAAABBAAAAQ2FyZVBsYW5DdXN0b21pemF0aW9uU3RhdHNSZXBvcnRfMjAyNF8wN18yOV8wOV8wOF8wOC9SZXBvcnRIZWFkZXJdz01vwjAMBuD/4jNt0rCPNlfuDEFPm3awKgORSlI57iRW5b8voxurJvkS+XltZwKmIbBs8UJgYYNMux79ZowSLu4TxQV/EJS4vzFY/fjW3bzR5qHQz4VpWt1YXecqzVOjH2tdr1+zHpDzZCGOYKecjWHkjtrr8J3e/TUXEuzbBH6+B33w1987MvrAfqSDsPOn3N0GT5BWdx34hP4f3tORmHxH8/77A84iQ7RKLUNl56SYP5g3FFVlmrIPHfbqeHasXhZUNZVZa0jpPaUvUEsHCOvDX4jNAAAARQEAAFBLAwQUAAgICAAESf1YAAAAAAAAAAAAAAAAUAAAAENhcmVQbGFuQ3VzdG9taXphdGlvblN0YXRzUmVwb3J0XzIwMjRfMDdfMjlfMDlfMDhfMDgvRUhlYWx0aFBsYW5EZWZpbml0aW9uLzU5MDIwpZJLT8MwDID/S859rNNA2q4FCU6gjdu0Q0jdNiJNKscZjKn/HadjG0wTF6RKlR/J99XuXtw/gDTUPhtp76DWVpN2Viz2AsG7gApedj2IhbhoSISuOHszn0wnHHRAMh7aAnouP8ZawfkeXa0Nn1+Llqhf5Dm0Iy/zwVYtVFn1ltetxnxFGBQFhDPk2Jv2zK7O7M2QCPggsH5UXe9FQMPAfxA6V+laA6bo2Pb69Qg1IFgV61tpAixPiXFcp2AU8WzisJFWf8qIypSmFKF3SNo2aVFM55lxSpqD3NOP1nw+K2a3YhiSE/pgNVJLV4F8NfxmWE+RrdjeNqOq33mC7s9hKJ9ffi5fEL3duwUUw2bgZ5MclxlXmcUle5IUPIdSkd6C4DWUEiH+GWXw5Lpv/1XoOom7aEa6Y7Nf1dIFy9ZFch7ZUtoGrjYNwxdQSwcIxzs3k0kBAACiAgAAUEsBAhQAFAAICAgABEn9WOvDX4jNAAAARQEAAEEAAAAAAAAAAAAAAAAAAAAAAENhcmVQbGFuQ3VzdG9taXphdGlvblN0YXRzUmVwb3J0XzIwMjRfMDdfMjlfMDlfMDhfMDgvUmVwb3J0SGVhZGVyUEsBAhQAFAAICAgABEn9WMc7N5NJAQAAogIAAFAAAAAAAAAAAAAAAAAAPAEAAENhcmVQbGFuQ3VzdG9taXphdGlvblN0YXRzUmVwb3J0XzIwMjRfMDdfMjlfMDlfMDhfMDgvRUhlYWx0aFBsYW5EZWZpbml0aW9uLzU5MDIwUEsFBgAAAAACAAIA7QAAAAMDAAAAAA=="</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -295,7 +296,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -331,7 +332,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -342,7 +343,6 @@ Content-Type: application/fhir+json; charset=UTF-8
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

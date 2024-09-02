@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Error Messages - eHealth Infrastructure v3.1.0</title>
+    <title>Error Messages - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,7 +39,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"5"}
     h3,h4,h5,h6{--heading-prefix:"5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -58,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -216,7 +217,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Error Messages</h2>
   
 
@@ -343,10 +344,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_FOUND_NON_OR_SEVERAL_MATCHES_FOR_QFDD_DOCUMENT_REFERENCE</code>: Found non or more than 1 match for QFDD DocumentReference. Identifier: system: %s, value: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_NOT_ABLE_TO_DETERMINE_QFDD_REFERENCE</code>: Not able to determine QFDD reference from questionnaire.identifier. Non or more than 1 identifier system starting with ‘urn:oid’. Questionnaire: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_NOT_ABLE_TO_DETERMINE_QFDD_REFERENCE</code>: Not able to determine QFDD reference from questionnaire.identifier. Non or more than 1 identifier system starting with 'urn:oid'. Questionnaire: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_SOURCE_IS_UNSUPPORTED</code>: QuestionnaireResponse with id: ‘%s’ has source ‘%s’, which is not supported - Skipping publication</p>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_SOURCE_IS_UNSUPPORTED</code>: QuestionnaireResponse with id: '%s' has source '%s', which is not supported - Skipping publication</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_SUPPORTING_INFORMATION</code>: Appointment must have supportingInformation</p>
@@ -378,7 +379,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_NO_PLANDEFINITION</code>: There is no PlanDefinition with id %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_NOT_ACTIVE_PLANDEFINITION</code>: The apply operation can only be performed on Plandefinitions with status “active”</p>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_NOT_ACTIVE_PLANDEFINITION</code>: The apply operation can only be performed on Plandefinitions with status "active"</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_EPISODE_OF_CARE_REFERENCE_NOT_SPECIFIED</code>: EpisodeOfCare reference must be specified</p>
@@ -400,7 +401,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="ehealth-careteam">ehealth-careteam</h4>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">CARETEAM_GENERAL_EXTERNAL_SECURITY_TOKEN_CARETEAM_IDENTIFIER_SYSTEM_IS_MISSING</code>: The CareTeam must contain an identifier using system “urn:ietf:rfc:3986”</li>
+  <li><code class="language-plaintext highlighter-rouge">CARETEAM_GENERAL_EXTERNAL_SECURITY_TOKEN_CARETEAM_IDENTIFIER_SYSTEM_IS_MISSING</code>: The CareTeam must contain an identifier using system "urn:ietf:rfc:3986"</li>
+</ul>
+
+<h4 id="ehealth-cda">ehealth-cda</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CDA_XML_VALIDATION_FAILED</code>: Validation of the CDA XML failed: %s</li>
 </ul>
 
 <h4 id="ehealth-communicationrequest">ehealth-communicationrequest</h4>
@@ -468,7 +475,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_XDS_ERROR</code>: The following errors where received from Document Sharing</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_DOCUMENT_URL_NOT_CORRECT_FORMAT</code>: Url doesn’t have expected format: <DocumentEntry.uniqueId>_<DocumentEntry.repositoryUniqueId>_<DocumentEntry.homeCommunityId></DocumentEntry.homeCommunityId></DocumentEntry.repositoryUniqueId></DocumentEntry.uniqueId></p>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_DOCUMENT_URL_NOT_CORRECT_FORMAT</code>: Url doesn't have expected format: <DocumentEntry.uniqueId>_<DocumentEntry.repositoryUniqueId>_<DocumentEntry.homeCommunityId></DocumentEntry.homeCommunityId></DocumentEntry.repositoryUniqueId></DocumentEntry.uniqueId></p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_DOCUMENT_NOT_VALID_TYPE</code>: Requested document type is not valid. The requested type was %s, but the operation only supports %s</p>
@@ -503,7 +510,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_NO_REQUIRED_PROVENANCE_POLICIES</code>: No provenance with required policies</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_INCORRECT_CONDITION_SUBJECT</code>: EpisodeOfCare and Condition doesn’t point to the same Patient</p>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_INCORRECT_CONDITION_SUBJECT</code>: EpisodeOfCare and Condition doesn't point to the same Patient</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_PATCH_NO_CONSENT</code>: No valid Episode Of Care related consent</p>
@@ -515,13 +522,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_STATUS_HISTORY_NOT_EMPTY</code>: It is not allowed to fill status history manually</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_EPISODE_OF_CARE_IN_NON_PLANNED_STATUS</code>: It is only possible to create an episode of care in status ‘Planned’</p>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_EPISODE_OF_CARE_IN_NON_PLANNED_STATUS</code>: It is only possible to create an episode of care in status 'Planned'</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_TEAM_HISTORY_NOT_EMPTY</code>: It is not allowed to fill team history manually</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_DOESNT_MATCH_CONTEXT</code>: Episode of care patient doesn’t match to the context</p>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_DOESNT_MATCH_CONTEXT</code>: Episode of care patient doesn't match to the context</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_IS_CONTEXT_ALLOWED_MATCH_NOT_FOUND</code>: It is not possible to set the Episode Of Care as a context</p>
@@ -535,7 +542,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_NO_INPUT_PARAMETER</code>: An input parameter of type Parameters should be provided.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_INCORRECT_INPUT_PARAMETER</code>: Input parameter ‘parameters’ should contain exactly one resource of type QuestionnaireResponse, Observation or Media.</p>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_INCORRECT_INPUT_PARAMETER</code>: Input parameter 'parameters' should contain exactly one resource of type QuestionnaireResponse, Observation or Media.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_NO_RULE_DEFINED</code>: Library with id %s do not contain a rule to use for evaluation.</p>
@@ -559,7 +566,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_RESOURCE</code>: Not able to resolve %s when input is of type %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are (‘s’, ‘min’, ‘h’, ‘d’, ‘wk’, ‘mo’, ‘a’).</p>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are ('s', 'min', 'h', 'd', 'wk', 'mo', 'a').</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LOGIC_RULE_INVALID_INPUT</code>: Error evaluating logic rule. Category: %s, Focus: %s, RuleDescription: %s</p>
@@ -585,10 +592,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_PATIENT_AND_EPISODE_NOT_SPECIFIED</code>: At least patient or episodeOfCare must be specified</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_PATIENT_REFERENCE</code>: Unsupported patient reference</p>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_PATIENT_AND_EPISODE_AND_SERVICEREQUEST_NOT_SPECIFIED</code>: At least one patient, episodeOfCare or serviceRequest must be specified</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_EPISODEOFCARE_REFERENCE</code>: Unsupported episodeOfCare reference</p>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_COUNT_NOT_SPECIFIED</code>: A positive number for Count must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_COUNT_LIMIT_EXCEEDED</code>: Count limit of 100 exceeded</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_START_OR_END_NOT_SPECIFIED</code>: Either start or end must be provided, but none was provided</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_START_AND_END_BOTH_SPECIFIED</code>: Both start and end cannot be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_REFERENCE</code>: Unsupported resource reference, expected %s but was %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_DEVICE_REFERENCE</code>: Unsupported device reference</p>
@@ -621,7 +640,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_BUNDLE_CONTAINS_INVALID_RESOURCES</code>: The input bundle contains resources which are not of type EHealthObservation, EHealthMedia, EHealthQuestionnaireResponse or EHealthProvenance.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_INVALID_POLICY</code>: Submitted provenances should use the policy ‘Reuse of measurement chosen by citizen’</p>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_INVALID_POLICY</code>: Submitted provenances should use the policy 'Reuse of measurement chosen by citizen'</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_REFERENCE_MISSING</code>: EHealthProvenance resource is referencing %s but it is not provided as part of the input.</p>
@@ -675,7 +694,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_RESOURCE_TO_OLD_TO_BE_USED_FOR_REUSE</code>: Reuse of resource is not allowed due to the resource being too old.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are (‘s’, ‘min’, ‘h’, ‘d’, ‘wk’, ‘mo’, ‘a’).</p>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are ('s', 'min', 'h', 'd', 'wk', 'mo', 'a').</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_MORE_THAN_ONE_DEVICE_QUALITY</code>: Only one device quality allowed for each observation/media</p>
@@ -684,30 +703,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_RESOLVED_TIMING</code>: ResolvedTiming must have either type=Resolved and start/end or type=Unresolved/Adhoc/Extra and no start/end</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_TOO_MANY_ANSWERS</code>: QuestionnaireResponse: %s has too many answers for the item with linkId: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_TOO_FEW_ANSWERS</code>: QuestionnaireResponse: %s has too few answers for the item with linkId: %s</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_DATA_NO_DATA_FOUND</code>: Encrypted media data with id %s was not found</p>
   </li>
+</ul>
+
+<h4 id="ehealth-observation">ehealth-observation</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">OBSERVATION_MEDIA_NOT_SUPPORTED_MESSAGE</code>: Measurement was of media type. This was not translated to an observation since it is not supported in FHIR</li>
 </ul>
 
 <h4 id="ehealth-organization">ehealth-organization</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_SOURCE_MUST_BE_MANUAL</code>: The operation can only be performed for Organization with source “manual”</p>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_SOURCE_MUST_BE_MANUAL</code>: The operation can only be performed for Organization with source "manual"</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_MUST_BE_SSL_WHEN_SOURCE_MANUAL</code>: The operation can only be performed for SSL Organizations when the source is “manual”</p>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_MUST_BE_SSL_WHEN_SOURCE_MANUAL</code>: The operation can only be performed for SSL Organizations when the source is "manual"</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_NOT_UNIQUE</code>: Organization Identifier not unique: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_SYSTEM_NOT_ALLOWED_FOR_SOURCE_MANUAL</code>: Identifier system is not allowed for Organization with source “manual”</p>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_SYSTEM_NOT_ALLOWED_FOR_SOURCE_MANUAL</code>: Identifier system is not allowed for Organization with source "manual"</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_TRAVERSE_TO_SOR_NOT_POSSIBLE</code>: No related SOR organization could be found for: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_MUST_CONTAIN_AT_LEAST_CVR_FOR_SOURCE_MANUAL</code>: Identifier system CVR required for Organization with source “manual”</p>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_MUST_CONTAIN_AT_LEAST_CVR_FOR_SOURCE_MANUAL</code>: Identifier system CVR required for Organization with source "manual"</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_UNKNOWN_IDENTIFIER</code>: Unable to find unique Organization with identifier: %s. Number of search results: %s</p>
@@ -730,7 +761,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_VALIDATE_MANDATORY_ACTIVITYDEFINITION_OR_SUBPLAN_REFERENCE</code>: At least one activity definition or subplan should be referenced.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_VALIDATE_ALL_REFERENCED_ACTIVITYDEFINITIONS_OR_SUBPLANS_SHOULD_BE_ACTIVE</code>: All referenced activity definitions or subplans should be with state: “active”</p>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_VALIDATE_ALL_REFERENCED_ACTIVITYDEFINITIONS_OR_SUBPLANS_SHOULD_BE_ACTIVE</code>: All referenced activity definitions or subplans should be with state: "active"</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_MISSING_RELATED_ACTION</code>: An action points to a non-existing related action</p>
@@ -748,6 +779,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">PROVENANCE_SEARCH_DATA_NOT_MATCH_CONTEXT</code>: The target property should match to the episode of care in context</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-qfdd">ehealth-qfdd</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QFDD_NARRATIVE_MISSING_TEXT_ERROR</code>: Information section does not have a text element. LinkId: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QFDD_NARRATIVE_MISSING_EXTENSION_ERROR</code>: Information section does not have a rendering-xhtml extension. LinkId: %s</p>
   </li>
 </ul>
 
@@ -789,7 +831,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">REPORTING_MISSING_INPUT_PARAMETER</code>: Parameter “%s” is mandatory for report “%s”.</p>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_MISSING_INPUT_PARAMETER</code>: Parameter "%s" is mandatory for report "%s".</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">REPORTING_REPORT_GENERATION_FAILED</code>: Report generation has failed</p>
@@ -804,7 +846,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">REPORTING_EXECUTE_NOT_ALLOWED</code>: Asynchronous generation of the report is not allowed</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">REPORTING_MUTUALLY_EXCLUSIVE_INPUT_PARAMETER</code>: Parameters “%s” and “%s” are mutually exclusive for report “%s”.</p>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_MUTUALLY_EXCLUSIVE_INPUT_PARAMETER</code>: Parameters "%s" and "%s" are mutually exclusive for report "%s".</p>
   </li>
 </ul>
 
@@ -867,10 +909,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TASK_INVESTIGATION_ITEM_REFERENCES_MUST_HAVE_VERSION_AND_VERSIONLESS</code>: Investigation references must have an item with version and one versionless</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TASK_RESTRICTION_CATEGORY_NONE_CANT_BE_COMBINED</code>: Restriction category ‘None’ can’t be combined with others</p>
+    <p><code class="language-plaintext highlighter-rouge">TASK_RESTRICTION_CATEGORY_NONE_CANT_BE_COMBINED</code>: Restriction category 'None' can't be combined with others</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TASK_RESTRICTION_CATEGORY_NOT_MATCHING_TOKEN_CONTEXT</code>: Restriction category ‘%s’ does not match token context</p>
+    <p><code class="language-plaintext highlighter-rouge">TASK_RESTRICTION_CATEGORY_NOT_MATCHING_TOKEN_CONTEXT</code>: Restriction category '%s' does not match token context</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_PROCESSING_FAILED</code>: Measurement processing failed for Provenance %s</p>
@@ -894,7 +936,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_RULE_OUTPUT_NOT_FOUND</code>: RuleOutput not found when searching through Task Automated Processing Resource</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TASK_FOR_NOT_SET</code>: When episode of care is set, the field ‘for’ must reference the corresponding patient</p>
+    <p><code class="language-plaintext highlighter-rouge">TASK_FOR_NOT_SET</code>: When episode of care is set, the field 'for' must reference the corresponding patient</p>
   </li>
 </ul>
 
@@ -902,7 +944,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_CPR_DIDNT_MATCH</code>: Found document didn’t match with CPR</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_CPR_DIDNT_MATCH</code>: Found document didn't match with CPR</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_MORE_THAN_ONE_FOUND</code>: More than 1 DocumentReference with same master identifier found. The master identifier should be unique.</p>
@@ -911,13 +953,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_NO_DOCUMENT_FOUND</code>: No matching document found</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_UNKNOWN_QUESTION_TYPE</code>: Unknown QFDD question type. Question id: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_UNSUPPORTED_STRUCTURE</code>: The root item structure was neither an Information Only Section nor a Question Section. LinkId:  %s</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of QFDD xml</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_MISSING_STEPVALUE</code>: Questionnaire item with linkId ‘%s’ has itemControl: ‘slider’ but has no step value extension.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_MISSING_STEPVALUE</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but has no step value extension.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId ‘%s’ has itemControl: ‘slider’ but maxOccursValue is not 1. Was: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but either repeats if true. Was: %s. or maxOccursValue is larger than 1. Was: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_CODESYSTEM_TITLE_MISSING</code>: CodeSystem title is missing, for CodeSystem with url: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_QUESTION_NARRATIVE_FILE_TEMPLATE_ERROR</code>: Template for question section narrative can't be found or written.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_QUESTION_NARRATIVE_TEMPLATE_SYNTAX_ERROR</code>: Could not process template for question section narrative due to syntax errors or missing variables</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_INPUT_PARAMETERS</code>: Input bundle should contain just one EHealthComposition, EHealthQuestionnaireResponse, EHealthQuestionnaire and DocumentReference(QFDD).</p>
@@ -929,13 +986,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_DUPLICATED_EXTERNAL_IDENTIFIER</code>: Cannot transform from QRD to QuestionnaireResponse. Duplicated external identifiers: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_EXTERNAL_DOCUMENT_NOT_MATCHING_QFDD_IDENTIFIER_ON_QUESTIONNAIRE</code>: External Document reference in QRD does not match QFDD identifier on Questionnaire. External Document reference: ‘%s’. QFDD identifier on Questionnaire: ‘%s’.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_EXTERNAL_DOCUMENT_NOT_MATCHING_QFDD_IDENTIFIER_ON_QUESTIONNAIRE</code>: External Document reference in QRD does not match QFDD identifier on Questionnaire. External Document reference: '%s'. QFDD identifier on Questionnaire: '%s'.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_NO_EXTERNAL_DOCUMENT_FOUND_IN_QRD</code>: No External Document reference found in QRD.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_NO_QFDD_IDENTIFIER_ON_QUESTIONNAIRE</code>: Questionnaire does not have a QFDD identifier. No identifier with system starting with ‘urn:oid’.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_NO_QFDD_IDENTIFIER_ON_QUESTIONNAIRE</code>: Questionnaire does not have a QFDD identifier. No identifier with system starting with 'urn:oid'.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_COULD_NOT_FIND_PARENT_FOR_LINK_ID</code>: Could not find parent for item with linkId: %s.</p>
@@ -944,7 +1001,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_QRD_HAS_NO_SECTIONS</code>: QRD has no sections with questions.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_QRD_QUESTION_TYPE_DOES_NOT_MATCH_QUESTIONNAIRE_ITEM_TYPE</code>: QRD Question type ‘%s’ does not match questionnaire item type ‘%s’. LinkId: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_QRD_QUESTION_TYPE_DOES_NOT_MATCH_QUESTIONNAIRE_ITEM_TYPE</code>: QRD Question type '%s' does not match questionnaire item type '%s'. LinkId: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNSUPPORTED_QUESTION_TYPE</code>: Unsupported Questionnaire type: %s.</p>
@@ -953,16 +1010,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_NUMBER_OF_ANSWERS</code>: QuestionnaireResponse item should contain from %s to %s answers.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_SLIDER_MISMATCH_BETWEEN_TYPE_AND_SLIDER_STEP</code>: Questionnaire item with linkId ‘%s’ has itemControl: ‘slider’ and item.type: ‘Integer’ but has decimal step value: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_SLIDER_MISMATCH_BETWEEN_TYPE_AND_SLIDER_STEP</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' and item.type: 'Integer' but has decimal step value: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_SLIDER_EXTENSIONS</code>: Questionnaire item with linkId ‘%s’ has itemControl: ‘slider’, therefore it must contain at least the following extensions: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_SLIDER_EXTENSIONS</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain at least the following extensions: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_STEP_EXTENSION</code>: Questionnaire item with linkId ‘%s’ has itemControl: ‘slider’, therefore it must contain one of the following extensions: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_STEP_EXTENSION</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain one of the following extensions: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_ITEM_CONTROL_EXTENSION</code>: Questionnaire item with linkId ‘%s’ has no itemControl extension with code: ‘slider’.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_ITEM_CONTROL_EXTENSION</code>: Questionnaire item with linkId '%s' has no itemControl extension with code: 'slider'.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_MISSING_IDENTIFIER</code>: Identifier on composition is mandatory</p>
@@ -971,19 +1028,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of QRD xml</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION</code>: QFDD section with title ‘%s’ has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to have exactly one item of display. Found %s items.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to have exactly one item of display. Found %s items.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION_FOUND_OTHER_TYPE</code>: QFDD section with title ‘%s’ has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to contain exactly one item of type ‘display’. Found item of type: ‘%s’.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION_FOUND_OTHER_TYPE</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to contain exactly one item of type 'display'. Found item of type: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_IN_ROOT_GROUP_DOES_NOT_MATCH_NUMBER_OF_ORGANIZERS</code>: QFDD section with title ‘%s’ has %s organizers. Expect FHIR Questionnaire root group to contain the same number of items with type ‘group’. Found: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_IN_ROOT_GROUP_DOES_NOT_MATCH_NUMBER_OF_ORGANIZERS</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain the same number of items with type 'group'. Found: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ONLY_SUB_GROUPS_IN_ROOT_GROUP</code>: QFDD section with title ‘%s’ has %s organizers. Expect FHIR Questionnaire root group to contain only items of type: ‘group’.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ONLY_SUB_GROUPS_IN_ROOT_GROUP</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain only items of type: 'group'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_ITEM_TO_BE_OF_TYPE_GROUP</code>: Root item on questionnaire is not of type ‘group’. Type was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_ITEM_TO_BE_OF_TYPE_GROUP</code>: Root item on questionnaire is not of type 'group'. Type was: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ITEM_TO_BE_OF_TYPE_GROUP</code>: Item is not of type group. Type: %s</p>
@@ -1025,16 +1082,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNKNOWN_QRD_RESPONSE_TYPE</code>: Unknown QRD response type. QRD Question id: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_ASSOCIATED_TEXT_QUESTION_ITEM_NOT_OF_TYPE_TEXT</code>: AssociatedTextQuestion item with id: ‘%s’ is not of type ‘text’. Type was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_ASSOCIATED_TEXT_QUESTION_ITEM_NOT_OF_TYPE_TEXT</code>: AssociatedTextQuestion item with id: '%s' is not of type 'text'. Type was: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_QFDD_QUESTION_DOES_NOT_SUPPORT_ASSOCIATED_TEXT_QUESTION</code>: QFDDQuestion with id: ‘%s’ does not support associatedText. Class was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_QFDD_QUESTION_DOES_NOT_SUPPORT_ASSOCIATED_TEXT_QUESTION</code>: QFDDQuestion with id: '%s' does not support associatedText. Class was: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_RESOURCE</code>: Input bundle missing resource: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NARRATIVE_ERROR</code>: Can’t generate narrative for: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NARRATIVE_ERROR</code>: Can't generate narrative for: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CPR</code>: CPR is mandatory for patient but not present in fhir bundle</p>
@@ -1049,7 +1106,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_CODING</code>: Observation.observationRanges[x].type.coding.system should be http://www.example.com/medcom/message-codes</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES</code>: Observation ranges should not have both High and Low set when transforming to PHRM, but High is: %s, and Low is: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_RAL</code>: RAL observation ranges should not have both High and Low set when transforming to PHRM, but High is: %s, and Low is: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_GAL</code>: GAL observation ranges should not have both High and Low set when transforming to PHRM, unless either bound is replaced with a RAL reference range, but High is: %s, and Low is: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_NUMBER_OF_DECIMALS</code>: Value should have no more than 7 decimals, but is: %s</p>
@@ -1073,7 +1133,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_INVALID_EFFECTIVE</code>: Invalid Observation.effective, expecting DateTime, Period or Instant</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_INVALID_METHOD_CODES</code>: Method codes for performerType and provisionMethod for observation with id ‘%s’ could not be established.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_INVALID_METHOD_CODES</code>: Method codes for performerType and provisionMethod for observation with id '%s' could not be established.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_TOO_MANY_DECIMALS</code>: Could not transform measurement with reference range Low: %s and High: %s since we cannot correctly translate more than 7 decimals.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CONFIDENTIALITY_CODE</code>: Composition.confidentiality is mandatory</p>
@@ -1109,10 +1172,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_COMPOSITION_HAS_NO_TIMEZONE_OR_SECONDS</code>: Composition has no timezone or seconds set: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XDS_PROPERTY_MISSING_EXCEPTION</code>: ‘%s’ is missing which is required for document sharing. DocumentReference id: ‘%s’.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XDS_PROPERTY_MISSING_EXCEPTION</code>: '%s' is missing which is required for document sharing. DocumentReference id: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XDS_PROPERTY_CODE_INVALID_EXCEPTION</code>: ‘%s’ is required for document sharing but the specified coding is not valid for the valueSet ‘%s’: system=%s, code=%s, display=%s. DocumentReference id: ‘%s’</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XDS_PROPERTY_CODE_INVALID_EXCEPTION</code>: '%s' is required for document sharing but the specified coding is not valid for the valueSet '%s': system=%s, code=%s, display=%s. DocumentReference id: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_XHTML_TO_CDA_XML_FAILED</code>: Unable to transform XHTML to CDA XML format</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_CDA_XML_TO_XHTML_FAILED</code>: Unable to tranform CDA XML to XHTML format</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XSLT_CONFIGURATION_ERROR</code>: Error creating XLST transformer: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XSD_CONFIGURATION_ERROR</code>: Error creating XSD transformer: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_APD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of APD xml</p>
@@ -1163,19 +1238,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_UPDATE_TO_CATEGORY_IS_NOT_ALLOWED</code>: Update to category is not allowed: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_ONLY_STATUS_COMPLETED_CAN_HAVE_ADMINISTRATIVE_STATUS_OTHER_THAN_ACTIVATE</code>: Only Communication with status ‘COMPLETED’ can have an administrative-status other than ‘activate’</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_ONLY_STATUS_COMPLETED_CAN_HAVE_ADMINISTRATIVE_STATUS_OTHER_THAN_ACTIVATE</code>: Only Communication with status 'COMPLETED' can have an administrative-status other than 'activate'</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_ONLY_STATUS_COMPLETED_CAN_BE_MARKED_AS_RECEIVED</code>: Only Communication with status ‘COMPLETED’ can have a ‘received’ timestamp</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_ONLY_STATUS_COMPLETED_CAN_BE_MARKED_AS_RECEIVED</code>: Only Communication with status 'COMPLETED' can have a 'received' timestamp</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_SENT_PROP_CANNOT_BE_SET_BY_CLIENT</code>: Communication ‘sent’ property is managed by the server and cannot be set by the client</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_SENT_PROP_CANNOT_BE_SET_BY_CLIENT</code>: Communication 'sent' property is managed by the server and cannot be set by the client</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_ONLY_ADMINISTRATIVE_STATUS_AND_RECEIVED_CAN_BE_UPDATED_WHEN_STATUS_IS_COMPLETED</code>: Only administrative-status extension and ‘received’ propery can be updated when status is ‘COMPLETED’</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_ONLY_ADMINISTRATIVE_STATUS_AND_RECEIVED_CAN_BE_UPDATED_WHEN_STATUS_IS_COMPLETED</code>: Only administrative-status extension and 'received' propery can be updated when status is 'COMPLETED'</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_JSON_PATCH_IS_ONLY_ALLOWED_FOR_NOTE</code>: This JSON patch type is only allowed for category ‘%s’ (current is ‘%s’)</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_JSON_PATCH_IS_ONLY_ALLOWED_FOR_NOTE</code>: This JSON patch type is only allowed for category '%s' (current is '%s')</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_EXACTLY_ONE_MESSAGE_CATEGORY_IS_EXPECTED_ACTUAL</code>: Exactly one message category is expected. Actual: %s</p>
@@ -1187,16 +1262,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_PATIENT_NEMSMS_NOT_ALLOWED</code>: Patient does not allow telecom medium NemSMS</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_EXACTLY_ONE_CAREPLAN_MUST_BE_SUPPLIED_WHEN_REASON_CODE_MISSING_MEASUREMENT_RESOLVING</code>: A message must be part of exaclty one CarePlan when reasonCode ‘missing-measurment-resolving’ is set</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_EXACTLY_ONE_CAREPLAN_MUST_BE_SUPPLIED_WHEN_REASON_CODE_MISSING_MEASUREMENT_RESOLVING</code>: A message must be part of exaclty one CarePlan when reasonCode 'missing-measurment-resolving' is set</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_STATUS_COMPLETED_OR_STOPPED_CANNOT_BE_SET_BY_CLIENT</code>: Communication with status ‘COMPLETED’ or ‘STOPPED’ are reserved for system use and cannot be set directly by the client</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_STATUS_COMPLETED_OR_STOPPED_CANNOT_BE_SET_BY_CLIENT</code>: Communication with status 'COMPLETED' or 'STOPPED' are reserved for system use and cannot be set directly by the client</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_WITH_STATUS_INPROGRESS_OR_STOPPED_CANNOT_BE_UPDATED_BY_CLIENT</code>: Communication with status ‘INPROGRESS’ or ‘STOPPED’ cannot be updated by the client</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_WITH_STATUS_INPROGRESS_OR_STOPPED_CANNOT_BE_UPDATED_BY_CLIENT</code>: Communication with status 'INPROGRESS' or 'STOPPED' cannot be updated by the client</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_NEMSMS_WITH_STATUS_COMPLETED_CANNOT_BE_UPDATED_BY_CLIENT</code>: Communication with medium ‘nemsms’ and status ‘COMPLETED’ cannot be updated by the client</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATION_NEMSMS_WITH_STATUS_COMPLETED_CANNOT_BE_UPDATED_BY_CLIENT</code>: Communication with medium 'nemsms' and status 'COMPLETED' cannot be updated by the client</p>
   </li>
 </ul>
 
@@ -1262,7 +1337,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -1298,7 +1373,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -1309,7 +1384,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

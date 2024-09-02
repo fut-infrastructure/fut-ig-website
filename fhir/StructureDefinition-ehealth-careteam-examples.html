@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title> - eHealth Infrastructure v3.1.0</title>
+    <title> - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,7 +43,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:""}
     h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -62,7 +63,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -213,7 +214,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -379,13 +380,29 @@
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <p><code class="language-plaintext highlighter-rouge">DELETE [base]/CareTeam/157</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMTdmYWE1ODctZjAwNy00NmNjLWE2ODQtMzU3YjQ3NmY1YzY4IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLndyaXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMzJlMWQxZmEtZTdiNC00OTNlLWIyYzctYjMyZDQ2NjkzZjcxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLndyaXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -394,13 +411,22 @@ Accept-Encoding: gzip
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Successfully deleted 1 resource(s) in 38ms&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;Successfully deleted 1 resource(s). Took 46ms.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"information"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"informational"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted 1 resource(s) in 38ms"</span><span class="w">
+      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESSFUL_DELETE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delete succeeded."</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted 1 resource(s). Took 46ms."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -412,41 +438,41 @@ Accept-Encoding: gzip
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/CareTeam?status=active&amp;date=ge2024-04-26T09%3A26%3A58%2B00%3A00&amp;date=le2024-04-26T09%3A26%3A58%2B00%3A00&amp;managingOrganization=https%3A%2F%2Forganization.cit-organization-1181.local%2Ffhir%2FOrganization%2F205%2F_history%2F1</code></p>
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/CareTeam?status=active&amp;date=ge2024-07-29T09%3A16%3A33%2B00%3A00&amp;date=le2024-07-29T09%3A16%3A33%2B00%3A00&amp;managingOrganization=https%3A%2F%2Forganization.cit-organization-1209.local%2Ffhir%2FOrganization%2F252%2F_history%2F1</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiODNiZWQ4MDEtMDU0Ni00OWNiLTk3ODctZTBlNmI3ZmMyZGZhIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnNlYXJjaCJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiOWYwZmJiZDQtM2M1YS00N2YyLWE2ZTItN2IzN2NiY2Q3ZjRlIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnNlYXJjaCJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bb633fdb-958c-4b39-9d5e-355cefc79521"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46d1850d-a8af-4f0e-bb7d-2f82fcae4f13"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:58.832+00:00"</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:34.427+00:00"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"relation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/CareTeam?_format=json&amp;_pretty=true&amp;date=ge2024-04-26T09%3A26%3A58%2B00%3A00&amp;date=le2024-04-26T09%3A26%3A58%2B00%3A00&amp;managingOrganization=https%3A%2F%2Forganization.cit-organization-1181.local%2Ffhir%2FOrganization%2F205%2F_history%2F1&amp;status=active"</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/CareTeam?_format=json&amp;_pretty=true&amp;date=ge2024-07-29T09%3A16%3A33%2B00%3A00&amp;date=le2024-07-29T09%3A16%3A33%2B00%3A00&amp;managingOrganization=https%3A%2F%2Forganization.cit-organization-1209.local%2Ffhir%2FOrganization%2F252%2F_history%2F1&amp;status=active"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/CareTeam/241"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/CareTeam/253"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CareTeam"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"241"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"253"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:58.262+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#a7bf9b49-78ff-43"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:33.556+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#4bff85c0-d394-4b"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -454,13 +480,13 @@ Accept-Encoding: gzip
         </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:ef131178-3738-430d-97c8-0a22ceaa9cec"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:4f77c84d-7ac8-4c87-9b11-99faad5f19d3"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d03f6a1-437f-4f71-ae57-9c6e30c16be7"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"caaac567-89db-4460-ad9f-22e592ac6830"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:58+00:00"</span><span class="w">
+          </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:33+00:00"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
@@ -474,7 +500,7 @@ Accept-Encoding: gzip
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/Organization/205"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/Organization/252"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -483,14 +509,14 @@ Accept-Encoding: gzip
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/CareTeam/242"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/CareTeam/254"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CareTeam"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"242"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"254"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:58.418+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#3dcfddf2-a493-4b"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:33.699+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#41233507-e0d3-47"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -498,13 +524,13 @@ Accept-Encoding: gzip
         </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:c4344334-83c0-40b3-b319-2cce04787c8d"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:5f4cd69c-e2d0-4574-86a0-039be8f3b66b"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d05aa8e-a71a-43e2-9e28-b9cc603c0160"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94a7203d-f08d-492c-9f87-4bb9136bcbc2"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:58+00:00"</span><span class="w">
+          </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:33+00:00"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
@@ -518,7 +544,7 @@ Accept-Encoding: gzip
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/Organization/205"</span><span class="w">
+            </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/Organization/252"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -540,9 +566,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiZjFiODBlOTUtODYxNC00ZDliLTkwODctMjQ0NGI2ZWRiZDI1IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnJlYWQiXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiYTI2ZmY2MzMtZTFlNC00MmE5LWIyODUtZTM5MWM1NWU4MDgyIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnJlYWQiXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -552,8 +578,8 @@ Accept-Encoding: gzip
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:36.744+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d8016bb0-6c3c-4d"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:04.893+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#dd4b5987-c5b0-45"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -561,11 +587,14 @@ Accept-Encoding: gzip
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:6ceb8a5a-397d-4c81-83e4-180b1cd77d69"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:30e0b89b-ef97-483d-a35a-a7d66a243ed5"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c5f0125d-99b4-467f-aded-355cfc8aea08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a467575-2db6-451d-8563-59bc46da019b"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:04+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -585,24 +614,24 @@ Accept-Encoding: gzip
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/CareTeam/422</code></p>
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/CareTeam/434</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMjM5MmRmZTUtYzgwZS00MmFkLWJmNGYtNWU1YzI3MzI4MmYzIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnJlYWQiXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNjQzZDU1MDEtODFkNi00ZTk3LTkxZTAtZmVlOTRjM2YxMmZlIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnJlYWQiXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CareTeam"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"422"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"434"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:29:08.077+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ae8ce3de-d54d-43"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:19:03.979+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#fc658693-d1f0-48"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -610,11 +639,14 @@ Accept-Encoding: gzip
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:4f94f765-3880-4f99-844b-1b57ea6c38fa"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:6ee011e0-98bc-4235-9ee6-abf28df04af0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a3009399-9761-4c21-ba80-6ae862904f6b"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e74eac48-68fb-4eb8-9f01-18050df01be5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:19:03+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -628,7 +660,7 @@ Accept-Encoding: gzip
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1181.local/fhir/Patient/84729"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1209.local/fhir/Patient/17835"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -643,7 +675,7 @@ Accept-Encoding: gzip
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/CareTeam/419"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/CareTeam/431"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -658,7 +690,7 @@ Accept-Encoding: gzip
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/Practitioner/421"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/Practitioner/433"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -674,7 +706,7 @@ Accept-Encoding: gzip
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/Organization/420"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/Organization/432"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -690,9 +722,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMjU3NWZkOWMtOGY4MS00YWI1LWJkZTgtNzI4NjhmY2U2YTkyIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLndyaXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiYWFiOGM3NzEtM2ZmYS00NTMxLTliMGItMzY5MjkzYTJiMDhmIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLndyaXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -708,11 +740,14 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:021df247-48d8-445b-baf1-a3cef490d42b"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:b939621f-7a40-4869-9130-0dbba7ec9ce3"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d0c97c17-b3c4-4238-a305-5d5c2799e2f1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5564f6ea-6496-4016-b616-2426ed5d7cb1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:15:48+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -726,7 +761,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1181.local/fhir/RelatedPerson/14345"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1209.local/fhir/RelatedPerson/13042"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -741,7 +776,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1181.local/fhir/Patient/3784"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1209.local/fhir/Patient/26470"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -756,7 +791,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/CareTeam/152"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/CareTeam/152"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -772,7 +807,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/Organization/153"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/Organization/153"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -784,7 +819,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"154"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:20.333+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:15:48.138+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#b1cab1b9-8e0f-4245-a904-c81237c232b0"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -792,11 +828,14 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:021df247-48d8-445b-baf1-a3cef490d42b"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:b939621f-7a40-4869-9130-0dbba7ec9ce3"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d0c97c17-b3c4-4238-a305-5d5c2799e2f1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5564f6ea-6496-4016-b616-2426ed5d7cb1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:15:48+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -810,7 +849,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1181.local/fhir/RelatedPerson/14345"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1209.local/fhir/RelatedPerson/13042"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -825,7 +864,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1181.local/fhir/Patient/3784"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://patient.cit-organization-1209.local/fhir/Patient/26470"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -840,7 +879,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"member"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/CareTeam/152"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/CareTeam/152"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -856,7 +895,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1181.local/fhir/Organization/153"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-organization-1209.local/fhir/Organization/153"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -872,9 +911,9 @@ Content-Type: application/fhir+json; charset=UTF-8
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiODJhZGYxZDMtNGE4ZC00ZDNjLWIwNTctNTM1ZTcxZjQ0MjEwIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnJlYWQiXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiM2RkODAxNzMtZWFjNS00NTRkLWJlZTQtYTI1NjcyMmU4ODZkIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLnJlYWQiXX0sInVzZXJfdHlwZSI6IlNZU1RFTSJ9.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -890,7 +929,8 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"204"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:37.549+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:05.637+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#01a9837b-01f7-437d-9057-f794e33e31ee"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -898,11 +938,14 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:afe94b43-8d68-4736-98f2-e1736bea6da6"</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:495eecf1-7778-4c95-a449-37c4d6f04ede"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bc2e9840-8532-4c4e-8c30-b0504fe86c90"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0ea92b14-7d8d-4b1f-97a6-3bb44656830a"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:05+00:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="nl">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -924,7 +967,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -951,10 +994,10 @@ Content-Type: application/fhir+json; charset=UTF-8
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNGE5Y2UzNjMtZmQ5Ni00MTU2LWEzNmQtZDExMGMyNTc3MzgwIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLndyaXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiODQ5OWQyOWQtZjUyMi00YmQ2LWExZjctOTZlZjAxMjU0MTcxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkNhcmVUZWFtLndyaXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 If-Match: "1"
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -965,7 +1008,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:36.554+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:04.735+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#c6f9f42f-c58c-47bb-bae5-71d11ae3213f"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -973,11 +1017,14 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:6ceb8a5a-397d-4c81-83e4-180b1cd77d69"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:30e0b89b-ef97-483d-a35a-a7d66a243ed5"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c5f0125d-99b4-467f-aded-355cfc8aea08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a467575-2db6-451d-8563-59bc46da019b"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:04+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -997,7 +1044,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T09:26:36.744+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:04.893+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#dd4b5987-c5b0-4558-9cdf-90bad4114f88"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -1005,11 +1053,14 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:ietf:rfc:3986"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:6ceb8a5a-397d-4c81-83e4-180b1cd77d69"</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:uuid:30e0b89b-ef97-483d-a35a-a7d66a243ed5"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c5f0125d-99b4-467f-aded-355cfc8aea08"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a467575-2db6-451d-8563-59bc46da019b"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T09:16:04+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"reasonCode"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1674,7 +1725,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -1710,7 +1761,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -1721,7 +1772,6 @@ Content-Type: application/fhir+json; charset=UTF-8
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

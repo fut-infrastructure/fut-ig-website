@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Home - eHealth Infrastructure v3.1.0</title>
+    <title>Home - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,7 +39,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
     <style type="text/css">h2{--heading-prefix:"1"}
     h3,h4,h5,h6{--heading-prefix:"1"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
@@ -58,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -216,7 +217,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Home</h2>
   
 
@@ -231,7 +232,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core<button data-clipboard-text="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core" title="Click to copy URL" class="btn-copy"></button></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">3.1.0<button data-clipboard-text="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core|3.1.0" title="Click to copy versioned URL" class="btn-copy"></button></span>
+      <span class="copy-text">3.2.0<button data-clipboard-text="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core|3.2.0" title="Click to copy versioned URL" class="btn-copy"></button></span>
       </td>
     </tr>
 
@@ -247,7 +248,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Active
           
-            as of 2024-07-01
+            as of 2024-09-02
           
         
       </td>
@@ -278,7 +279,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#conformance-requirements" id="markdown-toc-conformance-requirements">Conformance Requirements</a></li>
   <li><a href="#collaboration" id="markdown-toc-collaboration">Collaboration</a></li>
   <li><a href="#note-to-fhir-newcomers" id="markdown-toc-note-to-fhir-newcomers">Note to FHIR Newcomers</a></li>
-  <li><a href="#readers-guide" id="markdown-toc-readers-guide">Reader’s Guide</a></li>
+  <li><a href="#readers-guide" id="markdown-toc-readers-guide">Reader's Guide</a></li>
 </ul>
 
 </div>
@@ -294,7 +295,7 @@ of the eHealth Infrastructure.</p>
 <p>This document presents Danish use concepts defined via FHIR processable artifacts; these are outputs with agreed approaches to varied kinds of healthcare related information based on the core FHIR R4 specification.</p>
 <ul>
   <li><a href="profiles.html">Profiles</a> - are constraints of core FHIR resources and datatype for use in the eHealth Infrastructure</li>
-  <li><a name="l505">​</a><a href="extensions.html">Extensions</a> - are FHIR extensions that are added for local use, covering needed concepts of the eHealth Infrastructure</li>
+  <li><a name="l509">​</a><a href="extensions.html">Extensions</a> - are FHIR extensions that are added for local use, covering needed concepts of the eHealth Infrastructure</li>
   <li><a href="terminology.html">Terminologies</a> - are defined or referenced code systems and value sets for the context of the eHealth Infrastructure</li>
 </ul>
 
@@ -333,7 +334,7 @@ of the eHealth Infrastructure.</p>
 
 <p>Great FHIR exercises and tutorials can be found at <a href="https://fhir-drills.github.io/">https://fhir-drills.github.io/</a> and <a href="https://simplifier.net/guide/ProfilingAcademy/">https://simplifier.net/guide/ProfilingAcademy/</a></p>
 
-<h3 id="readers-guide">Reader’s Guide</h3>
+<h3 id="readers-guide">Reader's Guide</h3>
 
 <p>The intended audience of the implementation guide is IT architects, developers and testers who are seeking to understand
 the available resources in the eHealth Infrastructure and how they can be used.</p>
@@ -362,7 +363,7 @@ the available resources in the eHealth Infrastructure and how they can be used.<
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333">
@@ -389,7 +390,7 @@ the available resources in the eHealth Infrastructure and how they can be used.<
     <div class="container">    <!-- container -->
     </div>    <!-- /container -->
   </div>    <!-- /segment-post-footer -->
-  
+
     <!-- JS and analytics only. -->
     <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -400,7 +401,6 @@ the available resources in the eHealth Infrastructure and how they can be used.<
   <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
   <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
   <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
-  
     <!-- Analytics Below
   ================================================== -->
   </body>

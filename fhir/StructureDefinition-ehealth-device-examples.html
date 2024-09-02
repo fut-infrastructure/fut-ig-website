@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title> - eHealth Infrastructure v3.1.0</title>
+    <title> - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,7 +43,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:""}
     h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -62,7 +63,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -213,7 +214,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -531,41 +532,57 @@
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/Device?manufacturer%3Aexact=7cdb8641-e611-49b7-8901-1f1dd2a00767&amp;model%3Aexact=0982ed66-a972-4b30-be26-ddd05bfb2448</code></p>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/Device?manufacturer%3Aexact=cab47716-3ab8-4fde-b637-c8c406881a7d&amp;model%3Aexact=149baf9f-b4f4-40e2-84e3-108481fcafdc</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiRGV2aWNlLnJlYWQiLCJEZXZpY2Uud3JpdGUiLCIkdGVzdC1vbmx5LWNyZWF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1ffe3557-4acb-4cbf-b928-3c94b4cd4099"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57de8bc9-f22c-4140-966e-31b75e85c75b"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:30.530+00:00"</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:37:56.799+00:00"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"relation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://device.cit-device-874.local/fhir/Device?_format=json&amp;_pretty=true&amp;manufacturer%3Aexact=7cdb8641-e611-49b7-8901-1f1dd2a00767&amp;model%3Aexact=0982ed66-a972-4b30-be26-ddd05bfb2448"</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://device.cit-device-886.local/fhir/Device?_format=json&amp;_pretty=true&amp;manufacturer%3Aexact=cab47716-3ab8-4fde-b637-c8c406881a7d&amp;model%3Aexact=149baf9f-b4f4-40e2-84e3-108481fcafdc"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://device.cit-device-874.local/fhir/Device/141"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://device.cit-device-886.local/fhir/Device/141"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Device"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"141"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:29.851+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ff535ad6-7624-42"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:37:56.082+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1ee8c8c6-12d8-49"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -577,22 +594,22 @@ Accept-Encoding: gzip
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7cdb8641-e611-49b7-8901-1f1dd2a00767"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"modelNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0982ed66-a972-4b30-be26-ddd05bfb2448"</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cab47716-3ab8-4fde-b637-c8c406881a7d"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"modelNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"149baf9f-b4f4-40e2-84e3-108481fcafdc"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://device.cit-device-874.local/fhir/Device/143"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://device.cit-device-886.local/fhir/Device/143"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Device"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"143"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:30.247+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#d173f792-fac9-40"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:37:56.445+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1e1509e1-6133-4a"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -604,8 +621,8 @@ Accept-Encoding: gzip
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7cdb8641-e611-49b7-8901-1f1dd2a00767"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"modelNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0982ed66-a972-4b30-be26-ddd05bfb2448"</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cab47716-3ab8-4fde-b637-c8c406881a7d"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"modelNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"149baf9f-b4f4-40e2-84e3-108481fcafdc"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
@@ -625,9 +642,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiYmI2MzNlZmItODUyOC00MjQ5LWEwZWYtOTVmNGYwYzQwM2I0IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkRldmljZS5yZWFkIl19LCJjb250ZXh0Ijp7Im9yZ2FuaXphdGlvbl9pZCI6IjQyIiwicGF0aWVudF9pZCI6IjQyIiwidGVhbV9vbl9lb2MiOmZhbHNlfSwidXNlcl90eXBlIjoiUFJBQ1RJVElPTkVSIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiMjkyZjcyZTYtYjE2MC00NmYyLTliOGYtNzJiZGQ0OTcxZWE1IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkRldmljZS5yZWFkIl19LCJjb250ZXh0Ijp7Im9yZ2FuaXphdGlvbl9pZCI6IjQyIiwicGF0aWVudF9pZCI6IjQyIiwidGVhbV9vbl9lb2MiOmZhbHNlfSwidXNlcl90eXBlIjoiUFJBQ1RJVElPTkVSIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -637,8 +654,8 @@ Accept-Encoding: gzip
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"155"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:43.331+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#9b986191-032c-41"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:38:10.055+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#0848a477-5a77-47"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -651,7 +668,7 @@ Accept-Encoding: gzip
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-874.local/fhir/Organization/50694"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-886.local/fhir/Organization/30913"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -666,9 +683,9 @@ Accept-Encoding: gzip
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiYzFlYjMxODgtNzJjYi00NmQ0LTliODMtYmI0MzdmMmRlZmUwIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkRldmljZS53cml0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiOWUxNmYzMjctZGQ4MC00NWRhLTgzNGEtMzRhZjk4ZDE0NjIwIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkRldmljZS53cml0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -689,7 +706,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-874.local/fhir/Organization/91200"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-886.local/fhir/Organization/43803"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -700,7 +717,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"154"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:42.983+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:38:09.764+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#4d681901-daa5-4efb-bd11-30e9f6fc56ab"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -713,7 +731,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-874.local/fhir/Organization/91200"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-886.local/fhir/Organization/43803"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -730,7 +748,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiRGV2aWNlLnJlYWQiLCJEZXZpY2Uud3JpdGUiLCIkdGVzdC1vbmx5LWNyZWF0ZSJdfSwidXNlcl90eXBlIjoiU1lTVEVNIn0.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -778,7 +796,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;No issues detected during validation&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;No issues detected during validation&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -805,10 +823,10 @@ Content-Type: application/fhir+json; charset=UTF-8
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
-Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNGRkMGU4NDgtYTgyZS00ODY0LTg4NDUtYmE1ZTc3ZTE1ZDQwIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkRldmljZS5yZWFkIiwiRGV2aWNlLndyaXRlIiwiRGV2aWNlVXNlU3RhdGVtZW50LnJlYWQiXX0sImNvbnRleHQiOnsicGF0aWVudF9pZCI6Imh0dHBzOi8vcGF0aWVudC5jaXQtZGV2aWNlLTg3NC5sb2NhbC9maGlyL1BhdGllbnQvNDk1NTAiLCJ0ZWFtX29uX2VvYyI6ZmFsc2V9LCJ1c2VyX3R5cGUiOiJQQVRJRU5UIn0.
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiNGY5NDVhMzctZTgyYi00YmVmLTgyN2UtNTJhZWNhYzRjOTkxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkRldmljZS5yZWFkIiwiRGV2aWNlLndyaXRlIiwiRGV2aWNlVXNlU3RhdGVtZW50LnJlYWQiXX0sImNvbnRleHQiOnsicGF0aWVudF9pZCI6Imh0dHBzOi8vcGF0aWVudC5jaXQtZGV2aWNlLTg4Ni5sb2NhbC9maGlyL1BhdGllbnQvMjA3NDUiLCJ0ZWFtX29uX2VvYyI6ZmFsc2V9LCJ1c2VyX3R5cGUiOiJQQVRJRU5UIn0.
 If-Match: "1"
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -819,7 +837,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"164"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:45.068+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:38:11.911+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#49720123-ef36-401a-9178-df7746634181"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -832,7 +851,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-874.local/fhir/Organization/750"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-886.local/fhir/Organization/6479"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -843,7 +862,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"164"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-03-22T07:26:45.068+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:38:11.911+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#49720123-ef36-401a-9178-df7746634181"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -856,7 +876,7 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-874.local/fhir/Organization/750"</span><span class="w">
+    </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-device-886.local/fhir/Organization/6479"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1368,7 +1388,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -1404,7 +1424,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -1415,7 +1435,6 @@ Content-Type: application/fhir+json; charset=UTF-8
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

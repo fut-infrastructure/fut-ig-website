@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title> - eHealth Infrastructure v3.1.0</title>
+    <title> - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,7 +43,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:""}
     h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -62,7 +63,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -213,7 +214,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -475,13 +476,29 @@
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <p><code class="language-plaintext highlighter-rouge">DELETE [base]/Composition/126</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQ29tcG9zaXRpb24ucmVhZCIsIkNvbXBvc2l0aW9uLmNyZWF0ZSIsIkNvbXBvc2l0aW9uLnNlYXJjaCIsIkNvbXBvc2l0aW9uLmRlbGV0ZSIsIiR0ZXN0LW9ubHktY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -490,13 +507,22 @@ Accept-Encoding: gzip
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Successfully deleted 1 resource(s) in 28ms&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
+    </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;h1&gt;Operation Outcome&lt;/h1&gt;&lt;table border=</span><span class="se">\"</span><span class="s2">0</span><span class="se">\"</span><span class="s2">&gt;&lt;tr&gt;&lt;td style=</span><span class="se">\"</span><span class="s2">font-weight: bold;</span><span class="se">\"</span><span class="s2">&gt;INFORMATION&lt;/td&gt;&lt;td&gt;[]&lt;/td&gt;&lt;td&gt;Successfully deleted 1 resource(s). Took 86ms.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"information"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"informational"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted 1 resource(s) in 28ms"</span><span class="w">
+      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESSFUL_DELETE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delete succeeded."</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully deleted 1 resource(s). Took 86ms."</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -508,41 +534,41 @@ Accept-Encoding: gzip
       
       
       
-      <p><code class="language-plaintext highlighter-rouge">GET [base]/Composition?title=d04decc6-aeb0-45ac-91b5-da9262b71c64</code></p>
+      <p><code class="language-plaintext highlighter-rouge">GET [base]/Composition?title=701ba35f-aa81-4170-b221-d614dd96063c</code></p>
 
 <p><strong>Header</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQ29tcG9zaXRpb24ucmVhZCIsIkNvbXBvc2l0aW9uLmNyZWF0ZSIsIkNvbXBvc2l0aW9uLnNlYXJjaCIsIkNvbXBvc2l0aW9uLmRlbGV0ZSIsIiR0ZXN0LW9ubHktY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
 <p><strong>Response</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00caf84c-da3f-4e59-9ab0-951e0b9a8df7"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b4dc0a3-ab7f-4eff-9c84-d8cf31049636"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:56.126+00:00"</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:30.642+00:00"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"relation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://document-transformation.cit-document-transformation-2250.local/fhir/Composition?_format=json&amp;_pretty=true&amp;title=d04decc6-aeb0-45ac-91b5-da9262b71c64"</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://document-transformation.cit-document-transformation-2592.local/fhir/Composition?_format=json&amp;_pretty=true&amp;title=701ba35f-aa81-4170-b221-d614dd96063c"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://document-transformation.cit-document-transformation-2250.local/fhir/Composition/130"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://document-transformation.cit-document-transformation-2592.local/fhir/Composition/130"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Composition"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:55.493+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#209f1be9-0a95-4a"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:30.249+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#5949bebe-0d21-41"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -555,10 +581,6 @@ Accept-Encoding: gzip
               </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"</span><span class="w">
               </span><span class="p">]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;div class=</span><span class="se">\"</span><span class="s2">hapiHeaderText</span><span class="se">\"</span><span class="s2">&gt;FirstName &lt;b&gt;LASTNAME &lt;/b&gt;&lt;/div&gt;&lt;table class=</span><span class="se">\"</span><span class="s2">hapiPropertyTable</span><span class="se">\"</span><span class="s2">&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;/td&gt;&lt;td&gt;0101010001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Address&lt;/td&gt;&lt;td&gt;&lt;span&gt;Scot 2 &lt;/span&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
@@ -585,7 +607,7 @@ Accept-Encoding: gzip
               </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2250.local/fhir/Organization/91719"</span><span class="w">
+              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2592.local/fhir/Organization/80666"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
@@ -598,7 +620,7 @@ Accept-Encoding: gzip
             </span><span class="p">},</span><span class="w">
             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30b33cea-b62a-43d3-a69b-b5700e14049c"</span><span class="w">
+                </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dd2dfaee-0556-40d9-9af7-ffd7fb02adcd"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
           </span><span class="p">}</span><span class="w">
@@ -615,27 +637,27 @@ Accept-Encoding: gzip
         </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:55+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:30+00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d04decc6-aeb0-45ac-91b5-da9262b71c64"</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701ba35f-aa81-4170-b221-d614dd96063c"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://document-transformation.cit-document-transformation-2250.local/fhir/Composition/131"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://document-transformation.cit-document-transformation-2592.local/fhir/Composition/131"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Composition"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"131"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:55.717+00:00"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#87b785df-8d74-48"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:30.384+00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#afb22cd1-f4ec-4c"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition"</span><span class="w">
           </span><span class="p">]</span><span class="w">
@@ -648,10 +670,6 @@ Accept-Encoding: gzip
               </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"</span><span class="w">
               </span><span class="p">]</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;div class=</span><span class="se">\"</span><span class="s2">hapiHeaderText</span><span class="se">\"</span><span class="s2">&gt;FirstName &lt;b&gt;LASTNAME &lt;/b&gt;&lt;/div&gt;&lt;table class=</span><span class="se">\"</span><span class="s2">hapiPropertyTable</span><span class="se">\"</span><span class="s2">&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;/td&gt;&lt;td&gt;0101010001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Address&lt;/td&gt;&lt;td&gt;&lt;span&gt;Scot 2 &lt;/span&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
@@ -678,7 +696,7 @@ Accept-Encoding: gzip
               </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2250.local/fhir/Organization/89656"</span><span class="w">
+              </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2592.local/fhir/Organization/91589"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="p">{</span><span class="w">
@@ -691,7 +709,7 @@ Accept-Encoding: gzip
             </span><span class="p">},</span><span class="w">
             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
               </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"780a97d3-6868-4c87-ad2d-ad6029d9cdfe"</span><span class="w">
+                </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"634f3275-e9ac-4fe4-8c4c-88588fd63fb2"</span><span class="w">
               </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
           </span><span class="p">}</span><span class="w">
@@ -708,13 +726,13 @@ Accept-Encoding: gzip
         </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:55+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:30+00:00"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d04decc6-aeb0-45ac-91b5-da9262b71c64"</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"701ba35f-aa81-4170-b221-d614dd96063c"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
@@ -736,7 +754,7 @@ Accept-Encoding: gzip
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQ29tcG9zaXRpb24ucmVhZCIsIkNvbXBvc2l0aW9uLmNyZWF0ZSIsIkNvbXBvc2l0aW9uLnNlYXJjaCIsIkNvbXBvc2l0aW9uLmRlbGV0ZSIsIiR0ZXN0LW9ubHktY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 </code></pre></div></div>
 
@@ -746,8 +764,8 @@ Accept-Encoding: gzip
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:53.796+00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2ff06f95-7567-49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:28.354+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#40f3f841-bd94-95"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -760,10 +778,6 @@ Accept-Encoding: gzip
         </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"</span><span class="w">
         </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;div class=</span><span class="se">\"</span><span class="s2">hapiHeaderText</span><span class="se">\"</span><span class="s2">&gt;FirstName &lt;b&gt;LASTNAME &lt;/b&gt;&lt;/div&gt;&lt;table class=</span><span class="se">\"</span><span class="s2">hapiPropertyTable</span><span class="se">\"</span><span class="s2">&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;/td&gt;&lt;td&gt;0101010001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Address&lt;/td&gt;&lt;td&gt;&lt;span&gt;Scot 2 &lt;/span&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -790,7 +804,7 @@ Accept-Encoding: gzip
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2250.local/fhir/Organization/2057"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2592.local/fhir/Organization/69565"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -803,7 +817,7 @@ Accept-Encoding: gzip
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202687cb-4c4b-4663-99bd-7cfb3957a086"</span><span class="w">
+          </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fd9ef170-c51d-4f46-8a45-3415c1dea8b4"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -820,13 +834,13 @@ Accept-Encoding: gzip
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:53+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:28+00:00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5f5539a-1212-4e8c-b715-39202271ef74"</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49f711fe-43f6-48a6-8909-d8f8865615ce"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -842,7 +856,7 @@ Accept-Encoding: gzip
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Accept-Charset: utf-8
 Authorization: Bearer eyJhbGciOiJub25lIn0.eyJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQ29tcG9zaXRpb24ucmVhZCIsIkNvbXBvc2l0aW9uLmNyZWF0ZSIsIkNvbXBvc2l0aW9uLnNlYXJjaCIsIkNvbXBvc2l0aW9uLmRlbGV0ZSIsIiR0ZXN0LW9ubHktY3JlYXRlIl19LCJ1c2VyX3R5cGUiOiJTWVNURU0ifQ.
 Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
-User-Agent: HAPI-FHIR/6.2.1 (FHIR Client; FHIR 4.0.1/R4; apache)
+User-Agent: HAPI-FHIR/6.10.5 (FHIR Client; FHIR 4.0.1/R4; apache)
 Accept-Encoding: gzip
 Content-Type: application/fhir+json; charset=UTF-8
 </code></pre></div></div>
@@ -889,7 +903,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2250.local/fhir/Organization/2057"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2592.local/fhir/Organization/69565"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -902,7 +916,7 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202687cb-4c4b-4663-99bd-7cfb3957a086"</span><span class="w">
+          </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fd9ef170-c51d-4f46-8a45-3415c1dea8b4"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -919,13 +933,13 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:53+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:28+00:00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5f5539a-1212-4e8c-b715-39202271ef74"</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49f711fe-43f6-48a6-8909-d8f8865615ce"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -935,7 +949,8 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:53.796+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:28.354+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#40f3f841-bd94-95a4-8456-96abcf914c05"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -948,10 +963,6 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="s2">"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"</span><span class="w">
         </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generated"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"div"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div xmlns=</span><span class="se">\"</span><span class="s2">http://www.w3.org/1999/xhtml</span><span class="se">\"</span><span class="s2">&gt;&lt;div class=</span><span class="se">\"</span><span class="s2">hapiHeaderText</span><span class="se">\"</span><span class="s2">&gt;FirstName &lt;b&gt;LASTNAME &lt;/b&gt;&lt;/div&gt;&lt;table class=</span><span class="se">\"</span><span class="s2">hapiPropertyTable</span><span class="se">\"</span><span class="s2">&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Identifier&lt;/td&gt;&lt;td&gt;0101010001&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Address&lt;/td&gt;&lt;td&gt;&lt;span&gt;Scot 2 &lt;/span&gt;&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -978,7 +989,7 @@ Content-Type: application/fhir+json; charset=UTF-8
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2250.local/fhir/Organization/2057"</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://organization.cit-document-transformation-2592.local/fhir/Organization/69565"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -991,7 +1002,7 @@ Content-Type: application/fhir+json; charset=UTF-8
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202687cb-4c4b-4663-99bd-7cfb3957a086"</span><span class="w">
+          </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fd9ef170-c51d-4f46-8a45-3415c1dea8b4"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1008,13 +1019,13 @@ Content-Type: application/fhir+json; charset=UTF-8
   </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-04-26T07:58:53+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-07-29T08:45:28+00:00"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5f5539a-1212-4e8c-b715-39202271ef74"</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49f711fe-43f6-48a6-8909-d8f8865615ce"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1585,7 +1596,7 @@ Content-Type: application/fhir+json; charset=UTF-8
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -1621,7 +1632,7 @@ Content-Type: application/fhir+json; charset=UTF-8
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -1632,7 +1643,6 @@ Content-Type: application/fhir+json; charset=UTF-8
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changelog - eHealth Infrastructure v3.1.0</title>
+    <title>Changelog - eHealth Infrastructure v3.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -39,7 +39,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
@@ -58,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.1.0 - release
+            <span style="display:inline-block;">3.2.0 - release
 
 
             </span>
@@ -216,7 +217,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.1.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changelog</h2>
   
 
@@ -234,7 +235,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#310-2024-05-14" id="markdown-toc-310-2024-05-14">3.1.0 (2024-05-14)</a>    <ul>
+  <li><a href="#320-2024-08-22" id="markdown-toc-320-2024-08-22">3.2.0 (2024-08-22)</a>    <ul>
       <li><a href="#general-changes" id="markdown-toc-general-changes">General changes</a></li>
       <li><a href="#custom-operations" id="markdown-toc-custom-operations">Custom operations</a></li>
       <li><a href="#code-systems" id="markdown-toc-code-systems">Code systems</a></li>
@@ -244,7 +245,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#search-parameters" id="markdown-toc-search-parameters">Search parameters</a></li>
     </ul>
   </li>
-  <li><a href="#300-2024-01-08" id="markdown-toc-300-2024-01-08">3.0.0 (2024-01-08)</a>    <ul>
+  <li><a href="#310-2024-05-14" id="markdown-toc-310-2024-05-14">3.1.0 (2024-05-14)</a>    <ul>
       <li><a href="#general-changes-1" id="markdown-toc-general-changes-1">General changes</a></li>
       <li><a href="#custom-operations-1" id="markdown-toc-custom-operations-1">Custom operations</a></li>
       <li><a href="#code-systems-1" id="markdown-toc-code-systems-1">Code systems</a></li>
@@ -254,16 +255,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#search-parameters-1" id="markdown-toc-search-parameters-1">Search parameters</a></li>
     </ul>
   </li>
-  <li><a href="#2100-2023-11-09" id="markdown-toc-2100-2023-11-09">2.10.0 (2023-11-09)</a>    <ul>
+  <li><a href="#300-2024-01-08" id="markdown-toc-300-2024-01-08">3.0.0 (2024-01-08)</a>    <ul>
       <li><a href="#general-changes-2" id="markdown-toc-general-changes-2">General changes</a></li>
       <li><a href="#custom-operations-2" id="markdown-toc-custom-operations-2">Custom operations</a></li>
       <li><a href="#code-systems-2" id="markdown-toc-code-systems-2">Code systems</a></li>
       <li><a href="#valuesets-2" id="markdown-toc-valuesets-2">ValueSets</a></li>
       <li><a href="#conceptmaps-2" id="markdown-toc-conceptmaps-2">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-2" id="markdown-toc-resourceprofile-changes-2">Resource/profile changes</a></li>
+      <li><a href="#search-parameters-2" id="markdown-toc-search-parameters-2">Search parameters</a></li>
     </ul>
   </li>
-  <li><a href="#290-2023-08-29" id="markdown-toc-290-2023-08-29">2.9.0 (2023-08-29)</a>    <ul>
+  <li><a href="#2100-2023-11-09" id="markdown-toc-2100-2023-11-09">2.10.0 (2023-11-09)</a>    <ul>
       <li><a href="#general-changes-3" id="markdown-toc-general-changes-3">General changes</a></li>
       <li><a href="#custom-operations-3" id="markdown-toc-custom-operations-3">Custom operations</a></li>
       <li><a href="#code-systems-3" id="markdown-toc-code-systems-3">Code systems</a></li>
@@ -272,7 +274,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#resourceprofile-changes-3" id="markdown-toc-resourceprofile-changes-3">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#280-2023-06-01" id="markdown-toc-280-2023-06-01">2.8.0 (2023-06-01)</a>    <ul>
+  <li><a href="#290-2023-08-29" id="markdown-toc-290-2023-08-29">2.9.0 (2023-08-29)</a>    <ul>
       <li><a href="#general-changes-4" id="markdown-toc-general-changes-4">General changes</a></li>
       <li><a href="#custom-operations-4" id="markdown-toc-custom-operations-4">Custom operations</a></li>
       <li><a href="#code-systems-4" id="markdown-toc-code-systems-4">Code systems</a></li>
@@ -281,7 +283,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#resourceprofile-changes-4" id="markdown-toc-resourceprofile-changes-4">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#270-2023-03-29" id="markdown-toc-270-2023-03-29">2.7.0 (2023-03-29)</a>    <ul>
+  <li><a href="#280-2023-06-01" id="markdown-toc-280-2023-06-01">2.8.0 (2023-06-01)</a>    <ul>
       <li><a href="#general-changes-5" id="markdown-toc-general-changes-5">General changes</a></li>
       <li><a href="#custom-operations-5" id="markdown-toc-custom-operations-5">Custom operations</a></li>
       <li><a href="#code-systems-5" id="markdown-toc-code-systems-5">Code systems</a></li>
@@ -290,7 +292,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#resourceprofile-changes-5" id="markdown-toc-resourceprofile-changes-5">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#260-2023-01-16" id="markdown-toc-260-2023-01-16">2.6.0 (2023-01-16)</a>    <ul>
+  <li><a href="#270-2023-03-29" id="markdown-toc-270-2023-03-29">2.7.0 (2023-03-29)</a>    <ul>
       <li><a href="#general-changes-6" id="markdown-toc-general-changes-6">General changes</a></li>
       <li><a href="#custom-operations-6" id="markdown-toc-custom-operations-6">Custom operations</a></li>
       <li><a href="#code-systems-6" id="markdown-toc-code-systems-6">Code systems</a></li>
@@ -299,7 +301,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#resourceprofile-changes-6" id="markdown-toc-resourceprofile-changes-6">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#250-2022-10-25" id="markdown-toc-250-2022-10-25">2.5.0 (2022-10-25)</a>    <ul>
+  <li><a href="#260-2023-01-16" id="markdown-toc-260-2023-01-16">2.6.0 (2023-01-16)</a>    <ul>
       <li><a href="#general-changes-7" id="markdown-toc-general-changes-7">General changes</a></li>
       <li><a href="#custom-operations-7" id="markdown-toc-custom-operations-7">Custom operations</a></li>
       <li><a href="#code-systems-7" id="markdown-toc-code-systems-7">Code systems</a></li>
@@ -308,7 +310,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#resourceprofile-changes-7" id="markdown-toc-resourceprofile-changes-7">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#240-2022-10-11" id="markdown-toc-240-2022-10-11">2.4.0 (2022-10-11)</a>    <ul>
+  <li><a href="#250-2022-10-25" id="markdown-toc-250-2022-10-25">2.5.0 (2022-10-25)</a>    <ul>
       <li><a href="#general-changes-8" id="markdown-toc-general-changes-8">General changes</a></li>
       <li><a href="#custom-operations-8" id="markdown-toc-custom-operations-8">Custom operations</a></li>
       <li><a href="#code-systems-8" id="markdown-toc-code-systems-8">Code systems</a></li>
@@ -317,162 +319,171 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="#resourceprofile-changes-8" id="markdown-toc-resourceprofile-changes-8">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#230-2022-09-27" id="markdown-toc-230-2022-09-27">2.3.0 (2022-09-27)</a>    <ul>
+  <li><a href="#240-2022-10-11" id="markdown-toc-240-2022-10-11">2.4.0 (2022-10-11)</a>    <ul>
       <li><a href="#general-changes-9" id="markdown-toc-general-changes-9">General changes</a></li>
       <li><a href="#custom-operations-9" id="markdown-toc-custom-operations-9">Custom operations</a></li>
       <li><a href="#code-systems-9" id="markdown-toc-code-systems-9">Code systems</a></li>
       <li><a href="#valuesets-9" id="markdown-toc-valuesets-9">ValueSets</a></li>
       <li><a href="#conceptmaps-9" id="markdown-toc-conceptmaps-9">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-9" id="markdown-toc-resourceprofile-changes-9">Resource/profile changes</a></li>
-      <li><a href="#search-parameters-2" id="markdown-toc-search-parameters-2">Search parameters</a></li>
     </ul>
   </li>
-  <li><a href="#20222-2022-06-30" id="markdown-toc-20222-2022-06-30">2022.2 (2022-06-30)</a>    <ul>
+  <li><a href="#230-2022-09-27" id="markdown-toc-230-2022-09-27">2.3.0 (2022-09-27)</a>    <ul>
       <li><a href="#general-changes-10" id="markdown-toc-general-changes-10">General changes</a></li>
       <li><a href="#custom-operations-10" id="markdown-toc-custom-operations-10">Custom operations</a></li>
       <li><a href="#code-systems-10" id="markdown-toc-code-systems-10">Code systems</a></li>
-      <li><a href="#naming-systems" id="markdown-toc-naming-systems">Naming systems</a></li>
       <li><a href="#valuesets-10" id="markdown-toc-valuesets-10">ValueSets</a></li>
       <li><a href="#conceptmaps-10" id="markdown-toc-conceptmaps-10">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-10" id="markdown-toc-resourceprofile-changes-10">Resource/profile changes</a></li>
+      <li><a href="#search-parameters-3" id="markdown-toc-search-parameters-3">Search parameters</a></li>
     </ul>
   </li>
-  <li><a href="#20221-2022-01-19" id="markdown-toc-20221-2022-01-19">2022.1 (2022-01-19)</a>    <ul>
+  <li><a href="#20222-2022-06-30" id="markdown-toc-20222-2022-06-30">2022.2 (2022-06-30)</a>    <ul>
       <li><a href="#general-changes-11" id="markdown-toc-general-changes-11">General changes</a></li>
       <li><a href="#custom-operations-11" id="markdown-toc-custom-operations-11">Custom operations</a></li>
       <li><a href="#code-systems-11" id="markdown-toc-code-systems-11">Code systems</a></li>
+      <li><a href="#naming-systems" id="markdown-toc-naming-systems">Naming systems</a></li>
       <li><a href="#valuesets-11" id="markdown-toc-valuesets-11">ValueSets</a></li>
       <li><a href="#conceptmaps-11" id="markdown-toc-conceptmaps-11">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-11" id="markdown-toc-resourceprofile-changes-11">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20213-2021-10-28" id="markdown-toc-20213-2021-10-28">2021.3 (2021-10-28)</a>    <ul>
+  <li><a href="#20221-2022-01-19" id="markdown-toc-20221-2022-01-19">2022.1 (2022-01-19)</a>    <ul>
       <li><a href="#general-changes-12" id="markdown-toc-general-changes-12">General changes</a></li>
       <li><a href="#custom-operations-12" id="markdown-toc-custom-operations-12">Custom operations</a></li>
       <li><a href="#code-systems-12" id="markdown-toc-code-systems-12">Code systems</a></li>
       <li><a href="#valuesets-12" id="markdown-toc-valuesets-12">ValueSets</a></li>
       <li><a href="#conceptmaps-12" id="markdown-toc-conceptmaps-12">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-12" id="markdown-toc-resourceprofile-changes-12">Resource/profile changes</a></li>
-      <li><a href="#changes-with-fhir-r4-migration" id="markdown-toc-changes-with-fhir-r4-migration">Changes with FHIR R4 Migration</a></li>
+    </ul>
+  </li>
+  <li><a href="#20213-2021-10-28" id="markdown-toc-20213-2021-10-28">2021.3 (2021-10-28)</a>    <ul>
+      <li><a href="#general-changes-13" id="markdown-toc-general-changes-13">General changes</a></li>
       <li><a href="#custom-operations-13" id="markdown-toc-custom-operations-13">Custom operations</a></li>
       <li><a href="#code-systems-13" id="markdown-toc-code-systems-13">Code systems</a></li>
       <li><a href="#valuesets-13" id="markdown-toc-valuesets-13">ValueSets</a></li>
       <li><a href="#conceptmaps-13" id="markdown-toc-conceptmaps-13">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-13" id="markdown-toc-resourceprofile-changes-13">Resource/profile changes</a></li>
-    </ul>
-  </li>
-  <li><a href="#20212-2021-05-05" id="markdown-toc-20212-2021-05-05">2021.2 (2021-05-05)</a>    <ul>
+      <li><a href="#changes-with-fhir-r4-migration" id="markdown-toc-changes-with-fhir-r4-migration">Changes with FHIR R4 Migration</a></li>
+      <li><a href="#custom-operations-14" id="markdown-toc-custom-operations-14">Custom operations</a></li>
       <li><a href="#code-systems-14" id="markdown-toc-code-systems-14">Code systems</a></li>
       <li><a href="#valuesets-14" id="markdown-toc-valuesets-14">ValueSets</a></li>
       <li><a href="#conceptmaps-14" id="markdown-toc-conceptmaps-14">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-14" id="markdown-toc-resourceprofile-changes-14">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20208-2021-01-12" id="markdown-toc-20208-2021-01-12">2020.8 (2021-01-12)</a>    <ul>
+  <li><a href="#20212-2021-05-05" id="markdown-toc-20212-2021-05-05">2021.2 (2021-05-05)</a>    <ul>
       <li><a href="#code-systems-15" id="markdown-toc-code-systems-15">Code systems</a></li>
       <li><a href="#valuesets-15" id="markdown-toc-valuesets-15">ValueSets</a></li>
       <li><a href="#conceptmaps-15" id="markdown-toc-conceptmaps-15">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-15" id="markdown-toc-resourceprofile-changes-15">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20207-2020-10-28" id="markdown-toc-20207-2020-10-28">2020.7 (2020-10-28)</a>    <ul>
+  <li><a href="#20208-2021-01-12" id="markdown-toc-20208-2021-01-12">2020.8 (2021-01-12)</a>    <ul>
       <li><a href="#code-systems-16" id="markdown-toc-code-systems-16">Code systems</a></li>
       <li><a href="#valuesets-16" id="markdown-toc-valuesets-16">ValueSets</a></li>
-      <li><a href="#resourceprofile-changes-16" id="markdown-toc-resourceprofile-changes-16">Resource/profile changes</a></li>
-      <li><a href="#code-systems-17" id="markdown-toc-code-systems-17">Code systems</a></li>
-      <li><a href="#valuesets-17" id="markdown-toc-valuesets-17">ValueSets</a></li>
       <li><a href="#conceptmaps-16" id="markdown-toc-conceptmaps-16">ConceptMaps</a></li>
-      <li><a href="#resourceprofile-changes-17" id="markdown-toc-resourceprofile-changes-17">Resource/profile changes</a></li>
+      <li><a href="#resourceprofile-changes-16" id="markdown-toc-resourceprofile-changes-16">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#202061-2020-09-04" id="markdown-toc-202061-2020-09-04">2020.6.1 (2020-09-04)</a>    <ul>
+  <li><a href="#20207-2020-10-28" id="markdown-toc-20207-2020-10-28">2020.7 (2020-10-28)</a>    <ul>
+      <li><a href="#code-systems-17" id="markdown-toc-code-systems-17">Code systems</a></li>
+      <li><a href="#valuesets-17" id="markdown-toc-valuesets-17">ValueSets</a></li>
+      <li><a href="#resourceprofile-changes-17" id="markdown-toc-resourceprofile-changes-17">Resource/profile changes</a></li>
       <li><a href="#code-systems-18" id="markdown-toc-code-systems-18">Code systems</a></li>
       <li><a href="#valuesets-18" id="markdown-toc-valuesets-18">ValueSets</a></li>
       <li><a href="#conceptmaps-17" id="markdown-toc-conceptmaps-17">ConceptMaps</a></li>
-    </ul>
-  </li>
-  <li><a href="#20206-2020-08-20" id="markdown-toc-20206-2020-08-20">2020.6 (2020-08-20)</a>    <ul>
-      <li><a href="#general-changes-13" id="markdown-toc-general-changes-13">General changes</a></li>
-      <li><a href="#custom-operations-14" id="markdown-toc-custom-operations-14">Custom operations</a></li>
-      <li><a href="#code-systems-19" id="markdown-toc-code-systems-19">Code systems</a></li>
-      <li><a href="#valuesets-19" id="markdown-toc-valuesets-19">ValueSets</a></li>
-      <li><a href="#searchparameters" id="markdown-toc-searchparameters">SearchParameters</a></li>
       <li><a href="#resourceprofile-changes-18" id="markdown-toc-resourceprofile-changes-18">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20205-2020-06-25" id="markdown-toc-20205-2020-06-25">2020.5 (2020-06-25)</a>    <ul>
+  <li><a href="#202061-2020-09-04" id="markdown-toc-202061-2020-09-04">2020.6.1 (2020-09-04)</a>    <ul>
+      <li><a href="#code-systems-19" id="markdown-toc-code-systems-19">Code systems</a></li>
+      <li><a href="#valuesets-19" id="markdown-toc-valuesets-19">ValueSets</a></li>
+      <li><a href="#conceptmaps-18" id="markdown-toc-conceptmaps-18">ConceptMaps</a></li>
+    </ul>
+  </li>
+  <li><a href="#20206-2020-08-20" id="markdown-toc-20206-2020-08-20">2020.6 (2020-08-20)</a>    <ul>
+      <li><a href="#general-changes-14" id="markdown-toc-general-changes-14">General changes</a></li>
+      <li><a href="#custom-operations-15" id="markdown-toc-custom-operations-15">Custom operations</a></li>
+      <li><a href="#code-systems-20" id="markdown-toc-code-systems-20">Code systems</a></li>
+      <li><a href="#valuesets-20" id="markdown-toc-valuesets-20">ValueSets</a></li>
+      <li><a href="#searchparameters" id="markdown-toc-searchparameters">SearchParameters</a></li>
       <li><a href="#resourceprofile-changes-19" id="markdown-toc-resourceprofile-changes-19">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20204-2020-05-25" id="markdown-toc-20204-2020-05-25">2020.4 (2020-05-25)</a>    <ul>
-      <li><a href="#custom-operations-15" id="markdown-toc-custom-operations-15">Custom operations</a></li>
+  <li><a href="#20205-2020-06-25" id="markdown-toc-20205-2020-06-25">2020.5 (2020-06-25)</a>    <ul>
       <li><a href="#resourceprofile-changes-20" id="markdown-toc-resourceprofile-changes-20">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20203-2020-04-30" id="markdown-toc-20203-2020-04-30">2020.3 (2020-04-30)</a>    <ul>
+  <li><a href="#20204-2020-05-25" id="markdown-toc-20204-2020-05-25">2020.4 (2020-05-25)</a>    <ul>
       <li><a href="#custom-operations-16" id="markdown-toc-custom-operations-16">Custom operations</a></li>
-    </ul>
-  </li>
-  <li><a href="#20202-2020-03-27" id="markdown-toc-20202-2020-03-27">2020.2 (2020-03-27)</a>    <ul>
-      <li><a href="#custom-operations-17" id="markdown-toc-custom-operations-17">Custom operations</a></li>
       <li><a href="#resourceprofile-changes-21" id="markdown-toc-resourceprofile-changes-21">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20201-2020-02-04" id="markdown-toc-20201-2020-02-04">2020.1 (2020-02-04)</a>    <ul>
-      <li><a href="#general-changes-14" id="markdown-toc-general-changes-14">General changes</a></li>
+  <li><a href="#20203-2020-04-30" id="markdown-toc-20203-2020-04-30">2020.3 (2020-04-30)</a>    <ul>
+      <li><a href="#custom-operations-17" id="markdown-toc-custom-operations-17">Custom operations</a></li>
+    </ul>
+  </li>
+  <li><a href="#20202-2020-03-27" id="markdown-toc-20202-2020-03-27">2020.2 (2020-03-27)</a>    <ul>
       <li><a href="#custom-operations-18" id="markdown-toc-custom-operations-18">Custom operations</a></li>
-      <li><a href="#code-systems-20" id="markdown-toc-code-systems-20">Code systems</a></li>
-      <li><a href="#valuesets-20" id="markdown-toc-valuesets-20">ValueSets</a></li>
-      <li><a href="#namingsystems" id="markdown-toc-namingsystems">NamingSystems</a></li>
-      <li><a href="#conceptmaps-18" id="markdown-toc-conceptmaps-18">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-22" id="markdown-toc-resourceprofile-changes-22">Resource/profile changes</a></li>
+    </ul>
+  </li>
+  <li><a href="#20201-2020-02-04" id="markdown-toc-20201-2020-02-04">2020.1 (2020-02-04)</a>    <ul>
+      <li><a href="#general-changes-15" id="markdown-toc-general-changes-15">General changes</a></li>
+      <li><a href="#custom-operations-19" id="markdown-toc-custom-operations-19">Custom operations</a></li>
+      <li><a href="#code-systems-21" id="markdown-toc-code-systems-21">Code systems</a></li>
+      <li><a href="#valuesets-21" id="markdown-toc-valuesets-21">ValueSets</a></li>
+      <li><a href="#namingsystems" id="markdown-toc-namingsystems">NamingSystems</a></li>
+      <li><a href="#conceptmaps-19" id="markdown-toc-conceptmaps-19">ConceptMaps</a></li>
+      <li><a href="#resourceprofile-changes-23" id="markdown-toc-resourceprofile-changes-23">Resource/profile changes</a></li>
       <li><a href="#events" id="markdown-toc-events">Events</a></li>
     </ul>
   </li>
   <li><a href="#201961-2019-12-04" id="markdown-toc-201961-2019-12-04">2019.6.1 (2019-12-04)</a>    <ul>
-      <li><a href="#code-systems-21" id="markdown-toc-code-systems-21">Code systems</a></li>
-      <li><a href="#valuesets-21" id="markdown-toc-valuesets-21">ValueSets</a></li>
-      <li><a href="#conceptmaps-19" id="markdown-toc-conceptmaps-19">ConceptMaps</a></li>
-      <li><a href="#resourceprofile-changes-23" id="markdown-toc-resourceprofile-changes-23">Resource/profile changes</a></li>
-    </ul>
-  </li>
-  <li><a href="#20196-2019-11-08" id="markdown-toc-20196-2019-11-08">2019.6 (2019-11-08)</a>    <ul>
-      <li><a href="#general-changes-15" id="markdown-toc-general-changes-15">General changes</a></li>
-      <li><a href="#custom-operations-19" id="markdown-toc-custom-operations-19">Custom operations</a></li>
       <li><a href="#code-systems-22" id="markdown-toc-code-systems-22">Code systems</a></li>
       <li><a href="#valuesets-22" id="markdown-toc-valuesets-22">ValueSets</a></li>
+      <li><a href="#conceptmaps-20" id="markdown-toc-conceptmaps-20">ConceptMaps</a></li>
       <li><a href="#resourceprofile-changes-24" id="markdown-toc-resourceprofile-changes-24">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#201953-2019-06-07" id="markdown-toc-201953-2019-06-07">2019.5.3 (2019-06-07)</a>    <ul>
+  <li><a href="#20196-2019-11-08" id="markdown-toc-20196-2019-11-08">2019.6 (2019-11-08)</a>    <ul>
       <li><a href="#general-changes-16" id="markdown-toc-general-changes-16">General changes</a></li>
+      <li><a href="#custom-operations-20" id="markdown-toc-custom-operations-20">Custom operations</a></li>
+      <li><a href="#code-systems-23" id="markdown-toc-code-systems-23">Code systems</a></li>
+      <li><a href="#valuesets-23" id="markdown-toc-valuesets-23">ValueSets</a></li>
       <li><a href="#resourceprofile-changes-25" id="markdown-toc-resourceprofile-changes-25">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#201952-2019-05-29" id="markdown-toc-201952-2019-05-29">2019.5.2 (2019-05-29)</a>    <ul>
+  <li><a href="#201953-2019-06-07" id="markdown-toc-201953-2019-06-07">2019.5.3 (2019-06-07)</a>    <ul>
       <li><a href="#general-changes-17" id="markdown-toc-general-changes-17">General changes</a></li>
-      <li><a href="#code-systems-23" id="markdown-toc-code-systems-23">Code systems</a></li>
-      <li><a href="#valuesets-23" id="markdown-toc-valuesets-23">ValueSets</a></li>
       <li><a href="#resourceprofile-changes-26" id="markdown-toc-resourceprofile-changes-26">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#201951-2019-05-15" id="markdown-toc-201951-2019-05-15">2019.5.1 (2019-05-15)</a>    <ul>
+  <li><a href="#201952-2019-05-29" id="markdown-toc-201952-2019-05-29">2019.5.2 (2019-05-29)</a>    <ul>
+      <li><a href="#general-changes-18" id="markdown-toc-general-changes-18">General changes</a></li>
       <li><a href="#code-systems-24" id="markdown-toc-code-systems-24">Code systems</a></li>
       <li><a href="#valuesets-24" id="markdown-toc-valuesets-24">ValueSets</a></li>
       <li><a href="#resourceprofile-changes-27" id="markdown-toc-resourceprofile-changes-27">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20195-2019-05-07" id="markdown-toc-20195-2019-05-07">2019.5 (2019-05-07)</a>    <ul>
-      <li><a href="#general-changes-18" id="markdown-toc-general-changes-18">General changes</a></li>
+  <li><a href="#201951-2019-05-15" id="markdown-toc-201951-2019-05-15">2019.5.1 (2019-05-15)</a>    <ul>
+      <li><a href="#code-systems-25" id="markdown-toc-code-systems-25">Code systems</a></li>
+      <li><a href="#valuesets-25" id="markdown-toc-valuesets-25">ValueSets</a></li>
       <li><a href="#resourceprofile-changes-28" id="markdown-toc-resourceprofile-changes-28">Resource/profile changes</a></li>
     </ul>
   </li>
-  <li><a href="#20195-2019-05-07-1" id="markdown-toc-20195-2019-05-07-1">2019.5 (2019-05-07)</a>    <ul>
+  <li><a href="#20195-2019-05-07" id="markdown-toc-20195-2019-05-07">2019.5 (2019-05-07)</a>    <ul>
       <li><a href="#general-changes-19" id="markdown-toc-general-changes-19">General changes</a></li>
-      <li><a href="#custom-operations-20" id="markdown-toc-custom-operations-20">Custom operations</a></li>
-      <li><a href="#code-systems-25" id="markdown-toc-code-systems-25">Code systems</a></li>
-      <li><a href="#valuesets-25" id="markdown-toc-valuesets-25">ValueSets</a></li>
       <li><a href="#resourceprofile-changes-29" id="markdown-toc-resourceprofile-changes-29">Resource/profile changes</a></li>
+    </ul>
+  </li>
+  <li><a href="#20195-2019-05-07-1" id="markdown-toc-20195-2019-05-07-1">2019.5 (2019-05-07)</a>    <ul>
+      <li><a href="#general-changes-20" id="markdown-toc-general-changes-20">General changes</a></li>
+      <li><a href="#custom-operations-21" id="markdown-toc-custom-operations-21">Custom operations</a></li>
+      <li><a href="#code-systems-26" id="markdown-toc-code-systems-26">Code systems</a></li>
+      <li><a href="#valuesets-26" id="markdown-toc-valuesets-26">ValueSets</a></li>
+      <li><a href="#resourceprofile-changes-30" id="markdown-toc-resourceprofile-changes-30">Resource/profile changes</a></li>
     </ul>
   </li>
   <li><a href="#v100---2019-03-06" id="markdown-toc-v100---2019-03-06">v1.0.0 - 2019-03-06</a></li>
@@ -481,59 +492,106 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>This is the log of changes made to the eHealth Implementation Guide.</p>
 
-<h2 id="310-2024-05-14">3.1.0 (2024-05-14)</h2>
+<h2 id="320-2024-08-22">3.2.0 (2024-08-22)</h2>
 
 <h3 id="general-changes">General changes</h3>
-
-<h3 id="custom-operations">Custom operations</h3>
 <ul>
-  <li>Added custom operation “retrieve-and-transform-QRD” on DocumentQuery service</li>
-  <li>Added custom operation “retrieve-and-transform-APD” on DocumentQuery service</li>
-  <li>Added custom operation “retrieve-and-transform-PHMR” on DocumentQuery service</li>
-  <li>Operation “retrieve-document” on DocumentQuery service has been extended with parameters <code class="language-plaintext highlighter-rouge">consentOverride</code> and <code class="language-plaintext highlighter-rouge">reason</code> to be able to specify if the operation should override the lack of consent from a patient to view their medical documents, and to indicate the reason for the override.</li>
+  <li>Search functionality has been updated to use Bing search instead of Google search.
+    <h3 id="custom-operations">Custom operations</h3>
+  </li>
+  <li>Updated $get-patient-procedures behavior on input specifying the optional 'extra' parameter. When 'extra' is true, the operation returns a row for extra activities as determined by ServiceRequest.includeAsExtra.</li>
+  <li>Updated behavior of custom operation "$apply" on Plan/CarePlan service to transfer the value of includeAsExtra element in PlanDefinition.action to the resulting ServiceRequests.includeAsExtra.</li>
+  <li>Added custom operation "search-measurements-bundle-limit" on Measurement service</li>
+  <li>Improved the export and import plan definition operations on Plan service
+    <h4 id="system-operations">System operations</h4>
+    <h4 id="instance-operations">Instance operations</h4>
+    <h3 id="code-systems">Code systems</h3>
+  </li>
+  <li>Added missing NPU codes to urn:oid:1.2.208.176.2.1 used in concept maps</li>
+  <li>Updated urn:oid:1.2.208.176.2.4 with 11 SKS codes ("DF00","DF10","DF20","DF30","DF40","DF50","DF60","DF70","DF80","DF90","DF99")</li>
+  <li>Updated ehealth-sor-organization-type CodeSystem with new code 557881000005104</li>
+  <li>Added missing title to code systems</li>
+  <li>Added missing measurement types (MCS88192, MCS88193, MCS88194) to urn:oid:1.2.208.184.100.8</li>
+  <li>Added two new codes to UCUM printSymbol supplement (/d and /wk)
+    <h3 id="valuesets">ValueSets</h3>
+  </li>
+  <li>Updated <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/sor-organization-specialty</code> with 8 new codes for the <code class="language-plaintext highlighter-rouge">http://snomed.info/sct</code> concept (658171000005102, 658161000005107, 658151000005105, 658191000005101, 658201000005103, 658141000005108, 658181000005104, 2903041000005106).</li>
+  <li>Updated ehealth-conditions ValueSet with 11 SKS codes from the urn:oid:1.2.208.176.2.4 system ("DF00","DF10","DF20","DF30","DF40","DF50","DF60","DF70","DF80","DF90","DF99")</li>
+  <li>Updated ValueSet-sundhedsdatastyrelsen-dk-ihe-classcode-vs with 8 new specialty codes (658171000005102, 658161000005107, 658151000005105, 658191000005101, 658201000005103, 658141000005108, 658181000005104, 2903041000005106)</li>
+  <li>Updated ehealth-sor-organization-type ValueSet with 3 new Snomed concepts (702916001, 284546000, 272511002)</li>
 </ul>
 
-<h4 id="system-operations">System operations</h4>
-<h4 id="instance-operations">Instance operations</h4>
-<h3 id="code-systems">Code systems</h3>
-<h3 id="valuesets">ValueSets</h3>
 <h3 id="conceptmaps">ConceptMaps</h3>
-<h3 id="resourceprofile-changes">Resource/profile changes</h3>
+<ul>
+  <li>Removed mapping for non-existing code 445988008 in http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing</li>
+  <li>Added mapping for MCS88192, MCS88193, MCS88194 codes in ConceptMap: Activitydefinition-code to do missing measurement, Activitydefinition-code to do reminder and Activitydefinition-code-to-perform-sharing</li>
+  <li>Added mapping for MCS88192, MCS88193, MCS88194 codes in ConceptMap: Activitydefinition-code to measurement resource type</li>
+  <li>Added mapping for MCS88192, MCS88193, MCS88194 codes in ConceptMap: conceptmap-obs-code-to-value-type</li>
+  <li>Added mapping for MCS88192, MCS88193, MCS88194 codes in ConceptMap: Observation code to UCUM mapping (Experimental)</li>
+  <li>Added mapping for /d and /wk codes in ConceptMap: UCUM code to PrintSymbol mapping (Experimental)
+    <h3 id="resourceprofile-changes">Resource/profile changes</h3>
+  </li>
+  <li>Expanded the <code class="language-plaintext highlighter-rouge">ehealth-organization-specialty</code> extension with <code class="language-plaintext highlighter-rouge">primaryIndicator</code> boolean to allow indication of whether a specialty is the primary for an organization.</li>
+  <li>Added extension ehealth-include-as-extra to ServiceRequest</li>
+  <li>Added extension ehealth-include-as-extra to PlanDefinition.action
+    <h3 id="search-parameters">Search parameters</h3>
+  </li>
+  <li>Added search parameter <code class="language-plaintext highlighter-rouge">communicationRelatesTo</code> on <code class="language-plaintext highlighter-rouge">ehealth-message</code> (<code class="language-plaintext highlighter-rouge">Communication</code>). This search parameter can be used to search for Communications based on either participant or episodeOfCare.</li>
+</ul>
+
+<h2 id="310-2024-05-14">3.1.0 (2024-05-14)</h2>
+
+<h3 id="general-changes-1">General changes</h3>
+
+<h3 id="custom-operations-1">Custom operations</h3>
+<ul>
+  <li>Added custom operation "retrieve-and-transform-QRD" on DocumentQuery service</li>
+  <li>Added custom operation "retrieve-and-transform-APD" on DocumentQuery service</li>
+  <li>Added custom operation "retrieve-and-transform-PHMR" on DocumentQuery service</li>
+  <li>Operation "retrieve-document" on DocumentQuery service has been extended with parameters <code class="language-plaintext highlighter-rouge">consentOverride</code> and <code class="language-plaintext highlighter-rouge">reason</code> to be able to specify if the operation should override the lack of consent from a patient to view their medical documents, and to indicate the reason for the override.</li>
+</ul>
+
+<h4 id="system-operations-1">System operations</h4>
+<h4 id="instance-operations-1">Instance operations</h4>
+<h3 id="code-systems-1">Code systems</h3>
+<h3 id="valuesets-1">ValueSets</h3>
+<h3 id="conceptmaps-1">ConceptMaps</h3>
+<h3 id="resourceprofile-changes-1">Resource/profile changes</h3>
 <ul>
   <li>DkCorePractitioner set as parent for the ehealth-practitioner profile</li>
 </ul>
 
-<h3 id="search-parameters">Search parameters</h3>
+<h3 id="search-parameters-1">Search parameters</h3>
 <ul>
   <li>Added search parameters <code class="language-plaintext highlighter-rouge">consentOverride</code> and <code class="language-plaintext highlighter-rouge">reason</code> on <code class="language-plaintext highlighter-rouge">ehealth-documentreference</code> (<code class="language-plaintext highlighter-rouge">DocumentReference</code>) search operation in DocumentQuery service, to be able to specify if the search should override the lack of consent from a patient to view their medical documents, and to indicate the reason for the override.</li>
 </ul>
 
 <h2 id="300-2024-01-08">3.0.0 (2024-01-08)</h2>
 
-<h3 id="general-changes-1">General changes</h3>
+<h3 id="general-changes-2">General changes</h3>
 <ul>
   <li>
     <table>
       <tbody>
         <tr>
-          <td>Publisher for all resources has been changed to “Den telemedicinske infrastruktur (eHealth Infrastructure)” instead of “Systematic</td>
-          <td>Trifork”</td>
+          <td>Publisher for all resources has been changed to "Den telemedicinske infrastruktur (eHealth Infrastructure)" instead of "Systematic</td>
+          <td>Trifork"</td>
         </tr>
       </tbody>
     </table>
   </li>
 </ul>
 
-<h3 id="custom-operations-1">Custom operations</h3>
+<h3 id="custom-operations-2">Custom operations</h3>
 <ul>
-  <li>Added custom operation “deprecate-document” on DocumentTransformation service</li>
-  <li>Added custom operation “upload-QFDD” on DocumentTransformation service</li>
-  <li>Added custom operation “transform-from-QRD-based-on-questionnaire” on DocumentTransformation service</li>
-  <li>Updated description of “import” operation on PlanDefinition service</li>
-  <li>Updated description of “export” operation on PlanDefinition service
-    <h4 id="system-operations-1">System operations</h4>
-    <h4 id="instance-operations-1">Instance operations</h4>
-    <h3 id="code-systems-1">Code systems</h3>
+  <li>Added custom operation "deprecate-document" on DocumentTransformation service</li>
+  <li>Added custom operation "upload-QFDD" on DocumentTransformation service</li>
+  <li>Added custom operation "transform-from-QRD-based-on-questionnaire" on DocumentTransformation service</li>
+  <li>Updated description of "import" operation on PlanDefinition service</li>
+  <li>Updated description of "export" operation on PlanDefinition service
+    <h4 id="system-operations-2">System operations</h4>
+    <h4 id="instance-operations-2">Instance operations</h4>
+    <h3 id="code-systems-2">Code systems</h3>
   </li>
   <li>Added http://ehealth.sundhed.dk/cs/measurement-sharing-approval-policies</li>
   <li>Updated urn:oid:1.2.208.176.2.1 with NPU22089 and NPU03963</li>
@@ -544,7 +602,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added http://ehealth.sundhed.dk/cs/ehealth-questionnaire-elements</li>
   <li>Added http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes</li>
   <li>Updated http://ehealth.sundhed.dk/cs/ehealth-usage-context-type with questionnaire-related code
-    <h3 id="valuesets-1">ValueSets</h3>
+    <h3 id="valuesets-2">ValueSets</h3>
   </li>
   <li>Added http://ehealth.sundhed.dk/vs/measurement-sharing-approval-policies</li>
   <li>Updated ValueSet-sundhedsdatastyrelsen-dk-ihe-classcode-vs to match DK-IHE_Metadata Value_sets 0.96.5</li>
@@ -556,10 +614,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added http://ehealth.sundhed.dk/vs/clinicalimpression-investigation-item-codes</li>
   <li>Added http://ehealth.sundhed.dk/vs/ehealth-questionnaire-elements</li>
   <li>Removed 412776001 and 412777005 SNOMED CT codes from http://ehealth.sundhed.dk/vs/careplan-category due to codes being removed from SNOMED CT
-    <h3 id="conceptmaps-1">ConceptMaps</h3>
+    <h3 id="conceptmaps-2">ConceptMaps</h3>
   </li>
   <li>Added http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing The map controls whether the sharingApprovalPolicy-field should be set on the given resource.
-    <h3 id="resourceprofile-changes-1">Resource/profile changes</h3>
+    <h3 id="resourceprofile-changes-2">Resource/profile changes</h3>
   </li>
   <li>Added extension ehealth-ext-sharingApprovalPolicy to ActivityDefinition and ServiceRequest</li>
   <li>Added extension ehealth-clinicalimpression-assesor-organization to ClinicalImpression</li>
@@ -567,17 +625,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added extention ehealth-resolved-timing to Task</li>
   <li>Added extention ehealth-external-identifier to Questionnaire.QuestionnaireItem</li>
   <li>Updated binding for ClinicalImpression.investigation.code to http://ehealth.sundhed.dk/vs/clinicalimpression-investigation-item-codes (example)
-    <h3 id="search-parameters-1">Search parameters</h3>
+    <h3 id="search-parameters-2">Search parameters</h3>
   </li>
   <li>Added search parameter <code class="language-plaintext highlighter-rouge">communicationParticipant</code> on <code class="language-plaintext highlighter-rouge">ehealth-message</code> (<code class="language-plaintext highlighter-rouge">Communication</code>) to be able to query either by CareTeam or Patient/Practitioner</li>
 </ul>
 
 <h2 id="2100-2023-11-09">2.10.0 (2023-11-09)</h2>
 
-<h3 id="general-changes-2">General changes</h3>
+<h3 id="general-changes-3">General changes</h3>
 
-<h3 id="custom-operations-2">Custom operations</h3>
-<h4 id="system-operations-2">System operations</h4>
+<h3 id="custom-operations-3">Custom operations</h3>
+<h4 id="system-operations-3">System operations</h4>
 <ul>
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-execute-careplan-and-episode-of-care-stats</code> operation</li>
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-execute-careplan-customization-stats</code> operation</li>
@@ -598,61 +656,61 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-get-report-job-status</code> operation</li>
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-schedule-patient-usage-stats</code> operation</li>
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-schedule-questionnaireresponses</code> operation#### Instance operations
-    <h4 id="instance-operations-2">Instance operations</h4>
-    <h3 id="code-systems-2">Code systems</h3>
-    <h3 id="valuesets-2">ValueSets</h3>
-    <h3 id="conceptmaps-2">ConceptMaps</h3>
-    <h3 id="resourceprofile-changes-2">Resource/profile changes</h3>
+    <h4 id="instance-operations-3">Instance operations</h4>
+    <h3 id="code-systems-3">Code systems</h3>
+    <h3 id="valuesets-3">ValueSets</h3>
+    <h3 id="conceptmaps-3">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-3">Resource/profile changes</h3>
   </li>
   <li>Added ehealth-questionnaire-helpText to Questionnaire.QuestionnaireItem</li>
   <li>Added ehealth-enableBehavior-conditionId to EnableBehaviour in Questionnaire.QuestionnaireItem
     <h4 id="careplan-ehealth-careplan">CarePlan (ehealth-careplan)</h4>
   </li>
-  <li>Added search parameter ‘condition’</li>
-  <li>Added search parameter ‘instantiates-canonical’</li>
+  <li>Added search parameter 'condition'</li>
+  <li>Added search parameter 'instantiates-canonical'</li>
 </ul>
 
 <h2 id="290-2023-08-29">2.9.0 (2023-08-29)</h2>
 
-<h3 id="general-changes-3">General changes</h3>
+<h3 id="general-changes-4">General changes</h3>
 <ul>
   <li>Added missing documentation for group appointment/video appointment events</li>
 </ul>
 
-<h3 id="custom-operations-3">Custom operations</h3>
-<h4 id="system-operations-3">System operations</h4>
+<h3 id="custom-operations-4">Custom operations</h3>
+<h4 id="system-operations-4">System operations</h4>
 <ul>
   <li>Added enforcement on Task (ehealth-task). Requires Task.for to contain Patient reference if Task.episodeOfCare is populated.
-    <h4 id="instance-operations-3">Instance operations</h4>
-    <h3 id="code-systems-3">Code systems</h3>
-    <h3 id="valuesets-3">ValueSets</h3>
-    <h3 id="conceptmaps-3">ConceptMaps</h3>
+    <h4 id="instance-operations-4">Instance operations</h4>
+    <h3 id="code-systems-4">Code systems</h3>
+    <h3 id="valuesets-4">ValueSets</h3>
+    <h3 id="conceptmaps-4">ConceptMaps</h3>
   </li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder</code>: The map controls whether an activity shall be able to result in the production of reminders.</li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type</code>: The map controls what measurement-resource-type is relevant as submission for a given activity.</li>
 </ul>
 
-<h3 id="resourceprofile-changes-3">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-4">Resource/profile changes</h3>
 
 <h2 id="280-2023-06-01">2.8.0 (2023-06-01)</h2>
 
-<h3 id="general-changes-4">General changes</h3>
+<h3 id="general-changes-5">General changes</h3>
 <ul>
   <li>Added mention of dataAbsentReason to intro for Observation.</li>
 </ul>
 
-<h3 id="custom-operations-4">Custom operations</h3>
-<h4 id="system-operations-4">System operations</h4>
-<h4 id="instance-operations-4">Instance operations</h4>
-<h3 id="code-systems-4">Code systems</h3>
+<h3 id="custom-operations-5">Custom operations</h3>
+<h4 id="system-operations-5">System operations</h4>
+<h4 id="instance-operations-5">Instance operations</h4>
+<h3 id="code-systems-5">Code systems</h3>
 <ul>
-  <li>Added “MeasurementForAssessmentAbsentValue” to http://ehealth.sundhed.dk/cs/task-category</li>
-  <li>Added “data-absent” to http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes
-    <h3 id="valuesets-4">ValueSets</h3>
+  <li>Added "MeasurementForAssessmentAbsentValue" to http://ehealth.sundhed.dk/cs/task-category</li>
+  <li>Added "data-absent" to http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes
+    <h3 id="valuesets-5">ValueSets</h3>
   </li>
   <li>Added http://ehealth.sundhed.dk/vs/data-absent-reason
-    <h3 id="conceptmaps-4">ConceptMaps</h3>
-    <h3 id="resourceprofile-changes-4">Resource/profile changes</h3>
+    <h3 id="conceptmaps-5">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-5">Resource/profile changes</h3>
   </li>
   <li>Added ehealth-servicerequest-statusHistory and ehealth-servicerequest-statusSchedule to ServiceRequest</li>
   <li>ehealth-observation dataAbsentReason changed to http://ehealth.sundhed.dk/vs/data-absent-reason (required)</li>
@@ -660,19 +718,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="270-2023-03-29">2.7.0 (2023-03-29)</h2>
 
-<h3 id="general-changes-5">General changes</h3>
+<h3 id="general-changes-6">General changes</h3>
 <ul>
-  <li>Changed the description in section “Automatic NemSMS Notifications” for Ehealth-message. This is related to “CCR0167 Ingen automatisk NemSMS for ehealth-message med kategori message” from Release 13.</li>
+  <li>Changed the description in section "Automatic NemSMS Notifications" for Ehealth-message. This is related to "CCR0167 Ingen automatisk NemSMS for ehealth-message med kategori message" from Release 13.</li>
   <li>Changed the descriptions of ehealth-message category to reflect CCR0154 changes.
-    <h3 id="custom-operations-5">Custom operations</h3>
-    <h4 id="system-operations-5">System operations</h4>
-    <h4 id="instance-operations-5">Instance operations</h4>
-    <h3 id="code-systems-5">Code systems</h3>
+    <h3 id="custom-operations-6">Custom operations</h3>
+    <h4 id="system-operations-6">System operations</h4>
+    <h4 id="instance-operations-6">Instance operations</h4>
+    <h3 id="code-systems-6">Code systems</h3>
   </li>
-  <li>Two new codes “AppointmentReminder” and “VideoAppointmentReminder” added to “ehealth-message-reasonCode” code system.
-    <h3 id="valuesets-5">ValueSets</h3>
-    <h3 id="conceptmaps-5">ConceptMaps</h3>
-    <h3 id="resourceprofile-changes-5">Resource/profile changes</h3>
+  <li>Two new codes "AppointmentReminder" and "VideoAppointmentReminder" added to "ehealth-message-reasonCode" code system.
+    <h3 id="valuesets-6">ValueSets</h3>
+    <h3 id="conceptmaps-6">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-6">Resource/profile changes</h3>
   </li>
   <li>EpisodeOfCare is now optional on Ehealth-communication-request.
     <ul>
@@ -682,54 +740,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Clinical Impression Codes valueSet reference was accidentally deleted from Ehealth-clinicalImpression.code in last IG release. Has been reintroduced</li>
   <li>Ehealth-message changed to reflect CCR0154 changes. This includes the following:
     <ul>
-      <li>Device-type sender is no longer allowed for category “message”.</li>
-      <li>For categories “advice” and “notification”, only Device-type senders are now allowed.</li>
+      <li>Device-type sender is no longer allowed for category "message".</li>
+      <li>For categories "advice" and "notification", only Device-type senders are now allowed.</li>
     </ul>
   </li>
 </ul>
 
 <h2 id="260-2023-01-16">2.6.0 (2023-01-16)</h2>
 
-<h3 id="general-changes-6">General changes</h3>
+<h3 id="general-changes-7">General changes</h3>
 <ul>
   <li>Change ValueSet bindings from id to url (FUT1-6050)</li>
   <li>Fix broken SearchParameter links in patient CapabilityStatement
-    <h3 id="custom-operations-6">Custom operations</h3>
-    <h4 id="system-operations-6">System operations</h4>
-    <h4 id="instance-operations-6">Instance operations</h4>
-    <h3 id="code-systems-6">Code systems</h3>
+    <h3 id="custom-operations-7">Custom operations</h3>
+    <h4 id="system-operations-7">System operations</h4>
+    <h4 id="instance-operations-7">Instance operations</h4>
+    <h3 id="code-systems-7">Code systems</h3>
   </li>
   <li>Added http://ehealth.sundhed.dk/cs/message-reasonCode</li>
   <li>Change supplement link in v3-TimingEvent to R4 link: http://terminology.hl7.org/ValueSet/v3-TimingEvent (FUT1-7461)
-    <h3 id="valuesets-6">ValueSets</h3>
+    <h3 id="valuesets-7">ValueSets</h3>
   </li>
   <li>Updated http://ehealth.sundhed.dk/vs/message-reasonCode to include http://ehealth.sundhed.dk/cs/message-reasonCode</li>
   <li>Removed codesystem http://ehealth.sundhed.dk/cs/device-types from valueset http://ehealth.sundhed.dk/vs/device-types
-    <h3 id="conceptmaps-6">ConceptMaps</h3>
-    <h3 id="resourceprofile-changes-6">Resource/profile changes</h3>
+    <h3 id="conceptmaps-7">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-7">Resource/profile changes</h3>
   </li>
   <li>telecom.system valueset binding updated in CareTeam and Organization.</li>
 </ul>
 
 <h2 id="250-2022-10-25">2.5.0 (2022-10-25)</h2>
-
-<h3 id="general-changes-7">General changes</h3>
-
-<h3 id="custom-operations-7">Custom operations</h3>
-<h4 id="system-operations-7">System operations</h4>
-<h4 id="instance-operations-7">Instance operations</h4>
-<h3 id="code-systems-7">Code systems</h3>
-<ul>
-  <li>Updated http://ehealth.sundhed.dk/cs/task-category with new Danish descriptions.
-    <h3 id="valuesets-7">ValueSets</h3>
-    <h3 id="conceptmaps-7">ConceptMaps</h3>
-  </li>
-  <li>Added http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement The map controls whether an activity shall be subjected to missing measurements checks or not.
-    <h3 id="resourceprofile-changes-7">Resource/profile changes</h3>
-  </li>
-</ul>
-
-<h2 id="240-2022-10-11">2.4.0 (2022-10-11)</h2>
 
 <h3 id="general-changes-8">General changes</h3>
 
@@ -738,19 +778,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="instance-operations-8">Instance operations</h4>
 <h3 id="code-systems-8">Code systems</h3>
 <ul>
-  <li>Added codesystem for tags: http://ehealth.sundhed.dk/cs/ehealth-system</li>
-  <li>Added “DI50: Hjertesvigt” concept to SKS CodeSystem</li>
-  <li>Moved “DZ76: Personer i kontakt med sundhedsvæsenet af andre årsager” to correct place in SKS CodeSystem hierarchi
+  <li>Updated http://ehealth.sundhed.dk/cs/task-category with new Danish descriptions.
     <h3 id="valuesets-8">ValueSets</h3>
-  </li>
-  <li>Added “DI50: Hjertesvigt” to ehealth-conditions ValueSet
     <h3 id="conceptmaps-8">ConceptMaps</h3>
+  </li>
+  <li>Added http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement The map controls whether an activity shall be subjected to missing measurements checks or not.
     <h3 id="resourceprofile-changes-8">Resource/profile changes</h3>
   </li>
-  <li>Updated life cycle descriptions for ehealth-device and ehealth-deviceusestatement.</li>
 </ul>
 
-<h2 id="230-2022-09-27">2.3.0 (2022-09-27)</h2>
+<h2 id="240-2022-10-11">2.4.0 (2022-10-11)</h2>
 
 <h3 id="general-changes-9">General changes</h3>
 
@@ -759,19 +796,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="instance-operations-9">Instance operations</h4>
 <h3 id="code-systems-9">Code systems</h3>
 <ul>
-  <li>Added codes to ehealth-clinicalimpression-finding-codes: no-effective-answer-significance and no-answer-significance-defined.</li>
-  <li>Updated definition of green-question-answer and yellow-question-answer codes in ehealth-clinicalimpression-finding-codes.
+  <li>Added codesystem for tags: http://ehealth.sundhed.dk/cs/ehealth-system</li>
+  <li>Added "DI50: Hjertesvigt" concept to SKS CodeSystem</li>
+  <li>Moved "DZ76: Personer i kontakt med sundhedsvæsenet af andre årsager" to correct place in SKS CodeSystem hierarchi
     <h3 id="valuesets-9">ValueSets</h3>
+  </li>
+  <li>Added "DI50: Hjertesvigt" to ehealth-conditions ValueSet
     <h3 id="conceptmaps-9">ConceptMaps</h3>
     <h3 id="resourceprofile-changes-9">Resource/profile changes</h3>
   </li>
-  <li>Added extension ehealth-questionnaireresponse-basis to ehealth-clinicalimpression for additional info regarding the finding.
-    <h3 id="search-parameters-2">Search parameters</h3>
-  </li>
-  <li>Added search on ‘about’ on ehealth-message</li>
+  <li>Updated life cycle descriptions for ehealth-device and ehealth-deviceusestatement.</li>
 </ul>
 
-<h2 id="20222-2022-06-30">2022.2 (2022-06-30)</h2>
+<h2 id="230-2022-09-27">2.3.0 (2022-09-27)</h2>
 
 <h3 id="general-changes-10">General changes</h3>
 
@@ -780,18 +817,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="instance-operations-10">Instance operations</h4>
 <h3 id="code-systems-10">Code systems</h3>
 <ul>
+  <li>Added codes to ehealth-clinicalimpression-finding-codes: no-effective-answer-significance and no-answer-significance-defined.</li>
+  <li>Updated definition of green-question-answer and yellow-question-answer codes in ehealth-clinicalimpression-finding-codes.
+    <h3 id="valuesets-10">ValueSets</h3>
+    <h3 id="conceptmaps-10">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-10">Resource/profile changes</h3>
+  </li>
+  <li>Added extension ehealth-questionnaireresponse-basis to ehealth-clinicalimpression for additional info regarding the finding.
+    <h3 id="search-parameters-3">Search parameters</h3>
+  </li>
+  <li>Added search on 'about' on ehealth-message</li>
+</ul>
+
+<h2 id="20222-2022-06-30">2022.2 (2022-06-30)</h2>
+
+<h3 id="general-changes-11">General changes</h3>
+
+<h3 id="custom-operations-11">Custom operations</h3>
+<h4 id="system-operations-11">System operations</h4>
+<h4 id="instance-operations-11">Instance operations</h4>
+<h3 id="code-systems-11">Code systems</h3>
+<ul>
   <li>Added http://ehealth.sundhed.dk/cs/ehealth-clone-operation for Clone operation codes <code class="language-plaintext highlighter-rouge">major-version</code>, <code class="language-plaintext highlighter-rouge">minor-version</code> and <code class="language-plaintext highlighter-rouge">copy</code></li>
   <li>Updated SKS with new concepts from exttest</li>
   <li>Updated some descriptions of DAK-E-Codes
     <h3 id="naming-systems">Naming systems</h3>
   </li>
   <li>Added http://ehealth.sundhed.dk/id/ehealth-environment as naming system for all ehealth environments
-    <h3 id="valuesets-10">ValueSets</h3>
+    <h3 id="valuesets-11">ValueSets</h3>
   </li>
   <li>http://ehealth.sundhed.dk/vs/trigger-behavior now includes concept <code class="language-plaintext highlighter-rouge">one-or-more</code> instead of <code class="language-plaintext highlighter-rouge">any</code></li>
   <li>Updated http://ehealth.sundhed.dk/vs/conditions with new conditions from exttest
-    <h3 id="conceptmaps-10">ConceptMaps</h3>
-    <h3 id="resourceprofile-changes-10">Resource/profile changes</h3>
+    <h3 id="conceptmaps-11">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-11">Resource/profile changes</h3>
     <h4 id="actionguidance">ActionGuidance</h4>
   </li>
   <li>Cardinality of ehealth-actionguidance-for changed to 0..*
@@ -816,18 +874,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20221-2022-01-19">2022.1 (2022-01-19)</h2>
 
-<h3 id="general-changes-11">General changes</h3>
+<h3 id="general-changes-12">General changes</h3>
 <ul>
   <li>Cleaned up some obselete references to ProcedureRequest</li>
   <li>Added link to Documentreference Search in operations list</li>
 </ul>
 
-<h3 id="custom-operations-11">Custom operations</h3>
+<h3 id="custom-operations-12">Custom operations</h3>
 <ul>
   <li>Added description of output parameters for $get-patient-procedures
-    <h4 id="system-operations-11">System operations</h4>
-    <h4 id="instance-operations-11">Instance operations</h4>
-    <h3 id="code-systems-11">Code systems</h3>
+    <h4 id="system-operations-12">System operations</h4>
+    <h4 id="instance-operations-12">Instance operations</h4>
+    <h3 id="code-systems-12">Code systems</h3>
   </li>
   <li>Added CodeSystem <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/action-type</code></li>
   <li>Added CodeSystem <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/action</code></li>
@@ -836,15 +894,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added citizen-view-approved to CodeSystem: http://ehealth.sundhed.dk/cs/clinicalimpression-decision-codes</li>
 </ul>
 
-<h3 id="valuesets-11">ValueSets</h3>
+<h3 id="valuesets-12">ValueSets</h3>
 <ul>
   <li>Added ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/action</code></li>
   <li>Added ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/trigger-behavior</code></li>
   <li>Added ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/trigger-enablement-code</code></li>
 </ul>
 
-<h3 id="conceptmaps-11">ConceptMaps</h3>
-<h3 id="resourceprofile-changes-11">Resource/profile changes</h3>
+<h3 id="conceptmaps-12">ConceptMaps</h3>
+<h3 id="resourceprofile-changes-12">Resource/profile changes</h3>
 <ul>
   <li>Removed mediaInvestigationItem from <code class="language-plaintext highlighter-rouge">ehealth-clinicalimpression.fsh</code></li>
   <li>Added ehealth-media as option for investigation.item in <code class="language-plaintext highlighter-rouge">ehealth-clinicalimpression.fsh</code></li>
@@ -926,26 +984,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20213-2021-10-28">2021.3 (2021-10-28)</h2>
 
-<h3 id="general-changes-12">General changes</h3>
+<h3 id="general-changes-13">General changes</h3>
 <p>The changes described here are those beyond changes made with the FHIR R4 migration (see section Changes with FHIR R4 Migration).</p>
 
-<h3 id="custom-operations-12">Custom operations</h3>
-<h4 id="system-operations-12">System operations</h4>
-<h4 id="instance-operations-12">Instance operations</h4>
-<h3 id="code-systems-12">Code systems</h3>
+<h3 id="custom-operations-13">Custom operations</h3>
+<h4 id="system-operations-13">System operations</h4>
+<h4 id="instance-operations-13">Instance operations</h4>
+<h3 id="code-systems-13">Code systems</h3>
 <ul>
   <li>Added CodeSystem <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/questionnaire-item-significance-indicator</code></li>
 </ul>
 
-<h3 id="valuesets-12">ValueSets</h3>
+<h3 id="valuesets-13">ValueSets</h3>
 <ul>
   <li>Added ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/questionnaire-item-control</code></li>
   <li>Added ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/questionnaire-item-significance-indicator</code></li>
   <li>Added ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/questionnaire-item-image-format</code></li>
 </ul>
 
-<h3 id="conceptmaps-12">ConceptMaps</h3>
-<h3 id="resourceprofile-changes-12">Resource/profile changes</h3>
+<h3 id="conceptmaps-13">ConceptMaps</h3>
+<h3 id="resourceprofile-changes-13">Resource/profile changes</h3>
 
 <h4 id="questionnaire-2">Questionnaire</h4>
 <ul>
@@ -967,29 +1025,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="changes-with-fhir-r4-migration">Changes with FHIR R4 Migration</h3>
 <p>The entire eHealth Implementation Guide has been migrated from FHIR STU3 to FHIR R4. Core migration changes described in <code class="language-plaintext highlighter-rouge">https://www.hl7.org/fhir/r4/diff.html</code> are mentioned in the changelog entries below only when significant to eHealth use. For instance, such mentioning could be that another FHIR element, possible introduced with FHIR R4, is now used instead of a FHIR STU3 element.</p>
 
-<h3 id="custom-operations-13">Custom operations</h3>
-<h4 id="system-operations-13">System operations</h4>
-<h4 id="instance-operations-13">Instance operations</h4>
-<h3 id="code-systems-13">Code systems</h3>
-<h3 id="valuesets-13">ValueSets</h3>
+<h3 id="custom-operations-14">Custom operations</h3>
+<h4 id="system-operations-14">System operations</h4>
+<h4 id="instance-operations-14">Instance operations</h4>
+<h3 id="code-systems-14">Code systems</h3>
+<h3 id="valuesets-14">ValueSets</h3>
 <ul>
   <li>Removed ValueSet with url http://ehealth.sundhed.dk/vs/it-selfreliance as not used and defined using system SNOMED CT but non-SNOMED CT concepts.
-    <h3 id="conceptmaps-13">ConceptMaps</h3>
-    <h3 id="resourceprofile-changes-13">Resource/profile changes</h3>
+    <h3 id="conceptmaps-14">ConceptMaps</h3>
+    <h3 id="resourceprofile-changes-14">Resource/profile changes</h3>
   </li>
   <li>Added extension workflow-episodeOfCare to reintroduce reference to EpisodeOfCare (as removed with FHIR R4). This extension is added to all clinical resources that previously had a context reference. The episodeOfCare reference is now mandatory in all cases.</li>
 </ul>
 
 <h4 id="communication-ehealth-message">Communication (ehealth-message)</h4>
 <ul>
-  <li>Added search parameter ‘episodeOfCare’ for querying extension http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare</li>
+  <li>Added search parameter 'episodeOfCare' for querying extension http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare</li>
 </ul>
 
 <h4 id="appointment">Appointment</h4>
 <ul>
-  <li>Element ‘reasonCode’ is used instead of ‘reason’ as that har been removed in FHIR R4</li>
+  <li>Element 'reasonCode' is used instead of 'reason' as that har been removed in FHIR R4</li>
   <li>
-    <p>serviceType must now be set depending on the value of meta/profile (with system “http://ehealth.sundhed.dk/cs/appointment-servicetype” for all codes):</p>
+    <p>serviceType must now be set depending on the value of meta/profile (with system "http://ehealth.sundhed.dk/cs/appointment-servicetype" for all codes):</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Profile 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment' =&gt; code = 'regular'
   Profile 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-videoappointment' =&gt; code = 'video'
@@ -1024,23 +1082,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <h2 id="20212-2021-05-05">2021.2 (2021-05-05)</h2>
-<h4 id="system-operations-14">System operations</h4>
+<h4 id="system-operations-15">System operations</h4>
 <ul>
   <li>Added description and example of <code class="language-plaintext highlighter-rouge">-s-get-patient-procedures</code> operation</li>
 </ul>
 
-<h3 id="code-systems-14">Code systems</h3>
+<h3 id="code-systems-15">Code systems</h3>
 <ul>
   <li>Added new code <code class="language-plaintext highlighter-rouge">mg/L</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-ucum-printsymbol-supplement</code></li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">Cel</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-ucum-printsymbol-supplement</code></li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">1/min</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-ucum-printsymbol-supplement</code></li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">percentpoint</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-ucum-printsymbol-supplement</code></li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">percentpoint</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-unit-code</code></li>
-  <li>Added concept ‘ExpectedDelivery’ to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code></li>
-  <li>Added concept ‘MeasurementForAssessmentNotTriaged’ to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code></li>
-  <li>Changed content value from ‘fragment’ to ‘complete’ in <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.184.100.1</code></li>
-  <li>Changed content value from ‘fragment’ to ‘complete’ in <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.176.2.4</code></li>
-  <li>Changed content value from ‘fragment’ to ‘complete’ in <code class="language-plaintext highlighter-rouge">urn:ietf:bcp:47</code></li>
+  <li>Added concept 'ExpectedDelivery' to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code></li>
+  <li>Added concept 'MeasurementForAssessmentNotTriaged' to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code></li>
+  <li>Changed content value from 'fragment' to 'complete' in <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.184.100.1</code></li>
+  <li>Changed content value from 'fragment' to 'complete' in <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.176.2.4</code></li>
+  <li>Changed content value from 'fragment' to 'complete' in <code class="language-plaintext highlighter-rouge">urn:ietf:bcp:47</code></li>
   <li>Added relative reference values to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/reference-range-type</code></li>
   <li>Added new code system: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/goal-description</code></li>
   <li>Added new code system: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/resolved-timing-type</code></li>
@@ -1049,14 +1107,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Removed offending HTML from display: <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.184.100.8</code></li>
   <li>Removed concepts marked as deprecated from code system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/careteam-participant-role</code></li>
   <li>Removed concepts marked as deprecated from code system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/oio-bpp-roles</code>
-    <h3 id="valuesets-14">ValueSets</h3>
+    <h3 id="valuesets-15">ValueSets</h3>
   </li>
   <li>Added new valueSet: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/goal-description</code></li>
   <li>Added new valueSet: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/goal-target-measure</code></li>
   <li>Added new valueSet: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/resolved-timing-type</code></li>
   <li>Changed valueSet: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-provenance-policies</code></li>
   <li>Changed valueSet: <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/facility-type-codes</code>
-    <h3 id="conceptmaps-14">ConceptMaps</h3>
+    <h3 id="conceptmaps-15">ConceptMaps</h3>
   </li>
   <li>Added mapping for code <code class="language-plaintext highlighter-rouge">mg/L</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol</code></li>
   <li>Added mapping for code <code class="language-plaintext highlighter-rouge">Cel</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol</code></li>
@@ -1078,7 +1136,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Removed mapping for code <code class="language-plaintext highlighter-rouge">urn:dk:sundhed:ehealth:role:tele_medicine_actor</code> in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles</code></li>
   <li>Removed mapping for code <code class="language-plaintext highlighter-rouge">urn:dk:sundhed:ehealth:role:incident_locator</code> in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles</code></li>
   <li>Removed mapping for code <code class="language-plaintext highlighter-rouge">urn:dk:sundhed:ehealth:role:user_administrator</code> in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles</code>
-    <h3 id="resourceprofile-changes-14">Resource/profile changes</h3>
+    <h3 id="resourceprofile-changes-15">Resource/profile changes</h3>
   </li>
   <li>Added ehealth-goal profile. Used to specify reference base values for relative reference ranges.</li>
   <li>Added new extension: ehealth-resolved-timing to Observation, QuestionnaireResponse, Media</li>
@@ -1086,29 +1144,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20208-2021-01-12">2020.8 (2021-01-12)</h2>
 
-<h3 id="code-systems-15">Code systems</h3>
+<h3 id="code-systems-16">Code systems</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</code>
-    <h3 id="valuesets-15">ValueSets</h3>
+    <h3 id="valuesets-16">ValueSets</h3>
   </li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-usage-context-type</code></li>
   <li>Expanded <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/clinicalimpression-finding-codes</code> with <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/observation-codes</code>
-    <h3 id="conceptmaps-15">ConceptMaps</h3>
+    <h3 id="conceptmaps-16">ConceptMaps</h3>
   </li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-15">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-16">Resource/profile changes</h3>
 
 <h4 id="appointment-ehealth-appointment">Appointment (ehealth-appointment)</h4>
 <ul>
   <li>Added search parameter intended-audience</li>
-  <li>Added performing organization to appointments in order to support export of CDA’s. Use is required when stating legal basis</li>
+  <li>Added performing organization to appointments in order to support export of CDA's. Use is required when stating legal basis</li>
 </ul>
 
 <h4 id="video-appointment-ehealth-videoappointment">Video appointment (ehealth-videoappointment)</h4>
 <ul>
-  <li>Added performing organization to appointments in order to support export of CDA’s. Use is required when stating legal basis</li>
+  <li>Added performing organization to appointments in order to support export of CDA's. Use is required when stating legal basis</li>
 </ul>
 
 <h4 id="group-appointment-ehealth-group-appointment">Group appointment (ehealth-group-appointment)</h4>
@@ -1148,15 +1206,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20207-2020-10-28">2020.7 (2020-10-28)</h2>
 
-<h3 id="code-systems-16">Code systems</h3>
+<h3 id="code-systems-17">Code systems</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/overviewUsageMode</code>
-    <h3 id="valuesets-16">ValueSets</h3>
+    <h3 id="valuesets-17">ValueSets</h3>
   </li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/overviewUsageMode</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-16">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-17">Resource/profile changes</h3>
 <ul>
   <li>Added extension <code class="language-plaintext highlighter-rouge">OverviewUsageMode</code></li>
 </ul>
@@ -1187,7 +1245,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Initial version</li>
 </ul>
 
-<h3 id="code-systems-17">Code systems</h3>
+<h3 id="code-systems-18">Code systems</h3>
 <ul>
   <li>Added new code <code class="language-plaintext highlighter-rouge">1/30sec</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-ucum-printsymbol-supplement</code></li>
   <li>Added new system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-unit-code</code> with code <code class="language-plaintext highlighter-rouge">1/30sec</code></li>
@@ -1203,20 +1261,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added new code <code class="language-plaintext highlighter-rouge">green-question-answer</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes</code></li>
 </ul>
 
-<h3 id="valuesets-17">ValueSets</h3>
+<h3 id="valuesets-18">ValueSets</h3>
 <ul>
   <li>Added new valueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-unit</code> to include the valueSets <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-unit-code</code> and <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/ValueSet/ucum-common</code></li>
   <li>Added new valueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-unit-code</code> to include the system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-unit-code</code></li>
   <li>Changed includes in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/task-category</code> to include the system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code> instead of the concepts individually</li>
 </ul>
 
-<h3 id="conceptmaps-16">ConceptMaps</h3>
+<h3 id="conceptmaps-17">ConceptMaps</h3>
 <ul>
   <li>Added new group in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum</code></li>
   <li>Added new group in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-17">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-18">Resource/profile changes</h3>
 
 <h4 id="reference-range-ehealth-referencerange">Reference range (ehealth-referenceRange)</h4>
 <ul>
@@ -1230,13 +1288,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="202061-2020-09-04">2020.6.1 (2020-09-04)</h2>
 
-<h3 id="code-systems-18">Code systems</h3>
+<h3 id="code-systems-19">Code systems</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-ucum-printsymbol-supplement</code>
-    <h3 id="valuesets-18">ValueSets</h3>
+    <h3 id="valuesets-19">ValueSets</h3>
   </li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-ucum-printsymbol-supplement</code>
-    <h3 id="conceptmaps-17">ConceptMaps</h3>
+    <h3 id="conceptmaps-18">ConceptMaps</h3>
   </li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol</code></li>
@@ -1244,16 +1302,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20206-2020-08-20">2020.6 (2020-08-20)</h2>
 
-<h3 id="general-changes-13">General changes</h3>
+<h3 id="general-changes-14">General changes</h3>
 
-<h3 id="custom-operations-14">Custom operations</h3>
+<h3 id="custom-operations-15">Custom operations</h3>
 <ul>
   <li>added plandefinition-export and plandefinition-import
-    <h3 id="code-systems-19">Code systems</h3>
+    <h3 id="code-systems-20">Code systems</h3>
   </li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">CalibrationNeeded</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code></li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">OpenSSLOrder</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code>
-    <h3 id="valuesets-19">ValueSets</h3>
+    <h3 id="valuesets-20">ValueSets</h3>
   </li>
   <li>Added new code <code class="language-plaintext highlighter-rouge">CalibrationNeeded</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/task-category</code></li>
   <li>Removed code <code class="language-plaintext highlighter-rouge">313299006</code> from <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/conditions</code></li>
@@ -1261,16 +1319,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <h3 id="searchparameters">SearchParameters</h3>
   </li>
   <li>added careteamParticipant as search parameter on Appointments
-    <h3 id="resourceprofile-changes-18">Resource/profile changes</h3>
+    <h3 id="resourceprofile-changes-19">Resource/profile changes</h3>
   </li>
   <li>added minimum requirement of 1 identifier for eHealth-Organization</li>
   <li>added administrative-status required on eHealth-Message</li>
-  <li>DeviceMetric.type and DeviceMetric.unit strength changed from ‘preferred’ to ‘required’</li>
+  <li>DeviceMetric.type and DeviceMetric.unit strength changed from 'preferred' to 'required'</li>
 </ul>
 
 <h2 id="20205-2020-06-25">2020.5 (2020-06-25)</h2>
 
-<h3 id="resourceprofile-changes-19">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-20">Resource/profile changes</h3>
 
 <h4 id="patient-1">Patient</h4>
 <ul>
@@ -1295,13 +1353,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20204-2020-05-25">2020.4 (2020-05-25)</h2>
 
-<h3 id="custom-operations-15">Custom operations</h3>
-<h4 id="system-operations-15">System operations</h4>
+<h3 id="custom-operations-16">Custom operations</h3>
+<h4 id="system-operations-16">System operations</h4>
 <ul>
   <li>Changed description and example of <code class="language-plaintext highlighter-rouge">-s-persist-login</code> operation</li>
 </ul>
 
-<h3 id="resourceprofile-changes-20">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-21">Resource/profile changes</h3>
 
 <h4 id="appointment-ehealth-appointment--ehealth-videoappointment">Appointment (ehealth-appointment / ehealth-videoappointment)</h4>
 <ul>
@@ -1315,8 +1373,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20203-2020-04-30">2020.3 (2020-04-30)</h2>
 
-<h3 id="custom-operations-16">Custom operations</h3>
-<h4 id="instance-operations-14">Instance operations</h4>
+<h3 id="custom-operations-17">Custom operations</h3>
+<h4 id="instance-operations-15">Instance operations</h4>
 <ul>
   <li>Updated descriptions for reporting operations</li>
   <li>Added traverse-to-sor instance operation</li>
@@ -1324,18 +1382,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20202-2020-03-27">2020.2 (2020-03-27)</h2>
 
-<h3 id="custom-operations-17">Custom operations</h3>
-<h4 id="system-operations-16">System operations</h4>
+<h3 id="custom-operations-18">Custom operations</h3>
+<h4 id="system-operations-17">System operations</h4>
 <ul>
   <li>Added description and example of <code class="language-plaintext highlighter-rouge">-s-persist-login</code> operation</li>
 </ul>
 
-<h4 id="instance-operations-15">Instance operations</h4>
+<h4 id="instance-operations-16">Instance operations</h4>
 <ul>
   <li>Changes to CodeSystem, ValueSet, ConceptMap and NamingSystem are limited to those not entirely defined through the terminology administration application.</li>
 </ul>
 
-<h3 id="resourceprofile-changes-21">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-22">Resource/profile changes</h3>
 
 <h4 id="device-ehealth-device">Device (ehealth-device)</h4>
 <ul>
@@ -1354,10 +1412,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20201-2020-02-04">2020.1 (2020-02-04)</h2>
 
-<h3 id="general-changes-14">General changes</h3>
+<h3 id="general-changes-15">General changes</h3>
 
 <ul>
-  <li>Changed wording in Reader’s Guide on value sets and code systems</li>
+  <li>Changed wording in Reader's Guide on value sets and code systems</li>
   <li>Added capability statement for Document Query Service</li>
   <li>Added capability statement for Reporting Service</li>
   <li>Changed typos on UCUM in General Guidance</li>
@@ -1365,13 +1423,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Example operations updated.</p>
 
-<h3 id="custom-operations-18">Custom operations</h3>
+<h3 id="custom-operations-19">Custom operations</h3>
 
-<h4 id="system-operations-17">System operations</h4>
+<h4 id="system-operations-18">System operations</h4>
 
-<h4 id="instance-operations-16">Instance operations</h4>
+<h4 id="instance-operations-17">Instance operations</h4>
 
-<h3 id="code-systems-20">Code systems</h3>
+<h3 id="code-systems-21">Code systems</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.184.100.9</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">urn:oid:1.2.208.184.100.10</code></li>
@@ -1396,7 +1454,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Removed <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/practitioner-role</code></li>
 </ul>
 
-<h3 id="valuesets-20">ValueSets</h3>
+<h3 id="valuesets-21">ValueSets</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-eventcodelists-vs</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-classcode-vs</code></li>
@@ -1427,13 +1485,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added ehealth-identifier - <em>An identifier used internally in eHealth, possibly used for identifiers when transforming to CDA document representations of resources</em></li>
 </ul>
 
-<h3 id="conceptmaps-18">ConceptMaps</h3>
+<h3 id="conceptmaps-19">ConceptMaps</h3>
 <ul>
   <li>Removed <code class="language-plaintext highlighter-rouge">http://fhir.ch/ig/ch-core/ConceptMap/maritalstatus-ech11-to-fhir</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-22">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-23">Resource/profile changes</h3>
 <ul>
   <li>Added deceased extension for use on <code class="language-plaintext highlighter-rouge">Person</code> when doing <code class="language-plaintext highlighter-rouge">Person$match</code></li>
   <li>Removed <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/practitioner-role</code> profile</li>
@@ -1447,7 +1505,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="activitydefinition-ehealth-activitydefinition">ActivityDefinition (ehealth-activitydefinition)</h4>
 <ul>
-  <li>ActivityDefinition.jurisdiction bound to ValueSet “http://ehealth.sundhed.dk/vs/jurisdiction”</li>
+  <li>ActivityDefinition.jurisdiction bound to ValueSet "http://ehealth.sundhed.dk/vs/jurisdiction"</li>
 </ul>
 
 <h4 id="appointment-ehealth-appointment-1">Appointment (ehealth-appointment)</h4>
@@ -1527,7 +1585,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="observation-ehealth-observation-1">Observation (ehealth-observation)</h4>
 <ul>
   <li>Changed element <code class="language-plaintext highlighter-rouge">Observation.component.code</code> value set binding to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/observation-codes</code></li>
-  <li>Changed strength of <code class="language-plaintext highlighter-rouge">Observation.component.code</code> value set binding to “required”</li>
+  <li>Changed strength of <code class="language-plaintext highlighter-rouge">Observation.component.code</code> value set binding to "required"</li>
   <li><code class="language-plaintext highlighter-rouge">Observation.component.referenceRange.type</code> was changed to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/reference-range-type</code></li>
   <li><code class="language-plaintext highlighter-rouge">Observation.component.value[x]</code> was changed to contain either <code class="language-plaintext highlighter-rouge">Quantity</code> or <code class="language-plaintext highlighter-rouge">CodeableConcept</code></li>
 </ul>
@@ -1583,14 +1641,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="201961-2019-12-04">2019.6.1 (2019-12-04)</h2>
 
-<h3 id="code-systems-21">Code systems</h3>
+<h3 id="code-systems-22">Code systems</h3>
 <ul>
   <li>All <code class="language-plaintext highlighter-rouge">CodeSystem</code> migrated to <code class="language-plaintext highlighter-rouge">active</code> status</li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/oio-organization-type</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/oio-bpp-roles</code></li>
 </ul>
 
-<h3 id="valuesets-21">ValueSets</h3>
+<h3 id="valuesets-22">ValueSets</h3>
 <ul>
   <li>All <code class="language-plaintext highlighter-rouge">ValueSet</code> migrated to <code class="language-plaintext highlighter-rouge">active</code> status</li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/oio-organization-type</code></li>
@@ -1599,13 +1657,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Included ValueSet <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/ValueSet/metric-category</code> in ValueSet <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ssl-catalogue-item-annotations</code></li>
 </ul>
 
-<h3 id="conceptmaps-19">ConceptMaps</h3>
+<h3 id="conceptmaps-20">ConceptMaps</h3>
 <ul>
   <li>All <code class="language-plaintext highlighter-rouge">ConceptMap</code> migrated to <code class="language-plaintext highlighter-rouge">active</code> status</li>
   <li>Added <code class="language-plaintext highlighter-rouge">oiobpp-roles-to-participant-role</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-23">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-24">Resource/profile changes</h3>
 <ul>
   <li>Added CommunicationRequest profile</li>
 </ul>
@@ -1629,7 +1687,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="message-ehealth-message-1">Message (ehealth-message)</h4>
 <ul>
-  <li>Added “title” extension to allow message “subject”</li>
+  <li>Added "title" extension to allow message "subject"</li>
   <li>Maximum allow 1 senderCareTeam/recipientCareTeam (multiple were allowed earlier by error)</li>
   <li>ReasonCode extended to allow task-category codes</li>
   <li>Added extension for (optional) group-id to correlate different messages</li>
@@ -1639,7 +1697,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20196-2019-11-08">2019.6 (2019-11-08)</h2>
 
-<h3 id="general-changes-15">General changes</h3>
+<h3 id="general-changes-16">General changes</h3>
 <ul>
   <li>Added list of error messages</li>
   <li>Added missing operations in operations tables for capability statements (issue fixed by new release of IG Publisher tool used for generating this Implementation Guide)</li>
@@ -1658,8 +1716,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Removed ehealth-detached-provenance (FUT1-2623 and FUT1-2734)</li>
 </ul>
 
-<h3 id="custom-operations-19">Custom operations</h3>
-<h4 id="system-operations-18">System operations</h4>
+<h3 id="custom-operations-20">Custom operations</h3>
+<h4 id="system-operations-19">System operations</h4>
 <ul>
   <li>Changed description of <code class="language-plaintext highlighter-rouge">-s-create-episode-of-care</code></li>
   <li>Added description and example of <code class="language-plaintext highlighter-rouge">-s-is-context-allowed</code> operation</li>
@@ -1668,8 +1726,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added description of <code class="language-plaintext highlighter-rouge">match</code> on Person</li>
 </ul>
 
-<h4 id="instance-operations-17">Instance operations</h4>
-<h3 id="code-systems-22">Code systems</h3>
+<h4 id="instance-operations-18">Instance operations</h4>
+<h3 id="code-systems-23">Code systems</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/library-type</code> defining code <code class="language-plaintext highlighter-rouge">automated-processing</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/device-safety</code></li>
@@ -1710,7 +1768,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Changed <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/derived-quality-base</code> so the codes are not in all caps</li>
 </ul>
 
-<h3 id="valuesets-22">ValueSets</h3>
+<h3 id="valuesets-23">ValueSets</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/library-type</code> including code <code class="language-plaintext highlighter-rouge">automated-processing</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/device-measurement-unit</code></li>
@@ -1743,7 +1801,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Changed <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-provenance-policies</code> added new policy : <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/policy/ehealth/reuse-of-measurement-chosen-by-citizen</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-24">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-25">Resource/profile changes</h3>
 
 <h4 id="activitydefinition-ehealth-activitydefinition-1">ActivityDefinition (ehealth-activitydefinition)</h4>
 <ul>
@@ -1756,8 +1814,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Location is no longer required</li>
   <li>Changed description due to new cardinalities</li>
   <li>Added CodeSystem for appointmentType, updated example accordingly</li>
-  <li>Added ValueSet “ehealth-appointment-reason”</li>
-  <li>Added ‘responsible’ extension</li>
+  <li>Added ValueSet "ehealth-appointment-reason"</li>
+  <li>Added 'responsible' extension</li>
   <li>Added careteam as possible participant</li>
   <li>Added FhirPath constraint that assert responsible is always part of the participants</li>
   <li>Updated intro</li>
@@ -1787,11 +1845,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added extension <code class="language-plaintext highlighter-rouge">careplan</code></li>
   <li>Added extension <code class="language-plaintext highlighter-rouge">decisionContext</code></li>
   <li>Added extension <code class="language-plaintext highlighter-rouge">decision</code></li>
-  <li>Added option “Observation” as contained element to <code class="language-plaintext highlighter-rouge">finding.item</code></li>
+  <li>Added option "Observation" as contained element to <code class="language-plaintext highlighter-rouge">finding.item</code></li>
   <li>Removed extension <code class="language-plaintext highlighter-rouge">decisionRule</code></li>
-  <li>Removed option “Encounter” from <code class="language-plaintext highlighter-rouge">context</code></li>
-  <li>Removed option “Group” from <code class="language-plaintext highlighter-rouge">subject</code></li>
-  <li>Removed option “eHealth-Observation” from <code class="language-plaintext highlighter-rouge">finding.item</code></li>
+  <li>Removed option "Encounter" from <code class="language-plaintext highlighter-rouge">context</code></li>
+  <li>Removed option "Group" from <code class="language-plaintext highlighter-rouge">subject</code></li>
+  <li>Removed option "eHealth-Observation" from <code class="language-plaintext highlighter-rouge">finding.item</code></li>
   <li>Updated intro</li>
 </ul>
 
@@ -1799,9 +1857,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>Added extension <code class="language-plaintext highlighter-rouge">senderCareTeam</code></li>
   <li>Added extension <code class="language-plaintext highlighter-rouge">restrictionCategory</code></li>
-  <li>Changed category to ‘http://ehealth.sundhed.dk/vs/communication-category’</li>
+  <li>Changed category to 'http://ehealth.sundhed.dk/vs/communication-category'</li>
   <li>Changed cardinality of element <code class="language-plaintext highlighter-rouge">sender</code> to 0..1</li>
-  <li>References to organization were removed from ‘sender’ and ‘recipient’</li>
+  <li>References to organization were removed from 'sender' and 'recipient'</li>
   <li>Added context reference to Encounter</li>
   <li>Added PATCH example</li>
   <li>Possible to use CareTeam as recipient using extension</li>
@@ -1855,7 +1913,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Available search parameters added</li>
   <li>Added administrative-status and period (part of discarding detached-provenance)</li>
   <li>Restricted value set for status (ehealth-status)</li>
-  <li>Added “priority” extension with value set as specified in R4 spec (but not included in R3)</li>
+  <li>Added "priority" extension with value set as specified in R4 spec (but not included in R3)</li>
 </ul>
 
 <h4 id="observation-ehealth-observation-2">Observation (ehealth-observation)</h4>
@@ -1891,7 +1949,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added it-competence-level support for device-type and description data</li>
   <li>Removed managingOrganization</li>
   <li>Legal PATCH operations described</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Removed functional-capacity extension (not to be used for now)</li>
 </ul>
 
@@ -1946,12 +2004,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="201953-2019-06-07">2019.5.3 (2019-06-07)</h2>
 
-<h3 id="general-changes-16">General changes</h3>
+<h3 id="general-changes-17">General changes</h3>
 <ul>
   <li>Titles and headlines made more homogeneous</li>
 </ul>
 
-<h3 id="resourceprofile-changes-25">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-26">Resource/profile changes</h3>
 
 <h4 id="activitydefinition-ehealth-activitydefinition-2">ActivityDefinition (ehealth-activitydefinition)</h4>
 <ul>
@@ -1990,65 +2048,65 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="201952-2019-05-29">2019.5.2 (2019-05-29)</h2>
 
-<h3 id="general-changes-17">General changes</h3>
+<h3 id="general-changes-18">General changes</h3>
 <ul>
   <li>Added note to General Guidance on Coding code and system must be provided despite being optional in FHIR</li>
 </ul>
 
-<h3 id="code-systems-23">Code systems</h3>
+<h3 id="code-systems-24">Code systems</h3>
 <ul>
   <li>Added new codes <code class="language-plaintext highlighter-rouge">22232009</code>, <code class="language-plaintext highlighter-rouge">394761003</code>, <code class="language-plaintext highlighter-rouge">550881000005103</code>, <code class="language-plaintext highlighter-rouge">547211000005108</code>, <code class="language-plaintext highlighter-rouge">550851000005109</code> to <code class="language-plaintext highlighter-rouge">http://snomed.info/sct</code></li>
   <li>Updated description of values in <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/ehealth-quality-types</code> to define relation to valid quality codes.</li>
 </ul>
 
-<h3 id="valuesets-23">ValueSets</h3>
+<h3 id="valuesets-24">ValueSets</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/organization-type</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-26">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-27">Resource/profile changes</h3>
 <h4 id="activitydefinition-ehealth-activitydefinition-3">ActivityDefinition (ehealth-activitydefinition)</h4>
 <ul>
   <li>Added definition of <code class="language-plaintext highlighter-rouge">minimumQuality</code></li>
   <li>Added definition of <code class="language-plaintext highlighter-rouge">modifierRole</code></li>
   <li>Changed definition of <code class="language-plaintext highlighter-rouge">reference</code></li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="appointment-ehealth-appointment-3">Appointment (ehealth-appointment)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="appointmentresponse-ehealth-appointmentresponse-1">AppointmentResponse (ehealth-appointmentresponse)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="careplan-ehealth-careplan-2">CarePlan (ehealth-careplan)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="careteam-ehealth-careteam-1">CareTeam (ehealth-careteam)</h4>
 <ul>
   <li>Changed description, reflecting that current use of CareTeam is not tied to patient</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="communication-ehealth-communication-1">Communication (ehealth-communication)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="composition-ehealth-composition-1">Composition (ehealth-composition)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="provenance-ehealth-detached-provenance">Provenance (ehealth-detached-provenance)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="device-ehealth-device-1">Device (ehealth-device)</h4>
@@ -2057,7 +2115,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Updated description of <code class="language-plaintext highlighter-rouge">privatelyOwned</code></li>
   <li>Updated description of <code class="language-plaintext highlighter-rouge">suppliers</code></li>
   <li>Changed cardinality for <code class="language-plaintext highlighter-rouge">patient</code> to 0..0</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="devicemetric-ehealth-devicemetric-1">DeviceMetric (ehealth-devicemetric)</h4>
@@ -2074,14 +2132,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="documentreference-ehealth-documentreference">DocumentReference (ehealth-documentreference)</h4>
 <ul>
   <li>Added resource description</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="guidanceresponse-ehealth-guidanceresponse">GuidanceResponse (ehealth-guidanceresponse)</h4>
 <ul>
   <li>Added introduction</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
-  <li>Changed element <code class="language-plaintext highlighter-rouge">module</code> to use aggregation types “referenced” and “contained”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
+  <li>Changed element <code class="language-plaintext highlighter-rouge">module</code> to use aggregation types "referenced" and "contained"</li>
 </ul>
 
 <h4 id="library-ehealth-library-3">Library (ehealth-library)</h4>
@@ -2104,31 +2162,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="relatedperson-ehealth-patient-relatedperson">RelatedPerson (ehealth-patient-relatedPerson)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="plandefinition-ehealth-plandefinition-2">PlanDefinition (ehealth-plandefinition)</h4>
 <ul>
   <li>Added definition of <code class="language-plaintext highlighter-rouge">modifierRole</code></li>
   <li>Added definition of <code class="language-plaintext highlighter-rouge">role</code></li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="provenance-ehealth-provenance-1">Provenance (ehealth-provenance)</h4>
 <ul>
   <li>Added resource description</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="questionnaireresponse-ehealth-questionnaireresponse-1">QuestionnaireResponse (ehealth-questionnaireresponse)</h4>
 <ul>
   <li>Updated descriptions of <code class="language-plaintext highlighter-rouge">quality.qualityType</code> and <code class="language-plaintext highlighter-rouge">quality.qualityCode</code>.</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="relatedperson-ehealth-relatedperson-1">RelatedPerson (ehealth-relatedperson)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="task-ehealth-task-3">Task (ehealth-task)</h4>
@@ -2138,18 +2196,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="201951-2019-05-15">2019.5.1 (2019-05-15)</h2>
 
-<h3 id="code-systems-24">Code systems</h3>
+<h3 id="code-systems-25">Code systems</h3>
 <ul>
   <li>Removed <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/careplan-status</code></li>
 </ul>
 
-<h3 id="valuesets-24">ValueSets</h3>
+<h3 id="valuesets-25">ValueSets</h3>
 <ul>
   <li>Added new codes <code class="language-plaintext highlighter-rouge">250554003</code>, <code class="language-plaintext highlighter-rouge">445988008</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/ehealth-activitydefinition-code</code>.</li>
   <li>Removed <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/careplan-status</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-27">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-28">Resource/profile changes</h3>
 
 <h4 id="careplan-ehealth-careplan-3">CarePlan (ehealth-careplan)</h4>
 <ul>
@@ -2163,13 +2221,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20195-2019-05-07">2019.5 (2019-05-07)</h2>
 
-<h3 id="general-changes-18">General changes</h3>
+<h3 id="general-changes-19">General changes</h3>
 
 <ul>
   <li>Updated operation examples for most of the resources</li>
 </ul>
 
-<h3 id="resourceprofile-changes-28">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-29">Resource/profile changes</h3>
 
 <h4 id="activitydefinition-ehealth-activitydefinition-4">ActivityDefinition (ehealth-activitydefinition)</h4>
 <ul>
@@ -2191,7 +2249,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="20195-2019-05-07-1">2019.5 (2019-05-07)</h2>
 
-<h3 id="general-changes-19">General changes</h3>
+<h3 id="general-changes-20">General changes</h3>
 
 <ul>
   <li>Added operations examples for <code class="language-plaintext highlighter-rouge">ehealth-activitydefinition</code>, <code class="language-plaintext highlighter-rouge">ehealth-careplan</code>, <code class="language-plaintext highlighter-rouge">ehealth-careteam</code>, <code class="language-plaintext highlighter-rouge">ehealth-clinicalimpression</code>, <code class="language-plaintext highlighter-rouge">ehealth-communication</code>, <code class="language-plaintext highlighter-rouge">ehealth-message</code>, <code class="language-plaintext highlighter-rouge">ehealth-condition</code>, <code class="language-plaintext highlighter-rouge">ehealth-consent</code>, <code class="language-plaintext highlighter-rouge">ehealth-device</code>, <code class="language-plaintext highlighter-rouge">ehealth-devicemetric</code>, <code class="language-plaintext highlighter-rouge">ehealth-deviceUseStatement</code>, <code class="language-plaintext highlighter-rouge">ehealth-episodeofcare</code>, <code class="language-plaintext highlighter-rouge">ehealth-library</code>, <code class="language-plaintext highlighter-rouge">ehealth-media</code>, <code class="language-plaintext highlighter-rouge">ehealth-observation</code>, <code class="language-plaintext highlighter-rouge">ehealth-organization</code>, <code class="language-plaintext highlighter-rouge">ehealth-plandefinition</code>, <code class="language-plaintext highlighter-rouge">ehealth-practitioner</code>, <code class="language-plaintext highlighter-rouge">ehealth-practitionerRole</code>, <code class="language-plaintext highlighter-rouge">ehealth-procedurerequest</code>, <code class="language-plaintext highlighter-rouge">ehealth-provenance</code>, <code class="language-plaintext highlighter-rouge">ehealth-questionnaire</code> and <code class="language-plaintext highlighter-rouge">ehealth-questionnaireresponse</code>.</li>
@@ -2199,14 +2257,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/fhir/</code> as base-url to intra-IG links</li>
   <li>Added operation examples for most of the resources</li>
   <li>Changed <code class="language-plaintext highlighter-rouge">DK CRN Identifier</code>, <code class="language-plaintext highlighter-rouge">Identifier.assigner</code> marked Referenced</li>
-  <li>Changed strength of all value bindings to “required”</li>
+  <li>Changed strength of all value bindings to "required"</li>
   <li>Added capabilitystatements for <code class="language-plaintext highlighter-rouge">Measurement Service</code>, <code class="language-plaintext highlighter-rouge">Organization Service</code>, <code class="language-plaintext highlighter-rouge">Questionnaire Service</code> and <code class="language-plaintext highlighter-rouge">Terminology Service</code></li>
   <li>Updated capabilitystatement for <code class="language-plaintext highlighter-rouge">Patient Service</code></li>
 </ul>
 
-<h3 id="custom-operations-20">Custom operations</h3>
+<h3 id="custom-operations-21">Custom operations</h3>
 
-<h4 id="system-operations-19">System operations</h4>
+<h4 id="system-operations-20">System operations</h4>
 <ul>
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-submit-measurement</code></li>
   <li>Added description of <code class="language-plaintext highlighter-rouge">-s-transformToObservation</code></li>
@@ -2222,14 +2280,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Deleted <code class="language-plaintext highlighter-rouge">search-organization-and-practitioner-external</code></li>
 </ul>
 
-<h4 id="instance-operations-18">Instance operations</h4>
+<h4 id="instance-operations-19">Instance operations</h4>
 <ul>
   <li>Added description of <code class="language-plaintext highlighter-rouge">Library-i-evaluate</code></li>
   <li>Added description of <code class="language-plaintext highlighter-rouge">PlanDefinition-i-apply</code></li>
   <li>Changed return value of <code class="language-plaintext highlighter-rouge">Library-i-evaluate</code> to <code class="language-plaintext highlighter-rouge">Parameters</code></li>
 </ul>
 
-<h3 id="code-systems-25">Code systems</h3>
+<h3 id="code-systems-26">Code systems</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://www.example.com/medcom/document-class</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://snomed.info/sct</code></li>
@@ -2253,7 +2311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Changed (renamed) <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/submission-sharing-policies</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/measurement-sharing-policies</code></li>
 </ul>
 
-<h3 id="valuesets-25">ValueSets</h3>
+<h3 id="valuesets-26">ValueSets</h3>
 <ul>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/clinicalimpression-codes</code></li>
   <li>Added <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/device-use-reason</code></li>
@@ -2300,7 +2358,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Changed (renamed) <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/submission-sharing-policies</code> to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/measurement-sharing-policies</code></li>
 </ul>
 
-<h3 id="resourceprofile-changes-29">Resource/profile changes</h3>
+<h3 id="resourceprofile-changes-30">Resource/profile changes</h3>
 
 <h4 id="activitydefinition-ehealth-activitydefinition-5">ActivityDefinition (ehealth-activitydefinition)</h4>
 <ul>
@@ -2313,7 +2371,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="careplan-ehealth-careplan-4">CarePlan (ehealth-careplan)</h4>
 <ul>
   <li>Added extension <code class="language-plaintext highlighter-rouge">responsibilitySummary</code></li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">CarePlan.category</code> value set binding to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/careplan-category</code></li>
   <li>Deleted extension <code class="language-plaintext highlighter-rouge">monitoringResponsible</code></li>
   <li>Deleted extension <code class="language-plaintext highlighter-rouge">monitoringResponsibleHistory</code></li>
@@ -2321,13 +2379,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="careteam-ehealth-careteam-2">CareTeam (ehealth-careteam)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">documentation</code></li>
 </ul>
 
 <h4 id="clinicalimpression-ehealth-clinicalimpression-1">ClinicalImpression (ehealth-clinicalimpression)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed resource description</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">ClinicalImpression.action</code> to support <code class="language-plaintext highlighter-rouge">ehealth-appointment</code></li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">ClinicalImpression.code</code> value set binding to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/clinicalimpression-codes</code></li>
@@ -2335,25 +2393,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="condition-ehealth-condition-1">Condition (ehealth-condition)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">Condition.note.author[x]</code> to support <code class="language-plaintext highlighter-rouge">ehealth-relatedperson</code></li>
 </ul>
 
 <h4 id="consent-ehealth-consent-1">Consent (ehealth-consent)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">category</code> value set binding to <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/consent-category</code></li>
 </ul>
 
 <h4 id="communication-ehealth-correspondance">Communication (ehealth-correspondance)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">category</code> to require code from value set <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/ValueSet/communication-category</code></li>
 </ul>
 
 <h4 id="communication-ehealth-message-1">Communication (ehealth-message)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">medium</code> is now optional (not always relevant)</li>
 </ul>
 
@@ -2364,17 +2422,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="device-ehealth-device-2">Device (ehealth-device)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="devicemetric-ehealth-devicemetric-2">DeviceMetric (ehealth-devicemetric)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="deviceusestatement-ehealth-deviceusestatement-1">DeviceUseStatement (ehealth-deviceusestatement)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed indication to require code from value set <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/vs/device-use-reason</code></li>
 </ul>
 
@@ -2385,7 +2443,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="episodeofcare-ehealth-episodeofcare-2">EpisodeOfCare (ehealth-episodeofcare)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="guidanceresponse-ehealth-guidanceresponse-1">GuidanceResponse (ehealth-guidanceresponse)</h4>
@@ -2395,13 +2453,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="library-ehealth-library-4">Library (ehealth-library)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed (renamed) element <code class="language-plaintext highlighter-rouge">parameterbinding.name</code> to <code class="language-plaintext highlighter-rouge">boundParameterName</code></li>
 </ul>
 
 <h4 id="media-ehealth-media-3">Media (ehealth-media)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed the type of extension element <code class="language-plaintext highlighter-rouge">qualityType</code> and <code class="language-plaintext highlighter-rouge">qualityCode</code> to CodeableConcept</li>
   <li>Changed the type of extension element <code class="language-plaintext highlighter-rouge">ehealth-sharingPolicy</code> to CodeableConcept</li>
   <li>Removed <code class="language-plaintext highlighter-rouge">ehealth-careplan</code> from <code class="language-plaintext highlighter-rouge">Media.basedOn</code> element</li>
@@ -2410,7 +2468,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="observation-ehealth-observation-3">Observation (ehealth-observation)</h4>
 <ul>
   <li>Added element <code class="language-plaintext highlighter-rouge">specimen</code> referencing FHIR Specimen</li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed the type of extension element <code class="language-plaintext highlighter-rouge">qualityType</code> and <code class="language-plaintext highlighter-rouge">qualityCode</code> to CodeableConcept</li>
   <li>Changed the type of extension element <code class="language-plaintext highlighter-rouge">ehealth-sharingPolicy</code> to CodeableConcept</li>
 </ul>
@@ -2418,7 +2476,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="organization-ehealth-organization-4">Organization (ehealth-organization)</h4>
 <ul>
   <li>Added extensions for <code class="language-plaintext highlighter-rouge">system</code> and <code class="language-plaintext highlighter-rouge">value</code> to be used inside <code class="language-plaintext highlighter-rouge">organization.contact.telecom</code></li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">contact.telecom.extension.system</code> to be mandatory</li>
 </ul>
 
@@ -2431,17 +2489,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="practitioner-ehealth-practitioner-1">Practitioner (ehealth-practitioner)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="practitionerrole-ehealth-practitionerrole">PractitionerRole (ehealth-practitionerrole)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
 </ul>
 
 <h4 id="procedurerequest-ehealth-procedurerequest-3">ProcedureRequest (ehealth-procedurerequest)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Deleted extension <code class="language-plaintext highlighter-rouge">responsible</code></li>
   <li>Deleted extension <code class="language-plaintext highlighter-rouge">responsibleHistory</code></li>
 </ul>
@@ -2453,7 +2511,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="provenance-ehealth-provenance-2">Provenance (ehealth-provenance)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”.</li>
+  <li>Changed referenced resources to use aggregation type "referenced".</li>
 </ul>
 
 <h4 id="questionnaire-ehealth-questionnaire-2">Questionnaire (ehealth-questionnaire)</h4>
@@ -2461,7 +2519,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Added extension <code class="language-plaintext highlighter-rouge">modifierRole</code> as a replacement for elements <code class="language-plaintext highlighter-rouge">author</code> and <code class="language-plaintext highlighter-rouge">custodian</code></li>
   <li>Added element <code class="language-plaintext highlighter-rouge">type</code> as replacement of element <code class="language-plaintext highlighter-rouge">code</code></li>
   <li>Added extension <code class="language-plaintext highlighter-rouge">QuestionnaireType</code></li>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">code</code> to default with 0-0 cardinality</li>
   <li>Changed <code class="language-plaintext highlighter-rouge">recommendation</code> extension from Coding to CodeableConcept</li>
   <li>Changed extension <code class="language-plaintext highlighter-rouge">QuestionnaireReuseCriteria</code> from Coding to CodeableConcept for elements <code class="language-plaintext highlighter-rouge">situationQuality</code>, <code class="language-plaintext highlighter-rouge">operationQuality</code> and <code class="language-plaintext highlighter-rouge">dataQuality</code></li>
@@ -2472,7 +2530,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="questionnaireresponse-ehealth-questionnaireresponse-2">QuestionnaireResponse (ehealth-questionnaireresponse)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed the type of extension element <code class="language-plaintext highlighter-rouge">qualityType</code> and <code class="language-plaintext highlighter-rouge">qualityCode</code> to CodeableConcept</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">context</code> to be mandatory</li>
   <li>Changed element <code class="language-plaintext highlighter-rouge">subject</code> to be mandatory</li>
@@ -2488,7 +2546,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="task-ehealth-task-4">Task (ehealth-task)</h4>
 <ul>
-  <li>Changed referenced resources to use aggregation type “referenced”</li>
+  <li>Changed referenced resources to use aggregation type "referenced"</li>
   <li>Changed <code class="language-plaintext highlighter-rouge">ehealth-task-category</code> to CodeableConcept type</li>
   <li>Added extension <code class="language-plaintext highlighter-rouge">responsible</code></li>
 </ul>
@@ -2514,7 +2572,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 1, 2024 11:09+0000">2024-07-01</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
@@ -2550,7 +2608,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -2561,7 +2619,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
   <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
-  
   <!-- Analytics Below
   ================================================== -->
   </body>

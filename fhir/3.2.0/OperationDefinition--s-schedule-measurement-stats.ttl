@@ -1,0 +1,63 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-measurement-stats> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-schedule-measurement-stats"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-schedule-measurement-stats</b></p><a name=\"-s-schedule-measurement-stats\"> </a><a name=\"hc-s-schedule-measurement-stats\"> </a><a name=\"-s-schedule-measurement-stats-en-US\"> </a><p>URL: [base]/$schedule-measurement-stats</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-schedule-measurement-stats"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.2.0"] ; # 
+  fhir:name [ fhir:v "schedule-measurement-stats"] ; # 
+  fhir:title [ fhir:v "Schedule measurement stats"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-09-02T13:58:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Report Contents\nThis report contains counts of Measurements for each EpisodeOfCare:\n- Observation\n- QuestionnaireResponse\n- Media\n### Grouping \nThis report is grouped by EpsiodeOfCare. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on EpisodeOfCare.managingOrganization match\n- period: Filter on:\n    - Observation.effective inside period for Observations\n    - Questionnaire.authored inside period for QuestionnaireResponses\n    - Media.occurence inside period for Media\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nEHealthEpisodeOfCare is a Fhir resource. See the implementation guide for details\n\n    {\n        'EHealthEpisodeOfCare': {\n            'resourceType': 'EpisodeOfCare',\n            'id': '21357',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare']\n            },\n            'extension': [{\n                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare-caremanagerOrganization',\n                    'valueReference': {\n                        'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/30170'\n                    }\n                }\n            ],\n            'status': 'active',\n            'diagnosis': [{\n                    'condition': {\n                        'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/Condition/70274'\n                    },\n                    'rank': 1\n                }\n            ],\n            'patient': {\n                'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/26565'\n            },\n            'managingOrganization': {\n                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/28358'\n            },\n            'period': {\n                'start': '1970-01-01T01:00:01+01:00',\n                'end': '1970-01-01T01:01:40+01:00'\n            }\n        },\n        'EpisodeOfCareMeasurementSummary': {\n            'observationCount': 5,\n            'mediaCount': 0,\n            'questionnaireResponseCount': 0\n        }\n    }"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "schedule-measurement-stats"] ; # 
+  fhir:system [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "anonymization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "period" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Period" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

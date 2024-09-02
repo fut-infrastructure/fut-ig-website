@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-create-episode-of-care"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-create-episode-of-care</b></p><a name=\"-s-create-episode-of-care\"> </a><a name=\"hc-s-create-episode-of-care\"> </a><a name=\"-s-create-episode-of-care-en-US\"> </a><p>URL: [base]/$create-episode-of-care</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>episodeOfCareAndProvenances</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td/></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-create-episode-of-care"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.2.0"] ; # 
+  fhir:name [ fhir:v "create-episode-of-care"] ; # 
+  fhir:title [ fhir:v "Create an EpisodeOfCare"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-09-02T13:58:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input.\r\n## Input\r\nThe input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance' (see below).\r\n### The EpisodeOfCare resource\r\nThe EpisodeOfCare has to have `PLANNED` status \r\nThe 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. \r\nThe 'managingOrganization' property of the EpisodeOfCare references the GDPR Data Controller (Danish: 'Dataansvarlig').\r\n### The privacy-Provenance resource\r\nA privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:\r\n- 'http://ehealth.sundhed.dk/policy/dk/sundhedsloven'\r\n- 'http://ehealth.sundhed.dk/policy/dk/serviceloven'\r\n### Diagnosis referenced Condition resource\r\nFor any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.\r\n## Output\r\nFor valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.\r\nTo get resources bodies in the output the request header has to contain parameter ```Prefer: return=representation```.\r\n### The origin-Provenance resource\r\nWhenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token.\r\n"] ; # 
+  fhir:affectsState [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "create-episode-of-care"] ; # 
+  fhir:system [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "episodeOfCareAndProvenances" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
