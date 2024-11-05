@@ -3,15 +3,15 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="dk.ehealth.sundhed.fhir.ig.core"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name="dk.ehealth.sundhed.fhir.ig.core"> </a><a name="hcdk.ehealth.sundhed.fhir.ig.core"> </a><a name="dk.ehealth.sundhed.fhir.ig.core-en-US"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name="dk.ehealth.sundhed.fhir.ig.core"> </a><a name="hcdk.ehealth.sundhed.fhir.ig.core"> </a><a name="dk.ehealth.sundhed.fhir.ig.core-da-DK"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>
 </div></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core"/>
-  <version value="3.2.0"/>
+  <version value="3.3.0"/>
   <name value="eHealthInfrastructure"/>
   <title value="eHealth Infrastructure"/>
   <status value="active"/>
-  <date value="2024-09-02T14:02:47+00:00"/>
+  <date value="2024-11-05T10:04:41+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -21,6 +21,13 @@
     </telecom>
   </contact>
   <description value="The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
   <packageId value="dk.ehealth.sundhed.fhir.ig.core"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -1436,6 +1443,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-questionnaire-item-is-copyright"/>
+      </reference>
+      <name value="Copyright item indicator"/>
+      <description value="Indicates that the item is part of a copyright structure (CDA Document sharing - QFDD/QRD)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -2100,6 +2118,17 @@
       </reference>
       <name value="eHealth Device Identifier"/>
       <description value="An identifier of a device used in eHealth"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-manuallydeprecated-type"/>
+      </reference>
+      <name value="Ehealth Document manually deprecated"/>
+      <description value="Ehealth Document manually deprecated"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3352,6 +3381,17 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
+        <reference value="OperationDefinition/Media-t-get-data"/>
+      </reference>
+      <name value="Get media data"/>
+      <description value="The get-data operation returns a media resource matching the uuid provided.&#xA;&#xA;&#xA;### Parameter description&#xA;- uuid: The uuid of the media to return&#xA;&#xA;&#xA;### Output description&#xA;The result of this operation returns a Binary containing the media found from the provided uuid"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
         <reference value="OperationDefinition/-s-get-patient-procedures"/>
       </reference>
       <name value="Get patient procedures"/>
@@ -3367,16 +3407,6 @@
       </reference>
       <name value="Get Report Job Status"/>
       <description value="### Status Contents &#xA;This operation returns status for reports scheduled by the user (by schedule or execute)&#xA;### Output&#xA;The output is a Bundle containing Parameters resources for each scheduled report.&#xA;The parts of the Parameters describe the class of report, the parameters that the report&#xA;was scheduled with, the user ID, the status of the report, a reference to the report Binary&#xA;and time of creation, start, and end of execution.&#xA;### Example output&#xA;{&#xA;  'resourceType': 'Bundle',&#xA;  'type': 'collection',&#xA;  'entry': [&#xA;    {&#xA;      'fullUrl': 'ce35bcd5-4bb2-4c6e-b230-5347df1fe9bc',&#xA;      'resource': {&#xA;        'resourceType': 'Parameters',&#xA;        'id': 'ce35bcd5-4bb2-4c6e-b230-5347df1fe9bc',&#xA;        'parameter': [&#xA;          {&#xA;            'name': 'reportJob',&#xA;            'part': [&#xA;              {&#xA;                'name': 'reportClass',&#xA;                'valueString': 'com.systematic.ehealth.reporting.reports.PatientsUsageReport'&#xA;              },&#xA;              {&#xA;                'name': 'userId',&#xA;                'valueString': '0aaca7cd-67c3-48dd-a8c4-0cceecb5d276'&#xA;              },&#xA;              {&#xA;                'name': 'status',&#xA;                'valueString': 'DONE'&#xA;              },&#xA;              {&#xA;                'name': 'binary',&#xA;                'valueReference': {&#xA;                  'reference': 'https://reporting.local.ehealth.sundhed.dk/fhir/Binary/7'&#xA;                }&#xA;              },&#xA;              {&#xA;                'name': 'parameters',&#xA;                'resource': {&#xA;                  'resourceType': 'Parameters',&#xA;                  'parameter': [&#xA;                    {&#xA;                      'name': 'anonymization',&#xA;                      'valueString': 'None'&#xA;                    }&#xA;                  ]&#xA;                }&#xA;              },&#xA;              {&#xA;                'name': 'created',&#xA;                'valueDateTime': '2023-10-12T09:51:50+00:00'&#xA;              },&#xA;              {&#xA;                'name': 'started',&#xA;                'valueDateTime': '2023-10-12T09:51:50+00:00'&#xA;              },&#xA;              {&#xA;                'name': 'ended',&#xA;                'valueDateTime': '2023-10-12T09:51:51+00:00'&#xA;              }&#xA;            ]&#xA;          }&#xA;        ]&#xA;      }&#xA;    }&#xA;  ]&#xA;}"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/Media-t-get-data"/>
-      </reference>
-      <name value="get-data"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4206,6 +4236,39 @@
       </reference>
       <name value="Overview Usage Mode"/>
       <description value="Whether the element should appear in overview modes of operation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-participant"/>
+      </reference>
+      <name value="Participant"/>
+      <description value="The participating CareTeam or Practitioner."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/participant-function"/>
+      </reference>
+      <name value="Participant Function"/>
+      <description value="Participant Function."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/participant-function"/>
+      </reference>
+      <name value="Participant Function"/>
+      <description value="The function of the participant (primay / secondary contact)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5571,6 +5634,17 @@
       </reference>
       <name value="Task Category"/>
       <description value="Value set for task category."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-task-handover-roles"/>
+      </reference>
+      <name value="Task Handover Roles"/>
+      <description value="Task Handover Roles"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

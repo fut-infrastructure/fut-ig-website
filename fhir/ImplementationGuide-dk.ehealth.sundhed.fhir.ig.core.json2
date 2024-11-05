@@ -3,14 +3,14 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.core",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"dk.ehealth.sundhed.fhir.ig.core-en-US\"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"dk.ehealth.sundhed.fhir.ig.core-da-DK\"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
   },
   "url" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
-  "version" : "3.2.0",
+  "version" : "3.3.0",
   "name" : "eHealthInfrastructure",
   "title" : "eHealth Infrastructure",
   "status" : "active",
-  "date" : "2024-09-02T14:02:47+00:00",
+  "date" : "2024-11-05T10:04:41+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -20,6 +20,13 @@
     }]
   }],
   "description" : "The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "packageId" : "dk.ehealth.sundhed.fhir.ig.core",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
@@ -1692,6 +1699,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehealth-questionnaire-item-is-copyright"
+      },
+      "name" : "Copyright item indicator",
+      "description" : "Indicates that the item is part of a copyright structure (CDA Document sharing - QFDD/QRD)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -2416,6 +2435,18 @@
       },
       "name" : "eHealth Device Identifier",
       "description" : "An identifier of a device used in eHealth",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehealth-manuallydeprecated-type"
+      },
+      "name" : "Ehealth Document manually deprecated",
+      "description" : "Ehealth Document manually deprecated",
       "exampleBoolean" : false
     },
     {
@@ -3786,6 +3817,18 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
+        "reference" : "OperationDefinition/Media-t-get-data"
+      },
+      "name" : "Get media data",
+      "description" : "The get-data operation returns a media resource matching the uuid provided.\n\n\n### Parameter description\n- uuid: The uuid of the media to return\n\n\n### Output description\nThe result of this operation returns a Binary containing the media found from the provided uuid",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
         "reference" : "OperationDefinition/-s-get-patient-procedures"
       },
       "name" : "Get patient procedures",
@@ -3802,17 +3845,6 @@
       },
       "name" : "Get Report Job Status",
       "description" : "### Status Contents \nThis operation returns status for reports scheduled by the user (by schedule or execute)\n### Output\nThe output is a Bundle containing Parameters resources for each scheduled report.\nThe parts of the Parameters describe the class of report, the parameters that the report\nwas scheduled with, the user ID, the status of the report, a reference to the report Binary\nand time of creation, start, and end of execution.\n### Example output\n{\n  'resourceType': 'Bundle',\n  'type': 'collection',\n  'entry': [\n    {\n      'fullUrl': 'ce35bcd5-4bb2-4c6e-b230-5347df1fe9bc',\n      'resource': {\n        'resourceType': 'Parameters',\n        'id': 'ce35bcd5-4bb2-4c6e-b230-5347df1fe9bc',\n        'parameter': [\n          {\n            'name': 'reportJob',\n            'part': [\n              {\n                'name': 'reportClass',\n                'valueString': 'com.systematic.ehealth.reporting.reports.PatientsUsageReport'\n              },\n              {\n                'name': 'userId',\n                'valueString': '0aaca7cd-67c3-48dd-a8c4-0cceecb5d276'\n              },\n              {\n                'name': 'status',\n                'valueString': 'DONE'\n              },\n              {\n                'name': 'binary',\n                'valueReference': {\n                  'reference': 'https://reporting.local.ehealth.sundhed.dk/fhir/Binary/7'\n                }\n              },\n              {\n                'name': 'parameters',\n                'resource': {\n                  'resourceType': 'Parameters',\n                  'parameter': [\n                    {\n                      'name': 'anonymization',\n                      'valueString': 'None'\n                    }\n                  ]\n                }\n              },\n              {\n                'name': 'created',\n                'valueDateTime': '2023-10-12T09:51:50+00:00'\n              },\n              {\n                'name': 'started',\n                'valueDateTime': '2023-10-12T09:51:50+00:00'\n              },\n              {\n                'name': 'ended',\n                'valueDateTime': '2023-10-12T09:51:51+00:00'\n              }\n            ]\n          }\n        ]\n      }\n    }\n  ]\n}",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/Media-t-get-data"
-      },
-      "name" : "get-data",
       "exampleBoolean" : false
     },
     {
@@ -4718,6 +4750,42 @@
       },
       "name" : "Overview Usage Mode",
       "description" : "Whether the element should appear in overview modes of operation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehealth-participant"
+      },
+      "name" : "Participant",
+      "description" : "The participating CareTeam or Practitioner.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/participant-function"
+      },
+      "name" : "Participant Function",
+      "description" : "Participant Function.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/participant-function"
+      },
+      "name" : "Participant Function",
+      "description" : "The function of the participant (primay / secondary contact).",
       "exampleBoolean" : false
     },
     {
@@ -6208,6 +6276,18 @@
       },
       "name" : "Task Category",
       "description" : "Value set for task category.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehealth-task-handover-roles"
+      },
+      "name" : "Task Handover Roles",
+      "description" : "Task Handover Roles",
       "exampleBoolean" : false
     },
     {

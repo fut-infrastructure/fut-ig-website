@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ehealth-task - eHealth Infrastructure v3.2.0</title>
+    <title>ehealth-task - eHealth Infrastructure v3.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -63,7 +63,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.2.0 - release
+            <span style="display:inline-block;">3.3.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
 
 
             </span>
@@ -214,7 +218,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -298,7 +302,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">3.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task|3.2.0"/></span>
+      <span class="copy-text">3.3.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task|3.3.0"/></span>
       </td>
     </tr>
 
@@ -314,7 +318,7 @@
         
           Active
           
-            as of 2024-09-02
+            as of 2024-11-05
           
         
       </td>
@@ -353,7 +357,7 @@
 
 <p>Task resources are produced by the eHealth Infrastructure as reaction to measurements being submitted, measurements being submitted at odd timing or expected measurements not being submitted. Measurements in the form of Observation, QuestionnaireResponse or other resources are expected to be submitted by a Patient according to a measurement regime specified in a CarePlan and referenced CarePlan/ServiceRequest.</p>
 
-<p>The context in which the Task is created is identified through <code class="language-plaintext highlighter-rouge">episodeOfCare</code>. The <code class="language-plaintext highlighter-rouge">focus</code> element describes what resource the Task responsible should be acting on and can reference any resource. The <code class="language-plaintext highlighter-rouge">for</code> element can contain a reference to a Patient and shall be specified if the Task pertains to a Patient as subject. In case <code class="language-plaintext highlighter-rouge">episodeOfCare</code> references an EpisodeOfCare, it is enforced that <code class="language-plaintext highlighter-rouge">for</code> references the same Patient as is referenced in the EpisodeOfCare."</p>
+<p>The context in which the Task is created is identified through <code class="language-plaintext highlighter-rouge">episodeOfCare</code>. The <code class="language-plaintext highlighter-rouge">focus</code> element describes what resource the Task responsible should be acting on and can reference any resource. The <code class="language-plaintext highlighter-rouge">for</code> element can contain a reference to a Patient and shall be specified if the Task pertains to a Patient as subject. In case <code class="language-plaintext highlighter-rouge">episodeOfCare</code> references an EpisodeOfCare, it is enforced that <code class="language-plaintext highlighter-rouge">for</code> references the same Patient as is referenced in the EpisodeOfCare.</p>
 
 <h3 id="use-of-task-for-coordinating-assessment-of-submitted-measurement">Use of Task for coordinating assessment of submitted measurement</h3>
 
@@ -383,7 +387,7 @@
   <li>Task <code class="language-plaintext highlighter-rouge">ehealth-task-responsible</code> that references the one or more CareTeam attached to the CarePlan</li>
   <li>Task <code class="language-plaintext highlighter-rouge">ehealth-restriction-category</code> is a coding that can be used to restrict access to the task, for instance restricting a task so only CareTeam members involved in monitoring measurements can access it</li>
   <li>Task <code class="language-plaintext highlighter-rouge">priority</code> reflecting the urgency set by the triaging rule</li>
-  <li>Task <code class="language-plaintext highlighter-rouge">focus</code> referencing the ClinicalImpression that was also created during triaging. Focus can be overridden by the automated processing rule to reference something different than the ClinicalImpression.</li>
+  <li>Task <code class="language-plaintext highlighter-rouge">focus</code> referencing the ClinicalImpression that was also created during triaging. Focus can be overridden by the automated processing rule to reference something different from the ClinicalImpression.</li>
 </ul>
 
 <h3 id="use-of-task-for-resolving-missing-measurement">Use of Task for resolving missing measurement</h3>
@@ -417,6 +421,48 @@
 <p>The Task extension <code class="language-plaintext highlighter-rouge">ehealth-task-responsible</code> enables that multiple entities (CareTeam, Practitioner, Patient, RelatedPerson) can be responsible for the Task. It is expected, for instance, that each CareTeam will provide support/monitoring of multiple patients. The Task resources for which a CareTeam is responsible can form a list sorted by priority to support triaging.</p>
 
 <p>When a Task has been assigned to a particular individual (through Task <code class="language-plaintext highlighter-rouge">owner</code>) it is possible for the Task responsible(s) to reassign the Task. This way, CareTeam members can coordinate Task assignments (by adding Practitioner as Task owner and setting Task status) while preserving the CareTeam as fallback in case the Practitioner is unable to process the Task, for instance due to absence.</p>
+
+<h3 id="use-of-task-in-resource-handover-negotiations-between-careteams">Use of Task in resource handover negotiations between CareTeams</h3>
+<p>Tasks can be used to support resource handover negotiations between CareTeams.</p>
+
+<ul>
+  <li>Task <code class="language-plaintext highlighter-rouge">category</code> must be set to <code class="language-plaintext highlighter-rouge">HandoverNegotiation</code></li>
+  <li>Task <code class="language-plaintext highlighter-rouge">ehealth-task-responsible</code> must reference the CareTeams that are involved in the handover (both the CareTeam that is handing over and the CareTeam that is taking over)</li>
+  <li>Task <code class="language-plaintext highlighter-rouge">focus</code> must reference the resource that is being handed over</li>
+  <li>Task <code class="language-plaintext highlighter-rouge">input</code> should be used to identify which role the responsible CareTeams have in the handover (e.g. <code class="language-plaintext highlighter-rouge">input</code> with <code class="language-plaintext highlighter-rouge">type</code> set to code from <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-handover-roles</code> and <code class="language-plaintext highlighter-rouge">valueReference</code> to the CareTeam that has that role in the handover)</li>
+</ul>
+
+<p>Simplified example of a handover negotiation Task regarding handover of CarePlan1. The handover is between CareTeam1 and CareTeam2 with a CareTeam3 as informed:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">category</code>: coding = <code class="language-plaintext highlighter-rouge">HandoverNegotiation</code> from system = <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-category</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ehealth-task-responsible</code>: reference to CareTeam1, reference to CareTeam2, reference to CareTeam3</li>
+  <li><code class="language-plaintext highlighter-rouge">focus</code>: reference to CarePlan</li>
+  <li><code class="language-plaintext highlighter-rouge">input[0]</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">type</code> = coding with <code class="language-plaintext highlighter-rouge">inviting-entity</code> from system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-handover-roles</code></li>
+      <li><code class="language-plaintext highlighter-rouge">value</code> = reference to CareTeam1</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">input[1]</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">type</code> = coding with <code class="language-plaintext highlighter-rouge">leaving-entity</code> from system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-handover-roles</code></li>
+      <li><code class="language-plaintext highlighter-rouge">value</code> = reference to CareTeam1</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">input[2]</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">type</code> = coding with <code class="language-plaintext highlighter-rouge">arriving-entity</code> from system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-handover-roles</code></li>
+      <li><code class="language-plaintext highlighter-rouge">value</code> = reference to CareTeam2</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">input[3]</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">type</code> = coding with <code class="language-plaintext highlighter-rouge">informed-entity</code> from system <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/task-handover-roles</code></li>
+      <li><code class="language-plaintext highlighter-rouge">value</code> = reference to CareTeam3</li>
+    </ul>
+  </li>
+</ul>
 
 </div>
 
@@ -3838,7 +3884,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 5, 2024 10:04+0000">2024-11-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

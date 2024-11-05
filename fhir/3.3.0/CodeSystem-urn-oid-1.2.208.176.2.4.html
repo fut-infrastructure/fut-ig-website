@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Sundhedsvæsenets klassifikationssystem (SKS) - eHealth Infrastructure v3.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"86.492"}
+    h3,h4,h5,h6{--heading-prefix:"86.492"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">3.3.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Sundhedsvæsenets klassifikationssystem (SKS)</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-oid-1.2.208.176.2.4.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-oid-1.2.208.176.2.4.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-oid-1.2.208.176.2.4.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: Sundhedsvæsenets klassifikationssystem (SKS)
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">urn:oid:1.2.208.176.2.4<button title="Click to copy URL" class="btn-copy" data-clipboard-text="urn:oid:1.2.208.176.2.4"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">3.3.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="urn:oid:1.2.208.176.2.4|3.3.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2019-12-13
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">SKS</span></td>
+    </tr>
+
+    <tr>
+      <td colspan="5">
+        <i>Other Identifiers:</i> OID:1.2.208.176.2.4
+      </td>
+    </tr>
+
+
+
+
+  </table>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-ehealth-activitydefinition-code.html">ActivityDefinitionCode</a></li>
+ <li><a href="ValueSet-ehealth-conditions.html">Conditions</a></li>
+ <li><a href="ValueSet-ehealth-health-conditions.html">Health_conditions</a></li>
+ <li><a href="ValueSet-ehealth-observation-codes.html">ObservationCodes</a></li>
+ <li><a href="ValueSet-dk-ihe-eventcodelists-vs.html">DK_IHE_EventCodeLists_VS</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem urn-oid-1.2.208.176.2.4</b></p><a name="urn-oid-1.2.208.176.2.4"> </a><a name="hcurn-oid-1.2.208.176.2.4"> </a><a name="urn-oid-1.2.208.176.2.4-und"> </a>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">version: 4; Last updated: 2021-02-08 08:14:10+0000</p></div><p>This case-sensitive code system <code>urn:oid:1.2.208.176.2.4</code> defines the following codes in an undefined hierarchy:</p>
+<table class="codes"><tr><td><b>Lvl</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr>
+<tr><td>1</td>
+<td style="white-space:nowrap">A<a name="urn-oid-1.2.208.176.2.4-A"> </a></td>
+<td>Administrative forhold</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;AL<a name="urn-oid-1.2.208.176.2.4-AL"> </a></td>
+<td>Administrative koder til LPR3</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;ALA<a name="urn-oid-1.2.208.176.2.4-ALA"> </a></td>
+<td>Koder vedr. Forløbselement</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL<a name="urn-oid-1.2.208.176.2.4-ALAL"> </a></td>
+<td>Forløbselement label</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL01<a name="urn-oid-1.2.208.176.2.4-ALAL01"> </a></td>
+<td>Kræftsygdomme</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL02<a name="urn-oid-1.2.208.176.2.4-ALAL02"> </a></td>
+<td>Hjertesygdomme</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL03<a name="urn-oid-1.2.208.176.2.4-ALAL03"> </a></td>
+<td>Psykiske lidelser og adfærdsmæssige forstyrrelser</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL21<a name="urn-oid-1.2.208.176.2.4-ALAL21"> </a></td>
+<td>Kronisk obstruktiv lungesygdom (KOL)</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL22<a name="urn-oid-1.2.208.176.2.4-ALAL22"> </a></td>
+<td>Type 2-diabetes</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL23<a name="urn-oid-1.2.208.176.2.4-ALAL23"> </a></td>
+<td>Osteoporose</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL51<a name="urn-oid-1.2.208.176.2.4-ALAL51"> </a></td>
+<td>Graviditet, fødsel og barsel</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALAL52<a name="urn-oid-1.2.208.176.2.4-ALAL52"> </a></td>
+<td>Nyfødte</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;ALCA<a name="urn-oid-1.2.208.176.2.4-ALCA"> </a></td>
+<td>Kontakt type</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALCA00<a name="urn-oid-1.2.208.176.2.4-ALCA00"> </a></td>
+<td>fysisk fremmøde</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALCA03<a name="urn-oid-1.2.208.176.2.4-ALCA03"> </a></td>
+<td>virtuel kontakt</td></tr>
+<tr><td>1</td>
+<td style="white-space:nowrap">D<a name="urn-oid-1.2.208.176.2.4-D"> </a></td>
+<td>Klassifikation af sygdomme og helbredsrelaterede tilstande</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DE10<a name="urn-oid-1.2.208.176.2.4-DE10"> </a></td>
+<td>Type 1-diabetes</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE100<a name="urn-oid-1.2.208.176.2.4-DE100"> </a></td>
+<td>Type 1-diabetes med koma</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE101<a name="urn-oid-1.2.208.176.2.4-DE101"> </a></td>
+<td>Type 1-diabetes med ketoacidose</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE102<a name="urn-oid-1.2.208.176.2.4-DE102"> </a></td>
+<td>Type 1-diabetes med nyrekomplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE103<a name="urn-oid-1.2.208.176.2.4-DE103"> </a></td>
+<td>Type 1-diabetes med øjenkomplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE104<a name="urn-oid-1.2.208.176.2.4-DE104"> </a></td>
+<td>Type 1-diabetes med neurologisk komplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE105<a name="urn-oid-1.2.208.176.2.4-DE105"> </a></td>
+<td>Type 1-diabetes med komplikationer i perifere karsystem</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE105A<a name="urn-oid-1.2.208.176.2.4-DE105A"> </a></td>
+<td>Type 1-diabetes med perifer angiopati</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE105B<a name="urn-oid-1.2.208.176.2.4-DE105B"> </a></td>
+<td>Type 1-diabetes med fodsår</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE105C<a name="urn-oid-1.2.208.176.2.4-DE105C"> </a></td>
+<td>Type 1-diabetes med gangræn</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE105D<a name="urn-oid-1.2.208.176.2.4-DE105D"> </a></td>
+<td>Type 1-diabetes med mikroangiopati</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE106<a name="urn-oid-1.2.208.176.2.4-DE106"> </a></td>
+<td>Type 1-diabetes med anden komplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE107<a name="urn-oid-1.2.208.176.2.4-DE107"> </a></td>
+<td>Type 1-diabetes med multiple komplikationer</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE108<a name="urn-oid-1.2.208.176.2.4-DE108"> </a></td>
+<td>Type 1-diabetes med komplikation UNS</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE109<a name="urn-oid-1.2.208.176.2.4-DE109"> </a></td>
+<td>Type 1-diabetes uden komplikationer</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE109A<a name="urn-oid-1.2.208.176.2.4-DE109A"> </a></td>
+<td>Type 1-diabetes UNS</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DE11<a name="urn-oid-1.2.208.176.2.4-DE11"> </a></td>
+<td>Type 2-diabetes</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE110<a name="urn-oid-1.2.208.176.2.4-DE110"> </a></td>
+<td>Type 2-diabetes med koma</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE111<a name="urn-oid-1.2.208.176.2.4-DE111"> </a></td>
+<td>Type 2-diabetes med ketoacidose</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE112<a name="urn-oid-1.2.208.176.2.4-DE112"> </a></td>
+<td>Type 2-diabetes med nyrekomplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE113<a name="urn-oid-1.2.208.176.2.4-DE113"> </a></td>
+<td>Type 2-diabetes med øjenkomplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE114<a name="urn-oid-1.2.208.176.2.4-DE114"> </a></td>
+<td>Type 2-diabetes med neurologisk komplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE115<a name="urn-oid-1.2.208.176.2.4-DE115"> </a></td>
+<td>Type 2-diabetes med komplikationer i perifere karsystem</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE115A<a name="urn-oid-1.2.208.176.2.4-DE115A"> </a></td>
+<td>Type 2-diabetes med perifer angiopati</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE115B<a name="urn-oid-1.2.208.176.2.4-DE115B"> </a></td>
+<td>Type 2-diabetes med fodsår</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE115C<a name="urn-oid-1.2.208.176.2.4-DE115C"> </a></td>
+<td>Type 2-diabetes med gangræn</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE115D<a name="urn-oid-1.2.208.176.2.4-DE115D"> </a></td>
+<td>Type 2-diabetes med mikroangiopati</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE116<a name="urn-oid-1.2.208.176.2.4-DE116"> </a></td>
+<td>Type 2-diabetes med anden komplikation</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE117<a name="urn-oid-1.2.208.176.2.4-DE117"> </a></td>
+<td>Type 2-diabetes med multiple komplikationer</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE118<a name="urn-oid-1.2.208.176.2.4-DE118"> </a></td>
+<td>Type 2-diabetes med komplikation UNS</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DE119<a name="urn-oid-1.2.208.176.2.4-DE119"> </a></td>
+<td>Type 2-diabetes uden komplikationer</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE119A<a name="urn-oid-1.2.208.176.2.4-DE119A"> </a></td>
+<td>Type 2-diabetes UNS</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF00<a name="urn-oid-1.2.208.176.2.4-DF00"> </a></td>
+<td>Demens ved Alzheimers sygdom</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF10<a name="urn-oid-1.2.208.176.2.4-DF10"> </a></td>
+<td>Psykiske lidelser og adfærdsmæssige forstyrrelser forårsaget af brug af alkohol</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF20<a name="urn-oid-1.2.208.176.2.4-DF20"> </a></td>
+<td>Skizofreni</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF30<a name="urn-oid-1.2.208.176.2.4-DF30"> </a></td>
+<td>Manisk enkeltepisode</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF40<a name="urn-oid-1.2.208.176.2.4-DF40"> </a></td>
+<td>Fobiske angsttilstande</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF50<a name="urn-oid-1.2.208.176.2.4-DF50"> </a></td>
+<td>Spiseforstyrrelser</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF60<a name="urn-oid-1.2.208.176.2.4-DF60"> </a></td>
+<td>Specifikke forstyrrelser af personlighedsstrukturen</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF70<a name="urn-oid-1.2.208.176.2.4-DF70"> </a></td>
+<td>Mental retardering af lettere grad</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF80<a name="urn-oid-1.2.208.176.2.4-DF80"> </a></td>
+<td>Specifikke udviklingsforstyrrelser af tale og sprog</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF90<a name="urn-oid-1.2.208.176.2.4-DF90"> </a></td>
+<td>Hyperkinetiske forstyrrelser</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DF99<a name="urn-oid-1.2.208.176.2.4-DF99"> </a></td>
+<td>Ikke nærmere specificerede psykiske lidelser</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DI20<a name="urn-oid-1.2.208.176.2.4-DI20"> </a></td>
+<td>Angina pectoris</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI200<a name="urn-oid-1.2.208.176.2.4-DI200"> </a></td>
+<td>Ustabil angina pectoris</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI200B<a name="urn-oid-1.2.208.176.2.4-DI200B"> </a></td>
+<td>Klinisk vurderet ustabil angina pectoris</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI200C<a name="urn-oid-1.2.208.176.2.4-DI200C"> </a></td>
+<td>Ustabil angina pectoris med dokumenteret iskæmi</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI201<a name="urn-oid-1.2.208.176.2.4-DI201"> </a></td>
+<td>Prinzmetals angina pectoris</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI208<a name="urn-oid-1.2.208.176.2.4-DI208"> </a></td>
+<td>Anden form for angina pectoris</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI208D<a name="urn-oid-1.2.208.176.2.4-DI208D"> </a></td>
+<td>Mikrovaskulær angina</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI208E<a name="urn-oid-1.2.208.176.2.4-DI208E"> </a></td>
+<td>Stabil angina pectoris</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI208E1<a name="urn-oid-1.2.208.176.2.4-DI208E1"> </a></td>
+<td>Klinisk vurderet angina pectoris</td></tr>
+<tr><td>5</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI208E2<a name="urn-oid-1.2.208.176.2.4-DI208E2"> </a></td>
+<td>Angina pectoris med dokumenteret iskæmi</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI209<a name="urn-oid-1.2.208.176.2.4-DI209"> </a></td>
+<td>Angina pectoris UNS</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DI25<a name="urn-oid-1.2.208.176.2.4-DI25"> </a></td>
+<td>Kronisk iskæmisk hjertesygdom</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI251<a name="urn-oid-1.2.208.176.2.4-DI251"> </a></td>
+<td>Arteriosklerotisk hjertesygdom</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI252<a name="urn-oid-1.2.208.176.2.4-DI252"> </a></td>
+<td>Gammelt myokardieinfarkt</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI252A<a name="urn-oid-1.2.208.176.2.4-DI252A"> </a></td>
+<td>Tidligere myokardieinfarkt (non-Q-tak)</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI252B<a name="urn-oid-1.2.208.176.2.4-DI252B"> </a></td>
+<td>Tidligere myokardieinfarkt (Q-tak, anteriort)</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI252C<a name="urn-oid-1.2.208.176.2.4-DI252C"> </a></td>
+<td>Tidligere myokardieinfarkt (Q-tak, inferiort/posteriort)</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI253<a name="urn-oid-1.2.208.176.2.4-DI253"> </a></td>
+<td>Hjerteaneurisme</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI254<a name="urn-oid-1.2.208.176.2.4-DI254"> </a></td>
+<td>Koronararterieaneurisme og -dissektion</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI254A<a name="urn-oid-1.2.208.176.2.4-DI254A"> </a></td>
+<td>Fistula arteriovenosa coronaria acquisita</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI254B<a name="urn-oid-1.2.208.176.2.4-DI254B"> </a></td>
+<td>Spontan Koronararteriedissektion (SKAD)</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI255<a name="urn-oid-1.2.208.176.2.4-DI255"> </a></td>
+<td>Iskæmisk kardiomyopati</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI256<a name="urn-oid-1.2.208.176.2.4-DI256"> </a></td>
+<td>Stum myokardieiskæmi</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI258<a name="urn-oid-1.2.208.176.2.4-DI258"> </a></td>
+<td>Anden form for kronisk iskæmisk hjertesygdom</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DI259<a name="urn-oid-1.2.208.176.2.4-DI259"> </a></td>
+<td>Kronisk iskæmisk hjertesygdom UNS</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DI50<a name="urn-oid-1.2.208.176.2.4-DI50"> </a></td>
+<td>Hjertesvigt</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DJ44<a name="urn-oid-1.2.208.176.2.4-DJ44"> </a></td>
+<td>Kronisk obstruktiv lungesygdom</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DJ440<a name="urn-oid-1.2.208.176.2.4-DJ440"> </a></td>
+<td>Kronisk obstruktiv lungesygdom med akut nedre luftvejs infektion</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DJ441<a name="urn-oid-1.2.208.176.2.4-DJ441"> </a></td>
+<td>Kronisk obstruktiv lungesygdom med akut eksacerbation UNS</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DJ448<a name="urn-oid-1.2.208.176.2.4-DJ448"> </a></td>
+<td>Anden form for kronisk obstruktiv lungesygdom</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DJ448A<a name="urn-oid-1.2.208.176.2.4-DJ448A"> </a></td>
+<td>Kronisk obstruktiv bronkitis</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DJ448B<a name="urn-oid-1.2.208.176.2.4-DJ448B"> </a></td>
+<td>Kronisk astmatisk bronkitis</td></tr>
+<tr><td>4</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DJ448C<a name="urn-oid-1.2.208.176.2.4-DJ448C"> </a></td>
+<td>Kronisk bronkitis med emfysem</td></tr>
+<tr><td>3</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;&nbsp;&nbsp;DJ449<a name="urn-oid-1.2.208.176.2.4-DJ449"> </a></td>
+<td>Kronisk obstruktiv lungesygdom UNS</td></tr>
+<tr><td>2</td>
+<td style="white-space:nowrap">&nbsp;&nbsp;DZ76<a name="urn-oid-1.2.208.176.2.4-DZ76"> </a></td>
+<td>Personer i kontakt med sundhedsvæsenet af andre årsager</td></tr>
+<tr><td>1</td>
+<td style="white-space:nowrap">ZZ3170<a name="urn-oid-1.2.208.176.2.4-ZZ3170"> </a></td>
+<td>Hjemmeblodtryksmåling udført af patienten</td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 5, 2024 10:04+0000">2024-11-05</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

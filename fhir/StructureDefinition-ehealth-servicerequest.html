@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ehealth-servicerequest - eHealth Infrastructure v3.2.0</title>
+    <title>ehealth-servicerequest - eHealth Infrastructure v3.3.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -63,7 +63,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.2.0 - release
+            <span style="display:inline-block;">3.3.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
 
 
             </span>
@@ -214,7 +218,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.2.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -298,7 +302,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">3.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest|3.2.0"/></span>
+      <span class="copy-text">3.3.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest|3.3.0"/></span>
       </td>
     </tr>
 
@@ -314,7 +318,7 @@
         
           Active
           
-            as of 2024-09-02
+            as of 2024-11-05
           
         
       </td>
@@ -353,6 +357,40 @@
   <li><code class="language-plaintext highlighter-rouge">ehealth-sharingApprovalPolicy</code> Selects whether the approval of publication to national document sharing of measurements (resource(s) resulting from conducting the activity) must be done manually or if it is done automatically. The initial value will be inherited from the ActivityDefinition referenced in <code class="language-plaintext highlighter-rouge">definition</code>, but can subsequently be adapted for the particular Patient by adjusting the ServiceRequest.</li>
   <li><code class="language-plaintext highlighter-rouge">ehealth-servicerequest-statusHistory</code> contains history of changes in <code class="language-plaintext highlighter-rouge">status</code>, and is automatically maintained by the infrastructure.</li>
   <li><code class="language-plaintext highlighter-rouge">ehealth-servicerequest-statusSchedule</code> contains a list of scheduled changes in <code class="language-plaintext highlighter-rouge">status</code>. The infrastructure applies these changes automatically, and will remove the entry for the change once it has been applied.</li>
+</ul>
+
+<h3 id="occurrence-validity">Occurrence validity</h3>
+<p>The <code class="language-plaintext highlighter-rouge">occurrence[x]</code> field becomes both mandatory and must be valid when a ServiceRequest is marked as <code class="language-plaintext highlighter-rouge">active</code>, <code class="language-plaintext highlighter-rouge">on-hold</code>, or <code class="language-plaintext highlighter-rouge">completed</code>, as specified by <code class="language-plaintext highlighter-rouge">status</code> or <code class="language-plaintext highlighter-rouge">ehealth-servicerequest-statusSchedule</code>. This validation applies when updating either the CarePlan (if <code class="language-plaintext highlighter-rouge">status</code> or <code class="language-plaintext highlighter-rouge">ehealth-careplan-statusSchedule</code> is <code class="language-plaintext highlighter-rouge">active</code>) or the ServiceRequest.</p>
+
+<p>The validity depends on the variant of <code class="language-plaintext highlighter-rouge">occurrence[x]</code> as follows:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">occurrenceDateTime</code>: Shall contain a date-time with at least hours and minutes (and hence timezone).</li>
+  <li><code class="language-plaintext highlighter-rouge">occurrencePeriod</code>: Shall contain at least a <code class="language-plaintext highlighter-rouge">Period.start</code> containing a date-time with at least hours and minutes (and hence timezone).</li>
+  <li><code class="language-plaintext highlighter-rouge">occurrenceTiming</code>: Shall either be ad-hoc or recurring as follows:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">occurrenceTiming</code> ad-hoc: the elements of <code class="language-plaintext highlighter-rouge">Timing.repeat</code> shall adhere to:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">boundsPeriod</code>: shall be specified and shall contain at least <code class="language-plaintext highlighter-rouge">start</code> containing a date-time with at least hours and minutes (and hence timezone). If present, <code class="language-plaintext highlighter-rouge">end</code> shall contain a date-time with at least hours and minutes (and hence timezone) which shall be equal to or after <code class="language-plaintext highlighter-rouge">start</code>.</li>
+          <li><code class="language-plaintext highlighter-rouge">frequency</code>: shall be specified</li>
+          <li><code class="language-plaintext highlighter-rouge">count</code>: is optional, required when <code class="language-plaintext highlighter-rouge">countMax</code> is not empty</li>
+          <li><code class="language-plaintext highlighter-rouge">countMax</code>: is optional</li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">occurrenceTiming</code> recurring: the elements of <code class="language-plaintext highlighter-rouge">Timing.repeat</code> shall adhere to:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">boundsPeriod</code>: shall be specified and shall contain at least <code class="language-plaintext highlighter-rouge">start</code> containing a date-time with at least hours and minutes (and hence timezone). If present, <code class="language-plaintext highlighter-rouge">end</code> shall contain a date-time with at least hours and minutes (and hence timezone) which shall be equal to or after <code class="language-plaintext highlighter-rouge">start</code>.</li>
+          <li><code class="language-plaintext highlighter-rouge">frequency</code>: shall be specified</li>
+          <li><code class="language-plaintext highlighter-rouge">dayOfWeek</code>: optional. When one or more values specified, <code class="language-plaintext highlighter-rouge">period</code> and <code class="language-plaintext highlighter-rouge">periodUnit</code> shall specify either no value (being empty), 1 d (one day), pos-integer wk (week).</li>
+          <li><code class="language-plaintext highlighter-rouge">timeOfDay</code>: optional. When one or more values specified, <code class="language-plaintext highlighter-rouge">period</code> and <code class="language-plaintext highlighter-rouge">periodUnit</code> shall specify either no value (being empty), pos-integer d (day), pos-integer wk (week), pos-integer mo (month), or pos-integer a (year).</li>
+          <li><code class="language-plaintext highlighter-rouge">durationUnit</code>: required when <code class="language-plaintext highlighter-rouge">duration</code> is specified. Shall be one of s, min, h, d, wk, a.</li>
+          <li><code class="language-plaintext highlighter-rouge">period</code>: optional. When empty, it corresponds to occurrence every one day (every day).</li>
+          <li><code class="language-plaintext highlighter-rouge">periodUnit</code>: required when <code class="language-plaintext highlighter-rouge">period</code> is not empty. Shall be one of min, h, d, wk, mo, a.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>See the <a href="https://ehealth-dk.atlassian.net/wiki/spaces/EDTW/pages/1661665301/Adhering+to+Care+Plans+and+Measurement+Regimes#When-an-Activity-is-Supposed-to-Happen---The-Notion-of-Resolved-Timing">wiki</a> for examples.</p>
+  </li>
 </ul>
 
 
@@ -2334,7 +2372,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 2, 2024 14:02+0000">2024-09-02</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 5, 2024 10:04+0000">2024-11-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

@@ -3,15 +3,15 @@
 <OperationDefinition xmlns="http://hl7.org/fhir">
   <id value="-s-execute-careplan-customization-stats"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-execute-careplan-customization-stats</b></p><a name="-s-execute-careplan-customization-stats"> </a><a name="hc-s-execute-careplan-customization-stats"> </a><a name="-s-execute-careplan-customization-stats-en-US"> </a><p>URL: [base]/$execute-careplan-customization-stats</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td><td/><td/></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-execute-careplan-customization-stats</b></p><a name="-s-execute-careplan-customization-stats"> </a><a name="hc-s-execute-careplan-customization-stats"> </a><a name="-s-execute-careplan-customization-stats-da-DK"> </a><p>URL: [base]/$execute-careplan-customization-stats</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td><td/><td/></tr></table></div>
   </text>
   <url value="https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-execute-careplan-customization-stats"/>
-  <version value="3.2.0"/>
+  <version value="3.3.0"/>
   <name value="execute-careplan-customization-stats"/>
   <title value="Execute careplan customization stats"/>
   <status value="active"/>
   <kind value="operation"/>
-  <date value="2024-09-02T14:02:47+00:00"/>
+  <date value="2024-11-05T10:04:41+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -21,6 +21,13 @@
     </telecom>
   </contact>
   <description value="### Report Contents&#xA;This report contains a count of patient specific modifications of:&#xA;- Measurement schedule timing&#xA;- Reference ranges&#xA;### Grouping &#xA;This report is grouped by PlanDefinition. Each group is returned in a separate JSon file.&#xA;### Parameters&#xA;- organization: Filter on EpisodeOfCare.managingOrganization match&#xA;- period: Filter on CarePlan.period overlap&#xA;&#xA;### Output&#xA;Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.&#xA;### Example output&#xA;EHealthPlanDefinition is a Fhir resource. See the implementation guide for details&#xA;&#xA;    {&#xA;        'EHealthPlanDefinition': {&#xA;            'resourceType': 'PlanDefinition',&#xA;            'id': '53450',&#xA;            'meta': {&#xA;                'versionId': '1',&#xA;                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition']&#xA;            },&#xA;            'extension': [{&#xA;                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role',&#xA;                    'extension': [{&#xA;                            'url': 'reference',&#xA;                            'valueReference': {&#xA;                                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/85109'&#xA;                            }&#xA;                        }, {&#xA;                            'url': 'role',&#xA;                            'valueCodeableConcept': {&#xA;                                'coding': [{&#xA;                                        'system': 'http://ehealth.sundhed.dk/cs/modifier-role',&#xA;                                        'code': 'owner'&#xA;                                    }&#xA;                                ]&#xA;                            }&#xA;                        }&#xA;                    ]&#xA;                }&#xA;            ],&#xA;            'version': '97219ba1-2202-42a1-b99d-45de3a506b40',&#xA;            'status': 'active'&#xA;        },&#xA;        'CarePlanCustomizationSummary': {&#xA;            'timingCustomizationCount': 1,&#xA;            'referenceRangeCustomizationCount': 1&#xA;        }&#xA;    }"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
   <affectsState value="true"/>
   <code value="execute-careplan-customization-stats"/>
   <system value="true"/>
