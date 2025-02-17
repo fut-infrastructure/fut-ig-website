@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - eHealth Infrastructure v3.3.0</title>
+    <title>Artifacts Summary - eHealth Infrastructure v3.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
     <link href="assets/css/fut.css" rel="stylesheet"/>
 
@@ -41,10 +42,11 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"86"}
-    h3,h4,h5,h6{--heading-prefix:"86.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"87"}
+    h3,h4,h5,h6{--heading-prefix:"87.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         
         <div id="hl7-nav">
           <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
@@ -59,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.3.0 - release
+            <span style="display:inline-block;">3.4.0 - release
 
 
 
-  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+  <img alt=" flag" src="assets/images/zwe.svg" height="16" title=""/>
 
 
             </span>
@@ -221,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.4.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -7287,11 +7289,16 @@ and time of creation, start, and end of execution.</p>
                   title="OperationDefinition/Media-t-get-data">Get media data</a>
             </td>
             <td>
-<p>The get-data operation returns a media resource matching the uuid provided.</p>
+<p>The get-data operation returns a media content matching the uuid provided.</p>
 
 <h3 id="parameter-description">Parameter description</h3>
 <ul>
   <li>uuid: The uuid of the media to return</li>
+</ul>
+
+<h3 id="request-header-description">Request header description</h3>
+<ul>
+  <li>ehealth-thumbnail-size: The size of thumbnail to return instead of original content. If thumbnails are not supported for the media, the original content is returned</li>
 </ul>
 
 <h3 id="output-description">Output description</h3>
@@ -7360,7 +7367,8 @@ Example:&amp;#xD;
       <li>Extra: The service request may be performed outside the resolved timing.</li>
     </ul>
   </li>
-  <li>OccurencesRequested: Expected number of measurements.</li>
+  <li>OccurencesRequested: Expected number of measurements.</li>
+  <li>TotalInvalidated: Number of measurements which are invalidated.</li>
 </ul>
 </td>
          </tr>
@@ -7387,6 +7395,37 @@ Example:&amp;#xD;
             </td>
             <td>
 <p>Import a bundle containing at least one organization tree.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition-ClinicalImpression-t-set-measurement-validity.html"
+                  title="OperationDefinition/ClinicalImpression-t-set-measurement-validity">Invalidate / Retract Invalidation of a Measurement</a>
+            </td>
+            <td>
+<p>This operation is used to invalidate or retract an invalidation of a Measurement.</p>
+<h2 id="input">Input</h2>
+<p>The input parameter is a ClinicalImpression resource with the following values:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">status</code> - The status of the ClinicalImpression must be <code class="language-plaintext highlighter-rouge">completed</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">investigation.item</code> - Versioned reference to the Measurement that is to be invalidated or retracted.</li>
+  <li><code class="language-plaintext highlighter-rouge">investigation.item</code> - Unversioned reference to the Measurement that is to be invalidated or retracted.</li>
+  <li><code class="language-plaintext highlighter-rouge">subject</code> - Reference to the Patient .</li>
+  <li><code class="language-plaintext highlighter-rouge">episodeOfCare</code> - Reference to the EpisodeOfCare that the Measurement is part of.</li>
+  <li><code class="language-plaintext highlighter-rouge">code</code> - Should use <code class="language-plaintext highlighter-rouge">MeasurementAssessment</code> from <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/cs/clinicalimpression-codes</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">finding.code</code> - The finding code must be <code class="language-plaintext highlighter-rouge">measurement-invalidated</code> or <code class="language-plaintext highlighter-rouge">measurement-invalidation-retracted</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">decision</code> - The decision code is required if <code class="language-plaintext highlighter-rouge">finding.code</code> is <code class="language-plaintext highlighter-rouge">measurement-invalidated</code>. The decision code must be <code class="language-plaintext highlighter-rouge">invalidated-fulfills</code> or <code class="language-plaintext highlighter-rouge">invalidated-is-not-fulfillment</code>.
+    <h2 id="output">Output</h2>
+    <p>The operation returns the persisted ClinicalImpression:</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">clinicalImpression</code> - The persisted ClinicalImpression resource with updated assessor values.
+    <h2 id="operation-side-effects">Operation side effects</h2>
+  </li>
+  <li>The operation will update the status of the Measurement that is being invalidated or has the invalidation retracted to <code class="language-plaintext highlighter-rouge">entered-in-error</code> or <code class="language-plaintext highlighter-rouge">completed</code> respectively.</li>
+  <li>The operation will update the status to <code class="language-plaintext highlighter-rouge">entered-in-error</code> for any previous invalidation or invalidation retraction ClinicalImpression for the referenced Measurement, indicating that the previous ClinicalImpression is no longer used to represent the validity of the Measurement. The operation performs a search for any existing ClinicalImpression in the measurement validity cycle, and does not rely on/update the <code class="language-plaintext highlighter-rouge">previous</code> field on the input ClinicalImpression. If the input ClinicalImpression is for invalidation retraction, there must exist a ClinicalImpression invalidating the Measurement.</li>
+  <li>The operation will add an additional investigation with the code <code class="language-plaintext highlighter-rouge">item-modified</code>, referencing the Measurement version after the patch has been applied.</li>
+  <li>The operation will set assessor values (assessor, assessorOrganization and assessorOther). If the user is of type PRACTITIONER, assessor and assessorOrganization will be set. If the user is of type PATIENT, assessorOther will be set`.</li>
+</ul>
 </td>
          </tr>
          <tr>
@@ -10929,6 +10968,8 @@ First example is the monthly data:</p>
             <td>
 <p>The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted.</p>
 
+<p>Media resource inline content in <code class="language-plaintext highlighter-rouge">content.data</code> will be stored outside the resource, and the <code class="language-plaintext highlighter-rouge">content.url</code> for retrieval is set on the resource. Image content is anonymized by removing sensitive metadate before storage. Image content is processed to generate thumbnail representations in the thumbnail element.</p>
+
 <h3 id="parameter-description">Parameter description</h3>
 <p>measurement: Bundle containing:</p>
 <ul>
@@ -10939,6 +10980,7 @@ First example is the monthly data:</p>
 </ul>
 
 <p>All resources in the Bundle must refer to the same Patient and EpisodeOfCare.
+All measurement resources in the Bundle must have status either <code class="language-plaintext highlighter-rouge">completed</code> or <code class="language-plaintext highlighter-rouge">final</code> (<code class="language-plaintext highlighter-rouge">completed</code> in case of Media/QuestionnaireResponse and <code class="language-plaintext highlighter-rouge">final</code> in case of Observation).
 All resources in the Bundle as well as the created Provenance will receive any missing system tags (ehealth-system CodeSystem) provided by the referenced EpisodeOfCare.
 The request will be denied if any resource in the Bundle contains a system tag, which is not present on the referenced EpisodeOfCare</p>
 
@@ -11429,6 +11471,12 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-observation-wound-dimensions.html"
+                  title="StructureDefinition/ehealth-observation-wound-dimensions">ehealth-observation-wound-dimensions</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-organization.html"
                   title="StructureDefinition/ehealth-organization">ehealth-organization</a>
             </td>
@@ -11503,6 +11551,12 @@ Http response code 404 will be returned if no related SOR organization could be 
             <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-task.html"
                   title="StructureDefinition/ehealth-task">ehealth-task</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-transformation-documentreference.html"
+                  title="StructureDefinition/ehealth-transformation-documentreference">ehealth-transformation-documentreference</a>
             </td>
          </tr>
          <tr>
@@ -11914,6 +11968,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-media-thumbnail.html"
+                  title="StructureDefinition/ehealth-media-thumbnail">Media Thumbnail representation</a>
+            </td>
+            <td>
+<p>A downsampled version of a Media resource content.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-clinicalimpression-mediaInvestigationItem.html"
                   title="StructureDefinition/ehealth-clinicalimpression-mediaInvestigationItem">Media investigation item</a>
             </td>
@@ -11955,6 +12018,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Period of name and address protection. Patients with name and address protection are marked with security label ‘restricted’ (R in http://hl7.org/fhir/v3/Confidentiality).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-observation-method.html"
+                  title="StructureDefinition/ehealth-observation-method">Observation method</a>
+            </td>
+            <td>
+<p>The method of acquiring the value of an observation.</p>
 </td>
          </tr>
          <tr>
@@ -12211,6 +12283,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-media-related-to.html"
+                  title="StructureDefinition/ehealth-media-related-to">Related to</a>
+            </td>
+            <td>
+<p>Related to other media.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-organization-relatedTo.html"
                   title="StructureDefinition/ehealth-organization-relatedTo">Related to</a>
             </td>
@@ -12292,6 +12373,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-media-series-id.html"
+                  title="StructureDefinition/ehealth-media-series-id">Series ID</a>
+            </td>
+            <td>
+<p>Series identifier.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-servicerequest-statusHistory.html"
                   title="StructureDefinition/ehealth-servicerequest-statusHistory">ServiceRequest status history</a>
             </td>
@@ -12342,6 +12432,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Defines a decimal number step-value for the slider in the questionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-document-sharing-state.html"
+                  title="StructureDefinition/ehealth-document-sharing-state">State of the document sharing</a>
+            </td>
+            <td>
+<p>Where in the sharing process the document is, and the reason why</p>
 </td>
          </tr>
          <tr>
@@ -12503,6 +12602,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-media-usage-mode.html"
+                  title="StructureDefinition/ehealth-media-usage-mode">Usage mode</a>
+            </td>
+            <td>
+<p>Usage mode of the media.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-vmr-uri.html"
                   title="StructureDefinition/ehealth-vmr-uri">VMR URI</a>
             </td>
@@ -12553,6 +12661,24 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>The organization that the assessor is a part of.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-clinicalimpression-assessor-other.html"
+                  title="StructureDefinition/ehealth-clinicalimpression-assessor-other">assessor-other</a>
+            </td>
+            <td>
+<p>The patient or the related person performing the assessment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-effectivePeriod.html"
+                  title="StructureDefinition/ehealth-effectivePeriod">effectivePeriod</a>
+            </td>
+            <td>
+<p>Clinically relevant time-period for questionnaire response.</p>
 </td>
          </tr>
          <tr>
@@ -12677,6 +12803,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Basic resource type</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-body-site.html"
+                  title="ValueSet/ehealth-body-site">Body site</a>
+            </td>
+            <td>
+<p>Body site</p>
 </td>
          </tr>
          <tr>
@@ -12968,6 +13103,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-document-sharing-state.html"
+                  title="ValueSet/document-sharing-state">Document Sharing State</a>
+            </td>
+            <td>
+<p>Document Sharing State</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-document-type.html"
                   title="ValueSet/ehealth-document-type">Document Type</a>
             </td>
@@ -13093,6 +13237,42 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-media-codes.html"
+                  title="ValueSet/ehealth-media-codes">Media Codes</a>
+            </td>
+            <td>
+<p>Media codes value set</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-media-usage-mode.html"
+                  title="ValueSet/ehealth-media-usage-mode">Media Usage Mode</a>
+            </td>
+            <td>
+<p>Media Usage Mode</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-media-modality.html"
+                  title="ValueSet/ehealth-media-modality">Media modality</a>
+            </td>
+            <td>
+<p>Media modality</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-media-view.html"
+                  title="ValueSet/ehealth-media-view">Media view</a>
+            </td>
+            <td>
+<p>Media view</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-message-category.html" title="ValueSet/message-category">MessageCategory</a>
             </td>
             <td>
@@ -13141,6 +13321,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Observation codes value set.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-observation-method.html"
+                  title="ValueSet/ehealth-observation-method">Observation Method</a>
+            </td>
+            <td>
+<p>Identifies how an observation is acquired.</p>
 </td>
          </tr>
          <tr>
@@ -13414,6 +13603,24 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-thumbnail-size-category.html"
+                  title="ValueSet/ehealth-thumbnail-size-category">Thumbnail Size Category</a>
+            </td>
+            <td>
+<p>Thumbnail size is a value set with the available sizes of low resolution media representations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-thumbnail-status.html"
+                  title="ValueSet/ehealth-thumbnail-status">Thumbnail Status</a>
+            </td>
+            <td>
+<p>Thumbnail status is a value set for the status of low resolution media representations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-condition-conditions.html"
                   title="ValueSet/ehealth-condition-conditions">Tilstandskoder</a>
             </td>
@@ -13495,11 +13702,68 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-program.html" title="ValueSet/ehealth-program">eHealth Program</a>
+            </td>
+            <td>
+<p>Programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-usage-context-type.html"
                   title="ValueSet/ehealth-usage-context-type">eHealth Usage Context Type</a>
             </td>
             <td>
-<p>eHealth Usage Context types.</p>
+<p>The following table supersedes the expansion table below for the following codes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>System</th>
+      <th>Display</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>focus</td>
+      <td>http://terminology.hl7.org/CodeSystem/usage-context-type</td>
+      <td>Clinical Focus</td>
+      <td>The clinical concept(s) addressed by the artifact/element. For example, disease, diagnostic test interpretation, medication ordering as in http://ehealth.sundhed.dk/vs/conditions</td>
+    </tr>
+    <tr>
+      <td>program</td>
+      <td>http://terminology.hl7.org/CodeSystem/usage-context-type</td>
+      <td>Program</td>
+      <td>A program/project of work for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/ehealth-program</td>
+    </tr>
+    <tr>
+      <td>activity</td>
+      <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
+      <td>Activity Type</td>
+      <td>The type of activity in which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.</td>
+    </tr>
+    <tr>
+      <td>supports</td>
+      <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
+      <td>Supports</td>
+      <td>The type of activity supported by a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
+      <td>Range</td>
+      <td>The type of reference range with which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/reference-range-type value set.</td>
+    </tr>
+    <tr>
+      <td>questionnaire-related</td>
+      <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
+      <td>Questionnaire Related</td>
+      <td>The type of questionnaire element with which it is relevant to use a coded values/id registries having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/questionnaire-elements value set.</td>
+    </tr>
+  </tbody>
+</table>
 </td>
          </tr>
          <tr>
@@ -13951,6 +14215,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-document-sharing-state.html"
+                  title="CodeSystem/document-sharing-state">Document Sharing State</a>
+            </td>
+            <td>
+<p>Document Sharing State</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-document-type.html"
                   title="CodeSystem/ehealth-document-type">Document Type</a>
             </td>
@@ -14209,6 +14482,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ehealth.sundhed.dk-loinc.org-supplement.html"
+                  title="CodeSystem/ehealth.sundhed.dk-loinc.org-supplement">LOINC Code System Supplement</a>
+            </td>
+            <td>
+<p>LOINC is a freely available international standard for tests, measurements, and observations</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-library-type.html"
                   title="CodeSystem/ehealth-library-type">Library Type</a>
             </td>
@@ -14250,6 +14532,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>MedCom Instrument Codes.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-media-usage-mode.html"
+                  title="CodeSystem/ehealth-media-usage-mode">Media usage mode</a>
+            </td>
+            <td>
+<p>Identifies the what the media resource is used for.</p>
 </td>
          </tr>
          <tr>
@@ -14313,6 +14604,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>OIO BPP Role</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-observation-method.html"
+                  title="CodeSystem/ehealth-observation-method">Observation Method</a>
+            </td>
+            <td>
+<p>Identifies how an observation is acquired.</p>
 </td>
          </tr>
          <tr>
@@ -14514,6 +14814,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ehealth.sundhed.dk-snomed.info-sct-supplement.html"
+                  title="CodeSystem/ehealth.sundhed.dk-snomed.info-sct-supplement">SNOMED CT Code System Supplement</a>
+            </td>
+            <td>
+<p>SNOMED Clinical Terms</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-sor-organization-specialty.html"
                   title="CodeSystem/ehealth-sor-organization-specialty">SOR Organization Specialty</a>
             </td>
@@ -14577,6 +14886,24 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-thumbnail-size.html"
+                  title="CodeSystem/ehealth-thumbnail-size">Thumbnail Size Category</a>
+            </td>
+            <td>
+<p>Thumbnail size is a code system for the sizes of low resolution media representations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-thumbnail-status.html"
+                  title="CodeSystem/ehealth-thumbnail-status">Thumbnail status</a>
+            </td>
+            <td>
+<p>Thumbnail status is a code system for the status of low resolution media representations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-topic-type.html"
                   title="CodeSystem/ehealth-topic-type">Topic Type</a>
             </td>
@@ -14618,6 +14945,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>View types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-program.html"
+                  title="CodeSystem/ehealth-program">eHealth Program</a>
+            </td>
+            <td>
+<p>Codes for programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use.</p>
 </td>
          </tr>
          <tr>
@@ -14908,7 +15244,7 @@ Http response code 404 will be returned if no related SOR organization could be 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 5, 2024 10:04+0000">2024-11-05</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 17, 2025 14:41+0000">2025-02-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

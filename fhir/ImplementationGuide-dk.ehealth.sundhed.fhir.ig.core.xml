@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core"/>
-  <version value="3.3.0"/>
+  <version value="3.4.0"/>
   <name value="eHealthInfrastructure"/>
   <title value="eHealth Infrastructure"/>
   <status value="active"/>
-  <date value="2024-11-05T10:04:41+00:00"/>
+  <date value="2025-02-17T14:41:06+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -37,7 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="6.0.2"/>
+    <version value="6.2.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -45,7 +45,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.1.0"/>
+    <version value="5.2.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_dk_core">
     <uri value="http://hl7.dk/fhir/core/ImplementationGuide/hl7.fhir.dk.core"/>
@@ -275,7 +275,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#0.2.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -857,6 +857,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ehealth-clinicalimpression-assessor-other"/>
+      </reference>
+      <name value="assessor-other"/>
+      <description value="The patient or the related person performing the assessment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ehealth-assigning-careteam"/>
       </reference>
       <name value="Assigning careteam"/>
@@ -915,6 +926,17 @@
       </reference>
       <name value="Basic resource type"/>
       <description value="Basic resource type"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-body-site"/>
+      </reference>
+      <name value="Body site"/>
+      <description value="Body site"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2050,6 +2072,28 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/document-sharing-state"/>
+      </reference>
+      <name value="Document Sharing State"/>
+      <description value="Document Sharing State"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/document-sharing-state"/>
+      </reference>
+      <name value="Document Sharing State"/>
+      <description value="Document Sharing State"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/ehealth-document-type"/>
       </reference>
       <name value="Document Type"/>
@@ -2085,6 +2129,17 @@
         <reference value="CapabilityStatement/document-transformation"/>
       </reference>
       <name value="document-transformation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-effectivePeriod"/>
+      </reference>
+      <name value="effectivePeriod"/>
+      <description value="Clinically relevant time-period for questionnaire response."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2158,6 +2213,28 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/ehealth-program"/>
+      </reference>
+      <name value="eHealth Program"/>
+      <description value="Codes for programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-program"/>
+      </reference>
+      <name value="eHealth Program"/>
+      <description value="Programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/ehealth-system"/>
       </reference>
       <name value="Ehealth System"/>
@@ -2183,7 +2260,7 @@
         <reference value="ValueSet/ehealth-usage-context-type"/>
       </reference>
       <name value="eHealth Usage Context Type"/>
-      <description value="eHealth Usage Context types."/>
+      <description value="The following table supersedes the expansion table below for the following codes:&#xA;&#xA;| Code                | System                                                                                     | Display           | Definition                                                                                                                                                                                   |&#xA;|---------------------|--------------------------------------------------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|&#xA;| focus               | http://terminology.hl7.org/CodeSystem/usage-context-type                                    | Clinical Focus    | The clinical concept(s) addressed by the artifact/element. For example, disease, diagnostic test interpretation, medication ordering as in http://ehealth.sundhed.dk/vs/conditions                                                |&#xA;| program             | http://terminology.hl7.org/CodeSystem/usage-context-type                                    | Program           | A program/project of work for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/ehealth-program                                                                                                         |&#xA;| activity            | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type                                    | Activity Type     | The type of activity in which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set. |&#xA;| supports            | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type                                    | Supports          | The type of activity supported by a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set. |&#xA;| range               | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type                                    | Range             | The type of reference range with which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/reference-range-type value set. |&#xA;| questionnaire-related | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type                                    | Questionnaire Related | The type of questionnaire element with which it is relevant to use a coded values/id registries having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/questionnaire-elements value set. |"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2462,6 +2539,16 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ehealth-observation-wound-dimensions"/>
+      </reference>
+      <name value="ehealth-observation-wound-dimensions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ehealth-organization"/>
       </reference>
       <name value="ehealth-organization"/>
@@ -2585,6 +2672,16 @@
         <reference value="StructureDefinition/ehealth-task"/>
       </reference>
       <name value="ehealth-task"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-transformation-documentreference"/>
+      </reference>
+      <name value="ehealth-transformation-documentreference"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3384,7 +3481,7 @@
         <reference value="OperationDefinition/Media-t-get-data"/>
       </reference>
       <name value="Get media data"/>
-      <description value="The get-data operation returns a media resource matching the uuid provided.&#xA;&#xA;&#xA;### Parameter description&#xA;- uuid: The uuid of the media to return&#xA;&#xA;&#xA;### Output description&#xA;The result of this operation returns a Binary containing the media found from the provided uuid"/>
+      <description value="The get-data operation returns a media content matching the uuid provided.&#xA;&#xA;&#xA;### Parameter description&#xA;- uuid: The uuid of the media to return&#xA;&#xA;&#xA;### Request header description&#xA;- ehealth-thumbnail-size: The size of thumbnail to return instead of original content. If thumbnails are not supported for the media, the original content is returned&#xA;&#xA;&#xA;### Output description&#xA;The result of this operation returns a Binary containing the media found from the provided uuid"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3395,7 +3492,7 @@
         <reference value="OperationDefinition/-s-get-patient-procedures"/>
       </reference>
       <name value="Get patient procedures"/>
-      <description value="This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.&#xD;&#xA;## Input&#xD;&#xA;The operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.&#xD;&#xA;### Patient reference&#xD;&#xA;Mandatory reference for the Patient which the procedure overview is computed for.&#xD;&#xA;### Start and end datetimes&#xD;&#xA;Start and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.&#xD;&#xA;### EpisodeOfCare list&#xD;&#xA;The list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.&#xD;&#xA;### Condition Coding list&#xD;&#xA;The list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.&#xD;&#xA;### Tag Coding list&#xD;&#xA;The list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.&#xD;&#xA;### Extra boolean&#xD;&#xA;This is an optional parameter that can be set to true if activities allowing 'Extra' submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.&#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.&#xD;&#xA;### Output Parameters&#xD;&#xA;The output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. &#xD;&#xA;&#xD;&#xA;Rows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value &#xD;&#xA;```&#xD;&#xA;Example:&#xD;&#xA;'resource': {&#xD;&#xA;    'resourceType': 'Parameters',&#xD;&#xA;    'parameter': [{&#xD;&#xA;            'name': 'item_1',&#xD;&#xA;            'part': [{&#xD;&#xA;                    'name': 'CarePlan',&#xD;&#xA;                    'valueReference': {&#xD;&#xA;                        'reference': 'https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581'&#xD;&#xA;                    }&#xD;&#xA;            }]&#xD;&#xA;    }]&#xD;&#xA;}&#xD;&#xA; ```&#xD;&#xA;&#xD;&#xA;### Columns&#xD;&#xA;&#xD;&#xA;- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.&#xD;&#xA;- ServiceRequest: Reference to the ServiceRequest.&#xD;&#xA;- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).&#xD;&#xA;- Activity: Description of the planned activity.&#xD;&#xA;- ResolvedTimingStart: A planned start time for the activity in the requested period.&#xD;&#xA;- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.&#xD;&#xA;- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.&#xD;&#xA;- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.&#xD;&#xA;- TimingType:&#xD;&#xA;    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.&#xD;&#xA;    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.&#xD;&#xA;    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.&#xD;&#xA;    * Extra: The service request may be performed outside the resolved timing.&#xD;&#xA;- OccurencesRequested: Expected number of measurements."/>
+      <description value="This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.&#xD;&#xA;## Input&#xD;&#xA;The operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.&#xD;&#xA;### Patient reference&#xD;&#xA;Mandatory reference for the Patient which the procedure overview is computed for.&#xD;&#xA;### Start and end datetimes&#xD;&#xA;Start and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.&#xD;&#xA;### EpisodeOfCare list&#xD;&#xA;The list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.&#xD;&#xA;### Condition Coding list&#xD;&#xA;The list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.&#xD;&#xA;### Tag Coding list&#xD;&#xA;The list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.&#xD;&#xA;### Extra boolean&#xD;&#xA;This is an optional parameter that can be set to true if activities allowing 'Extra' submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.&#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.&#xD;&#xA;### Output Parameters&#xD;&#xA;The output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. &#xD;&#xA;&#xD;&#xA;Rows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value &#xD;&#xA;```&#xD;&#xA;Example:&#xD;&#xA;'resource': {&#xD;&#xA;    'resourceType': 'Parameters',&#xD;&#xA;    'parameter': [{&#xD;&#xA;            'name': 'item_1',&#xD;&#xA;            'part': [{&#xD;&#xA;                    'name': 'CarePlan',&#xD;&#xA;                    'valueReference': {&#xD;&#xA;                        'reference': 'https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581'&#xD;&#xA;                    }&#xD;&#xA;            }]&#xD;&#xA;    }]&#xD;&#xA;}&#xD;&#xA; ```&#xD;&#xA;&#xD;&#xA;### Columns&#xD;&#xA;&#xD;&#xA;- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.&#xD;&#xA;- ServiceRequest: Reference to the ServiceRequest.&#xD;&#xA;- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).&#xD;&#xA;- Activity: Description of the planned activity.&#xD;&#xA;- ResolvedTimingStart: A planned start time for the activity in the requested period.&#xD;&#xA;- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.&#xD;&#xA;- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.&#xD;&#xA;- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.&#xD;&#xA;- TimingType:&#xD;&#xA;    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.&#xD;&#xA;    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.&#xD;&#xA;    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.&#xD;&#xA;    * Extra: The service request may be performed outside the resolved timing.&#xD;&#xA;- OccurencesRequested: Expected number of measurements.&#xD;&#xA;- TotalInvalidated: Number of measurements which are invalidated."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3612,6 +3709,17 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
+        <reference value="OperationDefinition/ClinicalImpression-t-set-measurement-validity"/>
+      </reference>
+      <name value="Invalidate / Retract Invalidation of a Measurement"/>
+      <description value="This operation is used to invalidate or retract an invalidation of a Measurement.&#xD;&#xA;## Input&#xD;&#xA;The input parameter is a ClinicalImpression resource with the following values:&#xD;&#xA;- `status` - The status of the ClinicalImpression must be `completed`.&#xD;&#xA;- `investigation.item` - Versioned reference to the Measurement that is to be invalidated or retracted.&#xD;&#xA;- `investigation.item` - Unversioned reference to the Measurement that is to be invalidated or retracted.&#xD;&#xA;- `subject` - Reference to the Patient .&#xD;&#xA;- `episodeOfCare` - Reference to the EpisodeOfCare that the Measurement is part of.&#xD;&#xA;- `code` - Should use `MeasurementAssessment` from `http://ehealth.sundhed.dk/cs/clinicalimpression-codes`.&#xD;&#xA;- `finding.code` - The finding code must be `measurement-invalidated` or `measurement-invalidation-retracted`.&#xD;&#xA;- `decision` - The decision code is required if `finding.code` is `measurement-invalidated`. The decision code must be `invalidated-fulfills` or `invalidated-is-not-fulfillment`.&#xD;&#xA;## Output&#xD;&#xA;The operation returns the persisted ClinicalImpression:&#xD;&#xA;- `clinicalImpression` - The persisted ClinicalImpression resource with updated assessor values.&#xD;&#xA;## Operation side effects&#xD;&#xA;- The operation will update the status of the Measurement that is being invalidated or has the invalidation retracted to `entered-in-error` or `completed` respectively.&#xD;&#xA;- The operation will update the status to `entered-in-error` for any previous invalidation or invalidation retraction ClinicalImpression for the referenced Measurement, indicating that the previous ClinicalImpression is no longer used to represent the validity of the Measurement. The operation performs a search for any existing ClinicalImpression in the measurement validity cycle, and does not rely on/update the `previous` field on the input ClinicalImpression. If the input ClinicalImpression is for invalidation retraction, there must exist a ClinicalImpression invalidating the Measurement.&#xD;&#xA;- The operation will add an additional investigation with the code `item-modified`, referencing the Measurement version after the patch has been applied.&#xD;&#xA;- The operation will set assessor values (assessor, assessorOrganization and assessorOther). If the user is of type PRACTITIONER, assessor and assessorOrganization will be set. If the user is of type PATIENT, assessorOther will be set`."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
         <reference value="OperationDefinition/EpisodeOfCare-i-is-context-allowed"/>
       </reference>
       <name value="Is context allowed"/>
@@ -3717,6 +3825,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth.sundhed.dk-loinc.org-supplement"/>
+      </reference>
+      <name value="LOINC Code System Supplement"/>
+      <description value="LOINC is a freely available international standard for tests, measurements, and observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -3815,6 +3934,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-media-codes"/>
+      </reference>
+      <name value="Media Codes"/>
+      <description value="Media codes value set"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -3822,6 +3952,61 @@
       </reference>
       <name value="Media investigation item"/>
       <description value="Investigation item for Media resources so they can be approved."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-media-modality"/>
+      </reference>
+      <name value="Media modality"/>
+      <description value="Media modality"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-media-thumbnail"/>
+      </reference>
+      <name value="Media Thumbnail representation"/>
+      <description value="A downsampled version of a Media resource content."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-media-usage-mode"/>
+      </reference>
+      <name value="Media usage mode"/>
+      <description value="Identifies the what the media resource is used for."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-media-usage-mode"/>
+      </reference>
+      <name value="Media Usage Mode"/>
+      <description value="Media Usage Mode"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-media-view"/>
+      </reference>
+      <name value="Media view"/>
+      <description value="Media view"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3996,6 +4181,39 @@
       </reference>
       <name value="Observation Codes"/>
       <description value="Observation codes value set."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-observation-method"/>
+      </reference>
+      <name value="Observation method"/>
+      <description value="The method of acquiring the value of an observation."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-observation-method"/>
+      </reference>
+      <name value="Observation Method"/>
+      <description value="Identifies how an observation is acquired."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-observation-method"/>
+      </reference>
+      <name value="Observation Method"/>
+      <description value="Identifies how an observation is acquired."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4910,6 +5128,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ehealth-media-related-to"/>
+      </reference>
+      <name value="Related to"/>
+      <description value="Related to other media."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ehealth-organization-relatedTo"/>
       </reference>
       <name value="Related to"/>
@@ -5348,6 +5577,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ehealth-media-series-id"/>
+      </reference>
+      <name value="Series ID"/>
+      <description value="Series identifier."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ehealth-servicerequest-statusHistory"/>
       </reference>
       <name value="ServiceRequest status history"/>
@@ -5456,6 +5696,17 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/ehealth.sundhed.dk-snomed.info-sct-supplement"/>
+      </reference>
+      <name value="SNOMED CT Code System Supplement"/>
+      <description value="SNOMED Clinical Terms"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/ehealth-sor-organization-specialty"/>
       </reference>
       <name value="SOR Organization Specialty"/>
@@ -5511,6 +5762,17 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/ehealth-document-sharing-state"/>
+      </reference>
+      <name value="State of the document sharing"/>
+      <description value="Where in the sharing process the document is, and the reason why"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/ehealth-status"/>
       </reference>
       <name value="Status"/>
@@ -5536,7 +5798,7 @@
         <reference value="OperationDefinition/-s-submit-measurement"/>
       </reference>
       <name value="Submit measurement"/>
-      <description value="The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted. &#xA;&#xA;&#xA;### Parameter description&#xA;measurement: Bundle containing:&#xA;- 0..* Observation (ehealth-observation profile)&#xA;- 0..* QuestionnaireResponse (ehealth-questionnaireresponse profile)&#xA;- 0..* Media (ehealth-media profile)&#xA;- 0..* Provenance (ehealth-provenance profile). Each Provenance (which is intended for capturing reuse of measurement(s) – as described in the eHealth Observation profile introduction) must refer to other resources in the Bundle as target in the format &quot;urn:oid:&lt;the oid&gt;&quot; or &quot;urn:uuid:&lt;the uuid&gt;.&quot;.&#xA;&#xA;All resources in the Bundle must refer to the same Patient and EpisodeOfCare.&#xA;All resources in the Bundle as well as the created Provenance will receive any missing system tags (ehealth-system CodeSystem) provided by the referenced EpisodeOfCare.&#xA;The request will be denied if any resource in the Bundle contains a system tag, which is not present on the referenced EpisodeOfCare&#xA;&#xA;&#xA;### Output description&#xA;The returned Bundle contains references to the stored input resources where the id has been substituted.&#xA;&#xA;eHealth infrastructure will substitute the id when saving the resources in a single transaction."/>
+      <description value="The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted. &#xA;&#xA;Media resource inline content in `content.data` will be stored outside the resource, and the `content.url` for retrieval is set on the resource. Image content is anonymized by removing sensitive metadate before storage. Image content is processed to generate thumbnail representations in the thumbnail element. &#xA;&#xA;&#xA;### Parameter description&#xA;measurement: Bundle containing:&#xA;- 0..* Observation (ehealth-observation profile)&#xA;- 0..* QuestionnaireResponse (ehealth-questionnaireresponse profile)&#xA;- 0..* Media (ehealth-media profile)&#xA;- 0..* Provenance (ehealth-provenance profile). Each Provenance (which is intended for capturing reuse of measurement(s) – as described in the eHealth Observation profile introduction) must refer to other resources in the Bundle as target in the format &quot;urn:oid:&lt;the oid&gt;&quot; or &quot;urn:uuid:&lt;the uuid&gt;.&quot;.&#xA;&#xA;All resources in the Bundle must refer to the same Patient and EpisodeOfCare.&#xA;All measurement resources in the Bundle must have status either `completed` or `final` (`completed` in case of Media/QuestionnaireResponse and `final` in case of Observation).&#xA;All resources in the Bundle as well as the created Provenance will receive any missing system tags (ehealth-system CodeSystem) provided by the referenced EpisodeOfCare.&#xA;The request will be denied if any resource in the Bundle contains a system tag, which is not present on the referenced EpisodeOfCare&#xA;&#xA;&#xA;### Output description&#xA;The returned Bundle contains references to the stored input resources where the id has been substituted.&#xA;&#xA;eHealth infrastructure will substitute the id when saving the resources in a single transaction."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5754,6 +6016,50 @@
       </reference>
       <name value="threadId"/>
       <description value="Search parameter for finding communication based on thread id"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-thumbnail-size"/>
+      </reference>
+      <name value="Thumbnail Size Category"/>
+      <description value="Thumbnail size is a code system for the sizes of low resolution media representations."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-thumbnail-size-category"/>
+      </reference>
+      <name value="Thumbnail Size Category"/>
+      <description value="Thumbnail size is a value set with the available sizes of low resolution media representations."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-thumbnail-status"/>
+      </reference>
+      <name value="Thumbnail status"/>
+      <description value="Thumbnail status is a code system for the status of low resolution media representations."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-thumbnail-status"/>
+      </reference>
+      <name value="Thumbnail Status"/>
+      <description value="Thumbnail status is a value set for the status of low resolution media representations."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -6053,6 +6359,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-media-usage-mode"/>
+      </reference>
+      <name value="Usage mode"/>
+      <description value="Usage mode of the media."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -6327,6 +6644,14 @@
         </extension>
         <nameUrl value="POST_CarePlan_update-care-teams.html"/>
         <title value="POST Care Plan Update Care Teams"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="POST_ClinicalImpression_set-measurement-validity.html"/>
+        </extension>
+        <nameUrl value="POST_ClinicalImpression_set-measurement-validity.html"/>
+        <title value="POST Clinical Impression Set Measurement Validity"/>
         <generation value="markdown"/>
       </page>
       <page>

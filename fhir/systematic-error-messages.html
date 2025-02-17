@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Systematic Error Messages - eHealth Infrastructure v3.3.0</title>
+    <title>Systematic Error Messages - eHealth Infrastructure v3.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
     <link href="assets/css/fut.css" rel="stylesheet"/>
 
@@ -41,10 +42,11 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"79"}
-    h3,h4,h5,h6{--heading-prefix:"79"}</style>
+    <style type="text/css">h2{--heading-prefix:"80"}
+    h3,h4,h5,h6{--heading-prefix:"80"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         
         <div id="hl7-nav">
           <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
@@ -59,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.3.0 - release
+            <span style="display:inline-block;">3.4.0 - release
 
 
 
-  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+  <img alt=" flag" src="assets/images/zwe.svg" height="16" title=""/>
 
 
             </span>
@@ -221,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.3.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.4.0: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Systematic Error Messages</h2>
   
 
@@ -248,7 +250,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">GENERAL_SUBJECT_AND_CONTEXT_NOT_PROVIDED</code>: At least one of subject and context must be provided.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">GENERAL_VALIDATION_ERROR</code>: Validation error: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_VALIDATION_ERROR</code>: Validation error: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_TIMING_VALIDATION_ERROR</code>: Timing is invalid for ServiceRequest with id %s and status %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_VALIDATION_ERROR_NO_OCCURRENCE</code>: Service request with id %s has no occurrence.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_TIMING_OCCURENCE_WITHOUT_START_VALIDATION_ERROR</code>: ServiceRequest with id %s not valid with status: %s since occurrence timing has no start date.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_TRIGGER_ENABLEMENT_VALIDATION_ERROR</code>: ServiceRequest cannot be changed from %s to %s %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">GENERAL_EXPORT_FAILED</code>: Export resource has failed.</p>
@@ -258,6 +272,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">GENERAL_NAMING_SYSTEM_NOT_FOUND</code>: NamingSystem with identifier %s is not found.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_FIELD_ACCESS_FAILURE</code>: Failed to access field: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_FIELD_COMPARE_FAILURE</code>: Failed to compare field: %s</p>
   </li>
 </ul>
 
@@ -271,7 +291,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_STATUS_CHANGE</code>: Illegal status change for action_guidance or view from %s and to %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_CHANGE_OF_ELEMENTS</code>: Illegal element change in either EHealthActonGuidance or EhealthView. If status is equal to Active or Retired, only the following elements can be changed (Recommendation, IntendedAudience, useContext, modifierrole and status)</p>
+    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_CHANGE_OF_ELEMENTS</code>: Illegal element change in either EHealthActonGuidance or EhealthView. If status is equal to Active or Retired, only the following elements can be changed (Recommendation, IntendedAudience, useContext, modifierrole and status). The following differences were found when updating existing resource with id %s: %s.</p>
   </li>
 </ul>
 
@@ -279,7 +299,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for ActivityDefinition with status: %s or %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for ActivityDefinition with status: %s or %s, otherwise, only useContext can be modified. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating ActivityDefinition with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_TO_NOT_ALLOWED_STATE</code>: Update is not allowed for ActivityDefinition with %s status to different than %s status.</p>
@@ -323,6 +346,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_SOURCE_IS_UNSUPPORTED</code>: QuestionnaireResponse with id: '%s' has source '%s', which is not supported - Skipping publication</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_AUTHOR_RESOURCE_NOT_FOUND</code>: QuestionnaireResponse with id: '%s', no resource found for author reference '%s' - Skipping publication</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_SUPPORTING_INFORMATION</code>: Appointment must have supportingInformation</p>
@@ -383,6 +409,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">CDA_XML_VALIDATION_FAILED</code>: Validation of the CDA XML failed: %s</li>
+</ul>
+
+<h4 id="ehealth-clinical">ehealth-clinical</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_VALIDATION_STATE_FINDING_CODE_NOT_ALLOWED</code>: Invalidation/Invalidation Retraction finding code is not allowed for ClinicalImpression outside custom operation.</li>
+</ul>
+
+<h4 id="ehealth-codesystem">ehealth-codesystem</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CODESYSTEM_CONCEPT_CHANGE_NOT_ALLOWED_WHEN_ACTIVE</code>: Not allowed to remove or update concept when status is active.</li>
 </ul>
 
 <h4 id="ehealth-communicationrequest">ehealth-communicationrequest</h4>
@@ -508,6 +546,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_IS_CONTEXT_ALLOWED_MATCH_NOT_FOUND</code>: It is not possible to set the Episode Of Care as a context</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_TEAM_REFERENCE_MISSING</code>: It is not possible to add or replace team without a CareTeam reference</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-library">ehealth-library</h4>
@@ -550,10 +591,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_IDENTIFIER_UPDATE_RESTRICTED</code>: Validation error: attempt to update Library Identifiers list.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">LIBRARY_UNKNOWN_IDENTIFIER</code>: Unable to find unique Library with identifier: %s. Number of search results: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_UNKNOWN_IDENTIFIER</code>: Unable to find unique Library with identifier: %s and name: %s. Number of search results: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">LIBRARY_MISSING_IDENTIFIER</code>: Library %s does not have identifier of type: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_MISSING_IDENTIFIER</code>: Library with identifier: %s and name: %s does not have identifier of type: %s</p>
   </li>
 </ul>
 
@@ -684,7 +725,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_TOO_FEW_ANSWERS</code>: QuestionnaireResponse: %s has too few answers for the item with linkId: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_DATA_NO_DATA_FOUND</code>: Encrypted media data with id %s was not found</p>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_DATA_NO_DATA_FOUND</code>: Media data with id %s was not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_THUMBNAIL_DATA_NO_DATA_FOUND</code>: Media thumbnail data with size %d for id %s was not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_THUMBNAIL_DATA_NOT_SUPPORTED</code>: Media thumbnail data for id %s is not supported</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_STATUS</code>: Measurement status %s is invalid. Status must be %s for measurement of type %s</p>
   </li>
 </ul>
 
@@ -727,7 +777,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for PlanDefinition with status: %s or %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for PlanDefinition with status: %s or %s, otherwise, only useContext can be modified. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating PlanDefinition with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_TO_NOT_ALLOWED_STATE</code>: Update is not allowed for PlanDefinition with %s status to different than %s status.</p>
@@ -761,7 +814,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QFDD_NARRATIVE_MISSING_TEXT_ERROR</code>: Information section does not have a text element. LinkId: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">QFDD_DISPLAY_ITEM_MUST_HAVE_A_TEXT</code>: Display item must have a text. LinkId: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QFDD_NARRATIVE_MISSING_EXTENSION_ERROR</code>: Information section does not have a rendering-xhtml extension. LinkId: %s</p>
@@ -772,20 +825,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_IN_STATUS</code>: Update is not allowed for questionnaires with statuses: %s, %s</p>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMTPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_STATUS</code>: Update is not allowed for questionnaires with %s status to different than %s status</p>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_DATETIME</code>: QuestionnaireResponse has invalid DateTimeType on effectivePeriod.%s, must have minutes, seconds or millis precision and must have a timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_START_AFTER_END</code>: QuestionnaireResponse has invalid effectivePeriod, effectivePeriod.start must be before effectivePeriod.end</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating Questionnaire with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_IN_STATUS</code>: Update is not allowed for questionnaires with statuses: %s, %s, except for changes to useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_STATUS</code>: Update is not allowed for questionnaires with %s status to different than %s status.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_DELETE_WITH_STATUS</code>: Delete only possible for questionnaires with status: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_IMAGE_FORMAT_VALIDATION_MESSAGE</code>:
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_IMAGE_FORMAT_VALIDATION_MESSAGE</code>: 
 %s Image in questionnaire item with linkID %s and Binary contentType %s does not match any code in ValueSet: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_IMAGE_SIZE_VALIDATION_MESSAGE</code>:
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_IMAGE_SIZE_VALIDATION_MESSAGE</code>: 
 %s Image in questionnaire item with linkID %s exceeds the maximum size of %s kB</p>
   </li>
   <li>
@@ -913,6 +978,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">TASK_FOR_NOT_SET</code>: When episode of care is set, the field 'for' must reference the corresponding patient</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_MEASUREMENT_REFERENCE</code>: Expecting ClinicalImpression to include a single Investigations. The investigation must contain two items: one item with an versionless reference and one item with a versioned reference of the Measurement that is being invalidated or retracted.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_INVESTIGATION_ITEM_TYPE</code>: Investigation item type must be of type Media, Observation or QuestionnaireResponse.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_FINDING_CODE_ON_PREVIOUS</code>: Previous ClinicalImpression must be of type 'invalidation' when trying to retract invalidation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_INITIAL_STATUS</code>: ClinicalImpression for invalidation/retracted invalidation must be created with 'COMPLETED' status.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_DECISION_CODE</code>: ClinicalImpression must contain a single decision, with a single Coding of code 'invalidated-fulfills' or 'invalidated-is-not-fulfillment'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_FINDING_CODE</code>: ClinicalImpression must contain a single finding, with a single Coding of code 'measurement-invalidated' or 'measurement-invalidation-retracted'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_REFERENCE_MISMATCH</code>: Mismatch between references: %s(%s) and %s(%s).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_MISSING_PREVIOUS</code>: Unable to find previous ClinicalImpression when trying to retract invalidation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_PREVIOUS_EXPECTING_INVALIDATION_RETRACTION</code>: Previous ClinicalImpression must be of type invalidation retraction when trying to invalidate measurement.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_PREVIOUS_EXPECTING_INVALIDATION</code>: Previous ClinicalImpression must be of type invalidation when trying to retract invalidation for measurement.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_MULTIPLE_PREVIOUS</code>: Unable to determine previous invalidation/invalidation retracted ClinicalImpression, due to finding multiple candidates for the Measurement.</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-transformation">ehealth-transformation</h4>
@@ -979,19 +1077,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_QRD_QUESTION_TYPE_DOES_NOT_MATCH_QUESTIONNAIRE_ITEM_TYPE</code>: QRD Question type '%s' does not match questionnaire item type '%s'. LinkId: %s.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNSUPPORTED_QUESTION_TYPE</code>: Unsupported Questionnaire type: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNSUPPORTED_QUESTION_TYPE</code>: Unsupported Questionnaire type: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_NUMBER_OF_ANSWERS</code>: QuestionnaireResponse item should contain from %s to %s answers.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_NUMBER_OF_ANSWERS</code>: QuestionnaireResponse item should contain from '%s' to '%s' answers. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_SLIDER_MISMATCH_BETWEEN_TYPE_AND_SLIDER_STEP</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' and item.type: 'Integer' but has decimal step value: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_SLIDER_MISMATCH_BETWEEN_TYPE_AND_SLIDER_STEP</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' and item.type: 'Integer' but has decimal step value: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_SLIDER_EXTENSIONS</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain at least the following extensions: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_SLIDER_EXTENSIONS</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain at least the following extensions: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_STEP_EXTENSION</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain one of the following extensions: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_STEP_EXTENSION</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain one of the following extensions: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_ITEM_CONTROL_EXTENSION</code>: Questionnaire item with linkId '%s' has no itemControl extension with code: 'slider'.</p>
@@ -1003,64 +1101,88 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of QRD xml</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to have exactly one item of display. Found %s items.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to have exactly one item of display. Found %s items. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION_FOUND_OTHER_TYPE</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to contain exactly one item of type 'display'. Found item of type: '%s'.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION_FOUND_OTHER_TYPE</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to contain exactly one item of type 'display'. Found item of type: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_IN_ROOT_GROUP_DOES_NOT_MATCH_NUMBER_OF_ORGANIZERS</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain the same number of items with type 'group'. Found: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_COPYRIGHT_SECTION</code>: Expecting FHIR Questionnaire root group to have one or more items of type display for structure matching QFDD section with title '%s'. Found %s items. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ONLY_SUB_GROUPS_IN_ROOT_GROUP</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain only items of type: 'group'.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_COPYRIGHT_SECTION_FOUND_OTHER_TYPE</code>: Expecting FHIR Questionnaire root group to contain only sub items of type 'display'. QFDD section with title '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_ITEM_TO_BE_OF_TYPE_GROUP</code>: Root item on questionnaire is not of type 'group'. Type was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_TO_MATCH_COPYRIGHT_ENTRIES_IN_QFDD</code>: Expecting FHIR Questionnaire root group to contain the same number of display items as copyright entries in the matching QFDD section. QFDD section with title '%s'. Found %s items, expecting %s items. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ITEM_TO_BE_OF_TYPE_GROUP</code>: Item is not of type group. Type: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_GROUP_TO_BE_COPYRIGHT</code>: Expecting FHIR Questionnaire root group isCopyright to be true as corresponding QFDD section is a copyright section. QFDD section with title '%s'. QuestionnaireResponse: '%s'</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_ON_ROOT_LEVEL_DOES_NOT_MATCH_NUMBER_OF_SECTIONS</code>: The number of root items on questionnaire does not match the number of QFDD sections. Questionnaire: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_COPYRIGHT_SUBITEMS_TO_HAVE_IS_COPYRIGHT_TRUE</code>: Expecting FHIR Questionnaire root group to contain sub items with isCopyright set to true as corresponding QFDD section is a copyright section. QFDD section with title '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_FOUND_MORE_THAN_ONE_MATCH_FOR_LINKID_IN_QUESTIONNAIRE_RESPONSE</code>: Found more than 1 match for LinkId in QuestionnaireResponse. LinkId: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_IN_ROOT_GROUP_DOES_NOT_MATCH_NUMBER_OF_ORGANIZERS</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain the same number of items with type 'group'. Found: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_MATCH_FOR_ASSOCIATED_TEXT_QUESTION_IN_QUESTIONNAIRE_RESPONSE</code>: Found no match for associatedTextQuestion in QuestionnaireResponse. Found Questionnaire item with linkId: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ONLY_SUB_GROUPS_IN_ROOT_GROUP</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain only items of type: 'group'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_QUESTIONNAIRE_TIEM_TO_HAVE_EXTERNAL_IDENTIFIER</code>: Expected questionnaireItem to have externalIdentifier: %s. But was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_ITEM_TO_BE_OF_TYPE_GROUP</code>: Root item on questionnaire is not of type 'group'. Type was: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_FOUND_NO_QUESTIONNAIRE_RESPONSE_FOR_ASSOCIATED_TEST_QUESTION</code>: Found no QuestionnaireResponse for associatedTextQuestion. Found Questionnaire item with linkId: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ITEM_TO_BE_OF_TYPE_GROUP</code>: Item is not of type group. Type: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_DO_NOT_MATCH_THE_QUESTION_FOR_ASSOCIATED_TEXT_QUESTION</code>: The precondition criterion code does not match the expected question code. Expected: %s. But was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_ON_ROOT_LEVEL_DOES_NOT_MATCH_NUMBER_OF_SECTIONS</code>: The number of root items on questionnaire does not match the number of QFDD sections. Questionnaire: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_MULTIPLE_CHOICE_ANSWER_EXPECTING_CODING_TYPE_FOR_VALUE</code>: Expecting answer value to be of type Coding. QuestionResponseItem with linkId: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_FOUND_MORE_THAN_ONE_MATCH_FOR_LINKID_IN_QUESTIONNAIRE_RESPONSE</code>: Found more than 1 match for LinkId in QuestionnaireResponse. LinkId: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_GROUP_GROUP_TYPE_UNKNOWN</code>: Unknown GroupType: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_QUESTIONNAIRE_TIEM_TO_HAVE_EXTERNAL_IDENTIFIER</code>: Expected questionnaireItem to have externalIdentifier: '%s'. But was: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_MORE_THAN_ONE</code>: Transformation do not support more than one precondition for associatedTextQuestion. Found %s. AssociatedTextQuestion: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_FOUND_NO_QUESTIONNAIRE_RESPONSE_FOR_ASSOCIATED_TEST_QUESTION</code>: Found no QuestionnaireResponse for associatedTextQuestion. Found Questionnaire item with linkId: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECT_IMAGE_IN_QUESTIONNAIRE_ITEM</code>: Expecting QuestionnaireItem to have an image as the corresponding QFDD question has an image. Question id: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_DO_NOT_MATCH_THE_QUESTION_FOR_ASSOCIATED_TEXT_QUESTION</code>: The precondition criterion code does not match the expected question code. Expected: '%s'. But was: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NOT_EXPECTING_IMAGE_IN_QUESTIONNAIRE_ITEM</code>: Not expecting QuestionnaireItem to have an image as the corresponding QFDD question do not have an image. Question id: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_MULTIPLE_CHOICE_ANSWER_EXPECTING_CODING_TYPE_FOR_VALUE</code>: Expecting answer value to be of type Coding. QuestionResponseItem with linkId: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNKNOWN_QRD_RESPONSE_TYPE</code>: Unknown QRD response type. QRD Question id: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_GROUP_GROUP_TYPE_UNKNOWN</code>: Unknown GroupType: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_ASSOCIATED_TEXT_QUESTION_ITEM_NOT_OF_TYPE_TEXT</code>: AssociatedTextQuestion item with id: '%s' is not of type 'text'. Type was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_MORE_THAN_ONE</code>: Transformation do not support more than one precondition for associatedTextQuestion. Found '%s'. AssociatedTextQuestion: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_QFDD_QUESTION_DOES_NOT_SUPPORT_ASSOCIATED_TEXT_QUESTION</code>: QFDDQuestion with id: '%s' does not support associatedText. Class was: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECT_IMAGE_IN_QUESTIONNAIRE_ITEM</code>: Expecting QuestionnaireItem to have an image as the corresponding QFDD question has an image. Question id: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NOT_EXPECTING_IMAGE_IN_QUESTIONNAIRE_ITEM</code>: Not expecting QuestionnaireItem to have an image as the corresponding QFDD question do not have an image. Question id: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNKNOWN_QRD_RESPONSE_TYPE</code>: Unknown QRD response type. QRD Question id: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_ASSOCIATED_TEXT_QUESTION_ITEM_NOT_OF_TYPE_TEXT_OR_STRING</code>: AssociatedTextQuestion item with id: '%s' is not of type 'text' or 'string'. Type was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_QFDD_QUESTION_DOES_NOT_SUPPORT_ASSOCIATED_TEXT_QUESTION</code>: QFDDQuestion with id: '%s' does not support associatedText. Class was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_MISSING_START</code>: QuestionnaireResponse with id: '%s' is missing effective period start.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_START</code>: QuestionnaireResponse with id: '%s' must have a valid effective period start, including time precision and timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_END</code>: QuestionnaireResponse with id: '%s' must have a valid effective period end, including time precision and timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EQUAL_BOUNDS</code>: The low and high bounds of the effective period in QuestionnaireResponse with ID '%s' must not be equal.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_RESOURCE</code>: Input bundle missing resource: %s</p>
@@ -1180,6 +1302,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
 </ul>
 
+<h4 id="ehealth-use">ehealth-use</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">USE_CONTEXT_VALIDATION_FAILED</code>: UseContext validation for %s failed: value code %s not found in %s ValueSet</li>
+</ul>
+
 <h4 id="ehealth-versioning">ehealth-versioning</h4>
 
 <ul>
@@ -1219,7 +1347,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 5, 2024 10:04+0000">2024-11-05</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 17, 2025 14:41+0000">2025-02-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
