@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-persist-login"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-persist-login</b></p><a name="-s-persist-login"> </a><a name="hc-s-persist-login"> </a><a name="-s-persist-login-da-DK"> </a><p>URL: [base]/$persist-login</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>careTeam</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/careteam.html">CareTeam</a></td><td/><td/></tr><tr><td>IN</td><td>practitionerRole</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-persist-login"/>
+  <version value="3.4.1"/>
+  <name value="persist-login"/>
+  <title value="Persist login"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-03-06T12:21:35+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="This operation persists login information into CareTeams and PractitionerRoles&#xA;The following elements of each careteam are mandatory:&#xA;- id: Reference based on the careteam from the saml security token&#xA;- status: any&#xA;- name: any&#xA;- reasonCode: any&#xA;- participant: 1 for each careteam-role in the saml security token&#xA;-- role: from the saml security token&#xA;-- member: reference to the practitioner&#xA;-- onBehalfOf: reference to organization (cannot be set currently because of a bug in hapi)&#xA;&#xA;Persist-login will find each careteam, and update it with any new participants and roles from the input bundle.&#xA;The input careteam resources are are used as a container for the participant list. The rest of the fields are not used.&#xA;The following elements of each PractitionerRole are mandatory:&#xA;- practitioner&#xA;- organization&#xA;- code: roles from the saml security token (CareteamParticipantRole valueset)&#xA;&#xA;Persist-login will search for practitionerRoles for each combination of (practitioner, organization) and create it if it doesn't already exists."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="persist-login"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="careTeam"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <type value="CareTeam"/>
+  </parameter>
+  <parameter>
+    <name value="practitionerRole"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <type value="PractitionerRole"/>
+  </parameter>
+</OperationDefinition>
