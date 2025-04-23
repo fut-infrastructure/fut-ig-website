@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core"/>
-  <version value="3.4.1"/>
+  <version value="3.5.0"/>
   <name value="eHealthInfrastructure"/>
   <title value="eHealth Infrastructure"/>
   <status value="active"/>
-  <date value="2025-03-06T12:26:33+00:00"/>
+  <date value="2025-04-23T06:28:42+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -275,7 +275,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r4#0.3.0"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#0.5.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -1548,7 +1548,7 @@
         <reference value="OperationDefinition/ehealth-patient-create"/>
       </reference>
       <name value="Create Patient"/>
-      <description value="This operation is used to create a new Patient resource. Once executed successfully the Patient resource is created on the server and as well returned in the response parameter. The operation takes the input parameters listed and returns the Patient resource where the person having the provided civil registration number (crn) is used as the origin of the data. &#xD;&#xA;&#xD;&#xA;### Note&#xD;&#xA;This operation is currently the only way to create Patient resources in the eHealth Infrastructure, as it ensures that the correct bindings from national registers"/>
+      <description value="Creates a Patient resource on the server and returns it in the response. If the patient already exists, it is returned instead. If the CPR number does not match a patient on the service, looks up the CPR in the national registry and finds any potential prior CPRs used by the person. If a prior CPR number matches a patient on the service, updates the patient with national data, and returns a patient with the newest data. NOTE: This means that the returned patient can have a different identifier than the one used for the request. If no prior CPR matches, creates a new patient using national data. If the CPR is invalid, i.e. does not correspond to a patient on the national registry, it errors. &#xD;&#xA;&#xD;&#xA;### Note&#xD;&#xA;This operation is currently the only way to create Patient resources in the eHealth Infrastructure, as it ensures that the correct bindings from national registers"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1871,17 +1871,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ConceptMap"/>
-      </extension>
-      <reference>
-        <reference value="ConceptMap/device-type-to-medcom-device-type"/>
-      </reference>
-      <name value="Device type to MedCom device type"/>
-      <description value="The map is used to map the device type to the MedCom device type"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -2177,6 +2166,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-designation-use"/>
+      </reference>
+      <name value="eHealth Designation Use"/>
+      <description value="Codes used to identify/describe designation use."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-designation-use"/>
+      </reference>
+      <name value="eHealth Designation Use"/>
+      <description value="Details of how a designation would be used."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="NamingSystem"/>
       </extension>
       <reference>
@@ -2239,6 +2250,28 @@
       </reference>
       <name value="eHealth Program"/>
       <description value="Programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-property"/>
+      </reference>
+      <name value="eHealth Property"/>
+      <description value="Codes used to identity specific properties on codes in eHealth CodeSystems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-property"/>
+      </reference>
+      <name value="eHealth Property"/>
+      <description value="Used to distinguish/extract specific properties of a code."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3500,6 +3533,17 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
+        <reference value="OperationDefinition/Organization-i-get-general-practitioner-info"/>
+      </reference>
+      <name value="Get organization information for a healthcare provider with provider number"/>
+      <description value="The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. When multiple Organization resources have the same provider number, the shared parent Organization is returned. An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. &#xA;A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
         <reference value="OperationDefinition/-s-get-patient-procedures"/>
       </reference>
       <name value="Get patient procedures"/>
@@ -3886,50 +3930,6 @@
       </reference>
       <name value="Measurement Sharing Policies"/>
       <description value="Policies of sharing submissions with national registers such as KIH."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/medcom-device-type"/>
-      </reference>
-      <name value="MedCom Device Type"/>
-      <description value="Value set for the Medcom Device Type."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/medcom-device-types"/>
-      </reference>
-      <name value="Medcom Device Types"/>
-      <description value="CodeSystem for the Medcom Device Type."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/medcom-instrument-code-device-type"/>
-      </reference>
-      <name value="MedCom Instrument Code Device Type"/>
-      <description value="Value set for the Medcom Instrument Code Device Type."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/urn-oid-1.2.208.184.100.3"/>
-      </reference>
-      <name value="Medcom Instrument Codes"/>
-      <description value="MedCom Instrument Codes."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4616,7 +4616,7 @@
         <reference value="OperationDefinition/ehealth-person-match"/>
       </reference>
       <name value="Person name lookup"/>
-      <description value="This operation is used to do a lookup on a citizen in the national infrastructure based on the identifier of the person unless the identifier can be resolved locally. The operation returns a 'limited' Person resource with the identifier and name of the person being the only returned attributes in the bundle. The operation is an implementation of [https://www.hl7.org/fhir/stu3/patient-operations.html#match](https://www.hl7.org/fhir/stu3/patient-operations.html#match) on the Person resource."/>
+      <description value="This operation is used to lookup a citizen. It first attempts lookup on the service and, if a match is found, returns a Person resource with name, identifier, deceased-status and a link to the Patient resource. If not, it proceeds to find any prior CPR-numbers associated with the query CPR in the national infrastructure and checks if any of those match a patient on the service. If a match is found, it returns a Person resource with the same information. NOTE: This means that the returned patient can have a different identifier than the one used for request. If no match is found, it finds base information on the national infrastructure and returns a 'limited' Person resource containing only the identifier, name and deceased-state of the person. The operation is an implementation of [https://www.hl7.org/fhir/stu3/patient-operations.html#match](https://www.hl7.org/fhir/stu3/patient-operations.html#match) on the Person resource."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -6522,6 +6522,17 @@
       <description value="Virtual Meeting Room URI that can be used in eg. webRTC clients. Is provided by the service, not the client, and may not be updated."/>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/ydernummer"/>
+      </reference>
+      <name value="Ydernummer"/>
+      <description value="The Danish Health Authority and Danish Regions can identify doctors' names etc. via the provider number (&quot;ydernummer&quot;). The different groups of doctors (general practitioners, ear specialists, eye specialists, etc.) have their own provider number range. Multiple doctors in the same practice will often have the same provider number. Only doctors without a provider number use the special out-of-hours doctor numbers.Provider numbers can change over time. A provider number may be assigned to a doctor who quits or retires, after which the provider number becomes available and can later be assigned to another doctor."/>
+      <exampleBoolean value="false"/>
+    </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
         <valueUrl value="toc.html"/>
@@ -6879,6 +6890,14 @@
         </extension>
         <nameUrl value="POST_migrate-list.html"/>
         <title value="POST Migrate List"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="POST_Organization_get-general-practitioner-info.html"/>
+        </extension>
+        <nameUrl value="POST_Organization_get-general-practitioner-info.html"/>
+        <title value="POST Organization Get General Practitioner Info"/>
         <generation value="markdown"/>
       </page>
       <page>

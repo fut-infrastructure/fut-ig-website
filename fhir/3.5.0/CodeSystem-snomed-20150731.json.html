@@ -1,0 +1,899 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Danish SNOMED CT Extension - JSON Representation - eHealth Infrastructure v3.5.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"88.428"}
+    h3,h4,h5,h6{--heading-prefix:"88.428"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">3.5.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Danish SNOMED CT Extension</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="CodeSystem-snomed-20150731.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-snomed-20150731.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-snomed-20150731.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Danish SNOMED CT Extension - JSON Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2019-12-27
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="CodeSystem-snomed-20150731.json" no-download="true">Raw json</a> | <a href="CodeSystem-snomed-20150731.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">resourceType</a>" : "CodeSystem",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.id">id</a>" : "snomed-20150731",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem snomed-20150731&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;snomed-20150731\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcsnomed-20150731\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;snomed-20150731-da-DK\&quot;&gt; &lt;/a&gt;&lt;p&gt;This case-sensitive code system &lt;code&gt;http://snomed.info/sct/554471000005108/version/20150731&lt;/code&gt; defines the following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Dansk (Danish, da)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;551411000005104&lt;a name=\&quot;snomed-20150731-551411000005104\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;surgical gastroenterology&lt;/td&gt;&lt;td&gt;surgical gastroenterology&lt;/td&gt;&lt;td&gt;kirurgisk gastroenterologi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554011000005107&lt;a name=\&quot;snomed-20150731-554011000005107\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;forensic medicine&lt;/td&gt;&lt;td&gt;forensic medicine&lt;/td&gt;&lt;td&gt;retsmedicin&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;394812008&lt;a name=\&quot;snomed-20150731-394812008\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;dental medicine specialities&lt;/td&gt;&lt;td&gt;dental medicine specialities&lt;/td&gt;&lt;td&gt;odontologiske specialer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554221000005108&lt;a name=\&quot;snomed-20150731-554221000005108\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;dwilling place&lt;/td&gt;&lt;td&gt;dwilling place&lt;/td&gt;&lt;td&gt;bosted&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554031000005103&lt;a name=\&quot;snomed-20150731-554031000005103\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;dietician clinic&lt;/td&gt;&lt;td&gt;dietician clinic&lt;/td&gt;&lt;td&gt;diætistklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;546821000005103&lt;a name=\&quot;snomed-20150731-546821000005103\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;occupational therapy clinic&lt;/td&gt;&lt;td&gt;occupational therapy clinic&lt;/td&gt;&lt;td&gt;ergoterapiklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;547011000005103&lt;a name=\&quot;snomed-20150731-547011000005103\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;fysiotherapy clinic&lt;/td&gt;&lt;td&gt;fysiotherapy clinic&lt;/td&gt;&lt;td&gt;fysioterapiklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;546811000005109&lt;a name=\&quot;snomed-20150731-546811000005109\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;rehabilitation center&lt;/td&gt;&lt;td&gt;rehabilitation center&lt;/td&gt;&lt;td&gt;genoptræningscenter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550621000005101&lt;a name=\&quot;snomed-20150731-550621000005101\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;district nursing&lt;/td&gt;&lt;td&gt;district nursing&lt;/td&gt;&lt;td&gt;hjemmesygepleje&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550631000005103&lt;a name=\&quot;snomed-20150731-550631000005103\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;midwife clinic&lt;/td&gt;&lt;td&gt;midwife clinic&lt;/td&gt;&lt;td&gt;jordemoderklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550641000005106&lt;a name=\&quot;snomed-20150731-550641000005106\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;chiropractic clinic&lt;/td&gt;&lt;td&gt;chiropractic clinic&lt;/td&gt;&lt;td&gt;kiropraktorklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550651000005108&lt;a name=\&quot;snomed-20150731-550651000005108\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;medical laboratory&lt;/td&gt;&lt;td&gt;medical laboratory&lt;/td&gt;&lt;td&gt;lægelaboratorium&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550661000005105&lt;a name=\&quot;snomed-20150731-550661000005105\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;emergency medical service&lt;/td&gt;&lt;td&gt;emergency medical service&lt;/td&gt;&lt;td&gt;lægevagt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554211000005102&lt;a name=\&quot;snomed-20150731-554211000005102\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;prehospital unit&lt;/td&gt;&lt;td&gt;prehospital unit&lt;/td&gt;&lt;td&gt;præhospitalsenhed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550711000005101&lt;a name=\&quot;snomed-20150731-550711000005101\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;psychology counselling clinic&lt;/td&gt;&lt;td&gt;psychology counselling clinic&lt;/td&gt;&lt;td&gt;psykologisk rådgivningsklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550671000005100&lt;a name=\&quot;snomed-20150731-550671000005100\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;medical specialist practice site&lt;/td&gt;&lt;td&gt;medical specialist practice site&lt;/td&gt;&lt;td&gt;speciallægepraksis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554061000005105&lt;a name=\&quot;snomed-20150731-554061000005105\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chiropodist clinic&lt;/td&gt;&lt;td&gt;Chiropodist clinic&lt;/td&gt;&lt;td&gt;fodterapeutklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554041000005106&lt;a name=\&quot;snomed-20150731-554041000005106\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;health administration&lt;/td&gt;&lt;td&gt;health administration&lt;/td&gt;&lt;td&gt;sundhedsforvaltning&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554021000005101&lt;a name=\&quot;snomed-20150731-554021000005101\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;health visitors&lt;/td&gt;&lt;td&gt;health visitors&lt;/td&gt;&lt;td&gt;sundhedspleje&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550681000005102&lt;a name=\&quot;snomed-20150731-550681000005102\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;dental practice&lt;/td&gt;&lt;td&gt;dental practice&lt;/td&gt;&lt;td&gt;tandlægepraksis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550691000005104&lt;a name=\&quot;snomed-20150731-550691000005104\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dental care clinic&lt;/td&gt;&lt;td&gt;Dental care clinic&lt;/td&gt;&lt;td&gt;tandplejeklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550701000005104&lt;a name=\&quot;snomed-20150731-550701000005104\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;dental technician clinic&lt;/td&gt;&lt;td&gt;dental technician clinic&lt;/td&gt;&lt;td&gt;tandteknisk klinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554231000005106&lt;a name=\&quot;snomed-20150731-554231000005106\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;vaccination clinic&lt;/td&gt;&lt;td&gt;vaccination clinic&lt;/td&gt;&lt;td&gt;vaccinationsklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554051000005108&lt;a name=\&quot;snomed-20150731-554051000005108\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Reflexology clinic&lt;/td&gt;&lt;td&gt;Reflexology clinic&lt;/td&gt;&lt;td&gt;zoneterapiklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550811000005108&lt;a name=\&quot;snomed-20150731-550811000005108\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;admistrative unit&lt;/td&gt;&lt;td&gt;admistrative unit&lt;/td&gt;&lt;td&gt;administrativ enhed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;547211000005108&lt;a name=\&quot;snomed-20150731-547211000005108\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;municipality&lt;/td&gt;&lt;td&gt;municipality&lt;/td&gt;&lt;td&gt;kommune&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550891000005100&lt;a name=\&quot;snomed-20150731-550891000005100\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;private&lt;/td&gt;&lt;td&gt;private&lt;/td&gt;&lt;td&gt;privat&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550881000005103&lt;a name=\&quot;snomed-20150731-550881000005103\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;region&lt;/td&gt;&lt;td&gt;region&lt;/td&gt;&lt;td&gt;region&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550411000005105&lt;a name=\&quot;snomed-20150731-550411000005105\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Other health institution&lt;/td&gt;&lt;td&gt;Other health institution&lt;/td&gt;&lt;td&gt;anden sundhedsinstitution&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554851000005102&lt;a name=\&quot;snomed-20150731-554851000005102\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Asylum centre&lt;/td&gt;&lt;td&gt;Asylum centre&lt;/td&gt;&lt;td&gt;asylcenter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550861000005106&lt;a name=\&quot;snomed-20150731-550861000005106\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;fysiotherapy and occupational clinic&lt;/td&gt;&lt;td&gt;fysiotherapy and occupational clinic&lt;/td&gt;&lt;td&gt;fysioterapi- og ergoterapiklinik&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554881000005108&lt;a name=\&quot;snomed-20150731-554881000005108\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;handicap and psychiatry&lt;/td&gt;&lt;td&gt;handicap and psychiatry&lt;/td&gt;&lt;td&gt;handicap og psykiatri&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554861000005100&lt;a name=\&quot;snomed-20150731-554861000005100\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;handicap&lt;/td&gt;&lt;td&gt;handicap&lt;/td&gt;&lt;td&gt;handicap&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554821000005109&lt;a name=\&quot;snomed-20150731-554821000005109\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;home care&lt;/td&gt;&lt;td&gt;home care&lt;/td&gt;&lt;td&gt;hjemmepleje&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554411000005101&lt;a name=\&quot;snomed-20150731-554411000005101\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;employment agency&lt;/td&gt;&lt;td&gt;employment agency&lt;/td&gt;&lt;td&gt;jobcenter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554871000005105&lt;a name=\&quot;snomed-20150731-554871000005105\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;psychiatry&lt;/td&gt;&lt;td&gt;psychiatry&lt;/td&gt;&lt;td&gt;psykiatri&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550821000005102&lt;a name=\&quot;snomed-20150731-550821000005102\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;service unit&lt;/td&gt;&lt;td&gt;service unit&lt;/td&gt;&lt;td&gt;serviceenhed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550871000005101&lt;a name=\&quot;snomed-20150731-550871000005101\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;emergency admission unit&lt;/td&gt;&lt;td&gt;emergency admission unit&lt;/td&gt;&lt;td&gt;akutmodtageenhed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554241000005103&lt;a name=\&quot;snomed-20150731-554241000005103\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;technical location number&lt;/td&gt;&lt;td&gt;technical location number&lt;/td&gt;&lt;td&gt;teknisk lokationsnummer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550841000005107&lt;a name=\&quot;snomed-20150731-550841000005107\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;research unit&lt;/td&gt;&lt;td&gt;research unit&lt;/td&gt;&lt;td&gt;forskningsenhed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550851000005109&lt;a name=\&quot;snomed-20150731-550851000005109\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;clinical unit&lt;/td&gt;&lt;td&gt;clinical unit&lt;/td&gt;&lt;td&gt;klinisk enhed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;551611000005102&lt;a name=\&quot;snomed-20150731-551611000005102\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;surgical ward&lt;/td&gt;&lt;td&gt;surgical ward&lt;/td&gt;&lt;td&gt;operationsgang&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;554071000005100&lt;a name=\&quot;snomed-20150731-554071000005100\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;hospital pharmacy&lt;/td&gt;&lt;td&gt;hospital pharmacy&lt;/td&gt;&lt;td&gt;sygehusapotek&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;550831000005104&lt;a name=\&quot;snomed-20150731-550831000005104\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;education unit&lt;/td&gt;&lt;td&gt;education unit&lt;/td&gt;&lt;td&gt;uddannelsesenhed&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">url</a>" : "http://snomed.info/sct/554471000005108/version/20150731",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.identifier">identifier</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:ietf:rfc:3986",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "urn:oid:2.16.840.1.113883.6.96"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a>" : "3.5.0",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">name</a>" : "Danish-SNOMED-CT-Extension",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.title">title</a>" : "Danish SNOMED CT Extension",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.experimental">experimental</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a>" : "2019-12-27T00:00:00+00:00",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.publisher">publisher</a>" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a>" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.description">description</a>" : "Danish SNOMED CT Extension",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "urn:iso:std:iso:3166",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "DK",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.caseSensitive">caseSensitive</a>" : true,
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.content">content</a>" : "complete",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "551411000005104",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "surgical gastroenterology",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "surgical gastroenterology",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "kirurgisk gastroenterologi"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554011000005107",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "forensic medicine",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "forensic medicine",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "retsmedicin"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "394812008",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "dental medicine specialities",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "dental medicine specialities",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "odontologiske specialer"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554221000005108",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "dwilling place",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "dwilling place",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "bosted"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554031000005103",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "dietician clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "dietician clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "diætistklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "546821000005103",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "occupational therapy clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "occupational therapy clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "ergoterapiklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "547011000005103",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "fysiotherapy clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "fysiotherapy clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "fysioterapiklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "546811000005109",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "rehabilitation center",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "rehabilitation center",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "genoptræningscenter"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550621000005101",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "district nursing",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "district nursing",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "hjemmesygepleje"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550631000005103",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "midwife clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "midwife clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "jordemoderklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550641000005106",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "chiropractic clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "chiropractic clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "kiropraktorklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550651000005108",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "medical laboratory",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "medical laboratory",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "lægelaboratorium"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550661000005105",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "emergency medical service",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "emergency medical service",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "lægevagt"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554211000005102",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "prehospital unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "prehospital unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "præhospitalsenhed"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550711000005101",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "psychology counselling clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "psychology counselling clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "psykologisk rådgivningsklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550671000005100",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "medical specialist practice site",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "medical specialist practice site",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "speciallægepraksis"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554061000005105",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Chiropodist clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Chiropodist clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "fodterapeutklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554041000005106",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "health administration",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "health administration",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "sundhedsforvaltning"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554021000005101",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "health visitors",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "health visitors",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "sundhedspleje"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550681000005102",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "dental practice",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "dental practice",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "tandlægepraksis"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550691000005104",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Dental care clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Dental care clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "tandplejeklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550701000005104",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "dental technician clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "dental technician clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "tandteknisk klinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554231000005106",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "vaccination clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "vaccination clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "vaccinationsklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554051000005108",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Reflexology clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Reflexology clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "zoneterapiklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550811000005108",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "admistrative unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "admistrative unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "administrativ enhed"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "547211000005108",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "municipality",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "municipality",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "kommune"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550891000005100",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "private",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "private",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "privat"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550881000005103",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "region",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "region",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "region"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550411000005105",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Other health institution",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Other health institution",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "anden sundhedsinstitution"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554851000005102",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "Asylum centre",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "Asylum centre",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "asylcenter"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550861000005106",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "fysiotherapy and occupational clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "fysiotherapy and occupational clinic",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "fysioterapi- og ergoterapiklinik"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554881000005108",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "handicap and psychiatry",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "handicap and psychiatry",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "handicap og psykiatri"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554861000005100",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "handicap",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "handicap",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "handicap"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554821000005109",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "home care",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "home care",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "hjemmepleje"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554411000005101",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "employment agency",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "employment agency",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "jobcenter"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554871000005105",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "psychiatry",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "psychiatry",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "psykiatri"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550821000005102",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "service unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "service unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "serviceenhed"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550871000005101",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "emergency admission unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "emergency admission unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "akutmodtageenhed"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554241000005103",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "technical location number",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "technical location number",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "teknisk lokationsnummer"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550841000005107",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "research unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "research unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "forskningsenhed"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550851000005109",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "clinical unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "clinical unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "klinisk enhed"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "551611000005102",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "surgical ward",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "surgical ward",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "operationsgang"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "554071000005100",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "hospital pharmacy",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "hospital pharmacy",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "sygehusapotek"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "550831000005104",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "education unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.definition">definition</a>" : "education unit",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">designation</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">language</a>" : "da",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">value</a>" : "uddannelsesenhed"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 23, 2025 06:23+0000">2025-04-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

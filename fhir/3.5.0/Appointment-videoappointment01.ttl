@@ -1,0 +1,143 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/Appointment/videoappointment01> a fhir:Appointment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "videoappointment01"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "3" ] ;
+     fhir:lastUpdated [ fhir:v "2021-07-15T07:06:36.667+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-videoappointment"^^xsd:anyURI ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-videoappointment>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Appointment videoappointment01</b></p><a name=\"videoappointment01\"> </a><a name=\"hcvideoappointment01\"> </a><a name=\"videoappointment01-da-DK\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 3; Last updated: 2021-07-15 07:06:36+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-videoappointment.html\">ehealth-videoappointment</a></p></div><p><b>Max participants</b>: 4</p><p><b>Meeting URL</b>: <a href=\"https://portal.vconf.dk/?url=721834@rooms.vconf-stage.dk&amp;pin=37835&amp;start_dato=2021-07-16T09:00:00\">https://portal.vconf.dk/?url=721834@rooms.vconf-stage.dk&amp;pin=37835&amp;start_dato=2021-07-16T09:00:00</a></p><p><b>VMR URI</b>: 721834@rooms.vconf-stage.dk</p><p><b>End meeting on end time</b>: false</p><p><b>Responsible</b>: <a href=\"https://organization.fut.trifork.com/fhir/CareTeam/108752\">https://organization.fut.trifork.com/fhir/CareTeam/108752</a></p><p><b>Guest PIN code</b>: 29202</p><p><b>Guest PIN code</b>: 37835</p><p><b>identifier</b>: <code>http://vdx.medcom.dk/meeting</code>/894e56b4-53bb-4004-8f06-6a4d7ad115ca</p><p><b>status</b>: Booked</p><p><b>serviceType</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/appointment-servicetype video}\">A video appointment</span></p><p><b>appointmentType</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/appointmenttype-codes EMERGENCY}\">Emergency appointment</span></p><p><b>reasonCode</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/appointment-reason 412776001}\">Clinical review</span></p><p><b>priority</b>: 1</p><p><b>description</b>: Forundersøgelse</p><p><b>start</b>: 2021-07-16 09:00:00+0000</p><p><b>end</b>: 2021-07-16 11:00:00+0000</p><p><b>comment</b>: Forundersøgelse for grå stær hos Trifork.\n Patienten møder op hos Trifork med udfyldt spørgeskema</p><blockquote><p><b>participant</b></p><p><b>Careteam</b>: <a href=\"https://organization.fut.trifork.com/fhir/CareTeam/108752\">https://organization.fut.trifork.com/fhir/CareTeam/108752</a></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType PART}\">Participation</span></p><p><b>required</b>: Required</p><p><b>status</b>: Accepted</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"https://organization.fut.trifork.com/fhir/Practitioner/107302\">actor1 display text</a></p><p><b>required</b>: Required</p><p><b>status</b>: Tentative</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"https://patient.fut.trifork.com/fhir/Patient/102\">https://patient.fut.trifork.com/fhir/Patient/102</a></p><p><b>required</b>: Required</p><p><b>status</b>: Accepted</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"#hcvideoappointment01/1\">Location Room 43b</a></p><p><b>required</b>: Required</p><p><b>status</b>: Accepted</p></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Location #1</b></p><a name=\"videoappointment01/1\"> </a><a name=\"hcvideoappointment01/1\"> </a><a name=\"videoappointment01/1-da-DK\"> </a><p><b>name</b>: Room 43b</p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Location ;
+     fhir:id [ fhir:v "1" ] ;
+     fhir:name [ fhir:v "Room 43b" ]
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-max-participants"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:integer ;
+       fhir:v 4
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-meeting-url"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:uri ;
+       fhir:v "https://portal.vconf.dk/?url=721834@rooms.vconf-stage.dk&pin=37835&start_dato=2021-07-16T09:00:00"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-vmr-uri"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:uri ;
+       fhir:v "721834@rooms.vconf-stage.dk"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-end-meeting-on-end-time"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:boolean ;
+       fhir:v false
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <https://organization.fut.trifork.com/fhir/CareTeam/108752> ;
+       fhir:reference [ fhir:v "https://organization.fut.trifork.com/fhir/CareTeam/108752" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-host-pin-code"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "29202"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-guest-pin-code"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "37835"
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://vdx.medcom.dk/meeting"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "894e56b4-53bb-4004-8f06-6a4d7ad115ca" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "booked"] ; # 
+  fhir:serviceType ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/appointment-servicetype"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "video" ]
+     ] )
+  ] ) ; # 
+  fhir:appointmentType [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/appointmenttype-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "EMERGENCY" ]
+     ] )
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/appointment-reason"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "412776001" ]
+     ] )
+  ] ) ; # 
+  fhir:priority [ fhir:v "1"^^xsd:nonNegativeInteger] ; # 
+  fhir:description [ fhir:v "Forundersøgelse"] ; # 
+  fhir:start [ fhir:v "2021-07-16T09:00:00.000+00:00"^^xsd:dateTime] ; # 
+  fhir:end [ fhir:v "2021-07-16T11:00:00.000+00:00"^^xsd:dateTime] ; # 
+  fhir:comment [ fhir:v "Forundersøgelse for grå stær hos Trifork.\n Patienten møder op hos Trifork med udfyldt spørgeskema"] ; # 
+  fhir:participant ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:link <https://organization.fut.trifork.com/fhir/CareTeam/108752> ;
+         fhir:reference [ fhir:v "https://organization.fut.trifork.com/fhir/CareTeam/108752" ]
+       ]
+     ] ) ;
+     fhir:type ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PART" ] ;
+         fhir:display [ fhir:v "Participation" ]
+       ] )
+     ] ) ;
+     fhir:required [ fhir:v "required" ] ;
+     fhir:status [ fhir:v "accepted" ]
+  ] [
+     fhir:actor [
+       fhir:link <https://organization.fut.trifork.com/fhir/Practitioner/107302> ;
+       fhir:reference [ fhir:v "https://organization.fut.trifork.com/fhir/Practitioner/107302" ] ;
+       fhir:display [ fhir:v "actor1 display text" ]
+     ] ;
+     fhir:required [ fhir:v "required" ] ;
+     fhir:status [ fhir:v "tentative" ]
+  ] [
+     fhir:actor [
+       fhir:link <https://patient.fut.trifork.com/fhir/Patient/102> ;
+       fhir:reference [ fhir:v "https://patient.fut.trifork.com/fhir/Patient/102" ]
+     ] ;
+     fhir:required [ fhir:v "required" ] ;
+     fhir:status [ fhir:v "accepted" ]
+  ] [
+     fhir:actor [
+       fhir:reference [ fhir:v "#1" ]
+     ] ;
+     fhir:required [ fhir:v "required" ] ;
+     fhir:status [ fhir:v "accepted" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

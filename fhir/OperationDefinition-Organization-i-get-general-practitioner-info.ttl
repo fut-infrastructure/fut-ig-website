@@ -1,0 +1,61 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/Organization-i-get-general-practitioner-info> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Organization-i-get-general-practitioner-info"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition Organization-i-get-general-practitioner-info</b></p><a name=\"Organization-i-get-general-practitioner-info\"> </a><a name=\"hcOrganization-i-get-general-practitioner-info\"> </a><a name=\"Organization-i-get-general-practitioner-info-da-DK\"> </a><p>URL: [base]/$get-general-practitioner-info</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>organization</td><td/><td>1..*</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td><div><p>Reference to Organization.\nThe provider number needs to be stated in the input reference with Reference.identifier.system: urn:oid:1.2.208.176.1.4 and Reference.identifier.value set to the provider number.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/organization.html\">Organization</a></td><td/><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Organization-i-get-general-practitioner-info"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.5.0"] ; # 
+  fhir:name [ fhir:v "get-general-practitioner-info"] ; # 
+  fhir:title [ fhir:v "Get organization information for a healthcare provider with provider number"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-04-23T06:28:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. When multiple Organization resources have the same provider number, the shared parent Organization is returned. An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. \nA typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v false] ; # 
+  fhir:code [ fhir:v "get-general-practitioner-info"] ; # 
+  fhir:resource ( [ fhir:v "Organization"] ) ; # 
+  fhir:system [ fhir:v true] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v false] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:documentation [ fhir:v "Reference to Organization. \nThe provider number needs to be stated in the input reference with Reference.identifier.system: urn:oid:1.2.208.176.1.4 and Reference.identifier.value set to the provider number." ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Organization" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

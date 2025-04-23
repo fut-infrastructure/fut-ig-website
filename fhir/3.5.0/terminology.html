@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Terminology - eHealth Infrastructure v3.5.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"84"}
+    h3,h4,h5,h6{--heading-prefix:"84"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">3.5.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Terminology</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Terminology</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h2 id="valuesets">ValueSets</h2>
+
+<ul>
+ <li><a href="ValueSet-ehealth-action-guidance-for-types.html">Action guidance For Types</a></li>
+ <li><a href="ValueSet-ehealth-action-guidance-types.html">Action guidance types</a></li>
+ <li><a href="ValueSet-ehealth-action.html">Action</a></li>
+ <li><a href="ValueSet-ehealth-activitydefinition-code.html">Activity Definition Code</a></li>
+ <li><a href="ValueSet-administrative-status.html">Administrative Status</a></li>
+ <li><a href="ValueSet-ehealth-appointment-reason.html">Appointment Reason</a></li>
+ <li><a href="ValueSet-ehealth-appointment-servicetype.html">Appointment Service Type</a></li>
+ <li><a href="ValueSet-appointmenttype-codes.html">Appointment Type Codes</a></li>
+ <li><a href="ValueSet-ehealth-basic-resource-type.html">Basic resource type</a></li>
+ <li><a href="ValueSet-ehealth-body-site.html">Body site</a></li>
+ <li><a href="ValueSet-ehealth-careplan-category.html">Careplan Category</a></li>
+ <li><a href="ValueSet-ehealth-careteam-category.html">CareTeam Category</a></li>
+ <li><a href="ValueSet-ehealth-careteam-participant-role.html">CareTeam Participant Role</a></li>
+ <li><a href="ValueSet-ehealth-clinicalimpression-codes.html">Clinical Impression Codes</a></li>
+ <li><a href="ValueSet-ehealth-clinicalimpression-decision-codes.html">ClinicalImpression Decision Codes</a></li>
+ <li><a href="ValueSet-ehealth-clinicalimpression-finding-codes.html">ClinicalImpression Finding Codes</a></li>
+ <li><a href="ValueSet-ehealth-clinicalimpression-investigation-item-codes.html">ClinicalImpression Investigation Item Codes</a></li>
+ <li><a href="ValueSet-ehealth-communication-category.html">Communication Category</a></li>
+ <li><a href="ValueSet-ehealth-condition-conditions.html">Tilstandskoder</a></li>
+ <li><a href="ValueSet-ehealth-conditions.html">Conditions</a></li>
+ <li><a href="ValueSet-ehealth-consent-category.html">Consent Category</a></li>
+ <li><a href="ValueSet-ehealth-contactpoint-custodian.html">ContactPoint Custodian</a></li>
+ <li><a href="ValueSet-ehealth-contactpoint-system.html">ContactPoint System</a></li>
+ <li><a href="ValueSet-ehealth-data-absent-reason.html">Data Absent Reason</a></li>
+ <li><a href="ValueSet-ehealth-designation-use.html">eHealth Designation Use</a></li>
+ <li><a href="ValueSet-ehealth-device-calibration-actor.html">Device Calibration Actor</a></li>
+ <li><a href="ValueSet-ehealth-device-calibration-period.html">Device Calibration Period</a></li>
+ <li><a href="ValueSet-ehealth-device-calibration-type.html">Device Calibration Type</a></li>
+ <li><a href="ValueSet-ehealth-device-measurement-unit.html">Device Measurement Unit</a></li>
+ <li><a href="ValueSet-ehealth-device-measuring-quality.html">Device Measuring Quality</a></li>
+ <li><a href="ValueSet-ehealth-device-safety.html">Device Safety</a></li>
+ <li><a href="ValueSet-ehealth-device-service-types.html">SSL Service Types</a></li>
+ <li><a href="ValueSet-ehealth-device-supplier-roles.html">Device Supplier Roles</a></li>
+ <li><a href="ValueSet-ehealth-device-types.html">Device Types</a></li>
+ <li><a href="ValueSet-ehealth-device-use-reason.html">Device Use Reason</a></li>
+ <li><a href="ValueSet-ehealth-devicemetric-property-types.html">DeviceMetricPropertyTypes</a></li>
+ <li><a href="ValueSet-ehealth-devicemetric-quality-types.html">DeviceMetric Quality Types</a></li>
+ <li><a href="ValueSet-ehealth-document-class.html">Document Class</a></li>
+ <li><a href="ValueSet-document-sharing-state.html">Document Sharing State</a></li>
+ <li><a href="ValueSet-ehealth-document-type.html">Document Type</a></li>
+ <li><a href="ValueSet-ehealth-provenance-policies.html">Policies for provenances</a></li>
+ <li><a href="ValueSet-ehealth-ucum-printsymbol-supplement.html">UCUM printSymbol supplement</a></li>
+ <li><a href="ValueSet-ehealth-usage-context-type.html">eHealth Usage Context Type</a></li>
+ <li><a href="ValueSet-ehealth-event-type-codes.html">Event Type Codes</a></li>
+ <li><a href="ValueSet-ehealth-facility-type-codes.html">Facility Type Codes</a></li>
+ <li><a href="ValueSet-ehealth-format-codes.html">FormatCodes</a></li>
+ <li><a href="ValueSet-fs3-health.html">FS III, helbredstilstande</a></li>
+ <li><a href="ValueSet-ehealth-goal-description.html">Goal Description</a></li>
+ <li><a href="ValueSet-goal-target-measure.html">Goal Target Measure</a></li>
+ <li><a href="ValueSet-ehealth-health-conditions.html">Sygdoms- og diagnosekoder</a></li>
+ <li><a href="ValueSet-competence-percentage-codes.html">IT Competence Level codes</a></li>
+ <li><a href="ValueSet-ehealth-jurisdiction.html">Jurisdiction</a></li>
+ <li><a href="ValueSet-ehealth-library-type.html">Library Type</a></li>
+ <li><a href="ValueSet-ehealth-measurement-sharing-policies.html">Measurement Sharing Policies</a></li>
+ <li><a href="ValueSet-ehealth-media-codes.html">Media Codes</a></li>
+ <li><a href="ValueSet-ehealth-media-modality.html">Media modality</a></li>
+ <li><a href="ValueSet-ehealth-media-view.html">Media view</a></li>
+ <li><a href="ValueSet-message-category.html">MessageCategory</a></li>
+ <li><a href="ValueSet-message-medium.html">MessageMedium</a></li>
+ <li><a href="ValueSet-ehealth-message-reasonCode.html">eHealth Message Reason Code</a></li>
+ <li><a href="ValueSet-ehealth-modifier-role.html">Modifier Role</a></li>
+ <li><a href="ValueSet-ehealth-observation-codes.html">Observation Codes</a></li>
+ <li><a href="ValueSet-ehealth-observation-method.html">Observation Method</a></li>
+ <li><a href="ValueSet-ehealth-oio-bpp-roles.html">OIO BPP Roles</a></li>
+ <li><a href="ValueSet-ehealth-oio-organization-type.html">OIO Organization Type</a></li>
+ <li><a href="ValueSet-ehealth-organization-relation-type.html">Organization Relation Type</a></li>
+ <li><a href="ValueSet-ehealth-organization-source.html">Organization Source</a></li>
+ <li><a href="ValueSet-ehealth-organization-specialty.html">Organization Specialty</a></li>
+ <li><a href="ValueSet-ehealth-organization-synchronization-status.html">Organization Synchronization Status</a></li>
+ <li><a href="ValueSet-ehealth-organization-type.html">Organization Type</a></li>
+ <li><a href="ValueSet-ehealth-overviewUsageMode.html">Overview Usage Mode</a></li>
+ <li><a href="ValueSet-participant-function.html">Participant Function</a></li>
+ <li><a href="ValueSet-ehealth-plandefinition-recommendation.html">PlanDefinition Recommendation</a></li>
+ <li><a href="ValueSet-ehealth-practice-setting-codes.html">Practice Setting Codes</a></li>
+ <li><a href="ValueSet-ehealth-priority.html">Priority</a></li>
+ <li><a href="ValueSet-ehealth-program.html">eHealth Program</a></li>
+ <li><a href="ValueSet-ehealth-property.html">eHealth Property</a></li>
+ <li><a href="ValueSet-ehealth-quality-types.html">Quality Types</a></li>
+ <li><a href="ValueSet-ehealth-questionnaire-elements.html">Questionnaire Elements</a></li>
+ <li><a href="ValueSet-ehealth-questionnaire-item-control.html">Questionnaire Item Control</a></li>
+ <li><a href="ValueSet-ehealth-questionnaire-item-image-format.html">Questionnaire Item Image Format</a></li>
+ <li><a href="ValueSet-ehealth-questionnaire-significance-indicator.html">Questionnaire Item Significance Indicator</a></li>
+ <li><a href="ValueSet-ehealth-questionnaire-recommendation.html">QuestionnaireRecommendation</a></li>
+ <li><a href="ValueSet-ehealth-questionnaire-types.html">Questionnaire Types</a></li>
+ <li><a href="ValueSet-ehealth-reference-range-type.html">Reference Range Type</a></li>
+ <li><a href="ValueSet-regional-subdivision-codes.html">RegionalSubdivisionCodes</a></li>
+ <li><a href="ValueSet-relatedperson-relationshiptype.html">RelationshipTypes</a></li>
+ <li><a href="ValueSet-resolved-timing-type.html">Resolved Timing Type</a></li>
+ <li><a href="ValueSet-ehealth-restriction-category.html">Restriction Category</a></li>
+ <li><a href="ValueSet-ehealth-measurement-sharing-approval-policies.html">Sharing Approval Policies</a></li>
+ <li><a href="ValueSet-ehealth-situation-quality.html">Situation Quality</a></li>
+ <li><a href="ValueSet-sor-organization-specialty.html">SorOrganizationSpecialty</a></li>
+ <li><a href="ValueSet-ehealth-sor-organization-type.html">SorOrganizationType</a></li>
+ <li><a href="ValueSet-ehealth-task-category.html">Task Category</a></li>
+ <li><a href="ValueSet-ehealth-thumbnail-size-category.html">Thumbnail Size Category</a></li>
+ <li><a href="ValueSet-ehealth-thumbnail-status.html">Thumbnail Status</a></li>
+ <li><a href="ValueSet-ehealth-topic-type.html">Topic Type</a></li>
+ <li><a href="ValueSet-ehealth-trigger-behavior.html">Trigger Behavior</a></li>
+ <li><a href="ValueSet-ehealth-trigger-enablement-code.html">Trigger Enablement Code</a></li>
+ <li><a href="ValueSet-ehealth-unit-code.html">eHealthUnitCodes</a></li>
+ <li><a href="ValueSet-ehealth-unit.html">eHealthUnit</a></li>
+ <li><a href="ValueSet-ehealth-usage-quality.html">Usage Quality</a></li>
+ <li><a href="ValueSet-ehealth-view-for-type.html">View For Type</a></li>
+ <li><a href="ValueSet-ehealth-view-type.html">View Type</a></li>
+ <li><a href="ValueSet-kl.dk-fhir-common-caresocial-ValueSet-KLConditionCodesNursing.html">KLTilstandeKoderSygepleje</a></li>
+ <li><a href="ValueSet-dk-ihe-classcode-vs.html">DK_IHE_ClassCode_VS</a></li>
+ <li><a href="ValueSet-dk-ihe-eventcodelists-vs.html">DK_IHE_EventCodeLists_VS</a></li>
+ <li><a href="ValueSet-dk-ihe-formatcode-vs.html">DK_IHE_FormatCode_VS</a></li>
+ <li><a href="ValueSet-dk-ihe-healthcarefacilitytypecode-vs.html">DK_IHE_HealthcareFacilityTypeCode_VS</a></li>
+ <li><a href="ValueSet-dk-ihe-practicesettingcode-vs.html">DK_IHE_practiceSettingCode_VS</a></li>
+ <li><a href="ValueSet-dk-ihe-typecode-vs.html">DK_IHE_TypeCode_VS</a></li>
+ <li><a href="ValueSet-ehealth-media-usage-mode.html">Media Usage Mode</a></li>
+
+</ul>
+
+<h2 id="codesystems">CodeSystems</h2>
+
+<ul>
+ <li><a href="CodeSystem-EventTiming.html">Event Timing</a></li>
+ <li><a href="CodeSystem-care-plan-status.html">Care Plan Status</a></li>
+ <li><a href="CodeSystem-ehealth-action-guidance-types.html">Action guidance types</a></li>
+ <li><a href="CodeSystem-ehealth-action-type.html">Action Type</a></li>
+ <li><a href="CodeSystem-ehealth-action.html">Action</a></li>
+ <li><a href="CodeSystem-ehealth-activitydefinition-code.html">Activity Definition Codes</a></li>
+ <li><a href="CodeSystem-ehealth-administrative-status.html">Administrative Status</a></li>
+ <li><a href="CodeSystem-ehealth-appointment-reason.html">Appointment Reason</a></li>
+ <li><a href="CodeSystem-ehealth-appointment-servicetype.html">Appointment Service Types</a></li>
+ <li><a href="CodeSystem-ehealth-appointmenttype-codes.html">Appointment Type Codes</a></li>
+ <li><a href="CodeSystem-ehealth-basic-resource-type.html">Basic resource type</a></li>
+ <li><a href="CodeSystem-ehealth-careplan-category.html">CarePlan Category</a></li>
+ <li><a href="CodeSystem-ehealth-careteam-category.html">CareTeam Category</a></li>
+ <li><a href="CodeSystem-ehealth-careteam-participant-role.html">CareTeam Participant Role</a></li>
+ <li><a href="CodeSystem-ehealth-clinicalimpression-codes.html">ClinicalImpression Codes</a></li>
+ <li><a href="CodeSystem-ehealth-clinicalimpression-decision-codes.html">ClinicalImpression Decision Codes</a></li>
+ <li><a href="CodeSystem-ehealth-clinicalimpression-finding-codes.html">ClinicalImpression Finding Codes</a></li>
+ <li><a href="CodeSystem-ehealth-clinicalimpression-investigation-item-codes.html">ClinicalImpression Investigation Item Codes</a></li>
+ <li><a href="CodeSystem-ehealth-clone-operation.html">Clone Operation</a></li>
+ <li><a href="CodeSystem-ehealth-communication-category.html">Communication Category</a></li>
+ <li><a href="CodeSystem-ehealth-conditions.html">Conditions</a></li>
+ <li><a href="CodeSystem-ehealth-consent-category.html">Consent Category</a></li>
+ <li><a href="CodeSystem-ehealth-contactpoint-custodian.html">ContactPoint Custodian</a></li>
+ <li><a href="CodeSystem-ehealth-contactpoint-system.html">ContactPoint System</a></li>
+ <li><a href="CodeSystem-ehealth-designation-use.html">eHealth Designation Use</a></li>
+ <li><a href="CodeSystem-ehealth-device-calibration-actor.html">Device calibration actor</a></li>
+ <li><a href="CodeSystem-ehealth-device-calibration-period.html">Device calibration period</a></li>
+ <li><a href="CodeSystem-ehealth-device-measuring-quality.html">Device Measuring Quality</a></li>
+ <li><a href="CodeSystem-ehealth-device-safety.html">Device safety</a></li>
+ <li><a href="CodeSystem-ehealth-device-service-types.html">Device service types</a></li>
+ <li><a href="CodeSystem-ehealth-device-supplier-roles.html">Device Supplier Roles</a></li>
+ <li><a href="CodeSystem-ehealth-device-types.html">Device Types</a></li>
+ <li><a href="CodeSystem-ehealth-device-use-reason.html">Device Use Reason</a></li>
+ <li><a href="CodeSystem-ehealth-devicemetric-property-types.html">DeviceMetric Property Types</a></li>
+ <li><a href="CodeSystem-ehealth-devicemetric-quality-types.html">DeviceMetric Quality Types</a></li>
+ <li><a href="CodeSystem-ehealth-document-class.html">Document Class</a></li>
+ <li><a href="CodeSystem-document-sharing-state.html">Document Sharing State</a></li>
+ <li><a href="CodeSystem-ehealth-document-type.html">Document Type</a></li>
+ <li><a href="CodeSystem-ehealth-provenance-policies.html">Policies for provenances</a></li>
+ <li><a href="CodeSystem-ehealth-ucum-printsymbol-supplement.html">UCUM printSymbol supplement</a></li>
+ <li><a href="CodeSystem-ehealth-usage-context-type.html">eHealth Usage Contxt Type</a></li>
+ <li><a href="CodeSystem-fs3-citizen-importance-scores.html">FS III, borgerens vurdering af betydning</a></li>
+ <li><a href="CodeSystem-fs3-citizen-performance-scores.html">FS III, borgerens vurdering af udførelse</a></li>
+ <li><a href="CodeSystem-fs3-group-communitylife.html">FS III, Samfundsliv</a></li>
+ <li><a href="CodeSystem-fs3-group-mentalfunctions.html">FS III, Mentale funktioner</a></li>
+ <li><a href="CodeSystem-fs3-group-mobility.html">FS III, Mobilitet</a></li>
+ <li><a href="CodeSystem-fs3-group-practicaltasks.html">FS III, Praktiske opgaver</a></li>
+ <li><a href="CodeSystem-fs3-group-selfcare.html">FS III, Egenomsorg</a></li>
+ <li><a href="CodeSystem-fs3-health-communication.html">FS III, Kommunikation</a></li>
+ <li><a href="CodeSystem-fs3-health-excretion-of-waste-materials.html">FS III, Udskillelse af affaldsstoffer</a></li>
+ <li><a href="CodeSystem-fs3-health-function-level.html">FS III, Funktionsniveau</a></li>
+ <li><a href="CodeSystem-fs3-health-knowledge-and-development.html">FS III, Viden og udvikling</a></li>
+ <li><a href="CodeSystem-fs3-health-musculoskeletal.html">FS III, Bevægeapparat</a></li>
+ <li><a href="CodeSystem-fs3-health-nutrition.html">FS III, Ernæring</a></li>
+ <li><a href="CodeSystem-fs3-health-pain-and-sensory-impressions.html">FS III, Smerter og sanseindtryk</a></li>
+ <li><a href="CodeSystem-fs3-health-psychosocial-conditions.html">FS III, Psykosociale forhold</a></li>
+ <li><a href="CodeSystem-fs3-health-respiration-and-circulation.html">FS III, Respiration og cirkulation</a></li>
+ <li><a href="CodeSystem-fs3-health-sexuality.html">FS III, Seksualitet</a></li>
+ <li><a href="CodeSystem-fs3-health-skin-and-mucous-membranes.html">FS III, Hud og slimhinder</a></li>
+ <li><a href="CodeSystem-fs3-health-sleep-and-rest.html">FS III, Søvn og hvile</a></li>
+ <li><a href="CodeSystem-fs3-scores.html">FS III, niveauer</a></li>
+ <li><a href="CodeSystem-ehealth-goal-description.html">Goal Description</a></li>
+ <li><a href="CodeSystem-ehealth-jurisdiction.html">Jurisdiction</a></li>
+ <li><a href="CodeSystem-ehealth-library-type.html">Library Type</a></li>
+ <li><a href="CodeSystem-ehealth-measurement-sharing-approval-policies.html">Sharing Approval Policies</a></li>
+ <li><a href="CodeSystem-ehealth-measurement-sharing-policies.html">Measurement Sharing Policies</a></li>
+ <li><a href="CodeSystem-ehealth-media-usage-mode.html">Media usage mode</a></li>
+ <li><a href="CodeSystem-ehealth-message-category.html">Message Category</a></li>
+ <li><a href="CodeSystem-ehealth-message-medium.html">Message Medium</a></li>
+ <li><a href="CodeSystem-ehealth-message-reasonCode.html">Message ReasonCode</a></li>
+ <li><a href="CodeSystem-ehealth-modifier-role.html">Modifier Role</a></li>
+ <li><a href="CodeSystem-ehealth-observation-method.html">Observation Method</a></li>
+ <li><a href="CodeSystem-ehealth-oio-bpp-roles.html">OIO-BPP Role</a></li>
+ <li><a href="CodeSystem-ehealth-oio-organization-type.html">OIO Organization Type</a></li>
+ <li><a href="CodeSystem-ehealth-organization-relation-type.html">Organization Relation Type</a></li>
+ <li><a href="CodeSystem-ehealth-organization-source.html">Organization Source</a></li>
+ <li><a href="CodeSystem-ehealth-organization-synchronization-status.html">Organization Synchronization Status</a></li>
+ <li><a href="CodeSystem-ehealth-overviewUsageMode.html">Overview usage mode</a></li>
+ <li><a href="CodeSystem-participant-function.html">Participant Function</a></li>
+ <li><a href="CodeSystem-percentage-codes.html">Integer percentage codes</a></li>
+ <li><a href="CodeSystem-ehealth-plandefinition-recommendation.html">PlanDefinition Recommendation</a></li>
+ <li><a href="CodeSystem-ehealth-priority.html">Priority</a></li>
+ <li><a href="CodeSystem-ehealth-program.html">eHealth Program</a></li>
+ <li><a href="CodeSystem-ehealth-property.html">eHealth Property</a></li>
+ <li><a href="CodeSystem-ehealth-quality-types.html">Quality Types</a></li>
+ <li><a href="CodeSystem-ehealth-questionnaire-elements.html">Questionnaire Elements</a></li>
+ <li><a href="CodeSystem-ehealth-questionnaire-item-significance-indicator.html">Questionnaire Item Significance Indicator</a></li>
+ <li><a href="CodeSystem-ehealth-questionnaire-recommendation.html">Questionnaire Recommendation</a></li>
+ <li><a href="CodeSystem-ehealth-questionnaire-types.html">Questionnaire Types</a></li>
+ <li><a href="CodeSystem-ehealth-reference-range-type.html">Reference Range Type</a></li>
+ <li><a href="CodeSystem-resolved-timing-type.html">Resolved Timing Type</a></li>
+ <li><a href="CodeSystem-ehealth-restriction-category.html">Restriction Category</a></li>
+ <li><a href="CodeSystem-ehealth-situation-quality.html">Situation Quality</a></li>
+ <li><a href="CodeSystem-ehealth-sor-organization-specialty.html">SOR Organization Specialty</a></li>
+ <li><a href="CodeSystem-ehealth-sor-organization-type.html">SOR Organization Type</a></li>
+ <li><a href="CodeSystem-ehealth.sundhed.dk-action-selection-behavior-supplement.html">Action Selection Behavior Supplement</a></li>
+ <li><a href="CodeSystem-ehealth.sundhed.dk-loinc.org-supplement.html">LOINC Code System Supplement</a></li>
+ <li><a href="CodeSystem-ehealth.sundhed.dk-snomed.info-sct-supplement.html">SNOMED CT Code System Supplement</a></li>
+ <li><a href="CodeSystem-ehealth-system.html">Ehealth System</a></li>
+ <li><a href="CodeSystem-ehealth-task-category.html">Task Category</a></li>
+ <li><a href="CodeSystem-ehealth-task-handover-roles.html">Task Handover Roles</a></li>
+ <li><a href="CodeSystem-ehealth-thumbnail-size.html">Thumbnail Size Category</a></li>
+ <li><a href="CodeSystem-ehealth-thumbnail-status.html">Thumbnail status</a></li>
+ <li><a href="CodeSystem-ehealth-topic-type.html">Topic Type</a></li>
+ <li><a href="CodeSystem-ehealth-trigger-enablement-code.html">Trigger Enablement Code</a></li>
+ <li><a href="CodeSystem-ehealth-unit-code.html">eHealth Unit Codes</a></li>
+ <li><a href="CodeSystem-ehealth-usage-quality.html">Usage Quality</a></li>
+ <li><a href="CodeSystem-ehealth-view-type.html">View types</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-address-type.html">Address Type</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-address-use.html">Address Use</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-care-team-status.html">Care Team Status</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-consent-state-codes.html">Consent State Codes</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-days-of-week.html">Days Of Week</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-episode-of-care-status.html">Episode Of Care Status</a></li>
+ <li><a href="CodeSystem-item-type.html">Questionnaire Item Type</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-publication-status.html">Publication Status</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-request-status.html">Request Status</a></li>
+ <li><a href="CodeSystem-hl7.org-fhir-resource-types.html">Resource Type</a></li>
+ <li><a href="CodeSystem-v3-TimingEvent.html">v3 Code System TimingEvent</a></li>
+ <li><a href="CodeSystem-iso-reg-subdiv-codes.html">Regional subdivision codes</a></li>
+ <li><a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html">FSIII</a></li>
+ <li><a href="CodeSystem-snomed-20150731.html">Danish SNOMED CT Extension</a></li>
+ <li><a href="CodeSystem-snomed-20180331.html">Danish SNOMED CT Extension</a></li>
+ <li><a href="CodeSystem-snomed-20180930.html">Danish SNOMED CT Extension</a></li>
+ <li><a href="CodeSystem-data-absent-reason.html">DataAbsentReason</a></li>
+ <li><a href="CodeSystem-hl7TermMaintInfra.html">HL7 Terminology Maintenance Infrastructure Vocabulary</a></li>
+ <li><a href="CodeSystem-urn-ietf-bcp-47.html">Common Codes from BCP-47</a></li>
+ <li><a href="CodeSystem-1.2.208.176.2.1--20190829.html">NPU DK</a></li>
+ <li><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html">Sundhedsvæsenets klassifikationssystem (SKS)</a></li>
+ <li><a href="CodeSystem-urn-oid-1.2.208.176.7.3.1.html">Questionnaires used in the Danish Patient Reported Outcome (PRO)</a></li>
+ <li><a href="CodeSystem-urn-oid-1.2.208.184.100.1.html">MedCom Message Codes</a></li>
+ <li><a href="CodeSystem-dk-ihe-formatcode-cs.html">DK IHE Format Code CodeSystem</a></li>
+ <li><a href="CodeSystem-urn-oid-1.2.208.184.100.8.html">DAK-E Codes</a></li>
+ <li><a href="CodeSystem-urn-oid-1.2.208.184.100.9.html">DK IHE ClassCode CS</a></li>
+
+</ul>
+
+<h2 id="conceptmaps">ConceptMaps</h2>
+
+<ul>
+ <li><a href="ConceptMap-activitydefinition-code-to-do-missing-measurement.html">Activitydefinition-code to do missing measurement</a></li>
+ <li><a href="ConceptMap-activitydefinition-code-to-do-reminder.html">Activitydefinition-code to do reminder</a></li>
+ <li><a href="ConceptMap-activitydefinition-code-to-measurement-resource-type.html">Activitydefinition-code to measurement resource type</a></li>
+ <li><a href="ConceptMap-activitydefinition-code-to-observation-code.html">ActivityDefinition code to Observation code</a></li>
+ <li><a href="ConceptMap-activitydefinition-code-to-perform-sharing.html">Activitydefinition-code-to-perform-sharing</a></li>
+ <li><a href="ConceptMap-conceptmap-obs-code-to-ucum.html">Observation code to UCUM mapping</a></li>
+ <li><a href="ConceptMap-conceptmap-obs-code-to-value-type.html">conceptmap-obs-code-to-value-type</a></li>
+ <li><a href="ConceptMap-conceptmap-ucum-to-printsymbol.html">UCUM code to PrintSymbol mapping</a></li>
+ <li><a href="ConceptMap-oio-bpp-roles-to-careteam-participant-roles.html">OIO BPP roles to eHealth CareTeam participant role mapping</a></li>
+
+</ul>
+
+<h2 id="namingsystems">NamingSystems</h2>
+
+<ul>
+ <li><a href="NamingSystem-cpr.html">Danish civil registration system - CPR</a></li>
+ <li><a href="NamingSystem-ydernummer.html">Ydernummer</a></li>
+ <li><a href="NamingSystem-sor.html">Sundhedsvæsenets Organisationsregister (SOR)</a></li>
+ <li><a href="NamingSystem-ehealth-environment.html">eHealth Environment</a></li>
+ <li><a href="NamingSystem-ehealth-identifier.html">eHealthIdentifier</a></li>
+ <li><a href="NamingSystem-ehealth-question-identifier.html">eHealthQuestionIdentifier</a></li>
+ <li><a href="NamingSystem-ehealth-device-identifier.html">eHealth Device Identifier</a></li>
+
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 23, 2025 06:23+0000">2025-04-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

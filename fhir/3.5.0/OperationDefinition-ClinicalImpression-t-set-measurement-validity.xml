@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ClinicalImpression-t-set-measurement-validity"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition ClinicalImpression-t-set-measurement-validity</b></p><a name="ClinicalImpression-t-set-measurement-validity"> </a><a name="hcClinicalImpression-t-set-measurement-validity"> </a><a name="ClinicalImpression-t-set-measurement-validity-da-DK"> </a><p>URL: [base]/ClinicalImpression/$set-measurement-validity</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>clinicalImpression</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/clinicalimpression.html">ClinicalImpression</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity"/>
+  <version value="3.5.0"/>
+  <name value="set-measurement-validity"/>
+  <title value="Invalidate / Retract Invalidation of a Measurement"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-04-23T06:22:54+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="This operation is used to invalidate or retract an invalidation of a Measurement.&#xD;&#xA;## Input&#xD;&#xA;The input parameter is a ClinicalImpression resource with the following values:&#xD;&#xA;- `status` - The status of the ClinicalImpression must be `completed`.&#xD;&#xA;- `investigation.item` - Versioned reference to the Measurement that is to be invalidated or retracted.&#xD;&#xA;- `investigation.item` - Unversioned reference to the Measurement that is to be invalidated or retracted.&#xD;&#xA;- `subject` - Reference to the Patient .&#xD;&#xA;- `episodeOfCare` - Reference to the EpisodeOfCare that the Measurement is part of.&#xD;&#xA;- `code` - Must be `MeasurementValidityUpdate` from `http://ehealth.sundhed.dk/cs/clinicalimpression-codes`.&#xD;&#xA;- `finding.code` - The finding code must be `measurement-invalidated` or `measurement-invalidation-retracted`.&#xD;&#xA;- `decision` - The decision code is required if `finding.code` is `measurement-invalidated`. The decision code must be `invalidated-fulfills` or `invalidated-is-not-fulfillment`.&#xD;&#xA;## Output&#xD;&#xA;The operation returns the persisted ClinicalImpression:&#xD;&#xA;- `clinicalImpression` - The persisted ClinicalImpression resource with updated assessor values.&#xD;&#xA;## Operation side effects&#xD;&#xA;- The operation will update the status of the Measurement that is being invalidated or has the invalidation retracted to `entered-in-error` or `completed` respectively.&#xD;&#xA;- The operation will update the status to `entered-in-error` for any previous invalidation or invalidation retraction ClinicalImpression for the referenced Measurement, indicating that the previous ClinicalImpression is no longer used to represent the validity of the Measurement. The operation performs a search for any existing ClinicalImpression in the measurement validity cycle, and does not rely on/update the `previous` field on the input ClinicalImpression. If the input ClinicalImpression is for invalidation retraction, there must exist a ClinicalImpression invalidating the Measurement.&#xD;&#xA;- The operation will add an additional investigation with the code `item-modified`, referencing the Measurement version after the patch has been applied.&#xD;&#xA;- The operation will set assessor values (assessor, assessorOrganization and assessorOther). If the user is of type PRACTITIONER, assessor and assessorOrganization will be set. If the user is of type PATIENT, assessorOther will be set`.&#xD;&#xA;"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="set-measurement-validity"/>
+  <resource value="ClinicalImpression"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="clinicalImpression"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="ClinicalImpression"/>
+  </parameter>
+</OperationDefinition>

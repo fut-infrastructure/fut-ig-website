@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - eHealth Infrastructure v3.4.1</title>
+    <title>Artifacts Summary - eHealth Infrastructure v3.5.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"87"}
-    h3,h4,h5,h6{--heading-prefix:"87.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"88"}
+    h3,h4,h5,h6{--heading-prefix:"88.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.4.1 - release
+            <span style="display:inline-block;">3.5.0 - release
 
 
 
@@ -223,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.4.1: Release) based on <a no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -366,7 +366,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="OperationDefinition/ehealth-patient-create">Create Patient</a>
             </td>
             <td>
-<p>This operation is used to create a new Patient resource. Once executed successfully the Patient resource is created on the server and as well returned in the response parameter. The operation takes the input parameters listed and returns the Patient resource where the person having the provided civil registration number (crn) is used as the origin of the data. 
+<p>Creates a Patient resource on the server and returns it in the response. If the patient already exists, it is returned instead. If the CPR number does not match a patient on the service, looks up the CPR in the national registry and finds any potential prior CPRs used by the person. If a prior CPR number matches a patient on the service, updates the patient with national data, and returns a patient with the newest data. NOTE: This means that the returned patient can have a different identifier than the one used for the request. If no prior CPR matches, creates a new patient using national data. If the CPR is invalid, i.e. does not correspond to a patient on the national registry, it errors. 
 </p>
 <h3 id="note">Note</h3>
 <p>This operation is currently the only way to create Patient resources in the eHealth Infrastructure, as it ensures that the correct bindings from national registers</p>
@@ -7307,6 +7307,16 @@ and time of creation, start, and end of execution.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="OperationDefinition-Organization-i-get-general-practitioner-info.html"
+                  title="OperationDefinition/Organization-i-get-general-practitioner-info">Get organization information for a healthcare provider with provider number</a>
+            </td>
+            <td>
+<p>The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. When multiple Organization resources have the same provider number, the shared parent Organization is returned. An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. 
+A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="OperationDefinition--s-get-patient-procedures.html"
                   title="OperationDefinition/-s-get-patient-procedures">Get patient procedures</a>
             </td>
@@ -7493,7 +7503,7 @@ The following elements of each PractitionerRole are mandatory:</p>
                   title="OperationDefinition/ehealth-person-match">Person name lookup</a>
             </td>
             <td>
-<p>This operation is used to do a lookup on a citizen in the national infrastructure based on the identifier of the person unless the identifier can be resolved locally. The operation returns a 'limited' Person resource with the identifier and name of the person being the only returned attributes in the bundle. The operation is an implementation of <a href="https://www.hl7.org/fhir/stu3/patient-operations.html#match">https://www.hl7.org/fhir/stu3/patient-operations.html#match</a> on the Person resource.</p>
+<p>This operation is used to lookup a citizen. It first attempts lookup on the service and, if a match is found, returns a Person resource with name, identifier, deceased-status and a link to the Patient resource. If not, it proceeds to find any prior CPR-numbers associated with the query CPR in the national infrastructure and checks if any of those match a patient on the service. If a match is found, it returns a Person resource with the same information. NOTE: This means that the returned patient can have a different identifier than the one used for request. If no match is found, it finds base information on the national infrastructure and returns a 'limited' Person resource containing only the identifier, name and deceased-state of the person. The operation is an implementation of <a href="https://www.hl7.org/fhir/stu3/patient-operations.html#match">https://www.hl7.org/fhir/stu3/patient-operations.html#match</a> on the Person resource.</p>
 </td>
          </tr>
          <tr>
@@ -13219,24 +13229,6 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-medcom-device-type.html"
-                  title="ValueSet/medcom-device-type">MedCom Device Type</a>
-            </td>
-            <td>
-<p>Value set for the Medcom Device Type.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="ValueSet-medcom-instrument-code-device-type.html"
-                  title="ValueSet/medcom-instrument-code-device-type">MedCom Instrument Code Device Type</a>
-            </td>
-            <td>
-<p>Value set for the Medcom Instrument Code Device Type.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="ValueSet-ehealth-media-codes.html"
                   title="ValueSet/ehealth-media-codes">Media Codes</a>
             </td>
@@ -13693,6 +13685,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-designation-use.html"
+                  title="ValueSet/ehealth-designation-use">eHealth Designation Use</a>
+            </td>
+            <td>
+<p>Details of how a designation would be used.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-message-reasonCode.html"
                   title="ValueSet/ehealth-message-reasonCode">eHealth Message Reason Code</a>
             </td>
@@ -13706,6 +13707,14 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-property.html" title="ValueSet/ehealth-property">eHealth Property</a>
+            </td>
+            <td>
+<p>Used to distinguish/extract specific properties of a code.</p>
 </td>
          </tr>
          <tr>
@@ -14527,24 +14536,6 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="CodeSystem-medcom-device-types.html"
-                  title="CodeSystem/medcom-device-types">Medcom Device Types</a>
-            </td>
-            <td>
-<p>CodeSystem for the Medcom Device Type.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="CodeSystem-urn-oid-1.2.208.184.100.3.html"
-                  title="CodeSystem/urn-oid-1.2.208.184.100.3">Medcom Instrument Codes</a>
-            </td>
-            <td>
-<p>MedCom Instrument Codes.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-media-usage-mode.html"
                   title="CodeSystem/ehealth-media-usage-mode">Media usage mode</a>
             </td>
@@ -14958,11 +14949,29 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-designation-use.html"
+                  title="CodeSystem/ehealth-designation-use">eHealth Designation Use</a>
+            </td>
+            <td>
+<p>Codes used to identify/describe designation use.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-program.html"
                   title="CodeSystem/ehealth-program">eHealth Program</a>
             </td>
             <td>
 <p>Codes for programs or projects using the eHealth Infrastructure and wanting to mark various resources as intended for their non-exclusive use.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-property.html"
+                  title="CodeSystem/ehealth-property">eHealth Property</a>
+            </td>
+            <td>
+<p>Codes used to identity specific properties on codes in eHealth CodeSystems.</p>
 </td>
          </tr>
          <tr>
@@ -15013,6 +15022,14 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>SOR is provided by the Danish Health Data Authority under the Danish Ministry of Health. The register holds organizations within the Danish health sector, their geographical and virtual addresses as well as codes for their identification and for EDI-communication. Danish Health Data Authority is responsible for issuing and publishing codes to identify organizations across health care sectors and related public and private services. SOR includes organizational data on hospitals, the primary care sector (physiotherapists, general practitioners, dentists etc.) and municipal health service organizations as well as non-health care organizations that need to be able to receive data from the former.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-ydernummer.html" title="NamingSystem/ydernummer">Ydernummer</a>
+            </td>
+            <td>
+<p>The Danish Health Authority and Danish Regions can identify doctors' names etc. via the provider number ("ydernummer"). The different groups of doctors (general practitioners, ear specialists, eye specialists, etc.) have their own provider number range. Multiple doctors in the same practice will often have the same provider number. Only doctors without a provider number use the special out-of-hours doctor numbers.Provider numbers can change over time. A provider number may be assigned to a doctor who quits or retires, after which the provider number becomes available and can later be assigned to another doctor.</p>
 </td>
          </tr>
          <tr>
@@ -15102,15 +15119,6 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>The map controls whether an activity shall have sharingApprovalPolicy or not</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="ConceptMap-device-type-to-medcom-device-type.html"
-                  title="ConceptMap/device-type-to-medcom-device-type">Device type to MedCom device type</a>
-            </td>
-            <td>
-<p>The map is used to map the device type to the MedCom device type</p>
 </td>
          </tr>
          <tr>
@@ -15253,7 +15261,7 @@ Http response code 404 will be returned if no related SOR organization could be 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.4.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 6, 2025 12:27+0000">2025-03-06</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 23, 2025 06:29+0000">2025-04-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >
