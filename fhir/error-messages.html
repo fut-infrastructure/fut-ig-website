@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Error Messages - eHealth Infrastructure v3.5.0</title>
+    <title>Error Messages - eHealth Infrastructure v3.5.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.5.0 - release
+            <span style="display:inline-block;">3.5.1 - release
 
 
 
@@ -223,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.5.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.5.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Error Messages</h2>
   
 
@@ -273,6 +273,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">GENERAL_NAMING_SYSTEM_NOT_FOUND</code>: NamingSystem with identifier %s is not found.</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_FIELD_ACCESS_FAILURE</code>: Failed to access field: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_FIELD_COMPARE_FAILURE</code>: Failed to compare field: %s</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-actionguidanceview">ehealth-actionguidanceview</h4>
@@ -285,7 +291,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_STATUS_CHANGE</code>: Illegal status change for action_guidance or view from %s and to %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_CHANGE_OF_ELEMENTS</code>: Illegal element change in either EHealthActonGuidance or EhealthView. If status is equal to Active or Retired, only the following elements can be changed (Recommendation, IntendedAudience, useContext, modifierrole and status)</p>
+    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_CHANGE_OF_ELEMENTS</code>: Illegal element change in either EHealthActonGuidance or EhealthView. If status is equal to Active or Retired, only the following elements can be changed (Recommendation, IntendedAudience, useContext, modifierrole and status). The following differences were found when updating existing resource with id %s: %s.</p>
   </li>
 </ul>
 
@@ -293,7 +299,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for ActivityDefinition with status: %s or %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for ActivityDefinition with status: %s or %s, otherwise, only useContext can be modified. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating ActivityDefinition with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_TO_NOT_ALLOWED_STATE</code>: Update is not allowed for ActivityDefinition with %s status to different than %s status.</p>
@@ -337,6 +346,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_SOURCE_IS_UNSUPPORTED</code>: QuestionnaireResponse with id: '%s' has source '%s', which is not supported - Skipping publication</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_AUTHOR_RESOURCE_NOT_FOUND</code>: QuestionnaireResponse with id: '%s', no resource found for author reference '%s' - Skipping publication</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_SUPPORTING_INFORMATION</code>: Appointment must have supportingInformation</p>
@@ -397,6 +409,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">CDA_XML_VALIDATION_FAILED</code>: Validation of the CDA XML failed: %s</li>
+</ul>
+
+<h4 id="ehealth-clinical">ehealth-clinical</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_VALIDATION_STATE_FINDING_CODE_NOT_ALLOWED</code>: Invalidation/Invalidation Retraction finding code is not allowed for ClinicalImpression outside custom operation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_MEASUREMENT_VALIDITY_UPDATED_CODE_REQUIRED</code>: ClinicalImpressions for Invalidation/Invalidation Retraction must have ClinicalImpression.code=MeasurementValidityUpdated</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-codesystem">ehealth-codesystem</h4>
@@ -464,7 +487,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_NOT_OF_TYPE_QFDD</code>: The document is expected to be of type QFDD</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_SOR_ORGANIZATION_REQUIRED</code>: Security token organization context must be a SOR organization for query</p>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_SOR_ORGANIZATION_REQUIRED</code>: Security token organization context must be resolvable to a SOR identifier for query</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_XDS_ERROR</code>: The following errors where received from Document Sharing</p>
@@ -511,7 +534,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_PATCH_NO_CONSENT</code>: No valid Episode Of Care related consent</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_MUST_BE_ACTIVE_AND_NOT_DECEASED</code>: Patient.active must be true and Patient.deceased must be false to create episode of care</p>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_MUST_NOT_BE_DECEASED</code>: Patient.deceased must be false to create episode of care</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_STATUS_HISTORY_NOT_EMPTY</code>: It is not allowed to fill status history manually</p>
@@ -707,7 +730,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_TOO_FEW_ANSWERS</code>: QuestionnaireResponse: %s has too few answers for the item with linkId: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_DATA_NO_DATA_FOUND</code>: Encrypted media data with id %s was not found</p>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_DATA_NO_DATA_FOUND</code>: Media data with id %s was not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_THUMBNAIL_DATA_NO_DATA_FOUND</code>: Media thumbnail data with size %d for id %s was not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_THUMBNAIL_DATA_NOT_SUPPORTED</code>: Media thumbnail data for id %s is not supported</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_STATUS</code>: Measurement status %s is invalid. Status must be %s for measurement of type %s</p>
   </li>
 </ul>
 
@@ -744,13 +776,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_MISSING_IDENTIFIER</code>: Organization %s does not have identifier of type: %s</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_REFERENCE_IDENTIFIER_MISSING_PROVIDER_NUMBER</code>: There are no identifiers of type ProviderNumber in the Organization reference list: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_REFERENCE_IDENTIFIER_PROVIDER_NUMBER_NOT_UNIQUE</code>: The identifiers of type ProviderNumber are not unique in the Organization reference list: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_NOT_FOUND</code>: No active Organization could be found for the ProviderNumber: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_NO_COMMON_PARENT_FOUND_PROVIDER_NUMBER</code>: No common parent found for the ProviderNumber: %s</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-plandefinition">ehealth-plandefinition</h4>
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for PlanDefinition with status: %s or %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for PlanDefinition with status: %s or %s, otherwise, only useContext can be modified. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating PlanDefinition with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_TO_NOT_ALLOWED_STATE</code>: Update is not allowed for PlanDefinition with %s status to different than %s status.</p>
@@ -795,10 +842,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_IN_STATUS</code>: Update is not allowed for questionnaires with statuses: %s, %s</p>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMTPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_STATUS</code>: Update is not allowed for questionnaires with %s status to different than %s status</p>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_DATETIME</code>: QuestionnaireResponse has invalid DateTimeType on effectivePeriod.%s, must have minutes, seconds or millis precision and must have a timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_START_AFTER_END</code>: QuestionnaireResponse has invalid effectivePeriod, effectivePeriod.start must be before effectivePeriod.end</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating Questionnaire with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_IN_STATUS</code>: Update is not allowed for questionnaires with statuses: %s, %s, except for changes to useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_STATUS</code>: Update is not allowed for questionnaires with %s status to different than %s status.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_DELETE_WITH_STATUS</code>: Delete only possible for questionnaires with status: %s</p>
@@ -936,6 +995,39 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">TASK_FOR_NOT_SET</code>: When episode of care is set, the field 'for' must reference the corresponding patient</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_MEASUREMENT_REFERENCE</code>: Expecting ClinicalImpression to include a single Investigations. The investigation must contain two items: one item with an versionless reference and one item with a versioned reference of the Measurement that is being invalidated or retracted.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_INVESTIGATION_ITEM_TYPE</code>: Investigation item type must be of type Media, Observation or QuestionnaireResponse.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_FINDING_CODE_ON_PREVIOUS</code>: Previous ClinicalImpression must be of type 'invalidation' when trying to retract invalidation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_INITIAL_STATUS</code>: ClinicalImpression for invalidation/retracted invalidation must be created with 'COMPLETED' status.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_DECISION_CODE</code>: ClinicalImpression must contain a single decision, with a single Coding of code 'invalidated-fulfills' or 'invalidated-is-not-fulfillment'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_FINDING_CODE</code>: ClinicalImpression must contain a single finding, with a single Coding of code 'measurement-invalidated' or 'measurement-invalidation-retracted'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_REFERENCE_MISMATCH</code>: Mismatch between references: %s(%s) and %s(%s).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_MISSING_PREVIOUS</code>: Unable to find previous ClinicalImpression when trying to retract invalidation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_PREVIOUS_EXPECTING_INVALIDATION_RETRACTION</code>: Previous ClinicalImpression must be of type invalidation retraction when trying to invalidate measurement.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_PREVIOUS_EXPECTING_INVALIDATION</code>: Previous ClinicalImpression must be of type invalidation when trying to retract invalidation for measurement.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_MULTIPLE_PREVIOUS</code>: Unable to determine previous invalidation/invalidation retracted ClinicalImpression, due to finding multiple candidates for the Measurement.</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-transformation">ehealth-transformation</h4>
@@ -949,6 +1041,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_NO_DOCUMENT_FOUND</code>: No matching document found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_GENERIC_NARRATIVE_ERROR</code>: Can't generate narrative for: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_UNKNOWN_QUESTION_TYPE</code>: Unknown QFDD question type. Question id: %s</p>
@@ -1098,31 +1193,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_QFDD_QUESTION_DOES_NOT_SUPPORT_ASSOCIATED_TEXT_QUESTION</code>: QFDDQuestion with id: '%s' does not support associatedText. Class was: '%s'. QuestionnaireResponse: '%s'.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_RESOURCE</code>: Input bundle missing resource: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_MISSING_START</code>: QuestionnaireResponse with id: '%s' is missing effective period start.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NARRATIVE_ERROR</code>: Can't generate narrative for: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_START</code>: QuestionnaireResponse with id: '%s' must have a valid effective period start, including time precision and timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_END</code>: QuestionnaireResponse with id: '%s' must have a valid effective period end, including time precision and timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EQUAL_BOUNDS</code>: The low and high bounds of the effective period in QuestionnaireResponse with ID '%s' must not be equal.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_RESOURCE</code>: Input bundle missing resource: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CPR</code>: CPR is mandatory for patient but not present in fhir bundle</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_OBSERVATION</code>: Observation is mandatory for PHMR</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_CODING</code>: Observation coding system must be urn:oid:1.2.208.176.2.1</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_COMMENT_AUTHOR_REFERENCE</code>: The author of a measurement comment is a reference not provided in the bundle.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_CODING</code>: Observation.observationRanges[x].type.coding.system should be http://www.example.com/medcom/message-codes</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_RAL</code>: RAL observation ranges should not have both High and Low set when transforming to PHRM, but High is: %s, and Low is: %s</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_GAL</code>: GAL observation ranges should not have both High and Low set when transforming to PHRM, unless either bound is replaced with a RAL reference range, but High is: %s, and Low is: %s</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_NUMBER_OF_DECIMALS</code>: Value should have no more than 7 decimals, but is: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_QUANTITY_MISSING</code>: Value should be Quantity type and not null</p>
@@ -1143,10 +1235,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_INVALID_EFFECTIVE</code>: Invalid Observation.effective, expecting DateTime, Period or Instant</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_CODESYSTEM_NOT_FOUND</code>: CodeSystem was not found. System: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_OBSERVATION_ENTRY_CODESYSTEM_NAME_NOT_DEFINED</code>: PHMR document observation entry must have a CodeSystem name. No one defined for '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_CODE_NOT_FOUND_IN_CODESYSTEM</code>: Code '%s' was not found in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_DESIGNATION_FOR_CODE</code>: Could not find designation use 'phmr-short-name' for code '%s' in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_DESIGNATION_VALUE_FOR_CODE</code>: No value specified for designation use 'phmr-short-name'. Code: '%s'. CodeSystem: '%s'</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_INVALID_METHOD_CODES</code>: Method codes for performerType and provisionMethod for observation with id '%s' could not be established.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_TOO_MANY_DECIMALS</code>: Could not transform measurement with reference range Low: %s and High: %s since we cannot correctly translate more than 7 decimals.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_MISSING_UNIT_CODE_FOR_QUANTITY</code>: No unit code found for quantity with observation code '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_INVALID_UNIT_MAPPING_FOR_OBSERVATION_CODE</code>: Invalid UCUM unit mapping found for observation code '%s'. Observation has unit: '%s', but expected is one of ('%s')</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_MISSING_UNIT_MAPPING_FOR_OBSERVATION_CODE</code>: No UCUM unit mapping found for observation code '%s' in ConceptMap. Has unit code: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_COMBINATION_OBSERVATION_UNIT_AND_PHMR_UNIT_PROPERTY</code>: Invalid combination of observation unit: '%s' and PHMR unit property: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_UNIT_PROPERTY_FOR_CODE</code>: Could not find property 'phmr-unit' for code '%s' in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_UNIT_VALUE_PROPERTY_FOR_CODE</code>: No value specified for property 'phmr-unit'. Code: '%s'. CodeSystem: '%s'</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CONFIDENTIALITY_CODE</code>: Composition.confidentiality is mandatory</p>
@@ -1161,7 +1283,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_COMPOSITION</code>: Composition expected for transformation is not found</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_ATTESTER</code>: Composition.attester.party is mandatory for transformation</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_ATTESTER</code>: Composition.attester must contain one Practitioner and one Organization if the document is shared manually</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_WRONG_TYPE_COMPOSITION_AUTHOR</code>: Composition.author should either be a Patient or Practitioner</p>
@@ -1173,7 +1295,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_AUTHOR_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.authorOrganization must contain SOR identifier: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_ATTESTER_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.attester.party must contain SOR identifier: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_ATTESTER_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.attester.party Organization must contain SOR identifier: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_CUSTODIAN_MUST_CONTAIN_SOR_ID</code>: Custodian organization must contain SOR identifier: %s</p>
@@ -1215,6 +1337,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
 </ul>
 
+<h4 id="ehealth-use">ehealth-use</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">USE_CONTEXT_VALIDATION_FAILED</code>: UseContext validation for %s failed: value code %s not found in %s ValueSet</li>
+</ul>
+
 <h4 id="ehealth-versioning">ehealth-versioning</h4>
 
 <ul>
@@ -1254,7 +1382,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 23, 2025 06:29+0000">2025-04-23</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.5.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 29, 2025 12:23+0000">2025-04-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

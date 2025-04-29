@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careplan-customization-stats> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-fetch-careplan-customization-stats"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-fetch-careplan-customization-stats</b></p><a name=\"-s-fetch-careplan-customization-stats\"> </a><a name=\"hc-s-fetch-careplan-customization-stats\"> </a><a name=\"-s-fetch-careplan-customization-stats-da-DK\"> </a><p>URL: [base]/$fetch-careplan-customization-stats</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://reporting.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-fetch-careplan-customization-stats"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "3.5.1"] ; # 
+  fhir:name [ fhir:v "fetch-careplan-customization-stats"] ; # 
+  fhir:title [ fhir:v "Fetch careplan customization stats"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-04-29T12:17:19+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Report Contents\nThis report contains a count of patient specific modifications of:\n- Measurement schedule timing\n- Reference ranges\n### Grouping \nThis report is grouped by PlanDefinition. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on EpisodeOfCare.managingOrganization match\n- period: Filter on CarePlan.period overlap\n\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nEHealthPlanDefinition is a Fhir resource. See the implementation guide for details\n\n    {\n        'EHealthPlanDefinition': {\n            'resourceType': 'PlanDefinition',\n            'id': '53450',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition']\n            },\n            'extension': [{\n                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role',\n                    'extension': [{\n                            'url': 'reference',\n                            'valueReference': {\n                                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/85109'\n                            }\n                        }, {\n                            'url': 'role',\n                            'valueCodeableConcept': {\n                                'coding': [{\n                                        'system': 'http://ehealth.sundhed.dk/cs/modifier-role',\n                                        'code': 'owner'\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            ],\n            'version': '97219ba1-2202-42a1-b99d-45de3a506b40',\n            'status': 'active'\n        },\n        'CarePlanCustomizationSummary': {\n            'timingCustomizationCount': 1,\n            'referenceRangeCustomizationCount': 1\n        }\n    }"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "fetch-careplan-customization-stats"] ; # 
+  fhir:system [ fhir:v true] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v false] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "anonymization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "period" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Period" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

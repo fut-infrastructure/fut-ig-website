@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ActivityDefinitionPlanDefinition-i-create-clone"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition ActivityDefinitionPlanDefinition-i-create-clone</b></p><a name="ActivityDefinitionPlanDefinition-i-create-clone"> </a><a name="hcActivityDefinitionPlanDefinition-i-create-clone"> </a><a name="ActivityDefinitionPlanDefinition-i-create-clone-da-DK"> </a><p>URL: [base]/ActivityDefinition/[id]/$create-clone</p><p>URL: [base]/PlanDefinition/[id]/$create-clone</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>clone-operation</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>default-clone-behavior</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td/></tr><tr><td>IN</td><td>deep-clone-references</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone"/>
+  <version value="3.5.1"/>
+  <name value="create-clone"/>
+  <title value="Create a clone of an ActivityDefinition"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-04-29T12:17:19+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="### Input&#xA;- resourceId: reference to the ActivityDefinition resource that should be cloned&#xA;- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation &#xA;- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned &#xA;- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.&#xA;&#xA;### Output&#xA;Bundle containing all resources that were created during the operation.&#xA;&#xA;### Validation&#xA;- New business versions require that the user has modifier-role: owner or co-author for the resource&#xA;- New copy does not require that the user has a modifier-role.&#xA;- New business version can be made only when no draft resource exists (having identical base identifier).&#xA;- Read/search/create privileges are required for the resource types affected by $create-clone&#xA;"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="create-clone"/>
+  <resource value="ActivityDefinition"/>
+  <resource value="PlanDefinition"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="clone-operation"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Coding"/>
+  </parameter>
+  <parameter>
+    <name value="default-clone-behavior"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="deep-clone-references"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <type value="Reference"/>
+  </parameter>
+</OperationDefinition>
