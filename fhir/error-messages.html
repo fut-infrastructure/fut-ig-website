@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Error Messages - eHealth Infrastructure v3.5.1</title>
+    <title>Error Messages - eHealth Infrastructure v4.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">3.5.1 - release
+            <span style="display:inline-block;">4.0.0 - release
 
 
 
@@ -223,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v3.5.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v4.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Error Messages</h2>
   
 
@@ -327,6 +327,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </tbody>
     </table>
   </li>
+  <li><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</li>
 </ul>
 
 <h4 id="ehealth-appointment">ehealth-appointment</h4>
@@ -551,9 +552,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_IS_CONTEXT_ALLOWED_MATCH_NOT_FOUND</code>: It is not possible to set the Episode Of Care as a context</p>
   </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_TEAM_REFERENCE_MISSING</code>: It is not possible to add or replace team without a CareTeam reference</p>
-  </li>
 </ul>
 
 <h4 id="ehealth-library">ehealth-library</h4>
@@ -587,6 +585,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_RESOURCE</code>: Not able to resolve %s when input is of type %s.</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_HISTORICAL_RESOURCE</code>: Not able to resolve historical %s when input is of type %s.</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are ('s', 'min', 'h', 'd', 'wk', 'mo', 'a').</p>
   </li>
   <li>
@@ -600,6 +601,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_MISSING_IDENTIFIER</code>: Library with identifier: %s and name: %s does not have identifier of type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LIMIT_EXCEEDED</code>: Limit %s exceeds the maximum allowed soft limit of %s. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_PATH_NOT_RECOGNIZED</code>: Sort path %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_DIRECTION_NOT_RECOGNIZED</code>: Sort direction %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_EMPTY</code>: Sort path is empty. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LIMITS_EXCEEDED</code>: Duration %s exceeds the maximum allowed duration of %s months or limit %s exceeds the maximum allowed soft limit of %s. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_MISSING_DURATION_OR_LIMIT</code>: Duration or limit not set. Historical data will not be processed for library %s</p>
   </li>
 </ul>
 
@@ -811,6 +830,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_MISSING_RELATED_ACTION</code>: An action points to a non-existing related action</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-provenance">ehealth-provenance</h4>
@@ -842,7 +864,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMTPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_DATETIME</code>: QuestionnaireResponse has invalid DateTimeType on effectivePeriod.%s, must have minutes, seconds or millis precision and must have a timezone.</p>
@@ -872,6 +894,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_QFDD_DOES_NOT_EXIST_IN_DOCUMENT_TRANSFORMATION</code>: The QFDD with the identifier %s does not exist in document transformation</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_TERMINOLOGY_HELPER_CODE_NOT_FOUND</code>: Code %s for CodeSystem %s not found</p>
@@ -1058,7 +1083,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_MISSING_STEPVALUE</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but has no step value extension.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but either repeats if true. Was: %s. or maxOccursValue is larger than 1. Was: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', but either Repeats is true or MaxOccurs is not null. Repeats was: %s and MaxOccurs was: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_CODESYSTEM_TITLE_MISSING</code>: CodeSystem title is missing, for CodeSystem with url: %s</p>
@@ -1382,7 +1407,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#3.5.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 29, 2025 12:23+0000">2025-04-29</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#4.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 8, 2025 06:55+0000">2025-08-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

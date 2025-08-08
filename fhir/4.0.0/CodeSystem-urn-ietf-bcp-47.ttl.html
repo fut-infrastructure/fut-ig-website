@@ -1,0 +1,1265 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Common Codes from BCP-47 - TTL Representation - eHealth Infrastructure v4.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"88.423"}
+    h3,h4,h5,h6{--heading-prefix:"88.423"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">4.0.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Common Codes from BCP-47</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 9" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v4.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="CodeSystem-urn-ietf-bcp-47.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-ietf-bcp-47.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-urn-ietf-bcp-47.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Common Codes from BCP-47 - TTL Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2020-02-07
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="CodeSystem-urn-ietf-bcp-47.ttl" no-download="true">Raw ttl</a> | <a href="CodeSystem-urn-ietf-bcp-47.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="rdf" style="white-space: pre; overflow: hidden">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:CodeSystem ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;urn-ietf-bcp-47&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.meta">fhir:meta</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.versionId">fhir:versionId</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;6&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.lastUpdated">fhir:lastUpdated</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#instant">fhir:v</a> &quot;2021-02-08T08:13:46.414+00:00&quot;^^xsd:dateTime ]
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.text">fhir:text</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Kodesystem urn-ietf-bcp-47&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;urn-ietf-bcp-47\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcurn-ietf-bcp-47\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;version: 6; Last updated: 2021-02-08 08:13:46+0000&lt;/p&gt;&lt;/div&gt;&lt;p&gt;This case-sensitive code system &lt;code&gt;urn:ietf:bcp:47&lt;/code&gt; defines the following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;ar&lt;a name=\&quot;urn-ietf-bcp-47-ar\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Arabic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;bn&lt;a name=\&quot;urn-ietf-bcp-47-bn\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Bengali&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;cs&lt;a name=\&quot;urn-ietf-bcp-47-cs\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Czech&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;da&lt;a name=\&quot;urn-ietf-bcp-47-da\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Danish&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;de&lt;a name=\&quot;urn-ietf-bcp-47-de\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;German&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;de-AT&lt;a name=\&quot;urn-ietf-bcp-47-de-AT\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;German (Austria)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;de-CH&lt;a name=\&quot;urn-ietf-bcp-47-de-CH\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;German (Switzerland)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;de-DE&lt;a name=\&quot;urn-ietf-bcp-47-de-DE\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;German (Germany)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;el&lt;a name=\&quot;urn-ietf-bcp-47-el\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Greek&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en&lt;a name=\&quot;urn-ietf-bcp-47-en\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-AU&lt;a name=\&quot;urn-ietf-bcp-47-en-AU\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (Australia)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-CA&lt;a name=\&quot;urn-ietf-bcp-47-en-CA\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (Canada)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-GB&lt;a name=\&quot;urn-ietf-bcp-47-en-GB\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (Great Britain)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-IN&lt;a name=\&quot;urn-ietf-bcp-47-en-IN\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (India)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-NZ&lt;a name=\&quot;urn-ietf-bcp-47-en-NZ\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (New Zeland)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-SG&lt;a name=\&quot;urn-ietf-bcp-47-en-SG\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (Singapore)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;en-US&lt;a name=\&quot;urn-ietf-bcp-47-en-US\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;English (United States)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;es&lt;a name=\&quot;urn-ietf-bcp-47-es\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spanish&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;es-AR&lt;a name=\&quot;urn-ietf-bcp-47-es-AR\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spanish (Argentina)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;es-ES&lt;a name=\&quot;urn-ietf-bcp-47-es-ES\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spanish (Spain)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;es-UY&lt;a name=\&quot;urn-ietf-bcp-47-es-UY\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Spanish (Uruguay)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fi&lt;a name=\&quot;urn-ietf-bcp-47-fi\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Finnish&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fr&lt;a name=\&quot;urn-ietf-bcp-47-fr\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;French&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fr-BE&lt;a name=\&quot;urn-ietf-bcp-47-fr-BE\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;French (Belgium)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fr-CH&lt;a name=\&quot;urn-ietf-bcp-47-fr-CH\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;French (Switzerland)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fr-FR&lt;a name=\&quot;urn-ietf-bcp-47-fr-FR\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;French (France)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fy&lt;a name=\&quot;urn-ietf-bcp-47-fy\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Frysian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;fy-NL&lt;a name=\&quot;urn-ietf-bcp-47-fy-NL\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Frysian (Netherlands)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;hi&lt;a name=\&quot;urn-ietf-bcp-47-hi\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Hindi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;hr&lt;a name=\&quot;urn-ietf-bcp-47-hr\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Croatian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;it&lt;a name=\&quot;urn-ietf-bcp-47-it\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Italian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;it-CH&lt;a name=\&quot;urn-ietf-bcp-47-it-CH\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Italian (Switzerland)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;it-IT&lt;a name=\&quot;urn-ietf-bcp-47-it-IT\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Italian (Italy)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;ja&lt;a name=\&quot;urn-ietf-bcp-47-ja\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Japanese&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;ko&lt;a name=\&quot;urn-ietf-bcp-47-ko\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Korean&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;nl&lt;a name=\&quot;urn-ietf-bcp-47-nl\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dutch&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;nl-BE&lt;a name=\&quot;urn-ietf-bcp-47-nl-BE\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dutch (Belgium)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;nl-NL&lt;a name=\&quot;urn-ietf-bcp-47-nl-NL\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dutch (Netherlands)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;no&lt;a name=\&quot;urn-ietf-bcp-47-no\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Norwegian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;no-NO&lt;a name=\&quot;urn-ietf-bcp-47-no-NO\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Norwegian (Norway)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;pa&lt;a name=\&quot;urn-ietf-bcp-47-pa\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Punjabi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;pt&lt;a name=\&quot;urn-ietf-bcp-47-pt\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Portuguese&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;pt-BR&lt;a name=\&quot;urn-ietf-bcp-47-pt-BR\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Portuguese (Brazil)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;ru&lt;a name=\&quot;urn-ietf-bcp-47-ru\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Russian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;ru-RU&lt;a name=\&quot;urn-ietf-bcp-47-ru-RU\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Russian (Russia)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;sr&lt;a name=\&quot;urn-ietf-bcp-47-sr\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Serbian&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;sr-SP&lt;a name=\&quot;urn-ietf-bcp-47-sr-SP\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Serbian (Serbia)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;sv&lt;a name=\&quot;urn-ietf-bcp-47-sv\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Swedish&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;sv-SE&lt;a name=\&quot;urn-ietf-bcp-47-sv-SE\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Swedish (Sweden)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;te&lt;a name=\&quot;urn-ietf-bcp-47-te\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Telegu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;zh&lt;a name=\&quot;urn-ietf-bcp-47-zh\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chinese&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;zh-CN&lt;a name=\&quot;urn-ietf-bcp-47-zh-CN\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chinese (China)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;zh-HK&lt;a name=\&quot;urn-ietf-bcp-47-zh-HK\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chinese (Hong Kong)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;zh-SG&lt;a name=\&quot;urn-ietf-bcp-47-zh-SG\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chinese (Singapore)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;zh-TW&lt;a name=\&quot;urn-ietf-bcp-47-zh-TW\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chinese (Taiwan)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Additional Language Displays&lt;/b&gt;&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Dansk (Danish, da)&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Deutsch (German, de)&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;English (English, en)&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Nederlands (Dutch, nl)&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Русский (Russian, ru)&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;中文 (Chinese, zh)&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ar&lt;/td&gt;&lt;td&gt;Arabisk&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Arabic&lt;/td&gt;&lt;td&gt;Arabisch&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;bn&lt;/td&gt;&lt;td&gt;Bengalsk&lt;/td&gt;&lt;td&gt;Bengalisch&lt;/td&gt;&lt;td&gt;Bengali&lt;/td&gt;&lt;td&gt;Bengaals&lt;/td&gt;&lt;td&gt;Бенгальский&lt;/td&gt;&lt;td&gt;孟加拉语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cs&lt;/td&gt;&lt;td&gt;Tjekkisk&lt;/td&gt;&lt;td&gt;Tschechisch&lt;/td&gt;&lt;td&gt;Czech&lt;/td&gt;&lt;td&gt;Tsjechisch&lt;/td&gt;&lt;td&gt;Чешский&lt;/td&gt;&lt;td&gt;捷克语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;da&lt;/td&gt;&lt;td&gt;Dansk&lt;/td&gt;&lt;td&gt;Dänisch&lt;/td&gt;&lt;td&gt;Danish&lt;/td&gt;&lt;td&gt;Deens&lt;/td&gt;&lt;td&gt;Датский&lt;/td&gt;&lt;td&gt;丹麦语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;de&lt;/td&gt;&lt;td&gt;Tysk&lt;/td&gt;&lt;td&gt;Deutsch&lt;/td&gt;&lt;td&gt;German&lt;/td&gt;&lt;td&gt;Duits&lt;/td&gt;&lt;td&gt;Немецкий&lt;/td&gt;&lt;td&gt;德语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;de-AT&lt;/td&gt;&lt;td&gt;Tysk (Østrig&lt;/td&gt;&lt;td&gt;Deutsch (Österreich)&lt;/td&gt;&lt;td&gt;German (Austria)&lt;/td&gt;&lt;td&gt;Duits (Oostenrijk)&lt;/td&gt;&lt;td&gt;Немецкий (Австрия)&lt;/td&gt;&lt;td&gt;德语 （奥地利）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;de-CH&lt;/td&gt;&lt;td&gt;Tysk (Schweiz)&lt;/td&gt;&lt;td&gt;Deutsch (Schweiz)&lt;/td&gt;&lt;td&gt;German (Switzerland)&lt;/td&gt;&lt;td&gt;Duits (Zwitserland)&lt;/td&gt;&lt;td&gt;Немецкий (Швейцария)&lt;/td&gt;&lt;td&gt;德语 （瑞士）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;de-DE&lt;/td&gt;&lt;td&gt;Tysk (Tyskland)&lt;/td&gt;&lt;td&gt;Deutsch (Deutschland)&lt;/td&gt;&lt;td&gt;German (Germany)&lt;/td&gt;&lt;td&gt;Duits (Duitsland)&lt;/td&gt;&lt;td&gt;Немецкий (Германия)&lt;/td&gt;&lt;td&gt;德语 （德国）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;el&lt;/td&gt;&lt;td&gt;Græsk&lt;/td&gt;&lt;td&gt;Griechisch&lt;/td&gt;&lt;td&gt;Greek&lt;/td&gt;&lt;td&gt;Grieks&lt;/td&gt;&lt;td&gt;Греческий&lt;/td&gt;&lt;td&gt;希腊语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en&lt;/td&gt;&lt;td&gt;Engelsk&lt;/td&gt;&lt;td&gt;Englisch&lt;/td&gt;&lt;td&gt;English&lt;/td&gt;&lt;td&gt;Engels&lt;/td&gt;&lt;td&gt;Английский&lt;/td&gt;&lt;td&gt;英语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-AU&lt;/td&gt;&lt;td&gt;Engelsk (Australien)&lt;/td&gt;&lt;td&gt;Englisch (Australien)&lt;/td&gt;&lt;td&gt;English (Australia)&lt;/td&gt;&lt;td&gt;Engels (Australië)&lt;/td&gt;&lt;td&gt;Английский (Австралия)&lt;/td&gt;&lt;td&gt;英语 （澳大利亚）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-CA&lt;/td&gt;&lt;td&gt;Engelsk (Canada)&lt;/td&gt;&lt;td&gt;Englisch (Kanada)&lt;/td&gt;&lt;td&gt;English (Canada)&lt;/td&gt;&lt;td&gt;Engels (Canada)&lt;/td&gt;&lt;td&gt;Английский (Канада)&lt;/td&gt;&lt;td&gt;英语 （加拿大）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-GB&lt;/td&gt;&lt;td&gt;Engelsk (Storbritannien)&lt;/td&gt;&lt;td&gt;Englisch (Großbritannien)&lt;/td&gt;&lt;td&gt;English (Great Britain)&lt;/td&gt;&lt;td&gt;Engels (Groot Brittannië)&lt;/td&gt;&lt;td&gt;Английский (Великобритания)&lt;/td&gt;&lt;td&gt;英语 （英国）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-IN&lt;/td&gt;&lt;td&gt;Engelsk (Indien)&lt;/td&gt;&lt;td&gt;Englisch (Indien)&lt;/td&gt;&lt;td&gt;English (India)&lt;/td&gt;&lt;td&gt;Engels (India)&lt;/td&gt;&lt;td&gt;Английский (Индия)&lt;/td&gt;&lt;td&gt;英语 （印度）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-NZ&lt;/td&gt;&lt;td&gt;Engelsk (New Zeeland)&lt;/td&gt;&lt;td&gt;Englisch (Neuseeland)&lt;/td&gt;&lt;td&gt;English (New Zeland)&lt;/td&gt;&lt;td&gt;Engels (Nieuw Zeeland)&lt;/td&gt;&lt;td&gt;Английский (Новая Зеландия)&lt;/td&gt;&lt;td&gt;英语 （新西兰）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-SG&lt;/td&gt;&lt;td&gt;Engelsk (Singapore)&lt;/td&gt;&lt;td&gt;Englisch (Singapur)&lt;/td&gt;&lt;td&gt;English (Singapore)&lt;/td&gt;&lt;td&gt;Engels (Singapore)&lt;/td&gt;&lt;td&gt;Английский (Сингапур)&lt;/td&gt;&lt;td&gt;英语 （新加坡）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;en-US&lt;/td&gt;&lt;td&gt;Engelsk (Amerikansk)&lt;/td&gt;&lt;td&gt;Englisch (USA)&lt;/td&gt;&lt;td&gt;English (United States)&lt;/td&gt;&lt;td&gt;Engels (Verenigde Staten)&lt;/td&gt;&lt;td&gt;Английский (США)&lt;/td&gt;&lt;td&gt;英语 （美国）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;es&lt;/td&gt;&lt;td&gt;Spansk&lt;/td&gt;&lt;td&gt;Spanisch&lt;/td&gt;&lt;td&gt;Spanish&lt;/td&gt;&lt;td&gt;Spaans&lt;/td&gt;&lt;td&gt;Испанский&lt;/td&gt;&lt;td&gt;西班牙语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;es-AR&lt;/td&gt;&lt;td&gt;Spansk (Argentina)&lt;/td&gt;&lt;td&gt;Spanisch (Argentinien)&lt;/td&gt;&lt;td&gt;Spanish (Argentina)&lt;/td&gt;&lt;td&gt;Spaans (Argentinië)&lt;/td&gt;&lt;td&gt;Испанский (Аргентина)&lt;/td&gt;&lt;td&gt;西班牙语 （阿根廷）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;es-ES&lt;/td&gt;&lt;td&gt;Spansk (Spanien)&lt;/td&gt;&lt;td&gt;Spanisch (Spanien)&lt;/td&gt;&lt;td&gt;Spanish (Spain)&lt;/td&gt;&lt;td&gt;Spaans (Spanje)&lt;/td&gt;&lt;td&gt;Испанский (Испания)&lt;/td&gt;&lt;td&gt;西班牙语 （西班牙）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;es-UY&lt;/td&gt;&lt;td&gt;Spansk (Uruguay)&lt;/td&gt;&lt;td&gt;Spanisch (Uruguay)&lt;/td&gt;&lt;td&gt;Spanish (Uruguay)&lt;/td&gt;&lt;td&gt;Spaans (Uruguay)&lt;/td&gt;&lt;td&gt;Испанский (Уругвай)&lt;/td&gt;&lt;td&gt;西班牙语 （乌拉圭）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fi&lt;/td&gt;&lt;td&gt;Finsk&lt;/td&gt;&lt;td&gt;Finnisch&lt;/td&gt;&lt;td&gt;Finnish&lt;/td&gt;&lt;td&gt;Fins&lt;/td&gt;&lt;td&gt;Финский&lt;/td&gt;&lt;td&gt;芬兰语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fr&lt;/td&gt;&lt;td&gt;Fransk&lt;/td&gt;&lt;td&gt;Französisch&lt;/td&gt;&lt;td&gt;French&lt;/td&gt;&lt;td&gt;Frans&lt;/td&gt;&lt;td&gt;Французский&lt;/td&gt;&lt;td&gt;法语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fr-BE&lt;/td&gt;&lt;td&gt;Finsk (Belgien)&lt;/td&gt;&lt;td&gt;Französisch (Belgien)&lt;/td&gt;&lt;td&gt;French (Belgium)&lt;/td&gt;&lt;td&gt;Frans (België)&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fr-CH&lt;/td&gt;&lt;td&gt;Fransk (Schweiz)&lt;/td&gt;&lt;td&gt;Französisch (Schweiz)&lt;/td&gt;&lt;td&gt;French (Switzerland)&lt;/td&gt;&lt;td&gt;Frans (Zwitserland)&lt;/td&gt;&lt;td&gt;Французский (Швейцария)&lt;/td&gt;&lt;td&gt;法语 （比利时）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fr-FR&lt;/td&gt;&lt;td&gt;Fransk (Frankrig)&lt;/td&gt;&lt;td&gt;Französisch (Frankreich)&lt;/td&gt;&lt;td&gt;French (France)&lt;/td&gt;&lt;td&gt;Frans (Frankrijk)&lt;/td&gt;&lt;td&gt;Французский (Франция)&lt;/td&gt;&lt;td&gt;法语 （瑞士）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fy&lt;/td&gt;&lt;td&gt;Frisisk&lt;/td&gt;&lt;td&gt;Friesisch&lt;/td&gt;&lt;td&gt;Frysian&lt;/td&gt;&lt;td&gt;Fries&lt;/td&gt;&lt;td/&gt;&lt;td&gt;弗里士兰语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;fy-NL&lt;/td&gt;&lt;td&gt;Frisisk (Holland)&lt;/td&gt;&lt;td&gt;Friesisch (Niederlande)&lt;/td&gt;&lt;td&gt;Frysian (Netherlands)&lt;/td&gt;&lt;td&gt;Fries (Nederland)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;弗里士兰语（荷兰）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;hi&lt;/td&gt;&lt;td&gt;Hindi&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Hindi&lt;/td&gt;&lt;td&gt;Hindi&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;hr&lt;/td&gt;&lt;td&gt;Kroatisk&lt;/td&gt;&lt;td&gt;Kroatisch&lt;/td&gt;&lt;td&gt;Croatian&lt;/td&gt;&lt;td&gt;Kroatisch&lt;/td&gt;&lt;td&gt;Хорватский&lt;/td&gt;&lt;td&gt;克罗地亚语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;it&lt;/td&gt;&lt;td&gt;Italiensk&lt;/td&gt;&lt;td&gt;Italienisch&lt;/td&gt;&lt;td&gt;Italian&lt;/td&gt;&lt;td&gt;Italiaans&lt;/td&gt;&lt;td&gt;Итальянский&lt;/td&gt;&lt;td&gt;意大利语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;it-CH&lt;/td&gt;&lt;td&gt;Italiensk (Schweiz)&lt;/td&gt;&lt;td&gt;Italienisch (Schweiz)&lt;/td&gt;&lt;td&gt;Italian (Switzerland)&lt;/td&gt;&lt;td&gt;Italiaans (Zwitserland)&lt;/td&gt;&lt;td&gt;Итальянский (Швейцария)&lt;/td&gt;&lt;td&gt;意大利语 （瑞士）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;it-IT&lt;/td&gt;&lt;td&gt;Italiensk (Italien)&lt;/td&gt;&lt;td&gt;Italienisch (Italien)&lt;/td&gt;&lt;td&gt;Italian (Italy)&lt;/td&gt;&lt;td&gt;Italiaans (Italië)&lt;/td&gt;&lt;td&gt;Итальянский (Италия)&lt;/td&gt;&lt;td&gt;意大利语 （意大利）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ja&lt;/td&gt;&lt;td&gt;Japansk&lt;/td&gt;&lt;td&gt;Japanisch&lt;/td&gt;&lt;td&gt;Japanese&lt;/td&gt;&lt;td&gt;Japans&lt;/td&gt;&lt;td&gt;Японский&lt;/td&gt;&lt;td&gt;日语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ko&lt;/td&gt;&lt;td&gt;Koreansk&lt;/td&gt;&lt;td&gt;Koreanisch&lt;/td&gt;&lt;td&gt;Korean&lt;/td&gt;&lt;td&gt;Koreaans&lt;/td&gt;&lt;td&gt;Корейский&lt;/td&gt;&lt;td&gt;朝鲜语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nl&lt;/td&gt;&lt;td&gt;Hollandsk&lt;/td&gt;&lt;td&gt;Niederländisch&lt;/td&gt;&lt;td&gt;Dutch&lt;/td&gt;&lt;td&gt;Nederlands&lt;/td&gt;&lt;td&gt;Нидерландский&lt;/td&gt;&lt;td&gt;荷兰语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nl-BE&lt;/td&gt;&lt;td&gt;Hollandsk (Belgien)&lt;/td&gt;&lt;td&gt;Niederländisch (Belgien)&lt;/td&gt;&lt;td&gt;Dutch (Belgium)&lt;/td&gt;&lt;td&gt;Nederlands (België)&lt;/td&gt;&lt;td/&gt;&lt;td&gt;荷兰语 （比利时）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;nl-NL&lt;/td&gt;&lt;td&gt;Hollandsk (Holland)&lt;/td&gt;&lt;td&gt;Niederländisch (Niederlande)&lt;/td&gt;&lt;td&gt;Dutch (Netherlands)&lt;/td&gt;&lt;td&gt;Nederlands (Nederland)&lt;/td&gt;&lt;td&gt;Нидерландский (Нидерланды)&lt;/td&gt;&lt;td&gt;荷兰语 （荷兰）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;no&lt;/td&gt;&lt;td&gt;Norsk&lt;/td&gt;&lt;td&gt;Norwegisch&lt;/td&gt;&lt;td&gt;Norwegian&lt;/td&gt;&lt;td&gt;Noors&lt;/td&gt;&lt;td&gt;Норвежский&lt;/td&gt;&lt;td&gt;挪威语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;no-NO&lt;/td&gt;&lt;td&gt;Norsk (Norge)&lt;/td&gt;&lt;td&gt;Norwegisch (Norwegen)&lt;/td&gt;&lt;td&gt;Norwegian (Norway)&lt;/td&gt;&lt;td&gt;Noors (Noorwegen)&lt;/td&gt;&lt;td&gt;Норвежский (Норвегия)&lt;/td&gt;&lt;td&gt;挪威语 （挪威）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pa&lt;/td&gt;&lt;td&gt;Punjabi&lt;/td&gt;&lt;td/&gt;&lt;td&gt;Punjabi&lt;/td&gt;&lt;td&gt;Punjabi&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pt&lt;/td&gt;&lt;td&gt;Portugisisk&lt;/td&gt;&lt;td&gt;Portugiesisch&lt;/td&gt;&lt;td&gt;Portuguese&lt;/td&gt;&lt;td&gt;Portugees&lt;/td&gt;&lt;td&gt;Португальский&lt;/td&gt;&lt;td&gt;葡萄牙语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;pt-BR&lt;/td&gt;&lt;td&gt;Portugisisk (Brasilien)&lt;/td&gt;&lt;td&gt;Portugiesisch (Brasilien)&lt;/td&gt;&lt;td&gt;Portuguese (Brazil)&lt;/td&gt;&lt;td&gt;Portugees (Brazilië)&lt;/td&gt;&lt;td&gt;Португальский (Бразилия)&lt;/td&gt;&lt;td&gt;葡萄牙语 （巴西）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ru&lt;/td&gt;&lt;td&gt;Russisk&lt;/td&gt;&lt;td&gt;Russisch&lt;/td&gt;&lt;td&gt;Russian&lt;/td&gt;&lt;td&gt;Russisch&lt;/td&gt;&lt;td&gt;Русский&lt;/td&gt;&lt;td&gt;俄语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ru-RU&lt;/td&gt;&lt;td&gt;Russisk (Rusland)&lt;/td&gt;&lt;td&gt;Russisch (Russland)&lt;/td&gt;&lt;td&gt;Russian (Russia)&lt;/td&gt;&lt;td&gt;Russisch (Rusland)&lt;/td&gt;&lt;td&gt;Русский (Россия)&lt;/td&gt;&lt;td&gt;俄语 （俄罗斯）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sr&lt;/td&gt;&lt;td&gt;Serbisk&lt;/td&gt;&lt;td&gt;Serbisch&lt;/td&gt;&lt;td&gt;Serbian&lt;/td&gt;&lt;td&gt;Servisch&lt;/td&gt;&lt;td&gt;Сербский&lt;/td&gt;&lt;td&gt;塞尔维亚语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sr-SP&lt;/td&gt;&lt;td&gt;Serbisk (Serbien)&lt;/td&gt;&lt;td&gt;Serbisch (Serbien)&lt;/td&gt;&lt;td&gt;Serbian (Serbia)&lt;/td&gt;&lt;td&gt;Servisch (Servië)&lt;/td&gt;&lt;td&gt;Сербский (Сербия)&lt;/td&gt;&lt;td&gt;塞尔维亚语 （塞尔维亚）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sv&lt;/td&gt;&lt;td&gt;Svensk&lt;/td&gt;&lt;td&gt;Schwedisch&lt;/td&gt;&lt;td&gt;Swedish&lt;/td&gt;&lt;td&gt;Zweeds&lt;/td&gt;&lt;td&gt;Шведский&lt;/td&gt;&lt;td&gt;瑞典语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sv-SE&lt;/td&gt;&lt;td&gt;Svensk (Sverige)&lt;/td&gt;&lt;td&gt;Schwedisch (Schweden)&lt;/td&gt;&lt;td&gt;Swedish (Sweden)&lt;/td&gt;&lt;td&gt;Zweeds (Zweden)&lt;/td&gt;&lt;td&gt;Шведский (Швеция)&lt;/td&gt;&lt;td&gt;瑞典语 （瑞典）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;te&lt;/td&gt;&lt;td&gt;Telugu&lt;/td&gt;&lt;td&gt;Telugu&lt;/td&gt;&lt;td&gt;Telegu&lt;/td&gt;&lt;td&gt;Teloegoe&lt;/td&gt;&lt;td&gt;Телугу&lt;/td&gt;&lt;td&gt;泰卢固语&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;zh&lt;/td&gt;&lt;td&gt;Kinesisk&lt;/td&gt;&lt;td&gt;Chinesisch&lt;/td&gt;&lt;td&gt;Chinese&lt;/td&gt;&lt;td&gt;Chinees&lt;/td&gt;&lt;td&gt;Kитайский&lt;/td&gt;&lt;td&gt;中文&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;zh-CN&lt;/td&gt;&lt;td&gt;Kinesisk (Kina)&lt;/td&gt;&lt;td&gt;Chinesisch (China)&lt;/td&gt;&lt;td&gt;Chinese (China)&lt;/td&gt;&lt;td&gt;Chinees (China)&lt;/td&gt;&lt;td&gt;Kитайский (Китай)&lt;/td&gt;&lt;td&gt;中文 （中国）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;zh-HK&lt;/td&gt;&lt;td&gt;Kinesisk (Hong Kong)&lt;/td&gt;&lt;td&gt;Chinesisch (Hong Kong)&lt;/td&gt;&lt;td&gt;Chinese (Hong Kong)&lt;/td&gt;&lt;td&gt;Chinees (Hong Kong)&lt;/td&gt;&lt;td&gt;Kитайский (Гонконг)&lt;/td&gt;&lt;td&gt;中文 （香港特别行政区）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;zh-SG&lt;/td&gt;&lt;td&gt;Kinesisk (Singapore)&lt;/td&gt;&lt;td&gt;Chinesisch (Singapur)&lt;/td&gt;&lt;td&gt;Chinese (Singapore)&lt;/td&gt;&lt;td&gt;Chinees (Singapore)&lt;/td&gt;&lt;td&gt;Kитайский (Сингапур)&lt;/td&gt;&lt;td&gt;中文 （新加坡）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;zh-TW&lt;/td&gt;&lt;td&gt;Kinesisk (Taiwan)&lt;/td&gt;&lt;td&gt;Chinesisch (Taiwan)&lt;/td&gt;&lt;td&gt;Chinese (Taiwan)&lt;/td&gt;&lt;td&gt;Chinees (Taiwan)&lt;/td&gt;&lt;td&gt;Kитайский (Тайвань)&lt;/td&gt;&lt;td&gt;中文 （台湾）&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:ietf:bcp:47&quot;^^xsd:anyURI] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;4.0.0&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Common Codes from BCP-47&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Common Codes from BCP-47&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.experimental">fhir:experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2020-02-07&quot;^^xsd:date] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Den telemedicinske infrastruktur (eHealth Infrastructure)&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">fhir:contact</a> ( [
+<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Den telemedicinske infrastruktur (eHealth Infrastructure)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:telecom</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;url&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;http://ehealth.sundhed.dk&quot; ]     ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Common Codes from BCP-47 (http://tools.ietf.org/html/bcp47)&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.jurisdiction">fhir:jurisdiction</a> ( [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:iso:std:iso:3166&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DK&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Denmark&quot; ]     ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.caseSensitive">fhir:caseSensitive</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> true] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.content">fhir:content</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;complete&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">fhir:concept</a> ( [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ar&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Arabic&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Arabisk&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Arabic&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Arabisch&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;bn&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Bengali&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Bengali&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Bengaals&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Бенгальский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;孟加拉语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Bengalisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Bengalsk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;cs&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Czech&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Czech&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tsjechisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Чешский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;捷克语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tschechisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tjekkisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Danish&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Danish&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Deens&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Датский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;丹麦语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dänisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dansk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Duits&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Немецкий&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;德语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Deutsch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tysk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de-AT&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German (Austria)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German (Austria)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Duits (Oostenrijk)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Немецкий (Австрия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;德语 （奥地利）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Deutsch (Österreich)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tysk (Østrig&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de-CH&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German (Switzerland)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German (Switzerland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Duits (Zwitserland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Немецкий (Швейцария)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;德语 （瑞士）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Deutsch (Schweiz)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tysk (Schweiz)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de-DE&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German (Germany)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;German (Germany)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Duits (Duitsland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Немецкий (Германия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;德语 （德国）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Deutsch (Deutschland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Tysk (Tyskland)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;el&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Greek&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Greek&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Grieks&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Греческий&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;希腊语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Griechisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Græsk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-AU&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Australia)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Australia)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (Australië)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (Австралия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （澳大利亚）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (Australien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (Australien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-CA&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Canada)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Canada)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (Canada)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (Канада)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （加拿大）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (Kanada)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (Canada)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-GB&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Great Britain)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Great Britain)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (Groot Brittannië)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (Великобритания)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （英国）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (Großbritannien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (Storbritannien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-IN&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (India)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (India)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (India)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (Индия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （印度）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (Indien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (Indien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-NZ&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (New Zeland)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (New Zeland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (Nieuw Zeeland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (Новая Зеландия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （新西兰）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (Neuseeland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (New Zeeland)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-SG&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Singapore)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (Singapore)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (Singapore)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (Сингапур)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （新加坡）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (Singapur)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (Singapore)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en-US&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (United States)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;English (United States)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engels (Verenigde Staten)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Английский (США)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;英语 （美国）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Englisch (USA)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Engelsk (Amerikansk)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;es&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spaans&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Испанский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;西班牙语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spansk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;es-AR&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish (Argentina)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish (Argentina)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spaans (Argentinië)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Испанский (Аргентина)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;西班牙语 （阿根廷）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanisch (Argentinien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spansk (Argentina)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;es-ES&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish (Spain)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish (Spain)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spaans (Spanje)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Испанский (Испания)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;西班牙语 （西班牙）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanisch (Spanien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spansk (Spanien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;es-UY&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish (Uruguay)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanish (Uruguay)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spaans (Uruguay)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Испанский (Уругвай)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;西班牙语 （乌拉圭）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spanisch (Uruguay)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Spansk (Uruguay)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fi&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Finnish&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Finnish&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Fins&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Финский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;芬兰语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Finnisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Finsk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fr&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frans&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Французский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;法语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Französisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Fransk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fr-BE&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French (Belgium)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French (Belgium)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frans (België)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Französisch (Belgien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Finsk (Belgien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fr-CH&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French (Switzerland)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French (Switzerland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frans (Zwitserland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Французский (Швейцария)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;法语 （比利时）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Französisch (Schweiz)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Fransk (Schweiz)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fr-FR&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French (France)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;French (France)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frans (Frankrijk)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Французский (Франция)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;法语 （瑞士）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Französisch (Frankreich)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Fransk (Frankrig)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fy&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frysian&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frysian&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Fries&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;弗里士兰语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Friesisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frisisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;fy-NL&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frysian (Netherlands)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frysian (Netherlands)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Fries (Nederland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;弗里士兰语（荷兰）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Friesisch (Niederlande)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Frisisk (Holland)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;hi&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hindi&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hindi&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hindi&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hindi&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;hr&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Croatian&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Croatian&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kroatisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Хорватский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;克罗地亚语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kroatisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kroatisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;it&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italian&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italian&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italiaans&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Итальянский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;意大利语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italienisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italiensk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;it-CH&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italian (Switzerland)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italian (Switzerland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italiaans (Zwitserland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Итальянский (Швейцария)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;意大利语 （瑞士）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italienisch (Schweiz)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italiensk (Schweiz)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;it-IT&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italian (Italy)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italian (Italy)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italiaans (Italië)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Итальянский (Италия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;意大利语 （意大利）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italienisch (Italien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Italiensk (Italien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ja&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Japanese&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Japanese&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Japans&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Японский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;日语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Japanisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Japansk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ko&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Korean&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Korean&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Koreaans&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Корейский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;朝鲜语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Koreanisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Koreansk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dutch&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dutch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Nederlands&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Нидерландский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;荷兰语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Niederländisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hollandsk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl-BE&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dutch (Belgium)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dutch (Belgium)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Nederlands (België)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;荷兰语 （比利时）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Niederländisch (Belgien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hollandsk (Belgien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl-NL&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dutch (Netherlands)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dutch (Netherlands)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Nederlands (Nederland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Нидерландский (Нидерланды)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;荷兰语 （荷兰）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Niederländisch (Niederlande)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hollandsk (Holland)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;no&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norwegian&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norwegian&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Noors&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Норвежский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;挪威语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norwegisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norsk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;no-NO&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norwegian (Norway)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norwegian (Norway)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Noors (Noorwegen)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Норвежский (Норвегия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;挪威语 （挪威）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norwegisch (Norwegen)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Norsk (Norge)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;pa&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Punjabi&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Punjabi&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Punjabi&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Punjabi&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;pt&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portuguese&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portuguese&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portugees&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Португальский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;葡萄牙语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portugiesisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portugisisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;pt-BR&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portuguese (Brazil)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portuguese (Brazil)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portugees (Brazilië)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Португальский (Бразилия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;葡萄牙语 （巴西）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portugiesisch (Brasilien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Portugisisk (Brasilien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russian&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russian&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Русский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;俄语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru-RU&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russian (Russia)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russian (Russia)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russisch (Rusland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Русский (Россия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;俄语 （俄罗斯）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russisch (Russland)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Russisk (Rusland)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;sr&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbian&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbian&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Servisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Сербский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;塞尔维亚语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;sr-SP&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbian (Serbia)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbian (Serbia)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Servisch (Servië)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Сербский (Сербия)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;塞尔维亚语 （塞尔维亚）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbisch (Serbien)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Serbisk (Serbien)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;sv&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Swedish&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Swedish&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Zweeds&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Шведский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;瑞典语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Schwedisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Svensk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;sv-SE&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Swedish (Sweden)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Swedish (Sweden)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Zweeds (Zweden)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Шведский (Швеция)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;瑞典语 （瑞典）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Schwedisch (Schweden)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Svensk (Sverige)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;te&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Telegu&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Telegu&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Teloegoe&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Телугу&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;泰卢固语&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Telugu&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Telugu&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinees&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kитайский&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;中文&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinesisch&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kinesisk&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh-CN&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (China)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (China)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinees (China)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kитайский (Китай)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;中文 （中国）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinesisch (China)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kinesisk (Kina)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh-HK&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (Hong Kong)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (Hong Kong)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinees (Hong Kong)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kитайский (Гонконг)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;中文 （香港特别行政区）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinesisch (Hong Kong)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kinesisk (Hong Kong)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh-SG&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (Singapore)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (Singapore)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinees (Singapore)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kитайский (Сингапур)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;中文 （新加坡）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinesisch (Singapur)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kinesisk (Singapore)&quot; ]     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh-TW&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (Taiwan)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation">fhir:designation</a> [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;en&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinese (Taiwan)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;nl&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinees (Taiwan)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ru&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kитайский (Тайвань)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;zh&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;中文 （台湾）&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;de&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Chinesisch (Taiwan)&quot; ]     ] [
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.language">fhir:language</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;da&quot; ] ;
+<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.designation.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Kinesisk (Taiwan)&quot; ]     ] )
+  ] ) . # 
+
+</pre>
+
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#4.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 8, 2025 06:47+0000">2025-08-08</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

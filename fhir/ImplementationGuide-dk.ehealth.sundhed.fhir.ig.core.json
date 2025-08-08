@@ -3,14 +3,14 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.core",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"dk.ehealth.sundhed.fhir.ig.core-da-DK\"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Implementationsguide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
   },
   "url" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
-  "version" : "3.5.1",
+  "version" : "4.0.0",
   "name" : "eHealthInfrastructure",
   "title" : "eHealth Infrastructure",
   "status" : "active",
-  "date" : "2025-04-29T12:22:27+00:00",
+  "date" : "2025-08-08T06:54:32+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -38,7 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "6.2.0"
+    "version" : "6.5.0"
   },
   {
     "id" : "hl7ext",
@@ -362,7 +362,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.5.0"
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.7.1"
     },
     {
       "extension" : [{
@@ -671,17 +671,6 @@
       },
       "name" : "291",
       "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrs-patient"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Organization"
-      }],
-      "reference" : {
-        "reference" : "Organization/312"
-      },
-      "name" : "312",
-      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"
     },
     {
       "extension" : [{
@@ -1091,6 +1080,29 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehealth-audit-restriction-levels"
+      },
+      "name" : "Audit Restriction Levels",
+      "description" : "Audit Event Restriction Levels used to indicate whether the audit log should be hidden from the citizen and/or the legal guardian when interacting with the infrastructure.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ehealth-audit-restriction-levels"
+      },
+      "name" : "Audit Restriction Levels",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1336,6 +1348,28 @@
       "name" : "CareTeam Participant Role",
       "description" : "Care Team Participant Role.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/108752"
+      },
+      "name" : "CareTeam/108752",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/42"
+      },
+      "name" : "CareTeam/42",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam"
     },
     {
       "extension" : [{
@@ -1603,6 +1637,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/42"
+      },
+      "name" : "Condition/42",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -1838,18 +1883,6 @@
       },
       "name" : "CVR Number",
       "description" : "The organization's identification code in the Danish 'Centrale Virksomhedsregister'",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/urn-oid-1.2.208.184.100.8"
-      },
-      "name" : "DAK-E Codes",
-      "description" : "Procedure and observation codes used for communication and administration of laboratory results in Denmark.",
       "exampleBoolean" : false
     },
     {
@@ -3248,6 +3281,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/42"
+      },
+      "name" : "EpisodeOfCare/42",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
@@ -3983,10 +4027,10 @@
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/Organization-i-get-general-practitioner-info"
+        "reference" : "OperationDefinition/Organization-t-get-general-practitioner-info"
       },
       "name" : "Get organization information for a healthcare provider with provider number",
-      "description" : "The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. When multiple Organization resources have the same provider number, the shared parent Organization is returned. An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. \nA typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice.",
+      "description" : "The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. \nThe Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. \nWhen multiple Organization resources have the same provider number, the shared parent Organization is returned. \nAn OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. \nA typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice.",
       "exampleBoolean" : false
     },
     {
@@ -3998,7 +4042,7 @@
         "reference" : "OperationDefinition/-s-get-patient-procedures"
       },
       "name" : "Get patient procedures",
-      "description" : "This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.\r\n## Input\r\nThe operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n### Patient reference\r\nMandatory reference for the Patient which the procedure overview is computed for.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.\r\n### EpisodeOfCare list\r\nThe list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.\r\n### Condition Coding list\r\nThe list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Tag Coding list\r\nThe list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Extra boolean\r\nThis is an optional parameter that can be set to true if activities allowing 'Extra' submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.\r\n## Output\r\nFor valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.\r\n### Output Parameters\r\nThe output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. \r\n\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value \r\n```\r\nExample:\r\n'resource': {\r\n    'resourceType': 'Parameters',\r\n    'parameter': [{\r\n            'name': 'item_1',\r\n            'part': [{\r\n                    'name': 'CarePlan',\r\n                    'valueReference': {\r\n                        'reference': 'https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581'\r\n                    }\r\n            }]\r\n    }]\r\n}\r\n ```\r\n\r\n### Columns\r\n\r\n- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated.",
+      "description" : "This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.\r\n## Input\r\nThe operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n### Patient reference\r\nMandatory reference for the Patient which the procedure overview is computed for.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.\r\n### EpisodeOfCare list\r\nThe list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.\r\n### Condition Coding list\r\nThe list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Tag Coding list\r\nThe list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Extra boolean\r\nThis is an optional parameter that can be set to true if activities allowing 'Extra' submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.\r\n## Output\r\nFor valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.\r\n### Output Parameters\r\nThe output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. \r\n\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value \r\n```\r\nExample:\r\n'resource': {\r\n    'resourceType': 'Parameters',\r\n    'parameter': [{\r\n            'name': 'item_1',\r\n            'part': [{\r\n                    'name': 'CarePlan',\r\n                    'valueReference': {\r\n                        'reference': 'https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581'\r\n                    }\r\n            }]\r\n    }]\r\n}\r\n ```\r\n\r\n### Columns\r\n\r\n- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurrencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated.",
       "exampleBoolean" : false
     },
     {
@@ -4424,10 +4468,34 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/urn-oid-1.2.208.184.100.8"
+      },
+      "name" : "MedCom Measurement CodeSystem",
+      "description" : "Complete MedCom Measurement CodeSystem (MCS)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/urn-oid-1.2.208.184.100.1"
       },
       "name" : "MedCom Message Codes",
       "description" : "MedCom Message Codes.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/phmr-observation-vs"
+      },
+      "name" : "MedCom PHMR Observation ValueSet",
+      "description" : "Value set used for Danish (DK) HL7 CDA profile PHMR-DK observation codes.",
       "exampleBoolean" : false
     },
     {
@@ -4969,6 +5037,28 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/108752"
+      },
+      "name" : "Organization/108752",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/8564"
+      },
+      "name" : "Organization/8564",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -5067,9 +5157,9 @@
         "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Patient/patient01"
+        "reference" : "Patient/102"
       },
-      "name" : "patient01",
+      "name" : "Patient/102",
       "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
     },
     {
@@ -5238,6 +5328,39 @@
       "name" : "Practice Setting Codes",
       "description" : "Value set used for indicating the specialty for organizations.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/107302"
+      },
+      "name" : "Practitioner/107302",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/123"
+      },
+      "name" : "Practitioner/123",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/42"
+      },
+      "name" : "Practitioner/42",
+      "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"
     },
     {
       "extension" : [{
