@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Organization-t-get-general-practitioner-info"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Operation</div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/Organization-t-get-general-practitioner-info"/>
+  <version value="4.0.1"/>
+  <name value="get-general-practitioner-info"/>
+  <title value="Get organization information for a healthcare provider with provider number"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-08-11T07:09:27+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. &#xA;The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. &#xA;When multiple Organization resources have the same provider number, the shared parent Organization is returned. &#xA;An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. &#xA;A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="false"/>
+  <code value="get-general-practitioner-info"/>
+  <resource value="Organization"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="organization"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="2147483647"/>
+    <documentation value="Reference to Organization. &#xA;The provider number needs to be stated in the input reference with Reference.identifier.system: urn:oid:1.2.208.176.1.4 and Reference.identifier.value set to the provider number."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Organization"/>
+  </parameter>
+</OperationDefinition>

@@ -1,0 +1,44 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "PlanDefinition-i-export",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Operation</div>"
+  },
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-export",
+  "version" : "4.0.1",
+  "name" : "export",
+  "title" : "Export a PlanDefinition",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2025-08-11T07:09:27+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Export a PlanDefinition.\n### Export Contents\nThe export contains the PlanDefinition including referenced resources:- PlanDefinitions\n- ActivityDefinitions\n- Questionnaires\n- Libraries\n- Organizations\n- DocumentReference + QFDD\n\nEach resource is returned in a separate JSon file.\n### Parameters\n- exclude: references to ActivityDefinitions or PlanDefinitions to exclude from the export.\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files.\nAll returned objects are Fhir resources. See the implementation guide for details\n",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "affectsState" : false,
+  "code" : "export",
+  "resource" : ["PlanDefinition"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "exclude",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "type" : "string"
+  }]
+}

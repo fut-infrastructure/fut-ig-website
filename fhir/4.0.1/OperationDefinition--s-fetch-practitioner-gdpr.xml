@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-fetch-practitioner-gdpr"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Operation</div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-practitioner-gdpr"/>
+  <version value="4.0.1"/>
+  <name value="fetch-practitioner-gdpr"/>
+  <title value="Fetch practitioner GDPR"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-08-11T07:09:27+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="### Report Contents&#xA;This report contains all information related to the specified Practitioner&#xA;- Practitioner&#xA;- CareTeam&#xA;- PractitionerRole&#xA;### Grouping &#xA;None. The report is returned in a single JSon file.&#xA;### Parameters&#xA;- organization: &#xA;    - Practitioner: Not filtered&#xA;    - CareTeam: Filter on CareTeam.ManagingOrganization match&#xA;    - PractitionerRole: Filter on PractitionerRole.Organization match&#xA;- period: not used&#xA;- practitionerID: The practitioner to fetch information for&#xA;### Output&#xA;Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.&#xA;### Example output&#xA;All returned objects are Fhir resources. See the implementation guide for details&#xA;&#xA;    {&#xA;        'EHealthPractitioner': {&#xA;            'resourceType': 'Practitioner',&#xA;            'id': '20599',&#xA;            'meta': {&#xA;                'versionId': '1',&#xA;                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner']&#xA;            },&#xA;            'name': [{&#xA;                    'family': '2f82a48c-61cc-4c7f-855a-3e6b59729ef1'&#xA;                }&#xA;            ]&#xA;        },&#xA;        'EHealthPractitionerRole': [],&#xA;        'EHealthCareTeam': [{&#xA;                'resourceType': 'CareTeam',&#xA;                'id': '99438',&#xA;                'meta': {&#xA;                    'versionId': '1',&#xA;                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam']&#xA;                },&#xA;                'identifier': [{&#xA;                        'id': 'f556eab1-dbe9-40e3-9edd-149fa3bd1ae0',&#xA;                        'system': 'urn:ietf:rfc:3986'&#xA;                    }&#xA;                ],&#xA;                'status': 'active',&#xA;                'name': 'f9d27974-6a6a-44fb-b6eb-bcd22d769a18',&#xA;                'participant': [{&#xA;                        'member': {&#xA;                            'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Practitioner/20599'&#xA;                        }&#xA;                    }&#xA;                ],&#xA;                'reasonCode': [{&#xA;                        'coding': [{&#xA;                                'system': 'http://ehealth.sundhed.dk/cs/conditions',&#xA;                                'code': 'TBD'&#xA;                            }&#xA;                        ]&#xA;                    }&#xA;                ],&#xA;                'managingOrganization': [{&#xA;                        'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/94174'&#xA;                    }&#xA;                ]&#xA;            }&#xA;        ]&#xA;    }&#xA;"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="fetch-practitioner-gdpr"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="anonymization"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="organization"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Period"/>
+  </parameter>
+  <parameter>
+    <name value="practitioner"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Binary"/>
+  </parameter>
+</OperationDefinition>

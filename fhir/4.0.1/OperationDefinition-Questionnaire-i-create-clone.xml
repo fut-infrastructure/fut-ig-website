@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Questionnaire-i-create-clone"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Operation</div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone"/>
+  <version value="4.0.1"/>
+  <name value="create-clone"/>
+  <title value="Create a clone of a Questionnaire"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-08-11T07:09:27+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="### Input&#xA;- resourceId: reference to the Questionnaire resource that should be cloned&#xA;- clone-operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation &#xA;&#xA;### Output&#xA;Bundle containing all resources that were created during the operation.&#xA;&#xA;### Validation&#xA;- New business versions require that the user has modifier-role: owner or co-author for the resource&#xA;- New copy does not require that the user has a modifier-role.&#xA;- New business version can be made only when no draft resource exists (having identical base identifier).&#xA;- Read/search/create privileges are required for the resource types affected by $create-clone&#xA;"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="create-clone"/>
+  <resource value="Questionnaire"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="clone-operation"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Coding"/>
+  </parameter>
+</OperationDefinition>

@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-practitioner-gdpr> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-execute-practitioner-gdpr"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Operation</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-practitioner-gdpr"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "4.0.1"] ; # 
+  fhir:name [ fhir:v "execute-practitioner-gdpr"] ; # 
+  fhir:title [ fhir:v "Execute practitioner GDPR"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-08-11T07:09:27+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Report Contents\nThis report contains all information related to the specified Practitioner\n- Practitioner\n- CareTeam\n- PractitionerRole\n### Grouping \nNone. The report is returned in a single JSon file.\n### Parameters\n- organization: \n    - Practitioner: Not filtered\n    - CareTeam: Filter on CareTeam.ManagingOrganization match\n    - PractitionerRole: Filter on PractitionerRole.Organization match\n- period: not used\n- practitionerID: The practitioner to fetch information for\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nAll returned objects are Fhir resources. See the implementation guide for details\n\n    {\n        'EHealthPractitioner': {\n            'resourceType': 'Practitioner',\n            'id': '20599',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner']\n            },\n            'name': [{\n                    'family': '2f82a48c-61cc-4c7f-855a-3e6b59729ef1'\n                }\n            ]\n        },\n        'EHealthPractitionerRole': [],\n        'EHealthCareTeam': [{\n                'resourceType': 'CareTeam',\n                'id': '99438',\n                'meta': {\n                    'versionId': '1',\n                    'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam']\n                },\n                'identifier': [{\n                        'id': 'f556eab1-dbe9-40e3-9edd-149fa3bd1ae0',\n                        'system': 'urn:ietf:rfc:3986'\n                    }\n                ],\n                'status': 'active',\n                'name': 'f9d27974-6a6a-44fb-b6eb-bcd22d769a18',\n                'participant': [{\n                        'member': {\n                            'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Practitioner/20599'\n                        }\n                    }\n                ],\n                'reasonCode': [{\n                        'coding': [{\n                                'system': 'http://ehealth.sundhed.dk/cs/conditions',\n                                'code': 'TBD'\n                            }\n                        ]\n                    }\n                ],\n                'managingOrganization': [{\n                        'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/94174'\n                    }\n                ]\n            }\n        ]\n    }\n"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "execute-practitioner-gdpr"] ; # 
+  fhir:system [ fhir:v true] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v false] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "anonymization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "period" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Period" ]
+  ] [
+     fhir:name [ fhir:v "practitioner" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

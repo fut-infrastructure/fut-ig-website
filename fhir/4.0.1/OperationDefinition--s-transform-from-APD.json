@@ -1,0 +1,50 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-transform-from-APD",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Operation</div>"
+  },
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-from-APD",
+  "version" : "4.0.1",
+  "name" : "transform-from-APD",
+  "title" : "Transform from APD",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2025-08-11T07:09:27+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Transforms a DK-HL7 Appointment Document (APD) XML document to a FHIR Appointment (ehealth-appointment profile) resource. The input FHIR DocumentReference (ehealth-documentreference profile) contains the APD XML document. The caller must ensure that the APD XML document is valid and adheres to the DK-HL7 Appointment Document profile. The returned FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing a FHIR Appointment (ehealth-appointment profile) resource.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "affectsState" : false,
+  "code" : "transform-from-APD",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "documentReference",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "type" : "DocumentReference"
+  },
+  {
+    "name" : "bundle",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "type" : "Bundle"
+  }]
+}

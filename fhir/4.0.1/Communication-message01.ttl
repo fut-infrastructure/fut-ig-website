@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/Communication/message01> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "message01"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "1" ] ;
+     fhir:lastUpdated [ fhir:v "2021-07-15T07:06:55.257+00:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"^^xsd:anyURI ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Meddelelse message01</b></p><a name=\"message01\"> </a><a name=\"hcmessage01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2021-07-15 07:06:55+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-message.html\">ehealth-message</a></p></div><p><b>Thread id</b>: b84a4a49-ede2-45eb-8400-eb2469a08f3e</p><p><b>Title</b>: Sample title...</p><p><b>Administrative status</b>: <a href=\"CodeSystem-ehealth-administrative-status.html#ehealth-administrative-status-activate\">Administrative Status activate</a>: Ikke læst</p><p><b>Priority</b>: routine</p><p><b>Sender careteam</b>: <a href=\"CareTeam-108752.html\">CareTeam Example CareTeam</a></p><p><b>Restriction category</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/restriction-category None}\">None</span></p><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/message-category advice}\">Advisering</span></p><p><b>medium</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/message-medium nemsms}\">NemSMS</span></p><p><b>sent</b>: 2021-07-15 07:06:55+0000</p><p><b>recipient</b>: <a href=\"Patient-102.html\">Nancy Ann Berggren (official) Ukendt, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))</a></p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>MESSAGE PAYLOAD</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-thread-id"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "b84a4a49-ede2-45eb-8400-eb2469a08f3e"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-title"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "Sample title..."
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-administrative-status"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Coding ;
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/administrative-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "activate" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-priority"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:code ;
+       fhir:v "routine"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/CareTeam/108752> ;
+       fhir:reference [ fhir:v "CareTeam/108752" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-restriction-category"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/restriction-category"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "None" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/message-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "advice" ]
+     ] )
+  ] ) ; # 
+  fhir:medium ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/message-medium"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "nemsms" ]
+     ] )
+  ] ) ; # 
+  fhir:sent [ fhir:v "2021-07-15T07:06:55+00:00"^^xsd:dateTime] ; # 
+  fhir:recipient ( [
+     fhir:link <http://ehealth.sundhed.dk/fhir/Patient/102> ;
+     fhir:reference [ fhir:v "Patient/102" ]
+  ] ) ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:string ;
+       fhir:v "MESSAGE PAYLOAD"
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
