@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Error Messages - eHealth Infrastructure v5.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">5.0.0 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Error Messages</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v5.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Error Messages</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_RESOURCE_NOT_FOUND</code>: Resource %s with id %s is not found.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_SUBJECT_AND_CONTEXT_NOT_PROVIDED</code>: At least one of subject and context must be provided.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_VALIDATION_ERROR</code>: Validation error: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_TIMING_VALIDATION_ERROR</code>: Timing is invalid for ServiceRequest with id %s and status %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_VALIDATION_ERROR_NO_OCCURRENCE</code>: Service request with id %s has no occurrence.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_TIMING_OCCURENCE_WITHOUT_START_VALIDATION_ERROR</code>: ServiceRequest with id %s not valid with status: %s since occurrence timing has no start date.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_TRIGGER_ENABLEMENT_VALIDATION_ERROR</code>: ServiceRequest cannot be changed from %s to %s %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_EXPORT_FAILED</code>: Export resource has failed.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_CANONICAL_TARGET_NOT_ALLOWED_ERROR</code>: Unsupported target in canonical: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_NAMING_SYSTEM_NOT_FOUND</code>: NamingSystem with identifier %s is not found.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_FIELD_ACCESS_FAILURE</code>: Failed to access field: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">GENERAL_FIELD_COMPARE_FAILURE</code>: Failed to compare field: %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-actionguidanceview">ehealth-actionguidanceview</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_CONTENT_SIZE</code>: Size of content is greater than the max allowed size. Content size: %s, max size: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_STATUS_CHANGE</code>: Illegal status change for action_guidance or view from %s and to %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIONGUIDANCEVIEW_ILLEGAL_CHANGE_OF_ELEMENTS</code>: Illegal element change in either EHealthActonGuidance or EhealthView. If status is equal to Active or Retired, only the following elements can be changed (Recommendation, IntendedAudience, useContext, modifierrole and status). The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-activitydefinition">ehealth-activitydefinition</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for ActivityDefinition with status: %s or %s, otherwise, only useContext can be modified. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating ActivityDefinition with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_UPDATE_TO_NOT_ALLOWED_STATE</code>: Update is not allowed for ActivityDefinition with %s status to different than %s status.</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_SHARINGAPPROVALPOLICY_NOT_ALLOWED</code>: Resource %s does not allow SharingApprovalPolicy to be set with code: %s</td>
+          <td>%s.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_SHARINGAPPROVALPOLICY_NOT_SET</code>: Resource %s with code: %s</td>
+          <td>%s must have SharingApprovalPolicy set.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</li>
+</ul>
+
+<h4 id="ehealth-appointment">ehealth-appointment</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">APPOINTMENT_LISTENER_APPOINTMENT_MISSING_CAREPLAN</code>: Appointment has no CarePlan</li>
+</ul>
+
+<h4 id="ehealth-assembler">ehealth-assembler</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_FOUND_NON_OR_SEVERAL_MATCHES_FOR_QFDD_DOCUMENT_REFERENCE</code>: Found non or more than 1 match for QFDD DocumentReference. Identifier: system: %s, value: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_NOT_ABLE_TO_DETERMINE_QFDD_REFERENCE</code>: Not able to determine QFDD reference from questionnaire.identifier. Non or more than 1 identifier system starting with 'urn:oid'. Questionnaire: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_SOURCE_IS_UNSUPPORTED</code>: QuestionnaireResponse with id: '%s' has source '%s', which is not supported - Skipping publication</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_QRD_QR_AUTHOR_RESOURCE_NOT_FOUND</code>: QuestionnaireResponse with id: '%s', no resource found for author reference '%s' - Skipping publication</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_SUPPORTING_INFORMATION</code>: Appointment must have supportingInformation</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_PATIENT_PARTICIPANT</code>: Appointment must have at least one Patient participant</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_RESPONSIBLE_ORGANIZATION</code>: Appointment must have responsible-organization</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_PERFORMER</code>: Appointment must have performer</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_RESPONSIBLE_PRACTITIONER</code>: Appointment must have responsible Practitioner</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_APD_MISSING_PATIENT_CPR</code>: Patient has no CPR number</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ASSEMBLER_PHMR_UNKNOWN_AUTHOR_TYPE</code>: Unknown author type:</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-careplan">ehealth-careplan</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_NO_PLANDEFINITION</code>: There is no PlanDefinition with id %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_NOT_ACTIVE_PLANDEFINITION</code>: The apply operation can only be performed on Plandefinitions with status "active"</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_EPISODE_OF_CARE_REFERENCE_NOT_SPECIFIED</code>: EpisodeOfCare reference must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_PLAN_DEFINITION_REFERENCE_NOT_SPECIFIED</code>: PlanDefinition reference must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_APPLY_CAN_NOT_FIND_ACTIVITY_DEFINITION</code>: Can not find activity definition with id :%s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_NOT_FOUND</code>: CarePlan is not found.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CAREPLAN_SEARCH_SUBJECT_CONTEXT_OR_RESPONSIBLE_ACTOR_IS_NOT_SPECIFIED</code>: At least subject, context or responsible actor must be specified</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-careteam">ehealth-careteam</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CARETEAM_GENERAL_EXTERNAL_SECURITY_TOKEN_CARETEAM_IDENTIFIER_SYSTEM_IS_MISSING</code>: The CareTeam must contain an identifier using system "urn:ietf:rfc:3986"</li>
+</ul>
+
+<h4 id="ehealth-cda">ehealth-cda</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CDA_XML_VALIDATION_FAILED</code>: Validation of the CDA XML failed: %s</li>
+</ul>
+
+<h4 id="ehealth-clinical">ehealth-clinical</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_VALIDATION_STATE_FINDING_CODE_NOT_ALLOWED</code>: Invalidation/Invalidation Retraction finding code is not allowed for ClinicalImpression outside custom operation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_MEASUREMENT_VALIDITY_UPDATED_CODE_REQUIRED</code>: ClinicalImpressions for Invalidation/Invalidation Retraction must have ClinicalImpression.code=MeasurementValidityUpdated</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-codesystem">ehealth-codesystem</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CODESYSTEM_CONCEPT_CHANGE_NOT_ALLOWED_WHEN_ACTIVE</code>: Not allowed to remove or update concept when status is active.</li>
+</ul>
+
+<h4 id="ehealth-communicationrequest">ehealth-communicationrequest</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_CONTEXT_NOT_MATCHING_SERVICEREQUEST</code>: The context for the CommunicationRequest: %s does not match the context of the referenced ServiceRequest: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_SUBJECT_NOT_MATCHING_RECIPIENT</code>: Patient recipient: %s does not match the subject: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_SUBJECT_NOT_MATCHING_SERVICEREQUEST</code>: The subject for the CommunicationRequest: %s does not match the subject of the referenced ServiceRequest: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_EXCACTLY_ONE_RECIPIENT_SEARCHPRARAM</code>: Excactly one recipient search parameter required</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-context">ehealth-context</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CONTEXT_VALIDATION_EPISODEOFCARE_EXCEPTION</code>: Episode of care does not match the security token context</li>
+</ul>
+
+<h4 id="ehealth-definition">ehealth-definition</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DEFINITION_WITHOUT_SELF_TREATMENT_TOPIC</code>: %s has to be with self-treatment topic</li>
+</ul>
+
+<h4 id="ehealth-device">ehealth-device</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DEVICE_WRITE_WRONG_PATIENT_CONTEXT</code>: User with patient context can only read devices that has been issued to the patient</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DEVICE_WRITE_WRONG_ORGANIZATION_CONTEXT</code>: User must be logged into the organization that is the owner of the device</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DEVICE_METRIC_WRITE_WRONG_ORGANIZATION_CONTEXT</code>: User must be logged into the organization that is the owner of the device</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DEVICE_USE_STATEMENT_WRITE_WRONG_ORGANIZATION_CONTEXT</code>: User must be logged into the organization that is the owner of the device</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DEVICE_WRONG_PATIENT_CONTEXT</code>: User with patient context can only interact with devices that has been issued to the patient or not issued to anyone yet</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DEVICE_WRITE_NON_PRIVATELY_OWNED</code>: Patient user can only create/update privately owned devices</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-document">ehealth-document</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_NOT_OF_TYPE_QFDD</code>: The document is expected to be of type QFDD</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_SOR_ORGANIZATION_REQUIRED</code>: Security token organization context must be resolvable to a SOR identifier for query</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_XDS_ERROR</code>: The following errors where received from Document Sharing</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_DOCUMENT_URL_NOT_CORRECT_FORMAT</code>: Url doesn't have expected format: <DocumentEntry.uniqueId>_<DocumentEntry.repositoryUniqueId>_<DocumentEntry.homeCommunityId></DocumentEntry.homeCommunityId></DocumentEntry.repositoryUniqueId></DocumentEntry.uniqueId></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_DOCUMENT_NOT_VALID_TYPE</code>: Requested document type is not valid. The requested type was %s, but the operation only supports %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_DOCUMENT_NOT_VALID_XML</code>: Retrieved document is not valid XML</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_REASON_NOT_PRESENT_WHEN_CONSENT_OVERRIDDEN</code>: Reason is mandatory when the consent is overridden</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-documentreference">ehealth-documentreference</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_REFER_TO_PATIENT</code>: It is not possible to set a patient as a subject for a Document reference</li>
+</ul>
+
+<h4 id="ehealth-episodeofcare">ehealth-episodeofcare</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_WRONG_EOC_COUNT</code>: Bundle has to contain only one Episode of Care</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_UNSUPPORTED_RESOURCE_TYPE</code>: Bundle contains unsupported resource type</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_INCORRECT_PROVENANCE_TARGET</code>: Provenance has incorrect target</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_NO_REQUIRED_PROVENANCE_POLICIES</code>: No provenance with required policies</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_INCORRECT_CONDITION_SUBJECT</code>: EpisodeOfCare and Condition doesn't point to the same Patient</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_PATCH_NO_CONSENT</code>: No valid Episode Of Care related consent</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_MUST_NOT_BE_DECEASED</code>: Patient.deceased must be false to create episode of care</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_STATUS_HISTORY_NOT_EMPTY</code>: It is not allowed to fill status history manually</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_EPISODE_OF_CARE_IN_NON_PLANNED_STATUS</code>: It is only possible to create an episode of care in status 'Planned'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_TEAM_HISTORY_NOT_EMPTY</code>: It is not allowed to fill team history manually</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_DOESNT_MATCH_CONTEXT</code>: Episode of care patient doesn't match to the context</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_IS_CONTEXT_ALLOWED_MATCH_NOT_FOUND</code>: It is not possible to set the Episode Of Care as a context</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-library">ehealth-library</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_NO_INPUT_PARAMETER</code>: An input parameter of type Parameters should be provided.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_INCORRECT_INPUT_PARAMETER</code>: Input parameter 'parameters' should contain exactly one resource of type QuestionnaireResponse, Observation or Media.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_NO_RULE_DEFINED</code>: Library with id %s do not contain a rule to use for evaluation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_NO_CAREPLAN_REFERENCING_PROVIDED_PROCEDUREQUEST</code>: CarePlan with reference to ServiceRequest with id %s is not found.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_RULE_SYNTAX_ERRORS</code>: Syntax for rule is invalid. %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_OUTPUT_PARAMETER_NOT_SUPPORTED</code>: Output parameter of type %s is not supported.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_INPUT_PARAMETER_NOT_SUPPORTED</code>: Input parameter of type %s is not supported.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNEXPECTED_LIBRARY</code>: Evaluate is invoked on Library with id %s. This Library is not the expected Library referenced by the ActivityDefinition.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_RESOURCE</code>: Not able to resolve %s when input is of type %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_HISTORICAL_RESOURCE</code>: Not able to resolve historical %s when input is of type %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are ('s', 'min', 'h', 'd', 'wk', 'mo', 'a').</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LOGIC_RULE_INVALID_INPUT</code>: Error evaluating logic rule. Category: %s, Focus: %s, RuleDescription: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_IDENTIFIER_UPDATE_RESTRICTED</code>: Validation error: attempt to update Library Identifiers list.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_UNKNOWN_IDENTIFIER</code>: Unable to find unique Library with identifier: %s and name: %s. Number of search results: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_MISSING_IDENTIFIER</code>: Library with identifier: %s and name: %s does not have identifier of type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LIMIT_EXCEEDED</code>: Limit %s exceeds the maximum allowed soft limit of %s. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_PATH_NOT_RECOGNIZED</code>: Sort path %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_DIRECTION_NOT_RECOGNIZED</code>: Sort direction %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_EMPTY</code>: Sort path is empty. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LIMITS_EXCEEDED</code>: Duration %s exceeds the maximum allowed duration of %s months or limit %s exceeds the maximum allowed soft limit of %s. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_MISSING_DURATION_OR_LIMIT</code>: Duration or limit not set. Historical data will not be processed for library %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-measurement">ehealth-measurement</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_PERIOD_NOT_SPECIFIED</code>: Period must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_PATIENT_AND_EPISODE_NOT_SPECIFIED</code>: At least patient or episodeOfCare must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_PATIENT_AND_EPISODE_AND_SERVICEREQUEST_NOT_SPECIFIED</code>: At least one patient, episodeOfCare or serviceRequest must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_COUNT_NOT_SPECIFIED</code>: A positive number for Count must be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_COUNT_LIMIT_EXCEEDED</code>: Count limit of 100 exceeded</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_START_OR_END_NOT_SPECIFIED</code>: Either start or end must be provided, but none was provided</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_START_AND_END_BOTH_SPECIFIED</code>: Both start and end cannot be specified</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_REFERENCE</code>: Unsupported resource reference, expected %s but was %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_DEVICE_REFERENCE</code>: Unsupported device reference</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_UNSUPPORTED_BASEDON_REFERENCE</code>: Unsupported based-on reference: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SEARCHMEASUREMENT_REFERENCED_RESOURCE_NOT_FOUND</code>: Referenced resource not found: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_OBSERVATION_CODE</code>: Observation.code does not match the code of the referenced ServiceRequest with id %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_QUESTIONNAIRE_REFERENCE</code>: Questionnaire reference with id %s is unexpected. Expected questionnaire reference to match questionnaire reference of related ActivityDefinition with id %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_SHOULD_REFERENCE_PATIENT</code>: Input resources of type EHealthObservation, EHealthMedia and EHealthQuestionnaireResponse should reference a patient.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_SHOULD_REFERENCE_EPISODEOFCARE</code>: Input resources of type EHealthObservation, EHealthMedia and EHealthQuestionnaireResponse should reference an episode of care.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_EMPTY_INPUT_BUNDLE</code>: The input bundle does not contain any resources.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_BUNDLE_CONTAINS_NONE_OF_EXPECTED_RESOURCES</code>: The input bundle does not contain any resources of type EHealthObservation, EHealthMedia, EHealthQuestionnaireResponse.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_BUNDLE_CONTAINS_INVALID_RESOURCES</code>: The input bundle contains resources which are not of type EHealthObservation, EHealthMedia, EHealthQuestionnaireResponse or EHealthProvenance.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_INVALID_POLICY</code>: Submitted provenances should use the policy 'Reuse of measurement chosen by citizen'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_REFERENCE_MISSING</code>: EHealthProvenance resource is referencing %s but it is not provided as part of the input.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_NOT_SINGLE_TARGET</code>: Provenance.target should have exactly one reference.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_TARGET_AND_ENTITY_SHOULD_BE_SAME_TYPE</code>: Provenance.target and Provenance.entity should be of same type.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_TARGET_AND_ENTITY_SHOULD_REFERENCE_SAME_PATIENT</code>: Provenance.target and Provenance.entity should reference the same patient</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_TARGET_AND_ENTITY_SHOULD_USE_SAME_DATE</code>: Provenance.target and Provenance.entity should use the same date.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_ENTITY_IS_REUSING</code>: Provenance.entity is reusing another measurement and thus can not be used for reuse.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_INVALID</code>: %s is invalid.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_PROVENANCE_NOT_SINGLE_ENTITY</code>: Provenance.entity should have exactly one reference.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_FOR_DIFFERENT_PATIENTS</code>: The resources provided are for different patients.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INPUT_NOT_PART_OF_SAME_EPISODEOFCARE</code>: The resources provided are not all part of the same episode of care.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_PROCEDURE_REQUEST_IS_NOT_ACTIVE</code>: Procedure request with id:[%s] is not active.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_ACTIVITYDEFINITION_MISSING_QUESTIONNAIRE_REFERENCE</code>: ActivityDefinition with id %s does not contain a relatedArtifact with a Questionnaire reference</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_DIFFERENT_PATIENT_REFERENCE</code>: The patient referenced by the EpisodeOfCare is different than the patient referenced by the provided resources</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_REUSE_NOT_ALLOWED</code>: Reuse of resource with id %s is not allowed.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_ASSOCIATED_QUALITY_NOT_PRESENT</code>: Associated quality %s is not present on submitted resource. Reuse of resource is not allowed.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_QUALITY_IS_NOT_SUBSUMED</code>: Quality %s does not subsume %s. Reuse of resource is not allowed.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_RESOURCE_TO_OLD_TO_BE_USED_FOR_REUSE</code>: Reuse of resource is not allowed due to the resource being too old.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are ('s', 'min', 'h', 'd', 'wk', 'mo', 'a').</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_MORE_THAN_ONE_DEVICE_QUALITY</code>: Only one device quality allowed for each observation/media</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_RESOLVED_TIMING</code>: ResolvedTiming must have either type=Resolved and start/end or type=Unresolved/Adhoc/Extra and no start/end</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_TOO_MANY_ANSWERS</code>: QuestionnaireResponse: %s has too many answers for the item with linkId: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_TOO_FEW_ANSWERS</code>: QuestionnaireResponse: %s has too few answers for the item with linkId: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_DATA_NO_DATA_FOUND</code>: Media data with id %s was not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_THUMBNAIL_DATA_NO_DATA_FOUND</code>: Media thumbnail data with size %d for id %s was not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_GET_THUMBNAIL_DATA_NOT_SUPPORTED</code>: Media thumbnail data for id %s is not supported</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MEASUREMENT_SUBMITMEASUREMENT_INVALID_STATUS</code>: Measurement status %s is invalid. Status must be %s for measurement of type %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-observation">ehealth-observation</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">OBSERVATION_MEDIA_NOT_SUPPORTED_MESSAGE</code>: Measurement was of media type. This was not translated to an observation since it is not supported in FHIR</li>
+</ul>
+
+<h4 id="ehealth-organization">ehealth-organization</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_SOURCE_MUST_BE_MANUAL</code>: The operation can only be performed for Organization with source "manual"</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_MUST_BE_SSL_WHEN_SOURCE_MANUAL</code>: The operation can only be performed for SSL Organizations when the source is "manual"</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_NOT_UNIQUE</code>: Organization Identifier not unique: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_SYSTEM_NOT_ALLOWED_FOR_SOURCE_MANUAL</code>: Identifier system is not allowed for Organization with source "manual"</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_TRAVERSE_TO_SOR_NOT_POSSIBLE</code>: No related SOR organization could be found for: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_IDENTIFIER_MUST_CONTAIN_AT_LEAST_CVR_FOR_SOURCE_MANUAL</code>: Identifier system CVR required for Organization with source "manual"</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_UNKNOWN_IDENTIFIER</code>: Unable to find unique Organization with identifier: %s. Number of search results: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_MISSING_IDENTIFIER</code>: Organization %s does not have identifier of type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_REFERENCE_IDENTIFIER_MISSING_PROVIDER_NUMBER</code>: There are no identifiers of type ProviderNumber in the Organization reference list: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_REFERENCE_IDENTIFIER_PROVIDER_NUMBER_NOT_UNIQUE</code>: The identifiers of type ProviderNumber are not unique in the Organization reference list: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_NOT_FOUND</code>: No active Organization could be found for the ProviderNumber: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_NO_COMMON_PARENT_FOUND_PROVIDER_NUMBER</code>: No common parent found for the ProviderNumber: %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-plandefinition">ehealth-plandefinition</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_STATUS</code>: Update is only allowed for PlanDefinition with status: %s or %s, otherwise, only useContext can be modified. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating PlanDefinition with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_UPDATE_TO_NOT_ALLOWED_STATE</code>: Update is not allowed for PlanDefinition with %s status to different than %s status.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_VALIDATE_MANDATORY_ACTIVITYDEFINITION_OR_SUBPLAN_REFERENCE</code>: At least one activity definition or subplan should be referenced.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_VALIDATE_ALL_REFERENCED_ACTIVITYDEFINITIONS_OR_SUBPLANS_SHOULD_BE_ACTIVE</code>: All referenced activity definitions or subplans should be with state: "active"</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_MISSING_RELATED_ACTION</code>: An action points to a non-existing related action</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-provenance">ehealth-provenance</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PROVENANCE_NO_READ_PRIVILEGE</code>: User must be logged in with the provenance read privilege</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PROVENANCE_NO_SEARCH_PRIVILEGE</code>: User must be logged in with the provenance search privilege</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PROVENANCE_SEARCH_DATA_NOT_MATCH_CONTEXT</code>: The target property should match to the episode of care in context</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-qfdd">ehealth-qfdd</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QFDD_DISPLAY_ITEM_MUST_HAVE_A_TEXT</code>: Display item must have a text. LinkId: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QFDD_NARRATIVE_MISSING_EXTENSION_ERROR</code>: Information section does not have a rendering-xhtml extension. LinkId: %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-questionnaire">ehealth-questionnaire</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_DATETIME</code>: QuestionnaireResponse has invalid DateTimeType on effectivePeriod.%s, must have minutes, seconds or millis precision and must have a timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_START_AFTER_END</code>: QuestionnaireResponse has invalid effectivePeriod, effectivePeriod.start must be before effectivePeriod.end</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_UPDATE_ALLOWED_FOR_USECONTEXT_STATUS</code>: Updating Questionnaire with/to status %s is not allowed when modifying fields other than useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_IN_STATUS</code>: Update is not allowed for questionnaires with statuses: %s, %s, except for changes to useContext. The following differences were found when updating existing resource with id %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_UPDATE_STATUS</code>: Update is not allowed for questionnaires with %s status to different than %s status.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_NOT_ALLOWED_TO_DELETE_WITH_STATUS</code>: Delete only possible for questionnaires with status: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_IMAGE_FORMAT_VALIDATION_MESSAGE</code>:
+%s Image in questionnaire item with linkID %s and Binary contentType %s does not match any code in ValueSet: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_IMAGE_SIZE_VALIDATION_MESSAGE</code>:
+%s Image in questionnaire item with linkID %s exceeds the maximum size of %s kB</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_QFDD_DOES_NOT_EXIST_IN_DOCUMENT_TRANSFORMATION</code>: The QFDD with the identifier %s does not exist in document transformation</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_TERMINOLOGY_HELPER_CODE_NOT_FOUND</code>: Code %s for CodeSystem %s not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_TERMINOLOGY_HELPER_CODE_SYSTEM_NOT_FOUND</code>: Code system not found for url: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_TERMINOLOGY_HELPER_CODE_SYSTEM_FOUND_MORE_THAN_ONE</code>: Found more than one code system for url: %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-reporting">ehealth-reporting</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_MISSING_INPUT_PARAMETER</code>: Parameter "%s" is mandatory for report "%s".</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_REPORT_GENERATION_FAILED</code>: Report generation has failed</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_SYNCHRONOUS_GENERATION_NOT_ALLOWED</code>: Synchronous generation of the report is not allowed</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_SCHEDULE_NOT_ALLOWED</code>: Scheduled generation of the report is not allowed</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_EXECUTE_NOT_ALLOWED</code>: Asynchronous generation of the report is not allowed</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">REPORTING_MUTUALLY_EXCLUSIVE_INPUT_PARAMETER</code>: Parameters "%s" and "%s" are mutually exclusive for report "%s".</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-security">ehealth-security</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_TOKEN_CONTEXT_NOT_ALLOWED</code>: Security token context not allowed: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_TOKEN_INSUFFICIENT_PERMISSION</code>: Insufficient permission for %s for %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_USER_NOT_ALLOWED</code>: Resource not allowed for user: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_TOKEN_CONTEXT_MISSING</code>: Security token context missing for user type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_TOKEN_CONTEXT_MISSING_CONTEXT</code>: Security token context missing for context type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_RESOURCE_NOT_MATCHING_TOKEN_CONTEXT</code>: Resource not matching security token context: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_OPERATION_NOT_ALLOWED_FOR_USER_TYPE</code>: Operation not allowed for user type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_SEARCH_PARAM_NOT_MATCHING_TOKEN_CONTEXT</code>: Search parameters not matching security token context: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_SEARCH_PARAMS_MANDATORY</code>: Search parameters mandatory with current user type and combination of search parameters: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SECURITY_SEARCH_OPERATION_POST_CONSTRAINT</code>: Search on %s only supports POST style.</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-status">ehealth-status</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">STATUS_SCHEDULE_PAUSE_MAX_30_DAYS</code>: A scheduled pause may not last more than 30 days</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">STATUS_SCHEDULE_IDENTICAL_TIME</code>: Multiple status changes may not be scheduled to be activated simultaneously</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-system">ehealth-system</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SYSTEM_TAG_UNEXPECTED_TAG</code>: Resource contains system tag(s), which do not match related resource.</li>
+</ul>
+
+<h4 id="ehealth-task">ehealth-task</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_INVESTIGATION_ITEM_REFERENCES_MUST_HAVE_VERSION_AND_VERSIONLESS</code>: Investigation references must have an item with version and one versionless</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_RESTRICTION_CATEGORY_NONE_CANT_BE_COMBINED</code>: Restriction category 'None' can't be combined with others</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_RESTRICTION_CATEGORY_NOT_MATCHING_TOKEN_CONTEXT</code>: Restriction category '%s' does not match token context</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_PROCESSING_FAILED</code>: Measurement processing failed for Provenance %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_RESOURCE_HANDLER_INVALID_JSON</code>: Unable to parse json string: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_INVALID_INPUT_RESOURCE</code>: Resource of type %s is not a valid input resource.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_MISSING_MEASUREMENT_PROCEDURE_REQUEST</code>: Could not determine if measurement is missing for procedure request: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_FAILING_REQUESTS_JOB_TERMINATED</code>: Limit of %s consecutive failing requests is reached. Scheduled audit job is terminated.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_CAREPLAN_NOT_FOUND</code>: CarePlan is not found when searching by activity: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_AUTOMATED_PROCESSING_RULE_OUTPUT_NOT_FOUND</code>: RuleOutput not found when searching through Task Automated Processing Resource</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_FOR_NOT_SET</code>: When episode of care is set, the field 'for' must reference the corresponding patient</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_MEASUREMENT_REFERENCE</code>: Expecting ClinicalImpression to include a single Investigations. The investigation must contain two items: one item with an versionless reference and one item with a versioned reference of the Measurement that is being invalidated or retracted.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_INVESTIGATION_ITEM_TYPE</code>: Investigation item type must be of type Media, Observation or QuestionnaireResponse.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_FINDING_CODE_ON_PREVIOUS</code>: Previous ClinicalImpression must be of type 'invalidation' when trying to retract invalidation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_INITIAL_STATUS</code>: ClinicalImpression for invalidation/retracted invalidation must be created with 'COMPLETED' status.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_DECISION_CODE</code>: ClinicalImpression must contain a single decision, with a single Coding of code 'invalidated-fulfills' or 'invalidated-is-not-fulfillment'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_FINDING_CODE</code>: ClinicalImpression must contain a single finding, with a single Coding of code 'measurement-invalidated' or 'measurement-invalidation-retracted'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_REFERENCE_MISMATCH</code>: Mismatch between references: %s(%s) and %s(%s).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_MISSING_PREVIOUS</code>: Unable to find previous ClinicalImpression when trying to retract invalidation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_PREVIOUS_EXPECTING_INVALIDATION_RETRACTION</code>: Previous ClinicalImpression must be of type invalidation retraction when trying to invalidate measurement.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_INVALID_PREVIOUS_EXPECTING_INVALIDATION</code>: Previous ClinicalImpression must be of type invalidation when trying to retract invalidation for measurement.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TASK_MEASUREMENT_VALIDITY_MULTIPLE_PREVIOUS</code>: Unable to determine previous invalidation/invalidation retracted ClinicalImpression, due to finding multiple candidates for the Measurement.</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-transformation">ehealth-transformation</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_CPR_DIDNT_MATCH</code>: Found document didn't match with CPR</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_MORE_THAN_ONE_FOUND</code>: More than 1 DocumentReference with same master identifier found. The master identifier should be unique.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_NO_DOCUMENT_FOUND</code>: No matching document found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_GENERIC_NARRATIVE_ERROR</code>: Can't generate narrative for: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_UNKNOWN_QUESTION_TYPE</code>: Unknown QFDD question type. Question id: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_UNSUPPORTED_STRUCTURE</code>: The root item structure was neither an Information Only Section nor a Question Section. LinkId:  %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of QFDD xml</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_MISSING_STEPVALUE</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but has no step value extension.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', but either Repeats is true or MaxOccurs is not null. Repeats was: %s and MaxOccurs was: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_CODESYSTEM_TITLE_MISSING</code>: CodeSystem title is missing, for CodeSystem with url: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_QUESTION_NARRATIVE_FILE_TEMPLATE_ERROR</code>: Template for question section narrative can't be found or written.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_QUESTION_NARRATIVE_TEMPLATE_SYNTAX_ERROR</code>: Could not process template for question section narrative due to syntax errors or missing variables</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_INPUT_PARAMETERS</code>: Input bundle should contain just one EHealthComposition, EHealthQuestionnaireResponse, EHealthQuestionnaire and DocumentReference(QFDD).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_INVALID_INPUT_PARAMETERS</code>: Input bundle should contain just one EHealthQuestionnaire and DocumentReference(QRD).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_DUPLICATED_EXTERNAL_IDENTIFIER</code>: Cannot transform from QRD to QuestionnaireResponse. Duplicated external identifiers: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_EXTERNAL_DOCUMENT_NOT_MATCHING_QFDD_IDENTIFIER_ON_QUESTIONNAIRE</code>: External Document reference in QRD does not match QFDD identifier on Questionnaire. External Document reference: '%s'. QFDD identifier on Questionnaire: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_NO_EXTERNAL_DOCUMENT_FOUND_IN_QRD</code>: No External Document reference found in QRD.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_NO_QFDD_IDENTIFIER_ON_QUESTIONNAIRE</code>: Questionnaire does not have a QFDD identifier. No identifier with system starting with 'urn:oid'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_COULD_NOT_FIND_PARENT_FOR_LINK_ID</code>: Could not find parent for item with linkId: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_QRD_HAS_NO_SECTIONS</code>: QRD has no sections with questions.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_QRD_QRD_QUESTION_TYPE_DOES_NOT_MATCH_QUESTIONNAIRE_ITEM_TYPE</code>: QRD Question type '%s' does not match questionnaire item type '%s'. LinkId: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNSUPPORTED_QUESTION_TYPE</code>: Unsupported Questionnaire type: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_NUMBER_OF_ANSWERS</code>: QuestionnaireResponse item should contain from '%s' to '%s' answers. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_SLIDER_MISMATCH_BETWEEN_TYPE_AND_SLIDER_STEP</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' and item.type: 'Integer' but has decimal step value: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_SLIDER_EXTENSIONS</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain at least the following extensions: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_STEP_EXTENSION</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', therefore it must contain one of the following extensions: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NO_SLIDER_ITEM_CONTROL_EXTENSION</code>: Questionnaire item with linkId '%s' has no itemControl extension with code: 'slider'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_MISSING_IDENTIFIER</code>: Identifier on composition is mandatory</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of QRD xml</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to have exactly one item of display. Found %s items. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_INFO_SECTION_FOUND_OTHER_TYPE</code>: QFDD section with title '%s' has no organizers(Information Only Section). Expecting FHIR Questionnaire root group to contain exactly one item of type 'display'. Found item of type: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_COPYRIGHT_SECTION</code>: Expecting FHIR Questionnaire root group to have one or more items of type display for structure matching QFDD section with title '%s'. Found %s items. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_FOR_COPYRIGHT_SECTION_FOUND_OTHER_TYPE</code>: Expecting FHIR Questionnaire root group to contain only sub items of type 'display'. QFDD section with title '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_DISPLAY_ITEM_TO_MATCH_COPYRIGHT_ENTRIES_IN_QFDD</code>: Expecting FHIR Questionnaire root group to contain the same number of display items as copyright entries in the matching QFDD section. QFDD section with title '%s'. Found %s items, expecting %s items. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_GROUP_TO_BE_COPYRIGHT</code>: Expecting FHIR Questionnaire root group isCopyright to be true as corresponding QFDD section is a copyright section. QFDD section with title '%s'. QuestionnaireResponse: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_COPYRIGHT_SUBITEMS_TO_HAVE_IS_COPYRIGHT_TRUE</code>: Expecting FHIR Questionnaire root group to contain sub items with isCopyright set to true as corresponding QFDD section is a copyright section. QFDD section with title '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_IN_ROOT_GROUP_DOES_NOT_MATCH_NUMBER_OF_ORGANIZERS</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain the same number of items with type 'group'. Found: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ONLY_SUB_GROUPS_IN_ROOT_GROUP</code>: QFDD section with title '%s' has %s organizers. Expect FHIR Questionnaire root group to contain only items of type: 'group'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ROOT_ITEM_TO_BE_OF_TYPE_GROUP</code>: Root item on questionnaire is not of type 'group'. Type was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_ITEM_TO_BE_OF_TYPE_GROUP</code>: Item is not of type group. Type: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NUMBER_OF_ITEMS_ON_ROOT_LEVEL_DOES_NOT_MATCH_NUMBER_OF_SECTIONS</code>: The number of root items on questionnaire does not match the number of QFDD sections. Questionnaire: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_FOUND_MORE_THAN_ONE_MATCH_FOR_LINKID_IN_QUESTIONNAIRE_RESPONSE</code>: Found more than 1 match for LinkId in QuestionnaireResponse. LinkId: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECTING_QUESTIONNAIRE_TIEM_TO_HAVE_EXTERNAL_IDENTIFIER</code>: Expected questionnaireItem to have externalIdentifier: '%s'. But was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_FOUND_NO_QUESTIONNAIRE_RESPONSE_FOR_ASSOCIATED_TEST_QUESTION</code>: Found no QuestionnaireResponse for associatedTextQuestion. Found Questionnaire item with linkId: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_DO_NOT_MATCH_THE_QUESTION_FOR_ASSOCIATED_TEXT_QUESTION</code>: The precondition criterion code does not match the expected question code. Expected: '%s'. But was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_MULTIPLE_CHOICE_ANSWER_EXPECTING_CODING_TYPE_FOR_VALUE</code>: Expecting answer value to be of type Coding. QuestionResponseItem with linkId: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_GROUP_GROUP_TYPE_UNKNOWN</code>: Unknown GroupType: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_PRECONDITION_MORE_THAN_ONE</code>: Transformation do not support more than one precondition for associatedTextQuestion. Found '%s'. AssociatedTextQuestion: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_EXPECT_IMAGE_IN_QUESTIONNAIRE_ITEM</code>: Expecting QuestionnaireItem to have an image as the corresponding QFDD question has an image. Question id: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_NOT_EXPECTING_IMAGE_IN_QUESTIONNAIRE_ITEM</code>: Not expecting QuestionnaireItem to have an image as the corresponding QFDD question do not have an image. Question id: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_UNKNOWN_QRD_RESPONSE_TYPE</code>: Unknown QRD response type. QRD Question id: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_ASSOCIATED_TEXT_QUESTION_ITEM_NOT_OF_TYPE_TEXT_OR_STRING</code>: AssociatedTextQuestion item with id: '%s' is not of type 'text' or 'string'. Type was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_QFDD_QUESTION_DOES_NOT_SUPPORT_ASSOCIATED_TEXT_QUESTION</code>: QFDDQuestion with id: '%s' does not support associatedText. Class was: '%s'. QuestionnaireResponse: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_MISSING_START</code>: QuestionnaireResponse with id: '%s' is missing effective period start.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_START</code>: QuestionnaireResponse with id: '%s' must have a valid effective period start, including time precision and timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_END</code>: QuestionnaireResponse with id: '%s' must have a valid effective period end, including time precision and timezone.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QRD_INVALID_QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EQUAL_BOUNDS</code>: The low and high bounds of the effective period in QuestionnaireResponse with ID '%s' must not be equal.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_RESOURCE</code>: Input bundle missing resource: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CPR</code>: CPR is mandatory for patient but not present in fhir bundle</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_OBSERVATION</code>: Observation is mandatory for PHMR</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_CODING</code>: Observation coding system must be urn:oid:1.2.208.176.2.1</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_QUANTITY_MISSING</code>: Value should be Quantity type and not null</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_XML_MISSING</code>: Invalid input document reference, it must contain content with data of PHMR xml</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_ID_OID_NOT_FOUND</code>: NamingSystem or CodeSystem with url %s is not found.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_MEASUREMENT_IDENTIFIER</code>: No identifier found for measurement</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_TIME_INTERVAL_MISSING</code>: Document is missing serviceStartTime and serviceStopTime.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_INVALID_EFFECTIVE</code>: Invalid Observation.effective, expecting DateTime, Period or Instant</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_CODESYSTEM_NOT_FOUND</code>: CodeSystem was not found. System: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_OBSERVATION_ENTRY_CODESYSTEM_NAME_NOT_DEFINED</code>: PHMR document observation entry must have a CodeSystem name. No one defined for '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_CODE_NOT_FOUND_IN_CODESYSTEM</code>: Code '%s' was not found in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_DESIGNATION_FOR_CODE</code>: Could not find designation use 'phmr-short-name' for code '%s' in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_DESIGNATION_VALUE_FOR_CODE</code>: No value specified for designation use 'phmr-short-name'. Code: '%s'. CodeSystem: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_INVALID_METHOD_CODES</code>: Method codes for performerType and provisionMethod for observation with id '%s' could not be established.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_MISSING_UNIT_CODE_FOR_QUANTITY</code>: No unit code found for quantity with observation code '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_INVALID_UNIT_MAPPING_FOR_OBSERVATION_CODE</code>: Invalid UCUM unit mapping found for observation code '%s'. Observation has unit: '%s', but expected is one of ('%s')</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_MISSING_UNIT_MAPPING_FOR_OBSERVATION_CODE</code>: No UCUM unit mapping found for observation code '%s' in ConceptMap. Has unit code: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_COMBINATION_OBSERVATION_UNIT_AND_PHMR_UNIT_PROPERTY</code>: Invalid combination of observation unit: '%s' and PHMR unit property: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_UNIT_PROPERTY_FOR_CODE</code>: Could not find property 'phmr-unit' for code '%s' in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_UNIT_VALUE_PROPERTY_FOR_CODE</code>: No value specified for property 'phmr-unit'. Code: '%s'. CodeSystem: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CONFIDENTIALITY_CODE</code>: Composition.confidentiality is mandatory</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_WRONG_TYPE_COMPOSITION_SUBJECT</code>: Composition.subject should be a Patient</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CUSTODIAN</code>: Custodian is mandatory for transformation</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_COMPOSITION</code>: Composition expected for transformation is not found</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_ATTESTER</code>: Composition.attester must contain one Practitioner and one Organization if the document is shared manually</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_WRONG_TYPE_COMPOSITION_AUTHOR</code>: Composition.author should either be a Patient or Practitioner</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_COMPOSITION_AUTHOR_ORGANIZATION</code>: Composition.authorOrganization is mandatory for transformation</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_AUTHOR_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.authorOrganization must contain SOR identifier: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_ATTESTER_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.attester.party Organization must contain SOR identifier: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_CUSTODIAN_MUST_CONTAIN_SOR_ID</code>: Custodian organization must contain SOR identifier: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_COMPOSITION_HAS_NO_TIMEZONE_OR_SECONDS</code>: Composition has no timezone or seconds set: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XDS_PROPERTY_MISSING_EXCEPTION</code>: '%s' is missing which is required for document sharing. DocumentReference id: '%s'.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XDS_PROPERTY_CODE_INVALID_EXCEPTION</code>: '%s' is required for document sharing but the specified coding is not valid for the valueSet '%s': system=%s, code=%s, display=%s. DocumentReference id: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_XHTML_TO_CDA_XML_FAILED</code>: Unable to transform XHTML to CDA XML format</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_FROM_CDA_XML_TO_XHTML_FAILED</code>: Unable to tranform CDA XML to XHTML format</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XSLT_CONFIGURATION_ERROR</code>: Error creating XLST transformer: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_XSD_CONFIGURATION_ERROR</code>: Error creating XSD transformer: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_APD_XML_MISSING</code>: Invalid input document reference, it must contain content with data of APD xml</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-upload">ehealth-upload</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">UPLOAD_QFDD_MASTERIDENTIFIER_IS_ALREADY_IN_USE</code>: The masterIdentifier on the DocumentReference is not unique</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">UPLOAD_QFDD_THE_ID_OF_THE_DOCUMENT_IS_NULL</code>: Missing Id in the QFDD.</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-use">ehealth-use</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">USE_CONTEXT_VALIDATION_FAILED</code>: UseContext validation for %s failed: value code %s not found in %s ValueSet</li>
+</ul>
+
+<h4 id="ehealth-versioning">ehealth-versioning</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VERSIONING_RESOURCE_MUST_BE_FROM_CURRENT_ENVIRONMENT</code>: Versioning validation error: Resource must be from current environment: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VERSIONING_MULTIPLE_DRAFTS_IN_BASE_NOT_ALLOWED</code>: Versioning validation error: Only one draft resource at a time is allowed per base.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VERSIONING_RESOURCE_NOT_ELIGIBLE_FOR_CLONE</code>: Versioning validation error: A resource must have base-identifier, environment-identifier, versioning-identifier and version to be cloned.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VERSIONING_REFERENCE_NOT_RELEVANT_FOR_RESOURCE</code>: Versioning validation error: References included in deep_clone_references must be present in resource to clone, %s: %s.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">VERSIONING_REFERENCE_MISSING_IN_TREE_PATH</code>: Versioning validation error: The following resources could not be cloned since their parent resource, %s, is not present in deep_clone_refernces: %s.</p>
+  </li>
+</ul>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#5.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Aug 11, 2025 11:42+0000">2025-08-11</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,77 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-ssl-orders> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-schedule-ssl-orders"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">Operation</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-ssl-orders"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "5.0.0"] ; # 
+  fhir:name [ fhir:v "schedule-ssl-orders"] ; # 
+  fhir:title [ fhir:v "Schedule ssl orders"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-08-11T11:41:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Report Contents\nThis report contains SSL Orders\n- OrderDetails\n- OrderLines\n- TraceLines\n### Grouping \nOrder. Each Order is returned in a single JSon file.\n### Parameters\n- organization: Filter on Order.buyer\n- period: Filter on TraceLine.timestamp\n- seller: Filter on Order.seller\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nAll returned objects are SSL resources. See the SSL API description for details\n\n    {\n        'OrderDetails': {\n            'order': {\n                'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER',\n                'threadId': null,\n                'identifiers': null,\n                'status': null,\n                'priority': null,\n                'notes': null,\n                'buyer': 'https://ssl-order.local.ehealth.sundhed.dk/v1/party/BUYER',\n                'seller': 'https://ssl-order.local.ehealth.sundhed.dk/v1/party/SELLER',\n                'sellerDeliveryContactEmail': null,\n                'carePlanRef': null,\n                'carePlanTitle': null,\n                'earliestDeliveryDate': null,\n                'latestDeliveryDate': null,\n                'receiver': null\n            },\n            'orderLines': [{\n                    'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order-line/ORDERLINE',\n                    'order': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER',\n                    'status': null,\n                    'item': null,\n                    'agreedDate': null,\n                    'device': null\n                }\n            ],\n            'traceLines': [{\n                    'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER/1',\n                    'timestamp': '2019-12-24T18:00:00Z',\n                    'createdByOrganization': null,\n                    'createdByUser': null,\n                    'text': null,\n                    'supplementaryText': null,\n                    'order': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER',\n                    'orderLine': null,\n                    'statusChange': null\n                }\n            ]\n        }\n    }\n"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "schedule-ssl-orders"] ; # 
+  fhir:system [ fhir:v true] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v false] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "anonymization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "string" ]
+  ] [
+     fhir:name [ fhir:v "organization" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "seller" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] [
+     fhir:name [ fhir:v "period" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Period" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Binary" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
