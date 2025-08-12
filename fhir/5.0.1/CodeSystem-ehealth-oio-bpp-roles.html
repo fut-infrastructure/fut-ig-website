@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>OIO-BPP Role - eHealth Infrastructure v5.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"88.496"}
+    h3,h4,h5,h6{--heading-prefix:"88.496"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">5.0.1 - release
+
+
+
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>OIO-BPP Role</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v5.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-ehealth-oio-bpp-roles.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-ehealth-oio-bpp-roles.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-ehealth-oio-bpp-roles.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: OIO-BPP Role
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/cs/oio-bpp-roles<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/cs/oio-bpp-roles"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">5.0.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/cs/oio-bpp-roles|5.0.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2019-12-02
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">OIOBPPRole</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>OIO BPP Role</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-ehealth-oio-bpp-roles.html">OIOBPPRoles</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"></p><a name="ehealth-oio-bpp-roles"> </a><a name="hcehealth-oio-bpp-roles"> </a><p>This case-sensitive code system <code>http://ehealth.sundhed.dk/cs/oio-bpp-roles</code> defines the following codes:</p>
+<table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Dansk (Danish, da)</b></td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:citizen_enroller<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58citizen_enroller"> </a></td>
+<td>Borgeropretter</td>
+<td>Kan oprette borger i telemedicinsk forløb og tildele borger en foruddefineret plan</td>
+<td>Borgeropretter</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:clinical_viewer<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58clinical_viewer"> </a></td>
+<td>Klinisk se adgang</td>
+<td>Kan se telemedicinske Måledata for at kunne understøtte dagligt ikke-telemedicinsk arbejde rettet på konkret borger</td>
+<td>Klinisk se adgang</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:monitoring_assistor<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58monitoring_assistor"> </a></td>
+<td>Monitoreringsmedhjælper</td>
+<td>Kan håndtere Måledata og kommunikation til/fra borger</td>
+<td>Monitoreringsmedhjælper</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:monitoring_adjuster<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58monitoring_adjuster"> </a></td>
+<td>Monitoreringstilretter</td>
+<td>Kan håndtere og ændre i Måleregime, Grænseværdier og telemedicinsk forløb/pakke til borger</td>
+<td>Monitoreringstilretter</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:report_user<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58report_user"> </a></td>
+<td>Nøgletalsmedarbejder</td>
+<td>Kan udføre datatrækning, rapporter og statistik</td>
+<td>Nøgletalsmedarbejder</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:questionnaire_editor<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58questionnaire_editor"> </a></td>
+<td>Sundhedsfaglig spørgeskemaeditor</td>
+<td>Kan udarbejde, ændre og teste Spørgeskema</td>
+<td>Sundhedsfaglig spørgeskemaeditor</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:clinical_administrator<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58clinical_administrator"> </a></td>
+<td>Pakke- og forløbsbygger</td>
+<td>Kan udvælge Spørgeskema/Måling, sammensætte indholdet af pakker og forløb, navngive pakke/forløb og tilrette de generelle Grænseværdier</td>
+<td>Pakke- og forløbsbygger</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:clinical_supporter<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58clinical_supporter"> </a></td>
+<td>Klinisk supporter</td>
+<td>Kan undersøge hændelser ud fra div. kriterier fx borger, bruger, dato, hændelse</td>
+<td>Klinisk supporter</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:careteam_administrator<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58careteam_administrator"> </a></td>
+<td>Care Team administrator</td>
+<td>Kan håndtere Care Teams i den telemedicinske løsning</td>
+<td>Care Team administrator</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:order_placer<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58order_placer"> </a></td>
+<td>Bestiller af udstyr</td>
+<td>Håndterer bestilling af telemedicinsk udstyr ud fra lokale aftaler</td>
+<td>Bestiller af udstyr</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:service_and_logistics<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58service_and_logistics"> </a></td>
+<td>Service og logistik samarbejdspartner</td>
+<td>Kan håndtere bestilling ud fra lokale aftaler</td>
+<td>Service og logistik samarbejdspartner</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:incident_reporter<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58incident_reporter"> </a></td>
+<td>Fejlmelder</td>
+<td>Kan indberette fejl på telemedicinske løsninger og udstyr</td>
+<td>Fejlmelder</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:incident_manager<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58incident_manager"> </a></td>
+<td>Support samarbejdspartner</td>
+<td>Kan håndtere fejlmelding ud fra lokale aftaler</td>
+<td>Support samarbejdspartner</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:terminology_administrator<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58terminology_administrator"> </a></td>
+<td>Terminologiadministrator</td>
+<td>Oprette og vedligeholde terminologi</td>
+<td>Terminologiadministrator</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:ssl_catalogue_responsible<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58ssl_catalogue_responsible"> </a></td>
+<td>Katalogansvarlig</td>
+<td>Oprette og vedligeholde SSL kataloger</td>
+<td>Katalogansvarlig</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:ssl_catalogue_annotator<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58ssl_catalogue_annotator"> </a></td>
+<td>Katalogopmærker</td>
+<td>Opmærke varer og serviceydelser i SSL kataloger</td>
+<td>Katalogopmærker</td></tr>
+<tr><td style="white-space:nowrap">urn:dk:sundhed:ehealth:role:ssl_contract_responsible<a name="ehealth-oio-bpp-roles-urn.58dk.58sundhed.58ehealth.58role.58ssl_contract_responsible"> </a></td>
+<td>Aftaleansvarlig</td>
+<td>Oprette og rette SSL samarbejdsaftaler</td>
+<td>Aftaleansvarlig</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/citizen_enroller/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47citizen_enroller.471"> </a></td>
+<td>Borgeropretter</td>
+<td>Kan oprette borger i telemedicinsk forløb og tildele borger en foruddefineret plan</td>
+<td>Borgeropretter</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/clinical_viewer/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47clinical_viewer.471"> </a></td>
+<td>Klinisk se adgang</td>
+<td>Kan se telemedicinske Måledata for at kunne understøtte dagligt ikke-telemedicinsk arbejde rettet på konkret borger</td>
+<td>Klinisk se adgang</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/monitoring_assistor/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47monitoring_assistor.471"> </a></td>
+<td>Monitoreringsmedhjælper</td>
+<td>Kan håndtere Måledata og kommunikation til/fra borger</td>
+<td>Monitoreringsmedhjælper</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/monitoring_adjuster/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47monitoring_adjuster.471"> </a></td>
+<td>Monitoreringstilretter</td>
+<td>Kan håndtere og ændre i Måleregime, Grænseværdier og telemedicinsk forløb/pakke til borger</td>
+<td>Monitoreringstilretter</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/report_user/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47report_user.471"> </a></td>
+<td>Nøgletalsmedarbejder</td>
+<td>Kan udføre datatrækning, rapporter og statistik</td>
+<td>Nøgletalsmedarbejder</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/questionnaire_editor/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47questionnaire_editor.471"> </a></td>
+<td>Sundhedsfaglig spørgeskemaeditor</td>
+<td>Kan udarbejde, ændre og teste Spørgeskema</td>
+<td>Sundhedsfaglig spørgeskemaeditor</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/clinical_administrator/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47clinical_administrator.471"> </a></td>
+<td>Pakke- og forløbsbygger</td>
+<td>Kan udvælge Spørgeskema/Måling, sammensætte indholdet af pakker og forløb, navngive pakke/forløb og tilrette de generelle Grænseværdier</td>
+<td>Pakke- og forløbsbygger</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/clinical_supporter/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47clinical_supporter.471"> </a></td>
+<td>Klinisk supporter</td>
+<td>Kan undersøge hændelser ud fra div. kriterier fx borger, bruger, dato, hændelse</td>
+<td>Klinisk supporter</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/careteam_administrator/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47careteam_administrator.471"> </a></td>
+<td>Care Team administrator</td>
+<td>Kan håndtere Care Teams i den telemedicinske løsning</td>
+<td>Care Team administrator</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/order_placer/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47order_placer.471"> </a></td>
+<td>Bestiller af udstyr</td>
+<td>Håndterer bestilling af telemedicinsk udstyr ud fra lokale aftaler</td>
+<td>Bestiller af udstyr</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/service_and_logistics/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47service_and_logistics.471"> </a></td>
+<td>Service og logistik samarbejdspartner</td>
+<td>Kan håndtere bestilling ud fra lokale aftaler</td>
+<td>Service og logistik samarbejdspartner</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/incident_reporter/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47incident_reporter.471"> </a></td>
+<td>Fejlmelder</td>
+<td>Kan indberette fejl på telemedicinske løsninger og udstyr</td>
+<td>Fejlmelder</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/incident_manager/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47incident_manager.471"> </a></td>
+<td>Support samarbejdspartner</td>
+<td>Kan håndtere fejlmelding ud fra lokale aftaler</td>
+<td>Support samarbejdspartner</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/terminology_administrator/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47terminology_administrator.471"> </a></td>
+<td>Terminologiadministrator</td>
+<td>Oprette og vedligeholde terminologi</td>
+<td>Terminologiadministrator</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/ssl_catalogue_responsible/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47ssl_catalogue_responsible.471"> </a></td>
+<td>Katalogansvarlig</td>
+<td>Oprette og vedligeholde SSL kataloger</td>
+<td>Katalogansvarlig</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/ssl_catalogue_annotator/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47ssl_catalogue_annotator.471"> </a></td>
+<td>Katalogopmærker</td>
+<td>Opmærke varer og serviceydelser i SSL kataloger</td>
+<td>Katalogopmærker</td></tr>
+<tr><td style="white-space:nowrap">http://ehealth.seb.dk/roles/usersystemrole/ssl_contract_responsible/1<a name="ehealth-oio-bpp-roles-http.58.47.47ehealth.46seb.46dk.47roles.47usersystemrole.47ssl_contract_responsible.471"> </a></td>
+<td>Aftaleansvarlig</td>
+<td>Oprette og rette SSL samarbejdsaftaler</td>
+<td>Aftaleansvarlig</td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#5.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 12, 2025 12:53+0000">2025-08-12</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/Library-it-evaluate> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Library-it-evaluate"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Operationsdefinition Library-it-evaluate</b></p><a name=\"Library-it-evaluate\"> </a><a name=\"hcLibrary-it-evaluate\"> </a><p>URL: [base]/Library/$evaluate</p><p>URL: [base]/Library/[id]/$evaluate</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>parameters</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/parameters.html\">Parameters</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/guidanceresponse.html\">GuidanceResponse</a></td><td/><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/Library-it-evaluate"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "5.0.1"] ; # 
+  fhir:name [ fhir:v "evaluate"] ; # 
+  fhir:title [ fhir:v "Evaluate"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-08-12T12:53:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This operation evaluates parameters passed as input against the decision support rule identified by the Library resource. It returns the computed clinical decision support result and/or errors. The Library resource identifies the clinical decision rule and define its parameters.\n\nThe operation is idempotent.\n### Input\n- 1..1 Parameters: HL7 FHIR [Parameters](https://www.hl7.org/fhir/stu3/parameters.html) resource containing input parameters for the clinical decision support computation.This should either be a QuestionnaireResponse or an Observation for evaluation.\n\n### Output\nUpon success this operation returns an GuidanceResponse resource containing the decision support result.\n\n"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v false] ; # 
+  fhir:code [ fhir:v "evaluate"] ; # 
+  fhir:resource ( [ fhir:v "Library"] ) ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v true] ; # 
+  fhir:instance [ fhir:v true] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "parameters" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 1 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Parameters" ]
+  ] [
+     fhir:name [ fhir:v "return" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "GuidanceResponse" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

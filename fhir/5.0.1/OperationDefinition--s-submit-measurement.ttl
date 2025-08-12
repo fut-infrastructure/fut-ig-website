@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "-s-submit-measurement"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Operationsdefinition -s-submit-measurement</b></p><a name=\"-s-submit-measurement\"> </a><a name=\"hc-s-submit-measurement\"> </a><p>URL: [base]/$$submit-measurement</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>measurement</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td/></tr><tr><td>OUT</td><td>bundle</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "5.0.1"] ; # 
+  fhir:name [ fhir:v "submit-measurement"] ; # 
+  fhir:title [ fhir:v "Submit measurement"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-08-12T12:53:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted. \n\nMedia resource inline content in `content.data` will be stored outside the resource, and the `content.url` for retrieval is set on the resource. Image content is anonymized by removing sensitive metadate before storage. Image content is processed to generate thumbnail representations in the thumbnail element. \n\n\n### Parameter description\nmeasurement: Bundle containing:\n- 0..* Observation (ehealth-observation profile)\n- 0..* QuestionnaireResponse (ehealth-questionnaireresponse profile)\n- 0..* Media (ehealth-media profile)\n- 0..* Provenance (ehealth-provenance profile). Each Provenance (which is intended for capturing reuse of measurement(s) – as described in the eHealth Observation profile introduction) must refer to other resources in the Bundle as target in the format \"urn:oid:<the oid>\" or \"urn:uuid:<the uuid>.\".\n\nAll resources in the Bundle must refer to the same Patient and EpisodeOfCare.\nAll measurement resources in the Bundle must have status either `completed` or `final` (`completed` in case of Media/QuestionnaireResponse and `final` in case of Observation).\nAll resources in the Bundle as well as the created Provenance will receive any missing system tags (ehealth-system CodeSystem) provided by the referenced EpisodeOfCare.\nThe request will be denied if any resource in the Bundle contains a system tag, which is not present on the referenced EpisodeOfCare\n\n\n### Output description\nThe returned Bundle contains references to the stored input resources where the id has been substituted.\n\neHealth infrastructure will substitute the id when saving the resources in a single transaction."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "submit-measurement"] ; # 
+  fhir:system [ fhir:v true] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v false] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "measurement" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] [
+     fhir:name [ fhir:v "bundle" ] ;
+     fhir:use [ fhir:v "out" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Bundle" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

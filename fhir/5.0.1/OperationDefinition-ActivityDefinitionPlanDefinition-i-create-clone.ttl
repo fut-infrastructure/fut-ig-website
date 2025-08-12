@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ActivityDefinitionPlanDefinition-i-create-clone"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Operationsdefinition ActivityDefinitionPlanDefinition-i-create-clone</b></p><a name=\"ActivityDefinitionPlanDefinition-i-create-clone\"> </a><a name=\"hcActivityDefinitionPlanDefinition-i-create-clone\"> </a><p>URL: [base]/ActivityDefinition/[id]/$create-clone</p><p>URL: [base]/PlanDefinition/[id]/$create-clone</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>clone-operation</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td/></tr><tr><td>IN</td><td>default-clone-behavior</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#boolean\">boolean</a></td><td/><td/></tr><tr><td>IN</td><td>deep-clone-references</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "5.0.1"] ; # 
+  fhir:name [ fhir:v "create-clone"] ; # 
+  fhir:title [ fhir:v "Create a clone of an ActivityDefinition"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2025-08-12T12:53:07+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://ehealth.sundhed.dk" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "### Input\n- resourceId: reference to the ActivityDefinition resource that should be cloned\n- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned \n- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.\n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone\n"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DK" ] ;
+       fhir:display [ fhir:v "Denmark" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v true] ; # 
+  fhir:code [ fhir:v "create-clone"] ; # 
+  fhir:resource ( [ fhir:v "ActivityDefinition"] [ fhir:v "PlanDefinition"] ) ; # 
+  fhir:system [ fhir:v false] ; # 
+  fhir:type [ fhir:v false] ; # 
+  fhir:instance [ fhir:v true] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "clone-operation" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "Coding" ]
+  ] [
+     fhir:name [ fhir:v "default-clone-behavior" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:type [ fhir:v "boolean" ]
+  ] [
+     fhir:name [ fhir:v "deep-clone-references" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v 0 ] ;
+     fhir:max [ fhir:v "*" ] ;
+     fhir:type [ fhir:v "Reference" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

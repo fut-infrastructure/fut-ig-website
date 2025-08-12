@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-schedule-measurement-stats"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Operationsdefinition -s-schedule-measurement-stats</b></p><a name="-s-schedule-measurement-stats"> </a><a name="hc-s-schedule-measurement-stats"> </a><p>URL: [base]/$$schedule-measurement-stats</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/binary.html">Binary</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-measurement-stats"/>
+  <version value="5.0.1"/>
+  <name value="schedule-measurement-stats"/>
+  <title value="Schedule measurement stats"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2025-08-12T12:53:07+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="### Report Contents&#xA;This report contains counts of Measurements for each EpisodeOfCare:&#xA;- Observation&#xA;- QuestionnaireResponse&#xA;- Media&#xA;### Grouping &#xA;This report is grouped by EpsiodeOfCare. Each group is returned in a separate JSon file.&#xA;### Parameters&#xA;- organization: Filter on EpisodeOfCare.managingOrganization match&#xA;- period: Filter on:&#xA;    - Observation.effective inside period for Observations&#xA;    - Questionnaire.authored inside period for QuestionnaireResponses&#xA;    - Media.occurence inside period for Media&#xA;### Output&#xA;Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.&#xA;### Example output&#xA;EHealthEpisodeOfCare is a Fhir resource. See the implementation guide for details&#xA;&#xA;    {&#xA;        'EHealthEpisodeOfCare': {&#xA;            'resourceType': 'EpisodeOfCare',&#xA;            'id': '21357',&#xA;            'meta': {&#xA;                'versionId': '1',&#xA;                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare']&#xA;            },&#xA;            'extension': [{&#xA;                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare-caremanagerOrganization',&#xA;                    'valueReference': {&#xA;                        'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/30170'&#xA;                    }&#xA;                }&#xA;            ],&#xA;            'status': 'active',&#xA;            'diagnosis': [{&#xA;                    'condition': {&#xA;                        'reference': 'https://careplan.local.ehealth.sundhed.dk/fhir/Condition/70274'&#xA;                    },&#xA;                    'rank': 1&#xA;                }&#xA;            ],&#xA;            'patient': {&#xA;                'reference': 'https://patient.local.ehealth.sundhed.dk/fhir/Patient/26565'&#xA;            },&#xA;            'managingOrganization': {&#xA;                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/28358'&#xA;            },&#xA;            'period': {&#xA;                'start': '1970-01-01T01:00:01+01:00',&#xA;                'end': '1970-01-01T01:01:40+01:00'&#xA;            }&#xA;        },&#xA;        'EpisodeOfCareMeasurementSummary': {&#xA;            'observationCount': 5,&#xA;            'mediaCount': 0,&#xA;            'questionnaireResponseCount': 0&#xA;        }&#xA;    }"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="schedule-measurement-stats"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="anonymization"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="organization"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Period"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Binary"/>
+  </parameter>
+</OperationDefinition>

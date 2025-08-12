@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/Appointment/appointment01> a fhir:Appointment ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "appointment01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"^^xsd:anyURI ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Aftale appointment01</b></p><a name=\"appointment01\"> </a><a name=\"hcappointment01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-appointment.html\">ehealth-appointment</a></p></div><p><b>Performing organization</b>: <a href=\"Organization-108752.html\">Organization 63785662-18ad-4896-b960-505e94bdc5c4</a></p><p><b>Responsible organization</b>: <a href=\"Organization-108752.html\">Organization 63785662-18ad-4896-b960-505e94bdc5c4</a></p><p><b>Responsible</b>: <a href=\"CareTeam-42.html\">CareTeam Aarhus</a></p><p><b>Legal basis</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/jurisdiction service-act}\">Serviceloven</span></p><p><b>status</b>: Proposed</p><p><b>serviceType</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/appointment-servicetype regular}\">A regular appointment</span></p><p><b>appointmentType</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/appointmenttype-codes FOLLOWUP}\">A follow up visit from a previous appointment</span></p><p><b>reasonCode</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/appointment-reason 412776001}\">Clinical Review</span></p><p><b>supportingInformation</b>: <a href=\"EpisodeOfCare-42.html\">EpisodeOfCare: extension = -&gt;Organization 63785662-18ad-4896-b960-505e94bdc5c4; status = planned; period = 2023-01-01 00:00:00+0000 --&gt; (ongoing)</a></p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Practitioner-42.html\">Tove Jensen</a></p><p><b>status</b>: Needs Action</p></blockquote><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Practitioner-123.html\">Practitioner Example2 Practitioner </a></p><p><b>status</b>: Needs Action</p></blockquote><blockquote><p><b>participant</b></p><p><b>Careteam</b>: <a href=\"CareTeam-42.html\">CareTeam Aarhus</a></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType ATND}\">attender</span></p><p><b>status</b>: Needs Action</p></blockquote></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performing-organization"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/Organization/108752> ;
+       fhir:reference [ fhir:v "Organization/108752" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible-organization"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/Organization/108752> ;
+       fhir:reference [ fhir:v "Organization/108752" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/CareTeam/42> ;
+       fhir:reference [ fhir:v "CareTeam/42" ] ;
+       fhir:display [ fhir:v "CareTeam Aarhus" ]
+     ]
+  ] [
+     fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-legalBasis"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/jurisdiction"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "service-act" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "proposed"] ; # 
+  fhir:serviceType ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/appointment-servicetype"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "regular" ]
+     ] )
+  ] ) ; # 
+  fhir:appointmentType [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/appointmenttype-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "FOLLOWUP" ]
+     ] )
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/appointment-reason"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "412776001" ]
+     ] ) ;
+     fhir:text [ fhir:v "Clinical Review" ]
+  ] ) ; # 
+  fhir:supportingInformation ( [
+     fhir:link <http://ehealth.sundhed.dk/fhir/EpisodeOfCare/42> ;
+     fhir:reference [ fhir:v "EpisodeOfCare/42" ]
+  ] ) ; # 
+  fhir:participant ( [
+     fhir:actor [
+       fhir:link <http://ehealth.sundhed.dk/fhir/Practitioner/42> ;
+       fhir:reference [ fhir:v "Practitioner/42" ] ;
+       fhir:display [ fhir:v "Tove Jensen" ]
+     ] ;
+     fhir:status [ fhir:v "needs-action" ]
+  ] [
+     fhir:actor [
+       fhir:link <http://ehealth.sundhed.dk/fhir/Practitioner/123> ;
+       fhir:reference [ fhir:v "Practitioner/123" ]
+     ] ;
+     fhir:status [ fhir:v "needs-action" ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:link <http://ehealth.sundhed.dk/fhir/CareTeam/42> ;
+         fhir:reference [ fhir:v "CareTeam/42" ] ;
+         fhir:display [ fhir:v "CareTeam Aarhus" ]
+       ]
+     ] ) ;
+     fhir:type ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ATND" ]
+       ] )
+     ] ) ;
+     fhir:status [ fhir:v "needs-action" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
