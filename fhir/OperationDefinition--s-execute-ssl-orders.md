@@ -1,0 +1,157 @@
+# Execute ssl orders - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Execute ssl orders**
+
+## OperationDefinition: Execute ssl orders 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-ssl-orders | *Version*:6.0.0 |
+| Active as of 2025-10-23 | *Computable Name*:execute-ssl-orders |
+
+ 
+
+### Report Contents
+
+ 
+This report contains SSL Orders 
+* OrderDetails
+* OrderLines
+* Order. Each Order is returned in a single JSon file.
+* organization: Filter on Order.buyer
+* period: Filter on TraceLine.timestamp
+* Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.
+
+
+  All returned objects are SSL resources. See the SSL API description for details
+
+
+  { 'OrderDetails': { 'order': { 'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER', 'threadId': null, 'identifiers': null, 'status': null, 'priority': null, 'notes': null, 'buyer': 'https://ssl-order.local.ehealth.sundhed.dk/v1/party/BUYER', 'seller': 'https://ssl-order.local.ehealth.sundhed.dk/v1/party/SELLER', 'sellerDeliveryContactEmail': null, 'carePlanRef': null, 'carePlanTitle': null, 'earliestDeliveryDate': null, 'latestDeliveryDate': null, 'receiver': null }, 'orderLines': [{ 'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order-line/ORDERLINE', 'order': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER', 'status': null, 'item': null, 'agreedDate': null, 'device': null } ], 'traceLines': [{ 'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER/1', 'timestamp': '2019-12-24T18:00:00Z', 'createdByOrganization': null, 'createdByUser': null, 'text': null, 'supplementaryText': null, 'order': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER', 'orderLine': null, 'statusChange': null } ] } }
+ 
+
+URL: [base]/$execute-ssl-orders
+
+### Parameters
+
+* **Use**: IN
+  * **Name**: anonymization
+  * **Scope**: 
+  * **Cardinality**: 1..1
+  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: organization
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Reference](http://hl7.org/fhir/R4/references.html#Reference)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: seller
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Reference](http://hl7.org/fhir/R4/references.html#Reference)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: period
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Period](http://hl7.org/fhir/R4/datatypes.html#Period)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: OUT
+  * **Name**: return
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Binary](http://hl7.org/fhir/R4/binary.html)
+  * **Binding**: 
+  * **Documentation**: 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-execute-ssl-orders",
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-ssl-orders",
+  "version" : "6.0.0",
+  "name" : "execute-ssl-orders",
+  "title" : "Execute ssl orders",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2025-10-23T10:34:08+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "### Report Contents\nThis report contains SSL Orders\n- OrderDetails\n- OrderLines\n- TraceLines\n### Grouping \nOrder. Each Order is returned in a single JSon file.\n### Parameters\n- organization: Filter on Order.buyer\n- period: Filter on TraceLine.timestamp\n- seller: Filter on Order.seller\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nAll returned objects are SSL resources. See the SSL API description for details\n\n    {\n        'OrderDetails': {\n            'order': {\n                'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER',\n                'threadId': null,\n                'identifiers': null,\n                'status': null,\n                'priority': null,\n                'notes': null,\n                'buyer': 'https://ssl-order.local.ehealth.sundhed.dk/v1/party/BUYER',\n                'seller': 'https://ssl-order.local.ehealth.sundhed.dk/v1/party/SELLER',\n                'sellerDeliveryContactEmail': null,\n                'carePlanRef': null,\n                'carePlanTitle': null,\n                'earliestDeliveryDate': null,\n                'latestDeliveryDate': null,\n                'receiver': null\n            },\n            'orderLines': [{\n                    'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order-line/ORDERLINE',\n                    'order': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER',\n                    'status': null,\n                    'item': null,\n                    'agreedDate': null,\n                    'device': null\n                }\n            ],\n            'traceLines': [{\n                    'id': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER/1',\n                    'timestamp': '2019-12-24T18:00:00Z',\n                    'createdByOrganization': null,\n                    'createdByUser': null,\n                    'text': null,\n                    'supplementaryText': null,\n                    'order': 'https://ssl-order.local.ehealth.sundhed.dk/v1/order/ORDER',\n                    'orderLine': null,\n                    'statusChange': null\n                }\n            ]\n        }\n    }\n",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "affectsState" : true,
+  "code" : "execute-ssl-orders",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [
+    {
+      "name" : "anonymization",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "organization",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Reference"
+    },
+    {
+      "name" : "seller",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Reference"
+    },
+    {
+      "name" : "period",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Period"
+    },
+    {
+      "name" : "return",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Binary"
+    }
+  ]
+}
+
+```

@@ -1,0 +1,155 @@
+# Thumbnail Size Category - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Thumbnail Size Category**
+
+## CodeSystem: Thumbnail Size Category 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/cs/thumbnail-size-category | *Version*:6.0.0 |
+| Active as of 2024-10-28 | *Computable Name*:ThumbnailSize |
+
+ 
+Thumbnail size is a code system for the sizes of low resolution media representations. 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [ThumbnailSizeCategory](ValueSet-ehealth-thumbnail-size-category.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ehealth-thumbnail-size",
+  "url" : "http://ehealth.sundhed.dk/cs/thumbnail-size-category",
+  "version" : "6.0.0",
+  "name" : "ThumbnailSize",
+  "title" : "Thumbnail Size Category",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-10-28T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Thumbnail size is a code system for the sizes of low resolution media representations.",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "property" : [
+    {
+      "code" : "size",
+      "uri" : "http://ehealth.sundhed.dk/cs/thumbnail-size#size",
+      "description" : "The size in pixels of the media representation (maximum of width or height)",
+      "type" : "integer"
+    },
+    {
+      "code" : "itemWeight",
+      "uri" : "http://hl7.org/fhir/concept-properties#itemWeight",
+      "description" : "A numeric value that represents the item's weight in a list",
+      "type" : "decimal"
+    }
+  ],
+  "concept" : [
+    {
+      "code" : "100p",
+      "display" : "100 pixels",
+      "definition" : "The media representation is 100 pixels in size (maximum of width or height)",
+      "property" : [
+        {
+          "code" : "size",
+          "valueInteger" : 100
+        },
+        {
+          "code" : "itemWeight",
+          "valueDecimal" : 100
+        }
+      ]
+    },
+    {
+      "code" : "240p",
+      "display" : "240 pixels",
+      "definition" : "The media representation is 240 pixels in size (maximum of width or height)",
+      "property" : [
+        {
+          "code" : "size",
+          "valueInteger" : 240
+        },
+        {
+          "code" : "itemWeight",
+          "valueDecimal" : 240
+        }
+      ]
+    },
+    {
+      "code" : "460p",
+      "display" : "460 pixels",
+      "definition" : "The media representation is 460 pixels in size (maximum of width or height)",
+      "property" : [
+        {
+          "code" : "size",
+          "valueInteger" : 460
+        },
+        {
+          "code" : "itemWeight",
+          "valueDecimal" : 460
+        }
+      ]
+    },
+    {
+      "code" : "1024p",
+      "display" : "1024 pixels",
+      "definition" : "The media representation is 1024 pixels in size (maximum of width or height)",
+      "property" : [
+        {
+          "code" : "size",
+          "valueInteger" : 1024
+        },
+        {
+          "code" : "itemWeight",
+          "valueDecimal" : 1024
+        }
+      ]
+    },
+    {
+      "code" : "1920p",
+      "display" : "1920 pixels",
+      "definition" : "The media representation is 1920 pixels in size (maximum of width or height)",
+      "property" : [
+        {
+          "code" : "size",
+          "valueInteger" : 1920
+        },
+        {
+          "code" : "itemWeight",
+          "valueDecimal" : 1920
+        }
+      ]
+    }
+  ]
+}
+
+```

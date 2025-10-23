@@ -1,0 +1,166 @@
+# DK IHE Format Code CodeSystem - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **DK IHE Format Code CodeSystem**
+
+## CodeSystem: DK IHE Format Code CodeSystem 
+
+| | |
+| :--- | :--- |
+| *Official URL*:urn:oid:1.2.208.184.100.10 | *Version*:6.0.0 |
+| Active as of 2019-12-11 | *Computable Name*:DK_IHE_FormatCode_CS |
+| *Other Identifiers:*OID:1.2.208.184.100.10 | |
+
+ 
+Code system for document format code used in national Document sharing 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [DK_IHE_FormatCode_VS](ValueSet-dk-ihe-formatcode-vs.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "dk-ihe-formatcode-cs",
+  "url" : "urn:oid:1.2.208.184.100.10",
+  "identifier" : [
+    {
+      "system" : "urn:ietf:rfc:3986",
+      "value" : "urn:oid:1.2.208.184.100.10"
+    }
+  ],
+  "version" : "6.0.0",
+  "name" : "DK_IHE_FormatCode_CS",
+  "title" : "DK IHE Format Code CodeSystem",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2019-12-11T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Code system for document format code used in national Document sharing",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "concept" : [
+    {
+      "code" : "urn:ad:dk:medcom:phmr-v2.1:full",
+      "display" : "DK PHMR schema",
+      "definition" : "Document adheres to HL7 PHMR DK profile ver. 2.1.0"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:phmr-v1.3:full",
+      "display" : "DK PHMR schema",
+      "definition" : "Document adheres to HL7 PHMR DK profile ver. 1.0."
+    },
+    {
+      "code" : "urn:ad:dk:medcom:qfdd-v1.1:full",
+      "display" : "DK QFDD schema",
+      "definition" : "Document adheres to HL7 QFDD DK profile ver. 1.0."
+    },
+    {
+      "code" : "urn:ad:dk:medcom:qfdd-v1.2:full",
+      "display" : "DK QFDD schema",
+      "definition" : "Document adheres to HL7 QFDD DK profile ver. 1.2"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:qrd-v1.1:full",
+      "display" : "DK QRD schema",
+      "definition" : "Document adheres to HL7 QRD DK profile"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:qrd-v1.2:full",
+      "display" : "DK QRD schema",
+      "definition" : "Document adheres to HL7 QRD DK profile ver. 1.0."
+    },
+    {
+      "code" : "urn:ad:dk:medcom:qrd-v1.3:full",
+      "display" : "DK QRD schema",
+      "definition" : "Document adheres to HL7 QRD DK profile ver. 1.3"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:appointmentsummary:full",
+      "display" : "DK Appointment Summary Document schema"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:labreports:svareksponeringsservice",
+      "display" : "Laboratoriesvar (samling af svar)"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:cpd-v1.0.1:full",
+      "display" : "DK CPD schema",
+      "definition" : "Document adheres to HL7 CPD DK profile ver. 1.0."
+    },
+    {
+      "code" : "urn:ad:dk:medcom:pdc-v2.0:full",
+      "display" : "DK PDC schema",
+      "definition" : "Document adheres to HL7 PDC DK profile ver. 2.0."
+    },
+    {
+      "code" : "urn:ad:dk:medcom:apd-v2.0:full",
+      "display" : "DK APD schema",
+      "definition" : "Document adheres to HL7 APD DK profile ver. 2.0."
+    },
+    {
+      "code" : "urn:ad:dk:medcom:apd-v2.0.1:full",
+      "display" : "DK APD schema",
+      "definition" : "Document adheres to HL7 APD DK profile ver. 2.0.1"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:cmr-v1.0:full",
+      "display" : "DK CMR schema",
+      "definition" : "Document adheres to HL7 CMR DK profile ver. 1.0"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:sds:cpd-v1.0.1:maternity",
+      "display" : "DK CPD schema for maternity",
+      "definition" : "Document adheres HL7 CPD DK profile ver. 1.0. (maternity)"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:prvs-v1.0:full",
+      "display" : "DK PRVS schema",
+      "definition" : "Document adheres to HL7 PRVS DK profile ver. 1.0"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:pdc-v3.0:full",
+      "display" : "DK PDC schema",
+      "definition" : "Document adheres to HL7 PDC DK profile ver. 3.0"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:cpd-v2.0:full",
+      "display" : "DK CPD schema",
+      "definition" : "Document adheres to HL7 CPD DK profile ver. 2.0"
+    },
+    {
+      "code" : "urn:ad:dk:medcom:phad-v1.0:full",
+      "display" : "DK PHAD schema",
+      "definition" : "Document adheres to HL7 PHAD DK profile ver. 1.0"
+    }
+  ]
+}
+
+```

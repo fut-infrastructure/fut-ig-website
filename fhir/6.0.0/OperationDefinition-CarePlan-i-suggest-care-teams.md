@@ -1,0 +1,99 @@
+# Suggest care teams - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Suggest care teams**
+
+## OperationDefinition: Suggest care teams 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams | *Version*:6.0.0 |
+| Active as of 2025-10-23 | *Computable Name*:suggest-care-teams |
+
+ 
+Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations. 
+
+URL: [base]/CarePlan/[id]/$suggest-care-teams
+
+### Parameters
+
+* **Use**: IN
+  * **Name**: regionCode
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: municipalityCode
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
+  * **Binding**: 
+  * **Documentation**: 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "CarePlan-i-suggest-care-teams",
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams",
+  "version" : "6.0.0",
+  "name" : "suggest-care-teams",
+  "title" : "Suggest care teams",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2025-10-23T10:25:37+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations.",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "affectsState" : true,
+  "code" : "suggest-care-teams",
+  "resource" : ["CarePlan"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [
+    {
+      "name" : "regionCode",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "municipalityCode",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "string"
+    }
+  ]
+}
+
+```

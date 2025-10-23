@@ -1,0 +1,135 @@
+# Measurement Sharing Policies - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Measurement Sharing Policies**
+
+## CodeSystem: Measurement Sharing Policies 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/cs/measurement-sharing-policies | *Version*:6.0.0 |
+| Active as of 2019-01-29 | *Computable Name*:MeasurementSharingPolicies |
+
+ 
+Measurement sharing policies 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [MeasurementSharingPolicies](ValueSet-ehealth-measurement-sharing-policies.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ehealth-measurement-sharing-policies",
+  "url" : "http://ehealth.sundhed.dk/cs/measurement-sharing-policies",
+  "version" : "6.0.0",
+  "name" : "MeasurementSharingPolicies",
+  "title" : "Measurement Sharing Policies",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2019-01-29T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Measurement sharing policies",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "property" : [
+    {
+      "code" : "deprecated",
+      "uri" : "http://hl7.org/fhir/concept-properties#deprecated",
+      "description" : "Indicates that the concept is deprecated and should not be used",
+      "type" : "dateTime"
+    }
+  ],
+  "concept" : [
+    {
+      "code" : "TBD",
+      "display" : "Example value - Under construction",
+      "definition" : "Example value - Under construction",
+      "property" : [
+        {
+          "code" : "deprecated",
+          "valueDateTime" : "2020-02-03"
+        }
+      ]
+    },
+    {
+      "code" : "sharingAllowedDestinationNationalHealthData",
+      "display" : "Sharing is allowed destination national health data",
+      "definition" : "Sharing is allowed destination national health data",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Må deles via national deling af sundhedsdata"
+        }
+      ]
+    },
+    {
+      "code" : "sharingAllowedDestinationNationalServiceActData",
+      "display" : "Sharing is allowed destination national service act data",
+      "definition" : "Sharing is allowed destination national service act data",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Må deles via national deling af servicelov-data"
+        }
+      ]
+    },
+    {
+      "code" : "sharingAllowedDestinationMunicipalData",
+      "display" : "Sharing is allowed destination municipal data",
+      "definition" : "Sharing is allowed destination municipal data",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Deling"
+        }
+      ],
+      "property" : [
+        {
+          "code" : "deprecated",
+          "valueDateTime" : "2020-02-03"
+        }
+      ]
+    },
+    {
+      "code" : "noSharing",
+      "display" : "No sharing",
+      "definition" : "No sharing",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Må ikke deles via national deling af data"
+        }
+      ]
+    }
+  ]
+}
+
+```

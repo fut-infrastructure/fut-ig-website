@@ -3,14 +3,14 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.core",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Implementationsguide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><h2>eHealthInfrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
   },
   "url" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
-  "version" : "5.0.1",
+  "version" : "6.0.0",
   "name" : "eHealthInfrastructure",
   "title" : "eHealth Infrastructure",
   "status" : "active",
-  "date" : "2025-08-12T13:00:26+00:00",
+  "date" : "2025-10-23T10:34:08+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -82,6 +82,17 @@
       {
         "url" : "value",
         "valueString" : "release"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters-expParam.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -362,7 +373,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.7.1"
+      "valueCode" : "hl7.fhir.uv.tools.r4#0.8.0"
     },
     {
       "extension" : [{
@@ -383,6 +394,17 @@
       {
         "url" : "value",
         "valueString" : "release"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters-expParam.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -738,6 +760,18 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/action-participant-function"
+      },
+      "name" : "Action Participant Function",
+      "description" : "The function performed by the participant for the action.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/ehealth.sundhed.dk-action-selection-behavior-supplement"
       },
       "name" : "Action Selection Behavior Supplement",
@@ -1040,6 +1074,18 @@
       },
       "name" : "appointmentGroupId",
       "description" : "Search parameter for finding resources based on group id",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehealth-artifact-date"
+      },
+      "name" : "Artifact Date",
+      "description" : "The date (and optionally time) when the artifact was last significantly changed.",
       "exampleBoolean" : false
     },
     {
@@ -1461,6 +1507,18 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/ehealth-clinicalimpression-decision-support-codes"
+      },
+      "name" : "ClinicalImpression Decision Support Codes",
+      "description" : "Decision support codes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/ehealth-clinicalimpression-finding-codes"
       },
       "name" : "ClinicalImpression Finding Codes",
@@ -1798,7 +1856,7 @@
         "reference" : "OperationDefinition/-s-apply"
       },
       "name" : "Create a careplan",
-      "description" : "This operation creates a careplan for a specific episodeOfCare using this PlanDefinition as a template.",
+      "description" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.",
       "exampleBoolean" : false
     },
     {
@@ -1810,7 +1868,7 @@
         "reference" : "OperationDefinition/PlanDefinition-i-apply"
       },
       "name" : "Create a careplan",
-      "description" : "Create a careplan for a specific episodeOfCare using this PlanDefinition as a template.",
+      "description" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.",
       "exampleBoolean" : false
     },
     {
@@ -2391,6 +2449,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ehealth-document-category"
+      },
+      "name" : "Document Category",
+      "description" : "Document Category value set.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -2945,6 +3015,17 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/ehealth-material-communication"
+      },
+      "name" : "ehealth-material-communication",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/ehealth-media"
       },
       "name" : "ehealth-media",
@@ -3157,6 +3238,30 @@
         "reference" : "StructureDefinition/ehealth-view"
       },
       "name" : "ehealth-view",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehealth-document-reference-type"
+      },
+      "name" : "EHealthDocumentReference Type",
+      "description" : "EHealthDocumentReference Type CodeSystem",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ehealth-document-reference-type"
+      },
+      "name" : "EHealthDocumentReference Type",
+      "description" : "EHealthDocumentReference Type ValueSet",
       "exampleBoolean" : false
     },
     {
@@ -3515,6 +3620,18 @@
       },
       "name" : "Export Appointment to iCal",
       "description" : "This operation exports the Appointment to an iCal [RFC-5545](https://tools.ietf.org/html/rfc5545) format",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/expParam"
+      },
+      "name" : "expParam",
+      "description" : "Expansion parameter",
       "exampleBoolean" : false
     },
     {
@@ -4252,6 +4369,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ehealth-intendedOrganization"
+      },
+      "name" : "Intended organization",
+      "description" : "The resource is intended to be used by these organizations.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "SearchParameter"
       }],
       "reference" : {
@@ -4413,6 +4542,66 @@
       },
       "name" : "LOINC Code System Supplement",
       "description" : "LOINC is a freely available international standard for tests, measurements, and observations",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/material-assignment-participant-function"
+      },
+      "name" : "Material Assignment Participant Function",
+      "description" : "The function of the participant in material assignment (performer).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehealth-material-category"
+      },
+      "name" : "Material Category",
+      "description" : "Material Category",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehealth-material-communication-category"
+      },
+      "name" : "Material Communication Category",
+      "description" : "The set of possible material-communication categories",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/material-registration-participant-function"
+      },
+      "name" : "Material Registration Participant Function",
+      "description" : "The function of the participant in material registration (author / editor).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/material-communication-category"
+      },
+      "name" : "MaterialCommunicationCategory",
+      "description" : "The set of possible material-communication categories",
       "exampleBoolean" : false
     },
     {
@@ -6328,7 +6517,7 @@
         "reference" : "OperationDefinition/-s-search-measurements-bundle-limit"
       },
       "name" : "Search measurements bundle limit",
-      "description" : "The search-measurements-bundle-limit operation searches for a number of bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.\n\n\n### Parameter description\n- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).\n- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).\n- count: The number of bundles to return, max allowed value is 100 - Integer.\n- start: Based on submitted time / Provenance.recorded. If provided, the operation will search for resource(s) submitted after this time. The result bundles will be sorted in ascending order - DateTime.\n- end: Based on submitted time / Provenance.recorded. If provided, the operation will search for resource(s) submitted before this time. The result bundles will be sorted in descending order - DateTime.\n- based-on: Resources(s) must be based on any of the specified service requests - Reference(eHealth ServiceRequest).\n- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.\n\n\nOne of either \"start\" or \"end\", along with the \"count\" parameter must always be specified.\n\nAdditionally at least \"patient\" or \"episodeOfCare\" or \"serviceRequest\" must be specified.\n\n### Output description\n\nThe result of this operation returns a Bundle with a list of nested Bundles having resources matching the search parameters. The number of nested Bundles depends on the count parameter.\n\nEach of the nested bundles contains the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources, from the same submission request.\n\nRelated resources are the set of resources created by a single invocation of the submit-measurement operation.",
+      "description" : "The search-measurements-bundle-limit operation searches for a number of bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.\n\n\n### Parameter description\n- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).\n- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).\n- count: The number of bundles to return, max allowed value is 100 - Integer.\n- start: Based on the effective time of measurement, please see <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-observation-definitions.html#key_Observation.effective[x]'>Observation.effective[x]</a> , <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-questionnaireresponse.html#effective-period'>QuestionnaireResponse.effective-period</a> , and <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-media-definitions.html#key_Media.created[x]'>Media.created[x]</a>. If QuestionnaireResponse.effectivePeriod is missing, authored is used instead. If provided, the operation will search for observation, media and QuestionnaireResponse resource(s) with a clinical effective time after this time. The result bundles will be sorted in ascending order - DateTime.\n- end: Based on the effective time of measurement, please see <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-observation-definitions.html#key_Observation.effective[x]'>Observation.effective[x]</a> , <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-questionnaireresponse.html#effective-period'>QuestionnaireResponse.effective-period</a> , and <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-media-definitions.html#key_Media.created[x]'>Media.created[x]</a>. If QuestionnaireResponse.effectivePeriod is missing, authored is used instead. If provided, the operation will search for observation, media and QuestionnaireResponse resource(s) with a clinical effective time before this time. The result bundles will be sorted in descending order - DateTime.\n- based-on: Resources(s) must be based on any of the specified service requests - Reference(eHealth ServiceRequest).\n- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.\n\n\nOne of either \"start\" or \"end\", along with the \"count\" parameter must always be specified.\n\nAdditionally at least \"patient\" or \"episodeOfCare\" or \"based-on\" must be specified.\n\n### Output description\n\nThe result of this operation returns a Bundle with a list of nested Bundles having resources matching the search parameters. The number of nested Bundles depends on the count parameter.\n\nEach of the nested bundles contains the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources, from the same submission request.\n\nRelated resources are the set of resources created by a single invocation of the submit-measurement operation.",
       "exampleBoolean" : false
     },
     {
@@ -7449,6 +7638,15 @@
         }],
         "nameUrl" : "example-operations.html",
         "title" : "Example Operations",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "GET_apply_search.html"
+        }],
+        "nameUrl" : "GET_apply_search.html",
+        "title" : "GET Apply Search",
         "generation" : "markdown"
       },
       {

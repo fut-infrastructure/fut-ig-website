@@ -3,15 +3,15 @@
   "id" : "-s-apply",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Operationsdefinition -s-apply</b></p><a name=\"-s-apply\"> </a><a name=\"hc-s-apply\"> </a><p>URL: [base]/$$apply</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>planDefinition</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>episodeOfCare</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td/></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-apply</b></p><a name=\"-s-apply\"> </a><a name=\"hc-s-apply\"> </a><p>URL: [base]/$apply</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>planDefinition</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr><tr><td>IN</td><td>episodeOfCare</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td/></tr></table></div>"
   },
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply",
-  "version" : "5.0.1",
+  "version" : "6.0.0",
   "name" : "apply",
   "title" : "Create a careplan",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-08-12T13:00:26+00:00",
+  "date" : "2025-10-23T10:34:08+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -20,7 +20,7 @@
       "value" : "http://ehealth.sundhed.dk"
     }]
   }],
-  "description" : "This operation creates a careplan for a specific episodeOfCare using this PlanDefinition as a template.",
+  "description" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -28,7 +28,7 @@
       "display" : "Denmark"
     }]
   }],
-  "affectsState" : true,
+  "affectsState" : false,
   "code" : "apply",
   "system" : true,
   "type" : false,
@@ -38,13 +38,13 @@
     "use" : "in",
     "min" : 0,
     "max" : "1",
-    "type" : "Reference"
+    "type" : "string"
   },
   {
     "name" : "episodeOfCare",
     "use" : "in",
     "min" : 0,
     "max" : "1",
-    "type" : "Reference"
+    "type" : "string"
   }]
 }

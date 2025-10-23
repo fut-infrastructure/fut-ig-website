@@ -3,15 +3,15 @@
 <OperationDefinition xmlns="http://hl7.org/fhir">
   <id value="-s-apply"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Operationsdefinition -s-apply</b></p><a name="-s-apply"> </a><a name="hc-s-apply"> </a><p>URL: [base]/$$apply</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>planDefinition</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr><tr><td>IN</td><td>episodeOfCare</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td/></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-apply</b></p><a name="-s-apply"> </a><a name="hc-s-apply"> </a><p>URL: [base]/$apply</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>planDefinition</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr><tr><td>IN</td><td>episodeOfCare</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td/></tr></table></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply"/>
-  <version value="5.0.1"/>
+  <version value="6.0.0"/>
   <name value="apply"/>
   <title value="Create a careplan"/>
   <status value="active"/>
   <kind value="operation"/>
-  <date value="2025-08-12T13:00:26+00:00"/>
+  <date value="2025-10-23T10:34:08+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -20,7 +20,7 @@
       <value value="http://ehealth.sundhed.dk"/>
     </telecom>
   </contact>
-  <description value="This operation creates a careplan for a specific episodeOfCare using this PlanDefinition as a template."/>
+  <description value="Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -28,7 +28,7 @@
       <display value="Denmark"/>
     </coding>
   </jurisdiction>
-  <affectsState value="true"/>
+  <affectsState value="false"/>
   <code value="apply"/>
   <system value="true"/>
   <type value="false"/>
@@ -38,13 +38,13 @@
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <type value="Reference"/>
+    <type value="string"/>
   </parameter>
   <parameter>
     <name value="episodeOfCare"/>
     <use value="in"/>
     <min value="0"/>
     <max value="1"/>
-    <type value="Reference"/>
+    <type value="string"/>
   </parameter>
 </OperationDefinition>

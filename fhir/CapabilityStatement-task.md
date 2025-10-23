@@ -1,0 +1,639 @@
+# task - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **task**
+
+## CapabilityStatement: task 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/task | *Version*:6.0.0 |
+| Active as of 2025-10-21 | *Computable Name*:task |
+
+ [Raw OpenAPI-Swagger Definition file](task.openapi.json) | [Download](task.openapi.json) 
+
+## 
+
+* Implementation Guide Version: 6.0.0 
+* FHIR Version: 4.0.1 
+* Supported Formats: `application/fhir+xml`, `xml`, `application/fhir+json`, `json`, `application/x-turtle`, `ttl`, `html/json`, `html/xml`, `html/turtle`
+* Published on: 2025-10-21 10:54:20+0000 
+* Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) 
+
+> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
+
+## FHIR RESTful Capabilities
+
+### Mode: server
+
+Summary of System-wide Operations
+
+
+### Capabilities by Resource/Profile
+
+#### Summary
+
+The summary table lists the resources that are part of this configuration, and for each resource it lists:
+
+* The relevant profiles (if any)
+* The interactions supported by each resource (**R**ead, **S**earch, **U**pdate, and **C**reate, are always shown, while **VR**ead, **P**atch, **D**elete, **H**istory on **I**nstance, or **H**istory on **T**ype are only present if at least one of the resources has support for them.
+* The required, recommended, and some optional search parameters (if any).
+* The linked resources enabled for `_include`
+* The other resources enabled for `_revinclude`
+* The operations on the resource (if any)
+
+| | | | | | | | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| [ClinicalImpression](#ClinicalImpression1-1) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md) | y | y | y |  | y | y | _content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, action, assessor, carePlan, date, decision, episodeOfCare, finding-code, finding-ref, identifier, investigation, patient, previous, problem, status, subject | `ClinicalImpression:previous` | `ClinicalImpression:action`,`ClinicalImpression:assessor`,`ClinicalImpression:carePlan`,`ClinicalImpression:episodeOfCare`,`ClinicalImpression:finding-ref`,`ClinicalImpression:investigation`,`ClinicalImpression:patient`,`ClinicalImpression:previous`,`ClinicalImpression:problem`,`ClinicalImpression:subject`,`Task:based-on`,`Task:episodeOfCare`,`Task:focus`,`Task:owner`,`Task:part-of`,`Task:patient`,`Task:requester`,`Task:responsible`,`Task:subject` | `$validate`,`$set-measurement-validity` |
+| [OperationDefinition](#OperationDefinition1-2) | [http://hl7.org/fhir/StructureDefinition/OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html) | y |  |  |  |  |  |  | `*` | `ClinicalImpression:action`,`ClinicalImpression:assessor`,`ClinicalImpression:carePlan`,`ClinicalImpression:episodeOfCare`,`ClinicalImpression:finding-ref`,`ClinicalImpression:investigation`,`ClinicalImpression:patient`,`ClinicalImpression:previous`,`ClinicalImpression:problem`,`ClinicalImpression:subject`,`Task:based-on`,`Task:episodeOfCare`,`Task:focus`,`Task:owner`,`Task:part-of`,`Task:patient`,`Task:requester`,`Task:responsible`,`Task:subject` |  |
+| [Task](#Task1-3) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task](StructureDefinition-ehealth-task.md) | y | y | y |  | y | y | _content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, authored-on, based-on, business-status, category, code, episodeOfCare, focus, group-identifier, identifier, intent, modified, owner, part-of, patient, performer, period, priority, requester, resolvedTimingEnd, resolvedTimingServiceRequestVersionId, resolvedTimingStart, resolvedTimingType, responsible, restriction-category, status, subject | `Task:based-on`,`Task:focus`,`Task:part-of` | `ClinicalImpression:action`,`ClinicalImpression:assessor`,`ClinicalImpression:carePlan`,`ClinicalImpression:episodeOfCare`,`ClinicalImpression:finding-ref`,`ClinicalImpression:investigation`,`ClinicalImpression:patient`,`ClinicalImpression:previous`,`ClinicalImpression:problem`,`ClinicalImpression:subject`,`Task:based-on`,`Task:episodeOfCare`,`Task:focus`,`Task:owner`,`Task:part-of`,`Task:patient`,`Task:requester`,`Task:responsible`,`Task:subject` | `$validate` |
+
+-------
+
+#### Resource Conformance: supported ClinicalImpression
+
+Base System Profile
+
+[ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `search-type`, `vread`, `read`, `patch`, `create`.
+
+Search Parameters
+
+
+ 
+
+Extended Operations
+
+
+#### Resource Conformance: supported OperationDefinition
+
+Base System Profile
+
+[OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `read`.
+
+#### Resource Conformance: supported Task
+
+Base System Profile
+
+[ehealth-task](StructureDefinition-ehealth-task.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `search-type`, `vread`, `read`, `patch`, `create`.
+
+Search Parameters
+
+
+ 
+
+Extended Operations
+
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "task",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/task",
+  "version" : "6.0.0",
+  "name" : "task",
+  "status" : "active",
+  "date" : "2025-10-21T10:54:20.606+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "kind" : "instance",
+  "software" : {
+    "name" : "task",
+    "version" : "1.27.0"
+  },
+  "implementation" : {
+    "description" : "eHealth task service",
+    "url" : "https://task.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : [
+    "application/fhir+xml",
+    "xml",
+    "application/fhir+json",
+    "json",
+    "application/x-turtle",
+    "ttl",
+    "html/json",
+    "html/xml",
+    "html/turtle"
+  ],
+  "rest" : [
+    {
+      "mode" : "server",
+      "resource" : [
+        {
+          "type" : "ClinicalImpression",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression",
+          "interaction" : [
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            },
+            {
+              "code" : "patch"
+            },
+            {
+              "code" : "create"
+            }
+          ],
+          "conditionalCreate" : true,
+          "searchInclude" : ["ClinicalImpression:previous"],
+          "searchRevInclude" : [
+            "ClinicalImpression:action",
+            "ClinicalImpression:assessor",
+            "ClinicalImpression:carePlan",
+            "ClinicalImpression:episodeOfCare",
+            "ClinicalImpression:finding-ref",
+            "ClinicalImpression:investigation",
+            "ClinicalImpression:patient",
+            "ClinicalImpression:previous",
+            "ClinicalImpression:problem",
+            "ClinicalImpression:subject",
+            "Task:based-on",
+            "Task:episodeOfCare",
+            "Task:focus",
+            "Task:owner",
+            "Task:part-of",
+            "Task:patient",
+            "Task:requester",
+            "Task:responsible",
+            "Task:subject"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_content",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's data using a fulltext search"
+            },
+            {
+              "name" : "_has",
+              "type" : "string",
+              "documentation" : "Return resources linked to by the given target"
+            },
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "_language",
+              "type" : "string",
+              "documentation" : "The language of the resource"
+            },
+            {
+              "name" : "_lastUpdated",
+              "type" : "date",
+              "documentation" : "Only return resources which were last updated as specified by the given range"
+            },
+            {
+              "name" : "_profile",
+              "type" : "uri",
+              "documentation" : "Search for resources which have the given profile"
+            },
+            {
+              "name" : "_security",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given security labels"
+            },
+            {
+              "name" : "_tag",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given tag"
+            },
+            {
+              "name" : "_text",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+            },
+            {
+              "name" : "action",
+              "type" : "reference",
+              "documentation" : "Action taken as part of assessment procedure"
+            },
+            {
+              "name" : "assessor",
+              "type" : "reference",
+              "documentation" : "The clinician performing the assessment"
+            },
+            {
+              "name" : "carePlan",
+              "type" : "reference",
+              "documentation" : "CarePlan"
+            },
+            {
+              "name" : "date",
+              "type" : "date",
+              "documentation" : "When the assessment was documented"
+            },
+            {
+              "name" : "decision",
+              "type" : "token",
+              "documentation" : "Decision"
+            },
+            {
+              "name" : "episodeOfCare",
+              "type" : "reference",
+              "documentation" : "Encounter or Episode created from"
+            },
+            {
+              "name" : "finding-code",
+              "type" : "token",
+              "documentation" : "What was found"
+            },
+            {
+              "name" : "finding-ref",
+              "type" : "reference",
+              "documentation" : "What was found"
+            },
+            {
+              "name" : "identifier",
+              "type" : "token",
+              "documentation" : "Business identifier"
+            },
+            {
+              "name" : "investigation",
+              "type" : "reference",
+              "documentation" : "Record of a specific investigation"
+            },
+            {
+              "name" : "patient",
+              "type" : "reference",
+              "documentation" : "Patient or group assessed"
+            },
+            {
+              "name" : "previous",
+              "type" : "reference",
+              "documentation" : "Reference to last assessment"
+            },
+            {
+              "name" : "problem",
+              "type" : "reference",
+              "documentation" : "Relevant impressions of patient state"
+            },
+            {
+              "name" : "status",
+              "type" : "token",
+              "documentation" : "draft | completed | entered-in-error"
+            },
+            {
+              "name" : "subject",
+              "type" : "reference",
+              "documentation" : "Patient or group assessed"
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "validate",
+              "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate"
+            },
+            {
+              "name" : "set-measurement-validity",
+              "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity",
+              "documentation" : "This operation is used to invalidate or retract an invalidation of a Measurement.\r\n## Input\r\nThe input parameter is a ClinicalImpression resource with the following values:\r\n- `status` - The status of the ClinicalImpression must be `completed`.\r\n- `investigation.item` - Versioned reference to the Measurement that is to be invalidated or retracted.\r\n- `investigation.item` - Unversioned reference to the Measurement that is to be invalidated or retracted.\r\n- `subject` - Reference to the Patient .\r\n- `episodeOfCare` - Reference to the EpisodeOfCare that the Measurement is part of.\r\n- `code` - Should use `MeasurementAssessment` from `http://ehealth.sundhed.dk/cs/clinicalimpression-codes`.\r\n- `finding.code` - The finding code must be `measurement-invalidated` or `measurement-invalidation-retracted`.\r\n- `decision` - The decision code is required if `finding.code` is `measurement-invalidated`. The decision code must be `invalidated-fulfills` or `invalidated-is-not-fulfillment`.\r\n## Output\r\nThe operation returns the persisted ClinicalImpression:\r\n- `clinicalImpression` - The persisted ClinicalImpression resource with updated assessor values.\r\n## Operation side effects\r\n- The operation will update the status of the Measurement that is being invalidated or has the invalidation retracted to `entered-in-error` or `completed` respectively.\r\n- The operation will update the status to `entered-in-error` for any previous invalidation or invalidation retraction ClinicalImpression for the referenced Measurement, indicating that the previous ClinicalImpression is no longer used to represent the validity of the Measurement. The operation performs a search for any existing ClinicalImpression in the measurement validity cycle, and does not rely on/update the `previous` field on the input ClinicalImpression. If the input ClinicalImpression is for invalidation retraction, there must exist a ClinicalImpression invalidating the Measurement.\r\n- The operation will add an additional investigation with the code `item-modified`, referencing the Measurement version after the patch has been applied.\r\n- The operation will set assessor values (assessor, assessorOrganization and assessorOther). If the user is of type PRACTITIONER, assessor and assessorOrganization will be set. If the user is of type PATIENT, assessorOther will be set`."
+            }
+          ]
+        },
+        {
+          "type" : "OperationDefinition",
+          "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+          "interaction" : [
+            {
+              "code" : "read"
+            }
+          ],
+          "searchInclude" : ["*"],
+          "searchRevInclude" : [
+            "ClinicalImpression:action",
+            "ClinicalImpression:assessor",
+            "ClinicalImpression:carePlan",
+            "ClinicalImpression:episodeOfCare",
+            "ClinicalImpression:finding-ref",
+            "ClinicalImpression:investigation",
+            "ClinicalImpression:patient",
+            "ClinicalImpression:previous",
+            "ClinicalImpression:problem",
+            "ClinicalImpression:subject",
+            "Task:based-on",
+            "Task:episodeOfCare",
+            "Task:focus",
+            "Task:owner",
+            "Task:part-of",
+            "Task:patient",
+            "Task:requester",
+            "Task:responsible",
+            "Task:subject"
+          ]
+        },
+        {
+          "type" : "Task",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task",
+          "interaction" : [
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            },
+            {
+              "code" : "patch"
+            },
+            {
+              "code" : "create"
+            }
+          ],
+          "conditionalCreate" : true,
+          "searchInclude" : ["Task:based-on", "Task:focus", "Task:part-of"],
+          "searchRevInclude" : [
+            "ClinicalImpression:action",
+            "ClinicalImpression:assessor",
+            "ClinicalImpression:carePlan",
+            "ClinicalImpression:episodeOfCare",
+            "ClinicalImpression:finding-ref",
+            "ClinicalImpression:investigation",
+            "ClinicalImpression:patient",
+            "ClinicalImpression:previous",
+            "ClinicalImpression:problem",
+            "ClinicalImpression:subject",
+            "Task:based-on",
+            "Task:episodeOfCare",
+            "Task:focus",
+            "Task:owner",
+            "Task:part-of",
+            "Task:patient",
+            "Task:requester",
+            "Task:responsible",
+            "Task:subject"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_content",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's data using a fulltext search"
+            },
+            {
+              "name" : "_has",
+              "type" : "string",
+              "documentation" : "Return resources linked to by the given target"
+            },
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "_language",
+              "type" : "string",
+              "documentation" : "The language of the resource"
+            },
+            {
+              "name" : "_lastUpdated",
+              "type" : "date",
+              "documentation" : "Only return resources which were last updated as specified by the given range"
+            },
+            {
+              "name" : "_profile",
+              "type" : "uri",
+              "documentation" : "Search for resources which have the given profile"
+            },
+            {
+              "name" : "_security",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given security labels"
+            },
+            {
+              "name" : "_tag",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given tag"
+            },
+            {
+              "name" : "_text",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+            },
+            {
+              "name" : "authored-on",
+              "type" : "date",
+              "documentation" : "Search by creation date"
+            },
+            {
+              "name" : "based-on",
+              "type" : "reference",
+              "documentation" : "Search by requests this task is based on"
+            },
+            {
+              "name" : "business-status",
+              "type" : "token",
+              "documentation" : "Search by business status"
+            },
+            {
+              "name" : "category",
+              "type" : "token",
+              "documentation" : "Search by category"
+            },
+            {
+              "name" : "code",
+              "type" : "token",
+              "documentation" : "Search by task code"
+            },
+            {
+              "name" : "episodeOfCare",
+              "type" : "reference",
+              "documentation" : "Search by encounter or episode"
+            },
+            {
+              "name" : "focus",
+              "type" : "reference",
+              "documentation" : "Search by task focus"
+            },
+            {
+              "name" : "group-identifier",
+              "type" : "token",
+              "documentation" : "Search by group identifier"
+            },
+            {
+              "name" : "identifier",
+              "type" : "token",
+              "documentation" : "Search for a task instance by its business identifier"
+            },
+            {
+              "name" : "intent",
+              "type" : "token",
+              "documentation" : "Search by task intent"
+            },
+            {
+              "name" : "modified",
+              "type" : "date",
+              "documentation" : "Search by last modification date"
+            },
+            {
+              "name" : "owner",
+              "type" : "reference",
+              "documentation" : "Search by task owner"
+            },
+            {
+              "name" : "part-of",
+              "type" : "reference",
+              "documentation" : "Search by task this task is part of"
+            },
+            {
+              "name" : "patient",
+              "type" : "reference",
+              "documentation" : "Search by patient"
+            },
+            {
+              "name" : "performer",
+              "type" : "token",
+              "documentation" : "Search by recommended type of performer (e.g., Requester, Performer, Scheduler)."
+            },
+            {
+              "name" : "period",
+              "type" : "date",
+              "documentation" : "Search by period Task is/was underway"
+            },
+            {
+              "name" : "priority",
+              "type" : "token",
+              "documentation" : "Search by task priority"
+            },
+            {
+              "name" : "requester",
+              "type" : "reference",
+              "documentation" : "Search by task requester"
+            },
+            {
+              "name" : "resolvedTimingEnd",
+              "type" : "date",
+              "documentation" : "Resolved Timing end"
+            },
+            {
+              "name" : "resolvedTimingServiceRequestVersionId",
+              "type" : "token",
+              "documentation" : "Resolved Timing serviceRequestVersionID"
+            },
+            {
+              "name" : "resolvedTimingStart",
+              "type" : "date",
+              "documentation" : "Resolved Timing start"
+            },
+            {
+              "name" : "resolvedTimingType",
+              "type" : "token",
+              "documentation" : "Resolved Timing type"
+            },
+            {
+              "name" : "responsible",
+              "type" : "reference",
+              "documentation" : "Search by responsible"
+            },
+            {
+              "name" : "restriction-category",
+              "type" : "token",
+              "documentation" : "Search by restriction category"
+            },
+            {
+              "name" : "status",
+              "type" : "token",
+              "documentation" : "Search by task status"
+            },
+            {
+              "name" : "subject",
+              "type" : "reference",
+              "documentation" : "Search by subject"
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "validate",
+              "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/ClinicalImpressionTask-it-validate"
+            }
+          ]
+        }
+      ],
+      "operation" : [
+        {
+          "name" : "migrate",
+          "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+          "documentation" : "Data migration"
+        },
+        {
+          "name" : "reindex-terminology",
+          "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"
+        },
+        {
+          "name" : "meta",
+          "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+        },
+        {
+          "name" : "get-resource-counts",
+          "definition" : "https://task.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+          "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+        }
+      ]
+    }
+  ]
+}
+
+```

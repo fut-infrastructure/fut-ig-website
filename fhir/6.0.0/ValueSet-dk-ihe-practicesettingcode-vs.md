@@ -1,0 +1,642 @@
+# DK_IHE_practiceSettingCode_VS - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **DK_IHE_practiceSettingCode_VS**
+
+## ValueSet: DK_IHE_practiceSettingCode_VS 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-practicesettingcode-vs | *Version*:6.0.0 |
+| Active as of 2019-12-11 | *Computable Name*:DK_IHE_practiceSettingCode_VS |
+
+ 
+Values used for the document metadata attribute practiceSettingCode, which is an attribute specifying the clinical specialty where the act that resulted in the document was performed (e.g., Family Practice, Laboratory, Radiology). The value set is based on a subset of the code list from the SOR lookup table 'SOR-Enhedstyper' (http://sor.sundhedsstyrelsen.dsdn.dk/lookupdata/#EntityTypes, accessable on Sundhedsdatanettet (SDN)), which is based on SNOMED codes. 
+
+ **References** 
+
+This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+
+### Logical Definition (CLD)
+
+ 
+
+### Expansion
+
+No Expansion for this valueset (not supported by Publication Tooling)
+
+-------
+
+ Explanation of the columns that may appear on this page: 
+
+| | |
+| :--- | :--- |
+| Level | A few code lists that FHIR defines are hierarchical - each code is assigned a level. In this scheme, some codes are under other codes, and imply that the code they are under also applies |
+| System | The source of the definition of the code (when the value set draws in codes defined elsewhere) |
+| Code | The code (used as the code in the resource instance) |
+| Display | The display (used in the*display*element of a[Coding](http://hl7.org/fhir/R4/datatypes.html#Coding)). If there is no display, implementers should not simply display the code, but map the concept into their application |
+| Definition | An explanation of the meaning of the concept |
+| Comments | Additional notes about how to use the code |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ValueSet",
+  "id" : "dk-ihe-practicesettingcode-vs",
+  "url" : "http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-practicesettingcode-vs",
+  "version" : "6.0.0",
+  "name" : "DK_IHE_practiceSettingCode_VS",
+  "title" : "DK_IHE_practiceSettingCode_VS",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2019-12-11T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Values used for the document metadata attribute practiceSettingCode, which is an attribute specifying the clinical specialty where the act that resulted in the document was performed (e.g., Family Practice, Laboratory, Radiology). The value set is based on a subset of the code list from the SOR lookup table 'SOR-Enhedstyper' (http://sor.sundhedsstyrelsen.dsdn.dk/lookupdata/#EntityTypes, accessable on Sundhedsdatanettet (SDN)), which is based on SNOMED codes.",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "compose" : {
+    "include" : [
+      {
+        "system" : "http://snomed.info/sct",
+        "concept" : [
+          {
+            "code" : "658171000005102",
+            "display" : "hjemmepleje",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "hjemmepleje"
+              }
+            ]
+          },
+          {
+            "code" : "658161000005107",
+            "display" : "hjemmesygepleje",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "hjemmesygepleje"
+              }
+            ]
+          },
+          {
+            "code" : "658151000005105",
+            "display" : "sundhedsfremme og forebyggelse",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "sundhedsfremme og forebyggelse"
+              }
+            ]
+          },
+          {
+            "code" : "658191000005101",
+            "display" : "sundhedspleje",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "sundhedspleje"
+              }
+            ]
+          },
+          {
+            "code" : "658201000005103",
+            "display" : "kommunal tandpleje",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "kommunal tandpleje"
+              }
+            ]
+          },
+          {
+            "code" : "658141000005108",
+            "display" : "genoptræning efter hospitalsophold",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "genoptræning efter hospitalsophold"
+              }
+            ]
+          },
+          {
+            "code" : "658181000005104",
+            "display" : "hjælpemiddelområdet",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "hjælpemiddelområdet"
+              }
+            ]
+          },
+          {
+            "code" : "2903041000005106",
+            "display" : "det kommunale omsorgs-, social- og sundhedsområde",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "det kommunale omsorgs-, social- og sundhedsområde"
+              }
+            ]
+          },
+          {
+            "code" : "773568002",
+            "display" : "Emergency medicine",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "akutmedicin"
+              }
+            ]
+          },
+          {
+            "code" : "408443003",
+            "display" : "almen medicin",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "almen medicin"
+              }
+            ]
+          },
+          {
+            "code" : "394577000",
+            "display" : "anæstesiologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "anæstesiologi"
+              }
+            ]
+          },
+          {
+            "code" : "394821009",
+            "display" : "arbejdsmedicin",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "arbejdsmedicin"
+              }
+            ]
+          },
+          {
+            "code" : "394588006",
+            "display" : "børne- og ungdomspsykiatri",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "børne- og ungdomspsykiatri"
+              }
+            ]
+          },
+          {
+            "code" : "394582007",
+            "display" : "dermato-venerologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "dermato-venerologi"
+              }
+            ]
+          },
+          {
+            "code" : "394914008",
+            "display" : "diagnostisk radiologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "diagnostisk radiologi"
+              }
+            ]
+          },
+          {
+            "code" : "394583002",
+            "display" : "endokrinologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "endokrinologi"
+              }
+            ]
+          },
+          {
+            "code" : "394811001",
+            "display" : "geriatri",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "geriatri"
+              }
+            ]
+          },
+          {
+            "code" : "394585009",
+            "display" : "gynækologi og obstetrik",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "gynækologi og obstetrik"
+              }
+            ]
+          },
+          {
+            "code" : "408472002",
+            "display" : "hepatologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "hepatologi"
+              }
+            ]
+          },
+          {
+            "code" : "394803006",
+            "display" : "hæmatologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "hæmatologi"
+              }
+            ]
+          },
+          {
+            "code" : "394807007",
+            "display" : "infektionsmedicin",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "infektionsmedicin"
+              }
+            ]
+          },
+          {
+            "code" : "419192003",
+            "display" : "intern medicin",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "intern medicin"
+              }
+            ]
+          },
+          {
+            "code" : "394579002",
+            "display" : "kardiologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "kardiologi"
+              }
+            ]
+          },
+          {
+            "code" : "408463005",
+            "display" : "karkirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "karkirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "394609007",
+            "display" : "kirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "kirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "551411000005104",
+            "display" : "kirurgisk gastroenterologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "kirurgisk gastroenterologi"
+              }
+            ]
+          },
+          {
+            "code" : "394596001",
+            "display" : "klinisk biokemi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk biokemi"
+              }
+            ]
+          },
+          {
+            "code" : "394600006",
+            "display" : "klinisk farmakologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk farmakologi"
+              }
+            ]
+          },
+          {
+            "code" : "394601005",
+            "display" : "klinisk fysiologi og nuklearmedicin (snomed:  klinisk fysiologi)",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk fysiologi og nuklearmedicin (snomed:  klinisk fysiologi)"
+              }
+            ]
+          },
+          {
+            "code" : "394580004",
+            "display" : "klinisk genetik",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk genetik"
+              }
+            ]
+          },
+          {
+            "code" : "421661004",
+            "display" : "klinisk immunologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk immunologi"
+              }
+            ]
+          },
+          {
+            "code" : "408454008",
+            "display" : "klinisk mikrobiologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk mikrobiologi"
+              }
+            ]
+          },
+          {
+            "code" : "394809005",
+            "display" : "klinisk neurofysiologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk neurofysiologi"
+              }
+            ]
+          },
+          {
+            "code" : "394592004",
+            "display" : "klinisk onkologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "klinisk onkologi"
+              }
+            ]
+          },
+          {
+            "code" : "418112009",
+            "display" : "lungesygdomme",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "lungesygdomme"
+              }
+            ]
+          },
+          {
+            "code" : "394805004",
+            "display" : "medicinsk allergologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "medicinsk allergologi"
+              }
+            ]
+          },
+          {
+            "code" : "394584008",
+            "display" : "medicinsk gastroenterologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "medicinsk gastroenterologi"
+              }
+            ]
+          },
+          {
+            "code" : "394589003",
+            "display" : "nefrologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "nefrologi"
+              }
+            ]
+          },
+          {
+            "code" : "394610002",
+            "display" : "neurokirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "neurokirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "394591006",
+            "display" : "neurologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "neurologi"
+              }
+            ]
+          },
+          {
+            "code" : "394812008",
+            "display" : "odontologi (snomed: odontologiske specialer)",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "odontologi (snomed: odontologiske specialer)"
+              }
+            ]
+          },
+          {
+            "code" : "394594003",
+            "display" : "oftalmologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "oftalmologi"
+              }
+            ]
+          },
+          {
+            "code" : "394608004",
+            "display" : "Orthodontics",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "ortodonti"
+              }
+            ]
+          },
+          {
+            "code" : "394801008",
+            "display" : "ortopædisk kirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "ortopædisk kirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "394604002",
+            "display" : "oto-rhino-laryngologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "oto-rhino-laryngologi"
+              }
+            ]
+          },
+          {
+            "code" : "394915009",
+            "display" : "patologisk anatomi og cytologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "patologisk anatomi og cytologi"
+              }
+            ]
+          },
+          {
+            "code" : "394611003",
+            "display" : "plastikkirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "plastikkirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "394587001",
+            "display" : "psykiatri",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "psykiatri"
+              }
+            ]
+          },
+          {
+            "code" : "394537008",
+            "display" : "pædiatri",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "pædiatri"
+              }
+            ]
+          },
+          {
+            "code" : "394810000",
+            "display" : "reumatologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "reumatologi"
+              }
+            ]
+          },
+          {
+            "code" : "394581000",
+            "display" : "samfundsmedicin",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "samfundsmedicin"
+              }
+            ]
+          },
+          {
+            "code" : "394605001",
+            "display" : "tand-, mund- og kæbekirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "tand-, mund- og kæbekirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "394603008",
+            "display" : "thoraxkirurgi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "thoraxkirurgi"
+              }
+            ]
+          },
+          {
+            "code" : "408448007",
+            "display" : "tropemedicin",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "tropemedicin"
+              }
+            ]
+          },
+          {
+            "code" : "394612005",
+            "display" : "urologi",
+            "designation" : [
+              {
+                "language" : "da",
+                "value" : "urologi"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+```

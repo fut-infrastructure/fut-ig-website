@@ -1,0 +1,121 @@
+# ClinicalImpression Decision Codes - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ClinicalImpression Decision Codes**
+
+## CodeSystem: ClinicalImpression Decision Codes 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/cs/clinicalimpression-decision-codes | *Version*:6.0.0 |
+| Active as of 2019-09-23 | *Computable Name*:ClinicalImpressionDecisionCodes |
+
+ 
+Clinical Impression Decision Codes 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [ClinicalImpressionDecisionCodes](ValueSet-ehealth-clinicalimpression-decision-codes.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ehealth-clinicalimpression-decision-codes",
+  "url" : "http://ehealth.sundhed.dk/cs/clinicalimpression-decision-codes",
+  "version" : "6.0.0",
+  "name" : "ClinicalImpressionDecisionCodes",
+  "title" : "ClinicalImpression Decision Codes",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2019-09-23T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Clinical Impression Decision Codes",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "concept" : [
+    {
+      "code" : "approved",
+      "display" : "Approved",
+      "definition" : "Approved",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Godkendt"
+        }
+      ]
+    },
+    {
+      "code" : "approved-for-sharing",
+      "display" : "Approved for sharing",
+      "definition" : "Approved for sharing",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Godkendt til dokumentdeling"
+        }
+      ]
+    },
+    {
+      "code" : "citizen-view-approved",
+      "display" : "Approved Citizen View",
+      "definition" : "Approved Citizen View",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Godkendt Borger Visning"
+        }
+      ]
+    },
+    {
+      "code" : "invalidated-fulfills",
+      "display" : "Handle invalidated measurement as fulfilling expected submission",
+      "definition" : "Handle invalidated measurement as fulfilling expected submission",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Ugyldiggjort måledata tæller som opfyldelse af indsendt måledata"
+        }
+      ]
+    },
+    {
+      "code" : "invalidated-is-not-fulfillment",
+      "display" : "Handle invalidated measurement as not fulfilling expected submission",
+      "definition" : "Handle invalidated measurement as not fulfilling expected submission",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Ugyldiggjort måledata tæller ikke som opfyldelse af indsendt måledata"
+        }
+      ]
+    }
+  ]
+}
+
+```

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Error Messages - eHealth Infrastructure v5.0.1</title>
+    <title>Error Messages - eHealth Infrastructure v6.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -31,10 +31,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
-    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
-    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
-    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">5.0.1 - release
+            <span style="display:inline-block;">6.0.0 - release
 
 
 
@@ -223,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v5.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v6.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Error Messages</h2>
   
 
@@ -442,7 +442,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_SUBJECT_NOT_MATCHING_SERVICEREQUEST</code>: The subject for the CommunicationRequest: %s does not match the subject of the referenced ServiceRequest: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_EXCACTLY_ONE_RECIPIENT_SEARCHPRARAM</code>: Excactly one recipient search parameter required</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_EXCACTLY_ONE_RECIPIENT_SEARCHPRARAM</code>: Exactly one recipient search parameter required</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_NO_SYSTEM_TAGS_WITHOUT_EOC</code>: CommunicationRequest must have a system tags when referencing an EpisodeOfCare</p>
   </li>
 </ul>
 
@@ -485,6 +488,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_MISSING_URL</code>: DocumentReference to update must contain an URL identifying the content.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_CONTENT_MANDATORY</code>: DocumentReference for material must contain exactly one content</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_ON_UPDATE</code>: When updating registration of DocumentReference for material, data is only allowed for URLs identifying internal content.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_ON_CREATE</code>: When registering a new DocumentReference for material, either an URL identifying external content, an URL identifying internal content or data in the Attachment must be provided.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_ORIGIN_UPDATE</code>: It is not allowed to change the content origin from internal to external or vice versa.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_DATA_EXTERNAL_ORIGIN</code>: It is not allowed to have data in the content attachment when the URL is external.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_UPDATE_NOT_ALLOWED_FOR_FIELD</code>: DocumentReference for material does not allow update operations with changes for field: %s</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_NOT_OF_TYPE_QFDD</code>: The document is expected to be of type QFDD</p>
   </li>
   <li>
@@ -510,7 +534,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="ehealth-documentreference">ehealth-documentreference</h4>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_REFER_TO_PATIENT</code>: It is not possible to set a patient as a subject for a Document reference</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_REFER_TO_PATIENT</code>: It is not possible to set a patient as a subject for a Document reference</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_EPISODEOFCARE_CONTEXT_ENCOUNTER</code>: DocumentReference for generic material must not contain references to EpisodeOfCare in context.encounter</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_STORAGE_SERVICE_UPLOAD_ERROR</code>: Failed to upload material: Invalid response from storage service</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_MANDATORY</code>: DocumentReference.subject is mandatory, but is not set</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_ENCOUNTER_MANDATORY</code>: DocumentReference.context.encounter must have exactly one reference</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_URL_CHANGED</code>: The contents attachment.url cannot be changed. The url was: %s, but the new url is: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_INTERNAL_URL_NO_CONTENT</code>: No content found at internal URL: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_INTERNAL_URL_REGISTRATION_MUST_MATCH_CONTENT</code>: DocumentReference.context.encounter and DocumentReference.subject must match EpisodeOfCare and Patient for content at internal URL: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_PATIENT_MATERIAL_NOT_ALLOWED</code>: It is not possible to create or update a DocumentReference for patient-specific material on this service.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_EXTERNAL_URL_NOT_ALLOWED</code>: It is not allowed to set an external url for patient-specific material</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_INVALID_CITIZEN_SPECIFIC_DATA</code>: When the content is patient-specific material, either an URL or data must be provided, but both were provided</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_NOT_CITIZEN_SPECIFIC</code>: Patient-specific material must use the correct category code, but is: %s</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-episodeofcare">ehealth-episodeofcare</h4>
@@ -619,6 +678,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_MISSING_DURATION_OR_LIMIT</code>: Duration or limit not set. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DATE_FILTER_PATH_NOT_RECOGNIZED</code>: DateFilter path %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DATE_FILTER_EMPTY</code>: DateFilter path is empty. Historical data will not be processed for library %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-material">ehealth-material</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_MISSING_PAYLOAD</code>: Expected a single payload entry on MaterialCommunication, but it is missing.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_MISSING_EPISODE_OF_CARE</code>: Missing EpisodeOfCare reference on MaterialCommunication</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_PATIENT_MISMATCH_ON_EPISODEOFCARE</code>: Mismatch between Patient on MaterialCommunication and EpisodeOfCare. Subject on MaterialCommunication: %s, Patient on EpisodeOfCare: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_EPISODE_OF_CARE_MISMATCH_ON_CONTENT</code>: Mismatch between EpisodeOfCare on MaterialCommunication and DocumentReference content. EpisodeOfCare on MaterialCommunication: %s, EpisodeOfCare on DocumentReference content: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_PATIENT_MISMATCH_ON_CONTENT</code>: Mismatch between Patient on MaterialCommunication and DocumentReference content. Patient on MaterialCommunication: %s, Patient on DocumentReference content: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_UNABLE_TO_FIND_CONTENT</code>: Unable to find content for DocumentReference with id %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_UPDATE_NOT_ALLOWED_FOR_FIELD</code>: MaterialCommunication does not allow update operations with changes for field: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_SUBJECT_AND_RECIPIENT_MISMATCH</code>: MaterialCommunication subject must also be the recipient.</p>
   </li>
 </ul>
 
@@ -1407,7 +1501,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#5.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 12, 2025 13:01+0000">2025-08-12</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#6.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 23, 2025 10:34+0000">2025-10-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

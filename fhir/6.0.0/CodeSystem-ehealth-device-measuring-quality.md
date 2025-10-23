@@ -1,0 +1,265 @@
+# Device Measuring Quality - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Device Measuring Quality**
+
+## CodeSystem: Device Measuring Quality 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/cs/device-measuring-quality | *Version*:6.0.0 |
+| Active as of 2019-01-29 | *Computable Name*:DeviceMeasuringQuality |
+
+ 
+Quality codes for qualities with which a device can perform measuring 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [DeviceMeasuringQuality](ValueSet-ehealth-device-measuring-quality.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ehealth-device-measuring-quality",
+  "url" : "http://ehealth.sundhed.dk/cs/device-measuring-quality",
+  "version" : "6.0.0",
+  "name" : "DeviceMeasuringQuality",
+  "title" : "Device Measuring Quality",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2019-01-29T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "Quality codes for qualities with which a device can perform measuring",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "property" : [
+    {
+      "code" : "deprecated",
+      "uri" : "http://hl7.org/fhir/concept-properties#deprecated",
+      "description" : "Indicates that the concept is deprecated and should not be used",
+      "type" : "dateTime"
+    }
+  ],
+  "concept" : [
+    {
+      "code" : "none",
+      "display" : "No quality needed",
+      "definition" : "Quality value where no derivation rule logic nor values are expected",
+      "designation" : [
+        {
+          "language" : "da",
+          "value" : "Ingen udstyrskvalitet krævet/ventet"
+        }
+      ],
+      "concept" : [
+        {
+          "code" : "unknown",
+          "display" : "Unknown quality",
+          "definition" : "Unknown quality (Unlikely to be adequate if a quality value is expected)",
+          "designation" : [
+            {
+              "language" : "da",
+              "value" : "Ukendt udstyrskvalitet"
+            }
+          ],
+          "concept" : [
+            {
+              "code" : "derivation-error",
+              "display" : "Error in deriving or determining the quality",
+              "definition" : "Quality value could not be derived due to insufficient input, unknown/unavailable logic, or other error",
+              "designation" : [
+                {
+                  "language" : "da",
+                  "value" : "Udstyrskvaliteten kunne ikke bestemmes grundet manglende input, utilgængelig logik, eller anden fejl."
+                }
+              ],
+              "concept" : [
+                {
+                  "code" : "normal",
+                  "display" : "Normal/neutral device measuring quality",
+                  "definition" : "Normal/neutral device measuring quality",
+                  "designation" : [
+                    {
+                      "language" : "da",
+                      "value" : "Normalt/neutralt udstyrskvalitetsniveau"
+                    }
+                  ],
+                  "concept" : [
+                    {
+                      "code" : "low-precision",
+                      "display" : "Low precision/credibility grade device quality",
+                      "definition" : "Low precision/credibility grade device quality. Typically such device is not clinical grade.",
+                      "designation" : [
+                        {
+                          "language" : "da",
+                          "value" : "Lav præcision eller pålidelighed"
+                        }
+                      ],
+                      "concept" : [
+                        {
+                          "code" : "low-precision-degraded",
+                          "display" : "Degraded quality for low precision/credibility grade device",
+                          "definition" : "Degraded quality for low precision/credibility grade device. Typically such device is not clinical grade.",
+                          "designation" : [
+                            {
+                              "language" : "da",
+                              "value" : "Forringet kvalitet for udstyr med lav præcision eller pålidelighed"
+                            }
+                          ],
+                          "concept" : [
+                            {
+                              "code" : "low-precision-normal",
+                              "display" : "Normal/neutral quality for low precision/credibility grade device",
+                              "definition" : "Normal/neutral quality for low precision/credibility grade device. Typically such device is not clinical grade.",
+                              "designation" : [
+                                {
+                                  "language" : "da",
+                                  "value" : "Normal kvalitet for udstyr med lav præcision eller pålidelighed"
+                                }
+                              ],
+                              "concept" : [
+                                {
+                                  "code" : "low-precision-uncalibrated",
+                                  "display" : "Quality for uncalibrated low precision/credibility grade device",
+                                  "definition" : "Quality for uncalibrated low precision/credibility grade device. Typically such device is not clinical grade.",
+                                  "designation" : [
+                                    {
+                                      "language" : "da",
+                                      "value" : "Kvalitet for ukalibreret udstyr med lav præcision eller pålidelighed"
+                                    }
+                                  ],
+                                  "concept" : [
+                                    {
+                                      "code" : "low-precision-calibrated",
+                                      "display" : "Quality for calibrated low precision/credibility grade device",
+                                      "definition" : "Quality for calibrated low precision/credibility grade device. Typically such device is not clinical grade.",
+                                      "designation" : [
+                                        {
+                                          "language" : "da",
+                                          "value" : "Kvalitet for kalibreret udstyr med lav præcision eller pålidelighed"
+                                        }
+                                      ],
+                                      "concept" : [
+                                        {
+                                          "code" : "high-precision",
+                                          "display" : "High precision/credibility grade device quality",
+                                          "definition" : "High precision/credibility grade device quality. Typically such device is clinical grade.",
+                                          "designation" : [
+                                            {
+                                              "language" : "da",
+                                              "value" : "Høj præcision eller pålidelighed"
+                                            }
+                                          ],
+                                          "concept" : [
+                                            {
+                                              "code" : "high-precision-degraded",
+                                              "display" : "Degraded quality for high precision/credibility grade device",
+                                              "definition" : "Degraded quality for high precision/credibility grade device. Typically such device is clinical grade.",
+                                              "designation" : [
+                                                {
+                                                  "language" : "da",
+                                                  "value" : "Forringet kvalitet for udstyr med høj præcision eller pålidelighed"
+                                                }
+                                              ],
+                                              "concept" : [
+                                                {
+                                                  "code" : "high-precision-normal",
+                                                  "display" : "Normal/neutral quality for high precision/credibility grade device",
+                                                  "definition" : "Normal/neutral quality for high precision/credibility grade device. Typically such device is clinical grade.",
+                                                  "designation" : [
+                                                    {
+                                                      "language" : "da",
+                                                      "value" : "Normal kvalitet for udstyr med høj præcision eller pålidelighed"
+                                                    }
+                                                  ],
+                                                  "concept" : [
+                                                    {
+                                                      "code" : "high-precision-uncalibrated",
+                                                      "display" : "Quality for uncalibrated high precision/credibility grade device",
+                                                      "definition" : "Quality for uncalibrated high precision/credibility grade device. Typically such device is clinical grade.",
+                                                      "designation" : [
+                                                        {
+                                                          "language" : "da",
+                                                          "value" : "Kvalitet for ukalibreret udstyr med høj præcision eller pålidelighed"
+                                                        }
+                                                      ],
+                                                      "concept" : [
+                                                        {
+                                                          "code" : "high-precision-calibrated",
+                                                          "display" : "Quality for calibrated high precision/credibility grade device",
+                                                          "definition" : "Quality for calibrated high precision/credibility grade device. Typically such device is clinical grade.",
+                                                          "designation" : [
+                                                            {
+                                                              "language" : "da",
+                                                              "value" : "Kvalitet for kalibreret udstyr med høj præcision eller pålidelighed"
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code" : "TBD",
+      "display" : "Example value - Under construction",
+      "definition" : "Example value - Under construction",
+      "property" : [
+        {
+          "code" : "deprecated",
+          "valueDateTime" : "2020-02-03"
+        }
+      ]
+    }
+  ]
+}
+
+```

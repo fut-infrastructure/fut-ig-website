@@ -1,0 +1,288 @@
+# Execute careplan duration stats - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Execute careplan duration stats**
+
+## OperationDefinition: Execute careplan duration stats 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplan-duration-stats | *Version*:6.0.0 |
+| Active as of 2025-10-23 | *Computable Name*:execute-careplan-duration-stats |
+
+ 
+
+### Report Contents
+
+ 
+This report contains statistics on status changes for CarePlans: 
+* count: Number of CarePlans in each state
+* min: Shortest time spent in each state
+* max: Longest time spent in each state
+* sum: Sum of time spent in each state
+* average: Average time spent in each state.
+ 
+The durations are specified in[ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm)format. 
+
+### Grouping
+
+ 
+This report is grouped by PlanDefinition. Each group is returned in a separate JSon file. 
+
+### Parameters
+
+ 
+* organization: Filter on EpisodeOfCare.managingOrganization match
+* period: Filter on CarePlan.period overlap
+* condition: Filter on EpisodeOfCare condition match
+ 
+
+### Output
+
+ 
+Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups. 
+
+### Example output
+
+ 
+EHealthPlanDefinition is a Fhir resource. See the implementation guide for details 
+
+```
+{
+    'EHealthPlanDefinition': {
+        'resourceType': 'PlanDefinition',
+        'id': '257',
+        'meta': {
+            'versionId': '1',
+            'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition']
+        },
+        'extension': [{
+                'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role',
+                'extension': [{
+                        'url': 'reference',
+                        'valueReference': {
+                            'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/73753'
+                        }
+                    }, {
+                        'url': 'role',
+                        'valueCodeableConcept': {
+                            'coding': [{
+                                    'system': 'http://ehealth.sundhed.dk/cs/modifier-role',
+                                    'code': 'owner'
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        'version': 'dc9ecd87-163f-4d2f-bdfe-434085eafe4f',
+        'status': 'active'
+    },
+    'CarePlanStatusDurationSummary': {
+        'statusDurationStatistics': {
+            'draft': {
+                'status': {
+                    'valueCodeableConcept': {
+                        'coding': [{
+                                'system': 'http://hl7.org/fhir/care-plan-status',
+                                'code': 'draft'
+                            }
+                        ]
+                    }
+                },
+                'durationStatistics': {
+                    'count': 2,
+                    'min': 'P10DT10H0M0S',
+                    'max': 'P15DT0H0M0S',
+                    'sum': 'P25DT10H0M0S',
+                    'average': 'P12DT17H0M0S'
+                }
+            },
+            'active': {
+                'status': {
+                    'valueCodeableConcept': {
+                        'coding': [{
+                                'system': 'http://hl7.org/fhir/care-plan-status',
+                                'code': 'active'
+                            }
+                        ]
+                    }
+                },
+                'durationStatistics': {
+                    'count': 2,
+                    'min': 'P200DT0H0M0S',
+                    'max': 'P200DT0H0M0S',
+                    'sum': 'P400DT0H0M0S',
+                    'average': 'P200DT0H0M0S'
+                }
+            },
+            'completed': {
+                'status': {
+                    'valueCodeableConcept': {
+                        'coding': [{
+                                'system': 'http://hl7.org/fhir/care-plan-status',
+                                'code': 'completed'
+                            }
+                        ]
+                    }
+                },
+                'durationStatistics': {
+                    'count': 2,
+                    'min': 'P284DT14H0M0S',
+                    'max': 'P380DT0H0M0S',
+                    'sum': 'P664DT14H0M0S',
+                    'average': 'P332DT7H0M0S'
+                }
+            },
+            'suspended': {
+                'status': {
+                    'valueCodeableConcept': {
+                        'coding': [{
+                                'system': 'http://hl7.org/fhir/care-plan-status',
+                                'code': 'suspended'
+                            }
+                        ]
+                    }
+                },
+                'durationStatistics': {
+                    'count': 2,
+                    'min': 'P5DT0H0M0S',
+                    'max': 'P5DT0H0M0S',
+                    'sum': 'P10DT0H0M0S',
+                    'average': 'P5DT0H0M0S'
+                }
+            }
+        }
+    }
+}
+
+```
+
+ 
+
+URL: [base]/$execute-careplan-duration-stats
+
+### Parameters
+
+* **Use**: IN
+  * **Name**: anonymization
+  * **Scope**: 
+  * **Cardinality**: 1..1
+  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: organization
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Reference](http://hl7.org/fhir/R4/references.html#Reference)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: period
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Period](http://hl7.org/fhir/R4/datatypes.html#Period)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: IN
+  * **Name**: condition
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Coding](http://hl7.org/fhir/R4/datatypes.html#Coding)
+  * **Binding**: 
+  * **Documentation**: 
+* **Use**: OUT
+  * **Name**: return
+  * **Scope**: 
+  * **Cardinality**: 0..1
+  * **Type**: [Binary](http://hl7.org/fhir/R4/binary.html)
+  * **Binding**: 
+  * **Documentation**: 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-execute-careplan-duration-stats",
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplan-duration-stats",
+  "version" : "6.0.0",
+  "name" : "execute-careplan-duration-stats",
+  "title" : "Execute careplan duration stats",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2025-10-23T10:25:37+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "description" : "### Report Contents\nThis report contains statistics on status changes for CarePlans:\n- count: Number of CarePlans in each state\n- min: Shortest time spent in each state\n- max: Longest time spent in each state\n- sum: Sum of time spent in each state\n- average: Average time spent in each state.\n \nThe durations are specified in [ISO 8601](https://www.digi.com/resources/documentation/digidocs/90001437-13/reference/r_iso_8601_duration_format.htm) format.\n### Grouping \nThis report is grouped by PlanDefinition. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on EpisodeOfCare.managingOrganization match\n- period: Filter on CarePlan.period overlap\n- condition: Filter on EpisodeOfCare condition match\n\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nEHealthPlanDefinition is a Fhir resource. See the implementation guide for details\n\n    {\n        'EHealthPlanDefinition': {\n            'resourceType': 'PlanDefinition',\n            'id': '257',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition']\n            },\n            'extension': [{\n                    'url': 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role',\n                    'extension': [{\n                            'url': 'reference',\n                            'valueReference': {\n                                'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/73753'\n                            }\n                        }, {\n                            'url': 'role',\n                            'valueCodeableConcept': {\n                                'coding': [{\n                                        'system': 'http://ehealth.sundhed.dk/cs/modifier-role',\n                                        'code': 'owner'\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            ],\n            'version': 'dc9ecd87-163f-4d2f-bdfe-434085eafe4f',\n            'status': 'active'\n        },\n        'CarePlanStatusDurationSummary': {\n            'statusDurationStatistics': {\n                'draft': {\n                    'status': {\n                        'valueCodeableConcept': {\n                            'coding': [{\n                                    'system': 'http://hl7.org/fhir/care-plan-status',\n                                    'code': 'draft'\n                                }\n                            ]\n                        }\n                    },\n                    'durationStatistics': {\n                        'count': 2,\n                        'min': 'P10DT10H0M0S',\n                        'max': 'P15DT0H0M0S',\n                        'sum': 'P25DT10H0M0S',\n                        'average': 'P12DT17H0M0S'\n                    }\n                },\n                'active': {\n                    'status': {\n                        'valueCodeableConcept': {\n                            'coding': [{\n                                    'system': 'http://hl7.org/fhir/care-plan-status',\n                                    'code': 'active'\n                                }\n                            ]\n                        }\n                    },\n                    'durationStatistics': {\n                        'count': 2,\n                        'min': 'P200DT0H0M0S',\n                        'max': 'P200DT0H0M0S',\n                        'sum': 'P400DT0H0M0S',\n                        'average': 'P200DT0H0M0S'\n                    }\n                },\n                'completed': {\n                    'status': {\n                        'valueCodeableConcept': {\n                            'coding': [{\n                                    'system': 'http://hl7.org/fhir/care-plan-status',\n                                    'code': 'completed'\n                                }\n                            ]\n                        }\n                    },\n                    'durationStatistics': {\n                        'count': 2,\n                        'min': 'P284DT14H0M0S',\n                        'max': 'P380DT0H0M0S',\n                        'sum': 'P664DT14H0M0S',\n                        'average': 'P332DT7H0M0S'\n                    }\n                },\n                'suspended': {\n                    'status': {\n                        'valueCodeableConcept': {\n                            'coding': [{\n                                    'system': 'http://hl7.org/fhir/care-plan-status',\n                                    'code': 'suspended'\n                                }\n                            ]\n                        }\n                    },\n                    'durationStatistics': {\n                        'count': 2,\n                        'min': 'P5DT0H0M0S',\n                        'max': 'P5DT0H0M0S',\n                        'sum': 'P10DT0H0M0S',\n                        'average': 'P5DT0H0M0S'\n                    }\n                }\n            }\n        }\n    }\n",
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "affectsState" : true,
+  "code" : "execute-careplan-duration-stats",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [
+    {
+      "name" : "anonymization",
+      "use" : "in",
+      "min" : 1,
+      "max" : "1",
+      "type" : "string"
+    },
+    {
+      "name" : "organization",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Reference"
+    },
+    {
+      "name" : "period",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Period"
+    },
+    {
+      "name" : "condition",
+      "use" : "in",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Coding"
+    },
+    {
+      "name" : "return",
+      "use" : "out",
+      "min" : 0,
+      "max" : "1",
+      "type" : "Binary"
+    }
+  ]
+}
+
+```

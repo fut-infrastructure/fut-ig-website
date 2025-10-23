@@ -1,0 +1,1062 @@
+# organization - eHealth Infrastructure v6.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **organization**
+
+## CapabilityStatement: organization 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization | *Version*:6.0.0 |
+| Active as of 2025-10-21 | *Computable Name*:organization |
+
+ [Raw OpenAPI-Swagger Definition file](organization.openapi.json) | [Download](organization.openapi.json) 
+
+## 
+
+* Implementation Guide Version: 6.0.0 
+* FHIR Version: 4.0.1 
+* Supported Formats: `application/fhir+xml`, `xml`, `application/fhir+json`, `json`, `application/x-turtle`, `ttl`, `html/json`, `html/xml`, `html/turtle`
+* Published on: 2025-10-21 10:35:06+0000 
+* Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) 
+
+> **Note to Implementers: FHIR Capabilities**Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.
+
+## FHIR RESTful Capabilities
+
+### Mode: server
+
+Summary of System-wide Operations
+
+
+### Capabilities by Resource/Profile
+
+#### Summary
+
+The summary table lists the resources that are part of this configuration, and for each resource it lists:
+
+* The relevant profiles (if any)
+* The interactions supported by each resource (**R**ead, **S**earch, **U**pdate, and **C**reate, are always shown, while **VR**ead, **P**atch, **D**elete, **H**istory on **I**nstance, or **H**istory on **T**ype are only present if at least one of the resources has support for them.
+* The required, recommended, and some optional search parameters (if any).
+* The linked resources enabled for `_include`
+* The other resources enabled for `_revinclude`
+* The operations on the resource (if any)
+
+| | | | | | | | | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| [CareTeam](#CareTeam1-1) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam](StructureDefinition-ehealth-careteam.md) | y | y | y | y |  | y | y | _content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, category, context, context-type, context-type-value, date, encounter, identifier, managingOrganization, participant, patient, reasonCode, status, subject | `CareTeam:managingOrganization`,`CareTeam:participant`,`CareTeam:subject` | `CareTeam:encounter`,`CareTeam:managingOrganization`,`CareTeam:participant`,`CareTeam:patient`,`CareTeam:subject`,`Organization:endpoint`,`Organization:partof`,`PractitionerRole:endpoint`,`PractitionerRole:location`,`PractitionerRole:organization`,`PractitionerRole:practitioner`,`PractitionerRole:service`,`Provenance:target` | `$validate` |
+| [OperationDefinition](#OperationDefinition1-2) | [http://hl7.org/fhir/StructureDefinition/OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html) | y |  |  |  |  |  |  |  | `*` | `CareTeam:encounter`,`CareTeam:managingOrganization`,`CareTeam:participant`,`CareTeam:patient`,`CareTeam:subject`,`Organization:endpoint`,`Organization:partof`,`PractitionerRole:endpoint`,`PractitionerRole:location`,`PractitionerRole:organization`,`PractitionerRole:practitioner`,`PractitionerRole:service`,`Provenance:target` |  |
+| [Organization](#Organization1-3) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization](StructureDefinition-ehealth-organization.md) | y | y | y | y | y | y |  | _content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, active, address, address-city, address-country, address-postalcode, address-state, address-use, contactName, cvrNumber, endpoint, identifier, municipalityCode, name, partof, phonetic, providerIdentifier, regionCode, source, specialty, type | `Organization:partof` | `CareTeam:managingOrganization`,`Organization:partof`,`Provenance:target` | `$validate`,`$get-general-practitioner-info`,`$traverse-to-sor` |
+| [Practitioner](#Practitioner1-4) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner](StructureDefinition-ehealth-practitioner.md) | y | y | y | y |  | y | y | _content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, active, address, address-city, address-country, address-postalcode, address-state, address-use, communication, email, family, gender, given, identifier, name, phone, phonetic, telecom | `*` | `CareTeam:encounter`,`CareTeam:managingOrganization`,`CareTeam:participant`,`CareTeam:patient`,`CareTeam:subject`,`Organization:endpoint`,`Organization:partof`,`PractitionerRole:endpoint`,`PractitionerRole:location`,`PractitionerRole:organization`,`PractitionerRole:practitioner`,`PractitionerRole:service`,`Provenance:target` | `$validate` |
+| [PractitionerRole](#PractitionerRole1-5) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole](StructureDefinition-ehealth-practitionerrole.md) | y | y | y | y |  | y | y | _content, _has, _id, _language, _lastUpdated, _profile, _security, _tag, _text, active, date, email, endpoint, identifier, location, organization, phone, practitioner, role, service, specialty, telecom | `*`,`PractitionerRole:endpoint`,`PractitionerRole:location`,`PractitionerRole:organization`,`PractitionerRole:practitioner`,`PractitionerRole:service` | `CareTeam:encounter`,`CareTeam:managingOrganization`,`CareTeam:participant`,`CareTeam:patient`,`CareTeam:subject`,`Organization:endpoint`,`Organization:partof`,`PractitionerRole:endpoint`,`PractitionerRole:location`,`PractitionerRole:organization`,`PractitionerRole:practitioner`,`PractitionerRole:service`,`Provenance:target` | `$validate` |
+| [Provenance](#Provenance1-6) | [http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance](StructureDefinition-ehealth-provenance.md) | y | y | y |  |  |  |  | _id, recorded, target |  | `CareTeam:encounter`,`CareTeam:managingOrganization`,`CareTeam:participant`,`CareTeam:patient`,`CareTeam:subject`,`Organization:endpoint`,`Organization:partof`,`PractitionerRole:endpoint`,`PractitionerRole:location`,`PractitionerRole:organization`,`PractitionerRole:practitioner`,`PractitionerRole:service`,`Provenance:target` |  |
+
+-------
+
+#### Resource Conformance: supported CareTeam
+
+Base System Profile
+
+[ehealth-careteam](StructureDefinition-ehealth-careteam.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `update`, `search-type`, `vread`, `read`, `delete`, `create`.
+
+Search Parameters
+
+
+ 
+
+Extended Operations
+
+
+#### Resource Conformance: supported OperationDefinition
+
+Base System Profile
+
+[OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `read`.
+
+#### Resource Conformance: supported Organization
+
+Base System Profile
+
+[ehealth-organization](StructureDefinition-ehealth-organization.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `update`, `search-type`, `vread`, `read`, `patch`, `create`.
+
+Search Parameters
+
+
+ 
+
+Extended Operations
+
+
+#### Resource Conformance: supported Practitioner
+
+Base System Profile
+
+[ehealth-practitioner](StructureDefinition-ehealth-practitioner.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `update`, `search-type`, `vread`, `read`, `delete`, `create`.
+
+Search Parameters
+
+
+ 
+
+Extended Operations
+
+
+#### Resource Conformance: supported PractitionerRole
+
+Base System Profile
+
+[ehealth-practitionerrole](StructureDefinition-ehealth-practitionerrole.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `update`, `search-type`, `vread`, `read`, `delete`, `create`.
+
+Search Parameters
+
+
+ 
+
+Extended Operations
+
+
+#### Resource Conformance: supported Provenance
+
+Base System Profile
+
+[ehealth-provenance](StructureDefinition-ehealth-provenance.md)
+
+Profile Conformance
+
+**SHALL**
+
+Reference Policy
+
+Interaction summary
+
+* Supports `search-type`, `vread`, `read`.
+
+Search Parameters
+
+
+ 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "organization",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization",
+  "version" : "6.0.0",
+  "name" : "organization",
+  "status" : "active",
+  "date" : "2025-10-21T10:35:06.339+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [
+    {
+      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "telecom" : [
+        {
+          "system" : "url",
+          "value" : "http://ehealth.sundhed.dk"
+        }
+      ]
+    }
+  ],
+  "jurisdiction" : [
+    {
+      "coding" : [
+        {
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "DK",
+          "display" : "Denmark"
+        }
+      ]
+    }
+  ],
+  "kind" : "instance",
+  "software" : {
+    "name" : "organization",
+    "version" : "1.22.0"
+  },
+  "implementation" : {
+    "description" : "eHealth organization service",
+    "url" : "https://organization.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : [
+    "application/fhir+xml",
+    "xml",
+    "application/fhir+json",
+    "json",
+    "application/x-turtle",
+    "ttl",
+    "html/json",
+    "html/xml",
+    "html/turtle"
+  ],
+  "rest" : [
+    {
+      "mode" : "server",
+      "resource" : [
+        {
+          "type" : "CareTeam",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam",
+          "interaction" : [
+            {
+              "code" : "update"
+            },
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            },
+            {
+              "code" : "delete"
+            },
+            {
+              "code" : "create"
+            }
+          ],
+          "conditionalCreate" : true,
+          "conditionalUpdate" : true,
+          "conditionalDelete" : "multiple",
+          "searchInclude" : [
+            "CareTeam:managingOrganization",
+            "CareTeam:participant",
+            "CareTeam:subject"
+          ],
+          "searchRevInclude" : [
+            "CareTeam:encounter",
+            "CareTeam:managingOrganization",
+            "CareTeam:participant",
+            "CareTeam:patient",
+            "CareTeam:subject",
+            "Organization:endpoint",
+            "Organization:partof",
+            "PractitionerRole:endpoint",
+            "PractitionerRole:location",
+            "PractitionerRole:organization",
+            "PractitionerRole:practitioner",
+            "PractitionerRole:service",
+            "Provenance:target"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_content",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's data using a fulltext search"
+            },
+            {
+              "name" : "_has",
+              "type" : "string",
+              "documentation" : "Return resources linked to by the given target"
+            },
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "_language",
+              "type" : "string",
+              "documentation" : "The language of the resource"
+            },
+            {
+              "name" : "_lastUpdated",
+              "type" : "date",
+              "documentation" : "Only return resources which were last updated as specified by the given range"
+            },
+            {
+              "name" : "_profile",
+              "type" : "uri",
+              "documentation" : "Search for resources which have the given profile"
+            },
+            {
+              "name" : "_security",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given security labels"
+            },
+            {
+              "name" : "_tag",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given tag"
+            },
+            {
+              "name" : "_text",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+            },
+            {
+              "name" : "category",
+              "type" : "token",
+              "documentation" : "Type of team"
+            },
+            {
+              "name" : "context",
+              "type" : "token",
+              "documentation" : "A use context assigned to the care team"
+            },
+            {
+              "name" : "context-type",
+              "type" : "token",
+              "documentation" : "A type of use context assigned to the care team"
+            },
+            {
+              "name" : "context-type-value",
+              "type" : "composite",
+              "documentation" : "A use context type and value assigned to the care team"
+            },
+            {
+              "name" : "date",
+              "type" : "date",
+              "documentation" : "Time period team covers"
+            },
+            {
+              "name" : "encounter",
+              "type" : "reference",
+              "documentation" : "Encounter or episode associated with CareTeam"
+            },
+            {
+              "name" : "identifier",
+              "type" : "token",
+              "documentation" : "External Ids for this team"
+            },
+            {
+              "name" : "managingOrganization",
+              "type" : "reference",
+              "documentation" : "Managing organization of a care team"
+            },
+            {
+              "name" : "participant",
+              "type" : "reference",
+              "documentation" : "Who is involved"
+            },
+            {
+              "name" : "patient",
+              "type" : "reference",
+              "documentation" : "Who care team is for"
+            },
+            {
+              "name" : "reasonCode",
+              "type" : "token",
+              "documentation" : "Reason care team exists"
+            },
+            {
+              "name" : "status",
+              "type" : "token",
+              "documentation" : "proposed | active | suspended | inactive | entered-in-error"
+            },
+            {
+              "name" : "subject",
+              "type" : "reference",
+              "documentation" : "Who care team is for"
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "validate",
+              "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+            }
+          ]
+        },
+        {
+          "type" : "OperationDefinition",
+          "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+          "interaction" : [
+            {
+              "code" : "read"
+            }
+          ],
+          "searchInclude" : ["*"],
+          "searchRevInclude" : [
+            "CareTeam:encounter",
+            "CareTeam:managingOrganization",
+            "CareTeam:participant",
+            "CareTeam:patient",
+            "CareTeam:subject",
+            "Organization:endpoint",
+            "Organization:partof",
+            "PractitionerRole:endpoint",
+            "PractitionerRole:location",
+            "PractitionerRole:organization",
+            "PractitionerRole:practitioner",
+            "PractitionerRole:service",
+            "Provenance:target"
+          ]
+        },
+        {
+          "type" : "Organization",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
+          "interaction" : [
+            {
+              "code" : "update"
+            },
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            },
+            {
+              "code" : "patch"
+            },
+            {
+              "code" : "create"
+            }
+          ],
+          "conditionalCreate" : true,
+          "conditionalUpdate" : true,
+          "searchInclude" : ["Organization:partof"],
+          "searchRevInclude" : [
+            "CareTeam:managingOrganization",
+            "Organization:partof",
+            "Provenance:target"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_content",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's data using a fulltext search"
+            },
+            {
+              "name" : "_has",
+              "type" : "string",
+              "documentation" : "Return resources linked to by the given target"
+            },
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "_language",
+              "type" : "string",
+              "documentation" : "The language of the resource"
+            },
+            {
+              "name" : "_lastUpdated",
+              "type" : "date",
+              "documentation" : "Only return resources which were last updated as specified by the given range"
+            },
+            {
+              "name" : "_profile",
+              "type" : "uri",
+              "documentation" : "Search for resources which have the given profile"
+            },
+            {
+              "name" : "_security",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given security labels"
+            },
+            {
+              "name" : "_tag",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given tag"
+            },
+            {
+              "name" : "_text",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+            },
+            {
+              "name" : "active",
+              "type" : "token",
+              "documentation" : "A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text"
+            },
+            {
+              "name" : "address",
+              "type" : "string",
+              "documentation" : "A (part of the) address of the organization"
+            },
+            {
+              "name" : "address-city",
+              "type" : "string",
+              "documentation" : "A city specified in an address"
+            },
+            {
+              "name" : "address-country",
+              "type" : "string",
+              "documentation" : "A country specified in an address"
+            },
+            {
+              "name" : "address-postalcode",
+              "type" : "string",
+              "documentation" : "A postal code specified in an address"
+            },
+            {
+              "name" : "address-state",
+              "type" : "string",
+              "documentation" : "A state specified in an address"
+            },
+            {
+              "name" : "address-use",
+              "type" : "token",
+              "documentation" : "A use code specified in an address"
+            },
+            {
+              "name" : "contactName",
+              "type" : "string",
+              "documentation" : "Contact name"
+            },
+            {
+              "name" : "cvrNumber",
+              "type" : "string",
+              "documentation" : "Cvr number of the organization"
+            },
+            {
+              "name" : "endpoint",
+              "type" : "reference",
+              "documentation" : "Technical endpoints providing access to services operated for the organization"
+            },
+            {
+              "name" : "identifier",
+              "type" : "token",
+              "documentation" : "Any identifier for the organization (not the accreditation issuer's identifier)"
+            },
+            {
+              "name" : "municipalityCode",
+              "type" : "string",
+              "documentation" : "Municipality code of the organization"
+            },
+            {
+              "name" : "name",
+              "type" : "string",
+              "documentation" : "A portion of the organization's name or alias"
+            },
+            {
+              "name" : "partof",
+              "type" : "reference",
+              "documentation" : "An organization of which this organization forms a part"
+            },
+            {
+              "name" : "phonetic",
+              "type" : "string",
+              "documentation" : "A portion of the organization's name using some kind of phonetic matching algorithm"
+            },
+            {
+              "name" : "providerIdentifier",
+              "type" : "string",
+              "documentation" : "Provider identifier of the organization"
+            },
+            {
+              "name" : "regionCode",
+              "type" : "string",
+              "documentation" : "Region code of the organization"
+            },
+            {
+              "name" : "source",
+              "type" : "token",
+              "documentation" : "Source of the organization"
+            },
+            {
+              "name" : "specialty",
+              "type" : "token",
+              "documentation" : "Specialty of the organization"
+            },
+            {
+              "name" : "type",
+              "type" : "token",
+              "documentation" : "A code for the type of organization"
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "validate",
+              "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+            },
+            {
+              "name" : "get-general-practitioner-info",
+              "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Organization-t-get-general-practitioner-info",
+              "documentation" : "The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. \nThe Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. \nWhen multiple Organization resources have the same provider number, the shared parent Organization is returned. \nAn OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. \nA typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice."
+            },
+            {
+              "name" : "traverse-to-sor",
+              "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Organization-i-traverse-to-sor",
+              "documentation" : "Traverse upforwards to the first SOR organization\nHttp response code 404 will be returned if no related SOR organization could be found"
+            }
+          ]
+        },
+        {
+          "type" : "Practitioner",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+          "interaction" : [
+            {
+              "code" : "update"
+            },
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            },
+            {
+              "code" : "delete"
+            },
+            {
+              "code" : "create"
+            }
+          ],
+          "conditionalCreate" : true,
+          "conditionalUpdate" : true,
+          "conditionalDelete" : "multiple",
+          "searchInclude" : ["*"],
+          "searchRevInclude" : [
+            "CareTeam:encounter",
+            "CareTeam:managingOrganization",
+            "CareTeam:participant",
+            "CareTeam:patient",
+            "CareTeam:subject",
+            "Organization:endpoint",
+            "Organization:partof",
+            "PractitionerRole:endpoint",
+            "PractitionerRole:location",
+            "PractitionerRole:organization",
+            "PractitionerRole:practitioner",
+            "PractitionerRole:service",
+            "Provenance:target"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_content",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's data using a fulltext search"
+            },
+            {
+              "name" : "_has",
+              "type" : "string",
+              "documentation" : "Return resources linked to by the given target"
+            },
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "_language",
+              "type" : "string",
+              "documentation" : "The language of the resource"
+            },
+            {
+              "name" : "_lastUpdated",
+              "type" : "date",
+              "documentation" : "Only return resources which were last updated as specified by the given range"
+            },
+            {
+              "name" : "_profile",
+              "type" : "uri",
+              "documentation" : "Search for resources which have the given profile"
+            },
+            {
+              "name" : "_security",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given security labels"
+            },
+            {
+              "name" : "_tag",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given tag"
+            },
+            {
+              "name" : "_text",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+            },
+            {
+              "name" : "active",
+              "type" : "token",
+              "documentation" : "Whether the practitioner record is active"
+            },
+            {
+              "name" : "address",
+              "type" : "string",
+              "documentation" : "A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text"
+            },
+            {
+              "name" : "address-city",
+              "type" : "string",
+              "documentation" : "A city specified in an address"
+            },
+            {
+              "name" : "address-country",
+              "type" : "string",
+              "documentation" : "A country specified in an address"
+            },
+            {
+              "name" : "address-postalcode",
+              "type" : "string",
+              "documentation" : "A postalCode specified in an address"
+            },
+            {
+              "name" : "address-state",
+              "type" : "string",
+              "documentation" : "A state specified in an address"
+            },
+            {
+              "name" : "address-use",
+              "type" : "token",
+              "documentation" : "A use code specified in an address"
+            },
+            {
+              "name" : "communication",
+              "type" : "token",
+              "documentation" : "One of the languages that the practitioner can communicate with"
+            },
+            {
+              "name" : "email",
+              "type" : "token",
+              "documentation" : "A value in an email contact"
+            },
+            {
+              "name" : "family",
+              "type" : "string",
+              "documentation" : "A portion of the family name"
+            },
+            {
+              "name" : "gender",
+              "type" : "token",
+              "documentation" : "Gender of the practitioner"
+            },
+            {
+              "name" : "given",
+              "type" : "string",
+              "documentation" : "A portion of the given name"
+            },
+            {
+              "name" : "identifier",
+              "type" : "token",
+              "documentation" : "A practitioner's Identifier"
+            },
+            {
+              "name" : "name",
+              "type" : "string",
+              "documentation" : "A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"
+            },
+            {
+              "name" : "phone",
+              "type" : "token",
+              "documentation" : "A value in a phone contact"
+            },
+            {
+              "name" : "phonetic",
+              "type" : "string",
+              "documentation" : "A portion of either family or given name using some kind of phonetic matching algorithm"
+            },
+            {
+              "name" : "telecom",
+              "type" : "token",
+              "documentation" : "The value in any kind of contact"
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "validate",
+              "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+            }
+          ]
+        },
+        {
+          "type" : "PractitionerRole",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole",
+          "interaction" : [
+            {
+              "code" : "update"
+            },
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            },
+            {
+              "code" : "delete"
+            },
+            {
+              "code" : "create"
+            }
+          ],
+          "conditionalCreate" : true,
+          "conditionalUpdate" : true,
+          "conditionalDelete" : "multiple",
+          "searchInclude" : [
+            "*",
+            "PractitionerRole:endpoint",
+            "PractitionerRole:location",
+            "PractitionerRole:organization",
+            "PractitionerRole:practitioner",
+            "PractitionerRole:service"
+          ],
+          "searchRevInclude" : [
+            "CareTeam:encounter",
+            "CareTeam:managingOrganization",
+            "CareTeam:participant",
+            "CareTeam:patient",
+            "CareTeam:subject",
+            "Organization:endpoint",
+            "Organization:partof",
+            "PractitionerRole:endpoint",
+            "PractitionerRole:location",
+            "PractitionerRole:organization",
+            "PractitionerRole:practitioner",
+            "PractitionerRole:service",
+            "Provenance:target"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_content",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's data using a fulltext search"
+            },
+            {
+              "name" : "_has",
+              "type" : "string",
+              "documentation" : "Return resources linked to by the given target"
+            },
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "_language",
+              "type" : "string",
+              "documentation" : "The language of the resource"
+            },
+            {
+              "name" : "_lastUpdated",
+              "type" : "date",
+              "documentation" : "Only return resources which were last updated as specified by the given range"
+            },
+            {
+              "name" : "_profile",
+              "type" : "uri",
+              "documentation" : "Search for resources which have the given profile"
+            },
+            {
+              "name" : "_security",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given security labels"
+            },
+            {
+              "name" : "_tag",
+              "type" : "token",
+              "documentation" : "Search for resources which have the given tag"
+            },
+            {
+              "name" : "_text",
+              "type" : "string",
+              "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+            },
+            {
+              "name" : "active",
+              "type" : "token",
+              "documentation" : "Whether this practitioner's record is in active use"
+            },
+            {
+              "name" : "date",
+              "type" : "date",
+              "documentation" : "The period during which the practitioner is authorized to perform in these role(s)"
+            },
+            {
+              "name" : "email",
+              "type" : "token",
+              "documentation" : "A value in an email contact"
+            },
+            {
+              "name" : "endpoint",
+              "type" : "reference",
+              "documentation" : "Technical endpoints providing access to services operated for the practitioner with this role"
+            },
+            {
+              "name" : "identifier",
+              "type" : "token",
+              "documentation" : "A practitioner's Identifier"
+            },
+            {
+              "name" : "location",
+              "type" : "reference",
+              "documentation" : "One of the locations at which this practitioner provides care"
+            },
+            {
+              "name" : "organization",
+              "type" : "reference",
+              "documentation" : "The identity of the organization the practitioner represents / acts on behalf of"
+            },
+            {
+              "name" : "phone",
+              "type" : "token",
+              "documentation" : "A value in a phone contact"
+            },
+            {
+              "name" : "practitioner",
+              "type" : "reference",
+              "documentation" : "Practitioner that is able to provide the defined services for the organation"
+            },
+            {
+              "name" : "role",
+              "type" : "token",
+              "documentation" : "The practitioner can perform this role at for the organization"
+            },
+            {
+              "name" : "service",
+              "type" : "reference",
+              "documentation" : "The list of healthcare services that this worker provides for this role's Organization/Location(s)"
+            },
+            {
+              "name" : "specialty",
+              "type" : "token",
+              "documentation" : "The practitioner has this specialty at an organization"
+            },
+            {
+              "name" : "telecom",
+              "type" : "token",
+              "documentation" : "The value in any kind of contact"
+            }
+          ],
+          "operation" : [
+            {
+              "name" : "validate",
+              "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+            }
+          ]
+        },
+        {
+          "type" : "Provenance",
+          "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance",
+          "interaction" : [
+            {
+              "code" : "search-type"
+            },
+            {
+              "code" : "vread"
+            },
+            {
+              "code" : "read"
+            }
+          ],
+          "searchRevInclude" : [
+            "CareTeam:encounter",
+            "CareTeam:managingOrganization",
+            "CareTeam:participant",
+            "CareTeam:patient",
+            "CareTeam:subject",
+            "Organization:endpoint",
+            "Organization:partof",
+            "PractitionerRole:endpoint",
+            "PractitionerRole:location",
+            "PractitionerRole:organization",
+            "PractitionerRole:practitioner",
+            "PractitionerRole:service",
+            "Provenance:target"
+          ],
+          "searchParam" : [
+            {
+              "name" : "_id",
+              "type" : "token",
+              "documentation" : "The ID of the resource"
+            },
+            {
+              "name" : "recorded",
+              "type" : "date",
+              "documentation" : "When the activity was recorded / updated"
+            },
+            {
+              "name" : "target",
+              "type" : "reference",
+              "documentation" : "Target Reference(s) (usually version specific)"
+            }
+          ]
+        }
+      ],
+      "operation" : [
+        {
+          "name" : "persist-login",
+          "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-persist-login",
+          "documentation" : "This operation persists login information into CareTeams and PractitionerRoles\nThe following elements of each careteam are mandatory:\n- id: Reference based on the careteam from the saml security token\n- status: any\n- name: any\n- reasonCode: any\n- participant: 1 for each careteam-role in the saml security token\n-- role: from the saml security token\n-- member: reference to the practitioner\n-- onBehalfOf: reference to organization (cannot be set currently because of a bug in hapi)\n\nPersist-login will find each careteam, and update it with any new participants and roles from the input bundle.\nThe input careteam resources are are used as a container for the participant list. The rest of the fields are not used.\nThe following elements of each PractitionerRole are mandatory:\n- practitioner\n- organization\n- code: roles from the saml security token (CareteamParticipantRole valueset)\n\nPersist-login will search for practitionerRoles for each combination of (practitioner, organization) and create it if it doesn't already exists."
+        },
+        {
+          "name" : "import-organizations",
+          "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-import-organizations",
+          "documentation" : "Import a bundle containing at least one organization tree."
+        },
+        {
+          "name" : "reindex-terminology",
+          "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex-terminology"
+        },
+        {
+          "name" : "meta",
+          "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+        },
+        {
+          "name" : "get-resource-counts",
+          "definition" : "https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+          "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+        }
+      ]
+    }
+  ]
+}
+
+```
