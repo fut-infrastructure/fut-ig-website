@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/Consent/1> a fhir:Consent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-access-consent"^^xsd:anyURI ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-access-consent>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent 1</b></p><a name=\"1\"> </a><a name=\"hc1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-access-consent.html\">ehealth-access-consent</a></p></div><p><b>status</b>: active</p><p><b>scope</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentscope patient-privacy}\">Privacy Consent</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode INFA}\">information access</span></p><p><b>patient</b>: <a href=\"Patient-102.html\">Nancy Ann Berggren (official) Ukendt, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))</a></p><p><b>dateTime</b>: 2026-01-12 00:00:00+0100</p><p><b>performer</b>: <a href=\"Practitioner-107302.html\">Practitioner Example3 Practitioner </a></p><p><b>policyRule</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentpolicycodes cric}\">Common Rule Informed Consent</span></p><h3>Provisions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Opt In</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:scope [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "patient-privacy" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "INFA" ]
+     ] )
+  ] ) ; # 
+  fhir:patient [
+     fhir:link <http://ehealth.sundhed.dk/fhir/Patient/102> ;
+     fhir:reference [ fhir:v "Patient/102" ]
+  ] ; # 
+  fhir:dateTime [ fhir:v "2026-01-12T00:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <http://ehealth.sundhed.dk/fhir/Practitioner/107302> ;
+     fhir:reference [ fhir:v "Practitioner/107302" ]
+  ] ) ; # 
+  fhir:policyRule [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/consentpolicycodes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "cric" ]
+     ] )
+  ] ; # 
+  fhir:provision [
+     fhir:type [ fhir:v "permit" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="-s-reindex"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition -s-reindex</b></p><a name="-s-reindex"> </a><a name="hc-s-reindex"> </a><p>URL: [base]/$$reindex</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>url</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Optionally provides one ore more relative search parameter URLs (e.g. &quot;Patient?active=true&quot; or &quot;Observation?&quot;) that will be reindexed. Note that the URL applies to the resources as they are currently indexed, so you should not use a search parameter that needs reindexing in the URL or some resources may be missed. If no URLs are provided, all resources of all types will be reindexed.</p>
+</div></td></tr><tr><td>IN</td><td>reindexSearchParameters</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td/><td><div><p>Should search parameters be reindexed (default: ALL)</p>
+</div></td></tr><tr><td>IN</td><td>optimizeStorage</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td/><td><div><p>Should we attempt to optimize storage for resources (default: NONE)</p>
+</div></td></tr><tr><td>IN</td><td>optimisticLock</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td><div><p>Should we attempt to optimistically lock resources being reindexed in order to avoid concurrency issues (default: true)</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-reindex"/>
+  <version value="8.0.0"/>
+  <name value="reindex"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-01-27T10:56:04+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="true"/>
+  <code value="reindex"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="url"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Optionally provides one ore more relative search parameter URLs (e.g. &quot;Patient?active=true&quot; or &quot;Observation?&quot;) that will be reindexed. Note that the URL applies to the resources as they are currently indexed, so you should not use a search parameter that needs reindexing in the URL or some resources may be missed. If no URLs are provided, all resources of all types will be reindexed."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="reindexSearchParameters"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Should search parameters be reindexed (default: ALL)"/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="optimizeStorage"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Should we attempt to optimize storage for resources (default: NONE)"/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="optimisticLock"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Should we attempt to optimistically lock resources being reindexed in order to avoid concurrency issues (default: true)"/>
+    <type value="boolean"/>
+  </parameter>
+</OperationDefinition>

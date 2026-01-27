@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Create an EpisodeOfCare - eHealth Infrastructure v7.0.8</title>
+    <title>Create an EpisodeOfCare - eHealth Infrastructure v8.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"93.18"}
-    h3,h4,h5,h6{--heading-prefix:"93.18"}</style>
+    <style type="text/css">h2{--heading-prefix:"97.18"}
+    h3,h4,h5,h6{--heading-prefix:"97.18"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -61,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">7.0.8 - release
+            <span style="display:inline-block;">8.0.0 - release
 
 
 
-  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+  <span title="">DK</span>
 
 
             </span>
@@ -216,7 +216,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v7.0.8: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v8.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -270,7 +270,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">7.0.8<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care|7.0.8"/></span>
+      <span class="copy-text">8.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care|8.0.0"/></span>
       </td>
     </tr>
 
@@ -282,16 +282,20 @@
 
 
 
-      <td colspan="4">
+      <td colspan="3">
         
           Active
           
-            as of 2025-12-02
+            as of 2026-01-27
           
         
       </td>
 
 
+
+      <td>
+        <i>Realm:</i> <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+      </td>
 
       <td><i>Computable Name</i>: <span style="font-family: monospace;">create-episode-of-care</span></td>
     </tr>
@@ -318,6 +322,8 @@ The 'managingOrganization' property of the EpisodeOfCare references the GDPR Dat
   <li>'http://ehealth.sundhed.dk/policy/dk/aeldreloven'
     <h3 id="diagnosis-referenced-condition-resource">Diagnosis referenced Condition resource</h3>
     <p>For any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.</p>
+    <h3 id="treatment-area-validation">Treatment area validation</h3>
+    <p>When creating an EpisodeOfCare, the infrastructure validates that all diagnoses (referenced Condition.code) are within the treatment area of the telemedicine solution tied to the EpisodeOfCare.The telemedicine solution is determined by inspecting the incoming security token of the practitioner creating the EpisodeOfCare (coexistence-tag in scope claim).The treatment areas are defined by each telemedicine solution having a ValueSet determining the allowed Condition.code.The treatment area ValueSets are characterized by having a useContext with 'system-treatment-area' context code, and using the coexistence-tag as the value (see https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html).</p>
     <h2 id="output">Output</h2>
     <p>For valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.
 To get resources bodies in the output the request header has to contain parameter <code class="language-plaintext highlighter-rouge">Prefer: return=representation</code>.</p>
@@ -344,7 +350,8 @@ To get resources bodies in the output the request header has to contain paramete
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><a name="-s-create-episode-of-care"> </a><a name="hc-s-create-episode-of-care"> </a><p>URL: [base]/$$create-episode-of-care</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>episodeOfCareAndProvenances</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr></table></div>
+  <div xmlns="http://www.w3.org/1999/xhtml"><a name="-s-create-episode-of-care"> </a><a name="hc-s-create-episode-of-care"> </a><p>URL: [base]/$$create-episode-of-care</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>episodeOfCareAndProvenances</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td><div><p>The input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance'</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a></td><td/><td/></tr></table></div>
 
   <!-- insert notes if present -->
   
@@ -369,7 +376,7 @@ To get resources bodies in the output the request header has to contain paramete
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#7.0.8 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 2, 2025 12:56+0000">2025-12-02</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#8.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:57+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

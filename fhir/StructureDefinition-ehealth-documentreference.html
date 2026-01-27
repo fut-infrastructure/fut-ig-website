@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ehealth-documentreference - eHealth Infrastructure v7.0.8</title>
+    <title>ehealth-documentreference - eHealth Infrastructure v8.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"93.134"}
-    h3,h4,h5,h6{--heading-prefix:"93.134"}</style>
+    <style type="text/css">h2{--heading-prefix:"97.142"}
+    h3,h4,h5,h6{--heading-prefix:"97.142"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -65,11 +65,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">7.0.8 - release
+            <span style="display:inline-block;">8.0.0 - release
 
 
 
-  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+  <span title="">DK</span>
 
 
             </span>
@@ -220,7 +220,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v7.0.8: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v8.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -304,7 +304,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">7.0.8<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference|7.0.8"/></span>
+      <span class="copy-text">8.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference|8.0.0"/></span>
       </td>
     </tr>
 
@@ -316,16 +316,20 @@
 
 
 
-      <td colspan="4">
+      <td colspan="3">
         
           Active
           
-            as of 2025-12-02
+            as of 2026-01-27
           
         
       </td>
 
 
+
+      <td>
+        <i>Realm:</i> <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+      </td>
 
       <td><i>Computable Name</i>: <span style="font-family: monospace;">ehealth-documentreference</span></td>
     </tr>
@@ -390,10 +394,10 @@ in the ValueSet described for useContext.code.</p>
 <p><em>Material for Citizens</em>, is used in relation to <a href="StructureDefinition-ehealth-patient.html">Patient</a> and <a href="StructureDefinition-ehealth-episodeofcare.html">EpisodeOfCare</a>. This material will always be referenced through a URL as it is either stored externally or internally in the infrastructure. Depending on the nature of the material it will fall into two distinct sub-categories.</p>
 <ul>
   <li><strong><em>Patient-Specific Material</em></strong>, is material that contains sensitive information about a specific patient.</li>
-  <li><strong><em>Generic Material</em></strong>, is material that has no sensitive information about a specific patient and is broadly relevant and/or applicable to multiple patients.</li>
+  <li><strong><em>General Material</em></strong>, is material that has no sensitive information about a specific patient and is broadly relevant and/or applicable to multiple patients.</li>
 </ul>
 
-<p><em>Material for Citizens</em> is stored in the CarePlan and Plan services. <em>Patient-Specific Material</em> is stored in the CarePlan service while <em>Generic Material</em> is stored in the Plan service.</p>
+<p><em>Material for Citizens</em> is stored in the CarePlan and Plan services. <em>Patient-Specific Material</em> is stored in the CarePlan service while <em>General Material</em> is stored in the Plan service.</p>
 
 <p>The eHealth DocumentReference profile, when used for <em>Material for Citizens</em>, makes use of the following extensions:</p>
 <ul>
@@ -407,44 +411,49 @@ in the ValueSet described for useContext.code.</p>
 </ul>
 
 <h3 id="category-1">Category</h3>
-<p>For storage of <em>Generic Material</em> in the Plan service the <code class="language-plaintext highlighter-rouge">DocumentReference.category</code> must be populated with <code class="language-plaintext highlighter-rouge">generic-material</code>. Otherwise, it will be interpreted as <em>Instructional Material</em>.<br />
+<p>For storage of <em>General Material</em> in the Plan service the <code class="language-plaintext highlighter-rouge">DocumentReference.category</code> must be populated with <code class="language-plaintext highlighter-rouge">general-material</code>. Otherwise, it will be interpreted as <em>Instructional Material</em>.<br />
 For storage of <em>Patient-Specific Material</em> in the CarePlan service the <code class="language-plaintext highlighter-rouge">DocumentReference.category</code> must be populated with the code <code class="language-plaintext highlighter-rouge">patient-specific-material</code>.<br />
-If the code indicates a different material category than what the service stores (e.g. using <code class="language-plaintext highlighter-rouge">patient-specific-material</code> when registering <em>Generic Material</em> on the Plan service), it will be rejected.<br />
+If the code indicates a different material category than what the service stores (e.g. using <code class="language-plaintext highlighter-rouge">patient-specific-material</code> when registering <em>General Material</em> on the Plan service), it will be rejected.<br />
 The category code is immutable after creation.</p>
 
 <h3 id="subject">Subject</h3>
-<p>For <em>Patient-Specific Material</em> the <code class="language-plaintext highlighter-rouge">DocumentReference.subject</code> must be populated with a reference to the Patient the material is relevant for. Conversely, for <em>Generic Material</em> <code class="language-plaintext highlighter-rouge">DocumentReference.subject</code> must be unpopulated.</p>
+<p>For <em>Patient-Specific Material</em> the <code class="language-plaintext highlighter-rouge">DocumentReference.subject</code> must be populated with a reference to the Patient the material is relevant for. Conversely, for <em>General Material</em> <code class="language-plaintext highlighter-rouge">DocumentReference.subject</code> must be unpopulated.</p>
 
 <h3 id="episodeofcare">EpisodeOfCare</h3>
 <p>The related EpisodeOfCare is referenced through the <code class="language-plaintext highlighter-rouge">DocumentReference.context.encounter</code> element. Which is allowed to have at most one entry.<br />
-For <em>Patient-Specific Material</em> the <code class="language-plaintext highlighter-rouge">DocumentReference.context.encounter</code> must be populated with a reference to the EpisodeOfCare the material is relevant for. Conversely, for <em>Generic Material</em> <code class="language-plaintext highlighter-rouge">DocumentReference.context.encounter</code> must be unpopulated.</p>
+For <em>Patient-Specific Material</em> the <code class="language-plaintext highlighter-rouge">DocumentReference.context.encounter</code> must be populated with a reference to the EpisodeOfCare the material is relevant for. Conversely, for <em>General Material</em> <code class="language-plaintext highlighter-rouge">DocumentReference.context.encounter</code> must be unpopulated.</p>
 
 <h3 id="content">Content</h3>
 <p><code class="language-plaintext highlighter-rouge">DocumentReference.content</code> must have exactly one entry.<br />
 When creating the DocumentReference in the infrastructure either <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> or <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> element must be populated. If both are populated it will be rejected:</p>
 <ul>
-  <li>If providing <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code>, it will be decoded and uploaded to the infrastructure's <a href="https://storage-service.devtest.systematic-ehealth.com/swagger-ui/index.html">Storage-Service</a>, after which the <code class="language-plaintext highlighter-rouge">.data</code> field is cleared and the <code class="language-plaintext highlighter-rouge">.url</code> set to download location of the uploaded content.</li>
-  <li>If providing <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code>, it is possible to manually perform the upload to the Storage-Service beforehand and set the <code class="language-plaintext highlighter-rouge">.url</code> to the download location of the uploaded content. For <em>Generic Material</em> in the Plan service, it is also possible to provide an external URL (A URL for a resource/file outside the eHealth infrastructure).</li>
+  <li>If providing <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code>, it will be decoded and uploaded to the infrastructure's <a href="https://storage-service.devtest.systematic-ehealth.com/swagger-ui/index.html">Storage-Service</a>, after which the <code class="language-plaintext highlighter-rouge">.size</code> is set to the byte size of the uploaded data, the <code class="language-plaintext highlighter-rouge">.data</code> field is cleared, and the <code class="language-plaintext highlighter-rouge">.url</code> set to download location of the uploaded content.</li>
+  <li>If providing <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code>, then <code class="language-plaintext highlighter-rouge">.attachment.size</code> is mandatory. It is possible to manually perform the upload to the Storage-Service beforehand and set the <code class="language-plaintext highlighter-rouge">.url</code> and <code class="language-plaintext highlighter-rouge">.size</code> of the uploaded content. For <em>General Material</em> in the Plan service, the <code class="language-plaintext highlighter-rouge">.url</code> can be to an external resource/file outside the eHealth infrastructure.</li>
 </ul>
 
 <p><code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.contentType</code> must be populated with the mime-type of the content as the value is passed on to the Storage-Service. The Storage-Service uses it for validation on download requests to ensure that user's accept-header matches the contentType they are downloading. This is also the case if the upload is performed manually beforehand. Then the used contentType from the manual upload should be the same as the one provided in <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.contentType</code>.</p>
 
-<p>If uploading directly to the Storage-Service instead of going through either the Plan or CarePlan service, it is important to note the difference between uploading <em>Patient-Specific Material</em> and <em>Generic Material</em>:</p>
+<p>If uploading directly to the Storage-Service instead of going through either the Plan or CarePlan service, it is important to note the difference between uploading <em>Patient-Specific Material</em> and <em>General Material</em>:</p>
 <ul>
   <li>For <em>Patient-Specific Material</em> one must supply the <code class="language-plaintext highlighter-rouge">episodeOfCareReference</code> and <code class="language-plaintext highlighter-rouge">patientReference</code> parameters as this indicates to the service that the content is sensitive and must be encrypted. Additionally, not supplying them will cause a validation mismatch in the CarePlan service when creating the DocumentReference as they are validated against the Patient and EpisodeOfCare references in the DocumentReference.</li>
-  <li>For <em>Generic Material</em> the <code class="language-plaintext highlighter-rouge">episodeOfCareReference</code> and <code class="language-plaintext highlighter-rouge">patientReference</code> parameters must not be supplied as the content is not sensitive and therefore does not require encryption. Additionally, supplying them will cause a validation mismatch in the Plan service when creating the DocumentReference as they are validated to be empty.</li>
+  <li>For <em>General Material</em> the <code class="language-plaintext highlighter-rouge">episodeOfCareReference</code> and <code class="language-plaintext highlighter-rouge">patientReference</code> parameters must not be supplied as the content is not sensitive and therefore does not require encryption. Additionally, supplying them will cause a validation mismatch in the Plan service when creating the DocumentReference as they are validated to be empty.</li>
 </ul>
 
 <p>After creation of a DocumentReference, when trying to update it:</p>
 <ul>
-  <li>If the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> is a URL in the Storage-Service, it is not possible to update the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> field after creation. However, it is possible to update the uploaded content through the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> field. To do so both the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> and <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> fields must be populated for the update. The content in the <code class="language-plaintext highlighter-rouge">.data</code> field will be decoded and uploaded to the Storage-Service URL in <code class="language-plaintext highlighter-rouge">.url</code> overwriting the content that was there before. The <code class="language-plaintext highlighter-rouge">.data</code> field is cleared after upload and only the <code class="language-plaintext highlighter-rouge">.url</code> remains in the DocumentReference.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> is a URL in the Storage-Service, it is not possible to update the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> field after creation. However, it is possible to update the uploaded content through the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> field. There are two ways to do so:
+    <ol>
+      <li>By removing the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> and <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.size</code>, providing only the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> field in the content of the resource. This will decode and upload the content to the Storage-Service URL that is in <code class="language-plaintext highlighter-rouge">.url</code> for the existing resource, overwriting the content that was there before. The <code class="language-plaintext highlighter-rouge">.data</code> field is cleared after upload and only the <code class="language-plaintext highlighter-rouge">.url</code> and <code class="language-plaintext highlighter-rouge">.size</code> remains in the DocumentReference. This will also automatically set the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.size</code> field to the size of the newly uploaded content.</li>
+      <li>By providing the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code>, <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.size</code> and <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> fields in the update. However, this requires that the <code class="language-plaintext highlighter-rouge">.size</code> correctly reflects the byte size (before base64 encoding) of the new data and that the <code class="language-plaintext highlighter-rouge">.url</code> is not changed. This will decode and upload the content to the Storage-Service URL in <code class="language-plaintext highlighter-rouge">.url</code>, overwriting the content that was there before. The <code class="language-plaintext highlighter-rouge">.data</code> field is cleared after upload and only the <code class="language-plaintext highlighter-rouge">.url</code> and <code class="language-plaintext highlighter-rouge">.size</code> remains in the DocumentReference.</li>
+    </ol>
+  </li>
   <li>If the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> is set to an external URL, it is allowed to update the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.url</code> field after creation. However, it is not allowed to change it to a Storage-Service URL or add data to the <code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment.data</code> field.</li>
 </ul>
 
-<p>It is also possible to update the uploaded content directly at the Storage-Service without going through the Plan or CarePlan service. The url of the content will not change, and therefore there is no need to update the Storage-Service URL stored in the DocumentReference. One should note that the <code class="language-plaintext highlighter-rouge">episodeOfCareReference</code> and <code class="language-plaintext highlighter-rouge">patientReference</code> parameters are required to match the existing content, it is not possible to change from <em>Patient-Specific Material</em> to <em>Generic Material</em> or vice versa.</p>
+<p>It is also possible to update the uploaded content directly at the Storage-Service without going through the Plan or CarePlan service. The url of the content will not change, and therefore there is no need to update the Storage-Service URL stored in the DocumentReference. One should note that the <code class="language-plaintext highlighter-rouge">episodeOfCareReference</code> and <code class="language-plaintext highlighter-rouge">patientReference</code> parameters are required to match the existing content, it is not possible to change from <em>Patient-Specific Material</em> to <em>General Material</em> or vice versa.</p>
 
 <h3 id="modifierrole">ModifierRole</h3>
-<p>This extension is mandatory for <em>Material for Citizens</em>. However, for <em>Instructional Material</em> this extension is optional and not used for any validation. Specifically for <em>Generic Material</em> it is the basis for validation of the user's organizational context.</p>
+<p>This extension is mandatory for <em>Material for Citizens</em>. However, for <em>Instructional Material</em> this extension is optional and not used for any validation. Specifically for <em>General Material</em> it is the basis for validation of the user's organizational context.</p>
 
 <h3 id="intendedorganization">IntendedOrganization</h3>
 <p>Used to indicate the organizations that might have an interest in accessing the material. However, not the basis of any validation.</p>
@@ -686,7 +695,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Where to access the document</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 7dda8c89-78c0-4972-8497-9601363c97d0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ffdfb88d-86c4-426d-bc19-bb71f0ccf835
 document.getElementById('cbehealth-documentreferenceK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-documentreferenceK'), 'binding', document.getElementById('cbehealth-documentreferenceK-binding').checked, document.getElementById('ppehealth-documentreferenceK'));
 document.getElementById('cbehealth-documentreferenceK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -864,7 +873,7 @@ filterDesc(document.getElementById('ehealth-documentreferenceK'), 'obligation', 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-patient.html">ehealth-patient</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Patient demographics from source</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 7dda8c89-78c0-4972-8497-9601363c97d0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ffdfb88d-86c4-426d-bc19-bb71f0ccf835
 document.getElementById('cbehealth-documentreferenceD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-documentreferenceD'), 'binding', document.getElementById('cbehealth-documentreferenceD-binding').checked, document.getElementById('ppehealth-documentreferenceD'));
 document.getElementById('cbehealth-documentreferenceD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1249,7 +1258,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html">Resource</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Related identifiers or resources<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 7dda8c89-78c0-4972-8497-9601363c97d0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ffdfb88d-86c4-426d-bc19-bb71f0ccf835
 document.getElementById('cbehealth-documentreferenceS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-documentreferenceS'), 'binding', document.getElementById('cbehealth-documentreferenceS-binding').checked, document.getElementById('ppehealth-documentreferenceS'));
 document.getElementById('cbehealth-documentreferenceS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1634,7 +1643,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Where to access the document</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 7dda8c89-78c0-4972-8497-9601363c97d0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ffdfb88d-86c4-426d-bc19-bb71f0ccf835
 document.getElementById('cbehealth-documentreferenceKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-documentreferenceKA'), 'binding', document.getElementById('cbehealth-documentreferenceKA-binding').checked, document.getElementById('ppehealth-documentreferenceKA'));
 document.getElementById('cbehealth-documentreferenceKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1812,7 +1821,7 @@ filterDesc(document.getElementById('ehealth-documentreferenceKA'), 'obligation',
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-patient.html">ehealth-patient</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Patient demographics from source</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 7dda8c89-78c0-4972-8497-9601363c97d0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ffdfb88d-86c4-426d-bc19-bb71f0ccf835
 document.getElementById('cbehealth-documentreferenceDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-documentreferenceDA'), 'binding', document.getElementById('cbehealth-documentreferenceDA-binding').checked, document.getElementById('ppehealth-documentreferenceDA'));
 document.getElementById('cbehealth-documentreferenceDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2196,7 +2205,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="http://hl7.org/fhir/R4/resource.html">Resource</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Related identifiers or resources<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 7dda8c89-78c0-4972-8497-9601363c97d0
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // ffdfb88d-86c4-426d-bc19-bb71f0ccf835
 document.getElementById('cbehealth-documentreferenceSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-documentreferenceSA'), 'binding', document.getElementById('cbehealth-documentreferenceSA-binding').checked, document.getElementById('ppehealth-documentreferenceSA'));
 document.getElementById('cbehealth-documentreferenceSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2432,7 +2441,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#7.0.8 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 2, 2025 12:56+0000">2025-12-02</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#8.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:57+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

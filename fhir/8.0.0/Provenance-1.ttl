@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/Provenance/1> a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-access-provenance"^^xsd:anyURI ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-access-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Provenance 1</b></p><a name=\"1\"> </a><a name=\"hc1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-access-provenance.html\">ehealth-access-provenance</a></p></div><p>Provenance for <a href=\"Patient-102.html\">Nancy Ann Berggren (official) Ukendt, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))</a></p><p>Summary</p><table class=\"grid\"><tr><td>Occurrence</td><td>2026-01-12 10:00:00+0100 --&gt; (ongoing)</td></tr><tr><td>Recorded</td><td>2026-01-12 10:00:00+0100</td></tr><tr><td>Activity</td><td><span title=\"Codes:{http://ehealth.sundhed.dk/cs/access-provenance-activity user-authentication}\">User authentication</span></td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>Role</b></td><td><b>who</b></td></tr><tr><td/><td><a href=\"Patient-102.html\">Nancy Ann Berggren (official) Ukendt, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))</a></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:target ( [
+     fhir:link <http://ehealth.sundhed.dk/fhir/Patient/102> ;
+     fhir:reference [ fhir:v "Patient/102" ]
+  ] ) ; # 
+  fhir:occurred [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2026-01-12T10:00:00+01:00"^^xsd:dateTime ]
+  ] ; # 
+  fhir:recorded [ fhir:v "2026-01-12T10:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:activity [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/access-provenance-activity"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "user-authentication" ]
+     ] )
+  ] ; # 
+  fhir:agent ( [
+     fhir:role ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://ehealth.sundhed.dk/cs/access-provenance-agent-role"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "assisted-login" ]
+       ] )
+     ] ) ;
+     fhir:who [
+       fhir:link <http://ehealth.sundhed.dk/fhir/Patient/102> ;
+       fhir:reference [ fhir:v "Patient/102" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

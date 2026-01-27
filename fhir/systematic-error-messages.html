@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Systematic Error Messages - eHealth Infrastructure v7.0.8</title>
+    <title>Systematic Error Messages - eHealth Infrastructure v8.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"85"}
-    h3,h4,h5,h6{--heading-prefix:"85"}</style>
+    <style type="text/css">h2{--heading-prefix:"89"}
+    h3,h4,h5,h6{--heading-prefix:"89"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -61,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">7.0.8 - release
+            <span style="display:inline-block;">8.0.0 - release
 
 
 
-  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+  <span title="">DK</span>
 
 
             </span>
@@ -223,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v7.0.8: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v8.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Systematic Error Messages</h2>
   
 
@@ -327,6 +327,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </tbody>
     </table>
   </li>
+  <li><code class="language-plaintext highlighter-rouge">ACTIVITYDEFINITION_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</li>
 </ul>
 
 <h4 id="ehealth-appointment">ehealth-appointment</h4>
@@ -414,7 +415,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="ehealth-clinical">ehealth-clinical</h4>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_VALIDATION_STATE_FINDING_CODE_NOT_ALLOWED</code>: Invalidation/Invalidation Retraction finding code is not allowed for ClinicalImpression outside custom operation.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_VALIDATION_STATE_FINDING_CODE_NOT_ALLOWED</code>: Invalidation/Invalidation Retraction finding code is not allowed for ClinicalImpression outside custom operation.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CLINICAL_IMPRESSION_MEASUREMENT_VALIDITY_UPDATED_CODE_REQUIRED</code>: ClinicalImpressions for Invalidation/Invalidation Retraction must have ClinicalImpression.code=MeasurementValidityUpdated</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-codesystem">ehealth-codesystem</h4>
@@ -436,7 +442,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_SUBJECT_NOT_MATCHING_SERVICEREQUEST</code>: The subject for the CommunicationRequest: %s does not match the subject of the referenced ServiceRequest: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_EXCACTLY_ONE_RECIPIENT_SEARCHPRARAM</code>: Excactly one recipient search parameter required</p>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_EXCACTLY_ONE_RECIPIENT_SEARCHPRARAM</code>: Exactly one recipient search parameter required</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">COMMUNICATIONREQUEST_NO_SYSTEM_TAGS_WITHOUT_EOC</code>: CommunicationRequest must have a system tags when referencing an EpisodeOfCare</p>
   </li>
 </ul>
 
@@ -479,10 +488,34 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_MISSING_URL</code>: DocumentReference to update must contain an URL identifying the content.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_CONTENT_MANDATORY</code>: DocumentReference for material must contain exactly one content</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_ON_UPDATE</code>: When updating registration of DocumentReference for material, data is only allowed for URLs identifying internal content.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_ON_CREATE</code>: When registering a new DocumentReference for material, either a URL identifying external content, a URL identifying internal content or data in the Attachment must be provided.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_ORIGIN_UPDATE</code>: It is not allowed to change the content origin from internal to external or vice versa.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_INVALID_CONTENT_DATA_EXTERNAL_ORIGIN</code>: It is not allowed to have data in the content attachment when the URL is external.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_UPDATE_NOT_ALLOWED_FOR_FIELD</code>: DocumentReference for material does not allow update operations with changes for field: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_REFERENCE_SIZE_MUST_BE_PROVIDED_FOR_URL</code>: When providing URL instead of data for content, DocumentReference.attachment.size must be provided (number of bytes of content).</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_NOT_OF_TYPE_QFDD</code>: The document is expected to be of type QFDD</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_SOR_ORGANIZATION_REQUIRED</code>: Security token organization context must be a SOR organization for query</p>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_SOR_ORGANIZATION_REQUIRED</code>: Security token organization context must be resolvable to a SOR identifier for query</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">DOCUMENT_QUERY_XDS_ERROR</code>: The following errors where received from Document Sharing</p>
@@ -504,7 +537,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="ehealth-documentreference">ehealth-documentreference</h4>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_REFER_TO_PATIENT</code>: It is not possible to set a patient as a subject for a Document reference</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_REFER_TO_PATIENT</code>: It is not possible to set a patient as a subject for a Document reference</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_EPISODEOFCARE_CONTEXT_ENCOUNTER</code>: DocumentReference for general material must not contain references to EpisodeOfCare in context.encounter</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_STORAGE_SERVICE_UPLOAD_ERROR</code>: Failed to upload material: Invalid response from storage service</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_SUBJECT_MANDATORY</code>: DocumentReference.subject is mandatory, but is not set</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_ENCOUNTER_MANDATORY</code>: DocumentReference.context.encounter must have exactly one reference</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_URL_CHANGED</code>: The contents attachment.url cannot be changed. The url was: %s, but the new url is: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_INTERNAL_URL_NO_CONTENT</code>: No content found at internal URL: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_INTERNAL_URL_REGISTRATION_MUST_MATCH_CONTENT</code>: DocumentReference.context.encounter and DocumentReference.subject must match EpisodeOfCare and Patient for content at internal URL: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_PATIENT_MATERIAL_NOT_ALLOWED</code>: It is not possible to create or update a DocumentReference for patient-specific material on this service.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_EXTERNAL_URL_NOT_ALLOWED</code>: It is not allowed to set an external url for patient-specific material</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_INVALID_CITIZEN_SPECIFIC_DATA</code>: When the content is patient-specific material, either an internal content URL or data must be provided</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">DOCUMENTREFERENCE_NOT_CITIZEN_SPECIFIC</code>: Patient-specific material must use the correct category code, but is: %s</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-episodeofcare">ehealth-episodeofcare</h4>
@@ -526,10 +594,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_INCORRECT_CONDITION_SUBJECT</code>: EpisodeOfCare and Condition doesn't point to the same Patient</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_MISSING_COEXISTENCE_TAGS</code>: Missing coexistence-tags in JWToken when creating EpisodeOfCare</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_INVALID_COEXISTENCE_TAGS</code>: Invalid Conditions provided when creating EpisodeOfCare using coexistence-tags: %s</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_PATCH_NO_CONSENT</code>: No valid Episode Of Care related consent</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_MUST_BE_ACTIVE_AND_NOT_DECEASED</code>: Patient.active must be true and Patient.deceased must be false to create episode of care</p>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_PATIENT_MUST_NOT_BE_DECEASED</code>: Patient.deceased must be false to create episode of care</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CREATE_STATUS_HISTORY_NOT_EMPTY</code>: It is not allowed to fill status history manually</p>
@@ -547,7 +621,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_IS_CONTEXT_ALLOWED_MATCH_NOT_FOUND</code>: It is not possible to set the Episode Of Care as a context</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_TEAM_REFERENCE_MISSING</code>: It is not possible to add or replace team without a CareTeam reference</p>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CROSS_TEAM_SEARCH_INVALID_CONDITION_PARAMETER</code>: When using cross-team search on EpisodeOfCare, Condition parameter must use the Condition:code chained property</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">EPISODEOFCARE_CROSS_TEAM_SEARCH_CONDITION_INVALID_AGAINST_TREATMENT_AREA</code>: Condition:code search parameter must be valid against treatment area determined by coexistence-tag: %s</p>
   </li>
 </ul>
 
@@ -582,6 +659,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_RESOURCE</code>: Not able to resolve %s when input is of type %s.</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_UNABLE_TO_RESOLVE_HISTORICAL_RESOURCE</code>: Not able to resolve historical %s when input is of type %s.</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DURATION_UNIT_CODE_UNKNOWN</code>: Unsupported code %s for Duration.code. Duration.code should be a valid UCUM code. Supported codes are ('s', 'min', 'h', 'd', 'wk', 'mo', 'a').</p>
   </li>
   <li>
@@ -595,6 +675,59 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">LIBRARY_MISSING_IDENTIFIER</code>: Library with identifier: %s and name: %s does not have identifier of type: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LIMIT_EXCEEDED</code>: Limit %s exceeds the maximum allowed soft limit of %s. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_PATH_NOT_RECOGNIZED</code>: Sort path %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_DIRECTION_NOT_RECOGNIZED</code>: Sort direction %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_SORT_EMPTY</code>: Sort path is empty. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_LIMITS_EXCEEDED</code>: Duration %s exceeds the maximum allowed duration of %s months or limit %s exceeds the maximum allowed soft limit of %s. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_MISSING_DURATION_OR_LIMIT</code>: Duration or limit not set. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DATE_FILTER_PATH_NOT_RECOGNIZED</code>: DateFilter path %s is not recognized. Historical data will not be processed for library %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">LIBRARY_EVALUATE_DATE_FILTER_EMPTY</code>: DateFilter path is empty. Historical data will not be processed for library %s</p>
+  </li>
+</ul>
+
+<h4 id="ehealth-material">ehealth-material</h4>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_MISSING_PAYLOAD</code>: Expected a single payload entry on MaterialCommunication, but it is missing.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_MISSING_EPISODE_OF_CARE</code>: Missing EpisodeOfCare reference on MaterialCommunication</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_PATIENT_MISMATCH_ON_EPISODEOFCARE</code>: Mismatch between Patient on MaterialCommunication and EpisodeOfCare. Subject on MaterialCommunication: %s, Patient on EpisodeOfCare: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_EPISODE_OF_CARE_MISMATCH_ON_CONTENT</code>: Mismatch between EpisodeOfCare on MaterialCommunication and DocumentReference content. EpisodeOfCare on MaterialCommunication: %s, EpisodeOfCare on DocumentReference content: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_PATIENT_MISMATCH_ON_CONTENT</code>: Mismatch between Patient on MaterialCommunication and DocumentReference content. Patient on MaterialCommunication: %s, Patient on DocumentReference content: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_UNABLE_TO_FIND_CONTENT</code>: Unable to find content for DocumentReference with id %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_UPDATE_NOT_ALLOWED_FOR_FIELD</code>: MaterialCommunication does not allow update operations with changes for field: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">MATERIAL_COMMUNICATION_SUBJECT_AND_RECIPIENT_MISMATCH</code>: MaterialCommunication subject must also be the recipient.</p>
   </li>
 </ul>
 
@@ -771,6 +904,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>
     <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_MISSING_IDENTIFIER</code>: Organization %s does not have identifier of type: %s</p>
   </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_REFERENCE_IDENTIFIER_MISSING_PROVIDER_NUMBER</code>: There are no identifiers of type ProviderNumber in the Organization reference list: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_REFERENCE_IDENTIFIER_PROVIDER_NUMBER_NOT_UNIQUE</code>: The identifiers of type ProviderNumber are not unique in the Organization reference list: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_NOT_FOUND</code>: No active Organization could be found for the ProviderNumber: %s</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ORGANIZATION_NO_COMMON_PARENT_FOUND_PROVIDER_NUMBER</code>: No common parent found for the ProviderNumber: %s</p>
+  </li>
 </ul>
 
 <h4 id="ehealth-plandefinition">ehealth-plandefinition</h4>
@@ -793,6 +938,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_MISSING_RELATED_ACTION</code>: An action points to a non-existing related action</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PLANDEFINITION_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</p>
   </li>
 </ul>
 
@@ -825,7 +973,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMTPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_EMPTY_PERIOD</code>: QuestionnaireResponse cannot have an effectivePeriod without start or end DateTimeType.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_RESPONSE_EFFECTIVE_PERIOD_INVALID_DATETIME</code>: QuestionnaireResponse has invalid DateTimeType on effectivePeriod.%s, must have minutes, seconds or millis precision and must have a timezone.</p>
@@ -855,6 +1003,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_QFDD_DOES_NOT_EXIST_IN_DOCUMENT_TRANSFORMATION</code>: The QFDD with the identifier %s does not exist in document transformation</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_CREATE_MODIFIER_ROLE_OWNER_MANDATORY</code>: Modifier role owner is mandatory</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">QUESTIONNAIRE_TERMINOLOGY_HELPER_CODE_NOT_FOUND</code>: Code %s for CodeSystem %s not found</p>
@@ -1026,6 +1177,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_DEPRECATE_DOCUMENT_NO_DOCUMENT_FOUND</code>: No matching document found</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_GENERIC_NARRATIVE_ERROR</code>: Can't generate narrative for: %s</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_UNKNOWN_QUESTION_TYPE</code>: Unknown QFDD question type. Question id: %s</p>
   </li>
   <li>
@@ -1038,7 +1192,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_MISSING_STEPVALUE</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but has no step value extension.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId '%s' has itemControl: 'slider' but either repeats if true. Was: %s. or maxOccursValue is larger than 1. Was: %s.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_ITEM_WITH_SLIDER_NOT_MATCHING_DISCRETE_SLIDER</code>: Questionnaire item with linkId '%s' has itemControl: 'slider', but either Repeats is true or MaxOccurs is not null. Repeats was: %s and MaxOccurs was: %s.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_QFDD_CODESYSTEM_TITLE_MISSING</code>: CodeSystem title is missing, for CodeSystem with url: %s</p>
@@ -1188,28 +1342,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_RESOURCE</code>: Input bundle missing resource: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NARRATIVE_ERROR</code>: Can't generate narrative for: %s</p>
-  </li>
-  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CPR</code>: CPR is mandatory for patient but not present in fhir bundle</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MISSING_OBSERVATION</code>: Observation is mandatory for PHMR</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_CODING</code>: Observation coding system must be urn:oid:1.2.208.176.2.1</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_COMMENT_AUTHOR_REFERENCE</code>: The author of a measurement comment is a reference not provided in the bundle.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_CODING</code>: Observation.observationRanges[x].type.coding.system should be http://www.example.com/medcom/message-codes</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_RAL</code>: RAL observation ranges should not have both High and Low set when transforming to PHRM, but High is: %s, and Low is: %s</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_OBSERVATION_RANGES_GAL</code>: GAL observation ranges should not have both High and Low set when transforming to PHRM, unless either bound is replaced with a RAL reference range, but High is: %s, and Low is: %s</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_NUMBER_OF_DECIMALS</code>: Value should have no more than 7 decimals, but is: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_QUANTITY_MISSING</code>: Value should be Quantity type and not null</p>
@@ -1230,10 +1369,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_INVALID_EFFECTIVE</code>: Invalid Observation.effective, expecting DateTime, Period or Instant</p>
   </li>
   <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_CODESYSTEM_NOT_FOUND</code>: CodeSystem was not found. System: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_DOCUMENT_OBSERVATION_ENTRY_CODESYSTEM_NAME_NOT_DEFINED</code>: PHMR document observation entry must have a CodeSystem name. No one defined for '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_CODE_NOT_FOUND_IN_CODESYSTEM</code>: Code '%s' was not found in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_DESIGNATION_FOR_CODE</code>: Could not find designation use 'phmr-short-name' for code '%s' in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_DESIGNATION_VALUE_FOR_CODE</code>: No value specified for designation use 'phmr-short-name'. Code: '%s'. CodeSystem: '%s'</p>
+  </li>
+  <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_INVALID_METHOD_CODES</code>: Method codes for performerType and provisionMethod for observation with id '%s' could not be established.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_MEASUREMENT_TOO_MANY_DECIMALS</code>: Could not transform measurement with reference range Low: %s and High: %s since we cannot correctly translate more than 7 decimals.</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_MISSING_UNIT_CODE_FOR_QUANTITY</code>: No unit code found for quantity with observation code '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_INVALID_UNIT_MAPPING_FOR_OBSERVATION_CODE</code>: Invalid UCUM unit mapping found for observation code '%s'. Observation has unit: '%s', but expected is one of ('%s')</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_OBSERVATION_MISSING_UNIT_MAPPING_FOR_OBSERVATION_CODE</code>: No UCUM unit mapping found for observation code '%s' in ConceptMap. Has unit code: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_INVALID_COMBINATION_OBSERVATION_UNIT_AND_PHMR_UNIT_PROPERTY</code>: Invalid combination of observation unit: '%s' and PHMR unit property: '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_UNIT_PROPERTY_FOR_CODE</code>: Could not find property 'phmr-unit' for code '%s' in CodeSystem '%s'</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_PHMR_NO_PHMR_UNIT_VALUE_PROPERTY_FOR_CODE</code>: No value specified for property 'phmr-unit'. Code: '%s'. CodeSystem: '%s'</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_CONFIDENTIALITY_CODE</code>: Composition.confidentiality is mandatory</p>
@@ -1248,7 +1417,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_COMPOSITION</code>: Composition expected for transformation is not found</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_ATTESTER</code>: Composition.attester.party is mandatory for transformation</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_MISSING_ATTESTER</code>: Composition.attester must contain one Practitioner and one Organization if the document is shared manually</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_WRONG_TYPE_COMPOSITION_AUTHOR</code>: Composition.author should either be a Patient or Practitioner</p>
@@ -1260,7 +1429,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_AUTHOR_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.authorOrganization must contain SOR identifier: %s</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_ATTESTER_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.attester.party must contain SOR identifier: %s</p>
+    <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_ATTESTER_ORGANIZATION_MUST_CONTAIN_SOR_ID</code>: Composition.attester.party Organization must contain SOR identifier: %s</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">TRANSFORMATION_HEADER_CUSTODIAN_MUST_CONTAIN_SOR_ID</code>: Custodian organization must contain SOR identifier: %s</p>
@@ -1347,7 +1516,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#7.0.8 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 2, 2025 12:56+0000">2025-12-02</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#8.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 27, 2026 10:57+0000">2026-01-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

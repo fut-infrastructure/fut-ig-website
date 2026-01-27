@@ -1,0 +1,66 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-reindex",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-reindex</b></p><a name=\"-s-reindex\"> </a><a name=\"hc-s-reindex\"> </a><p>URL: [base]/$$reindex</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>url</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Optionally provides one ore more relative search parameter URLs (e.g. &quot;Patient?active=true&quot; or &quot;Observation?&quot;) that will be reindexed. Note that the URL applies to the resources as they are currently indexed, so you should not use a search parameter that needs reindexing in the URL or some resources may be missed. If no URLs are provided, all resources of all types will be reindexed.</p>\n</div></td></tr><tr><td>IN</td><td>reindexSearchParameters</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td/><td><div><p>Should search parameters be reindexed (default: ALL)</p>\n</div></td></tr><tr><td>IN</td><td>optimizeStorage</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td/><td><div><p>Should we attempt to optimize storage for resources (default: NONE)</p>\n</div></td></tr><tr><td>IN</td><td>optimisticLock</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>Should we attempt to optimistically lock resources being reindexed in order to avoid concurrency issues (default: true)</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-reindex",
+  "version" : "8.0.0",
+  "name" : "reindex",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-01-27T10:56:04+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "reindex",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "url",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "Optionally provides one ore more relative search parameter URLs (e.g. \"Patient?active=true\" or \"Observation?\") that will be reindexed. Note that the URL applies to the resources as they are currently indexed, so you should not use a search parameter that needs reindexing in the URL or some resources may be missed. If no URLs are provided, all resources of all types will be reindexed.",
+    "type" : "string"
+  },
+  {
+    "name" : "reindexSearchParameters",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Should search parameters be reindexed (default: ALL)",
+    "type" : "code"
+  },
+  {
+    "name" : "optimizeStorage",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Should we attempt to optimize storage for resources (default: NONE)",
+    "type" : "code"
+  },
+  {
+    "name" : "optimisticLock",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Should we attempt to optimistically lock resources being reindexed in order to avoid concurrency issues (default: true)",
+    "type" : "boolean"
+  }]
+}
