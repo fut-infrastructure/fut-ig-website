@@ -1,0 +1,535 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Wound Conditions - TTL Representation - eHealth Infrastructure v9.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"99.459"}
+    h3,h4,h5,h6{--heading-prefix:"99.459"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">9.0.0 - release
+
+
+
+  <span title="">DK</span>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Wound Conditions</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 9" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v9.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="ValueSet-ehealth-wound-conditions.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-wound-conditions.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-wound-conditions.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Wound Conditions - TTL Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2026-02-10
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="ValueSet-ehealth-wound-conditions.ttl" no-download="true">Raw ttl</a> | <a href="ValueSet-ehealth-wound-conditions.ttl" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="rdf" style="white-space: pre; overflow: hidden">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+# - resource -------------------------------------------------------------------
+
+ a fhir:ValueSet ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ehealth-wound-conditions&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.text">fhir:text</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet ehealth-wound-conditions&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ehealth-wound-conditions\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcehealth-wound-conditions\&quot;&gt; &lt;/a&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html\&quot;&gt;&lt;code&gt;urn:oid:1.2.208.176.2.4&lt;/code&gt;&lt;/a&gt;&lt;table class=\&quot;none\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI830B\&quot;&gt;DI830B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Ulcus cruris post-thromboticum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI830A\&quot;&gt;DI830A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Varicøst ulcus på underekstremite&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI870\&quot;&gt;DI870&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Posttrombotisk syndrom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI832\&quot;&gt;DI832&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Varicer i underekstremitet med både ulcus og eksem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI831\&quot;&gt;DI831&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Varicer i underekstremitet med eksem&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DR699\&quot;&gt;DR699&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Sygdom uden kendt eller specificeret årsag&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL892A\&quot;&gt;DL892A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad III ved neurologiske udfald&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL89\&quot;&gt;DL89&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Tryksår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL892\&quot;&gt;DL892&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad III&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL891\&quot;&gt;DL891&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad II&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL891A\&quot;&gt;DL891A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad II ved neurologiske udfald&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL890A\&quot;&gt;DL890A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad I ved neurologiske udfald&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL890\&quot;&gt;DL890&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad I&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL893A\&quot;&gt;DL893A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad IV ved neurologiske udfald&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL893\&quot;&gt;DL893&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Decubitus grad IV&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS819\&quot;&gt;DS819&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på underben UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS913A\&quot;&gt;DS913A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på fod UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS519\&quot;&gt;DS519&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på albueregion eller underarm UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS913\&quot;&gt;DS913&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på anden del af fod&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT091\&quot;&gt;DT091&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på truncus UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS898\&quot;&gt;DS898&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden læsion i knæregion eller på underben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS999\&quot;&gt;DS999&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Læsion af ankel eller fod UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT14\&quot;&gt;DT14&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Læsion uden angivelse af legemsregion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ933\&quot;&gt;DZ933&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Tilstand med kolostomi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC509\&quot;&gt;DC509&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Brystkræft UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-BNPF2\&quot;&gt;BNPF2&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Pleje af huddonorsted&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT813C\&quot;&gt;DT813C&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Overfladisk bristning eller nekrose af operationssår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT875\&quot;&gt;DT875&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Nekrose i amputationsstump&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814H\&quot;&gt;DT814H&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Postoperativ dyb sårinfektion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814G\&quot;&gt;DT814G&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Postoperativ overfladisk sårinfektion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814F\&quot;&gt;DT814F&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Postoperativ sårinfektion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT813D\&quot;&gt;DT813D&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Dyb bristning af operationssår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT876\&quot;&gt;DT876&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden eller ikke specificeret komplikation i amputationstump&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL120\&quot;&gt;DL120&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Bulløs pemfigoid&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL889\&quot;&gt;DL889&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Pyoderma gangraenosum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL959\&quot;&gt;DL959&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Vaskulitis begrænset til huden UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL958\&quot;&gt;DL958&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden vaskulitis begrænset til huden&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL921\&quot;&gt;DL921&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Necrobiosis lipoidica IKA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC437A\&quot;&gt;DC437A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Malignt melanom i hud på ben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ZM80703\&quot;&gt;ZM80703&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;planocellulært karcinom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ZM80903\&quot;&gt;ZM80903&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;basocellulært karcinom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC449\&quot;&gt;DC449&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden hudkræft UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE147\&quot;&gt;DE147&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Diabetes UNS med multiple komplikationer&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE105C\&quot;&gt;DE105C&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Type 1-diabetes med gangræn&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE145C\&quot;&gt;DE145C&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Diabetes UNS med gangræn&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE105B\&quot;&gt;DE105B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Type 1-diabetes med fodsår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE145B\&quot;&gt;DE145B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Diabetes UNS med fodsår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE104\&quot;&gt;DE104&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Type 1-diabetes med neurologisk komplikation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE144\&quot;&gt;DE144&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Diabetes UNS med neurologisk komplikation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE115C\&quot;&gt;DE115C&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Type 2-diabetes med gangræn&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE115B\&quot;&gt;DE115B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Type 2-diabetes med fodsår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM142\&quot;&gt;DM142&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Diabetisk artropati&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE114\&quot;&gt;DE114&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Type 2-diabetes med neurologisk komplikation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979E\&quot;&gt;DL979E&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Ulcus pedis arterioscleroticum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI702A\&quot;&gt;DI702A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Aterosklerotisk gangræn&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI702\&quot;&gt;DI702&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Aterosklerose i arterie i ekstremitet&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979B\&quot;&gt;DL979B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Ulcus cruris arterioscleroticum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979A\&quot;&gt;DL979A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Neurogent ulcus på ben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL984\&quot;&gt;DL984&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Kronisk ulcus i huden IKA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DR609\&quot;&gt;DR609&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Ødem UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979\&quot;&gt;DL979&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Ulcus på ben IKA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL059\&quot;&gt;DL059&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Pilonidalcyste uden absces&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI890\&quot;&gt;DI890&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Lymfødem IKA&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL849\&quot;&gt;DL849&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Callositas et clavus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DA469\&quot;&gt;DA469&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Rosen UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL309\&quot;&gt;DL309&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Dermatitis UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL738A\&quot;&gt;DL738A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Folliculitis UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DA46\&quot;&gt;DA46&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Rosen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM146\&quot;&gt;DM146&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Neuropatisk artropati&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL308H\&quot;&gt;DL308H&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Håndeksem UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979C\&quot;&gt;DL979C&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Ulcus perforans pedis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL732\&quot;&gt;DL732&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Suppurerende hidrosadenitis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT959\&quot;&gt;DT959&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Følgetilstand efter forbrænding, ætsning eller forfrysning UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL920B\&quot;&gt;DL920B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Granuloma annulare perforans&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL138\&quot;&gt;DL138&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden bulløs dermatitis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL600\&quot;&gt;DL600&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Nedgroet negl&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL023\&quot;&gt;DL023&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Absces, furunkel eller karbunkel i huden i sæderegionen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT140D\&quot;&gt;DT140D&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Hæmatom UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS718\&quot;&gt;DS718&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på anden eller ikke specificeret del af hofteregion eller lår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ945\&quot;&gt;DZ945&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Hudtransplanteret&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC434\&quot;&gt;DC434&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Malignt melanom i hud på skalpen eller halsen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT691\&quot;&gt;DT691&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Pernio&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS510\&quot;&gt;DS510&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på albue&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL570\&quot;&gt;DL570&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Aktinisk keratose&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT860A\&quot;&gt;DT860A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Graft-versus-host reaktion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL982\&quot;&gt;DL982&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Dermatosis neutrophilica febrilis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL022N\&quot;&gt;DL022N&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Absces på ryggen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT111\&quot;&gt;DT111&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på arm UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS711\&quot;&gt;DS711&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på lår&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ940\&quot;&gt;DZ940&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Nyretransplanteret&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DB028\&quot;&gt;DB028&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Herpes zoster-infektion med anden komplikation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DQ828F\&quot;&gt;DQ828F&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Dyskeratosis follicularis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT669\&quot;&gt;DT669&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Stråleskade UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS912\&quot;&gt;DS912&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på tå med beskadigelse af negl&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI708\&quot;&gt;DI708&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Aterosklerose i anden arterie&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS411\&quot;&gt;DS411&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på overarm&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL40\&quot;&gt;DL40&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Psoriasis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS681D\&quot;&gt;DS681D&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Traumatisk amputation af 5. finger&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM726\&quot;&gt;DM726&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Nekrotiserende bløddelsinfektion&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL050\&quot;&gt;DL050&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Pilonidalcyste med absces&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT247B\&quot;&gt;DT247B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;3° ætsning på ben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS911\&quot;&gt;DS911&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på tå uden beskadigelse af negl&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DD863\&quot;&gt;DD863&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Sarkoidose i hud&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS318A\&quot;&gt;DS318A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på abdomen UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT019\&quot;&gt;DT019&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Multiple åbne sår UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS611\&quot;&gt;DS611&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på finger med beskadigelse af negl&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ489\&quot;&gt;DZ489&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Efterbehandling efter kirurgisk indgreb UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL039\&quot;&gt;DL039&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Flegmone UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT232B\&quot;&gt;DT232B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;2° forbrænding på hånd&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL951\&quot;&gt;DL951&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Erythema elevatum diutinum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS098\&quot;&gt;DS098&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden læsion af hovedet&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS610A\&quot;&gt;DS610A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på finger UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL030A\&quot;&gt;DL030A&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Panaritium tendinosum&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT200\&quot;&gt;DT200&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Forbrænding UNS på hovedet og halsen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS82\&quot;&gt;DS82&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Fraktur af knæ, underben og ankel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DG629\&quot;&gt;DG629&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Polyneuropati UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS000\&quot;&gt;DS000&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Overfladisk læsion af skalpen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL281\&quot;&gt;DL281&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Prurigo nodularis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL282\&quot;&gt;DL282&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Anden form for prurigo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS917\&quot;&gt;DS917&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Multiple åbne sår på ankel og fod&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS610\&quot;&gt;DS610&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Åbent sår på finger uden beskadigelse af negl&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL609\&quot;&gt;DL609&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Neglesygdom UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL984B\&quot;&gt;DL984B&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Hudfissur&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL024\&quot;&gt;DL024&lt;/a&gt;&lt;/td&gt;&lt;td style=\&quot;color: #cccccc\&quot;&gt;Absces, furunkel eller karbunkel i huden på ekstremitet&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">fhir:url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://ehealth.sundhed.dk/vs/wound-conditions&quot;^^xsd:anyURI] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">fhir:version</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;9.0.0&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;WoundConditions&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">fhir:title</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Wound Conditions&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">fhir:experimental</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> false] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2026-02-10T00:00:00+00:00&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">fhir:publisher</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Den telemedicinske infrastruktur (eHealth Infrastructure)&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">fhir:contact</a> ( [
+<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Den telemedicinske infrastruktur (eHealth Infrastructure)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">fhir:telecom</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;url&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;http://ehealth.sundhed.dk&quot; ]     ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">fhir:v</a> &quot;Wound conditions.&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.jurisdiction">fhir:jurisdiction</a> ( [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:iso:std:iso:3166&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DK&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Denmark&quot; ]     ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose">fhir:compose</a> [
+    ( <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">fhir:include</a> [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:oid:1.2.208.176.2.4&quot;^^xsd:anyURI ] ;
+      ( <a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">fhir:concept</a> [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI830B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI830A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI870&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI832&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI831&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DR699&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL892A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL89&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL892&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL891&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL891A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL890A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL890&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL893A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL893&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS819&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS913A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS519&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS913&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT091&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS898&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS999&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT14&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DZ933&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DC509&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;BNPF2&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT813C&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT875&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT814H&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT814G&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT814F&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT813D&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT876&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL120&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL889&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL959&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL958&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL921&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DC437A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ZM80703&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;ZM80903&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DC449&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE147&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE105C&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE145C&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE105B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE145B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE104&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE144&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE115C&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE115B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DM142&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DE114&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL979E&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI702A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI702&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL979B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL979A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL984&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DR609&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL979&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL059&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI890&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL849&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DA469&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL309&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL738A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DA46&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DM146&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL308H&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL979C&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL732&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT959&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL920B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL138&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL600&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL023&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT140D&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS718&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DZ945&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DC434&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT691&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS510&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL570&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT860A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL982&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL022N&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT111&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS711&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DZ940&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DB028&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DQ828F&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT669&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS912&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DI708&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS411&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL40&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS681D&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DM726&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL050&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT247B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS911&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DD863&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS318A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT019&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS611&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DZ489&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL039&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT232B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL951&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS098&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS610A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL030A&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DT200&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS82&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DG629&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS000&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL281&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL282&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS917&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DS610&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL609&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL984B&quot; ]       ] [
+<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;DL024&quot; ]       ] )     ] )
+  ] . # 
+
+</pre>
+
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#9.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 21, 2026 07:30+0000">2026-04-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

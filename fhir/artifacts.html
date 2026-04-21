@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - eHealth Infrastructure v8.0.1</title>
+    <title>Artifacts Summary - eHealth Infrastructure v9.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"97"}
-    h3,h4,h5,h6{--heading-prefix:"97.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"99"}
+    h3,h4,h5,h6{--heading-prefix:"99.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">8.0.1 - release
+            <span style="display:inline-block;">9.0.0 - release
 
 
 
@@ -223,7 +223,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v8.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v9.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -487,6 +487,15 @@ To get resources bodies in the output the request header has to contain paramete
     <p>Whenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token.</p>
   </li>
 </ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition--s-migrate.html"
+                  title="OperationDefinition/-s-migrate">Data migration</a>
+            </td>
+            <td>
+<p>Data migration</p>
 </td>
          </tr>
          <tr>
@@ -3903,8 +3912,10 @@ All returned objects are Fhir resources. See the implementation guide for detail
   <li>_outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'</li>
   <li>_type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.</li>
   <li>_since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).</li>
+  <li>_until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).</li>
   <li>_typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.</li>
   <li>_typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.</li>
+  <li>_includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.</li>
   <li>_exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'
     <h2 id="polling-status-of-export">Polling status of export</h2>
     <p>Subsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.</p>
@@ -11201,11 +11212,38 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="OperationDefinition-Binary-its-expunge.html"
+                  title="OperationDefinition/Binary-its-expunge">expunge</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition--s-hapi.fhir.reindex-status.html"
+                  title="OperationDefinition/-s-hapi.fhir.reindex-status">hapi.fhir.reindex-status</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="OperationDefinition--s-import.html"
                   title="OperationDefinition/-s-import">import</a>
             </td>
             <td>
 <p>Import terminology resources</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition--s-meta.html"
+                  title="OperationDefinition/-s-meta">meta</a>
+            </td>
+            <td>
+
 </td>
          </tr>
          <tr>
@@ -11412,6 +11450,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Search parameter for finding communication based on thread id</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-ehealth-communication-search-topic.html"
+                  title="SearchParameter/ehealth-communication-search-topic">topic</a>
+            </td>
+            <td>
+<p>Search parameter for finding communication based on topic</p>
 </td>
          </tr>
       </tbody>
@@ -11867,6 +11914,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-code-qualification.html"
+                  title="StructureDefinition/ehealth-code-qualification">Code Qualification</a>
+            </td>
+            <td>
+<p>Condition qualification</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-enableBehavior-conditionId.html"
                   title="StructureDefinition/ehealth-enableBehavior-conditionId">Condition Id</a>
             </td>
@@ -11971,6 +12027,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>The action guidance type</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-provider-affiliation.html"
+                  title="StructureDefinition/ehealth-provider-affiliation">Ehealth provider affiliation</a>
+            </td>
+            <td>
+<p>The Practitioner's association with a provider identifier (Danish: Ydernummer).</p>
 </td>
          </tr>
          <tr>
@@ -12187,6 +12252,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>The method of acquiring the value of an observation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-address-official.html"
+                  title="StructureDefinition/address-official">Official Address</a>
+            </td>
+            <td>
+<p>Indicate that this address is meant to be the 'official' address for that person. What an 'official' address is depends on the country. This extension allows to specify if this address is or it is not the official address, or to indicate that this is the official address for that country.</p>
 </td>
          </tr>
          <tr>
@@ -12843,6 +12917,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-message-author.html"
+                  title="StructureDefinition/ehealth-message-author">eHealth Message Author</a>
+            </td>
+            <td>
+<p>Records the attorney (RelatedPerson) who authored a message on behalf of the grantor patient, for cases where the physical author is not the same as Communication.sender. When a RELATED_PERSON user sends a message, Communication.sender must still reference the grantor patient, and this extension must reference the acting RelatedPerson. In future, the target list may be extended to include Practitioner references (e.g. for messages sent by a CareTeam member), but for now only RelatedPerson is supported.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-effectivePeriod.html"
                   title="StructureDefinition/ehealth-effectivePeriod">effectivePeriod</a>
             </td>
@@ -12963,6 +13046,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Treatment area for all conditions (xa).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-treatment-area-xc-2.html"
+                  title="ValueSet/ehealth-treatment-area-xc-2">Angst (treatment area)</a>
+            </td>
+            <td>
+<p>Treatment area for angst conditions (xc).</p>
 </td>
          </tr>
          <tr>
@@ -13110,6 +13202,24 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-vs-condition-qualification.html"
+                  title="ValueSet/vs-condition-qualification">Condition Qualification</a>
+            </td>
+            <td>
+<p>Value set of condition qualifications</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-condition-qualification-tele-wound.html"
+                  title="ValueSet/condition-qualification-tele-wound">Condition Qualification for Tele Wound</a>
+            </td>
+            <td>
+<p>Value set of condition qualifications for tele wound domain.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-conditions.html"
                   title="ValueSet/ehealth-conditions">Conditions</a>
             </td>
@@ -13241,6 +13351,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Used to specify why the normally expected content of the data element is missing.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-treatment-area-xc-1.html"
+                  title="ValueSet/ehealth-treatment-area-xc-1">Depression (treatment area)</a>
+            </td>
+            <td>
+<p>Treatment area for depression conditions (xc).</p>
 </td>
          </tr>
          <tr>
@@ -13866,7 +13985,7 @@ Http response code 404 will be returned if no related SOR organization could be 
                   title="ValueSet/relatedperson-relationshiptype">RelationshipTypes</a>
             </td>
             <td>
-<p>A set of codes that can be used to indicate the relationship between a Patient and a Related Person used in Denmark</p>
+<p>A set of codes that can be used to indicate the relationship between a Patient and a Related Person used in Denmark. Including the specific permissions granted to the Related Person in the context of a Power of Attorney relationship.</p>
 </td>
          </tr>
          <tr>
@@ -14024,6 +14143,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-treatment-areas-xc.html"
+                  title="ValueSet/ehealth-treatment-areas-xc">Treatment Area Collection xc</a>
+            </td>
+            <td>
+<p>Combined treatment areas for coexistence tag xc.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-trigger-behavior.html"
                   title="ValueSet/ehealth-trigger-behavior">Trigger Behavior</a>
             </td>
@@ -14051,6 +14179,60 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-vs-usage-context-body-site.html"
+                  title="ValueSet/vs-usage-context-body-site">Usage Context Body site</a>
+            </td>
+            <td>
+<p>Usage Body site</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-usage-context-task-type.html"
+                  title="ValueSet/vs-usage-context-task-type">Usage Context Task Type</a>
+            </td>
+            <td>
+<p>Value set of task types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-usage-context-workflow.html"
+                  title="ValueSet/vs-usage-context-workflow">Usage Context Workflow</a>
+            </td>
+            <td>
+<p>Value set of workflows</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-usage-context-body-site-tele-wound.html"
+                  title="ValueSet/usage-context-body-site-tele-wound">Usage Context for Tele Wound Body Site</a>
+            </td>
+            <td>
+<p>Value set of body site for tele wound domain.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-usage-context-task-type-tele-wound.html"
+                  title="ValueSet/vs-usage-context-task-type-tele-wound">Usage Context for Tele Wound Task Type </a>
+            </td>
+            <td>
+<p>Value set of task types for the Tele Wound domain.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-vs-usage-context-workflow-tele-wound.html"
+                  title="ValueSet/vs-usage-context-workflow-tele-wound">Usage Context for Tele Wound Workflow </a>
+            </td>
+            <td>
+<p>Value set of workflows for Tele Wound</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-usage-quality.html"
                   title="ValueSet/ehealth-usage-quality">Usage Quality</a>
             </td>
@@ -14074,6 +14256,24 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>View types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-wound-conditions.html"
+                  title="ValueSet/ehealth-wound-conditions">Wound Conditions</a>
+            </td>
+            <td>
+<p>Wound conditions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-treatment-area-xc-3.html"
+                  title="ValueSet/ehealth-treatment-area-xc-3">Z-diagnoser (treatment area)</a>
+            </td>
+            <td>
+<p>Treatment area for Z-diagnosis conditions (xc).</p>
 </td>
          </tr>
          <tr>
@@ -14149,34 +14349,58 @@ Http response code 404 will be returned if no related SOR organization could be 
       <td>A program/project of work for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/ehealth-program</td>
     </tr>
     <tr>
+      <td>task</td>
+      <td>http://terminology.hl7.org/CodeSystem/usage-context-type</td>
+      <td>Task</td>
+      <td>A task type for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/usage-context-task-type</td>
+    </tr>
+    <tr>
+      <td>workflow</td>
+      <td>http://terminology.hl7.org/CodeSystem/usage-context-type</td>
+      <td>Workflow</td>
+      <td>A workflow for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/usage-context-workflow</td>
+    </tr>
+    <tr>
       <td>activity</td>
       <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
       <td>Activity Type</td>
-      <td>The type of activity in which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.</td>
+      <td>The type of activity in which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.</td>
     </tr>
     <tr>
       <td>supports</td>
       <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
       <td>Supports</td>
-      <td>The type of activity supported by a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.</td>
+      <td>The type of activity supported by a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.</td>
     </tr>
     <tr>
       <td>range</td>
       <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
       <td>Range</td>
-      <td>The type of reference range with which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/reference-range-type value set.</td>
+      <td>The type of reference range with which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/reference-range-type value set.</td>
     </tr>
     <tr>
       <td>questionnaire-related</td>
       <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
       <td>Questionnaire Related</td>
-      <td>The type of questionnaire element with which it is relevant to use a coded values/id registries having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/questionnaire-elements value set.</td>
+      <td>The type of questionnaire element with which it is relevant to use a coded values/id registries having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/questionnaire-elements value set.</td>
     </tr>
     <tr>
       <td>system-treatment-area</td>
       <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
       <td>System Treatment Area</td>
-      <td>The coexistence tag for which the treatment areas ValueSet is relevant. For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/ehealth-system value set.</td>
+      <td>The coexistence tag for which the treatment areas ValueSet is relevant. For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/ehealth-system value set.</td>
+    </tr>
+    <tr>
+      <td>condition-qualification</td>
+      <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
+      <td>Condition Qualification</td>
+      <td>A condition qualification for which this artifact/element is applicable. For this context type, the value shall be a code from the value set http://ehealth.sundhed.dk/vs/condition-qualification.</td>
+    </tr>
+    <tr>
+      <td>body-site</td>
+      <td>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</td>
+      <td>Body Site</td>
+      <td>A placement on the body for which this artifact/element is applicable. For this context type, the value shall be a code from the value set http://ehealth.sundhed.dk/vs/usage-context-body-site.</td>
     </tr>
   </tbody>
 </table>
@@ -14952,6 +15176,24 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ICD-11-MMS-2025-01.html"
+                  title="CodeSystem/ICD-11-MMS-2025-01">ICD-11 for Mortality and Morbidity Statistics</a>
+            </td>
+            <td>
+<p>ICD-11 for Mortality and Morbidity Statistics, FHIR representation based on ICD-11 content from https://icd.who.int/en/.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth.sundhed.dk-ICD-11-MMS-supplement.html"
+                  title="CodeSystem/ehealth.sundhed.dk-ICD-11-MMS-supplement">ICD-11 for Mortality and Morbidity Statistics - Danish Supplement</a>
+            </td>
+            <td>
+<p>Danish language supplement for ICD-11 for Mortality and Morbidity Statistics - Surface Topography. Translations to Danish provided by the Danish National Health Data Authority (Danish: Sundhedsdatastyrelsen).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-percentage-codes.html"
                   title="CodeSystem/percentage-codes">Integer percentage codes</a>
             </td>
@@ -15173,6 +15415,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Policies under which data can be provided</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-poa-privilege.html"
+                  title="CodeSystem/ehealth-poa-privilege">Power of Attorney Privilege</a>
+            </td>
+            <td>
+<p>Vendor-specific power of attorney privilege codes used by Keycloak when creating RelatedPerson resources for PoA-authenticated citizens. The full set of codes is externally governed and not enumerated here.</p>
 </td>
          </tr>
          <tr>
@@ -15442,6 +15693,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>View types</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-telewound-wound-types.html"
+                  title="CodeSystem/telewound-wound-types">Wound types</a>
+            </td>
+            <td>
+<p>Wound types</p>
 </td>
          </tr>
          <tr>
@@ -15862,7 +16122,7 @@ Http response code 404 will be returned if no related SOR organization could be 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#8.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 3, 2026 10:25+0000">2026-03-03</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#9.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 21, 2026 07:30+0000">2026-04-21</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

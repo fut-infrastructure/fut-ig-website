@@ -1,0 +1,1027 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ICD-11 for Mortality and Morbidity Statistics - XML Representation - eHealth Infrastructure v9.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"99.549"}
+    h3,h4,h5,h6{--heading-prefix:"99.549"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">9.0.0 - release
+
+
+
+  <span title="">DK</span>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>ICD-11 for Mortality and Morbidity Statistics</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 7" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v9.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="CodeSystem-ICD-11-MMS-2025-01.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-ICD-11-MMS-2025-01.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-ICD-11-MMS-2025-01.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: ICD-11 for Mortality and Morbidity Statistics - XML Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2026-04-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="CodeSystem-ICD-11-MMS-2025-01.xml" no-download="true">Raw xml</a> | <a href="CodeSystem-ICD-11-MMS-2025-01.xml" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="xml" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">CodeSystem</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ICD-11-MMS-2025-01&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem ICD-11-MMS-2025-01&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;ICD-11-MMS-2025-01&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcICD-11-MMS-2025-01&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Properties&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;This code system defines the following properties for its concepts&lt;/b&gt;&lt;/p&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;URI&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;ICD11 Foundation Entity ID&lt;/td&gt;&lt;td&gt;icd11-foundation-entity-id&lt;/td&gt;&lt;td&gt;http://ehealth.sundhed.dk/cs/ehealth-property#icd11-foundation-entity-id&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Concepts&lt;/b&gt;&lt;/p&gt;&lt;p&gt;This case-insensitive code system &lt;code&gt;http://id.who.int/icd/release/11/mms&lt;/code&gt; provides &lt;b&gt;a fragment&lt;/b&gt; that includes following codes in a Classified With hierarchy:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;ICD11 Foundation Entity ID&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA1RS6&lt;a name=&quot;ICD-11-MMS-2025-01-XA1RS6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Head and neck&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/223243926&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA20Q1&lt;a name=&quot;ICD-11-MMS-2025-01-XA20Q1&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Head&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1357976561&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6CW5&lt;a name=&quot;ICD-11-MMS-2025-01-XA6CW5&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Scalp&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/570444145&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA86S4&lt;a name=&quot;ICD-11-MMS-2025-01-XA86S4&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Face&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/968129184&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6TR8&lt;a name=&quot;ICD-11-MMS-2025-01-XA6TR8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Forehead&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/862454798&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA7MK8&lt;a name=&quot;ICD-11-MMS-2025-01-XA7MK8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Cheek&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1286369458&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA3H13&lt;a name=&quot;ICD-11-MMS-2025-01-XA3H13&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Nose&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1082634473&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5A87&lt;a name=&quot;ICD-11-MMS-2025-01-XA5A87&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Oral region&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/899660487&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA7AA6&lt;a name=&quot;ICD-11-MMS-2025-01-XA7AA6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Neck&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/956558826&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4QS6&lt;a name=&quot;ICD-11-MMS-2025-01-XA4QS6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Front of neck&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1274197866&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA2ZF0&lt;a name=&quot;ICD-11-MMS-2025-01-XA2ZF0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Side of neck&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1921653290&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA1M78&lt;a name=&quot;ICD-11-MMS-2025-01-XA1M78&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Nape of neck&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/391324778&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA3FR3&lt;a name=&quot;ICD-11-MMS-2025-01-XA3FR3&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Trunk&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/947150833&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4QH7&lt;a name=&quot;ICD-11-MMS-2025-01-XA4QH7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Upper trunk&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/17625777&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5D93&lt;a name=&quot;ICD-11-MMS-2025-01-XA5D93&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Thorax&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/650081113&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA55T2&lt;a name=&quot;ICD-11-MMS-2025-01-XA55T2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Chest wall&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1656376572&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA10L7&lt;a name=&quot;ICD-11-MMS-2025-01-XA10L7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Upper back&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/730488167&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6CY1&lt;a name=&quot;ICD-11-MMS-2025-01-XA6CY1&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lower trunk&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/371496561&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6GV0&lt;a name=&quot;ICD-11-MMS-2025-01-XA6GV0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Abdomen&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1983193090&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA0U66&lt;a name=&quot;ICD-11-MMS-2025-01-XA0U66&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Upper abdomen&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1927061586&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4TC0&lt;a name=&quot;ICD-11-MMS-2025-01-XA4TC0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lower abdomen&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/2105593940&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA25R8&lt;a name=&quot;ICD-11-MMS-2025-01-XA25R8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lumbosacral region&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/501035478&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6ZR2&lt;a name=&quot;ICD-11-MMS-2025-01-XA6ZR2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Mid back&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/162152032&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA9ET2&lt;a name=&quot;ICD-11-MMS-2025-01-XA9ET2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lower back&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1218764272&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA2P90&lt;a name=&quot;ICD-11-MMS-2025-01-XA2P90&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Back&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1187030&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA8HA7&lt;a name=&quot;ICD-11-MMS-2025-01-XA8HA7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Anogenital region&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/294531567&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4B34&lt;a name=&quot;ICD-11-MMS-2025-01-XA4B34&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Perianal region&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/687060814&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6AS2&lt;a name=&quot;ICD-11-MMS-2025-01-XA6AS2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Extremities&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1810600222&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4BA8&lt;a name=&quot;ICD-11-MMS-2025-01-XA4BA8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Upper extremity&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/986233688&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA2ND5&lt;a name=&quot;ICD-11-MMS-2025-01-XA2ND5&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Shoulder&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/2127070735&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA17J1&lt;a name=&quot;ICD-11-MMS-2025-01-XA17J1&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Axilla&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1494375321&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6809&lt;a name=&quot;ICD-11-MMS-2025-01-XA6809&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Upper arm&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/312192089&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA9FF8&lt;a name=&quot;ICD-11-MMS-2025-01-XA9FF8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Elbow&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/667468098&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA7WB0&lt;a name=&quot;ICD-11-MMS-2025-01-XA7WB0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Forearm&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1477228030&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA2J63&lt;a name=&quot;ICD-11-MMS-2025-01-XA2J63&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Wrist&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1679928503&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5R12&lt;a name=&quot;ICD-11-MMS-2025-01-XA5R12&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Hand&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/430791912&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA30Z6&lt;a name=&quot;ICD-11-MMS-2025-01-XA30Z6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dorsum of hand&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/2088002216&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA3NY8&lt;a name=&quot;ICD-11-MMS-2025-01-XA3NY8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Palm of hand&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/243611688&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA2593&lt;a name=&quot;ICD-11-MMS-2025-01-XA2593&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Fingers and thumb&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/822750113&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA8DJ6&lt;a name=&quot;ICD-11-MMS-2025-01-XA8DJ6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Thumb&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/452671086&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA6NZ0&lt;a name=&quot;ICD-11-MMS-2025-01-XA6NZ0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Index finger&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/15105170&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA0Y38&lt;a name=&quot;ICD-11-MMS-2025-01-XA0Y38&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Middle finger&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/806667718&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA06X8&lt;a name=&quot;ICD-11-MMS-2025-01-XA06X8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ring finger&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1823823558&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5EN3&lt;a name=&quot;ICD-11-MMS-2025-01-XA5EN3&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Little finger&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1621005983&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA45A6&lt;a name=&quot;ICD-11-MMS-2025-01-XA45A6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lower extremity&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/2093217246&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA3VA7&lt;a name=&quot;ICD-11-MMS-2025-01-XA3VA7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Buttock&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1894266247&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5S78&lt;a name=&quot;ICD-11-MMS-2025-01-XA5S78&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Thigh&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/238202718&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA98B3&lt;a name=&quot;ICD-11-MMS-2025-01-XA98B3&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Anterior surface of thigh&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1956868073&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA8RH9&lt;a name=&quot;ICD-11-MMS-2025-01-XA8RH9&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lateral surface of thigh&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1089399959&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA0183&lt;a name=&quot;ICD-11-MMS-2025-01-XA0183&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Posterior surface of thigh&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1472628823&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA1YQ6&lt;a name=&quot;ICD-11-MMS-2025-01-XA1YQ6&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Medial surface of thigh&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/927597086&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA8KL5&lt;a name=&quot;ICD-11-MMS-2025-01-XA8KL5&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Knee&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1670056745&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA3YG1&lt;a name=&quot;ICD-11-MMS-2025-01-XA3YG1&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lower leg&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/106050921&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA33X4&lt;a name=&quot;ICD-11-MMS-2025-01-XA33X4&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Anterior surface of lower leg&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/689705614&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4RR4&lt;a name=&quot;ICD-11-MMS-2025-01-XA4RR4&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Lateral surface of lower leg&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/855726194&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA0LQ2&lt;a name=&quot;ICD-11-MMS-2025-01-XA0LQ2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Posterior surface of lower leg&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/491885042&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA15P0&lt;a name=&quot;ICD-11-MMS-2025-01-XA15P0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Medial surface of lower leg&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/606682290&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA67V4&lt;a name=&quot;ICD-11-MMS-2025-01-XA67V4&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Ankle&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1106248434&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA47V8&lt;a name=&quot;ICD-11-MMS-2025-01-XA47V8&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Foot&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1896004518&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA99M7&lt;a name=&quot;ICD-11-MMS-2025-01-XA99M7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Hindfoot&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/899012917&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5HK0&lt;a name=&quot;ICD-11-MMS-2025-01-XA5HK0&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Heel&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/247910170&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5151&lt;a name=&quot;ICD-11-MMS-2025-01-XA5151&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Midfoot&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/265822591&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA5YL1&lt;a name=&quot;ICD-11-MMS-2025-01-XA5YL1&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Forefoot&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/999662081&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA8BE2&lt;a name=&quot;ICD-11-MMS-2025-01-XA8BE2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dorsum of foot&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/2084017562&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA1XM4&lt;a name=&quot;ICD-11-MMS-2025-01-XA1XM4&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Sole of foot&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1797255514&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4LC9&lt;a name=&quot;ICD-11-MMS-2025-01-XA4LC9&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Toes&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1735902769&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA2RP7&lt;a name=&quot;ICD-11-MMS-2025-01-XA2RP7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Great toe&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1003902257&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA8ZZ3&lt;a name=&quot;ICD-11-MMS-2025-01-XA8ZZ3&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Second toe&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/754856433&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA0SP3&lt;a name=&quot;ICD-11-MMS-2025-01-XA0SP3&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Third toe&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/361143473&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA4KK7&lt;a name=&quot;ICD-11-MMS-2025-01-XA4KK7&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Fourth toe&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/45021297&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XA42W4&lt;a name=&quot;ICD-11-MMS-2025-01-XA42W4&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Fifth toe&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/769712024&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XK9J&lt;a name=&quot;ICD-11-MMS-2025-01-XK9J&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Bilateral&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/627678743&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XK8G&lt;a name=&quot;ICD-11-MMS-2025-01-XK8G&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Left&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/271422288&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XK9K&lt;a name=&quot;ICD-11-MMS-2025-01-XK9K&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Right&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/876572005&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XK70&lt;a name=&quot;ICD-11-MMS-2025-01-XK70&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Unilateral, unspecified&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1038788978&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XK7V&lt;a name=&quot;ICD-11-MMS-2025-01-XK7V&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Anterior&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/1190123007&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;XK8L&lt;a name=&quot;ICD-11-MMS-2025-01-XK8L&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Posterior&lt;/td&gt;&lt;td&gt;&lt;code&gt;http://id.who.int/icd/entity/648538052&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://id.who.int/icd/release/11/mms&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;9.0.0&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ICD-11 for Mortality and Morbidity Statistics&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-04-21T07:29:24+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.publisher">publisher</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Den telemedicinske infrastruktur (eHealth Infrastructure)&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Den telemedicinske infrastruktur (eHealth Infrastructure)&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://ehealth.sundhed.dk&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.contact">contact</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.description">description</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;ICD-11 for Mortality and Morbidity Statistics, FHIR representation based on ICD-11 content from https://icd.who.int/en/.&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:iso:std:iso:3166&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;DK&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Denmark&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.copyright">copyright</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;WHO 2020. See ICD-11 license at https://icd.who.int/en/docs/ICD11-license.pdf&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.caseSensitive">caseSensitive</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.hierarchyMeaning">hierarchyMeaning</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;classified-with&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.compositional">compositional</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.versionNeeded">versionNeeded</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;false&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.content">content</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;fragment&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.property">property</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.property.uri">uri</a>
+         <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://ehealth.sundhed.dk/cs/ehealth-property#icd11-foundation-entity-id&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.property.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;string&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.property">property</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA1RS6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Head and neck&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/223243926&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA20Q1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Head&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1357976561&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6CW5&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Scalp&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/570444145&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA86S4&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Face&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/968129184&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6TR8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Forehead&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/862454798&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA7MK8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Cheek&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1286369458&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA3H13&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Nose&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1082634473&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5A87&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Oral region&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/899660487&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA7AA6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Neck&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/956558826&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4QS6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Front of neck&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1274197866&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA2ZF0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Side of neck&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1921653290&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA1M78&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Nape of neck&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/391324778&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA3FR3&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Trunk&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/947150833&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4QH7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Upper trunk&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/17625777&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5D93&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Thorax&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/650081113&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA55T2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Chest wall&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1656376572&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA10L7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Upper back&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/730488167&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6CY1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lower trunk&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/371496561&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6GV0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Abdomen&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1983193090&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA0U66&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Upper abdomen&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1927061586&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4TC0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lower abdomen&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/2105593940&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA25R8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lumbosacral region&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/501035478&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6ZR2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Mid back&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/162152032&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA9ET2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lower back&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1218764272&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA2P90&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Back&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1187030&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA8HA7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Anogenital region&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/294531567&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4B34&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Perianal region&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/687060814&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6AS2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Extremities&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1810600222&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4BA8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Upper extremity&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/986233688&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA2ND5&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Shoulder&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/2127070735&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA17J1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Axilla&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1494375321&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6809&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Upper arm&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/312192089&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA9FF8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Elbow&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/667468098&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA7WB0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Forearm&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1477228030&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA2J63&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Wrist&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1679928503&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5R12&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Hand&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/430791912&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA30Z6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Dorsum of hand&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/2088002216&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA3NY8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Palm of hand&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/243611688&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA2593&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fingers and thumb&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/822750113&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA8DJ6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Thumb&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/452671086&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA6NZ0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Index finger&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/15105170&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA0Y38&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Middle finger&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/806667718&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA06X8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ring finger&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1823823558&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5EN3&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Little finger&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1621005983&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA45A6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lower extremity&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/2093217246&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA3VA7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Buttock&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1894266247&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5S78&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Thigh&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/238202718&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA98B3&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Anterior surface of thigh&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1956868073&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA8RH9&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lateral surface of thigh&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1089399959&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA0183&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Posterior surface of thigh&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1472628823&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA1YQ6&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Medial surface of thigh&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/927597086&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA8KL5&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Knee&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1670056745&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA3YG1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lower leg&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/106050921&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA33X4&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Anterior surface of lower leg&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/689705614&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4RR4&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lateral surface of lower leg&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/855726194&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA0LQ2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Posterior surface of lower leg&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/491885042&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA15P0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Medial surface of lower leg&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/606682290&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA67V4&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Ankle&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1106248434&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA47V8&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Foot&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1896004518&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA99M7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Hindfoot&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/899012917&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5HK0&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Heel&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/247910170&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5151&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Midfoot&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/265822591&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA5YL1&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Forefoot&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/999662081&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA8BE2&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Dorsum of foot&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/2084017562&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA1XM4&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Sole of foot&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1797255514&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4LC9&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Toes&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1735902769&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA2RP7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Great toe&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1003902257&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA8ZZ3&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Second toe&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/754856433&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA0SP3&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Third toe&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/361143473&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA4KK7&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fourth toe&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/45021297&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XA42W4&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Fifth toe&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/769712024&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XK9J&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Bilateral&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/627678743&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XK8G&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Left&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/271422288&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XK9K&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Right&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/876572005&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XK70&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Unilateral, unspecified&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1038788978&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XK7V&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Anterior&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/1190123007&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;XK8L&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Posterior&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;icd11-foundation-entity-id&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value[x]">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;http://id.who.int/icd/entity/648538052&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept">concept</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">CodeSystem</a>&gt;</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#9.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 21, 2026 07:30+0000">2026-04-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
