@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Wound Conditions - eHealth Infrastructure v9.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/fut.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"99.459"}
+    h3,h4,h5,h6{--heading-prefix:"99.459"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a id="hl7-logo" no-external="true" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img height="60" alt="Visit the Project website" src="assets/images/fut.png"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a id="hl7-search-lnk" no-external="true" href="search.html"><img alt="Search this FHIR IG" src="assets/images/search.png"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;">9.0.1 - release
+
+
+
+  <span title="">DK</span>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Wound Conditions</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v9.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version in its permanent home (it will always be available at this URL).  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-wound-conditions.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-wound-conditions.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-wound-conditions.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Wound Conditions
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/vs/wound-conditions<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/wound-conditions"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">9.0.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/wound-conditions|9.0.1"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          Active
+          
+            as of 2026-02-10
+          
+        
+      </td>
+
+
+
+      <td>
+        <i>Realm:</i> <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
+      </td>
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">WoundConditions</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Wound conditions.</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li>Included into <a href="ValueSet-ehealth-conditions.html">Conditions</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"></p><a name="ehealth-wound-conditions"> </a><a name="hcehealth-wound-conditions"> </a>
+<ul><li>Include these codes as defined in <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html"><code>urn:oid:1.2.208.176.2.4</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI830B">DI830B</a></td><td style="color: #cccccc">Ulcus cruris post-thromboticum</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI830A">DI830A</a></td><td style="color: #cccccc">Varicøst ulcus på underekstremite</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI870">DI870</a></td><td style="color: #cccccc">Posttrombotisk syndrom</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI832">DI832</a></td><td style="color: #cccccc">Varicer i underekstremitet med både ulcus og eksem</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI831">DI831</a></td><td style="color: #cccccc">Varicer i underekstremitet med eksem</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DR699">DR699</a></td><td style="color: #cccccc">Sygdom uden kendt eller specificeret årsag</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL892A">DL892A</a></td><td style="color: #cccccc">Decubitus grad III ved neurologiske udfald</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL89">DL89</a></td><td style="color: #cccccc">Tryksår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL892">DL892</a></td><td style="color: #cccccc">Decubitus grad III</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL891">DL891</a></td><td style="color: #cccccc">Decubitus grad II</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL891A">DL891A</a></td><td style="color: #cccccc">Decubitus grad II ved neurologiske udfald</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL890A">DL890A</a></td><td style="color: #cccccc">Decubitus grad I ved neurologiske udfald</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL890">DL890</a></td><td style="color: #cccccc">Decubitus grad I</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL893A">DL893A</a></td><td style="color: #cccccc">Decubitus grad IV ved neurologiske udfald</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL893">DL893</a></td><td style="color: #cccccc">Decubitus grad IV</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS819">DS819</a></td><td style="color: #cccccc">Åbent sår på underben UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS913A">DS913A</a></td><td style="color: #cccccc">Åbent sår på fod UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS519">DS519</a></td><td style="color: #cccccc">Åbent sår på albueregion eller underarm UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS913">DS913</a></td><td style="color: #cccccc">Åbent sår på anden del af fod</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT091">DT091</a></td><td style="color: #cccccc">Åbent sår på truncus UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS898">DS898</a></td><td style="color: #cccccc">Anden læsion i knæregion eller på underben</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS999">DS999</a></td><td style="color: #cccccc">Læsion af ankel eller fod UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT14">DT14</a></td><td style="color: #cccccc">Læsion uden angivelse af legemsregion</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ933">DZ933</a></td><td style="color: #cccccc">Tilstand med kolostomi</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC509">DC509</a></td><td style="color: #cccccc">Brystkræft UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-BNPF2">BNPF2</a></td><td style="color: #cccccc">Pleje af huddonorsted</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT813C">DT813C</a></td><td style="color: #cccccc">Overfladisk bristning eller nekrose af operationssår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT875">DT875</a></td><td style="color: #cccccc">Nekrose i amputationsstump</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814H">DT814H</a></td><td style="color: #cccccc">Postoperativ dyb sårinfektion</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814G">DT814G</a></td><td style="color: #cccccc">Postoperativ overfladisk sårinfektion</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814F">DT814F</a></td><td style="color: #cccccc">Postoperativ sårinfektion</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT813D">DT813D</a></td><td style="color: #cccccc">Dyb bristning af operationssår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT876">DT876</a></td><td style="color: #cccccc">Anden eller ikke specificeret komplikation i amputationstump</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL120">DL120</a></td><td style="color: #cccccc">Bulløs pemfigoid</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL889">DL889</a></td><td style="color: #cccccc">Pyoderma gangraenosum</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL959">DL959</a></td><td style="color: #cccccc">Vaskulitis begrænset til huden UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL958">DL958</a></td><td style="color: #cccccc">Anden vaskulitis begrænset til huden</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL921">DL921</a></td><td style="color: #cccccc">Necrobiosis lipoidica IKA</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC437A">DC437A</a></td><td style="color: #cccccc">Malignt melanom i hud på ben</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ZM80703">ZM80703</a></td><td style="color: #cccccc">planocellulært karcinom</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ZM80903">ZM80903</a></td><td style="color: #cccccc">basocellulært karcinom</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC449">DC449</a></td><td style="color: #cccccc">Anden hudkræft UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE147">DE147</a></td><td style="color: #cccccc">Diabetes UNS med multiple komplikationer</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE105C">DE105C</a></td><td style="color: #cccccc">Type 1-diabetes med gangræn</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE145C">DE145C</a></td><td style="color: #cccccc">Diabetes UNS med gangræn</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE105B">DE105B</a></td><td style="color: #cccccc">Type 1-diabetes med fodsår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE145B">DE145B</a></td><td style="color: #cccccc">Diabetes UNS med fodsår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE104">DE104</a></td><td style="color: #cccccc">Type 1-diabetes med neurologisk komplikation</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE144">DE144</a></td><td style="color: #cccccc">Diabetes UNS med neurologisk komplikation</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE115C">DE115C</a></td><td style="color: #cccccc">Type 2-diabetes med gangræn</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE115B">DE115B</a></td><td style="color: #cccccc">Type 2-diabetes med fodsår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM142">DM142</a></td><td style="color: #cccccc">Diabetisk artropati</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE114">DE114</a></td><td style="color: #cccccc">Type 2-diabetes med neurologisk komplikation</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979E">DL979E</a></td><td style="color: #cccccc">Ulcus pedis arterioscleroticum</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI702A">DI702A</a></td><td style="color: #cccccc">Aterosklerotisk gangræn</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI702">DI702</a></td><td style="color: #cccccc">Aterosklerose i arterie i ekstremitet</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979B">DL979B</a></td><td style="color: #cccccc">Ulcus cruris arterioscleroticum</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979A">DL979A</a></td><td style="color: #cccccc">Neurogent ulcus på ben</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL984">DL984</a></td><td style="color: #cccccc">Kronisk ulcus i huden IKA</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DR609">DR609</a></td><td style="color: #cccccc">Ødem UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979">DL979</a></td><td style="color: #cccccc">Ulcus på ben IKA</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL059">DL059</a></td><td style="color: #cccccc">Pilonidalcyste uden absces</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI890">DI890</a></td><td style="color: #cccccc">Lymfødem IKA</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL849">DL849</a></td><td style="color: #cccccc">Callositas et clavus</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DA469">DA469</a></td><td style="color: #cccccc">Rosen UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL309">DL309</a></td><td style="color: #cccccc">Dermatitis UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL738A">DL738A</a></td><td style="color: #cccccc">Folliculitis UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DA46">DA46</a></td><td style="color: #cccccc">Rosen</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM146">DM146</a></td><td style="color: #cccccc">Neuropatisk artropati</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL308H">DL308H</a></td><td style="color: #cccccc">Håndeksem UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979C">DL979C</a></td><td style="color: #cccccc">Ulcus perforans pedis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL732">DL732</a></td><td style="color: #cccccc">Suppurerende hidrosadenitis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT959">DT959</a></td><td style="color: #cccccc">Følgetilstand efter forbrænding, ætsning eller forfrysning UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL920B">DL920B</a></td><td style="color: #cccccc">Granuloma annulare perforans</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL138">DL138</a></td><td style="color: #cccccc">Anden bulløs dermatitis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL600">DL600</a></td><td style="color: #cccccc">Nedgroet negl</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL023">DL023</a></td><td style="color: #cccccc">Absces, furunkel eller karbunkel i huden i sæderegionen</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT140D">DT140D</a></td><td style="color: #cccccc">Hæmatom UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS718">DS718</a></td><td style="color: #cccccc">Åbent sår på anden eller ikke specificeret del af hofteregion eller lår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ945">DZ945</a></td><td style="color: #cccccc">Hudtransplanteret</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC434">DC434</a></td><td style="color: #cccccc">Malignt melanom i hud på skalpen eller halsen</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT691">DT691</a></td><td style="color: #cccccc">Pernio</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS510">DS510</a></td><td style="color: #cccccc">Åbent sår på albue</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL570">DL570</a></td><td style="color: #cccccc">Aktinisk keratose</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT860A">DT860A</a></td><td style="color: #cccccc">Graft-versus-host reaktion</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL982">DL982</a></td><td style="color: #cccccc">Dermatosis neutrophilica febrilis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL022N">DL022N</a></td><td style="color: #cccccc">Absces på ryggen</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT111">DT111</a></td><td style="color: #cccccc">Åbent sår på arm UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS711">DS711</a></td><td style="color: #cccccc">Åbent sår på lår</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ940">DZ940</a></td><td style="color: #cccccc">Nyretransplanteret</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DB028">DB028</a></td><td style="color: #cccccc">Herpes zoster-infektion med anden komplikation</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DQ828F">DQ828F</a></td><td style="color: #cccccc">Dyskeratosis follicularis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT669">DT669</a></td><td style="color: #cccccc">Stråleskade UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS912">DS912</a></td><td style="color: #cccccc">Åbent sår på tå med beskadigelse af negl</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI708">DI708</a></td><td style="color: #cccccc">Aterosklerose i anden arterie</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS411">DS411</a></td><td style="color: #cccccc">Åbent sår på overarm</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL40">DL40</a></td><td style="color: #cccccc">Psoriasis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS681D">DS681D</a></td><td style="color: #cccccc">Traumatisk amputation af 5. finger</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM726">DM726</a></td><td style="color: #cccccc">Nekrotiserende bløddelsinfektion</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL050">DL050</a></td><td style="color: #cccccc">Pilonidalcyste med absces</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT247B">DT247B</a></td><td style="color: #cccccc">3° ætsning på ben</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS911">DS911</a></td><td style="color: #cccccc">Åbent sår på tå uden beskadigelse af negl</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DD863">DD863</a></td><td style="color: #cccccc">Sarkoidose i hud</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS318A">DS318A</a></td><td style="color: #cccccc">Åbent sår på abdomen UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT019">DT019</a></td><td style="color: #cccccc">Multiple åbne sår UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS611">DS611</a></td><td style="color: #cccccc">Åbent sår på finger med beskadigelse af negl</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ489">DZ489</a></td><td style="color: #cccccc">Efterbehandling efter kirurgisk indgreb UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL039">DL039</a></td><td style="color: #cccccc">Flegmone UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT232B">DT232B</a></td><td style="color: #cccccc">2° forbrænding på hånd</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL951">DL951</a></td><td style="color: #cccccc">Erythema elevatum diutinum</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS098">DS098</a></td><td style="color: #cccccc">Anden læsion af hovedet</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS610A">DS610A</a></td><td style="color: #cccccc">Åbent sår på finger UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL030A">DL030A</a></td><td style="color: #cccccc">Panaritium tendinosum</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT200">DT200</a></td><td style="color: #cccccc">Forbrænding UNS på hovedet og halsen</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS82">DS82</a></td><td style="color: #cccccc">Fraktur af knæ, underben og ankel</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DG629">DG629</a></td><td style="color: #cccccc">Polyneuropati UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS000">DS000</a></td><td style="color: #cccccc">Overfladisk læsion af skalpen</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL281">DL281</a></td><td style="color: #cccccc">Prurigo nodularis</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL282">DL282</a></td><td style="color: #cccccc">Anden form for prurigo</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS917">DS917</a></td><td style="color: #cccccc">Multiple åbne sår på ankel og fod</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS610">DS610</a></td><td style="color: #cccccc">Åbent sår på finger uden beskadigelse af negl</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL609">DL609</a></td><td style="color: #cccccc">Neglesygdom UNS</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL984B">DL984B</a></td><td style="color: #cccccc">Hudfissur</td></tr><tr><td><a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL024">DL024</a></td><td style="color: #cccccc">Absces, furunkel eller karbunkel i huden på ekstremitet</td></tr></table></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html">codesystem Sundhedsvæsenets klassifikationssystem (SKS) v9.0.1 (CodeSystem)</a></p><p>This value set contains 124 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Display (Dansk)</b></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI830B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI830B">DI830B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Ulcus cruris post-thromboticum</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI830A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI830A">DI830A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Varicøst ulcus på underekstremite</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI870"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI870">DI870</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Posttrombotisk syndrom</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI832"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI832">DI832</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Varicer i underekstremitet med både ulcus og eksem</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI831"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI831">DI831</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Varicer i underekstremitet med eksem</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DR699"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DR699">DR699</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Sygdom uden kendt eller specificeret årsag</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL892A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL892A">DL892A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad III ved neurologiske udfald</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL89"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL89">DL89</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Tryksår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL892"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL892">DL892</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad III</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL891"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL891">DL891</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad II</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL891A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL891A">DL891A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad II ved neurologiske udfald</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL890A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL890A">DL890A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad I ved neurologiske udfald</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL890"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL890">DL890</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad I</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL893A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL893A">DL893A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad IV ved neurologiske udfald</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL893"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL893">DL893</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Decubitus grad IV</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS819"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS819">DS819</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på underben UNS</td><td>Åbent sår på underben uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS913A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS913A">DS913A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på fod UNS</td><td>Åbent sår på fod uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS519"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS519">DS519</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på albueregion eller underarm UNS</td><td>Åbent sår på albueregion eller underarm uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS913"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS913">DS913</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på anden del af fod</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT091"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT091">DT091</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på truncus UNS</td><td>Åbent sår på truncus uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS898"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS898">DS898</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden læsion i knæregion eller på underben</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS999"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS999">DS999</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Læsion af ankel eller fod UNS</td><td>Læsion af ankel eller fod uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT14"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT14">DT14</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Læsion uden angivelse af legemsregion</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DZ933"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ933">DZ933</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Tilstand med kolostomi</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DC509"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC509">DC509</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Brystkræft UNS</td><td>Brystkræft uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-BNPF2"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-BNPF2">BNPF2</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Pleje af huddonorsted</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT813C"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT813C">DT813C</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Overfladisk bristning eller nekrose af operationssår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT875"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT875">DT875</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Nekrose i amputationsstump</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT814H"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814H">DT814H</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Postoperativ dyb sårinfektion</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT814G"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814G">DT814G</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Postoperativ overfladisk sårinfektion</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT814F"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT814F">DT814F</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Postoperativ sårinfektion</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT813D"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT813D">DT813D</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Dyb bristning af operationssår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT876"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT876">DT876</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden eller ikke specificeret komplikation i amputationstump</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL120"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL120">DL120</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Bulløs pemfigoid</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL889"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL889">DL889</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Pyoderma gangraenosum</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL959"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL959">DL959</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Vaskulitis begrænset til huden UNS</td><td>Vaskulitis begrænset til huden uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL958"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL958">DL958</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden vaskulitis begrænset til huden</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL921"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL921">DL921</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Necrobiosis lipoidica IKA</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DC437A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC437A">DC437A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Malignt melanom i hud på ben</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-ZM80703"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ZM80703">ZM80703</a></td><td>urn:oid:1.2.208.176.2.4</td><td>planocellulært karcinom</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-ZM80903"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ZM80903">ZM80903</a></td><td>urn:oid:1.2.208.176.2.4</td><td>basocellulært karcinom</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DC449"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC449">DC449</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden hudkræft UNS</td><td>Anden hudkræft uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE147"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE147">DE147</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Diabetes UNS med multiple komplikationer</td><td>Diabetes uden specifikation med multiple komplikationer</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE105C"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE105C">DE105C</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Type 1-diabetes med gangræn</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE145C"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE145C">DE145C</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Diabetes UNS med gangræn</td><td>Diabetes uden specifikation med gangræn</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE105B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE105B">DE105B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Type 1-diabetes med fodsår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE145B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE145B">DE145B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Diabetes UNS med fodsår</td><td>Diabetes uden specifikation med fodsår</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE104"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE104">DE104</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Type 1-diabetes med neurologisk komplikation</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE144"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE144">DE144</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Diabetes UNS med neurologisk komplikation</td><td>Diabetes uden specifikation med neurologisk komplikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE115C"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE115C">DE115C</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Type 2-diabetes med gangræn</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE115B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE115B">DE115B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Type 2-diabetes med fodsår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DM142"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM142">DM142</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Diabetisk artropati</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DE114"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE114">DE114</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Type 2-diabetes med neurologisk komplikation</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL979E"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979E">DL979E</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Ulcus pedis arterioscleroticum</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI702A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI702A">DI702A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Aterosklerotisk gangræn</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI702"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI702">DI702</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Aterosklerose i arterie i ekstremitet</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL979B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979B">DL979B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Ulcus cruris arterioscleroticum</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL979A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979A">DL979A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Neurogent ulcus på ben</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL984"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL984">DL984</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Kronisk ulcus i huden IKA</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DR609"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DR609">DR609</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Ødem UNS</td><td>Ødem uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL979"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979">DL979</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Ulcus på ben IKA</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL059"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL059">DL059</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Pilonidalcyste uden absces</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI890"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI890">DI890</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Lymfødem IKA</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL849"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL849">DL849</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Callositas et clavus</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DA469"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DA469">DA469</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Rosen UNS</td><td>Rosen uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL309"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL309">DL309</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Dermatitis UNS</td><td>Dermatitis uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL738A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL738A">DL738A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Folliculitis UNS</td><td>Folliculitis uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DA46"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DA46">DA46</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Rosen</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DM146"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM146">DM146</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Neuropatisk artropati</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL308H"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL308H">DL308H</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Håndeksem UNS</td><td>Håndeksem uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL979C"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL979C">DL979C</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Ulcus perforans pedis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL732"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL732">DL732</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Suppurerende hidrosadenitis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT959"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT959">DT959</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Følgetilstand efter forbrænding, ætsning eller forfrysning UNS</td><td>Følgetilstand efter forbrænding, ætsning eller forfrysning uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL920B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL920B">DL920B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Granuloma annulare perforans</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL138"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL138">DL138</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden bulløs dermatitis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL600"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL600">DL600</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Nedgroet negl</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL023"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL023">DL023</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Absces, furunkel eller karbunkel i huden i sæderegionen</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT140D"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT140D">DT140D</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Hæmatom UNS</td><td>Hæmatom uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS718"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS718">DS718</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på anden eller ikke specificeret del af hofteregion eller lår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DZ945"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ945">DZ945</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Hudtransplanteret</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DC434"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DC434">DC434</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Malignt melanom i hud på skalpen eller halsen</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT691"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT691">DT691</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Pernio</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS510"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS510">DS510</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på albue</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL570"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL570">DL570</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Aktinisk keratose</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT860A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT860A">DT860A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Graft-versus-host reaktion</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL982"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL982">DL982</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Dermatosis neutrophilica febrilis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL022N"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL022N">DL022N</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Absces på ryggen</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT111"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT111">DT111</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på arm UNS</td><td>Åbent sår på arm uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS711"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS711">DS711</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på lår</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DZ940"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ940">DZ940</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Nyretransplanteret</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DB028"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DB028">DB028</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Herpes zoster-infektion med anden komplikation</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DQ828F"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DQ828F">DQ828F</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Dyskeratosis follicularis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT669"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT669">DT669</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Stråleskade UNS</td><td>Stråleskade uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS912"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS912">DS912</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på tå med beskadigelse af negl</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DI708"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI708">DI708</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Aterosklerose i anden arterie</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS411"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS411">DS411</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på overarm</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL40"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL40">DL40</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Psoriasis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS681D"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS681D">DS681D</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Traumatisk amputation af 5. finger</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DM726"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM726">DM726</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Nekrotiserende bløddelsinfektion</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL050"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL050">DL050</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Pilonidalcyste med absces</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT247B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT247B">DT247B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>3° ætsning på ben</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS911"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS911">DS911</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på tå uden beskadigelse af negl</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DD863"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DD863">DD863</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Sarkoidose i hud</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS318A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS318A">DS318A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på abdomen UNS</td><td>Åbent sår på abdomen uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT019"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT019">DT019</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Multiple åbne sår UNS</td><td>Multiple åbne sår uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS611"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS611">DS611</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på finger med beskadigelse af negl</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DZ489"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ489">DZ489</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Efterbehandling efter kirurgisk indgreb UNS</td><td>Efterbehandling efter kirurgisk indgreb uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL039"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL039">DL039</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Flegmone UNS</td><td>Flegmone uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT232B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT232B">DT232B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>2° forbrænding på hånd</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL951"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL951">DL951</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Erythema elevatum diutinum</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS098"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS098">DS098</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden læsion af hovedet</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS610A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS610A">DS610A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på finger UNS</td><td>Åbent sår på finger uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL030A"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL030A">DL030A</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Panaritium tendinosum</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DT200"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DT200">DT200</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Forbrænding UNS på hovedet og halsen</td><td>Forbrænding uden specifikation på hovedet og halsen</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS82"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS82">DS82</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Fraktur af knæ, underben og ankel</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DG629"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DG629">DG629</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Polyneuropati UNS</td><td>Polyneuropati uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS000"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS000">DS000</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Overfladisk læsion af skalpen</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL281"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL281">DL281</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Prurigo nodularis</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL282"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL282">DL282</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Anden form for prurigo</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS917"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS917">DS917</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Multiple åbne sår på ankel og fod</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DS610"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DS610">DS610</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Åbent sår på finger uden beskadigelse af negl</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL609"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL609">DL609</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Neglesygdom UNS</td><td>Neglesygdom uden specifikation</td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL984B"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL984B">DL984B</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Hudfissur</td><td></td></tr><tr><td style="white-space:nowrap"><a name="x-urn:oid:1.2.208.176.2.4-DL024"> </a>  <a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DL024">DL024</a></td><td>urn:oid:1.2.208.176.2.4</td><td>Absces, furunkel eller karbunkel i huden på ekstremitet</td><td></td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#9.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 23, 2026 08:03+0000">2026-04-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <div style="color: #33333" >
+	Links: <a style="color: #81BEF7"
+ 		href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7"
+ 		href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7"
+ 		href="changelog.html">Change log</a>
+	<!--
+                 <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+-->
+	<a style="color: #81BEF7"
+ 		rel="license"
+ 		href="http://hl7.org/fhir/R4/license.html">
+		<img style="border-style: none;"
+   			alt="CC0"
+   			src="cc0.png"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
