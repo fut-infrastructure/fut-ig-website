@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/ConceptMap/ehealth-to-medcom-carecommunication-priority> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ehealth-to-medcom-carecommunication-priority"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap ehealth-to-medcom-carecommunication-priority</b></p><a name=\"ehealth-to-medcom-carecommunication-priority\"> </a><a name=\"hcehealth-to-medcom-carecommunication-priority\"> </a><p>This mapping does not specify any particular context of use.</p><br/><p>Mapping from <a href=\"CodeSystem-ehealth-carecommunication-priority.html\">eHealth CareCommunication Priority codes</a> to <code>http://medcomfhir.dk/ig/terminology/ValueSet/medcom-careCommunication-requestPriority</code></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>routine</td><td>:(equivalent)</td><td>routine</td></tr><tr><td>asap</td><td>:(equivalent)</td><td>asap</td></tr></table></div>"
+  ] ;
+  fhir:ConceptMap.url [ fhir:value "http://ehealth.sundhed.dk/cm/ehealth-to-medcom-carecommunication-priority"] ;
+  fhir:ConceptMap.version [ fhir:value "10.0.0"] ;
+  fhir:ConceptMap.title [ fhir:value "eHealth to MedCom CareCommunication Priority Map"] ;
+  fhir:ConceptMap.status [ fhir:value "active"] ;
+  fhir:ConceptMap.date [ fhir:value "2026-08-06T13:17:54+00:00"^^xsd:dateTime] ;
+  fhir:ConceptMap.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:ConceptMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:ConceptMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:ConceptMap.group [
+     fhir:index 0 ;
+     fhir:ConceptMap.group.source [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-carecommunication-priority" ] ;
+     fhir:ConceptMap.group.target [ fhir:value "http://medcomfhir.dk/ig/terminology/ValueSet/medcom-careCommunication-requestPriority" ] ;
+     fhir:ConceptMap.group.element [
+       fhir:index 0 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "routine" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "routine" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Routine" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "relatedto" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "asap" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "asap" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "ASAP" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "relatedto" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/ConceptMap/ehealth-to-medcom-carecommunication-priority.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

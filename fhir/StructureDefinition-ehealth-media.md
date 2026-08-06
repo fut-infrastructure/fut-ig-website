@@ -1,4 +1,4 @@
-# ehealth-media - eHealth Infrastructure v6.0.0
+# ehealth-media - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-media |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-media |
 
 # Introduction
 
@@ -65,7 +65,7 @@ At least one of "subject" and "episodeOfCare" must be provided. "period" searche
 * Refer to this Profile: [Media investigation item](StructureDefinition-ehealth-clinicalimpression-mediaInvestigationItem.md), [ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md), [Related to](StructureDefinition-ehealth-media-related-to.md) and [ehealth-observation-wound-dimensions](StructureDefinition-ehealth-observation-wound-dimensions.md)
 * CapabilityStatements using this Profile: [measurement](CapabilityStatement-measurement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-media)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-media.json)
 
 ### Formal Views of Profile Content
 
@@ -84,363 +84,293 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-media.csv), 
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-media",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-media",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "dicom",
-      "uri" : "http://nema.org/dicom",
-      "name" : "DICOM Tag Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "sct-concept",
-      "uri" : "http://snomed.info/conceptdomain",
-      "name" : "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity" : "sct-attr",
-      "uri" : "http://snomed.org/attributebinding",
-      "name" : "SNOMED CT Attribute Binding"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "dicom",
+    "uri" : "http://nema.org/dicom",
+    "name" : "DICOM Tag Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Media",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Media",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Media",
-        "path" : "Media",
-        "constraint" : [
-          {
-            "key" : "ehealth-media-usageMode-metadata-no-content",
-            "severity" : "error",
-            "human" : "Media with usage mode 'metadata' cannot have content.",
-            "expression" : "extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode').value = 'metadata' implies (content.data.empty() and content.url.empty())",
-            "xpath" : "f:usageMode/f:valueCode/@value='metadata' implies (empty(f:content/f:data) and empty(f:content/f:url))",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media"
-          }
-        ]
+    "element" : [{
+      "id" : "Media",
+      "path" : "Media",
+      "constraint" : [{
+        "key" : "ehealth-media-usageMode-metadata-no-content",
+        "severity" : "error",
+        "human" : "Media with usage mode 'metadata' cannot have content.",
+        "expression" : "extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode').value = 'metadata' implies (content.data.empty() and content.url.empty())",
+        "xpath" : "f:usageMode/f:valueCode/@value='metadata' implies (empty(f:content/f:data) and empty(f:content/f:url))",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media"
+      }]
+    },
+    {
+      "id" : "Media.extension",
+      "path" : "Media.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "Media.extension",
-        "path" : "Media.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 3
-      },
-      {
-        "id" : "Media.extension:episodeOfCare",
-        "path" : "Media.extension",
-        "sliceName" : "episodeOfCare",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:episodeOfCare.value[x]",
-        "path" : "Media.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:quality",
-        "path" : "Media.extension",
-        "sliceName" : "quality",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:resolvedTiming",
-        "path" : "Media.extension",
-        "sliceName" : "resolvedTiming",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:thumbnail",
-        "path" : "Media.extension",
-        "sliceName" : "thumbnail",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-thumbnail"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:usageMode",
-        "path" : "Media.extension",
-        "sliceName" : "usageMode",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:relatedTo",
-        "path" : "Media.extension",
-        "sliceName" : "relatedTo",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-related-to"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.extension:series",
-        "path" : "Media.extension",
-        "sliceName" : "series",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-series-id"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.basedOn",
-        "path" : "Media.basedOn",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Media.modality",
-        "path" : "Media.modality",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/media-modality"
-        }
-      },
-      {
-        "id" : "Media.view",
-        "path" : "Media.view",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/media-view"
-        }
-      },
-      {
-        "id" : "Media.subject",
-        "path" : "Media.subject",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://hl7.org/fhir/StructureDefinition/Group",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
-              "http://hl7.org/fhir/StructureDefinition/Specimen"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Media.subject.reference",
-        "path" : "Media.subject.reference",
-        "min" : 1
-      },
-      {
-        "id" : "Media.created[x]",
-        "path" : "Media.created[x]",
-        "min" : 1
-      },
-      {
-        "id" : "Media.operator",
-        "path" : "Media.operator",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Media.bodySite",
-        "path" : "Media.bodySite",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/body-site"
-        }
-      },
-      {
-        "id" : "Media.device",
-        "path" : "Media.device",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Media.note.author[x]",
-        "path" : "Media.note.author[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "Media.note.author[x]:authorReference",
-        "path" : "Media.note.author[x]",
-        "sliceName" : "authorReference",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Media.note.author[x]:authorString",
-        "path" : "Media.note.author[x]",
-        "sliceName" : "authorString",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
+      "min" : 3
+    },
+    {
+      "id" : "Media.extension:episodeOfCare",
+      "path" : "Media.extension",
+      "sliceName" : "episodeOfCare",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"]
+      }]
+    },
+    {
+      "id" : "Media.extension:episodeOfCare.value[x]",
+      "path" : "Media.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Media.extension:quality",
+      "path" : "Media.extension",
+      "sliceName" : "quality",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality"]
+      }]
+    },
+    {
+      "id" : "Media.extension:resolvedTiming",
+      "path" : "Media.extension",
+      "sliceName" : "resolvedTiming",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing"]
+      }]
+    },
+    {
+      "id" : "Media.extension:thumbnail",
+      "path" : "Media.extension",
+      "sliceName" : "thumbnail",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-thumbnail"]
+      }]
+    },
+    {
+      "id" : "Media.extension:usageMode",
+      "path" : "Media.extension",
+      "sliceName" : "usageMode",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode"]
+      }]
+    },
+    {
+      "id" : "Media.extension:relatedTo",
+      "path" : "Media.extension",
+      "sliceName" : "relatedTo",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-related-to"]
+      }]
+    },
+    {
+      "id" : "Media.extension:series",
+      "path" : "Media.extension",
+      "sliceName" : "series",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-series-id"]
+      }]
+    },
+    {
+      "id" : "Media.basedOn",
+      "path" : "Media.basedOn",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Media.modality",
+      "path" : "Media.modality",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/media-modality"
       }
-    ]
+    },
+    {
+      "id" : "Media.view",
+      "path" : "Media.view",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/media-view"
+      }
+    },
+    {
+      "id" : "Media.subject",
+      "path" : "Media.subject",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://hl7.org/fhir/StructureDefinition/Group",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
+        "http://hl7.org/fhir/StructureDefinition/Specimen"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Media.subject.reference",
+      "path" : "Media.subject.reference",
+      "min" : 1
+    },
+    {
+      "id" : "Media.created[x]",
+      "path" : "Media.created[x]",
+      "min" : 1
+    },
+    {
+      "id" : "Media.operator",
+      "path" : "Media.operator",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Media.bodySite",
+      "path" : "Media.bodySite",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/body-site"
+      }
+    },
+    {
+      "id" : "Media.device",
+      "path" : "Media.device",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Media.note.author[x]",
+      "path" : "Media.note.author[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Media.note.author[x]:authorReference",
+      "path" : "Media.note.author[x]",
+      "sliceName" : "authorReference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+      }]
+    },
+    {
+      "id" : "Media.note.author[x]:authorString",
+      "path" : "Media.note.author[x]",
+      "sliceName" : "authorString",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
   }
 }
 

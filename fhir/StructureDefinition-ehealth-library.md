@@ -1,4 +1,4 @@
-# ehealth-library - eHealth Infrastructure v6.0.0
+# ehealth-library - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-library | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-library |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-library | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-library |
 
 # Introduction
 
@@ -49,7 +49,7 @@ The decision support rule Library can be associated with a CarePlan / ServiceReq
 * Refer to this Profile: [ehealth-activitydefinition](StructureDefinition-ehealth-activitydefinition.md) and [ehealth-plandefinition](StructureDefinition-ehealth-plandefinition.md)
 * CapabilityStatements using this Profile: [library](CapabilityStatement-library.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-library)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-library.json)
 
 ### Formal Views of Profile Content
 
@@ -68,162 +68,147 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-library.csv)
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-library",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-library",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-library",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "objimpl",
-      "uri" : "http://hl7.org/fhir/object-implementation",
-      "name" : "Object Implementation Information"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "objimpl",
+    "uri" : "http://hl7.org/fhir/object-implementation",
+    "name" : "Object Implementation Information"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Library",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Library",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Library",
-        "path" : "Library"
+    "element" : [{
+      "id" : "Library",
+      "path" : "Library"
+    },
+    {
+      "id" : "Library.extension",
+      "path" : "Library.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "Library.extension",
-        "path" : "Library.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 2
-      },
-      {
-        "id" : "Library.extension:intendedAudience",
-        "path" : "Library.extension",
-        "sliceName" : "intendedAudience",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Library.extension:revision",
-        "path" : "Library.extension",
-        "sliceName" : "revision",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-revision"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Library.extension:modifierRole",
-        "path" : "Library.extension",
-        "sliceName" : "modifierRole",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Library.version",
-        "path" : "Library.version",
-        "min" : 1
-      },
-      {
-        "id" : "Library.type",
-        "path" : "Library.type",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/library-type"
-        }
-      },
-      {
-        "id" : "Library.useContext.code",
-        "path" : "Library.useContext.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/ehealth-usage-context-type"
-        }
-      },
-      {
-        "id" : "Library.jurisdiction",
-        "path" : "Library.jurisdiction",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/jurisdiction"
-        }
-      },
-      {
-        "id" : "Library.parameter",
-        "path" : "Library.parameter",
-        "min" : 1
+      "min" : 2
+    },
+    {
+      "id" : "Library.extension:intendedAudience",
+      "path" : "Library.extension",
+      "sliceName" : "intendedAudience",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience"]
+      }]
+    },
+    {
+      "id" : "Library.extension:revision",
+      "path" : "Library.extension",
+      "sliceName" : "revision",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-revision"]
+      }]
+    },
+    {
+      "id" : "Library.extension:modifierRole",
+      "path" : "Library.extension",
+      "sliceName" : "modifierRole",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role"]
+      }]
+    },
+    {
+      "id" : "Library.extension:aggregationMode",
+      "path" : "Library.extension",
+      "sliceName" : "aggregationMode",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregation-mode"]
+      }]
+    },
+    {
+      "id" : "Library.version",
+      "path" : "Library.version",
+      "min" : 1
+    },
+    {
+      "id" : "Library.type",
+      "path" : "Library.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/library-type"
       }
-    ]
+    },
+    {
+      "id" : "Library.useContext.code",
+      "path" : "Library.useContext.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/ehealth-usage-context-type"
+      }
+    },
+    {
+      "id" : "Library.jurisdiction",
+      "path" : "Library.jurisdiction",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/jurisdiction"
+      }
+    },
+    {
+      "id" : "Library.parameter",
+      "path" : "Library.parameter",
+      "min" : 1
+    }]
   }
 }
 

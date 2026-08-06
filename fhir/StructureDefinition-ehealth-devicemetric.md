@@ -1,4 +1,4 @@
-# ehealth-devicemetric - eHealth Infrastructure v6.0.0
+# ehealth-devicemetric - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-devicemetric |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-devicemetric |
 
 # Introduction
 
@@ -54,7 +54,7 @@ The initial values of device quality is set from values in the SSL catalogue.
 * Refer to this Profile: [ehealth-media](StructureDefinition-ehealth-media.md)
 * CapabilityStatements using this Profile: [device](CapabilityStatement-device.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-devicemetric)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-devicemetric.json)
 
 ### Formal Views of Profile Content
 
@@ -73,197 +73,157 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-devicemetric
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-devicemetric",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-devicemetric",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "DeviceMetric",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/DeviceMetric",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "DeviceMetric",
-        "path" : "DeviceMetric"
+    "element" : [{
+      "id" : "DeviceMetric",
+      "path" : "DeviceMetric"
+    },
+    {
+      "id" : "DeviceMetric.extension",
+      "path" : "DeviceMetric.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "DeviceMetric.extension",
-        "path" : "DeviceMetric.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 4
-      },
-      {
-        "id" : "DeviceMetric.extension:properties",
-        "path" : "DeviceMetric.extension",
-        "sliceName" : "properties",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-properties"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceMetric.extension:qualities",
-        "path" : "DeviceMetric.extension",
-        "sliceName" : "qualities",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-qualities"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceMetric.extension:qualitiyHistory",
-        "path" : "DeviceMetric.extension",
-        "sliceName" : "qualitiyHistory",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-qualityHistory"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceMetric.extension:templateQualities",
-        "path" : "DeviceMetric.extension",
-        "sliceName" : "templateQualities",
-        "min" : 3,
-        "max" : "3",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-templateQualities"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceMetric.type",
-        "path" : "DeviceMetric.type",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/device-measurement-unit"
-        }
-      },
-      {
-        "id" : "DeviceMetric.unit",
-        "path" : "DeviceMetric.unit",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/device-measurement-unit"
-        }
-      },
-      {
-        "id" : "DeviceMetric.source",
-        "path" : "DeviceMetric.source",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceMetric.parent",
-        "path" : "DeviceMetric.parent",
-        "max" : "0"
-      },
-      {
-        "id" : "DeviceMetric.calibration.extension",
-        "path" : "DeviceMetric.calibration.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "DeviceMetric.calibration.extension:calibrationExpires",
-        "path" : "DeviceMetric.calibration.extension",
-        "sliceName" : "calibrationExpires",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-calibrationExpires"
-            ]
-          }
-        ]
+      "min" : 4
+    },
+    {
+      "id" : "DeviceMetric.extension:properties",
+      "path" : "DeviceMetric.extension",
+      "sliceName" : "properties",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-properties"]
+      }]
+    },
+    {
+      "id" : "DeviceMetric.extension:qualities",
+      "path" : "DeviceMetric.extension",
+      "sliceName" : "qualities",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-qualities"]
+      }]
+    },
+    {
+      "id" : "DeviceMetric.extension:qualitiyHistory",
+      "path" : "DeviceMetric.extension",
+      "sliceName" : "qualitiyHistory",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-qualityHistory"]
+      }]
+    },
+    {
+      "id" : "DeviceMetric.extension:templateQualities",
+      "path" : "DeviceMetric.extension",
+      "sliceName" : "templateQualities",
+      "min" : 3,
+      "max" : "3",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-templateQualities"]
+      }]
+    },
+    {
+      "id" : "DeviceMetric.type",
+      "path" : "DeviceMetric.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/device-measurement-unit"
       }
-    ]
+    },
+    {
+      "id" : "DeviceMetric.unit",
+      "path" : "DeviceMetric.unit",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/device-measurement-unit"
+      }
+    },
+    {
+      "id" : "DeviceMetric.source",
+      "path" : "DeviceMetric.source",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DeviceMetric.parent",
+      "path" : "DeviceMetric.parent",
+      "max" : "0"
+    },
+    {
+      "id" : "DeviceMetric.calibration.extension",
+      "path" : "DeviceMetric.calibration.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "DeviceMetric.calibration.extension:calibrationExpires",
+      "path" : "DeviceMetric.calibration.extension",
+      "sliceName" : "calibrationExpires",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-devicemetric-calibrationExpires"]
+      }]
+    }]
   }
 }
 

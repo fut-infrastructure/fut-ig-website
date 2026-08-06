@@ -1,4 +1,4 @@
-# Suggest care teams - eHealth Infrastructure v6.0.0
+# Suggest care teams - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,30 +8,11 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:suggest-care-teams |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:suggest-care-teams |
 
  
 Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations. 
-
-URL: [base]/CarePlan/[id]/$suggest-care-teams
-
-### Parameters
-
-* **Use**: IN
-  * **Name**: regionCode
-  * **Scope**: 
-  * **Cardinality**: 0..1
-  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
-  * **Binding**: 
-  * **Documentation**: 
-* **Use**: IN
-  * **Name**: municipalityCode
-  * **Scope**: 
-  * **Cardinality**: 0..1
-  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
-  * **Binding**: 
-  * **Documentation**: 
 
 
 
@@ -42,58 +23,50 @@ URL: [base]/CarePlan/[id]/$suggest-care-teams
   "resourceType" : "OperationDefinition",
   "id" : "CarePlan-i-suggest-care-teams",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "suggest-care-teams",
   "title" : "Suggest care teams",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
   "description" : "Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "affectsState" : true,
   "code" : "suggest-care-teams",
   "resource" : ["CarePlan"],
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "regionCode",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "type" : "string"
-    },
-    {
-      "name" : "municipalityCode",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "type" : "string"
-    }
-  ]
+  "parameter" : [{
+    "name" : "regionCode",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Region code for the care teams' managing organization",
+    "type" : "string"
+  },
+  {
+    "name" : "municipalityCode",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Municipality code for the care teams' managing organization",
+    "type" : "string"
+  }]
 }
 
 ```

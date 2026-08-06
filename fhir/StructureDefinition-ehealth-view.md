@@ -1,4 +1,4 @@
-# ehealth-view - eHealth Infrastructure v6.0.0
+# ehealth-view - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-view |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-view |
 
 # Introduction
 
@@ -65,18 +65,23 @@ The status field,`ehealth-status`, will express the lifecycle of the resource. C
 
 ### UseContext
 
-The element `useContext` can be used to specify the context in which the View is applicable. The element `useContext.code` is bound to the ValueSet http://hl7.org/fhir/ValueSet/use-context (see https://hl7.org/fhir/R4/valueset-use-context.html) and defines the context which the `useContext` can specify. The `useContext.valueCodeableConcept` defines the value (e.g. if the `useContext.code` is `focus`, the `useContext.valueCodeableConcept` can specify a specific condition). The element `useContext.valueCodeableConcept` is validated against the eHealth ValueSet http://ehealth.sundhed.dk/vs/ehealth-usage-context-type (see https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html). The validation includes that the value in `useContext.valueCodeableConcept` is acceptable in the ValueSet described for `useContext.code`.
+The `useContext` element specifies the context in which the View is applicable. It consists of:
 
-The `useContext` element can be updated at any time, regardless of the status of the View.
+* **`useContext.code`** – Defines the context type.
+* **`useContext.valueCodeableConcept`** – Defines the context value (e.g., a specific condition when `useContext.code` is `focus`).
 
-An example of a `useContext` is that a View is only applicable for use in a specific intended solution (Note: the code and display for the intended solution in the example are fictional):
+When using `useContext.code` from [http://ehealth.sundhed.dk/vs/ehealth-usage-context-type](https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html), the `useContext.valueCodeableConcept` is validated against the ValueSet outlined for the chosen `useContext.code` as described in the description sections on [ehealth-usage-context-type ValueSet page](https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html).
+
+> **Note:** The `useContext` element can be updated at any time, regardless of the View status.
+
+**Example:** An View applicable only to a specific intended solution (codes are fictional):
 
 ```
 {
   "useContext": [
     {
       "code": {
-        "system": "http://hl7.org/fhir/ValueSet/use-context",
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
         "code": "program"
       },
       "valueCodeableConcept": {
@@ -94,7 +99,7 @@ An example of a `useContext` is that a View is only applicable for use in a spec
 
 * Refer to this Profile: [View investigation item](StructureDefinition-ehealth-clinicalimpression-viewInvestigationItem.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-view)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-view.json)
 
 ### Formal Views of Profile Content
 
@@ -113,261 +118,199 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-view.csv), [
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-view",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-view",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Basic",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Basic",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Basic",
-        "path" : "Basic"
+    "element" : [{
+      "id" : "Basic",
+      "path" : "Basic"
+    },
+    {
+      "id" : "Basic.extension",
+      "path" : "Basic.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "Basic.extension",
-        "path" : "Basic.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 4
-      },
-      {
-        "id" : "Basic.extension:recommendation",
-        "path" : "Basic.extension",
-        "sliceName" : "recommendation",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-recommendation"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:intendedAudience",
-        "path" : "Basic.extension",
-        "sliceName" : "intendedAudience",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:modifierRole",
-        "path" : "Basic.extension",
-        "sliceName" : "modifierRole",
-        "min" : 1,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:title",
-        "path" : "Basic.extension",
-        "sliceName" : "title",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-basic-title"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:version",
-        "path" : "Basic.extension",
-        "sliceName" : "version",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-version"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:description",
-        "path" : "Basic.extension",
-        "sliceName" : "description",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-description"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:purpose",
-        "path" : "Basic.extension",
-        "sliceName" : "purpose",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-purpose"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:useContext",
-        "path" : "Basic.extension",
-        "sliceName" : "useContext",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-useContext"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:status",
-        "path" : "Basic.extension",
-        "sliceName" : "status",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-status"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:content",
-        "path" : "Basic.extension",
-        "sliceName" : "content",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-content"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:type",
-        "path" : "Basic.extension",
-        "sliceName" : "type",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view-type"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.extension:viewFor",
-        "path" : "Basic.extension",
-        "sliceName" : "viewFor",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view-for"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Basic.code",
-        "path" : "Basic.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/basic-resource-type"
-        }
+      "min" : 4
+    },
+    {
+      "id" : "Basic.extension:recommendation",
+      "path" : "Basic.extension",
+      "sliceName" : "recommendation",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-recommendation"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:intendedAudience",
+      "path" : "Basic.extension",
+      "sliceName" : "intendedAudience",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:modifierRole",
+      "path" : "Basic.extension",
+      "sliceName" : "modifierRole",
+      "min" : 1,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:title",
+      "path" : "Basic.extension",
+      "sliceName" : "title",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-basic-title"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:version",
+      "path" : "Basic.extension",
+      "sliceName" : "version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-version"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:description",
+      "path" : "Basic.extension",
+      "sliceName" : "description",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-description"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:purpose",
+      "path" : "Basic.extension",
+      "sliceName" : "purpose",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-purpose"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:useContext",
+      "path" : "Basic.extension",
+      "sliceName" : "useContext",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-useContext"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:status",
+      "path" : "Basic.extension",
+      "sliceName" : "status",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-status"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:content",
+      "path" : "Basic.extension",
+      "sliceName" : "content",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-content"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:type",
+      "path" : "Basic.extension",
+      "sliceName" : "type",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view-type"]
+      }]
+    },
+    {
+      "id" : "Basic.extension:viewFor",
+      "path" : "Basic.extension",
+      "sliceName" : "viewFor",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-view-for"]
+      }]
+    },
+    {
+      "id" : "Basic.code",
+      "path" : "Basic.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/basic-resource-type"
       }
-    ]
+    }]
   }
 }
 

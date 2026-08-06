@@ -1,0 +1,86 @@
+# Send message - eHealth Infrastructure v10.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Send message**
+
+## OperationDefinition: Send message 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:Appointment-send-message |
+
+ 
+Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.md) associated with a video appointment ([ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.md) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.md)) via the specified channel. The recipient must be a RelatedPerson listed as a participant on the target Appointment. The created [ehealth-message](StructureDefinition-ehealth-message.md) resource is system-generated; its `sender` is a contained Device representing the issuing system. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "Appointment-send-message",
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message",
+  "version" : "10.0.0",
+  "name" : "Appointment-send-message",
+  "title" : "Send message",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-08-06T13:29:38+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.html) associated with a video appointment ([ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.html) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.html)) via the specified channel. The recipient must be a RelatedPerson listed as a participant on the target Appointment. The created [ehealth-message](StructureDefinition-ehealth-message.html) resource is system-generated; its `sender` is a contained Device representing the issuing system.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "send-message",
+  "comment" : "The following preconditions must be satisfied — otherwise the operation returns `HTTP 400 Bad Request` with an OperationOutcome describing the violated rule:\n\n* `Appointment.meta.profile` is [ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.html) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.html).\n* `Appointment.status` is `booked` or `pending`.\n* The `recipient` RelatedPerson is on `Appointment.participant[]` with `status` `accepted`, `tentative`, or `needs-action`.\n* `RelatedPerson.active` = `true`.\n* `RelatedPerson.period` has begun and has not ended.\n* `RelatedPerson.telecom[]` has exactly one element with `system` = `sms` and an [ehealth-telecom-purpose](StructureDefinition-ehealth-telecom-purpose.html) extension bound to `video-appointment-reminder-sms`.\n\nThe operation is synchronous and idempotent only from the FHIR caller's point of view: every successful call dispatches a new outbound message and creates a new Communication. The returned Communication has `status` = `completed` on successful dispatch or `status` = `stopped` when the downstream gateway rejected the send (the resource is still persisted so the failed attempt is auditable).",
+  "resource" : ["Appointment"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "recipient",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The related person to receive the message. Must be listed as a participant on the target Appointment.",
+    "type" : "Reference",
+    "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+  },
+  {
+    "name" : "channel",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The channel to use when sending the message.",
+    "type" : "code",
+    "binding" : {
+      "strength" : "required",
+      "valueSet" : "http://ehealth.sundhed.dk/vs/ehealth-message-channel"
+    }
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "The created Communication resource, conforming to the [ehealth-message](StructureDefinition-ehealth-message.html) profile. `Communication.status` is `completed` on successful dispatch or `stopped` when the downstream gateway rejected the send.",
+    "type" : "Communication"
+  }]
+}
+
+```

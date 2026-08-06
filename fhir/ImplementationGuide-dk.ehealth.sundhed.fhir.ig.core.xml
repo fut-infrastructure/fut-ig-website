@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core"/>
-  <version value="9.0.1"/>
+  <version value="10.0.0"/>
   <name value="eHealthInfrastructure"/>
   <title value="eHealth Infrastructure"/>
   <status value="active"/>
-  <date value="2026-04-23T08:01:32+00:00"/>
+  <date value="2026-08-06T13:29:38+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -37,7 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.1.0"/>
+    <version value="7.3.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -45,7 +45,7 @@
     </extension>
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.2.0"/>
+    <version value="5.3.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_dk_core">
     <uri value="http://hl7.dk/fhir/core/ImplementationGuide/hl7.fhir.dk.core"/>
@@ -282,8 +282,13 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters">
+      <valueReference>
+        <reference value="Parameters/expansion-parameters"/>
+      </valueReference>
+    </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r4#0.7.1"/>
+      <valueCode value="hl7.fhir.uv.tools.r4#1.1.2"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -806,6 +811,61 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-aggregate-group-id"/>
+      </reference>
+      <name value="Aggregate Group ID"/>
+      <description value="Id that link a group of measurements together by an aggregate group id, intended use is for Aggregated Triage."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-aggregate-id"/>
+      </reference>
+      <name value="aggregateId"/>
+      <description value="An optional identifier used to associate this ServiceRequest with an aggregate or grouping context."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-aggregation-mode"/>
+      </reference>
+      <name value="Aggregation Mode"/>
+      <description value="Mode of Aggregated Triage"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-aggregation-mode-types"/>
+      </reference>
+      <name value="Aggregation Mode"/>
+      <description value="Aggregation Mode"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/aggregation-mode-types"/>
+      </reference>
+      <name value="Aggregation Mode Types"/>
+      <description value="Aggregation Mode"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -1107,6 +1167,28 @@
       </reference>
       <name value="Care Team Status"/>
       <description value="Indicates the status of the care team."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/ehealth-communication-search-careCommunicationSenderCareTeam"/>
+      </reference>
+      <name value="careCommunicationSenderCareTeam"/>
+      <description value="Search parameter for finding CareCommunication based on the sending CareTeam (the careteam sub-extension of the ehealth-carecommunication-sender extension)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/ehealth-communication-search-careCommunicationSenderPractitioner"/>
+      </reference>
+      <name value="careCommunicationSenderPractitioner"/>
+      <description value="Search parameter for finding CareCommunication based on the sending Practitioner (the practitioner sub-extension of the ehealth-carecommunication-sender extension)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1834,7 +1916,7 @@
         <reference value="OperationDefinition/-s-create-episode-of-care"/>
       </reference>
       <name value="Create an EpisodeOfCare"/>
-      <description value="This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input.&#xD;&#xA;## Input&#xD;&#xA;The input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance' (see below).&#xD;&#xA;### The EpisodeOfCare resource&#xD;&#xA;The EpisodeOfCare has to have `PLANNED` status &#xD;&#xA;The 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. &#xD;&#xA;The 'managingOrganization' property of the EpisodeOfCare references the GDPR Data Controller (Danish: 'Dataansvarlig').&#xD;&#xA;### The privacy-Provenance resource&#xD;&#xA;A privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/sundhedsloven'&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/serviceloven'&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/aeldreloven'&#xD;&#xA;### Diagnosis referenced Condition resource&#xD;&#xA;For any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.&#xD;&#xA;### Treatment area validation&#xD;&#xA;When creating an EpisodeOfCare, the infrastructure validates that all diagnoses (referenced Condition.code) are within the treatment area of the telemedicine solution tied to the EpisodeOfCare.The telemedicine solution is determined by inspecting the incoming security token of the practitioner creating the EpisodeOfCare (coexistence-tag in scope claim).The treatment areas are defined by each telemedicine solution having a ValueSet determining the allowed Condition.code.The treatment area ValueSets are characterized by having a useContext with 'system-treatment-area' context code, and using the coexistence-tag as the value (see https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html).&#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.&#xD;&#xA;To get resources bodies in the output the request header has to contain parameter ```Prefer: return=representation```.&#xD;&#xA;## Validation&#xD;&#xA;- Patient.deceased must be false to create episode of care&#xD;&#xA;### The origin-Provenance resource&#xD;&#xA;Whenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token."/>
+      <description value="This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input.&#xD;&#xA;## Input&#xD;&#xA;The input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance' (see below).&#xD;&#xA;### The EpisodeOfCare resource&#xD;&#xA;The EpisodeOfCare has to have `PLANNED` status &#xD;&#xA;The 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. &#xD;&#xA;The GDPR Data Controller (Danish: 'Dataansvarlig') of the EpisodeOfCare is provided through the 'ehealth-managing-organization' extension (managingOrganizations), where each entry holds the responsible organisation and the period during which it held that responsibility. The standard 'managingOrganization' property is no longer used (cardinality 0..0).&#xD;&#xA;### The privacy-Provenance resource&#xD;&#xA;A privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/sundhedsloven'&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/serviceloven'&#xD;&#xA;- 'http://ehealth.sundhed.dk/policy/dk/aeldreloven'&#xD;&#xA;### Diagnosis referenced Condition resource&#xD;&#xA;For any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.&#xD;&#xA;### Treatment area validation&#xD;&#xA;When creating an EpisodeOfCare, the infrastructure validates that all diagnoses (referenced Condition.code) are within the treatment area of the telemedicine solution tied to the EpisodeOfCare.The telemedicine solution is determined by inspecting the incoming security token of the practitioner creating the EpisodeOfCare (coexistence-tag in scope claim).The treatment areas are defined by each telemedicine solution having a ValueSet determining the allowed Condition.code.The treatment area ValueSets are characterized by having a useContext with 'system-treatment-area' context code, and using the coexistence-tag as the value (see https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html).&#xD;&#xA;## Output&#xD;&#xA;For valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.&#xD;&#xA;To get resources bodies in the output the request header has to contain parameter ```Prefer: return=representation```.&#xD;&#xA;## Validation&#xD;&#xA;- Patient.deceased must be false to create episode of care&#xD;&#xA;### The origin-Provenance resource&#xD;&#xA;Whenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1960,6 +2042,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication-datetime"/>
+      </reference>
+      <name value="DateTime Extension"/>
+      <description value="Date and time of the payload segment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -2022,6 +2115,17 @@
       </reference>
       <name value="Description"/>
       <description value="Natural language description"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication-destination"/>
+      </reference>
+      <name value="Destination Extension"/>
+      <description value="Reference to the destination Organization for this communication."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2120,6 +2224,39 @@
       </reference>
       <name value="Device Measuring Quality"/>
       <description value="Device Measuring Quality value set."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-device-platform"/>
+      </reference>
+      <name value="Device platform"/>
+      <description value="Platform identifier for the patient's mobile device (e.g. iOS, Android). Used together with the registration token to route push notifications via FCM/APNs."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-device-platform"/>
+      </reference>
+      <name value="Device Platform"/>
+      <description value="Push notification service identifier for a citizen's mobile device. Used together with a registration token to direct push notifications to the right push notification service."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-device-platform"/>
+      </reference>
+      <name value="Device Platform"/>
+      <description value="Device Platform value set."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2485,6 +2622,61 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-carecommunication-mimetypes"/>
+      </reference>
+      <name value="eHealth CareCommunication Attachment MIME Types"/>
+      <description value="Allowed MIME types for attachments in eHealth CareCommunication messages. Mirrors MedCom's medcom-core-attachmentMimeTypes ValueSet."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-carecommunication-category"/>
+      </reference>
+      <name value="eHealth CareCommunication Categories"/>
+      <description value="Categories used for CareCommunciation messages."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-carecommunication-category"/>
+      </reference>
+      <name value="eHealth CareCommunication Category codes"/>
+      <description value="The set of CareCommunication category code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-carecommunication-priority"/>
+      </reference>
+      <name value="eHealth CareCommunication Priorities"/>
+      <description value="Priorities used for CareCommunication messages."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-carecommunication-priority"/>
+      </reference>
+      <name value="eHealth CareCommunication Priority codes"/>
+      <description value="The set of CareCommunication priority code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -2547,6 +2739,28 @@
       </reference>
       <name value="eHealth Message Author"/>
       <description value="Records the attorney (RelatedPerson) who authored a message on behalf of the grantor patient, for cases where the physical author is not the same as Communication.sender. When a RELATED_PERSON user sends a message, Communication.sender must still reference the grantor patient, and this extension must reference the acting RelatedPerson. In future, the target list may be extended to include Practitioner references (e.g. for messages sent by a CareTeam member), but for now only RelatedPerson is supported."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-message-channel"/>
+      </reference>
+      <name value="eHealth Message Channel"/>
+      <description value="ValueSet for message channel codes."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-message-channel"/>
+      </reference>
+      <name value="eHealth Message Channel codes"/>
+      <description value="Codes indicating the channel used to send a message."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2635,6 +2849,48 @@
       </reference>
       <name value="eHealth System"/>
       <description value="Coexistence tags for telemedicine solutions."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-telecom-purpose"/>
+      </reference>
+      <name value="eHealth Telecom Purpose"/>
+      <description value="ValueSet for telecom purpose codes."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-telecom-purpose"/>
+      </reference>
+      <name value="eHealth Telecom Purpose codes"/>
+      <description value="Codes indicating the purpose of a telecom contact point."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ehealth-to-medcom-carecommunication-category"/>
+      </reference>
+      <name value="eHealth to MedCom CareCommunication Category Map"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ehealth-to-medcom-carecommunication-priority"/>
+      </reference>
+      <name value="eHealth to MedCom CareCommunication Priority Map"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2728,6 +2984,16 @@
         <reference value="StructureDefinition/ehealth-auditevent"/>
       </reference>
       <name value="ehealth-auditevent"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication"/>
+      </reference>
+      <name value="ehealth-carecommunication"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4204,6 +4470,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication-payload-identifier"/>
+      </reference>
+      <name value="Identifier Extension"/>
+      <description value="Extension to hold an Identifier for a payload. Identifier.value shall be a UUID v4 in URN form (urn:uuid:&lt;uuid&gt;)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -4429,6 +4706,17 @@
       </reference>
       <name value="LOINC Code System Supplement"/>
       <description value="LOINC is a freely available international standard for tests, measurements, and observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-managing-organization"/>
+      </reference>
+      <name value="Managing organization"/>
+      <description value="An organization that has assumed responsibility for the episode of care during a given period. Replaces the standard EpisodeOfCare.managingOrganization to allow multiple managing organizations over time."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4696,6 +4984,39 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication-message-Type"/>
+      </reference>
+      <name value="Message type"/>
+      <description value="The type of the message. inResponseTo is only allowed when the type is reply-message."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/MessageTypeCS"/>
+      </reference>
+      <name value="Message Type CodeSystem"/>
+      <description value="Allowed codes for message type."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/MessageType"/>
+      </reference>
+      <name value="Message Type ValueSet"/>
+      <description value="Allowed message types: new-message, reply-message, forward-message."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Communication"/>
       </extension>
       <reference>
@@ -4894,6 +5215,27 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
+        <reference value="ValueSet/ehealth-oio-bpp-competences"/>
+      </reference>
+      <name value="OIO BPP Competences"/>
+      <description value="OIO BPP competences."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/oio-bpp-competences-to-practitioner-competences"/>
+      </reference>
+      <name value="OIO BPP competences to eHealth Practitioner competences role mapping"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
         <reference value="ValueSet/ehealth-oio-bpp-roles"/>
       </reference>
       <name value="OIO BPP Roles"/>
@@ -4930,6 +5272,17 @@
       </reference>
       <name value="OIO Organization Type"/>
       <description value="Value set used for indicating the organization type for organizations from OIO / STS-ORG"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-oio-bpp-competences"/>
+      </reference>
+      <name value="OIO-BPP Competences"/>
+      <description value="OIO BPP Competences"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5125,6 +5478,17 @@
       </reference>
       <name value="Other (treatment area)"/>
       <description value="Treatment area for other (xb)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-clinicalimpression-otherItem"/>
+      </reference>
+      <name value="Other item"/>
+      <description value="Investigation item for Aggregated Triage resources so they can be approved."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5379,6 +5743,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-poa-privilege"/>
+      </reference>
+      <name value="Power of Attorney Privilege"/>
+      <description value="Vendor-specific power of attorney privilege codes used by Keycloak when creating RelatedPerson resources for PoA-authenticated citizens. The full set of codes is externally governed and not enumerated here."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -5386,6 +5761,28 @@
       </reference>
       <name value="Practice Setting Codes"/>
       <description value="Value set used for indicating the specialty for organizations."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/ehealth-practitioner-competences"/>
+      </reference>
+      <name value="Practitioner Competences"/>
+      <description value="Practitioner Competences"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehealth-practitioner-competences"/>
+      </reference>
+      <name value="Practitioner Competences"/>
+      <description value="Practitioner Competences"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -5902,6 +6299,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-device-registrationToken"/>
+      </reference>
+      <name value="Registration token"/>
+      <description value="Registration token from a push notification service (e.g. FCM/APNs) for the patient's mobile device. Used by telemedicine solutions when sending push notifications."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -5941,6 +6349,17 @@
       <name value="Related to"/>
       <description value="Relations to other Organizations"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RelatedPerson"/>
+      </extension>
+      <reference>
+        <reference value="RelatedPerson/relatedperson-videosms"/>
+      </reference>
+      <name value="RelatedPerson with video-appointment SMS reminder telecom"/>
+      <description value="Example RelatedPerson configured to receive an SMS reminder when a related video appointment is upcoming. The telecom slice carries the `ehealth-telecom-purpose` extension with code `video-appointment-reminder-sms`."/>
+      <exampleCanonical value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -6004,6 +6423,17 @@
       </reference>
       <name value="Required policies for provenances"/>
       <description value="Required policies under which data can be provided. One of these policies must be provided in a provenance."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/Organization-t-resolve-managing-organization"/>
+      </reference>
+      <name value="Resolve managing organization (data controller)"/>
+      <description value="Given an organisation, returns the corresponding root authority (the GDPR data controller) by traversing the SOR / FK Organisation hierarchy upwards via Organization.partOf.&#xD;&#xA;## Input&#xD;&#xA;A single mandatory reference 'organization' to the organisation to resolve from.&#xD;&#xA;## Output&#xD;&#xA;The resolved authority Organization (a municipality or a region).&#xD;&#xA;An OperationOutcome with HTTP 404 is returned when no authority can be resolved for the organisation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -6158,6 +6588,17 @@
       </reference>
       <name value="Retrieve and transform QRD document"/>
       <description value="Retrieves a DK-HL7 Questionnaire Response Document (QRD) XML document from national document sharing infrastructure and transforms the QRD XML document to a FHIR QuestionnaireResponse (ehealth-questionnaireresponse profile) resource.Input (url) is the element DocumentReference.content.attachment.url for metadata about the QRD document as returned from the DocumentReference search operation performing a query to national document sharing infrastructure. The url, which shall be used as-is in this operation, is an encoding of the XDS DocumentEntry.uniqueId, XDS DocumentEntry.repositoryUniqueId and XDS DocumentEntry.homeCommunityId metadata attributes needed to retrieve the document. Input (bundle) must contain a Questionnaire FHIR resource corresponding to the questionnaire definition (QFDD) that the QRD references and is a response to.Input (consentOverride) signifies, when set to true, that the retrieve of a document shall be performed with override of any withholding of information possibly performed by the national document sharing service in accordance with patient's consents. Override of consents constitutes a form of break-the-glass invocation, known in Danish as værdispring. The preferred method is to call this operation without consent override and to only call with consent override when necessary. Input (reason) is mandatory when input element consentOverride is set to true. The string input is intended as a placeholder for the user's rationale for choosing to override consents. The value is logged in the Infrastructure.The returned FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing a FHIR QuestionnaireResponse (ehealth-documentreference profile) resource, if the Questionnaire FHIR resource was provided as an input, and if the transformation was successful.If the Questionnaire FHIR resource was not provided as an input, or if the transformation was not successful, the returned FHIR Bundle contains the QRD XML document that was retrieved from the national document sharing infrastructure."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/-s-assigned-material-count"/>
+      </reference>
+      <name value="Retrieve count of assignments for material"/>
+      <description value="This operation counts the number of material assignments (``ehealth-material-communication resources``) for a given ``ehealth-documentreference`` from the Plan service. This is done by performing an internal search using the given ehealth-documentReference, date and status parameters. Regardless of the given parameters, only ``ehealth-material-communication`` resources referring to an active ``ehealth-episodeofcare`` are counted. The group-by-careteam parameter determines whether a simple '_summary=count' search is performed or if all results should be fetched to extract and count based on participant CareTeam references.&#xD;&#xA;&#xD;&#xA;## Input&#xD;&#xA;The operation has two mandatory input parameters:&#xD;&#xA; - An EHealthDocumentReference reference&#xD;&#xA; - One or more status codes&#xD;&#xA;&#xD;&#xA;Additionally, there are two optional input parameters:&#xD;&#xA; - A boolean indicating whether to group the result by participant CareTeam references&#xD;&#xA; - A date parameter&#xD;&#xA;&#xD;&#xA;### EHealthDocumentReference reference&#xD;&#xA;A mandatory reference to an EHealthDocumentReference (general-material) in the plan service. Only ``ehealth-material-communication`` resources with the given reference in ``Communication.payload.content`` are counted.&#xD;&#xA;&#xD;&#xA;### Group-by-careTeam boolean&#xD;&#xA;The group-by-careTeam parameter is optional. When not supplied by the user, it is assumed false. When it is set to true, the operation returns a count per CareTeam referenced as a participant in the matching ehealth-material-communication resources.&#xD;&#xA;&#xD;&#xA;### Date&#xD;&#xA;The date parameter is optional, however, the count is always filtered by a date. If one is not given by the user, the date of execution is used instead. Only ``ehealth-material-communication`` resources whose ``Communication.period`` contains the used date are counted.&#xD;&#xA;&#xD;&#xA;### Status code list&#xD;&#xA;At least one ``status`` code must be supplied by the user. Only ``ehealth-material-communications`` with one of the supplied status codes in ``Communication.status`` will be counted.&#xD;&#xA;&#xD;&#xA;## Output&#xD;&#xA;When supplied with valid inputs, the operation will return a Bundle resource with a single Parameters resource in its ``Bundle.entry`` list. The Parameters resource format depends on whether the group-by-careTeam parameter was true.&#xD;&#xA;&#xD;&#xA;### Output Parameters&#xD;&#xA;If group-by-careTeam was false or not present. The Parameters resource will only contain a single parameter, named ``total`` with the value being the count of the ``ehealth-material-communication`` resources found to satisfy the given parameters.&#xD;&#xA;&#xD;&#xA;Example of output with group-by-careTeam as false or not present:&#xD;&#xA;```&#xD;&#xA;&quot;resource&quot;: {&#xD;&#xA;    &quot;resourceType&quot;: &quot;Parameters&quot;,&#xD;&#xA;    &quot;parameter&quot;: [{&#xD;&#xA;            &quot;name&quot;: &quot;total&quot;,&#xD;&#xA;            &quot;valueInteger&quot;: 42&#xD;&#xA;            }]&#xD;&#xA;    }]&#xD;&#xA;}&#xD;&#xA;```&#xD;&#xA;&#xD;&#xA;If group-by-careTeam was true, the Parameters resource will contain a parameter for each CareTeam that is referenced in ``Communication.participant.actor`` in any of the matching ``ehealth-material-communication`` resources. The name of each parameter will be the reference value (CareTeam/[id]) of the CareTeam and the value will be the count of matching ``ehealth-material-communication`` resources that reference that CareTeam. It is worth noting that if an ``ehealth-material-communication`` has two (or more) distinct participant CareTeams, this will add to the count of each of them.&#xD;&#xA;&#xD;&#xA;Example of output with group-by-careTeam as true:&#xD;&#xA;```&#xD;&#xA;&quot;resource&quot;: {&#xD;&#xA;    &quot;resourceType&quot;: &quot;Parameters&quot;,&#xD;&#xA;    &quot;parameter&quot;: [{&#xD;&#xA;            &quot;name&quot;: &quot;CareTeam/123&quot;,&#xD;&#xA;            &quot;valueInteger&quot;: 5&#xD;&#xA;            },&#xD;&#xA;            {&#xD;&#xA;            &quot;name&quot;: &quot;CareTeam/456&quot;,&#xD;&#xA;            &quot;valueInteger&quot;: 7&#xD;&#xA;            }]&#xD;&#xA;    }]&#xD;&#xA;}&#xD;&#xA;```"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -6371,6 +6812,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/Appointment-send-message"/>
+      </reference>
+      <name value="Send message"/>
+      <description value="Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.html) associated with a video appointment ([ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.html) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.html)) via the specified channel. The recipient must be a RelatedPerson listed as a participant on the target Appointment. The created [ehealth-message](StructureDefinition-ehealth-message.html) resource is system-generated; its `sender` is a contained Device representing the issuing system."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -6378,6 +6830,28 @@
       </reference>
       <name value="Sender careteam"/>
       <description value="CareTeam that is a sender of a Communication"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication-sender"/>
+      </reference>
+      <name value="Sender Extension, contains the sending PractitionerRole, Practitioner and CareTeam."/>
+      <description value="References the sending PractitionerRole (Actor), the Practitioner, and optionally a CareTeam."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-carecommunication-origin"/>
+      </reference>
+      <name value="sender organization"/>
+      <description value="Reference to the sending organization for this payload segment."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -6770,6 +7244,17 @@
       </reference>
       <name value="Telecom Custodian"/>
       <description value="Custodian of this ContactPoint."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehealth-telecom-purpose"/>
+      </reference>
+      <name value="Telecom purpose"/>
+      <description value="The purpose of a telecom contact point on a RelatedPerson."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -7624,6 +8109,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="multitenancy.html"/>
+        </extension>
+        <nameUrl value="multitenancy.html"/>
+        <title value="Multitenancy"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="operations.html"/>
         </extension>
         <nameUrl value="operations.html"/>
@@ -7636,6 +8129,14 @@
         </extension>
         <nameUrl value="POST_apply.html"/>
         <title value="POST Apply"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="POST_assigned-material-count.html"/>
+        </extension>
+        <nameUrl value="POST_assigned-material-count.html"/>
+        <title value="POST Assigned Material Count"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -7944,6 +8445,14 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="POST_Organization_resolve-managing-organization.html"/>
+        </extension>
+        <nameUrl value="POST_Organization_resolve-managing-organization.html"/>
+        <title value="POST Organization Resolve Managing Organization"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="POST_persist-login.html"/>
         </extension>
         <nameUrl value="POST_persist-login.html"/>
@@ -8196,6 +8705,14 @@
         </extension>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="PUT_Communication.html"/>
+        </extension>
+        <nameUrl value="PUT_Communication.html"/>
+        <title value="PUT Communication"/>
         <generation value="markdown"/>
       </page>
       <page>

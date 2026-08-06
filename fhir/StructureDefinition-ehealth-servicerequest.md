@@ -1,4 +1,4 @@
-# ehealth-servicerequest - eHealth Infrastructure v6.0.0
+# ehealth-servicerequest - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-servicerequest |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-servicerequest |
 
 # Introduction
 
@@ -43,7 +43,7 @@ The validity depends on the variant of `occurrence[x]` as follows:
 * Refer to this Profile: [ehealth-careplan](StructureDefinition-ehealth-careplan.md), [ehealth-goal](StructureDefinition-ehealth-goal.md), [ehealth-media](StructureDefinition-ehealth-media.md), [ehealth-observation](StructureDefinition-ehealth-observation.md) and [ehealth-questionnaireresponse](StructureDefinition-ehealth-questionnaireresponse.md)
 * CapabilityStatements using this Profile: [careplan](CapabilityStatement-careplan.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-servicerequest)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-servicerequest.json)
 
 ### Formal Views of Profile Content
 
@@ -62,370 +62,299 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-servicereque
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-servicerequest",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-servicerequest",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "quick",
-      "uri" : "http://siframework.org/cqf",
-      "name" : "Quality Improvement and Clinical Knowledge (QUICK)"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "quick",
+    "uri" : "http://siframework.org/cqf",
+    "name" : "Quality Improvement and Clinical Knowledge (QUICK)"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "ServiceRequest",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "ServiceRequest",
-        "path" : "ServiceRequest"
+    "element" : [{
+      "id" : "ServiceRequest",
+      "path" : "ServiceRequest"
+    },
+    {
+      "id" : "ServiceRequest.extension",
+      "path" : "ServiceRequest.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "ServiceRequest.extension",
-        "path" : "ServiceRequest.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 3
-      },
-      {
-        "id" : "ServiceRequest.extension:episodeOfCare",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "episodeOfCare",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:episodeOfCare.value[x]",
-        "path" : "ServiceRequest.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:referenceRange",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "referenceRange",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-referenceRange"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:sharingPolicy",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "sharingPolicy",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingPolicy"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:sharingApprovalPolicy",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "sharingApprovalPolicy",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingApprovalPolicy"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:reuseCriteria",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "reuseCriteria",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-reuseCriteria"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:triggerEnablementCode",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "triggerEnablementCode",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:statusHistory",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "statusHistory",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:statusSchedule",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "statusSchedule",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusSchedule"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.extension:includeAsExtra",
-        "path" : "ServiceRequest.extension",
-        "sliceName" : "includeAsExtra",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.instantiatesCanonical",
-        "path" : "ServiceRequest.instantiatesCanonical",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "canonical",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.basedOn",
-        "path" : "ServiceRequest.basedOn",
-        "max" : "0"
-      },
-      {
-        "id" : "ServiceRequest.replaces",
-        "path" : "ServiceRequest.replaces",
-        "max" : "0"
-      },
-      {
-        "id" : "ServiceRequest.code",
-        "path" : "ServiceRequest.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/activitydefinition-code"
-        }
-      },
-      {
-        "id" : "ServiceRequest.subject",
-        "path" : "ServiceRequest.subject",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.performer",
-        "path" : "ServiceRequest.performer",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam",
-              "http://hl7.org/fhir/StructureDefinition/HealthcareService"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.reasonReference",
-        "path" : "ServiceRequest.reasonReference",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.note.author[x]",
-        "path" : "ServiceRequest.note.author[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "ServiceRequest.note.author[x]:authorReference",
-        "path" : "ServiceRequest.note.author[x]",
-        "sliceName" : "authorReference",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.note.author[x]:authorString",
-        "path" : "ServiceRequest.note.author[x]",
-        "sliceName" : "authorString",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
-      },
-      {
-        "id" : "ServiceRequest.relevantHistory",
-        "path" : "ServiceRequest.relevantHistory",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
+      "min" : 3
+    },
+    {
+      "id" : "ServiceRequest.extension:episodeOfCare",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "episodeOfCare",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:episodeOfCare.value[x]",
+      "path" : "ServiceRequest.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:referenceRange",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "referenceRange",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-referenceRange"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:sharingPolicy",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "sharingPolicy",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingPolicy"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:sharingApprovalPolicy",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "sharingApprovalPolicy",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingApprovalPolicy"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:reuseCriteria",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "reuseCriteria",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-reuseCriteria"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:triggerEnablementCode",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "triggerEnablementCode",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:statusHistory",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "statusHistory",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:statusSchedule",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "statusSchedule",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusSchedule"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:includeAsExtra",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "includeAsExtra",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.extension:aggregateId",
+      "path" : "ServiceRequest.extension",
+      "sliceName" : "aggregateId",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-id"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.instantiatesCanonical",
+      "path" : "ServiceRequest.instantiatesCanonical",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "canonical",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.basedOn",
+      "path" : "ServiceRequest.basedOn",
+      "max" : "0"
+    },
+    {
+      "id" : "ServiceRequest.replaces",
+      "path" : "ServiceRequest.replaces",
+      "max" : "0"
+    },
+    {
+      "id" : "ServiceRequest.code",
+      "path" : "ServiceRequest.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/activitydefinition-code"
       }
-    ]
+    },
+    {
+      "id" : "ServiceRequest.subject",
+      "path" : "ServiceRequest.subject",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.performer",
+      "path" : "ServiceRequest.performer",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam",
+        "http://hl7.org/fhir/StructureDefinition/HealthcareService"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.reasonReference",
+      "path" : "ServiceRequest.reasonReference",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.note.author[x]",
+      "path" : "ServiceRequest.note.author[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "ServiceRequest.note.author[x]:authorReference",
+      "path" : "ServiceRequest.note.author[x]",
+      "sliceName" : "authorReference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+      }]
+    },
+    {
+      "id" : "ServiceRequest.note.author[x]:authorString",
+      "path" : "ServiceRequest.note.author[x]",
+      "sliceName" : "authorString",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "ServiceRequest.relevantHistory",
+      "path" : "ServiceRequest.relevantHistory",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance"],
+        "aggregation" : ["referenced"]
+      }]
+    }]
   }
 }
 

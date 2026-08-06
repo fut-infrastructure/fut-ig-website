@@ -1,0 +1,70 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-to-PHMR> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "-s-transform-to-PHMR"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-transform-to-PHMR</b></p><a name=\"-s-transform-to-PHMR\"> </a><a name=\"hc-s-transform-to-PHMR\"> </a><p>URL: [base]/$transform-to-PHMR</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>bundle</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/bundle.html\">Bundle</a></td><td/><td><div><p>The input FHIR Bundle that contains the FHIR Composition referencing FHIR Observation (ehealth-observation profile) resources to be transformed to PHMR XML.</p>\n</div></td></tr><tr><td>OUT</td><td>documentReference</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/documentreference.html\">DocumentReference</a></td><td/><td/></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-to-PHMR"] ;
+  fhir:OperationDefinition.version [ fhir:value "10.0.0"] ;
+  fhir:OperationDefinition.name [ fhir:value "transform-to-PHMR"] ;
+  fhir:OperationDefinition.title [ fhir:value "Transform to PHMR"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-08-06T13:17:54+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Transforms a FHIR Observation (ehealth-observation profile) resource to a DK-HL7 Personal Health Monitoring Report (PHMR) XML document. The input FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing one or more FHIR Observation (ehealth-observation profile) resources and referenced resources such as FHIR Organization. The returned FHIR DocumentReference contains the PHMR XML document adhering to the DK-HL7 Personal Health Monitoring Report profile."] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "transform-to-PHMR"] ;
+  fhir:OperationDefinition.system [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "bundle" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The input FHIR Bundle that contains the FHIR Composition referencing FHIR Observation (ehealth-observation profile) resources to be transformed to PHMR XML." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Bundle" ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "documentReference" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "DocumentReference" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-to-PHMR.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

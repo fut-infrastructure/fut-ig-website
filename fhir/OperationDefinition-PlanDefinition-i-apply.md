@@ -1,4 +1,4 @@
-# Create a careplan - eHealth Infrastructure v6.0.0
+# Create a careplan - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,23 +8,23 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-apply | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:apply |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-apply | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:apply |
 
  
-Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction. 
+Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. 
 
-URL: [base]/PlanDefinition/[id]/$apply
+### HTTP Methods
+
+ 
+* If using POST the operation will persist resources and return the careplan.
+* If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction. 
 
 ### Parameters
 
-* **Use**: IN
-  * **Name**: episodeOfCare
-  * **Scope**: 
-  * **Cardinality**: 0..1
-  * **Type**: [string](http://hl7.org/fhir/R4/datatypes.html#string)
-  * **Binding**: 
-  * **Documentation**: 
+ 
+* CarePlan or Bundle of transient CarePlan and ServiceRequest resources.
+ 
 
 
 
@@ -35,51 +35,42 @@ URL: [base]/PlanDefinition/[id]/$apply
   "resourceType" : "OperationDefinition",
   "id" : "PlanDefinition-i-apply",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-apply",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "apply",
   "title" : "Create a careplan",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "description" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template.\n### HTTP Methods\n- If using POST the operation will persist resources and return the careplan.\n- If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.\n### Parameters\n- episodeOfCare: Reference(EpisodeOfCare) - The episode of care for which the plan is being applied.\n### Output\nCarePlan or Bundle of transient CarePlan and ServiceRequest resources.\n",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "affectsState" : false,
   "code" : "apply",
   "resource" : ["PlanDefinition"],
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "episodeOfCare",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "type" : "string"
-    }
-  ]
+  "parameter" : [{
+    "name" : "episodeOfCare",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The episodeOfCare for which the plan is being applied.",
+    "type" : "string"
+  }]
 }
 
 ```

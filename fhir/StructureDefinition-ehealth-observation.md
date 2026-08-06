@@ -1,4 +1,4 @@
-# ehealth-observation - eHealth Infrastructure v6.0.0
+# ehealth-observation - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-observation |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-observation |
 
 # Introduction
 
@@ -96,10 +96,10 @@ See [Searching](https://www.hl7.org/fhir/stu3/search.html) for more information 
 **Usages:**
 
 * Derived from this Profile: [ehealth-observation-wound-dimensions](StructureDefinition-ehealth-observation-wound-dimensions.md)
-* Refer to this Profile: [ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md), [ehealth-communication](StructureDefinition-ehealth-communication.md), [ehealth-condition](StructureDefinition-ehealth-condition.md), [ehealth-goal](StructureDefinition-ehealth-goal.md)...Show 3 more,[ehealth-observation-wound-dimensions](StructureDefinition-ehealth-observation-wound-dimensions.md),[ehealth-questionnaireresponse](StructureDefinition-ehealth-questionnaireresponse.md)and[ehealth-servicerequest](StructureDefinition-ehealth-servicerequest.md)
+* Refer to this Profile: [ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md), [ehealth-communication](StructureDefinition-ehealth-communication.md), [ehealth-condition](StructureDefinition-ehealth-condition.md), [ehealth-goal](StructureDefinition-ehealth-goal.md)... Show 3 more, [ehealth-observation-wound-dimensions](StructureDefinition-ehealth-observation-wound-dimensions.md), [ehealth-questionnaireresponse](StructureDefinition-ehealth-questionnaireresponse.md) and [ehealth-servicerequest](StructureDefinition-ehealth-servicerequest.md)
 * CapabilityStatements using this Profile: [measurement](CapabilityStatement-measurement.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-observation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-observation.json)
 
 ### Formal Views of Profile Content
 
@@ -118,272 +118,222 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-observation.
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-observation",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-observation",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "sct-concept",
-      "uri" : "http://snomed.info/conceptdomain",
-      "name" : "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "sct-attr",
-      "uri" : "http://snomed.org/attributebinding",
-      "name" : "SNOMED CT Attribute Binding"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Observation",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Observation",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Observation",
-        "path" : "Observation"
+    "element" : [{
+      "id" : "Observation",
+      "path" : "Observation"
+    },
+    {
+      "id" : "Observation.extension",
+      "path" : "Observation.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "Observation.extension",
-        "path" : "Observation.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 2
-      },
-      {
-        "id" : "Observation.extension:episodeOfCare",
-        "path" : "Observation.extension",
-        "sliceName" : "episodeOfCare",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.extension:episodeOfCare.value[x]",
-        "path" : "Observation.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.extension:quality",
-        "path" : "Observation.extension",
-        "sliceName" : "quality",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.extension:resolvedTiming",
-        "path" : "Observation.extension",
-        "sliceName" : "resolvedTiming",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.basedOn",
-        "path" : "Observation.basedOn",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.code",
-        "path" : "Observation.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/observation-codes"
-        }
-      },
-      {
-        "id" : "Observation.subject",
-        "path" : "Observation.subject",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.effective[x]",
-        "path" : "Observation.effective[x]",
-        "min" : 1
-      },
-      {
-        "id" : "Observation.performer",
-        "path" : "Observation.performer",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.value[x]",
-        "path" : "Observation.value[x]",
-        "type" : [
-          {
-            "code" : "Quantity"
-          },
-          {
-            "code" : "CodeableConcept"
-          }
-        ]
-      },
-      {
-        "id" : "Observation.dataAbsentReason",
-        "path" : "Observation.dataAbsentReason",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/data-absent-reason"
-        }
-      },
-      {
-        "id" : "Observation.device",
-        "path" : "Observation.device",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Observation.referenceRange.type",
-        "path" : "Observation.referenceRange.type",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/reference-range-type"
-        }
-      },
-      {
-        "id" : "Observation.component.code",
-        "path" : "Observation.component.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/observation-codes"
-        }
-      },
-      {
-        "id" : "Observation.component.value[x]",
-        "path" : "Observation.component.value[x]",
-        "type" : [
-          {
-            "code" : "Quantity"
-          },
-          {
-            "code" : "CodeableConcept"
-          }
-        ]
+      "min" : 2
+    },
+    {
+      "id" : "Observation.extension:episodeOfCare",
+      "path" : "Observation.extension",
+      "sliceName" : "episodeOfCare",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"]
+      }]
+    },
+    {
+      "id" : "Observation.extension:episodeOfCare.value[x]",
+      "path" : "Observation.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Observation.extension:quality",
+      "path" : "Observation.extension",
+      "sliceName" : "quality",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality"]
+      }]
+    },
+    {
+      "id" : "Observation.extension:resolvedTiming",
+      "path" : "Observation.extension",
+      "sliceName" : "resolvedTiming",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing"]
+      }]
+    },
+    {
+      "id" : "Observation.basedOn",
+      "path" : "Observation.basedOn",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Observation.code",
+      "path" : "Observation.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/observation-codes"
       }
-    ]
+    },
+    {
+      "id" : "Observation.subject",
+      "path" : "Observation.subject",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.performer",
+      "path" : "Observation.performer",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Observation.value[x]",
+      "path" : "Observation.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      },
+      {
+        "code" : "CodeableConcept"
+      }]
+    },
+    {
+      "id" : "Observation.dataAbsentReason",
+      "path" : "Observation.dataAbsentReason",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/data-absent-reason"
+      }
+    },
+    {
+      "id" : "Observation.device",
+      "path" : "Observation.device",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Observation.referenceRange.type",
+      "path" : "Observation.referenceRange.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/reference-range-type"
+      }
+    },
+    {
+      "id" : "Observation.component.code",
+      "path" : "Observation.component.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/observation-codes"
+      }
+    },
+    {
+      "id" : "Observation.component.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      },
+      {
+        "code" : "CodeableConcept"
+      }]
+    }]
   }
 }
 

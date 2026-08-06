@@ -1,4 +1,4 @@
-# ehealth-definedquestion - eHealth Infrastructure v6.0.0
+# ehealth-definedquestion - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-definedquestion |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-definedquestion |
 
 # Introduction
 
@@ -32,9 +32,9 @@ The actual details of the DefinedQuestion's question and possible answers are de
 **Usages:**
 
 * CapabilityStatements using this Profile: [patient](CapabilityStatement-patient.md) and [questionnaire](CapabilityStatement-questionnaire.md)
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-definedquestion)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-definedquestion.json)
 
 ### Formal Views of Profile Content
 
@@ -53,73 +53,61 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-definedquest
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-definedquestion",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-definedquestion",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "iso11179",
-      "uri" : "http://metadata-standards.org/11179/",
-      "name" : "ISO 11179"
-    },
-    {
-      "identity" : "objimpl",
-      "uri" : "http://hl7.org/fhir/object-implementation",
-      "name" : "Object Implementation Information"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "iso11179",
+    "uri" : "http://metadata-standards.org/11179/",
+    "name" : "ISO 11179"
+  },
+  {
+    "identity" : "objimpl",
+    "uri" : "http://hl7.org/fhir/object-implementation",
+    "name" : "Object Implementation Information"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "StructureDefinition",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "StructureDefinition",
-        "path" : "StructureDefinition"
-      }
-    ]
+    "element" : [{
+      "id" : "StructureDefinition",
+      "path" : "StructureDefinition"
+    }]
   }
 }
 

@@ -1,4 +1,4 @@
-# Create a clone of a Questionnaire - eHealth Infrastructure v6.0.0
+# Create a clone of a Questionnaire - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:create-clone |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:create-clone |
 
  
 
@@ -34,18 +34,6 @@ Bundle containing all resources that were created during the operation.
 * Read/search/create privileges are required for the resource types affected by $create-clone
  
 
-URL: [base]/Questionnaire/[id]/$create-clone
-
-### Parameters
-
-* **Use**: IN
-  * **Name**: clone-operation
-  * **Scope**: 
-  * **Cardinality**: 0..1
-  * **Type**: [Coding](http://hl7.org/fhir/R4/datatypes.html#Coding)
-  * **Binding**: 
-  * **Documentation**: 
-
 
 
 ## Resource Content
@@ -55,51 +43,42 @@ URL: [base]/Questionnaire/[id]/$create-clone
   "resourceType" : "OperationDefinition",
   "id" : "Questionnaire-i-create-clone",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "create-clone",
   "title" : "Create a clone of a Questionnaire",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
   "description" : "### Input\n- resourceId: reference to the Questionnaire resource that should be cloned\n- clone-operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone\n",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "affectsState" : true,
   "code" : "create-clone",
   "resource" : ["Questionnaire"],
   "system" : false,
   "type" : false,
   "instance" : true,
-  "parameter" : [
-    {
-      "name" : "clone-operation",
-      "use" : "in",
-      "min" : 0,
-      "max" : "1",
-      "type" : "Coding"
-    }
-  ]
+  "parameter" : [{
+    "name" : "clone-operation",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation.",
+    "type" : "Coding"
+  }]
 }
 
 ```

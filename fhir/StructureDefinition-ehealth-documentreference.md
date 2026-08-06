@@ -1,4 +1,4 @@
-# ehealth-documentreference - eHealth Infrastructure v6.0.0
+# ehealth-documentreference - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-documentreference |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-documentreference |
 
 # Introduction
 
@@ -57,9 +57,9 @@ The element `useContext.code` has binding to the ValueSet http://hl7.org/fhir/Va
 **Material for Citizens**, is used in relation to [Patient](StructureDefinition-ehealth-patient.md) and [EpisodeOfCare](StructureDefinition-ehealth-episodeofcare.md). This material will always be referenced through a URL as it is either stored externally or internally in the infrastructure. Depending on the nature of the material it will fall into two distinct sub-categories.
 
 * ****Patient-Specific Material****, is material that contains sensitive information about a specific patient.
-* ****Generic Material****, is material that has no sensitive information about a specific patient and is broadly relevant and/or applicable to multiple patients.
+* ****General Material****, is material that has no sensitive information about a specific patient and is broadly relevant and/or applicable to multiple patients.
 
-**Material for Citizens** is stored in the CarePlan and Plan services. **Patient-Specific Material** is stored in the CarePlan service while **Generic Material** is stored in the Plan service.
+**Material for Citizens** is stored in the CarePlan and Plan services. **Patient-Specific Material** is stored in the CarePlan service while **General Material** is stored in the Plan service.
 
 The eHealth DocumentReference profile, when used for **Material for Citizens**, makes use of the following extensions:
 
@@ -73,45 +73,48 @@ The eHealth DocumentReference profile, when used for **Material for Citizens**, 
 
 ### Category
 
-For storage of **Generic Material** in the Plan service the `DocumentReference.category` must be populated with `generic-material`. Otherwise, it will be interpreted as **Instructional Material**.
+For storage of **General Material** in the Plan service the `DocumentReference.category` must be populated with `general-material`. Otherwise, it will be interpreted as **Instructional Material**.
  For storage of **Patient-Specific Material** in the CarePlan service the `DocumentReference.category` must be populated with the code `patient-specific-material`.
- If the code indicates a different material category than what the service stores (e.g. using `patient-specific-material` when registering **Generic Material** on the Plan service), it will be rejected.
+ If the code indicates a different material category than what the service stores (e.g. using `patient-specific-material` when registering **General Material** on the Plan service), it will be rejected.
  The category code is immutable after creation.
 
 ### Subject
 
-For **Patient-Specific Material** the `DocumentReference.subject` must be populated with a reference to the Patient the material is relevant for. Conversely, for **Generic Material** `DocumentReference.subject` must be unpopulated.
+For **Patient-Specific Material** the `DocumentReference.subject` must be populated with a reference to the Patient the material is relevant for. Conversely, for **General Material** `DocumentReference.subject` must be unpopulated.
 
 ### EpisodeOfCare
 
 The related EpisodeOfCare is referenced through the `DocumentReference.context.encounter` element. Which is allowed to have at most one entry.
- For **Patient-Specific Material** the `DocumentReference.context.encounter` must be populated with a reference to the EpisodeOfCare the material is relevant for. Conversely, for **Generic Material** `DocumentReference.context.encounter` must be unpopulated.
+ For **Patient-Specific Material** the `DocumentReference.context.encounter` must be populated with a reference to the EpisodeOfCare the material is relevant for. Conversely, for **General Material** `DocumentReference.context.encounter` must be unpopulated.
 
 ### Content
 
 `DocumentReference.content` must have exactly one entry.
  When creating the DocumentReference in the infrastructure either `DocumentReference.content.attachment.data` or `DocumentReference.content.attachment.url` element must be populated. If both are populated it will be rejected:
 
-* If providing `DocumentReference.content.attachment.data`, it will be decoded and uploaded to the infrastructure's [Storage-Service](https://storage-service.devtest.systematic-ehealth.com/swagger-ui/index.html), after which the `.data` field is cleared and the `.url` set to download location of the uploaded content.
-* If providing `DocumentReference.content.attachment.url`, it is possible to manually perform the upload to the Storage-Service beforehand and set the `.url` to the download location of the uploaded content. For **Generic Material** in the Plan service, it is also possible to provide an external URL (A URL for a resource/file outside the eHealth infrastructure).
+* If providing `DocumentReference.content.attachment.data`, it will be decoded and uploaded to the infrastructure's [Storage-Service](https://storage-service.devtest.systematic-ehealth.com/swagger-ui/index.html), after which the `.size` is set to the byte size of the uploaded data, the `.data` field is cleared, and the `.url` set to download location of the uploaded content.
+* If providing `DocumentReference.content.attachment.url`, then `.attachment.size` is mandatory. It is possible to manually perform the upload to the Storage-Service beforehand and set the `.url` and `.size` of the uploaded content. For **General Material** in the Plan service, the `.url` can be to an external resource/file outside the eHealth infrastructure.
 
 `DocumentReference.content.attachment.contentType` must be populated with the mime-type of the content as the value is passed on to the Storage-Service. The Storage-Service uses it for validation on download requests to ensure that user's accept-header matches the contentType they are downloading. This is also the case if the upload is performed manually beforehand. Then the used contentType from the manual upload should be the same as the one provided in `DocumentReference.content.attachment.contentType`.
 
-If uploading directly to the Storage-Service instead of going through either the Plan or CarePlan service, it is important to note the difference between uploading **Patient-Specific Material** and **Generic Material**:
+If uploading directly to the Storage-Service instead of going through either the Plan or CarePlan service, it is important to note the difference between uploading **Patient-Specific Material** and **General Material**:
 
 * For **Patient-Specific Material** one must supply the `episodeOfCareReference` and `patientReference` parameters as this indicates to the service that the content is sensitive and must be encrypted. Additionally, not supplying them will cause a validation mismatch in the CarePlan service when creating the DocumentReference as they are validated against the Patient and EpisodeOfCare references in the DocumentReference.
-* For **Generic Material** the `episodeOfCareReference` and `patientReference` parameters must not be supplied as the content is not sensitive and therefore does not require encryption. Additionally, supplying them will cause a validation mismatch in the Plan service when creating the DocumentReference as they are validated to be empty.
+* For **General Material** the `episodeOfCareReference` and `patientReference` parameters must not be supplied as the content is not sensitive and therefore does not require encryption. Additionally, supplying them will cause a validation mismatch in the Plan service when creating the DocumentReference as they are validated to be empty.
 
 After creation of a DocumentReference, when trying to update it:
 
-* If the `DocumentReference.content.attachment.url` is a URL in the Storage-Service, it is not possible to update the `DocumentReference.content.attachment.url` field after creation. However, it is possible to update the uploaded content through the `DocumentReference.content.attachment.data` field. To do so both the `DocumentReference.content.attachment.data` and `DocumentReference.content.attachment.url` fields must be populated for the update. The content in the `.data` field will be decoded and uploaded to the Storage-Service URL in `.url` overwriting the content that was there before. The `.data` field is cleared after upload and only the `.url` remains in the DocumentReference.
+* If the `DocumentReference.content.attachment.url` is a URL in the Storage-Service, it is not possible to update the `DocumentReference.content.attachment.url` field after creation. However, it is possible to update the uploaded content through the `DocumentReference.content.attachment.data` field. There are two ways to do so: 
+1. By removing the`DocumentReference.content.attachment.url`and`DocumentReference.content.attachment.size`, providing only the`DocumentReference.content.attachment.data`field in the content of the resource. This will decode and upload the content to the Storage-Service URL that is in`.url`for the existing resource, overwriting the content that was there before. The`.data`field is cleared after upload and only the`.url`and`.size`remains in the DocumentReference. This will also automatically set the`DocumentReference.content.attachment.size`field to the size of the newly uploaded content.
+1. By providing the`DocumentReference.content.attachment.url`,`DocumentReference.content.attachment.size`and`DocumentReference.content.attachment.data`fields in the update. However, this requires that the`.size`correctly reflects the byte size (before base64 encoding) of the new data and that the`.url`is not changed. This will decode and upload the content to the Storage-Service URL in`.url`, overwriting the content that was there before. The`.data`field is cleared after upload and only the`.url`and`.size`remains in the DocumentReference.
+ 
 * If the `DocumentReference.content.attachment.url` is set to an external URL, it is allowed to update the `DocumentReference.content.attachment.url` field after creation. However, it is not allowed to change it to a Storage-Service URL or add data to the `DocumentReference.content.attachment.data` field.
 
-It is also possible to update the uploaded content directly at the Storage-Service without going through the Plan or CarePlan service. The url of the content will not change, and therefore there is no need to update the Storage-Service URL stored in the DocumentReference. One should note that the `episodeOfCareReference` and `patientReference` parameters are required to match the existing content, it is not possible to change from **Patient-Specific Material** to **Generic Material** or vice versa.
+It is also possible to update the uploaded content directly at the Storage-Service without going through the Plan or CarePlan service. The url of the content will not change, and therefore there is no need to update the Storage-Service URL stored in the DocumentReference. One should note that the `episodeOfCareReference` and `patientReference` parameters are required to match the existing content, it is not possible to change from **Patient-Specific Material** to **General Material** or vice versa.
 
 ### ModifierRole
 
-This extension is mandatory for **Material for Citizens**. However, for **Instructional Material** this extension is optional and not used for any validation. Specifically for **Generic Material** it is the basis for validation of the user's organizational context.
+This extension is mandatory for **Material for Citizens**. However, for **Instructional Material** this extension is optional and not used for any validation. Specifically for **General Material** it is the basis for validation of the user's organizational context.
 
 ### IntendedOrganization
 
@@ -138,7 +141,7 @@ Allows the user to maintain a version of the content. The infrastructure does no
 * Refer to this Profile: [ehealth-consent](StructureDefinition-ehealth-consent.md), [ehealth-documentreference](StructureDefinition-ehealth-documentreference.md) and [ehealth-transformation-documentreference](StructureDefinition-ehealth-transformation-documentreference.md)
 * CapabilityStatements using this Profile: [careplan](CapabilityStatement-careplan.md) and [plan](CapabilityStatement-plan.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-documentreference)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-documentreference.json)
 
 ### Formal Views of Profile Content
 
@@ -157,352 +160,280 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-documentrefe
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-documentreference",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-documentreference",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "fhircomposition",
-      "uri" : "http://hl7.org/fhir/composition",
-      "name" : "FHIR Composition"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "cda",
-      "uri" : "http://hl7.org/v3/cda",
-      "name" : "CDA (R2)"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "xds",
-      "uri" : "http://ihe.net/xds",
-      "name" : "XDS metadata equivalent"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "fhircomposition",
+    "uri" : "http://hl7.org/fhir/composition",
+    "name" : "FHIR Composition"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "cda",
+    "uri" : "http://hl7.org/v3/cda",
+    "name" : "CDA (R2)"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "xds",
+    "uri" : "http://ihe.net/xds",
+    "name" : "XDS metadata equivalent"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "DocumentReference",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/DocumentReference",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "DocumentReference",
-        "path" : "DocumentReference",
-        "constraint" : [
-          {
-            "key" : "modifierRole-required-for-material-registration",
-            "severity" : "error",
-            "human" : "'ehealth-modifier-role' extension is required when category code is 'general-material' or 'patient-specific-material'",
-            "expression" : "category.coding.exists(system = 'http://ehealth.sundhed.dk/cs/material-category' and (code = 'general-material' or code = 'patient-specific-material')) implies extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role').exists()",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference"
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension",
-        "path" : "DocumentReference.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "DocumentReference.extension:useContext",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "useContext",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-useContext"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension:modifierRole",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "modifierRole",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension:intendedOrganization",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "intendedOrganization",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedOrganization"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension:artifactDate",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "artifactDate",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-artifact-date"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension:participant",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "participant",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-participant"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension:participant.extension:function",
-        "path" : "DocumentReference.extension.extension",
-        "sliceName" : "function"
-      },
-      {
-        "id" : "DocumentReference.extension:participant.extension:function.value[x]",
-        "path" : "DocumentReference.extension.extension.value[x]",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/material-registration-participant-function"
-        }
-      },
-      {
-        "id" : "DocumentReference.extension:usage",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "usage",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-usage"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.extension:version",
-        "path" : "DocumentReference.extension",
-        "sliceName" : "version",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-version"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.type",
-        "path" : "DocumentReference.type",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/ehealth-document-reference-type"
-        }
-      },
-      {
-        "id" : "DocumentReference.category",
-        "path" : "DocumentReference.category",
-        "max" : "1",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/document-category"
-        }
-      },
-      {
-        "id" : "DocumentReference.subject",
-        "path" : "DocumentReference.subject",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://hl7.org/fhir/StructureDefinition/Group",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.author",
-        "path" : "DocumentReference.author",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.authenticator",
-        "path" : "DocumentReference.authenticator",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.custodian",
-        "path" : "DocumentReference.custodian",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.relatesTo.target",
-        "path" : "DocumentReference.relatesTo.target",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.context.encounter",
-        "path" : "DocumentReference.context.encounter",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DocumentReference.context.event",
-        "path" : "DocumentReference.context.event",
-        "max" : "0"
-      },
-      {
-        "id" : "DocumentReference.context.facilityType",
-        "path" : "DocumentReference.context.facilityType",
-        "max" : "0"
-      },
-      {
-        "id" : "DocumentReference.context.practiceSetting",
-        "path" : "DocumentReference.context.practiceSetting",
-        "max" : "0"
-      },
-      {
-        "id" : "DocumentReference.context.sourcePatientInfo",
-        "path" : "DocumentReference.context.sourcePatientInfo",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
-            ]
-          }
-        ]
+    "element" : [{
+      "id" : "DocumentReference",
+      "path" : "DocumentReference",
+      "constraint" : [{
+        "key" : "modifierRole-required-for-material-registration",
+        "severity" : "error",
+        "human" : "'ehealth-modifier-role' extension is required when category code is 'general-material' or 'patient-specific-material'",
+        "expression" : "category.coding.exists(system = 'http://ehealth.sundhed.dk/cs/material-category' and (code = 'general-material' or code = 'patient-specific-material')) implies extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role').exists()",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference"
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension",
+      "path" : "DocumentReference.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       }
-    ]
+    },
+    {
+      "id" : "DocumentReference.extension:useContext",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "useContext",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-useContext"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension:modifierRole",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "modifierRole",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension:intendedOrganization",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "intendedOrganization",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedOrganization"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension:artifactDate",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "artifactDate",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-artifact-date"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension:participant",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "participant",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-participant"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension:participant.extension:function",
+      "path" : "DocumentReference.extension.extension",
+      "sliceName" : "function"
+    },
+    {
+      "id" : "DocumentReference.extension:participant.extension:function.value[x]",
+      "path" : "DocumentReference.extension.extension.value[x]",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/material-registration-participant-function"
+      }
+    },
+    {
+      "id" : "DocumentReference.extension:usage",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "usage",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-usage"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.extension:version",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "version",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-version"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.type",
+      "path" : "DocumentReference.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/ehealth-document-reference-type"
+      }
+    },
+    {
+      "id" : "DocumentReference.category",
+      "path" : "DocumentReference.category",
+      "max" : "1",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/document-category"
+      }
+    },
+    {
+      "id" : "DocumentReference.subject",
+      "path" : "DocumentReference.subject",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://hl7.org/fhir/StructureDefinition/Group",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.author",
+      "path" : "DocumentReference.author",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.authenticator",
+      "path" : "DocumentReference.authenticator",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.custodian",
+      "path" : "DocumentReference.custodian",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.relatesTo.target",
+      "path" : "DocumentReference.relatesTo.target",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.context.encounter",
+      "path" : "DocumentReference.context.encounter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"]
+      }]
+    },
+    {
+      "id" : "DocumentReference.context.event",
+      "path" : "DocumentReference.context.event",
+      "max" : "0"
+    },
+    {
+      "id" : "DocumentReference.context.facilityType",
+      "path" : "DocumentReference.context.facilityType",
+      "max" : "0"
+    },
+    {
+      "id" : "DocumentReference.context.practiceSetting",
+      "path" : "DocumentReference.context.practiceSetting",
+      "max" : "0"
+    },
+    {
+      "id" : "DocumentReference.context.sourcePatientInfo",
+      "path" : "DocumentReference.context.sourcePatientInfo",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"]
+      }]
+    }]
   }
 }
 

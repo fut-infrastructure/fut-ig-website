@@ -1,4 +1,4 @@
-# ehealth-clinicalimpression - eHealth Infrastructure v6.0.0
+# ehealth-clinicalimpression - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-clinicalimpression |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-clinicalimpression |
 
 # Introduction
 
@@ -84,10 +84,10 @@ The element `assessorOrganization` is automatically set by the infrastructure to
 
 **Usages:**
 
-* Refer to this Profile: [ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md) and [ehealth-condition](StructureDefinition-ehealth-condition.md)
+* Refer to this Profile: [Other item](StructureDefinition-ehealth-clinicalimpression-otherItem.md), [ehealth-clinicalimpression](StructureDefinition-ehealth-clinicalimpression.md) and [ehealth-condition](StructureDefinition-ehealth-condition.md)
 * CapabilityStatements using this Profile: [task](CapabilityStatement-task.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-clinicalimpression)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-clinicalimpression.json)
 
 ### Formal Views of Profile Content
 
@@ -106,394 +106,319 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-clinicalimpr
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-clinicalimpression",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-clinicalimpression",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "ClinicalImpression",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/ClinicalImpression",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "ClinicalImpression",
-        "path" : "ClinicalImpression"
+    "element" : [{
+      "id" : "ClinicalImpression",
+      "path" : "ClinicalImpression"
+    },
+    {
+      "id" : "ClinicalImpression.extension",
+      "path" : "ClinicalImpression.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "ClinicalImpression.extension",
-        "path" : "ClinicalImpression.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 1
-      },
-      {
-        "id" : "ClinicalImpression.extension:assessorOrganization",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "assessorOrganization",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-organization"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:assessorOther",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "assessorOther",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-other"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:carePlan",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "carePlan",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-careplan"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:decisionContext",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "decisionContext",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decisionContext"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:decision",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "decision",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decision"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:episodeOfCare",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "episodeOfCare",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:episodeOfCare.value[x]",
-        "path" : "ClinicalImpression.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.extension:findingBasis",
-        "path" : "ClinicalImpression.extension",
-        "sliceName" : "findingBasis",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse-finding-basis"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.code",
-        "path" : "ClinicalImpression.code",
-        "min" : 1,
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/clinicalimpression-codes"
-        }
-      },
-      {
-        "id" : "ClinicalImpression.subject",
-        "path" : "ClinicalImpression.subject",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.assessor",
-        "path" : "ClinicalImpression.assessor",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.previous",
-        "path" : "ClinicalImpression.previous",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.problem",
-        "path" : "ClinicalImpression.problem",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition",
-              "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.investigation.extension",
-        "path" : "ClinicalImpression.investigation.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "ClinicalImpression.investigation.extension:viewInvestigationItem",
-        "path" : "ClinicalImpression.investigation.extension",
-        "sliceName" : "viewInvestigationItem",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-viewInvestigationItem"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.investigation.code",
-        "path" : "ClinicalImpression.investigation.code",
-        "binding" : {
-          "strength" : "example",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/clinicalimpression-investigation-item-codes"
-        }
-      },
-      {
-        "id" : "ClinicalImpression.investigation.item",
-        "path" : "ClinicalImpression.investigation.item",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse",
-              "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
-              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
-              "http://hl7.org/fhir/StructureDefinition/RiskAssessment",
-              "http://hl7.org/fhir/StructureDefinition/ImagingStudy"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.finding.itemCodeableConcept",
-        "path" : "ClinicalImpression.finding.itemCodeableConcept",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/clinicalimpression-finding-codes"
-        }
-      },
-      {
-        "id" : "ClinicalImpression.finding.itemReference",
-        "path" : "ClinicalImpression.finding.itemReference",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Observation",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.prognosisReference",
-        "path" : "ClinicalImpression.prognosisReference",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/RiskAssessment"],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.note.author[x]",
-        "path" : "ClinicalImpression.note.author[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "ClinicalImpression.note.author[x]:authorReference",
-        "path" : "ClinicalImpression.note.author[x]",
-        "sliceName" : "authorReference",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "ClinicalImpression.note.author[x]:authorString",
-        "path" : "ClinicalImpression.note.author[x]",
-        "sliceName" : "authorString",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
+      "min" : 1
+    },
+    {
+      "id" : "ClinicalImpression.extension:assessorOrganization",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "assessorOrganization",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-organization"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:assessorOther",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "assessorOther",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-other"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:carePlan",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "carePlan",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-careplan"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:decisionContext",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "decisionContext",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decisionContext"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:decision",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "decision",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decision"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:episodeOfCare",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "episodeOfCare",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:episodeOfCare.value[x]",
+      "path" : "ClinicalImpression.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.extension:findingBasis",
+      "path" : "ClinicalImpression.extension",
+      "sliceName" : "findingBasis",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse-finding-basis"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.code",
+      "path" : "ClinicalImpression.code",
+      "min" : 1,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/clinicalimpression-codes"
       }
-    ]
+    },
+    {
+      "id" : "ClinicalImpression.subject",
+      "path" : "ClinicalImpression.subject",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.assessor",
+      "path" : "ClinicalImpression.assessor",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.previous",
+      "path" : "ClinicalImpression.previous",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.problem",
+      "path" : "ClinicalImpression.problem",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition",
+        "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.investigation.extension",
+      "path" : "ClinicalImpression.investigation.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "ClinicalImpression.investigation.extension:viewInvestigationItem",
+      "path" : "ClinicalImpression.investigation.extension",
+      "sliceName" : "viewInvestigationItem",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-viewInvestigationItem"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.investigation.extension:otherItem",
+      "path" : "ClinicalImpression.investigation.extension",
+      "sliceName" : "otherItem",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-otherItem"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.investigation.code",
+      "path" : "ClinicalImpression.investigation.code",
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/clinicalimpression-investigation-item-codes"
+      }
+    },
+    {
+      "id" : "ClinicalImpression.investigation.item",
+      "path" : "ClinicalImpression.investigation.item",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse",
+        "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
+        "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+        "http://hl7.org/fhir/StructureDefinition/RiskAssessment",
+        "http://hl7.org/fhir/StructureDefinition/ImagingStudy"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.finding.itemCodeableConcept",
+      "path" : "ClinicalImpression.finding.itemCodeableConcept",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/clinicalimpression-finding-codes"
+      }
+    },
+    {
+      "id" : "ClinicalImpression.finding.itemReference",
+      "path" : "ClinicalImpression.finding.itemReference",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.prognosisReference",
+      "path" : "ClinicalImpression.prognosisReference",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/RiskAssessment"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.note.author[x]",
+      "path" : "ClinicalImpression.note.author[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "ClinicalImpression.note.author[x]:authorReference",
+      "path" : "ClinicalImpression.note.author[x]",
+      "sliceName" : "authorReference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+      }]
+    },
+    {
+      "id" : "ClinicalImpression.note.author[x]:authorString",
+      "path" : "ClinicalImpression.note.author[x]",
+      "sliceName" : "authorString",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
   }
 }
 

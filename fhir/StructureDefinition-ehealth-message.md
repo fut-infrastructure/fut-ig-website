@@ -1,4 +1,4 @@
-# ehealth-message - eHealth Infrastructure v6.0.0
+# ehealth-message - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-message |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-message |
 
 # Introduction
 
@@ -60,6 +60,7 @@ The following custom search parameters may be used when searching for ehealth-me
 * **communicationCategory**: Specify the desired category using system and code (eg. "http://ehealth.sundhed.dk/message-category/" and "message")
 * **period**: Use a date-type search to filter messages that must conform to temporal constraints (eg. notifications that are only valid until a specific point in time)
 * **threadId**: Specify the logical "thread id" used to correlate messages
+* **topic**: Specify the desired topic using system and code (eg. "http://terminology.hl7.org/CodeSystem/definition-topic" and "Treatment")
 * **restrictionCategory**: Specify the desired restriction category using system and code (eg. "http://ehealth.sundhed.dk/cs/restriction-category" and "measurement-monitoring")
 * **episodeOfCare**: Specify the desired episodeOfCare reference (provided in extension http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare)
 
@@ -147,7 +148,7 @@ An ehealth-message may not have its category changed, eg. from 'note' to 'messag
 * Examples for this Profile: [Communication/message01](Communication-message01.md)
 * CapabilityStatements using this Profile: [patient](CapabilityStatement-patient.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-message)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-message.json)
 
 ### Formal Views of Profile Content
 
@@ -166,497 +167,417 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-message.csv)
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-message",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-message",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Communication",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Communication",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Communication",
-        "path" : "Communication",
-        "constraint" : [
-          {
-            "key" : "nemsms-invariant",
-            "severity" : "error",
-            "human" : "If communication resource is a NemSMS payload cannot exceed 160",
-            "expression" : "medium.coding.where(code = 'nemsms').exists() implies payload.content.ofType(string).length() <= 160",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
-          },
-          {
-            "key" : "note-invariant",
-            "severity" : "error",
-            "human" : "Category note invariant",
-            "expression" : "category.coding.code contains 'note' implies (recipient.reference contains sender.reference) or (recipient.reference.exists().not() and extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists())",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
-          },
-          {
-            "key" : "notification-invariant",
-            "severity" : "error",
-            "human" : "Category notification invariant",
-            "expression" : "category.coding.code contains 'notification' implies (recipient.reference.contains('Patient/') or extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists()) and ( sender.reference.contains('Device/') or contained.ofType(Device).where('#' + id = %resource.sender.reference).empty().not())",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
-          },
-          {
-            "key" : "message-invariant",
-            "severity" : "error",
-            "human" : "Category message invariant",
-            "expression" : "category.coding.code contains 'message' implies (recipient.reference.contains('Patient/') and ( extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam').value.as(Reference).exists())) or (( extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists()) and (sender.reference.contains('Patient/')) or (extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists() and extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam').value.as(Reference).exists() ))",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
-          },
-          {
-            "key" : "advice-invariant",
-            "severity" : "error",
-            "human" : "Category advice invariant",
-            "expression" : "category.coding.code contains 'advice' implies (recipient.reference.contains('Patient/') or extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists()) and ( sender.reference.contains('Device/') or contained.ofType(Device).where('#' + id = %resource.sender.reference).empty().not())",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
-          }
-        ]
+    "element" : [{
+      "id" : "Communication",
+      "path" : "Communication",
+      "constraint" : [{
+        "key" : "nemsms-invariant",
+        "severity" : "error",
+        "human" : "If communication resource is a NemSMS payload cannot exceed 160",
+        "expression" : "medium.coding.where(code = 'nemsms').exists() implies payload.content.ofType(string).length() <= 160",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
       },
       {
-        "id" : "Communication.extension",
-        "path" : "Communication.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 1
+        "key" : "note-invariant",
+        "severity" : "error",
+        "human" : "Category note invariant",
+        "expression" : "category.coding.code contains 'note' implies (recipient.reference contains sender.reference) or (recipient.reference.exists().not() and extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists())",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
       },
       {
-        "id" : "Communication.extension:episodeOfCare",
-        "path" : "Communication.extension",
-        "sliceName" : "episodeOfCare",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"
-            ]
-          }
-        ]
+        "key" : "notification-invariant",
+        "severity" : "error",
+        "human" : "Category notification invariant",
+        "expression" : "category.coding.code contains 'notification' implies (recipient.reference.contains('Patient/') or extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists()) and ( sender.reference.contains('Device/') or contained.ofType(Device).where('#' + id = %resource.sender.reference).empty().not())",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
       },
       {
-        "id" : "Communication.extension:episodeOfCare.value[x]",
-        "path" : "Communication.extension.value[x]",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"],
-            "aggregation" : ["referenced"]
-          }
-        ]
+        "key" : "message-invariant",
+        "severity" : "error",
+        "human" : "Category message invariant",
+        "expression" : "category.coding.code contains 'message' implies (recipient.reference.contains('Patient/') and ( extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam').value.as(Reference).exists())) or (( extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists()) and (sender.reference.contains('Patient/')) or (extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists() and extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam').value.as(Reference).exists() ))",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
       },
       {
-        "id" : "Communication.extension:recipientCareTeam",
-        "path" : "Communication.extension",
-        "sliceName" : "recipientCareTeam",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam"
-            ]
-          }
-        ]
+        "key" : "advice-invariant",
+        "severity" : "error",
+        "human" : "Category advice invariant",
+        "expression" : "category.coding.code contains 'advice' implies (recipient.reference.contains('Patient/') or recipient.reference.contains('RelatedPerson/') or extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam').value.as(Reference).exists()) and ( sender.reference.contains('Device/') or contained.ofType(Device).where('#' + id = %resource.sender.reference).empty().not())",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message"
+      }]
+    },
+    {
+      "id" : "Communication.extension",
+      "path" : "Communication.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "Communication.extension:senderCareTeam",
-        "path" : "Communication.extension",
-        "sliceName" : "senderCareTeam",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam"
-            ]
-          }
-        ]
+      "min" : 1
+    },
+    {
+      "id" : "Communication.extension:episodeOfCare",
+      "path" : "Communication.extension",
+      "sliceName" : "episodeOfCare",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:episodeOfCare.value[x]",
+      "path" : "Communication.extension.value[x]",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/EpisodeOfCare"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:recipientCareTeam",
+      "path" : "Communication.extension",
+      "sliceName" : "recipientCareTeam",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-recipientCareTeam"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:senderCareTeam",
+      "path" : "Communication.extension",
+      "sliceName" : "senderCareTeam",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-senderCareTeam"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:restrictionCategory",
+      "path" : "Communication.extension",
+      "sliceName" : "restrictionCategory",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-restriction-category"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:threadId",
+      "path" : "Communication.extension",
+      "sliceName" : "threadId",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-thread-id"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:period",
+      "path" : "Communication.extension",
+      "sliceName" : "period",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-period"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:administrativeStatus",
+      "path" : "Communication.extension",
+      "sliceName" : "administrativeStatus",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-administrative-status"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:title",
+      "path" : "Communication.extension",
+      "sliceName" : "title",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-title"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:priority",
+      "path" : "Communication.extension",
+      "sliceName" : "priority",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-priority"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:groupId",
+      "path" : "Communication.extension",
+      "sliceName" : "groupId",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-id"]
+      }]
+    },
+    {
+      "id" : "Communication.extension:onBehalfOf",
+      "path" : "Communication.extension",
+      "sliceName" : "onBehalfOf",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-on-behalf-of"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Communication.extension:author",
+      "path" : "Communication.extension",
+      "sliceName" : "author",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message-author"]
+      }]
+    },
+    {
+      "id" : "Communication.partOf",
+      "path" : "Communication.partOf",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CarePlan"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Communication.category",
+      "path" : "Communication.category",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "coding.system"
+        }],
+        "rules" : "open"
       },
-      {
-        "id" : "Communication.extension:restrictionCategory",
-        "path" : "Communication.extension",
-        "sliceName" : "restrictionCategory",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-restriction-category"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:threadId",
-        "path" : "Communication.extension",
-        "sliceName" : "threadId",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-thread-id"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:period",
-        "path" : "Communication.extension",
-        "sliceName" : "period",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-period"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:administrativeStatus",
-        "path" : "Communication.extension",
-        "sliceName" : "administrativeStatus",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-administrative-status"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:title",
-        "path" : "Communication.extension",
-        "sliceName" : "title",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-title"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:priority",
-        "path" : "Communication.extension",
-        "sliceName" : "priority",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-priority"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:groupId",
-        "path" : "Communication.extension",
-        "sliceName" : "groupId",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-id"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.extension:onBehalfOf",
-        "path" : "Communication.extension",
-        "sliceName" : "onBehalfOf",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-on-behalf-of"
-            ]
-          }
-        ],
-        "mustSupport" : true
-      },
-      {
-        "id" : "Communication.partOf",
-        "path" : "Communication.partOf",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/CarePlan"],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.category",
-        "path" : "Communication.category",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "coding.system"
-            }
-          ],
-          "rules" : "open"
-        },
-        "min" : 1
-      },
-      {
-        "id" : "Communication.category:DkTmCategory",
-        "path" : "Communication.category",
-        "sliceName" : "DkTmCategory",
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Communication.category:DkTmCategory.coding.system",
-        "path" : "Communication.category.coding.system",
-        "min" : 1,
-        "patternUri" : "http://ehealth.sundhed.dk/cs/message-category"
-      },
-      {
-        "id" : "Communication.category:DkTmCategory.coding.code",
-        "path" : "Communication.category.coding.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/message-category"
-        }
-      },
-      {
-        "id" : "Communication.medium",
-        "path" : "Communication.medium",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "coding.system"
-            }
-          ],
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "Communication.medium:DkTmMedium",
-        "path" : "Communication.medium",
-        "sliceName" : "DkTmMedium",
-        "min" : 0,
-        "max" : "1"
-      },
-      {
-        "id" : "Communication.medium:DkTmMedium.coding.system",
-        "path" : "Communication.medium.coding.system",
-        "min" : 1,
-        "patternUri" : "http://ehealth.sundhed.dk/cs/message-medium"
-      },
-      {
-        "id" : "Communication.medium:DkTmMedium.coding.code",
-        "path" : "Communication.medium.coding.code",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/message-medium"
-        }
-      },
-      {
-        "id" : "Communication.recipient",
-        "path" : "Communication.recipient",
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Patient",
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.sender",
-        "path" : "Communication.sender",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Device",
-              "http://hl7.org/fhir/StructureDefinition/Patient",
-              "http://hl7.org/fhir/StructureDefinition/Practitioner"
-            ],
-            "aggregation" : ["referenced", "contained"]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.reasonCode",
-        "path" : "Communication.reasonCode",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/message-reasonCode"
-        }
-      },
-      {
-        "id" : "Communication.reasonReference",
-        "path" : "Communication.reasonReference",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://hl7.org/fhir/StructureDefinition/Condition",
-              "http://hl7.org/fhir/StructureDefinition/Observation"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.payload",
-        "path" : "Communication.payload",
-        "max" : "1"
-      },
-      {
-        "id" : "Communication.payload.content[x]",
-        "path" : "Communication.payload.content[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "rules" : "closed"
-        }
-      },
-      {
-        "id" : "Communication.payload.content[x]:contentString",
-        "path" : "Communication.payload.content[x]",
-        "sliceName" : "contentString",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
-      },
-      {
-        "id" : "Communication.note.author[x]",
-        "path" : "Communication.note.author[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "Communication.note.author[x]:authorReference",
-        "path" : "Communication.note.author[x]",
-        "sliceName" : "authorReference",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Communication.note.author[x]:authorString",
-        "path" : "Communication.note.author[x]",
-        "sliceName" : "authorString",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
+      "min" : 1
+    },
+    {
+      "id" : "Communication.category:DkTmCategory",
+      "path" : "Communication.category",
+      "sliceName" : "DkTmCategory",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Communication.category:DkTmCategory.coding.system",
+      "path" : "Communication.category.coding.system",
+      "min" : 1,
+      "patternUri" : "http://ehealth.sundhed.dk/cs/message-category"
+    },
+    {
+      "id" : "Communication.category:DkTmCategory.coding.code",
+      "path" : "Communication.category.coding.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/message-category"
       }
-    ]
+    },
+    {
+      "id" : "Communication.medium",
+      "path" : "Communication.medium",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "coding.system"
+        }],
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Communication.medium:DkTmMedium",
+      "path" : "Communication.medium",
+      "sliceName" : "DkTmMedium",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Communication.medium:DkTmMedium.coding.system",
+      "path" : "Communication.medium.coding.system",
+      "min" : 1,
+      "patternUri" : "http://ehealth.sundhed.dk/cs/message-medium"
+    },
+    {
+      "id" : "Communication.medium:DkTmMedium.coding.code",
+      "path" : "Communication.medium.coding.code",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/message-medium"
+      }
+    },
+    {
+      "id" : "Communication.recipient",
+      "path" : "Communication.recipient",
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient",
+        "http://hl7.org/fhir/StructureDefinition/Practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Communication.sender",
+      "path" : "Communication.sender",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Device",
+        "http://hl7.org/fhir/StructureDefinition/Patient",
+        "http://hl7.org/fhir/StructureDefinition/Practitioner"],
+        "aggregation" : ["referenced", "contained"]
+      }]
+    },
+    {
+      "id" : "Communication.reasonCode",
+      "path" : "Communication.reasonCode",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/message-reasonCode"
+      }
+    },
+    {
+      "id" : "Communication.reasonReference",
+      "path" : "Communication.reasonReference",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Condition",
+        "http://hl7.org/fhir/StructureDefinition/Observation"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Communication.payload",
+      "path" : "Communication.payload",
+      "max" : "1"
+    },
+    {
+      "id" : "Communication.payload.content[x]",
+      "path" : "Communication.payload.content[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "rules" : "closed"
+      }
+    },
+    {
+      "id" : "Communication.payload.content[x]:contentString",
+      "path" : "Communication.payload.content[x]",
+      "sliceName" : "contentString",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    },
+    {
+      "id" : "Communication.note.author[x]",
+      "path" : "Communication.note.author[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Communication.note.author[x]:authorReference",
+      "path" : "Communication.note.author[x]",
+      "sliceName" : "authorReference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+      }]
+    },
+    {
+      "id" : "Communication.note.author[x]:authorString",
+      "path" : "Communication.note.author[x]",
+      "sliceName" : "authorString",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
   }
 }
 

@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ehealth-consent - eHealth Infrastructure v9.0.1</title>
+    <title>ehealth-consent - eHealth Infrastructure v10.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"99.142"}
-    h3,h4,h5,h6{--heading-prefix:"99.142"}</style>
+    <style type="text/css">h2{--heading-prefix:"103.148"}
+    h3,h4,h5,h6{--heading-prefix:"103.148"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -65,11 +65,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">9.0.1 - release
+            <span style="display:inline-block;">10.0.0 - release
 
 
 
-  <span title="">DK</span>
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
 
 
             </span>
@@ -104,6 +104,9 @@
   </li>
   <li>
     <a href="guidance.html">General guidance</a>
+  </li>
+  <li>
+    <a href="multitenancy.html">Multitenancy</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
@@ -220,7 +223,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v9.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v10.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -304,7 +307,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">9.0.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent|9.0.1"/></span>
+      <span class="copy-text">10.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent|10.0.0"/></span>
       </td>
     </tr>
 
@@ -316,20 +319,16 @@
 
 
 
-      <td colspan="3">
+      <td colspan="4">
         
           Active
           
-            as of 2026-04-23
+            as of 2026-08-06
           
         
       </td>
 
 
-
-      <td>
-        <i>Realm:</i> <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
-      </td>
 
       <td><i>Computable Name</i>: <span style="font-family: monospace;">ehealth-consent</span></td>
     </tr>
@@ -367,7 +366,7 @@
 <h2 id="registration-of-consent">Registration of Consent</h2>
 <p>When a Patient gives a consent, this consent must be recorded as a Consent resource. This resource can be created by the Patient herself or by a Practitioner as a result of conversations or correspondence with the Patient.</p>
 
-<p>eHealth operates with two categories of consents:</p>
+<p>eHealth operates with three categories of consents:</p>
 
 <ol>
   <li>
@@ -375,6 +374,9 @@
   </li>
   <li>
     <p>Category <strong>SSLPCI</strong>: Consent given by a Patient to have his/her contact information (physical address and telecommunication endpoints) being disclosed to a specified actor supplying device(s) and service(s) to the Patient as part of an EpisodeOfCare and related CarePlan(s).</p>
+  </li>
+  <li>
+    <p>Category <strong>behavior-by-policy</strong>: A policy-driven behaviour marker that records whether an actor is permitted or denied a behaviour, where the concrete behaviour is identified by the <code class="language-plaintext highlighter-rouge">Consent.policy.uri</code>. Unlike PITEOC and SSLPCI, a behavior-by-policy Consent is not necessarily a consent given by the Patient — it is typically recorded by a Practitioner. The behaviour can be scoped to a care pathway (EpisodeOfCare) and/or a citizen-specific plan (CarePlan) by means of the ehealth-consent-affiliation extension. The policies that can be expressed are defined in the ValueSet <a href="ValueSet-vs-ehealth-consent-policy.html">ehealth-consent-policy</a>. At present, the only defined policy controls whether triage results may be displayed to the Patient; additional policies may be added in the future. See <a href="#controlling-display-of-triage-results-to-the-patient">Controlling display of triage results to the Patient</a> and <a href="#affiliation">Affiliation</a> below for details of that policy.</p>
   </li>
 </ol>
 
@@ -389,6 +391,112 @@
   <li><code class="language-plaintext highlighter-rouge">Consent.category.coding.system = "http://ehealth.sundhed.dk/cs/consent-category"</code></li>
   <li><code class="language-plaintext highlighter-rouge">Consent.category.coding.code = "SSLPCI"</code>.</li>
 </ul>
+
+<p>Consents of category <strong>behavior-by-policy</strong> are expressed by creating a Consent resource with:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Consent.category.coding.system = "http://ehealth.sundhed.dk/cs/consent-category"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Consent.category.coding.code = "behavior-by-policy"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Consent.policy.uri</code> set to the policy that defines the behaviour being decided. The policy must be one of those in the ValueSet <a href="ValueSet-vs-ehealth-consent-policy.html">ehealth-consent-policy</a> - it is the policy that gives the Consent its concrete meaning.</li>
+</ul>
+
+<p>The remaining elements to set depend on the specific policy. For the currently defined policy, see <a href="#controlling-display-of-triage-results-to-the-patient">Controlling display of triage results to the Patient</a> below.</p>
+
+<h3 id="controlling-display-of-triage-results-to-the-patient">Controlling display of triage results to the Patient</h3>
+<p>A Consent of category <strong>behavior-by-policy</strong> with <code class="language-plaintext highlighter-rouge">Consent.policy.uri = "http://ehealth.sundhed.dk/policy/ehealth/display-triage-result"</code> is used to record the decision of whether triage results may be displayed to the Patient. The decision can be recorded at the EpisodeOfCare level and/or at the CarePlan level by use of the <a href="#affiliation">ehealth-consent-affiliation</a> extension.</p>
+
+<blockquote>
+  <p>The eHealth infrastructure only <strong>stores</strong> this decision. It does <strong>not</strong> act on it, does not enforce it, and does not define any precedence between levels or any default behaviour. It is the responsibility of the consuming Telemedicine Solutions to read the Consent(s), to decide which level takes precedence when decisions exist at both the <code class="language-plaintext highlighter-rouge">EpisodeOfCare</code> and <code class="language-plaintext highlighter-rouge">CarePlan</code> level, and to decide how to behave when <strong>no</strong> applicable Consent exists. The infrastructure carries no opinion on these matters.</p>
+</blockquote>
+
+<p>A Consent recording this decision is expressed with the following elements:</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Consent.category</code></td>
+      <td><code>http://ehealth.sundhed.dk/cs/consent-category#behavior-by-policy</code></td>
+      <td>Marks this Consent as expressing a behavior governed by a policy.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.scope</code></td>
+      <td><code>http://ehealth.sundhed.dk/cs/ehealth-consent-scope#behavior</code></td>
+      <td>The scope of the Consent.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.policy.uri</code></td>
+      <td><code>http://ehealth.sundhed.dk/policy/ehealth/display-triage-result</code></td>
+      <td>The policy being decided on, i.e. display of triage results.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.extension[ehealth-consent-affiliation]</code></td>
+      <td>Reference to <code>EpisodeOfCare</code>, and optionally also <code>CarePlan</code></td>
+      <td>The care context level(s) the decision applies to. See <a href="#affiliation">Affiliation</a>.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.patient</code></td>
+      <td>Reference to the Patient</td>
+      <td>The Patient who is the subject of this Consent.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.provision.type</code></td>
+      <td><code>permit</code></td>
+      <td>Records that triage results <strong>may</strong> be displayed to the Patient.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.provision.class</code></td>
+      <td><code>http://hl7.org/fhir/resource-types#ClinicalImpression</code></td>
+      <td>The type of data the decision is about.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.provision.code</code></td>
+      <td><code>http://ehealth.sundhed.dk/cs/clinicalimpression-codes#TriagingResult</code></td>
+      <td>The specific kind of data the decision is about.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.provision.period</code></td>
+      <td>A (possibly open-ended) period</td>
+      <td>The validity period of the decision. As with the decision itself, the infrastructure stores this period but does not act on or enforce it.</td>
+    </tr>
+    <tr>
+      <td><code>Consent.status</code></td>
+      <td><code>active</code></td>
+      <td>The infrastructure does not act on the status for this category, so deciding which statuses to treat as a current decision (e.g. only <code>active</code>) is the responsibility of the consuming Telemedicine Solution.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>The elements above are those that give this policy its meaning; the list is <strong>not exhaustive</strong>. As for any Consent, additional elements should be set as appropriate. In particular, it is recommended to also set <code class="language-plaintext highlighter-rouge">Consent.performer</code> (the actor recording/agreeing the decision) and <code class="language-plaintext highlighter-rouge">Consent.organization</code> (the custodian Organization responsible for the Consent). These have been omitted from the above for brevity.</p>
+</blockquote>
+
+<p>When the affiliation extension is used, the infrastructure validates the following on create and update — if any check fails, the Consent is rejected:</p>
+<ul>
+  <li>The Consent must carry the <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/policy/ehealth/display-triage-result</code> policy.</li>
+  <li>Exactly one <code class="language-plaintext highlighter-rouge">EpisodeOfCare</code> affiliation must be present, and it must match the <code class="language-plaintext highlighter-rouge">EpisodeOfCare</code> in the creating Practitioner's security context.</li>
+  <li>Any <code class="language-plaintext highlighter-rouge">CarePlan</code> affiliation must reference a <code class="language-plaintext highlighter-rouge">CarePlan</code> whose <code class="language-plaintext highlighter-rouge">CarePlan.episodeOfCare</code> equals the affiliated <code class="language-plaintext highlighter-rouge">EpisodeOfCare</code>.</li>
+</ul>
+
+<p>Accordingly, the affiliation level expresses where the decision applies:</p>
+<ul>
+  <li>An affiliation to <strong>only an EpisodeOfCare</strong> expresses a decision at the care pathway (EpisodeOfCare) level.</li>
+  <li>An affiliation to <strong>both an EpisodeOfCare and a CarePlan</strong> expresses a decision at the citizen-specific plan (CarePlan) level.</li>
+</ul>
+
+<p>See <a href="#affiliation">Affiliation</a> for the extension definition.</p>
+
+<p>See <a href="Consent-23.html">Consent/23</a> for an example of a Consent that records the triage-result display decision.</p>
+
+<p>Note that, unlike the policy-enforcing categories <strong>PITEOC</strong> and <strong>SSLPCI</strong> (see <a href="#enforcement-of-consent">Enforcement of Consent</a> below), a <strong>behavior-by-policy</strong> Consent does not use <code class="language-plaintext highlighter-rouge">Consent.provision.data.reference</code> to bind the Consent to an EpisodeOfCare/CarePlan. Using <code class="language-plaintext highlighter-rouge">Consent.provision.data.reference</code> would change the meaning of the Consent (it would state which data the consent is <em>about</em>); the care context level is instead expressed through the <code class="language-plaintext highlighter-rouge">ehealth-consent-affiliation</code> extension.</p>
+
+<h4 id="access-control">Access control</h4>
+<p>A Patient (citizen) is <strong>not</strong> allowed to create or update a Consent with policy <code class="language-plaintext highlighter-rouge">http://ehealth.sundhed.dk/policy/ehealth/display-triage-result</code> — the decision of whether triage results may be displayed to the Patient is controlled by a Practitioner. See <a href="#remarks-on-operations">Remarks on operations</a> below.</p>
 
 <h2 id="enforcement-of-consent">Enforcement of Consent</h2>
 <p>Business rules are built into eHealth infrastructure to ensure that data can only be processed or forwarded to other systems and actors when the proper Consent is given.</p>
@@ -469,7 +577,7 @@ See <a href="Consent-23.html">Consent/23</a> for an example of how to use the af
  <li>Examples for this Profile: <a href="Consent-23.html">Consent/23</a></li>
  <li>CapabilityStatements using this Profile: <a href="CapabilityStatement-careplan.html">careplan</a> and <a href="CapabilityStatement-patient.html">patient</a></li>
 </ul>
-<p>You can also check for <a href="https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-consent">usages in the FHIR IG Statistics</a></p>
+<p>You can also check for <a href="https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-consent.json">usages in the FHIR IG Statistics</a></p>
 
   <!-- no uri -->
   <a name="profile"> </a>
@@ -530,7 +638,7 @@ See <a href="Consent-23.html">Consent/23</a> for an example of how to use the af
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Extension<br/><span style="font-weight:bold">Slice: </span>Unordered, Open by value:url<br/></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aba" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="k-Consent.extension.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aba" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="k-Consent.extension:affiliation"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-episodeofcare.html">ehealth-episodeofcare</a> | <a href="StructureDefinition-ehealth-careplan.html">ehealth-careplan</a>)<a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html"> {</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html" title="The reference to a resource that has to be resolved externally to the resource that includes the reference.">r</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html">}</a></td>
@@ -582,12 +690,12 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/R4/consent.html">Consent</a> | <a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aic" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck024.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="k-Consent.source_x_.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aic" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck024.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="k-Consent.source_x_:sourceReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-consent.html">ehealth-consent</a> | <a href="StructureDefinition-ehealth-documentreference.html">ehealth-documentreference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="StructureDefinition-ehealth-questionnaireresponse.html">ehealth-questionnaireresponse</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Source from which this consent is taken</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 3a760d78-a274-4f1e-9b64-c65a5708a490
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9682641-555a-4b84-9ff6-c70e2d4fced0
 document.getElementById('cbehealth-consentK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-consentK'), 'binding', document.getElementById('cbehealth-consentK-binding').checked, document.getElementById('ppehealth-consentK'));
 document.getElementById('cbehealth-consentK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -597,11 +705,68 @@ filterDesc(document.getElementById('ehealth-consentK'), 'obligation', document.g
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings</h4>
-<table class="list">
-<tr><td><b>Path</b></td><td><b>Conformance</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>Consent.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="Indicates the state of the consent."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>(a valid code from <a href="CodeSystem-hl7.org-fhir-consent-state-codes.html">Consent State Codes</a>)<div><code>http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.scope</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">ConsentScope</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-scope</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.category</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">ConsentCategory</a>(a valid code from <a href="CodeSystem-ehealth-consent-category.html">Consent Category</a>)<div><code>http://ehealth.sundhed.dk/vs/consent-category</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category"></button></div><div>From this IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Path</b>
+    </td>
+    <td>
+      <b>Status</b>
+    </td>
+    <td>
+      <b>Usage</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Version</b>
+    </td>
+    <td>
+      <b>Source</b>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.status</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="Indicates the state of the consent.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.scope</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">Consent Scope</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.category</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">Consent Category</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
 </table>
 
         
@@ -611,20 +776,24 @@ filterDesc(document.getElementById('ehealth-consentK'), 'obligation', document.g
             <a name="inv-key"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Constraints</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>Consent</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ppc-1</td><td>error</td><td>Consent</td><td>Either a Policy or PolicyRule<br/>: policy.exists() or policyRule.exists()</td><td></td></tr>
-<tr><td>ppc-2</td><td>error</td><td>Consent</td><td>IF Scope=privacy, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='patient-privacy').exists().not()</td><td></td></tr>
-<tr><td>ppc-3</td><td>error</td><td>Consent</td><td>IF Scope=research, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='research').exists().not()</td><td></td></tr>
-<tr><td>ppc-4</td><td>error</td><td>Consent</td><td>IF Scope=adr, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='adr').exists().not()</td><td></td></tr>
-<tr><td>ppc-5</td><td>error</td><td>Consent</td><td>IF Scope=treatment, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='treatment').exists().not()</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grade</b>
+    </td>
+    <td>
+      <b>Path(s)</b>
+    </td>
+    <td>
+      <b>Description</b>
+    </td>
+    <td>
+      <b>Expression</b>
+    </td>
+  </tr>
 </table>
 
           
@@ -648,7 +817,7 @@ filterDesc(document.getElementById('ehealth-consentK'), 'obligation', document.g
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Extension</span><br/><span style="font-weight:bold">Slice: </span>Unordered, Open by value:url</td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aaa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="Consent.extension.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aaa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="Consent.extension:affiliation"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-episodeofcare.html">ehealth-episodeofcare</a> | <a href="StructureDefinition-ehealth-careplan.html">ehealth-careplan</a>)<a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html"> {</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html" title="The reference to a resource that has to be resolved externally to the resource that includes the reference.">r</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html">}</a></td>
@@ -678,7 +847,7 @@ filterDesc(document.getElementById('ehealth-consentK'), 'obligation', document.g
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic"></span><span style="opacity: 0.5; font-style: italic">0</span><span style="opacity: 0.5; font-style: italic">..</span><span style="opacity: 0.5; font-style: italic">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a><span style="opacity: 0.5; font-style: italic">, </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/references.html">Reference</a><span style="font-style: italic">(</span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/consent.html">Consent</a><span style="font-style: italic"> | </span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a><span style="font-style: italic"> | </span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/contract.html">Contract</a><span style="font-style: italic"> | </span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a><span style="font-style: italic">)</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5; font-style: italic">Source from which this consent is taken</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by type:$this</span></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="afa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference" data-no-external="true">source[x]:sourceReference</a><a name="Consent.source_x_.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="afa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference" data-no-external="true">source[x]:sourceReference</a><a name="Consent.source_x_:sourceReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-consent.html">ehealth-consent</a> | <a href="StructureDefinition-ehealth-documentreference.html">ehealth-documentreference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="StructureDefinition-ehealth-questionnaireresponse.html">ehealth-questionnaireresponse</a>)</td>
@@ -708,7 +877,7 @@ filterDesc(document.getElementById('ehealth-consentK'), 'obligation', document.g
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Specific code covered by this consent<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="ValueSet-vs-ehealth-consent-provision-code.html" title="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code" class="binding">Consent Provision Code</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span title="null" class="binding">)</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 3a760d78-a274-4f1e-9b64-c65a5708a490
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9682641-555a-4b84-9ff6-c70e2d4fced0
 document.getElementById('cbehealth-consentD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-consentD'), 'binding', document.getElementById('cbehealth-consentD-binding').checked, document.getElementById('ppehealth-consentD'));
 document.getElementById('cbehealth-consentD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -719,13 +888,92 @@ filterDesc(document.getElementById('ehealth-consentD'), 'obligation', document.g
           <a name="tx"> </a>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings (Differential)</h4>
-<table class="list">
-<tr><td><b>Path</b></td><td><b>Conformance</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>Consent.scope</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">ConsentScope</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-scope</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.category</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">ConsentCategory</a>(a valid code from <a href="CodeSystem-ehealth-consent-category.html">Consent Category</a>)<div><code>http://ehealth.sundhed.dk/vs/consent-category</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.policy.uri</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-policy.html">ConsentPolicy</a>(a valid code from <a href="CodeSystem-ehealth-consent-policy.html">Consent policy</a>)<div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-policy</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.class</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-class.html">ConsentProvisionClass</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.code</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-code.html">ConsentProvisionCode</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code"></button></div><div>From this IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Path</b>
+    </td>
+    <td>
+      <b>Status</b>
+    </td>
+    <td>
+      <b>Usage</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Version</b>
+    </td>
+    <td>
+      <b>Source</b>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.scope</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-scope.html">Consent Scope</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.category</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-ehealth-consent-category.html">Consent Category</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.policy.uri</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-policy.html">Consent Policy</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.class</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-provision-class.html">Consent Provision Class</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.code</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-provision-code.html">Consent Provision Code</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
 </table>
 
         
@@ -783,7 +1031,7 @@ filterDesc(document.getElementById('ehealth-consentD'), 'obligation', document.g
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Extension<br/><span style="font-weight:bold">Slice: </span>Unordered, Open by value:url<br/></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aga" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="s-Consent.extension.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aga" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="s-Consent.extension:affiliation"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-episodeofcare.html">ehealth-episodeofcare</a> | <a href="StructureDefinition-ehealth-careplan.html">ehealth-careplan</a>)<a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html"> {</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html" title="The reference to a resource that has to be resolved externally to the resource that includes the reference.">r</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html">}</a></td>
@@ -850,7 +1098,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/R4/consent.html">Consent</a> | <a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aqc" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="s-Consent.source_x_.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aqc" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="s-Consent.source_x_:sourceReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-consent.html">ehealth-consent</a> | <a href="StructureDefinition-ehealth-documentreference.html">ehealth-documentreference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="StructureDefinition-ehealth-questionnaireresponse.html">ehealth-questionnaireresponse</a>)</td>
@@ -1007,7 +1255,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Context of activities covered by this rule<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.1.0/ValueSet-v3-PurposeOfUse.html" title="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse" class="binding">PurposeOfUse</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Context of activities covered by this rule<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v3-PurposeOfUse.html" title="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse" class="binding">PurposeOfUse</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="auj" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.provision.class" title="The class of information covered by this rule. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to." data-no-external="true">class</a><a name="s-Consent.provision.class"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
@@ -1060,7 +1308,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/consent.html#Consent.provision" title="Consent.provision">provision (Consent)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Nested Exception Rules<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 3a760d78-a274-4f1e-9b64-c65a5708a490
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9682641-555a-4b84-9ff6-c70e2d4fced0
 document.getElementById('cbehealth-consentS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-consentS'), 'binding', document.getElementById('cbehealth-consentS-binding').checked, document.getElementById('ppehealth-consentS'));
 document.getElementById('cbehealth-consentS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1070,38 +1318,227 @@ filterDesc(document.getElementById('ehealth-consentS'), 'obligation', document.g
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings</h4>
-<table class="list">
-<tr><td><b>Path</b></td><td><b>Conformance</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>Consent.language</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#preferred">preferred</a></td><td title="A human language."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">CommonLanguages</a><div><code>http://hl7.org/fhir/ValueSet/languages</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/languages"></button></div><div>From the FHIR Standard</div><table class="grid">
+<table class="list" data-fhir="generated-heirarchy">
   <tr>
-    <td style="font-size: 11px">
-      <b>Additional Bindings</b>
+    <td>
+      <b>Path</b>
     </td>
-    <td style="font-size: 11px">Purpose</td>
+    <td>
+      <b>Status</b>
+    </td>
+    <td>
+      <b>Usage</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Version</b>
+    </td>
+    <td>
+      <b>Source</b>
+    </td>
   </tr>
   <tr>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a>
+    <td>Consent.language</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is 'extensible' or 'preferred'">Max Binding</a>
+    <td title="A human language.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
     </td>
   </tr>
-</table>
-</td></tr>
-<tr><td>Consent.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="Indicates the state of the consent."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>(a valid code from <a href="CodeSystem-hl7.org-fhir-consent-state-codes.html">Consent State Codes</a>)<div><code>http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.scope</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">ConsentScope</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-scope</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.category</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">ConsentCategory</a>(a valid code from <a href="CodeSystem-ehealth-consent-category.html">Consent Category</a>)<div><code>http://ehealth.sundhed.dk/vs/consent-category</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.policy.uri</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-policy.html">ConsentPolicy</a>(a valid code from <a href="CodeSystem-ehealth-consent-policy.html">Consent policy</a>)<div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-policy</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.policyRule</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Regulatory policy examples."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-policy.html">ConsentPolicyRuleCodes</a><div><code>http://hl7.org/fhir/ValueSet/consent-policy</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-policy"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.type</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="How a rule statement is applied, such as adding additional consent or removing consent."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-provision-type.html">ConsentProvisionType</a><div><code>http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.actor.role</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="How an actor is involved in the consent considerations."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-role-type.html">SecurityRoleType</a><div><code>http://hl7.org/fhir/ValueSet/security-role-type</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/security-role-type"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.action</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="Detailed codes for the consent action."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-action.html">ConsentActionCodes</a><div><code>http://hl7.org/fhir/ValueSet/consent-action</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-action"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.securityLabel</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Security Labels from the Healthcare Privacy and Security Classification System."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-labels.html">All Security Labels</a><div><code>http://hl7.org/fhir/ValueSet/security-labels</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/security-labels"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.purpose</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels."><a style="opacity: 1.0" href="http://terminology.hl7.org/7.1.0/ValueSet-v3-PurposeOfUse.html">PurposeOfUse</a><div><code>http://terminology.hl7.org/ValueSet/v3-PurposeOfUse</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse"></button></div></td></tr>
-<tr><td>Consent.provision.class</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-class.html">ConsentProvisionClass</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.code</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-code.html">ConsentProvisionCode</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.data.meaning</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="How a resource reference is interpreted when testing consent restrictions."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-data-meaning.html">ConsentDataMeaning</a><div><code>http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
+  <tr>
+    <td>Consent.status</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="Indicates the state of the consent.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.scope</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">Consent Scope</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.category</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">Consent Category</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.policy.uri</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-policy.html">Consent Policy</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.policyRule</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="Regulatory policy examples.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-policy.html">Consent PolicyRule Codes</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-policy|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.type</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="How a rule statement is applied, such as adding additional consent or removing consent.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-provision-type.html">ConsentProvisionType</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.actor.​role</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="How an actor is involved in the consent considerations.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-role-type.html">SecurityRoleType</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/security-role-type|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.action</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+    </td>
+    <td title="Detailed codes for the consent action.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-action.html">Consent Action Codes</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-action|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.securityLabel</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="Security Labels from the Healthcare Privacy and Security Classification System.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-labels.html">SecurityLabels</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/security-labels|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.purpose</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.">
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v3-PurposeOfUse.html">PurposeOfUse</a>
+      <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to 3.1.0, the version found through the package references">&#x1F4E6;3.1.0</td>
+    <td>
+      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.class</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-class.html">Consent Provision Class</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.code</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-code.html">Consent Provision Code</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.data.​meaning</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="How a resource reference is interpreted when testing consent restrictions.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-data-meaning.html">ConsentDataMeaning</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
 </table>
 
         
@@ -1111,20 +1548,24 @@ filterDesc(document.getElementById('ehealth-consentS'), 'obligation', document.g
             <a name="inv-snap"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Constraints</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>Consent</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ppc-1</td><td>error</td><td>Consent</td><td>Either a Policy or PolicyRule<br/>: policy.exists() or policyRule.exists()</td><td></td></tr>
-<tr><td>ppc-2</td><td>error</td><td>Consent</td><td>IF Scope=privacy, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='patient-privacy').exists().not()</td><td></td></tr>
-<tr><td>ppc-3</td><td>error</td><td>Consent</td><td>IF Scope=research, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='research').exists().not()</td><td></td></tr>
-<tr><td>ppc-4</td><td>error</td><td>Consent</td><td>IF Scope=adr, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='adr').exists().not()</td><td></td></tr>
-<tr><td>ppc-5</td><td>error</td><td>Consent</td><td>IF Scope=treatment, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='treatment').exists().not()</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grade</b>
+    </td>
+    <td>
+      <b>Path(s)</b>
+    </td>
+    <td>
+      <b>Description</b>
+    </td>
+    <td>
+      <b>Expression</b>
+    </td>
+  </tr>
 </table>
 
           
@@ -1168,7 +1609,7 @@ filterDesc(document.getElementById('ehealth-consentS'), 'obligation', document.g
     "<a href="StructureDefinition-ehealth-consent.html#Consent.category" title="A classification of the type of consents found in the statement. This element supports indexing and retrieval of consent statements" class="dict"><span style="text-decoration: underline">category</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Classification of the consent statement - for indexing/retrieval</a></span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.patient" title="The patient/healthcare consumer to whom this consent applies" class="dict"><span style="text-decoration: underline">patient</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient]])}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Who the consent applies to</span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.dateTime" title="When this  Consent was issued / created / indexed" class="dict"><span style="text-decoration: underline">dateTime</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">When this Consent was created or indexed</span>
-    "<a href="StructureDefinition-ehealth-consent.html#Consent.performer" title="Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></span>)}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Who is agreeing to the policy and rules</span>
+    "<a href="StructureDefinition-ehealth-consent.html#Consent.performer" title="Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Organization|4.0.1)}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Who is agreeing to the policy and rules</span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.organization" title="The organization that manages the consent, and the framework within which it is executed" class="dict"><span style="text-decoration: underline">organization</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization]])}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Custodian of the consent</span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.sourceAttachment" title="The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document" class="dict"><span style="text-decoration: underline">sourceAttachment</span></a>" : [ <span style="color: navy"> // sliced by type:$this in the specified order Open</span>
       { // <span style="color: navy; opacity: 0.8">Source from which this consent is taken</span> <span style="color: brown" title=""><b>C?</b></span>
@@ -1186,7 +1627,7 @@ filterDesc(document.getElementById('ehealth-consentS'), 'obligation', document.g
       "extension": [
       ],
       "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verified" title="Has the instruction been verified" class="dict"><span style="text-decoration: underline">verified</span></a>" : &lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></span>&gt;, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Has been verified</span>
-      "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verifiedWith" title="Who verified the instruction (Patient, Relative or other Authorized Person)" class="dict"><span style="text-decoration: underline">verifiedWith</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></span>)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Person who verified</span>
+      "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verifiedWith" title="Who verified the instruction (Patient, Relative or other Authorized Person)" class="dict"><span style="text-decoration: underline">verifiedWith</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Patient|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Person who verified</span>
       "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verificationDate" title="Date verification was collected" class="dict"><span style="text-decoration: underline">verificationDate</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">When consent verified</span>
     }],
     "<a href="StructureDefinition-ehealth-consent.html#Consent.provision" title="An exception to the base policy of this consent. An exception can be an addition or removal of access permissions" class="dict"><span style="text-decoration: underline">provision</span></a>" : { <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Constraints to the base Consent.policyRule</span>
@@ -1198,7 +1639,7 @@ filterDesc(document.getElementById('ehealth-consentS'), 'obligation', document.g
         "extension": [
         ],
         "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.actor.role" title="How the individual is involved in the resources content that is described in the exception" class="dict"><span style="text-decoration: underline">role</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></span>}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">How the actor is involved</a></span>
-        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.actor.reference" title="The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers')" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/device.html">Device</a></span>)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Resource for the actor (or group, by role)</span>
+        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.actor.reference" title="The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers')" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Device|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Resource for the actor (or group, by role)</span>
       }],
       "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.action" title="Actions controlled by this Rule" class="dict"><span style="text-decoration: underline">action</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Actions controlled by this rule</a></span>
       "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.securityLabel" title="A security label, comprised of 0..* security label fields (Privacy tags), which define which resources are controlled by this exception" class="dict"><span style="text-decoration: underline">securityLabel</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Security Labels that define affected resources</a></span>
@@ -1210,7 +1651,7 @@ filterDesc(document.getElementById('ehealth-consentS'), 'obligation', document.g
         "extension": [
         ],
         "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.data.meaning" title="How the resource reference is interpreted when testing consent restrictions" class="dict"><span style="text-decoration: underline">meaning</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">instance | related | dependents | authoredby</a></span>
-        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.data.reference" title="A reference to a specific resource that defines which resources are covered by this consent" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/resource.html">Resource</a></span>)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">The actual data reference</span>
+        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.data.reference" title="A reference to a specific resource that defines which resources are covered by this consent" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Resource|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">The actual data reference</span>
       }],
       "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.provision" title="Rules which provide exceptions to the base rule or subrules" class="dict"><span style="text-decoration: underline">provision</span></a>" : [&lt;<span style="color: darkgreen">n/a</span>&gt;], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Nested Exception Rules</span>
     },
@@ -1294,7 +1735,7 @@ Summary
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Extension<br/><span style="font-weight:bold">Slice: </span>Unordered, Open by value:url<br/></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aba" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="ka-Consent.extension.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aba" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="ka-Consent.extension:affiliation"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-episodeofcare.html">ehealth-episodeofcare</a> | <a href="StructureDefinition-ehealth-careplan.html">ehealth-careplan</a>)<a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html"> {</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html" title="The reference to a resource that has to be resolved externally to the resource that includes the reference.">r</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html">}</a></td>
@@ -1346,12 +1787,12 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/R4/consent.html">Consent</a> | <a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aic" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck024.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="ka-Consent.source_x_.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aic" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck024.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="ka-Consent.source_x_:sourceReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-consent.html">ehealth-consent</a> | <a href="StructureDefinition-ehealth-documentreference.html">ehealth-documentreference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="StructureDefinition-ehealth-questionnaireresponse.html">ehealth-questionnaireresponse</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Source from which this consent is taken</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 3a760d78-a274-4f1e-9b64-c65a5708a490
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9682641-555a-4b84-9ff6-c70e2d4fced0
 document.getElementById('cbehealth-consentKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-consentKA'), 'binding', document.getElementById('cbehealth-consentKA-binding').checked, document.getElementById('ppehealth-consentKA'));
 document.getElementById('cbehealth-consentKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1361,11 +1802,68 @@ filterDesc(document.getElementById('ehealth-consentKA'), 'obligation', document.
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings</h4>
-<table class="list">
-<tr><td><b>Path</b></td><td><b>Conformance</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>Consent.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="Indicates the state of the consent."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>(a valid code from <a href="CodeSystem-hl7.org-fhir-consent-state-codes.html">Consent State Codes</a>)<div><code>http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.scope</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">ConsentScope</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-scope</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.category</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">ConsentCategory</a>(a valid code from <a href="CodeSystem-ehealth-consent-category.html">Consent Category</a>)<div><code>http://ehealth.sundhed.dk/vs/consent-category</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category"></button></div><div>From this IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Path</b>
+    </td>
+    <td>
+      <b>Status</b>
+    </td>
+    <td>
+      <b>Usage</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Version</b>
+    </td>
+    <td>
+      <b>Source</b>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.status</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="Indicates the state of the consent.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.scope</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">Consent Scope</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.category</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">Consent Category</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
 </table>
 
         
@@ -1375,20 +1873,24 @@ filterDesc(document.getElementById('ehealth-consentKA'), 'obligation', document.
             <a name="inv-all-key"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Constraints</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>Consent</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ppc-1</td><td>error</td><td>Consent</td><td>Either a Policy or PolicyRule<br/>: policy.exists() or policyRule.exists()</td><td></td></tr>
-<tr><td>ppc-2</td><td>error</td><td>Consent</td><td>IF Scope=privacy, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='patient-privacy').exists().not()</td><td></td></tr>
-<tr><td>ppc-3</td><td>error</td><td>Consent</td><td>IF Scope=research, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='research').exists().not()</td><td></td></tr>
-<tr><td>ppc-4</td><td>error</td><td>Consent</td><td>IF Scope=adr, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='adr').exists().not()</td><td></td></tr>
-<tr><td>ppc-5</td><td>error</td><td>Consent</td><td>IF Scope=treatment, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='treatment').exists().not()</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grade</b>
+    </td>
+    <td>
+      <b>Path(s)</b>
+    </td>
+    <td>
+      <b>Description</b>
+    </td>
+    <td>
+      <b>Expression</b>
+    </td>
+  </tr>
 </table>
 
           
@@ -1412,7 +1914,7 @@ filterDesc(document.getElementById('ehealth-consentKA'), 'obligation', document.
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Extension</span><br/><span style="font-weight:bold">Slice: </span>Unordered, Open by value:url</td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aaa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="a-Consent.extension.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aaa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="a-Consent.extension:affiliation"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-episodeofcare.html">ehealth-episodeofcare</a> | <a href="StructureDefinition-ehealth-careplan.html">ehealth-careplan</a>)<a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html"> {</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html" title="The reference to a resource that has to be resolved externally to the resource that includes the reference.">r</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html">}</a></td>
@@ -1442,7 +1944,7 @@ filterDesc(document.getElementById('ehealth-consentKA'), 'obligation', document.
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic"></span><span style="opacity: 0.5; font-style: italic">0</span><span style="opacity: 0.5; font-style: italic">..</span><span style="opacity: 0.5; font-style: italic">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/datatypes.html#Attachment">Attachment</a><span style="opacity: 0.5; font-style: italic">, </span><a style="font-style: italic; font-style: italic" href="http://hl7.org/fhir/R4/references.html">Reference</a><span style="font-style: italic">(</span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/consent.html">Consent</a><span style="font-style: italic"> | </span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a><span style="font-style: italic"> | </span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/contract.html">Contract</a><span style="font-style: italic"> | </span><a style="opacity: 0.5; font-style: italic; opacity: 0.5; font-style: italic" href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a><span style="font-style: italic">)</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5; font-style: italic">Source from which this consent is taken</span><br style="font-style: italic"/><span style="font-weight:bold; font-style: italic">Slice: </span><span style="font-style: italic">Unordered, Open by type:$this</span></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="afa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference" data-no-external="true">source[x]:sourceReference</a><a name="a-Consent.source_x_.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="afa" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference" data-no-external="true">source[x]:sourceReference</a><a name="a-Consent.source_x_:sourceReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-consent.html">ehealth-consent</a> | <a href="StructureDefinition-ehealth-documentreference.html">ehealth-documentreference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="StructureDefinition-ehealth-questionnaireresponse.html">ehealth-questionnaireresponse</a>)</td>
@@ -1472,7 +1974,7 @@ filterDesc(document.getElementById('ehealth-consentKA'), 'obligation', document.
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5; opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Specific code covered by this consent<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="ValueSet-vs-ehealth-consent-provision-code.html" title="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code" class="binding">Consent Provision Code</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#required" title="To be conformant, the concept in this element SHALL be from the specified value set." class="binding">required</a><span title="null" class="binding">)</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 3a760d78-a274-4f1e-9b64-c65a5708a490
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9682641-555a-4b84-9ff6-c70e2d4fced0
 document.getElementById('cbehealth-consentDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-consentDA'), 'binding', document.getElementById('cbehealth-consentDA-binding').checked, document.getElementById('ppehealth-consentDA'));
 document.getElementById('cbehealth-consentDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1482,13 +1984,92 @@ filterDesc(document.getElementById('ehealth-consentDA'), 'obligation', document.
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings (Differential)</h4>
-<table class="list">
-<tr><td><b>Path</b></td><td><b>Conformance</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>Consent.scope</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">ConsentScope</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-scope</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.category</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">ConsentCategory</a>(a valid code from <a href="CodeSystem-ehealth-consent-category.html">Consent Category</a>)<div><code>http://ehealth.sundhed.dk/vs/consent-category</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.policy.uri</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-policy.html">ConsentPolicy</a>(a valid code from <a href="CodeSystem-ehealth-consent-policy.html">Consent policy</a>)<div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-policy</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.class</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-class.html">ConsentProvisionClass</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.code</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-code.html">ConsentProvisionCode</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code"></button></div><div>From this IG</div></td></tr>
+<table class="list" data-fhir="generated-heirarchy">
+  <tr>
+    <td>
+      <b>Path</b>
+    </td>
+    <td>
+      <b>Status</b>
+    </td>
+    <td>
+      <b>Usage</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Version</b>
+    </td>
+    <td>
+      <b>Source</b>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.scope</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-scope.html">Consent Scope</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.category</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-ehealth-consent-category.html">Consent Category</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.policy.uri</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-policy.html">Consent Policy</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.class</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-provision-class.html">Consent Provision Class</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.code</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 0.5" href="ValueSet-vs-ehealth-consent-provision-code.html">Consent Provision Code</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
 </table>
 
         
@@ -1546,7 +2127,7 @@ filterDesc(document.getElementById('ehealth-consentDA'), 'obligation', document.
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/extensibility.html#Extension">Extension</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Extension<br/><span style="font-weight:bold">Slice: </span>Unordered, Open by value:url<br/></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aga" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="sa-Consent.extension.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white" id="aga" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.extension:affiliation" title="Extension URL = http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent-affiliation" data-no-external="true">extension:affiliation</a><a name="sa-Consent.extension:affiliation"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-episodeofcare.html">ehealth-episodeofcare</a> | <a href="StructureDefinition-ehealth-careplan.html">ehealth-careplan</a>)<a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html"> {</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html" title="The reference to a resource that has to be resolved externally to the resource that includes the reference.">r</a><a href="http://hl7.org/fhir/R4/valueset-resource-aggregation-mode.html">}</a></td>
@@ -1613,7 +2194,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a>(<a href="http://hl7.org/fhir/R4/consent.html">Consent</a> | <a href="http://hl7.org/fhir/R4/documentreference.html">DocumentReference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="http://hl7.org/fhir/R4/questionnaireresponse.html">QuestionnaireResponse</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td></tr>
-<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aqc" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="sa-Consent.source_x_.2"> </a></td>
+<tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="aqc" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck124.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end_slicer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Slice Item" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.source[x]:sourceReference" title="Slice sourceReference: The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document." data-no-external="true">source[x]:sourceReference</a><a name="sa-Consent.source_x_:sourceReference"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a href="StructureDefinition-ehealth-consent.html">ehealth-consent</a> | <a href="StructureDefinition-ehealth-documentreference.html">ehealth-documentreference</a> | <a href="http://hl7.org/fhir/R4/contract.html">Contract</a> | <a href="StructureDefinition-ehealth-questionnaireresponse.html">ehealth-questionnaireresponse</a>)</td>
@@ -1770,7 +2351,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Context of activities covered by this rule<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.1.0/ValueSet-v3-PurposeOfUse.html" title="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse" class="binding">PurposeOfUse</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.</span><br/></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Context of activities covered by this rule<br class="binding"/><span style="font-weight:bold" title="null" class="binding">Binding: </span><a href="http://terminology.hl7.org/7.3.0/ValueSet-v3-PurposeOfUse.html" title="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse" class="binding">PurposeOfUse</a><span title="null" class="binding"> (</span><a href="http://hl7.org/fhir/R4/terminologies.html#extensible" title="To be conformant, the concept in this element SHALL be from the specified value set if any of the codes within the value set can apply to the concept being communicated.  If the value set does not cover the concept (based on human review), alternate codings (or, data type allowing, text) may be included instead." class="binding">extensible</a><span title="null" class="binding">)</span><span title="null" class="binding">: </span><span title="null" class="binding">What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.</span><br/></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="auj" data-fhir="generated-heirarchy"><td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ehealth-consent-definitions.html#Consent.provision.class" title="The class of information covered by this rule. The type can be a FHIR resource type, a profile on a type, or a CDA document, or some other type that indicates what sort of information the consent relates to." data-no-external="true">class</a><a name="sa-Consent.provision.class"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: black; null" title="This element is included in summaries">Σ</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
@@ -1823,7 +2404,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R4/consent.html#Consent.provision" title="Consent.provision">provision (Consent)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Nested Exception Rules<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 3a760d78-a274-4f1e-9b64-c65a5708a490
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9682641-555a-4b84-9ff6-c70e2d4fced0
 document.getElementById('cbehealth-consentSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('ehealth-consentSA'), 'binding', document.getElementById('cbehealth-consentSA-binding').checked, document.getElementById('ppehealth-consentSA'));
 document.getElementById('cbehealth-consentSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1833,38 +2414,227 @@ filterDesc(document.getElementById('ehealth-consentSA'), 'obligation', document.
 </script></table>
           <!--Terminology Bindings heading in the fragment -->
           <h4>Terminology Bindings</h4>
-<table class="list">
-<tr><td><b>Path</b></td><td><b>Conformance</b></td><td><b>ValueSet</b></td><td><b>URI</b></td></tr>
-<tr><td>Consent.language</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#preferred">preferred</a></td><td title="A human language."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">CommonLanguages</a><div><code>http://hl7.org/fhir/ValueSet/languages</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/languages"></button></div><div>From the FHIR Standard</div><table class="grid">
+<table class="list" data-fhir="generated-heirarchy">
   <tr>
-    <td style="font-size: 11px">
-      <b>Additional Bindings</b>
+    <td>
+      <b>Path</b>
     </td>
-    <td style="font-size: 11px">Purpose</td>
+    <td>
+      <b>Status</b>
+    </td>
+    <td>
+      <b>Usage</b>
+    </td>
+    <td>
+      <b>ValueSet</b>
+    </td>
+    <td>
+      <b>Version</b>
+    </td>
+    <td>
+      <b>Source</b>
+    </td>
   </tr>
   <tr>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a>
+    <td>Consent.language</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[preferred]">preferred</a>
     </td>
-    <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is 'extensible' or 'preferred'">Max Binding</a>
+    <td title="A human language.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-languages.html">Common Languages</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/languages|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
     </td>
   </tr>
-</table>
-</td></tr>
-<tr><td>Consent.status</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="Indicates the state of the consent."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>(a valid code from <a href="CodeSystem-hl7.org-fhir-consent-state-codes.html">Consent State Codes</a>)<div><code>http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.scope</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">ConsentScope</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-scope</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.category</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">ConsentCategory</a>(a valid code from <a href="CodeSystem-ehealth-consent-category.html">Consent Category</a>)<div><code>http://ehealth.sundhed.dk/vs/consent-category</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.policy.uri</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-policy.html">ConsentPolicy</a>(a valid code from <a href="CodeSystem-ehealth-consent-policy.html">Consent policy</a>)<div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-policy</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.policyRule</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Regulatory policy examples."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-policy.html">ConsentPolicyRuleCodes</a><div><code>http://hl7.org/fhir/ValueSet/consent-policy</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-policy"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.type</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="How a rule statement is applied, such as adding additional consent or removing consent."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-provision-type.html">ConsentProvisionType</a><div><code>http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.actor.role</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="How an actor is involved in the consent considerations."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-role-type.html">SecurityRoleType</a><div><code>http://hl7.org/fhir/ValueSet/security-role-type</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/security-role-type"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.action</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#example">example</a></td><td title="Detailed codes for the consent action."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-action.html">ConsentActionCodes</a><div><code>http://hl7.org/fhir/ValueSet/consent-action</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-action"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.securityLabel</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="Security Labels from the Healthcare Privacy and Security Classification System."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-labels.html">All Security Labels</a><div><code>http://hl7.org/fhir/ValueSet/security-labels</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/security-labels"></button></div><div>From the FHIR Standard</div></td></tr>
-<tr><td>Consent.provision.purpose</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#extensible">extensible</a></td><td title="What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels."><a style="opacity: 1.0" href="http://terminology.hl7.org/7.1.0/ValueSet-v3-PurposeOfUse.html">PurposeOfUse</a><div><code>http://terminology.hl7.org/ValueSet/v3-PurposeOfUse</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse"></button></div></td></tr>
-<tr><td>Consent.provision.class</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-class.html">ConsentProvisionClass</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.code</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td><a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-code.html">ConsentProvisionCode</a><div><code>http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code"></button></div><div>From this IG</div></td></tr>
-<tr><td>Consent.provision.data.meaning</td><td><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#required">required</a></td><td title="How a resource reference is interpreted when testing consent restrictions."><a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-data-meaning.html">ConsentDataMeaning</a><div><code>http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1</code><button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1"></button></div><div>From the FHIR Standard</div></td></tr>
+  <tr>
+    <td>Consent.status</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="Indicates the state of the consent.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-state-codes.html">ConsentState</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-state-codes|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.scope</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-scope.html">Consent Scope</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-scope" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.category</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-ehealth-consent-category.html">Consent Category</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/consent-category" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.policy.uri</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-policy.html">Consent Policy</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-policy" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.policyRule</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="Regulatory policy examples.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-policy.html">Consent PolicyRule Codes</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-policy|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.type</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="How a rule statement is applied, such as adding additional consent or removing consent.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-provision-type.html">ConsentProvisionType</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-provision-type|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.actor.​role</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="How an actor is involved in the consent considerations.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-role-type.html">SecurityRoleType</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/security-role-type|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.action</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[example]">example</a>
+    </td>
+    <td title="Detailed codes for the consent action.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-action.html">Consent Action Codes</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-action|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.securityLabel</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="Security Labels from the Healthcare Privacy and Security Classification System.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-security-labels.html">SecurityLabels</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/security-labels|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.purpose</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[extensible]">extensible</a>
+    </td>
+    <td title="What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.">
+      <a style="opacity: 1.0" href="http://terminology.hl7.org/7.3.0/ValueSet-v3-PurposeOfUse.html">PurposeOfUse</a>
+      <button data-clipboard-text="http://terminology.hl7.org/ValueSet/v3-PurposeOfUse" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to 3.1.0, the version found through the package references">&#x1F4E6;3.1.0</td>
+    <td>
+      <a href="http://terminology.hl7.org/7.3.0">THO v7.3</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Consent.provision.class</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-class.html">Consent Provision Class</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.code</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td>
+      <a style="opacity: 1.0" href="ValueSet-vs-ehealth-consent-provision-code.html">Consent Provision Code</a>
+      <button data-clipboard-text="http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is not explicitly stated, which means it is fixed to the version provided in this specification">&#x1F4E6;10.0.0</td>
+    <td>This IG</td>
+  </tr>
+  <tr>
+    <td>Consent.provision.data.​meaning</td>
+    <td>Base</td>
+    <td>
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/terminologies.html#Enumeration[required]">required</a>
+    </td>
+    <td title="How a resource reference is interpreted when testing consent restrictions.">
+      <a style="opacity: 1.0" href="http://hl7.org/fhir/R4/valueset-consent-data-meaning.html">ConsentDataMeaning</a>
+      <button data-clipboard-text="http://hl7.org/fhir/ValueSet/consent-data-meaning|4.0.1" title="Click to copy URL" class="btn-copy"></button>
+    </td>
+    <td title="Version is explicitly stated to be 4.0.1">&#x1F4CD;4.0.1</td>
+    <td>
+      <a href="https://hl7.org/fhir/R4/">FHIR Std.</a>
+    </td>
+  </tr>
 </table>
 
         
@@ -1874,20 +2644,24 @@ filterDesc(document.getElementById('ehealth-consentSA'), 'obligation', document.
             <a name="inv-all-snap"> </a>
             <!--Constraints  heading in the fragment -->
             <h4>Constraints</h4>
-<table class="list">
-<tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
-<tr><td>dom-2</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL NOT contain nested Resources<br/>: contained.contained.empty()</td><td></td></tr>
-<tr><td>dom-3</td><td>error</td><td>Consent</td><td>If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource<br/>: contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()</td><td></td></tr>
-<tr><td>dom-4</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated<br/>: contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()</td><td></td></tr>
-<tr><td>dom-5</td><td>error</td><td>Consent</td><td>If a resource is contained in another resource, it SHALL NOT have a security label<br/>: contained.meta.security.empty()</td><td></td></tr>
-<tr><td>dom-6</td><td>best practice</td><td>Consent</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
-<tr><td>ele-1</td><td>error</td><td><b>**ALL** elements</b></td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
-<tr><td>ext-1</td><td>error</td><td><b>**ALL** extensions</b></td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>ppc-1</td><td>error</td><td>Consent</td><td>Either a Policy or PolicyRule<br/>: policy.exists() or policyRule.exists()</td><td></td></tr>
-<tr><td>ppc-2</td><td>error</td><td>Consent</td><td>IF Scope=privacy, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='patient-privacy').exists().not()</td><td></td></tr>
-<tr><td>ppc-3</td><td>error</td><td>Consent</td><td>IF Scope=research, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='research').exists().not()</td><td></td></tr>
-<tr><td>ppc-4</td><td>error</td><td>Consent</td><td>IF Scope=adr, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='adr').exists().not()</td><td></td></tr>
-<tr><td>ppc-5</td><td>error</td><td>Consent</td><td>IF Scope=treatment, there must be a patient<br/>: patient.exists() or scope.coding.where(system='something' and code='treatment').exists().not()</td><td></td></tr>
+<table class="list presentation" data-fhir="generated-heirarchy">
+  <tr>
+    <td width="60">
+      <b>Id</b>
+    </td>
+    <td>
+      <b>Grade</b>
+    </td>
+    <td>
+      <b>Path(s)</b>
+    </td>
+    <td>
+      <b>Description</b>
+    </td>
+    <td>
+      <b>Expression</b>
+    </td>
+  </tr>
 </table>
 
           
@@ -1931,7 +2705,7 @@ filterDesc(document.getElementById('ehealth-consentSA'), 'obligation', document.
     "<a href="StructureDefinition-ehealth-consent.html#Consent.category" title="A classification of the type of consents found in the statement. This element supports indexing and retrieval of consent statements" class="dict"><span style="text-decoration: underline">category</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Classification of the consent statement - for indexing/retrieval</a></span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.patient" title="The patient/healthcare consumer to whom this consent applies" class="dict"><span style="text-decoration: underline">patient</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient]])}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Who the consent applies to</span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.dateTime" title="When this  Consent was issued / created / indexed" class="dict"><span style="text-decoration: underline">dateTime</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">When this Consent was created or indexed</span>
-    "<a href="StructureDefinition-ehealth-consent.html#Consent.performer" title="Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></span>)}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Who is agreeing to the policy and rules</span>
+    "<a href="StructureDefinition-ehealth-consent.html#Consent.performer" title="Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Organization|4.0.1)}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Who is agreeing to the policy and rules</span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.organization" title="The organization that manages the consent, and the framework within which it is executed" class="dict"><span style="text-decoration: underline">organization</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization]])}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Custodian of the consent</span>
     "<a href="StructureDefinition-ehealth-consent.html#Consent.sourceAttachment" title="The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document" class="dict"><span style="text-decoration: underline">sourceAttachment</span></a>" : [ <span style="color: navy"> // sliced by type:$this in the specified order Open</span>
       { // <span style="color: navy; opacity: 0.8">Source from which this consent is taken</span> <span style="color: brown" title=""><b>C?</b></span>
@@ -1949,7 +2723,7 @@ filterDesc(document.getElementById('ehealth-consentSA'), 'obligation', document.
       "extension": [
       ],
       "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verified" title="Has the instruction been verified" class="dict"><span style="text-decoration: underline">verified</span></a>" : &lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></span>&gt;, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Has been verified</span>
-      "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verifiedWith" title="Who verified the instruction (Patient, Relative or other Authorized Person)" class="dict"><span style="text-decoration: underline">verifiedWith</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></span>)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Person who verified</span>
+      "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verifiedWith" title="Who verified the instruction (Patient, Relative or other Authorized Person)" class="dict"><span style="text-decoration: underline">verifiedWith</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Patient|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Person who verified</span>
       "<a href="StructureDefinition-ehealth-consent.html#Consent.verification.verificationDate" title="Date verification was collected" class="dict"><span style="text-decoration: underline">verificationDate</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">dateTime</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">When consent verified</span>
     }],
     "<a href="StructureDefinition-ehealth-consent.html#Consent.provision" title="An exception to the base policy of this consent. An exception can be an addition or removal of access permissions" class="dict"><span style="text-decoration: underline">provision</span></a>" : { <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Constraints to the base Consent.policyRule</span>
@@ -1961,7 +2735,7 @@ filterDesc(document.getElementById('ehealth-consentSA'), 'obligation', document.
         "extension": [
         ],
         "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.actor.role" title="How the individual is involved in the resources content that is described in the exception" class="dict"><span style="text-decoration: underline">role</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></span>}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">How the actor is involved</a></span>
-        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.actor.reference" title="The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers')" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/device.html">Device</a></span>)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Resource for the actor (or group, by role)</span>
+        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.actor.reference" title="The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers')" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Device|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Resource for the actor (or group, by role)</span>
       }],
       "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.action" title="Actions controlled by this Rule" class="dict"><span style="text-decoration: underline">action</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Actions controlled by this rule</a></span>
       "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.securityLabel" title="A security label, comprised of 0..* security label fields (Privacy tags), which define which resources are controlled by this exception" class="dict"><span style="text-decoration: underline">securityLabel</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></span>}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">Security Labels that define affected resources</a></span>
@@ -1973,7 +2747,7 @@ filterDesc(document.getElementById('ehealth-consentSA'), 'obligation', document.
         "extension": [
         ],
         "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.data.meaning" title="How the resource reference is interpreted when testing consent restrictions" class="dict"><span style="text-decoration: underline">meaning</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></span>&gt;", <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8"><a href="http://hl7.org/fhir/R4/null.html" style="color: navy">instance | related | dependents | authoredby</a></span>
-        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.data.reference" title="A reference to a specific resource that defines which resources are covered by this consent" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/resource.html">Resource</a></span>)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">The actual data reference</span>
+        "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.data.reference" title="A reference to a specific resource that defines which resources are covered by this consent" class="dict"><span style="text-decoration: underline">reference</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>(Resource|4.0.1)}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">The actual data reference</span>
       }],
       "<a href="StructureDefinition-ehealth-consent.html#Consent.provision.provision" title="Rules which provide exceptions to the base rule or subrules" class="dict"><span style="text-decoration: underline">provision</span></a>" : [&lt;<span style="color: darkgreen">n/a</span>&gt;], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">Nested Exception Rules</span>
     },
@@ -2062,7 +2836,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#9.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 23, 2026 08:03+0000">2026-04-23</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#10.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 6, 2026 13:29+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

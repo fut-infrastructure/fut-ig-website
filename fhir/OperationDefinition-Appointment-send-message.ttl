@@ -1,0 +1,96 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "Appointment-send-message"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition Appointment-send-message</b></p><a name=\"Appointment-send-message\"> </a><a name=\"hcAppointment-send-message\"> </a><p>URL: [base]/Appointment/[id]/$send-message</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>recipient</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a> (<a href=\"StructureDefinition-ehealth-relatedperson.html\" title=\"http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson\">ehealth-relatedperson</a>)</td><td/><td><div><p>The related person to receive the message. Must be listed as a participant on the target Appointment.</p>\n</div></td></tr><tr><td>IN</td><td>channel</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-ehealth-message-channel.html\">eHealth Message Channel</a> (Required)</td><td><div><p>The channel to use when sending the message.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/communication.html\">Communication</a></td><td/><td><div><p>The created Communication resource, conforming to the <a href=\"StructureDefinition-ehealth-message.html\">ehealth-message</a> profile. <code>Communication.status</code> is <code>completed</code> on successful dispatch or <code>stopped</code> when the downstream gateway rejected the send.</p>\n</div></td></tr></table><div><p>The following preconditions must be satisfied — otherwise the operation returns <code>HTTP 400 Bad Request</code> with an OperationOutcome describing the violated rule:</p>\n<ul>\n<li><code>Appointment.meta.profile</code> is <a href=\"StructureDefinition-ehealth-videoappointment.html\">ehealth-videoappointment</a> or <a href=\"StructureDefinition-ehealth-group-videoappointment.html\">ehealth-group-videoappointment</a>.</li>\n<li><code>Appointment.status</code> is <code>booked</code> or <code>pending</code>.</li>\n<li>The <code>recipient</code> RelatedPerson is on <code>Appointment.participant[]</code> with <code>status</code> <code>accepted</code>, <code>tentative</code>, or <code>needs-action</code>.</li>\n<li><code>RelatedPerson.active</code> = <code>true</code>.</li>\n<li><code>RelatedPerson.period</code> has begun and has not ended.</li>\n<li><code>RelatedPerson.telecom[]</code> has exactly one element with <code>system</code> = <code>sms</code> and an <a href=\"StructureDefinition-ehealth-telecom-purpose.html\">ehealth-telecom-purpose</a> extension bound to <code>video-appointment-reminder-sms</code>.</li>\n</ul>\n<p>The operation is synchronous and idempotent only from the FHIR caller's point of view: every successful call dispatches a new outbound message and creates a new Communication. The returned Communication has <code>status</code> = <code>completed</code> on successful dispatch or <code>status</code> = <code>stopped</code> when the downstream gateway rejected the send (the resource is still persisted so the failed attempt is auditable).</p>\n</div></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message"] ;
+  fhir:OperationDefinition.version [ fhir:value "10.0.0"] ;
+  fhir:OperationDefinition.name [ fhir:value "Appointment-send-message"] ;
+  fhir:OperationDefinition.title [ fhir:value "Send message"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-08-06T13:29:38+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.html) associated with a video appointment ([ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.html) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.html)) via the specified channel. The recipient must be a RelatedPerson listed as a participant on the target Appointment. The created [ehealth-message](StructureDefinition-ehealth-message.html) resource is system-generated; its `sender` is a contained Device representing the issuing system."] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "send-message"] ;
+  fhir:OperationDefinition.comment [ fhir:value "The following preconditions must be satisfied — otherwise the operation returns `HTTP 400 Bad Request` with an OperationOutcome describing the violated rule:\n\n* `Appointment.meta.profile` is [ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.html) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.html).\n* `Appointment.status` is `booked` or `pending`.\n* The `recipient` RelatedPerson is on `Appointment.participant[]` with `status` `accepted`, `tentative`, or `needs-action`.\n* `RelatedPerson.active` = `true`.\n* `RelatedPerson.period` has begun and has not ended.\n* `RelatedPerson.telecom[]` has exactly one element with `system` = `sms` and an [ehealth-telecom-purpose](StructureDefinition-ehealth-telecom-purpose.html) extension bound to `video-appointment-reminder-sms`.\n\nThe operation is synchronous and idempotent only from the FHIR caller's point of view: every successful call dispatches a new outbound message and creates a new Communication. The returned Communication has `status` = `completed` on successful dispatch or `status` = `stopped` when the downstream gateway rejected the send (the resource is still persisted so the failed attempt is auditable)."] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "Appointment" ;
+     fhir:index 0
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "recipient" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The related person to receive the message. Must be listed as a participant on the target Appointment." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Reference" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson>
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "channel" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The channel to use when sending the message." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "code" ] ;
+     fhir:OperationDefinition.parameter.binding [
+       fhir:OperationDefinition.parameter.binding.strength [ fhir:value "required" ] ;
+       fhir:OperationDefinition.parameter.binding.valueSet [
+         fhir:value "http://ehealth.sundhed.dk/vs/ehealth-message-channel" ;
+         fhir:link <http://ehealth.sundhed.dk/vs/ehealth-message-channel>
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The created Communication resource, conforming to the [ehealth-message](StructureDefinition-ehealth-message.html) profile. `Communication.status` is `completed` on successful dispatch or `stopped` when the downstream gateway rejected the send." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Communication" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

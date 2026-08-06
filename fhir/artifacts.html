@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - eHealth Infrastructure v9.0.1</title>
+    <title>Artifacts Summary - eHealth Infrastructure v10.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"99"}
-    h3,h4,h5,h6{--heading-prefix:"99.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"103"}
+    h3,h4,h5,h6{--heading-prefix:"103.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -61,11 +61,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
             <br/>
-            <span style="display:inline-block;">9.0.1 - release
+            <span style="display:inline-block;">10.0.0 - release
 
 
 
-  <span title="">DK</span>
+  <img alt="Denmark flag" src="assets/images/dnk.svg" height="16" title="Denmark"/>
 
 
             </span>
@@ -100,6 +100,9 @@
   </li>
   <li>
     <a href="guidance.html">General guidance</a>
+  </li>
+  <li>
+    <a href="multitenancy.html">Multitenancy</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
@@ -223,7 +226,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v9.0.1: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT Infrastructure (v10.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -466,7 +469,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="the-episodeofcare-resource">The EpisodeOfCare resource</h3>
 <p>The EpisodeOfCare has to have <code class="language-plaintext highlighter-rouge">PLANNED</code> status 
 The 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. 
-The 'managingOrganization' property of the EpisodeOfCare references the GDPR Data Controller (Danish: 'Dataansvarlig').</p>
+The GDPR Data Controller (Danish: 'Dataansvarlig') of the EpisodeOfCare is provided through the 'ehealth-managing-organization' extension (managingOrganizations), where each entry holds the responsible organisation and the period during which it held that responsibility. The standard 'managingOrganization' property is no longer used (cardinality 0..0).</p>
 <h3 id="the-privacy-provenance-resource">The privacy-Provenance resource</h3>
 <p>A privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:</p>
 <ul>
@@ -7591,6 +7594,20 @@ The following elements of each PractitionerRole are mandatory:</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="OperationDefinition-Organization-t-resolve-managing-organization.html"
+                  title="OperationDefinition/Organization-t-resolve-managing-organization">Resolve managing organization (data controller)</a>
+            </td>
+            <td>
+<p>Given an organisation, returns the corresponding root authority (the GDPR data controller) by traversing the SOR / FK Organisation hierarchy upwards via Organization.partOf.</p>
+<h2 id="input">Input</h2>
+<p>A single mandatory reference 'organization' to the organisation to resolve from.</p>
+<h2 id="output">Output</h2>
+<p>The resolved authority Organization (a municipality or a region).
+An OperationOutcome with HTTP 404 is returned when no authority can be resolved for the organisation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="OperationDefinition-Bundle-t-retrieve-and-transform-APD.html"
                   title="OperationDefinition/Bundle-t-retrieve-and-transform-APD">Retrieve and transform APD document</a>
             </td>
@@ -7614,6 +7631,74 @@ The following elements of each PractitionerRole are mandatory:</p>
             </td>
             <td>
 <p>Retrieves a DK-HL7 Questionnaire Response Document (QRD) XML document from national document sharing infrastructure and transforms the QRD XML document to a FHIR QuestionnaireResponse (ehealth-questionnaireresponse profile) resource.Input (url) is the element DocumentReference.content.attachment.url for metadata about the QRD document as returned from the DocumentReference search operation performing a query to national document sharing infrastructure. The url, which shall be used as-is in this operation, is an encoding of the XDS DocumentEntry.uniqueId, XDS DocumentEntry.repositoryUniqueId and XDS DocumentEntry.homeCommunityId metadata attributes needed to retrieve the document. Input (bundle) must contain a Questionnaire FHIR resource corresponding to the questionnaire definition (QFDD) that the QRD references and is a response to.Input (consentOverride) signifies, when set to true, that the retrieve of a document shall be performed with override of any withholding of information possibly performed by the national document sharing service in accordance with patient's consents. Override of consents constitutes a form of break-the-glass invocation, known in Danish as værdispring. The preferred method is to call this operation without consent override and to only call with consent override when necessary. Input (reason) is mandatory when input element consentOverride is set to true. The string input is intended as a placeholder for the user's rationale for choosing to override consents. The value is logged in the Infrastructure.The returned FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing a FHIR QuestionnaireResponse (ehealth-documentreference profile) resource, if the Questionnaire FHIR resource was provided as an input, and if the transformation was successful.If the Questionnaire FHIR resource was not provided as an input, or if the transformation was not successful, the returned FHIR Bundle contains the QRD XML document that was retrieved from the national document sharing infrastructure.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="OperationDefinition--s-assigned-material-count.html"
+                  title="OperationDefinition/-s-assigned-material-count">Retrieve count of assignments for material</a>
+            </td>
+            <td>
+<p>This operation counts the number of material assignments (<code class="language-plaintext highlighter-rouge">ehealth-material-communication resources</code>) for a given <code class="language-plaintext highlighter-rouge">ehealth-documentreference</code> from the Plan service. This is done by performing an internal search using the given ehealth-documentReference, date and status parameters. Regardless of the given parameters, only <code class="language-plaintext highlighter-rouge">ehealth-material-communication</code> resources referring to an active <code class="language-plaintext highlighter-rouge">ehealth-episodeofcare</code> are counted. The group-by-careteam parameter determines whether a simple '_summary=count' search is performed or if all results should be fetched to extract and count based on participant CareTeam references.
+</p>
+<h2 id="input">Input</h2>
+<p>The operation has two mandatory input parameters:</p>
+<ul>
+  <li>An EHealthDocumentReference reference</li>
+  <li>One or more status codes
+
+Additionally, there are two optional input parameters:</li>
+  <li>A boolean indicating whether to group the result by participant CareTeam references</li>
+  <li>A date parameter
+
+    <h3 id="ehealthdocumentreference-reference">EHealthDocumentReference reference</h3>
+    <p>A mandatory reference to an EHealthDocumentReference (general-material) in the plan service. Only <code class="language-plaintext highlighter-rouge">ehealth-material-communication</code> resources with the given reference in <code class="language-plaintext highlighter-rouge">Communication.payload.content</code> are counted.
+</p>
+    <h3 id="group-by-careteam-boolean">Group-by-careTeam boolean</h3>
+    <p>The group-by-careTeam parameter is optional. When not supplied by the user, it is assumed false. When it is set to true, the operation returns a count per CareTeam referenced as a participant in the matching ehealth-material-communication resources.
+</p>
+    <h3 id="date">Date</h3>
+    <p>The date parameter is optional, however, the count is always filtered by a date. If one is not given by the user, the date of execution is used instead. Only <code class="language-plaintext highlighter-rouge">ehealth-material-communication</code> resources whose <code class="language-plaintext highlighter-rouge">Communication.period</code> contains the used date are counted.
+</p>
+    <h3 id="status-code-list">Status code list</h3>
+    <p>At least one <code class="language-plaintext highlighter-rouge">status</code> code must be supplied by the user. Only <code class="language-plaintext highlighter-rouge">ehealth-material-communications</code> with one of the supplied status codes in <code class="language-plaintext highlighter-rouge">Communication.status</code> will be counted.
+</p>
+    <h2 id="output">Output</h2>
+    <p>When supplied with valid inputs, the operation will return a Bundle resource with a single Parameters resource in its <code class="language-plaintext highlighter-rouge">Bundle.entry</code> list. The Parameters resource format depends on whether the group-by-careTeam parameter was true.
+</p>
+    <h3 id="output-parameters">Output Parameters</h3>
+    <p>If group-by-careTeam was false or not present. The Parameters resource will only contain a single parameter, named <code class="language-plaintext highlighter-rouge">total</code> with the value being the count of the <code class="language-plaintext highlighter-rouge">ehealth-material-communication</code> resources found to satisfy the given parameters.
+
+Example of output with group-by-careTeam as false or not present:</p>
+    <pre><code class="language-&#xD;">"resource": {&amp;#xD;
+ "resourceType": "Parameters",&amp;#xD;
+ "parameter": [{&amp;#xD;
+         "name": "total",&amp;#xD;
+         "valueInteger": 42&amp;#xD;
+         }]&amp;#xD;
+ }]&amp;#xD;
+}&amp;#xD;
+```&amp;#xD;
+&amp;#xD;
+If group-by-careTeam was true, the Parameters resource will contain a parameter for each CareTeam that is referenced in ``Communication.participant.actor`` in any of the matching ``ehealth-material-communication`` resources. The name of each parameter will be the reference value (CareTeam/[id]) of the CareTeam and the value will be the count of matching ``ehealth-material-communication`` resources that reference that CareTeam. It is worth noting that if an ``ehealth-material-communication`` has two (or more) distinct participant CareTeams, this will add to the count of each of them.&amp;#xD;
+&amp;#xD;
+Example of output with group-by-careTeam as true:&amp;#xD;
+```&amp;#xD;
+"resource": {&amp;#xD;
+ "resourceType": "Parameters",&amp;#xD;
+ "parameter": [{&amp;#xD;
+         "name": "CareTeam/123",&amp;#xD;
+         "valueInteger": 5&amp;#xD;
+         },&amp;#xD;
+         {&amp;#xD;
+         "name": "CareTeam/456",&amp;#xD;
+         "valueInteger": 7&amp;#xD;
+         }]&amp;#xD;
+ }]&amp;#xD;
+}&amp;#xD;
+</code></pre>
+  </li>
+</ul>
 </td>
          </tr>
          <tr>
@@ -11055,6 +11140,15 @@ First example is the monthly data:</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="OperationDefinition-Appointment-send-message.html"
+                  title="OperationDefinition/Appointment-send-message">Send message</a>
+            </td>
+            <td>
+<p>Sends a message to a <a href="StructureDefinition-ehealth-relatedperson.html">RelatedPerson</a> associated with a video appointment (<a href="StructureDefinition-ehealth-videoappointment.html">ehealth-videoappointment</a> or <a href="StructureDefinition-ehealth-group-videoappointment.html">ehealth-group-videoappointment</a>) via the specified channel. The recipient must be a RelatedPerson listed as a participant on the target Appointment. The created <a href="StructureDefinition-ehealth-message.html">ehealth-message</a> resource is system-generated; its <code class="language-plaintext highlighter-rouge">sender</code> is a contained Device representing the issuing system.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="OperationDefinition--s-submit-measurement.html"
                   title="OperationDefinition/-s-submit-measurement">Submit measurement</a>
             </td>
@@ -11301,6 +11395,24 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="SearchParameter-ehealth-communication-search-careCommunicationSenderCareTeam.html"
+                  title="SearchParameter/ehealth-communication-search-careCommunicationSenderCareTeam">careCommunicationSenderCareTeam</a>
+            </td>
+            <td>
+<p>Search parameter for finding CareCommunication based on the sending CareTeam (the careteam sub-extension of the ehealth-carecommunication-sender extension).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="SearchParameter-ehealth-communication-search-careCommunicationSenderPractitioner.html"
+                  title="SearchParameter/ehealth-communication-search-careCommunicationSenderPractitioner">careCommunicationSenderPractitioner</a>
+            </td>
+            <td>
+<p>Search parameter for finding CareCommunication based on the sending Practitioner (the practitioner sub-extension of the ehealth-carecommunication-sender extension).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="SearchParameter-ehealth-communication-search-careTeamRecipient.html"
                   title="SearchParameter/ehealth-communication-search-careTeamRecipient">careTeamRecipient</a>
             </td>
@@ -11503,6 +11615,12 @@ Http response code 404 will be returned if no related SOR organization could be 
             <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-auditevent.html"
                   title="StructureDefinition/ehealth-auditevent">ehealth-auditevent</a>
+            </td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication.html"
+                  title="StructureDefinition/ehealth-carecommunication">ehealth-carecommunication</a>
             </td>
          </tr>
          <tr>
@@ -11779,6 +11897,24 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-aggregate-group-id.html"
+                  title="StructureDefinition/ehealth-aggregate-group-id">Aggregate Group ID</a>
+            </td>
+            <td>
+<p>Id that link a group of measurements together by an aggregate group id, intended use is for Aggregated Triage.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-aggregation-mode.html"
+                  title="StructureDefinition/ehealth-aggregation-mode">Aggregation Mode</a>
+            </td>
+            <td>
+<p>Mode of Aggregated Triage</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-answer-Condition.html"
                   title="StructureDefinition/ehealth-answer-Condition">Answer condition</a>
             </td>
@@ -11977,6 +12113,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication-datetime.html"
+                  title="StructureDefinition/ehealth-carecommunication-datetime">DateTime Extension</a>
+            </td>
+            <td>
+<p>Date and time of the payload segment.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-clinicalimpression-decision.html"
                   title="StructureDefinition/ehealth-clinicalimpression-decision">Decision</a>
             </td>
@@ -12000,6 +12145,24 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Natural language description</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication-destination.html"
+                  title="StructureDefinition/ehealth-carecommunication-destination">Destination Extension</a>
+            </td>
+            <td>
+<p>Reference to the destination Organization for this communication.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-device-platform.html"
+                  title="StructureDefinition/ehealth-device-platform">Device platform</a>
+            </td>
+            <td>
+<p>Platform identifier for the patient's mobile device (e.g. iOS, Android). Used together with the registration token to route push notifications via FCM/APNs.</p>
 </td>
          </tr>
          <tr>
@@ -12148,6 +12311,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication-payload-identifier.html"
+                  title="StructureDefinition/ehealth-carecommunication-payload-identifier">Identifier Extension</a>
+            </td>
+            <td>
+<p>Extension to hold an Identifier for a payload. Identifier.value shall be a UUID v4 in URN form (urn:uuid:&lt;uuid&gt;).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-intendedAudience.html"
                   title="StructureDefinition/ehealth-intendedAudience">Intended audience</a>
             </td>
@@ -12184,6 +12356,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-managing-organization.html"
+                  title="StructureDefinition/ehealth-managing-organization">Managing organization</a>
+            </td>
+            <td>
+<p>An organization that has assumed responsibility for the episode of care during a given period. Replaces the standard EpisodeOfCare.managingOrganization to allow multiple managing organizations over time.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-max-participants.html"
                   title="StructureDefinition/ehealth-max-participants">Max participants</a>
             </td>
@@ -12216,6 +12397,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>The URL at which a video meeting will take place. Is provided by the service, not the client, and may not be updated</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication-message-Type.html"
+                  title="StructureDefinition/ehealth-carecommunication-message-Type">Message type</a>
+            </td>
+            <td>
+<p>The type of the message. inResponseTo is only allowed when the type is reply-message.</p>
 </td>
          </tr>
          <tr>
@@ -12297,6 +12487,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>The specialty of the organization</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-clinicalimpression-otherItem.html"
+                  title="StructureDefinition/ehealth-clinicalimpression-otherItem">Other item</a>
+            </td>
+            <td>
+<p>Investigation item for Aggregated Triage resources so they can be approved.</p>
 </td>
          </tr>
          <tr>
@@ -12517,6 +12716,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-device-registrationToken.html"
+                  title="StructureDefinition/ehealth-device-registrationToken">Registration token</a>
+            </td>
+            <td>
+<p>Registration token from a push notification service (e.g. FCM/APNs) for the patient's mobile device. Used by telemedicine solutions when sending push notifications.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-media-related-to.html"
                   title="StructureDefinition/ehealth-media-related-to">Related to</a>
             </td>
@@ -12594,6 +12802,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Business revision of the resource</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication-sender.html"
+                  title="StructureDefinition/ehealth-carecommunication-sender">Sender Extension, contains the sending PractitionerRole, Practitioner and CareTeam.</a>
+            </td>
+            <td>
+<p>References the sending PractitionerRole (Actor), the Practitioner, and optionally a CareTeam.</p>
 </td>
          </tr>
          <tr>
@@ -12782,6 +12999,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-telecom-purpose.html"
+                  title="StructureDefinition/ehealth-telecom-purpose">Telecom purpose</a>
+            </td>
+            <td>
+<p>The purpose of a telecom contact point on a RelatedPerson.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-devicemetric-templateQualities.html"
                   title="StructureDefinition/ehealth-devicemetric-templateQualities">Template qualities</a>
             </td>
@@ -12899,6 +13125,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-aggregate-id.html"
+                  title="StructureDefinition/ehealth-aggregate-id">aggregateId</a>
+            </td>
+            <td>
+<p>An optional identifier used to associate this ServiceRequest with an aggregate or grouping context.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-ehealth-clinicalimpression-assessor-organization.html"
                   title="StructureDefinition/ehealth-clinicalimpression-assessor-organization">assessor-Organization</a>
             </td>
@@ -12949,6 +13184,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Recommendation state of the plan definition</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ehealth-carecommunication-origin.html"
+                  title="StructureDefinition/ehealth-carecommunication-origin">sender organization</a>
+            </td>
+            <td>
+<p>Reference to the sending organization for this payload segment.</p>
 </td>
          </tr>
          <tr>
@@ -13037,6 +13281,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Administrative status</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-aggregation-mode-types.html"
+                  title="ValueSet/aggregation-mode-types">Aggregation Mode Types</a>
+            </td>
+            <td>
+<p>Aggregation Mode</p>
 </td>
          </tr>
          <tr>
@@ -13409,6 +13662,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-device-platform.html"
+                  title="ValueSet/ehealth-device-platform">Device Platform</a>
+            </td>
+            <td>
+<p>Device Platform value set.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-device-safety.html"
                   title="ValueSet/ehealth-device-safety">Device Safety</a>
             </td>
@@ -13714,6 +13976,14 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-MessageType.html" title="ValueSet/MessageType">Message Type ValueSet</a>
+            </td>
+            <td>
+<p>Allowed message types: new-message, reply-message, forward-message.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-message-category.html" title="ValueSet/message-category">MessageCategory</a>
             </td>
             <td>
@@ -13744,6 +14014,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Treatment area for neurological diseases (xb).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-oio-bpp-competences.html"
+                  title="ValueSet/ehealth-oio-bpp-competences">OIO BPP Competences</a>
+            </td>
+            <td>
+<p>OIO BPP competences.</p>
 </td>
          </tr>
          <tr>
@@ -13879,6 +14158,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Value set used for indicating the specialty for organizations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-practitioner-competences.html"
+                  title="ValueSet/ehealth-practitioner-competences">Practitioner Competences</a>
+            </td>
+            <td>
+<p>Practitioner Competences</p>
 </td>
          </tr>
          <tr>
@@ -14278,11 +14566,47 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-ehealth-carecommunication-mimetypes.html"
+                  title="ValueSet/ehealth-carecommunication-mimetypes">eHealth CareCommunication Attachment MIME Types</a>
+            </td>
+            <td>
+<p>Allowed MIME types for attachments in eHealth CareCommunication messages. Mirrors MedCom's medcom-core-attachmentMimeTypes ValueSet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-carecommunication-category.html"
+                  title="ValueSet/ehealth-carecommunication-category">eHealth CareCommunication Categories</a>
+            </td>
+            <td>
+<p>Categories used for CareCommunciation messages.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-carecommunication-priority.html"
+                  title="ValueSet/ehealth-carecommunication-priority">eHealth CareCommunication Priorities</a>
+            </td>
+            <td>
+<p>Priorities used for CareCommunication messages.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-ehealth-designation-use.html"
                   title="ValueSet/ehealth-designation-use">eHealth Designation Use</a>
             </td>
             <td>
 <p>Details of how a designation would be used.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-message-channel.html"
+                  title="ValueSet/ehealth-message-channel">eHealth Message Channel</a>
+            </td>
+            <td>
+<p>ValueSet for message channel codes.</p>
 </td>
          </tr>
          <tr>
@@ -14316,6 +14640,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Coexistence tags for telemedicine solutions.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-ehealth-telecom-purpose.html"
+                  title="ValueSet/ehealth-telecom-purpose">eHealth Telecom Purpose</a>
+            </td>
+            <td>
+<p>ValueSet for telecom purpose codes.</p>
 </td>
          </tr>
          <tr>
@@ -14527,6 +14860,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Administrative status</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-aggregation-mode-types.html"
+                  title="CodeSystem/ehealth-aggregation-mode-types">Aggregation Mode</a>
+            </td>
+            <td>
+<p>Aggregation Mode</p>
 </td>
          </tr>
          <tr>
@@ -14824,6 +15166,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Quality codes for qualities with which a device can perform measuring</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-device-platform.html"
+                  title="CodeSystem/ehealth-device-platform">Device Platform</a>
+            </td>
+            <td>
+<p>Push notification service identifier for a citizen's mobile device. Used together with a registration token to direct push notifications to the right push notification service.</p>
 </td>
          </tr>
          <tr>
@@ -15311,6 +15662,14 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-MessageTypeCS.html" title="CodeSystem/MessageTypeCS">Message Type CodeSystem</a>
+            </td>
+            <td>
+<p>Allowed codes for message type.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-modifier-role.html"
                   title="CodeSystem/ehealth-modifier-role">Modifier Role</a>
             </td>
@@ -15334,6 +15693,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Organization types specific for organizations from OIO / STS-ORG</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-oio-bpp-competences.html"
+                  title="CodeSystem/ehealth-oio-bpp-competences">OIO-BPP Competences</a>
+            </td>
+            <td>
+<p>OIO BPP Competences</p>
 </td>
          </tr>
          <tr>
@@ -15415,6 +15783,24 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Policies under which data can be provided</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-poa-privilege.html"
+                  title="CodeSystem/ehealth-poa-privilege">Power of Attorney Privilege</a>
+            </td>
+            <td>
+<p>Vendor-specific power of attorney privilege codes used by Keycloak when creating RelatedPerson resources for PoA-authenticated citizens. The full set of codes is externally governed and not enumerated here.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-practitioner-competences.html"
+                  title="CodeSystem/ehealth-practitioner-competences">Practitioner Competences</a>
+            </td>
+            <td>
+<p>Practitioner Competences</p>
 </td>
          </tr>
          <tr>
@@ -15697,11 +16083,38 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-carecommunication-category.html"
+                  title="CodeSystem/ehealth-carecommunication-category">eHealth CareCommunication Category codes</a>
+            </td>
+            <td>
+<p>The set of CareCommunication category code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-carecommunication-priority.html"
+                  title="CodeSystem/ehealth-carecommunication-priority">eHealth CareCommunication Priority codes</a>
+            </td>
+            <td>
+<p>The set of CareCommunication priority code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-ehealth-designation-use.html"
                   title="CodeSystem/ehealth-designation-use">eHealth Designation Use</a>
             </td>
             <td>
 <p>Codes used to identify/describe designation use.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-message-channel.html"
+                  title="CodeSystem/ehealth-message-channel">eHealth Message Channel codes</a>
+            </td>
+            <td>
+<p>Codes indicating the channel used to send a message.</p>
 </td>
          </tr>
          <tr>
@@ -15720,6 +16133,15 @@ Http response code 404 will be returned if no related SOR organization could be 
             </td>
             <td>
 <p>Codes used to identity specific properties on codes in eHealth CodeSystems.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-ehealth-telecom-purpose.html"
+                  title="CodeSystem/ehealth-telecom-purpose">eHealth Telecom Purpose codes</a>
+            </td>
+            <td>
+<p>Codes indicating the purpose of a telecom contact point.</p>
 </td>
          </tr>
          <tr>
@@ -15871,6 +16293,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ConceptMap-oio-bpp-competences-to-practitioner-competences.html"
+                  title="ConceptMap/oio-bpp-competences-to-practitioner-competences">OIO BPP competences to eHealth Practitioner competences role mapping</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ConceptMap-oio-bpp-roles-to-careteam-participant-roles.html"
                   title="ConceptMap/oio-bpp-roles-to-careteam-participant-roles">OIO BPP roles to eHealth CareTeam participant role mapping</a>
             </td>
@@ -15900,6 +16331,24 @@ Http response code 404 will be returned if no related SOR organization could be 
             <td style="column-width:30%">
                <a href="ConceptMap-conceptmap-obs-code-to-value-type.html"
                   title="ConceptMap/conceptmap-obs-code-to-value-type">conceptmap-obs-code-to-value-type</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ehealth-to-medcom-carecommunication-category.html"
+                  title="ConceptMap/ehealth-to-medcom-carecommunication-category">eHealth to MedCom CareCommunication Category Map</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-ehealth-to-medcom-carecommunication-priority.html"
+                  title="ConceptMap/ehealth-to-medcom-carecommunication-priority">eHealth to MedCom CareCommunication Priority Map</a>
             </td>
             <td>
 
@@ -16027,6 +16476,15 @@ Http response code 404 will be returned if no related SOR organization could be 
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="RelatedPerson-relatedperson-videosms.html"
+                  title="RelatedPerson/relatedperson-videosms">RelatedPerson with video-appointment SMS reminder telecom</a>
+            </td>
+            <td>
+<p>Example RelatedPerson configured to receive an SMS reminder when a related video appointment is upcoming. The telecom slice carries the <code class="language-plaintext highlighter-rouge">ehealth-telecom-purpose</code> extension with code <code class="language-plaintext highlighter-rouge">video-appointment-reminder-sms</code>.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Appointment-appointment01.html" title="Appointment/appointment01">appointment01</a>
             </td>
             <td>
@@ -16113,7 +16571,7 @@ Http response code 404 will be returned if no related SOR organization could be 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#9.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 23, 2026 08:03+0000">2026-04-23</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  Package dk.ehealth.sundhed.fhir.ig.core#10.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 6, 2026 13:29+0000">2026-08-06</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <div style="color: #33333" >

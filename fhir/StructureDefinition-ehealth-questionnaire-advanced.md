@@ -1,4 +1,4 @@
-# ehealth-questionnaire-advanced - eHealth Infrastructure v6.0.0
+# ehealth-questionnaire-advanced - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-advanced | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-questionnaire-advanced |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-advanced | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-questionnaire-advanced |
 
 # Introduction
 
@@ -44,9 +44,9 @@ In the EHealthQuestionnaireAdvanced a `calculatedExpression` can be added to an 
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-questionnaire-advanced)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-questionnaire-advanced.json)
 
 ### Formal Views of Profile Content
 
@@ -65,129 +65,105 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-questionnair
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-advanced",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-advanced",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-questionnaire-advanced",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "objimpl",
-      "uri" : "http://hl7.org/fhir/object-implementation",
-      "name" : "Object Implementation Information"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "objimpl",
+    "uri" : "http://hl7.org/fhir/object-implementation",
+    "name" : "Object Implementation Information"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Questionnaire",
   "baseDefinition" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Questionnaire",
-        "path" : "Questionnaire"
-      },
-      {
-        "id" : "Questionnaire.extension:variable",
-        "path" : "Questionnaire.extension",
-        "sliceName" : "variable",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : ["http://hl7.org/fhir/StructureDefinition/variable"]
-          }
-        ]
-      },
-      {
-        "id" : "Questionnaire.item.extension:calculatedExpression",
-        "path" : "Questionnaire.item.extension",
-        "sliceName" : "calculatedExpression",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Questionnaire.item.extension:usageMode",
-        "path" : "Questionnaire.item.extension",
-        "sliceName" : "usageMode",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://hl7.org/fhir/StructureDefinition/questionnaire-usageMode"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Questionnaire.item.answerOption.extension:ordinalValue",
-        "path" : "Questionnaire.item.answerOption.extension",
-        "sliceName" : "ordinalValue",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : ["http://hl7.org/fhir/StructureDefinition/ordinalValue"]
-          }
-        ]
-      }
-    ]
+    "element" : [{
+      "id" : "Questionnaire",
+      "path" : "Questionnaire"
+    },
+    {
+      "id" : "Questionnaire.extension:variable",
+      "path" : "Questionnaire.extension",
+      "sliceName" : "variable",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/variable"]
+      }]
+    },
+    {
+      "id" : "Questionnaire.item.extension:calculatedExpression",
+      "path" : "Questionnaire.item.extension",
+      "sliceName" : "calculatedExpression",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"]
+      }]
+    },
+    {
+      "id" : "Questionnaire.item.extension:usageMode",
+      "path" : "Questionnaire.item.extension",
+      "sliceName" : "usageMode",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/questionnaire-usageMode"]
+      }]
+    },
+    {
+      "id" : "Questionnaire.item.answerOption.extension:ordinalValue",
+      "path" : "Questionnaire.item.answerOption.extension",
+      "sliceName" : "ordinalValue",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/ordinalValue"]
+      }]
+    }]
   }
 }
 

@@ -1,4 +1,4 @@
-# ehealth-deviceusestatement - eHealth Infrastructure v6.0.0
+# ehealth-deviceusestatement - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-deviceusestatement |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-deviceusestatement |
 
 # Introduction
 
@@ -40,9 +40,9 @@ It can be relevant for a Practitioner to create a DeviceUseStatement in the case
 **Usages:**
 
 * CapabilityStatements using this Profile: [device](CapabilityStatement-device.md)
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-deviceusestatement)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-deviceusestatement.json)
 
 ### Formal Views of Profile Content
 
@@ -61,186 +61,147 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-deviceusesta
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-deviceusestatement",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-deviceusestatement",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "quick",
-      "uri" : "http://siframework.org/cqf",
-      "name" : "Quality Improvement and Clinical Knowledge (QUICK)"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "quick",
+    "uri" : "http://siframework.org/cqf",
+    "name" : "Quality Improvement and Clinical Knowledge (QUICK)"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "DeviceUseStatement",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/DeviceUseStatement",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "DeviceUseStatement",
-        "path" : "DeviceUseStatement"
-      },
-      {
-        "id" : "DeviceUseStatement.extension",
-        "path" : "DeviceUseStatement.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 1
-      },
-      {
-        "id" : "DeviceUseStatement.extension:Context",
-        "path" : "DeviceUseStatement.extension",
-        "sliceName" : "Context",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement-context"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceUseStatement.subject",
-        "path" : "DeviceUseStatement.subject",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceUseStatement.source",
-        "path" : "DeviceUseStatement.source",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceUseStatement.device",
-        "path" : "DeviceUseStatement.device",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceUseStatement.note.author[x]",
-        "path" : "DeviceUseStatement.note.author[x]",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "type",
-              "path" : "$this"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "DeviceUseStatement.note.author[x]:authorReference",
-        "path" : "DeviceUseStatement.note.author[x]",
-        "sliceName" : "authorReference",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "DeviceUseStatement.note.author[x]:authorString",
-        "path" : "DeviceUseStatement.note.author[x]",
-        "sliceName" : "authorString",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
+    "element" : [{
+      "id" : "DeviceUseStatement",
+      "path" : "DeviceUseStatement"
+    },
+    {
+      "id" : "DeviceUseStatement.extension",
+      "path" : "DeviceUseStatement.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       }
-    ]
+    },
+    {
+      "id" : "DeviceUseStatement.extension:Context",
+      "path" : "DeviceUseStatement.extension",
+      "sliceName" : "Context",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement-context"]
+      }]
+    },
+    {
+      "id" : "DeviceUseStatement.subject",
+      "path" : "DeviceUseStatement.subject",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DeviceUseStatement.source",
+      "path" : "DeviceUseStatement.source",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "DeviceUseStatement.device",
+      "path" : "DeviceUseStatement.device",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device"]
+      }]
+    },
+    {
+      "id" : "DeviceUseStatement.note.author[x]",
+      "path" : "DeviceUseStatement.note.author[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "DeviceUseStatement.note.author[x]:authorReference",
+      "path" : "DeviceUseStatement.note.author[x]",
+      "sliceName" : "authorReference",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+      }]
+    },
+    {
+      "id" : "DeviceUseStatement.note.author[x]:authorString",
+      "path" : "DeviceUseStatement.note.author[x]",
+      "sliceName" : "authorString",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
   }
 }
 

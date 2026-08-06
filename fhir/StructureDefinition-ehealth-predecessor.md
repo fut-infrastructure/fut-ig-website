@@ -1,4 +1,4 @@
-# Predecessor - eHealth Infrastructure v6.0.0
+# Predecessor - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-predecessor | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-predecessor |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-predecessor | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-predecessor |
 
 Version Predecessor
 
@@ -21,7 +21,7 @@ Version Predecessor
 
 * Use this Extension: [ehealth-activitydefinition](StructureDefinition-ehealth-activitydefinition.md), [ehealth-plandefinition](StructureDefinition-ehealth-plandefinition.md) and [ehealth-questionnaire](StructureDefinition-ehealth-questionnaire.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-predecessor)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-predecessor.json)
 
 ### Formal Views of Extension Content
 
@@ -44,87 +44,71 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-predecessor.
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-predecessor",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-predecessor",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-predecessor",
   "title" : "Predecessor",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
   "description" : "Version Predecessor",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "Element"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "Element"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "Predecessor",
-        "definition" : "Version Predecessor"
-      },
-      {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-predecessor"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "type" : [
-          {
-            "code" : "Identifier"
-          }
-        ]
-      },
-      {
-        "id" : "Extension.value[x].system",
-        "path" : "Extension.value[x].system",
-        "patternUri" : "urn:ietf:rfc:3986"
-      }
-    ]
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Predecessor",
+      "definition" : "Version Predecessor"
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-predecessor"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "type" : [{
+        "code" : "Identifier"
+      }]
+    },
+    {
+      "id" : "Extension.value[x].system",
+      "path" : "Extension.value[x].system",
+      "patternUri" : "urn:ietf:rfc:3986"
+    }]
   }
 }
 

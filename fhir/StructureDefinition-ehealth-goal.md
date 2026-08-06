@@ -1,4 +1,4 @@
-# ehealth-goal - eHealth Infrastructure v6.0.0
+# ehealth-goal - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-goal |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-goal |
 
 # Introduction
 
@@ -32,7 +32,7 @@ Goal.target.measure must contain an observation code indicating which type of ob
 * Refer to this Profile: [ehealth-careplan](StructureDefinition-ehealth-careplan.md)
 * CapabilityStatements using this Profile: [careplan](CapabilityStatement-careplan.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-goal)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-goal.json)
 
 ### Formal Views of Profile Content
 
@@ -51,137 +51,109 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-goal.csv), [
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-goal",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-goal",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Goal",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Goal",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Goal",
-        "path" : "Goal"
-      },
-      {
-        "id" : "Goal.description",
-        "path" : "Goal.description",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/goal-description"
-        }
-      },
-      {
-        "id" : "Goal.subject",
-        "path" : "Goal.subject",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Goal.target.measure",
-        "path" : "Goal.target.measure",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/goal-target-measure"
-        }
-      },
-      {
-        "id" : "Goal.expressedBy",
-        "path" : "Goal.expressedBy",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Goal.addresses",
-        "path" : "Goal.addresses",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation",
-              "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
-              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest",
-              "http://hl7.org/fhir/StructureDefinition/RiskAssessment"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Goal.outcomeReference",
-        "path" : "Goal.outcomeReference",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
+    "element" : [{
+      "id" : "Goal",
+      "path" : "Goal"
+    },
+    {
+      "id" : "Goal.description",
+      "path" : "Goal.description",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/goal-description"
       }
-    ]
+    },
+    {
+      "id" : "Goal.subject",
+      "path" : "Goal.subject",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Goal.target.measure",
+      "path" : "Goal.target.measure",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/goal-target-measure"
+      }
+    },
+    {
+      "id" : "Goal.expressedBy",
+      "path" : "Goal.expressedBy",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"]
+      }]
+    },
+    {
+      "id" : "Goal.addresses",
+      "path" : "Goal.addresses",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation",
+        "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+        "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest",
+        "http://hl7.org/fhir/StructureDefinition/RiskAssessment"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Goal.outcomeReference",
+      "path" : "Goal.outcomeReference",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation"],
+        "aggregation" : ["referenced"]
+      }]
+    }]
   }
 }
 

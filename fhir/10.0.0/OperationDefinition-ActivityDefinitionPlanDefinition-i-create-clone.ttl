@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ActivityDefinitionPlanDefinition-i-create-clone"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ActivityDefinitionPlanDefinition-i-create-clone</b></p><a name=\"ActivityDefinitionPlanDefinition-i-create-clone\"> </a><a name=\"hcActivityDefinitionPlanDefinition-i-create-clone\"> </a><p>URL: [base]/ActivityDefinition/[id]/$create-clone</p><p>URL: [base]/PlanDefinition/[id]/$create-clone</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>clone-operation</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td><div><p>minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation.</p>\n</div></td></tr><tr><td>IN</td><td>default-clone-behavior</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#boolean\">boolean</a></td><td/><td><div><p>true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned.</p>\n</div></td></tr><tr><td>IN</td><td>deep-clone-references</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td><div><p>References to resources to create as new resources rather than referencing the existing ones.</p>\n</div></td></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "http://ehealth.sundhed.dk/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone"] ;
+  fhir:OperationDefinition.version [ fhir:value "10.0.0"] ;
+  fhir:OperationDefinition.name [ fhir:value "create-clone"] ;
+  fhir:OperationDefinition.title [ fhir:value "Create a clone of an ActivityDefinition"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-08-06T13:17:54+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "### Input\n- resourceId: reference to the ActivityDefinition resource that should be cloned\n- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned \n- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.\n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone\n"] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "create-clone"] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "ActivityDefinition" ;
+     fhir:index 0
+  ], [
+     fhir:value "PlanDefinition" ;
+     fhir:index 1
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "clone-operation" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "default-clone-behavior" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "boolean" ]
+  ], [
+     fhir:index 2 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "deep-clone-references" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "References to resources to create as new resources rather than referencing the existing ones." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Reference" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

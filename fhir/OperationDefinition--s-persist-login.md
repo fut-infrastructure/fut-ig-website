@@ -1,4 +1,4 @@
-# Persist login - eHealth Infrastructure v6.0.0
+# Persist login - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-persist-login | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:persist-login |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-persist-login | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:persist-login |
 
  
 This operation persists login information into CareTeams and PractitionerRoles The following elements of each careteam are mandatory: 
@@ -26,25 +26,6 @@ Persist-login will find each careteam, and update it with any new participants a
  
 Persist-login will search for practitionerRoles for each combination of (practitioner, organization) and create it if it doesn't already exists. 
 
-URL: [base]/$persist-login
-
-### Parameters
-
-* **Use**: IN
-  * **Name**: careTeam
-  * **Scope**: 
-  * **Cardinality**: 0..*
-  * **Type**: [CareTeam](http://hl7.org/fhir/R4/careteam.html)
-  * **Binding**: 
-  * **Documentation**: 
-* **Use**: IN
-  * **Name**: practitionerRole
-  * **Scope**: 
-  * **Cardinality**: 0..*
-  * **Type**: [PractitionerRole](http://hl7.org/fhir/R4/practitionerrole.html)
-  * **Binding**: 
-  * **Documentation**: 
-
 
 
 ## Resource Content
@@ -54,57 +35,49 @@ URL: [base]/$persist-login
   "resourceType" : "OperationDefinition",
   "id" : "-s-persist-login",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-persist-login",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "persist-login",
   "title" : "Persist login",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
   "description" : "This operation persists login information into CareTeams and PractitionerRoles\nThe following elements of each careteam are mandatory:\n- id: Reference based on the careteam from the saml security token\n- status: any\n- name: any\n- reasonCode: any\n- participant: 1 for each careteam-role in the saml security token\n-- role: from the saml security token\n-- member: reference to the practitioner\n-- onBehalfOf: reference to organization (cannot be set currently because of a bug in hapi)\n\nPersist-login will find each careteam, and update it with any new participants and roles from the input bundle.\nThe input careteam resources are are used as a container for the participant list. The rest of the fields are not used.\nThe following elements of each PractitionerRole are mandatory:\n- practitioner\n- organization\n- code: roles from the saml security token (CareteamParticipantRole valueset)\n\nPersist-login will search for practitionerRoles for each combination of (practitioner, organization) and create it if it doesn't already exists.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "affectsState" : true,
   "code" : "persist-login",
   "system" : true,
   "type" : false,
   "instance" : false,
-  "parameter" : [
-    {
-      "name" : "careTeam",
-      "use" : "in",
-      "min" : 0,
-      "max" : "*",
-      "type" : "CareTeam"
-    },
-    {
-      "name" : "practitionerRole",
-      "use" : "in",
-      "min" : 0,
-      "max" : "*",
-      "type" : "PractitionerRole"
-    }
-  ]
+  "parameter" : [{
+    "name" : "careTeam",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The Careteams to update with any new participants and roles.",
+    "type" : "CareTeam"
+  },
+  {
+    "name" : "practitionerRole",
+    "use" : "in",
+    "min" : 0,
+    "max" : "*",
+    "documentation" : "The practitionerRoles for each combination of (practitioner, organization) to be created if it doesn't already exists.",
+    "type" : "PractitionerRole"
+  }]
 }
 
 ```

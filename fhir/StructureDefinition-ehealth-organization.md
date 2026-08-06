@@ -1,4 +1,4 @@
-# ehealth-organization - eHealth Infrastructure v6.0.0
+# ehealth-organization - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-organization |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-organization |
 
 # Introduction
 
@@ -32,6 +32,8 @@ Identifier Systems:
 * SOR-ID: "urn:oid:1.2.208.176.1.1"
 * KOMBIT STS-ORG-ID: "https://www.kombit.dk/sts/organisation"
 * SSL Identifier: "http://ehealth.sundhed.dk/organization/ssl"
+
+Dependency to DkCoreOrganization introduced identifier slices for EAN-ID (GLN identifier / EAN-nummer). These identifiers are not populated by the import process. This data is stored in a contained endpoint resource, see Endpoint section for more details.
 
 Organizations created manually are not allowed to have identifiers of types SOR-ID or KOMBIT STS-ORG-ID.
 
@@ -65,13 +67,29 @@ Relations between Organizations which are expressed using the extension element 
 
 As an example this implies at that if two representations of the exact same Organization are imported from two different sources, then both could have a `relatedTo` element with the other Organization as target, and a relation type of e.g. "sameAs".
 
+### Endpoint
+
+Organizations may have one or more contained Endpoint resources. These contained Endpoint resources are used to store GLN/EAN identifiers (Global Location Numbers) associated with the Organization.
+
+Although the parent profile DkCoreOrganization defines identifier slices for EAN-ID (GLN identifier / EAN-nummer), these identifier slices are not used or populated directly on the Organization resource. Instead, GLN/EAN data originating from the import sources (SOR/STS-ORG) is stored in contained Endpoint resources referenced through the `endpoint` element.
+
+The contained Endpoint resource uses:
+
+* `identifier` to hold the GLN/EAN number
+* `connectionType` bound to the ValueSet http://ehealth.sundhed.dk/vs/endpoint-connection-type-code value set (always contains code `unsupported`)
+* `payloadType` bound to the ValueSet http://ehealth.sundhed.dk/vs/endpoint-payload-type-code (always contains code `unsupported`)
+
+The `endpoint` reference is constrained to contained resources only (aggregation mode: contained), meaning the Endpoint resource must be inline within the Organization resource and cannot exist as a standalone resource.
+
+Organizations must have both a SOR identifier and a GLN (EAN) identifier (via the contained Endpoint) to be eligible for VANS communication.
+
 **Usages:**
 
-* Refer to this Profile: [ehealth-careplan](StructureDefinition-ehealth-careplan.md), [ehealth-careteam](StructureDefinition-ehealth-careteam.md), [assessor-Organization](StructureDefinition-ehealth-clinicalimpression-assessor-organization.md), [Author organization](StructureDefinition-ehealth-composition-authorOrganization.md)...Show 22 more,[ehealth-composition](StructureDefinition-ehealth-composition.md),[ehealth-consent](StructureDefinition-ehealth-consent.md),[Suppliers](StructureDefinition-ehealth-device-suppliers.md),[ehealth-device](StructureDefinition-ehealth-device.md),[ehealth-documentreference](StructureDefinition-ehealth-documentreference.md),[Caremanager organization](StructureDefinition-ehealth-episodeofcare-caremanagerOrganization.md),[ehealth-episodeofcare](StructureDefinition-ehealth-episodeofcare.md),[Intended audience](StructureDefinition-ehealth-intendedAudience.md),[Intended organization](StructureDefinition-ehealth-intendedOrganization.md),[Modified role](StructureDefinition-ehealth-modifier-role.md),[ehealth-observation](StructureDefinition-ehealth-observation.md),[Related to](StructureDefinition-ehealth-organization-relatedTo.md),[ehealth-organization](StructureDefinition-ehealth-organization.md),[Performing organization](StructureDefinition-ehealth-performing-organization.md),[ehealth-practitioner](StructureDefinition-ehealth-practitioner.md),[ehealth-practitionerrole](StructureDefinition-ehealth-practitionerrole.md),[ehealth-provenance](StructureDefinition-ehealth-provenance.md),[Questionnaire intended organization](StructureDefinition-ehealth-questionnaire-intendedOrganization.md),[Responsible organization](StructureDefinition-ehealth-responsible-organization.md),[ehealth-servicerequest](StructureDefinition-ehealth-servicerequest.md),[ehealth-task](StructureDefinition-ehealth-task.md)and[ehealth-transformation-documentreference](StructureDefinition-ehealth-transformation-documentreference.md)
+* Refer to this Profile: [ehealth-access-provenance](StructureDefinition-ehealth-access-provenance.md), [ehealth-careplan](StructureDefinition-ehealth-careplan.md), [ehealth-careteam](StructureDefinition-ehealth-careteam.md), [assessor-Organization](StructureDefinition-ehealth-clinicalimpression-assessor-organization.md)... Show 23 more, [Author organization](StructureDefinition-ehealth-composition-authorOrganization.md), [ehealth-composition](StructureDefinition-ehealth-composition.md), [ehealth-consent](StructureDefinition-ehealth-consent.md), [Suppliers](StructureDefinition-ehealth-device-suppliers.md), [ehealth-device](StructureDefinition-ehealth-device.md), [ehealth-documentreference](StructureDefinition-ehealth-documentreference.md), [Caremanager organization](StructureDefinition-ehealth-episodeofcare-caremanagerOrganization.md), [Intended audience](StructureDefinition-ehealth-intendedAudience.md), [Intended organization](StructureDefinition-ehealth-intendedOrganization.md), [Managing organization](StructureDefinition-ehealth-managing-organization.md), [Modified role](StructureDefinition-ehealth-modifier-role.md), [ehealth-observation](StructureDefinition-ehealth-observation.md), [Related to](StructureDefinition-ehealth-organization-relatedTo.md), [ehealth-organization](StructureDefinition-ehealth-organization.md), [Performing organization](StructureDefinition-ehealth-performing-organization.md), [ehealth-practitioner](StructureDefinition-ehealth-practitioner.md), [ehealth-practitionerrole](StructureDefinition-ehealth-practitionerrole.md), [ehealth-provenance](StructureDefinition-ehealth-provenance.md), [Questionnaire intended organization](StructureDefinition-ehealth-questionnaire-intendedOrganization.md), [Responsible organization](StructureDefinition-ehealth-responsible-organization.md), [ehealth-servicerequest](StructureDefinition-ehealth-servicerequest.md), [ehealth-task](StructureDefinition-ehealth-task.md) and [ehealth-transformation-documentreference](StructureDefinition-ehealth-transformation-documentreference.md)
 * Examples for this Profile: [63785662-18ad-4896-b960-505e94bdc5c4](Organization-108752.md) and [Organization02](Organization-8564.md)
 * CapabilityStatements using this Profile: [organization](CapabilityStatement-organization.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-organization)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-organization.json)
 
 ### Formal Views of Profile Content
 
@@ -90,305 +108,245 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-organization
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-organization",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-organization",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "servd",
-      "uri" : "http://www.omg.org/spec/ServD/1.0/",
-      "name" : "ServD"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "servd",
+    "uri" : "http://www.omg.org/spec/ServD/1.0/",
+    "name" : "ServD"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Organization",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Organization",
+  "baseDefinition" : "http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Organization",
-        "path" : "Organization"
+    "element" : [{
+      "id" : "Organization",
+      "path" : "Organization"
+    },
+    {
+      "id" : "Organization.extension",
+      "path" : "Organization.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
       },
-      {
-        "id" : "Organization.extension",
-        "path" : "Organization.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 2
-      },
-      {
-        "id" : "Organization.extension:cvrNumber",
-        "path" : "Organization.extension",
-        "sliceName" : "cvrNumber",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-cvrNumber"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:regionCode",
-        "path" : "Organization.extension",
-        "sliceName" : "regionCode",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-regionCode"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:municipalityCode",
-        "path" : "Organization.extension",
-        "sliceName" : "municipalityCode",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-municipalityCode"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:source",
-        "path" : "Organization.extension",
-        "sliceName" : "source",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-source"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:synchronizationStatus",
-        "path" : "Organization.extension",
-        "sliceName" : "synchronizationStatus",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-synchronizationStatus"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:providerIdentifier",
-        "path" : "Organization.extension",
-        "sliceName" : "providerIdentifier",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-providerIdentifier"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:specialty",
-        "path" : "Organization.extension",
-        "sliceName" : "specialty",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-specialty"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.extension:relatedTo",
-        "path" : "Organization.extension",
-        "sliceName" : "relatedTo",
-        "min" : 0,
-        "max" : "*",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-relatedTo"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.identifier",
-        "path" : "Organization.identifier",
-        "min" : 1
-      },
-      {
-        "id" : "Organization.type",
-        "path" : "Organization.type",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/organization-type"
-        }
-      },
-      {
-        "id" : "Organization.name",
-        "path" : "Organization.name",
-        "min" : 1
-      },
-      {
-        "id" : "Organization.telecom.value",
-        "path" : "Organization.telecom.value",
-        "min" : 1
-      },
-      {
-        "id" : "Organization.partOf",
-        "path" : "Organization.partOf",
-        "type" : [
-          {
-            "extension" : [
-              {
-                "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
-                "valueBoolean" : true
-              }
-            ],
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.contact.telecom.extension",
-        "path" : "Organization.contact.telecom.extension",
-        "min" : 3
-      },
-      {
-        "id" : "Organization.contact.telecom.extension:telecomValue",
-        "path" : "Organization.contact.telecom.extension",
-        "sliceName" : "telecomValue",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomValue"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.contact.telecom.extension:telecomSystem",
-        "path" : "Organization.contact.telecom.extension",
-        "sliceName" : "telecomSystem",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomSystem"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.contact.telecom.extension:telecomCustodian",
-        "path" : "Organization.contact.telecom.extension",
-        "sliceName" : "telecomCustodian",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomCustodian"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Organization.contact.telecom.system",
-        "path" : "Organization.contact.telecom.system",
-        "max" : "0"
-      },
-      {
-        "id" : "Organization.contact.telecom.value",
-        "path" : "Organization.contact.telecom.value",
-        "max" : "0"
+      "min" : 2
+    },
+    {
+      "id" : "Organization.extension:cvrNumber",
+      "path" : "Organization.extension",
+      "sliceName" : "cvrNumber",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-cvrNumber"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:regionCode",
+      "path" : "Organization.extension",
+      "sliceName" : "regionCode",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-regionCode"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:municipalityCode",
+      "path" : "Organization.extension",
+      "sliceName" : "municipalityCode",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-municipalityCode"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:source",
+      "path" : "Organization.extension",
+      "sliceName" : "source",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-source"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:synchronizationStatus",
+      "path" : "Organization.extension",
+      "sliceName" : "synchronizationStatus",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-synchronizationStatus"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:providerIdentifier",
+      "path" : "Organization.extension",
+      "sliceName" : "providerIdentifier",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-providerIdentifier"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:specialty",
+      "path" : "Organization.extension",
+      "sliceName" : "specialty",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-specialty"]
+      }]
+    },
+    {
+      "id" : "Organization.extension:relatedTo",
+      "path" : "Organization.extension",
+      "sliceName" : "relatedTo",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-relatedTo"]
+      }]
+    },
+    {
+      "id" : "Organization.type",
+      "path" : "Organization.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/organization-type"
       }
-    ]
+    },
+    {
+      "id" : "Organization.name",
+      "path" : "Organization.name",
+      "min" : 1
+    },
+    {
+      "id" : "Organization.telecom.value",
+      "path" : "Organization.telecom.value",
+      "min" : 1
+    },
+    {
+      "id" : "Organization.partOf",
+      "path" : "Organization.partOf",
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+          "valueBoolean" : true
+        }],
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Organization.contact.telecom.extension",
+      "path" : "Organization.contact.telecom.extension",
+      "min" : 3
+    },
+    {
+      "id" : "Organization.contact.telecom.extension:telecomValue",
+      "path" : "Organization.contact.telecom.extension",
+      "sliceName" : "telecomValue",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomValue"]
+      }]
+    },
+    {
+      "id" : "Organization.contact.telecom.extension:telecomSystem",
+      "path" : "Organization.contact.telecom.extension",
+      "sliceName" : "telecomSystem",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomSystem"]
+      }]
+    },
+    {
+      "id" : "Organization.contact.telecom.extension:telecomCustodian",
+      "path" : "Organization.contact.telecom.extension",
+      "sliceName" : "telecomCustodian",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomCustodian"]
+      }]
+    },
+    {
+      "id" : "Organization.contact.telecom.system",
+      "path" : "Organization.contact.telecom.system",
+      "max" : "0"
+    },
+    {
+      "id" : "Organization.contact.telecom.value",
+      "path" : "Organization.contact.telecom.value",
+      "max" : "0"
+    },
+    {
+      "id" : "Organization.endpoint",
+      "path" : "Organization.endpoint",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-endpoint"],
+        "aggregation" : ["contained"]
+      }]
+    }]
   }
 }
 

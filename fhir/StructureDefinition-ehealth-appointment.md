@@ -1,4 +1,4 @@
-# ehealth-appointment - eHealth Infrastructure v6.0.0
+# ehealth-appointment - eHealth Infrastructure v10.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment | *Version*:6.0.0 |
-| Active as of 2025-10-23 | *Computable Name*:ehealth-appointment |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment | *Version*:10.0.0 |
+| Active as of 2026-08-06 | *Computable Name*:ehealth-appointment |
 
 # Introduction
 
@@ -54,7 +54,7 @@ The following rules apply to ehealth-appointment resources, given the appointmen
 * Examples for this Profile: [Appointment/appointment01](Appointment-appointment01.md)
 * CapabilityStatements using this Profile: [patient](CapabilityStatement-patient.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/ehealth-appointment)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/dk.ehealth.sundhed.fhir.ig.core|current/StructureDefinition/StructureDefinition-ehealth-appointment.json)
 
 ### Formal Views of Profile Content
 
@@ -73,343 +73,281 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-appointment.
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-appointment",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment",
-  "version" : "6.0.0",
+  "version" : "10.0.0",
   "name" : "ehealth-appointment",
   "status" : "active",
-  "date" : "2025-10-23T10:34:08+00:00",
+  "date" : "2026-08-06T13:29:38+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-  "contact" : [
-    {
-      "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "http://ehealth.sundhed.dk"
-        }
-      ]
-    }
-  ],
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "DK",
-          "display" : "Denmark"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "ical",
-      "uri" : "http://ietf.org/rfc/2445",
-      "name" : "iCalendar"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "ical",
+    "uri" : "http://ietf.org/rfc/2445",
+    "name" : "iCalendar"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Appointment",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Appointment",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Appointment",
-        "path" : "Appointment",
-        "constraint" : [
-          {
-            "key" : "responsible-1",
-            "severity" : "error",
-            "human" : "Ensuring that responsible entity is a participating party",
-            "expression" : "(extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible').value.reference in participant.extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam').value.reference) or (extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible').value.reference in participant.actor.reference)",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
-          },
-          {
-            "key" : "single-patient-appointment",
-            "severity" : "error",
-            "human" : "Only a single patient is allowed pr. appointment",
-            "expression" : "participant.actor.where(reference.contains('/Patient')).count() < 2",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
-          }
-        ]
+    "element" : [{
+      "id" : "Appointment",
+      "path" : "Appointment",
+      "constraint" : [{
+        "key" : "responsible-1",
+        "severity" : "error",
+        "human" : "Ensuring that responsible entity is a participating party",
+        "expression" : "(extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible').value.reference in participant.extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam').value.reference) or (extension('http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible').value.reference in participant.actor.reference)",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
       },
       {
-        "id" : "Appointment.extension",
-        "path" : "Appointment.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        },
-        "min" : 1
+        "key" : "single-patient-appointment",
+        "severity" : "error",
+        "human" : "Only a single patient is allowed pr. appointment",
+        "expression" : "participant.actor.where(reference.contains('/Patient')).count() < 2",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
+      }]
+    },
+    {
+      "id" : "Appointment.extension",
+      "path" : "Appointment.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Appointment.extension:responsible",
+      "path" : "Appointment.extension",
+      "sliceName" : "responsible",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible"]
+      }]
+    },
+    {
+      "id" : "Appointment.extension:groupId",
+      "path" : "Appointment.extension",
+      "sliceName" : "groupId",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-id"]
+      }]
+    },
+    {
+      "id" : "Appointment.extension:legalBasis",
+      "path" : "Appointment.extension",
+      "sliceName" : "legalBasis",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-legalBasis"]
+      }],
+      "constraint" : [{
+        "key" : "governance-1",
+        "severity" : "error",
+        "human" : "When extension is used a Episode of Care MUST be referenced",
+        "expression" : "%resource.supportingInformation.reference.contains('EpisodeOfCare/')",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
       },
       {
-        "id" : "Appointment.extension:responsible",
-        "path" : "Appointment.extension",
-        "sliceName" : "responsible",
-        "min" : 1,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible"
-            ]
-          }
-        ]
+        "key" : "responsible-2",
+        "severity" : "error",
+        "human" : "Both performing organization and responsible organization must be populated when legal basis is used",
+        "expression" : "%resource.extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performing-organization').exists() and %resource.extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible-organization').exists()",
+        "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
+      }]
+    },
+    {
+      "id" : "Appointment.extension:releasableResource",
+      "path" : "Appointment.extension",
+      "sliceName" : "releasableResource",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-releasableResource"]
+      }]
+    },
+    {
+      "id" : "Appointment.extension:responsibleOrganization",
+      "path" : "Appointment.extension",
+      "sliceName" : "responsibleOrganization",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible-organization"]
+      }]
+    },
+    {
+      "id" : "Appointment.extension:performer",
+      "path" : "Appointment.extension",
+      "sliceName" : "performer",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performer"]
+      }]
+    },
+    {
+      "id" : "Appointment.extension:performingOrganization",
+      "path" : "Appointment.extension",
+      "sliceName" : "performingOrganization",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performing-organization"]
+      }]
+    },
+    {
+      "id" : "Appointment.serviceType",
+      "path" : "Appointment.serviceType",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "coding.code"
+        }],
+        "rules" : "open"
       },
-      {
-        "id" : "Appointment.extension:groupId",
-        "path" : "Appointment.extension",
-        "sliceName" : "groupId",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-id"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.extension:legalBasis",
-        "path" : "Appointment.extension",
-        "sliceName" : "legalBasis",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-legalBasis"
-            ]
-          }
-        ],
-        "constraint" : [
-          {
-            "key" : "governance-1",
-            "severity" : "error",
-            "human" : "When extension is used a Episode of Care MUST be referenced",
-            "expression" : "%resource.supportingInformation.reference.contains('EpisodeOfCare/')",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
-          },
-          {
-            "key" : "responsible-2",
-            "severity" : "error",
-            "human" : "Both performing organization and responsible organization must be populated when legal basis is used",
-            "expression" : "%resource.extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performing-organization').exists() and %resource.extension.where(url = 'http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible-organization').exists()",
-            "source" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment"
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.extension:releasableResource",
-        "path" : "Appointment.extension",
-        "sliceName" : "releasableResource",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-releasableResource"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.extension:responsibleOrganization",
-        "path" : "Appointment.extension",
-        "sliceName" : "responsibleOrganization",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-responsible-organization"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.extension:performer",
-        "path" : "Appointment.extension",
-        "sliceName" : "performer",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performer"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.extension:performingOrganization",
-        "path" : "Appointment.extension",
-        "sliceName" : "performingOrganization",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-performing-organization"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.serviceType",
-        "path" : "Appointment.serviceType",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "coding.code"
-            }
-          ],
-          "rules" : "open"
-        },
-        "min" : 1
-      },
-      {
-        "id" : "Appointment.serviceType:appointmentType",
-        "path" : "Appointment.serviceType",
-        "sliceName" : "appointmentType",
-        "min" : 1,
-        "max" : "1"
-      },
-      {
-        "id" : "Appointment.serviceType:appointmentType.coding",
-        "path" : "Appointment.serviceType.coding",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/appointment-servicetype"
-        }
-      },
-      {
-        "id" : "Appointment.serviceType:appointmentType.coding.code",
-        "path" : "Appointment.serviceType.coding.code",
-        "min" : 1,
-        "fixedCode" : "regular"
-      },
-      {
-        "id" : "Appointment.appointmentType",
-        "path" : "Appointment.appointmentType",
-        "min" : 1,
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/appointmenttype-codes"
-        }
-      },
-      {
-        "id" : "Appointment.reasonCode",
-        "path" : "Appointment.reasonCode",
-        "max" : "1",
-        "binding" : {
-          "strength" : "required",
-          "valueSet" : "http://ehealth.sundhed.dk/vs/appointment-reason"
-        }
-      },
-      {
-        "id" : "Appointment.supportingInformation",
-        "path" : "Appointment.supportingInformation",
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan"
-            ],
-            "aggregation" : ["referenced"]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.participant",
-        "path" : "Appointment.participant",
-        "min" : 2
-      },
-      {
-        "id" : "Appointment.participant.extension",
-        "path" : "Appointment.participant.extension",
-        "slicing" : {
-          "discriminator" : [
-            {
-              "type" : "value",
-              "path" : "url"
-            }
-          ],
-          "ordered" : false,
-          "rules" : "open"
-        }
-      },
-      {
-        "id" : "Appointment.participant.extension:careteam",
-        "path" : "Appointment.participant.extension",
-        "sliceName" : "careteam",
-        "min" : 0,
-        "max" : "1",
-        "type" : [
-          {
-            "code" : "Extension",
-            "profile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Appointment.participant.actor",
-        "path" : "Appointment.participant.actor",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
-              "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson",
-              "http://hl7.org/fhir/StructureDefinition/Location"
-            ],
-            "aggregation" : ["referenced", "contained"]
-          }
-        ]
+      "min" : 1
+    },
+    {
+      "id" : "Appointment.serviceType:appointmentType",
+      "path" : "Appointment.serviceType",
+      "sliceName" : "appointmentType",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
+      "id" : "Appointment.serviceType:appointmentType.coding",
+      "path" : "Appointment.serviceType.coding",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/appointment-servicetype"
       }
-    ]
+    },
+    {
+      "id" : "Appointment.serviceType:appointmentType.coding.code",
+      "path" : "Appointment.serviceType.coding.code",
+      "min" : 1,
+      "fixedCode" : "regular"
+    },
+    {
+      "id" : "Appointment.appointmentType",
+      "path" : "Appointment.appointmentType",
+      "min" : 1,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/appointmenttype-codes"
+      }
+    },
+    {
+      "id" : "Appointment.reasonCode",
+      "path" : "Appointment.reasonCode",
+      "max" : "1",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://ehealth.sundhed.dk/vs/appointment-reason"
+      }
+    },
+    {
+      "id" : "Appointment.supportingInformation",
+      "path" : "Appointment.supportingInformation",
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan"],
+        "aggregation" : ["referenced"]
+      }]
+    },
+    {
+      "id" : "Appointment.participant",
+      "path" : "Appointment.participant",
+      "min" : 2
+    },
+    {
+      "id" : "Appointment.participant.extension",
+      "path" : "Appointment.participant.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Appointment.participant.extension:careteam",
+      "path" : "Appointment.participant.extension",
+      "sliceName" : "careteam",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-ext-careteam"]
+      }]
+    },
+    {
+      "id" : "Appointment.participant.actor",
+      "path" : "Appointment.participant.actor",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitioner",
+        "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson",
+        "http://hl7.org/fhir/StructureDefinition/Location"],
+        "aggregation" : ["referenced", "contained"]
+      }]
+    }]
   }
 }
 
