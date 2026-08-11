@@ -1,4 +1,4 @@
-# Schedule careplan duration stats - eHealth Infrastructure v10.0.0
+# Schedule careplan duration stats - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-careplan-duration-stats | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:schedule-careplan-duration-stats |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-careplan-duration-stats | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:schedule-careplan-duration-stats |
 
  
 
@@ -171,12 +171,12 @@ EHealthPlanDefinition is a Fhir resource. See the implementation guide for detai
   "resourceType" : "OperationDefinition",
   "id" : "-s-schedule-careplan-duration-stats",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-careplan-duration-stats",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "schedule-careplan-duration-stats",
   "title" : "Schedule careplan duration stats",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

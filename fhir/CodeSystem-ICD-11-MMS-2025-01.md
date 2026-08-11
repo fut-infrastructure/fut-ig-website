@@ -1,4 +1,4 @@
-# ICD-11 for Mortality and Morbidity Statistics - eHealth Infrastructure v10.0.0
+# ICD-11 for Mortality and Morbidity Statistics - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://id.who.int/icd/release/11/mms | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ICD-11 for Mortality and Morbidity Statistics |
+| *Official URL*:http://id.who.int/icd/release/11/mms | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ICD-11 for Mortality and Morbidity Statistics |
 | **Copyright/Legal**: WHO 2020. See ICD-11 license at https://icd.who.int/en/docs/ICD11-license.pdf | |
 
  
@@ -28,11 +28,11 @@ ICD-11 for Mortality and Morbidity Statistics, FHIR representation based on ICD-
   "resourceType" : "CodeSystem",
   "id" : "ICD-11-MMS-2025-01",
   "url" : "http://id.who.int/icd/release/11/mms",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ICD-11 for Mortality and Morbidity Statistics",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

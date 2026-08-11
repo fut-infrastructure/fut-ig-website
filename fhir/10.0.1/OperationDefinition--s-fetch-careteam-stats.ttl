@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "-s-fetch-careteam-stats"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition -s-fetch-careteam-stats</b></p><a name=\"-s-fetch-careteam-stats\"> </a><a name=\"hc-s-fetch-careteam-stats\"> </a><p>URL: [base]/$fetch-careteam-stats</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>anonymization</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>This parameter is used to control if the report should be anonymized or not. If the value is set to NONE (no anonymization) and the user lacks the required permission, an exception is thrown.</p>\n</div></td></tr><tr><td>IN</td><td>organization</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td><div><p>Filter on CareTeam.managingOrganization match</p>\n</div></td></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Period\">Period</a></td><td/><td><div><p>Filter on: CarePlan.period overlap for CarePlans, EpisodeOfCare.period overlap for EpisodeOfCare, Task.authoredOn inside period for Tasks</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/binary.html\">Binary</a></td><td/><td/></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats"] ;
+  fhir:OperationDefinition.version [ fhir:value "10.0.1"] ;
+  fhir:OperationDefinition.name [ fhir:value "fetch-careteam-stats"] ;
+  fhir:OperationDefinition.title [ fhir:value "Fetch careteam stats"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-08-11T06:32:53+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "### Report Contents\nThis report contains counts of resources associated with CareTeams:\n- EpisodeOfCare\n- CarePlan\n- Task: Count for each task category\n### Grouping \nThis report is grouped by CareTeam. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on CareTeam.managingOrganization match\n- period: Filter on:\n    - CarePlan.period overlap for CarePlans\n    - EpisodeOfCare.period overlap for EpisodeOfCare\n    - Task.authoredOn inside period for Tasks\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nEHealthCareTeam is a Fhir resource. See the implementation guide for details\n\n    {\n        'EHealthCareTeam': {\n            'resourceType': 'CareTeam',\n            'id': '12958',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam']\n            },\n            'identifier': [{\n                    'id': '59f70e4e-1c31-4647-8c91-404939b6b14e',\n                    'system': 'urn:ietf:rfc:3986'\n                }\n            ],\n            'status': 'active',\n            'name': '0cea5c11-af39-4e5c-8733-9f532ea9961a',\n            'reasonCode': [{\n                    'coding': [{\n                            'system': 'http://ehealth.sundhed.dk/cs/conditions',\n                            'code': 'TBD'\n                        }\n                    ]\n                }\n            ],\n            'managingOrganization': [{\n                    'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/66642'\n                }\n            ]\n        },\n        'CareTeamSummary': {\n            'episodeOfCareCount': 2,\n            'carePlanCount': 6,\n            'taskCountByCategory': {\n                'MissingMeasurementResolving': 2\n            }\n        }\n    }"] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "fetch-careteam-stats"] ;
+  fhir:OperationDefinition.system [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "anonymization" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "This parameter is used to control if the report should be anonymized or not. If the value is set to NONE (no anonymization) and the user lacks the required permission, an exception is thrown." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "string" ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "organization" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Filter on CareTeam.managingOrganization match" ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Reference" ]
+  ], [
+     fhir:index 2 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "period" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Filter on: CarePlan.period overlap for CarePlans, EpisodeOfCare.period overlap for EpisodeOfCare, Task.authoredOn inside period for Tasks" ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Period" ]
+  ], [
+     fhir:index 3 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Binary" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,4 +1,4 @@
-# Send message - eHealth Infrastructure v10.0.0
+# Send message - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:Appointment-send-message |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:Appointment-send-message |
 
  
 Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.md) associated with a video appointment ([ehealth-videoappointment](StructureDefinition-ehealth-videoappointment.md) or [ehealth-group-videoappointment](StructureDefinition-ehealth-group-videoappointment.md)) via the specified channel. The recipient must be a RelatedPerson listed as a participant on the target Appointment. The created [ehealth-message](StructureDefinition-ehealth-message.md) resource is system-generated; its `sender` is a contained Device representing the issuing system. 
@@ -23,12 +23,12 @@ Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.m
   "resourceType" : "OperationDefinition",
   "id" : "Appointment-send-message",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "Appointment-send-message",
   "title" : "Send message",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# Patient/102 - eHealth Infrastructure v10.0.0
+# Patient/102 - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 Profile: [ehealth-patient](StructureDefinition-ehealth-patient.md)
 
-Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))
+Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))
 
 -------
 

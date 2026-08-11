@@ -1,4 +1,4 @@
-# Persist login - eHealth Infrastructure v10.0.0
+# Persist login - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-persist-login | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:persist-login |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-persist-login | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:persist-login |
 
  
 This operation persists login information into CareTeams and PractitionerRoles The following elements of each careteam are mandatory: 
@@ -35,12 +35,12 @@ Persist-login will search for practitionerRoles for each combination of (practit
   "resourceType" : "OperationDefinition",
   "id" : "-s-persist-login",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-persist-login",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "persist-login",
   "title" : "Persist login",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

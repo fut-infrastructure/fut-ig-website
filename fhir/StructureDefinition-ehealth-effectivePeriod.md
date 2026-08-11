@@ -1,4 +1,4 @@
-# effectivePeriod - eHealth Infrastructure v10.0.0
+# effectivePeriod - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-effectivePeriod | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ehealth-effectivePeriod |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-effectivePeriod | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ehealth-effectivePeriod |
 
 Clinically relevant time-period for questionnaire response.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-effectivePer
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-effectivePeriod",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-effectivePeriod",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ehealth-effectivePeriod",
   "title" : "effectivePeriod",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

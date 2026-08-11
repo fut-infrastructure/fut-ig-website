@@ -1,4 +1,4 @@
-# message01 - eHealth Infrastructure v10.0.0
+# message01 - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -30,7 +30,7 @@ Profile: [ehealth-message](StructureDefinition-ehealth-message.md)
 
 **sent**: 2021-07-15 07:06:55+0000
 
-**recipient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))](Patient-102.md)
+**recipient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))](Patient-102.md)
 
 ### Payloads
 

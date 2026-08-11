@@ -1,4 +1,4 @@
-# Modify care team assignment - eHealth Infrastructure v10.0.0
+# Modify care team assignment - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:update-care-teams |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:update-care-teams |
 
  
 The operation modifies the care team assignment of the care plan and all of its sub plans. 
@@ -23,12 +23,12 @@ The operation modifies the care team assignment of the care plan and all of its 
   "resourceType" : "OperationDefinition",
   "id" : "CarePlanEpisodeOfCare-i-update-care-teams",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "update-care-teams",
   "title" : "Modify care team assignment",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

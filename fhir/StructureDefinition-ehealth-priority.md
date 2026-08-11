@@ -1,4 +1,4 @@
-# Priority - eHealth Infrastructure v10.0.0
+# Priority - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-priority | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ehealth-priority |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-priority | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ehealth-priority |
 
 The priority of a message
 
@@ -45,11 +45,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-priority.csv
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-priority",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-priority",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ehealth-priority",
   "title" : "Priority",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

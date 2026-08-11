@@ -1,4 +1,4 @@
-# Action Selection Behavior Supplement - eHealth Infrastructure v10.0.0
+# Action Selection Behavior Supplement - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/hl7.org/fhir/action-selection-behavior-supplement | *Version*:10.0.0 | |
+| *Official URL*:http://ehealth.sundhed.dk/hl7.org/fhir/action-selection-behavior-supplement | *Version*:10.0.1 | |
 | * Standards status: *[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 2 | *Computable Name*:ActionSelectionBehaviorSupplement |
 | *Other Identifiers:*OID:2.16.840.1.113883.4.642.4.802 | | |
 
@@ -44,12 +44,12 @@ Defines selection behavior of a group.
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:2.16.840.1.113883.4.642.4.802"
   }],
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ActionSelectionBehaviorSupplement",
   "title" : "Action Selection Behavior Supplement",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# relatedperson01 - eHealth Infrastructure v10.0.0
+# relatedperson01 - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -12,11 +12,11 @@ Profile: [ehealth-relatedperson](StructureDefinition-ehealth-relatedperson.md)
 
 **Patient contact note**: This is a contact note
 
-**identifier**: [Danish civil registration system - CPR](NamingSystem-cpr.md)/0501792275
+**identifier**: [DK Central Person Registry (CPR)](http://hl7.dk/fhir/core/3.6.0/NamingSystem-cpr.html)/0501792275
 
 **active**: true
 
-**patient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))](Patient-102.md)
+**patient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))](Patient-102.md)
 
 **relationship**: power of attorney, urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1
 

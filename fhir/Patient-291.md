@@ -1,4 +1,4 @@
-# 291 - eHealth Infrastructure v10.0.0
+# 291 - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -10,7 +10,7 @@ version: 1
 
 Profile: [ehealth-skrs-patient](StructureDefinition-ehealth-skrs-patient.md)
 
-Anonymous Patient (no stated gender), DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1908560343 (use: official, ))
+Anonymous Patient (no stated gender), DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1908560343 (use: official, ))
 
 -------
 

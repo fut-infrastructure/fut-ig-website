@@ -1,4 +1,4 @@
-# Create an EpisodeOfCare - eHealth Infrastructure v10.0.0
+# Create an EpisodeOfCare - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:create-episode-of-care |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:create-episode-of-care |
 
  
 This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input. 
@@ -49,12 +49,12 @@ A privacy-Provenance is a Provenance resource characterized by having at least o
   "resourceType" : "OperationDefinition",
   "id" : "-s-create-episode-of-care",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-create-episode-of-care",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "create-episode-of-care",
   "title" : "Create an EpisodeOfCare",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

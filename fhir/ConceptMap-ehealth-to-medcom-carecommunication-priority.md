@@ -1,4 +1,4 @@
-# eHealth to MedCom CareCommunication Priority Map - eHealth Infrastructure v10.0.0
+# eHealth to MedCom CareCommunication Priority Map - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cm/ehealth-to-medcom-carecommunication-priority | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*: |
+| *Official URL*:http://ehealth.sundhed.dk/cm/ehealth-to-medcom-carecommunication-priority | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*: |
 
 
 
@@ -20,10 +20,10 @@
   "resourceType" : "ConceptMap",
   "id" : "ehealth-to-medcom-carecommunication-priority",
   "url" : "http://ehealth.sundhed.dk/cm/ehealth-to-medcom-carecommunication-priority",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "title" : "eHealth to MedCom CareCommunication Priority Map",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# Slider Step-value Decimal - eHealth Infrastructure v10.0.0
+# Slider Step-value Decimal - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-sliderStepValueDecimal | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ehealth-questionnaire-sliderStepValueDecimal |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-sliderStepValueDecimal | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ehealth-questionnaire-sliderStepValueDecimal |
 
 Defines a decimal number step-value for the slider in the questionnaire.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-questionnair
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-sliderStepValueDecimal",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-sliderStepValueDecimal",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ehealth-questionnaire-sliderStepValueDecimal",
   "title" : "Slider Step-value Decimal",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

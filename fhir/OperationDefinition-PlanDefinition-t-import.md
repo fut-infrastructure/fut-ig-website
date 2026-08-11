@@ -1,4 +1,4 @@
-# Import a Plandefinition - eHealth Infrastructure v10.0.0
+# Import a Plandefinition - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-t-import | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:import |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-t-import | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:import |
 
  
 Import a Plandefinition 
@@ -29,12 +29,12 @@ Import a Plandefinition
   "resourceType" : "OperationDefinition",
   "id" : "PlanDefinition-t-import",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-t-import",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "import",
   "title" : "Import a Plandefinition",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

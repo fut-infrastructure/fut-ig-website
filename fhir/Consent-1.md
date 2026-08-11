@@ -1,4 +1,4 @@
-# Consent/1 - eHealth Infrastructure v10.0.0
+# Consent/1 - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -11,7 +11,7 @@ Profile: [ehealth-access-consent](StructureDefinition-ehealth-access-consent.md)
 ## Participants
 
 * **Role**: Patient
-  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))](Patient-102.md)
+  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))](Patient-102.md)
 * **Role**: Party
   * **Details**: [Practitioner Example3 Practitioner ](Practitioner-107302.md)
 

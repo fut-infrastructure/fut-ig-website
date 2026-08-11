@@ -1,4 +1,4 @@
-# Get patient procedures - eHealth Infrastructure v10.0.0
+# Get patient procedures - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-patient-procedures | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:get-patient-procedures |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-patient-procedures | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:get-patient-procedures |
 
  
 This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period. 
@@ -109,12 +109,12 @@ Example:
   "resourceType" : "OperationDefinition",
   "id" : "-s-get-patient-procedures",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-patient-procedures",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "get-patient-procedures",
   "title" : "Get patient procedures",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

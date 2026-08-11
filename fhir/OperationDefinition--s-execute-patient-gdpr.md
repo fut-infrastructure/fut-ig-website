@@ -1,4 +1,4 @@
-# Execute patient GDPR - eHealth Infrastructure v10.0.0
+# Execute patient GDPR - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-gdpr | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:execute-patient-gdpr |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-gdpr | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:execute-patient-gdpr |
 
  
 
@@ -46,12 +46,12 @@ None. This report returns a single JSon file.
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-patient-gdpr",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-gdpr",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "execute-patient-gdpr",
   "title" : "Execute patient GDPR",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

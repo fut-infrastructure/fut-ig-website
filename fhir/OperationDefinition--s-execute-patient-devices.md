@@ -1,4 +1,4 @@
-# Execute patient devices - eHealth Infrastructure v10.0.0
+# Execute patient devices - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-devices | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:execute-patient-devices |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-devices | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:execute-patient-devices |
 
  
 
@@ -39,12 +39,12 @@ This report contains Device information for each EpisodeOfCare:
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-patient-devices",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-devices",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "execute-patient-devices",
   "title" : "Execute patient devices",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

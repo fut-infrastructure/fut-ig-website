@@ -1,4 +1,4 @@
-# expunge - eHealth Infrastructure v10.0.0
+# expunge - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-expunge | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:expunge |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-expunge | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:expunge |
 
 
 
@@ -20,11 +20,11 @@
   "resourceType" : "OperationDefinition",
   "id" : "-s-expunge",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-expunge",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "expunge",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

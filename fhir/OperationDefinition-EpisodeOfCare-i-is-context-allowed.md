@@ -1,4 +1,4 @@
-# Is context allowed - eHealth Infrastructure v10.0.0
+# Is context allowed - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:is-context-allowed |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:is-context-allowed |
 
  
 Checks that it is allowed to set an EpisodeOfCare as context. If the user requesting context is a patient, then the patient input parameter should be specified. If the user requesting context is a practitioner, then the careTeam input parameter should be specified. Throws an exception if it is not allowed to select the Episode Of Care context. 
@@ -31,12 +31,12 @@ For valid Episode of Care is returned references that cause the Episode of Care 
   "resourceType" : "OperationDefinition",
   "id" : "EpisodeOfCare-i-is-context-allowed",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "is-context-allowed",
   "title" : "Is context allowed",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

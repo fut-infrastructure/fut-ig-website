@@ -1,4 +1,4 @@
-# Search measurements bundle limit - eHealth Infrastructure v10.0.0
+# Search measurements bundle limit - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-search-measurements-bundle-limit | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:search-measurements-bundle-limit |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-search-measurements-bundle-limit | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:search-measurements-bundle-limit |
 
  
 The search-measurements-bundle-limit operation searches for a number of bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria. 
@@ -50,12 +50,12 @@ Related resources are the set of resources created by a single invocation of the
   "resourceType" : "OperationDefinition",
   "id" : "-s-search-measurements-bundle-limit",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-search-measurements-bundle-limit",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "search-measurements-bundle-limit",
   "title" : "Search measurements bundle limit",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

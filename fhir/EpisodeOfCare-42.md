@@ -1,4 +1,4 @@
-# EpisodeOfCare/42 - eHealth Infrastructure v10.0.0
+# EpisodeOfCare/42 - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -25,7 +25,7 @@ Profile: [ehealth-episodeofcare](StructureDefinition-ehealth-episodeofcare.md)
 | - | **Condition** |
 | * | [Condition Boligens indretning](Condition-42.md) |
 
-**patient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))](Patient-102.md)
+**patient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))](Patient-102.md)
 
 **period**: 2023-01-01 00:00:00+0000 --> (ongoing)
 

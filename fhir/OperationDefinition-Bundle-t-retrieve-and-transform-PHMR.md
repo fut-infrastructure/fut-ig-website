@@ -1,4 +1,4 @@
-# Retrieve and transform PHMR document - eHealth Infrastructure v10.0.0
+# Retrieve and transform PHMR document - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Bundle-t-retrieve-and-transform-PHMR | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:retrieve-and-transform-PHMR |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Bundle-t-retrieve-and-transform-PHMR | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:retrieve-and-transform-PHMR |
 
  
 Retrieves a DK-HL7 Personal Health Monitoring Report (PHMR) XML document from national document sharing infrastructure and transforms the PHMR XML document to FHIR Observation (ehealth-observation profile) resources.Input (url) is the element DocumentReference.content.attachment.url for metadata about the PHMR document as returned from the DocumentReference search operation performing a query to national document sharing infrastructure. The url, which shall be used as-is in this operation, is an encoding of the XDS DocumentEntry.uniqueId, XDS DocumentEntry.repositoryUniqueId and XDS DocumentEntry.homeCommunityId metadata attributes needed to retrieve the document. Input (consentOverride) signifies, when set to true, that the retrieve of a document shall be performed with override of any withholding of information possibly performed by the national document sharing service in accordance with patient's consents. Override of consents constitutes a form of break-the-glass invocation, known in Danish as værdispring. The preferred method is to call this operation without consent override and to only call with consent override when necessary. Input (reason) is mandatory when input element consentOverride is set to true. The string input is intended as a placeholder for the user's rationale for choosing to override consents. The value is logged in the Infrastructure.The returned FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing one or more FHIR Observation (ehealth-observation profile) resources and referenced resources such as FHIR Organization. 
@@ -23,12 +23,12 @@ Retrieves a DK-HL7 Personal Health Monitoring Report (PHMR) XML document from na
   "resourceType" : "OperationDefinition",
   "id" : "Bundle-t-retrieve-and-transform-PHMR",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Bundle-t-retrieve-and-transform-PHMR",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "retrieve-and-transform-PHMR",
   "title" : "Retrieve and transform PHMR document",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

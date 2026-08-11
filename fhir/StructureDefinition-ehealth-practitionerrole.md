@@ -1,4 +1,4 @@
-# ehealth-practitionerrole - eHealth Infrastructure v10.0.0
+# ehealth-practitionerrole - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ehealth-practitionerrole |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ehealth-practitionerrole |
 
 # Remarks on operations
 
@@ -41,10 +41,10 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-practitioner
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-practitionerrole",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-practitionerrole",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ehealth-practitionerrole",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

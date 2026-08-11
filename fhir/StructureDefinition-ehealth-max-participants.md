@@ -1,4 +1,4 @@
-# Max participants - eHealth Infrastructure v10.0.0
+# Max participants - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-max-participants | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ehealth-max-participants |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-max-participants | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ehealth-max-participants |
 
 The maximum number of participants allowed to participate in a video meeting
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-max-particip
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-max-participants",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-max-participants",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ehealth-max-participants",
   "title" : "Max participants",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

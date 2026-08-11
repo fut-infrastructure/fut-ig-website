@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ClinicalImpression-t-set-measurement-validity"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ClinicalImpression-t-set-measurement-validity</b></p><a name=\"ClinicalImpression-t-set-measurement-validity\"> </a><a name=\"hcClinicalImpression-t-set-measurement-validity\"> </a><p>URL: [base]/ClinicalImpression/$set-measurement-validity</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>clinicalImpression</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/clinicalimpression.html\">ClinicalImpression</a></td><td/><td><div><p>The ClinicalImpression resource representing the measurement, with versioned/unversioned references to the Measurement that's either being invalidated, or where the invalidation is being retracted.</p>\n</div></td></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "http://ehealth.sundhed.dk/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity"] ;
+  fhir:OperationDefinition.version [ fhir:value "10.0.1"] ;
+  fhir:OperationDefinition.name [ fhir:value "set-measurement-validity"] ;
+  fhir:OperationDefinition.title [ fhir:value "Invalidate / Retract Invalidation of a Measurement"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-08-11T06:32:53+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "This operation is used to invalidate or retract an invalidation of a Measurement.\r\n## Input\r\nThe input parameter is a ClinicalImpression resource with the following values:\r\n- `status` - The status of the ClinicalImpression must be `completed`.\r\n- `investigation.item` - Versioned reference to the Measurement that is to be invalidated or retracted.\r\n- `investigation.item` - Unversioned reference to the Measurement that is to be invalidated or retracted.\r\n- `subject` - Reference to the Patient .\r\n- `episodeOfCare` - Reference to the EpisodeOfCare that the Measurement is part of.\r\n- `code` - Should use `MeasurementAssessment` from `http://ehealth.sundhed.dk/cs/clinicalimpression-codes`.\r\n- `finding.code` - The finding code must be `measurement-invalidated` or `measurement-invalidation-retracted`.\r\n- `decision` - The decision code is required if `finding.code` is `measurement-invalidated`. The decision code must be `invalidated-fulfills` or `invalidated-is-not-fulfillment`.\r\n## Output\r\nThe operation returns the persisted ClinicalImpression:\r\n- `clinicalImpression` - The persisted ClinicalImpression resource with updated assessor values.\r\n## Operation side effects\r\n- The operation will update the status of the Measurement that is being invalidated or has the invalidation retracted to `entered-in-error` or `completed` respectively.\r\n- The operation will update the status to `entered-in-error` for any previous invalidation or invalidation retraction ClinicalImpression for the referenced Measurement, indicating that the previous ClinicalImpression is no longer used to represent the validity of the Measurement. The operation performs a search for any existing ClinicalImpression in the measurement validity cycle, and does not rely on/update the `previous` field on the input ClinicalImpression. If the input ClinicalImpression is for invalidation retraction, there must exist a ClinicalImpression invalidating the Measurement.\r\n- The operation will add an additional investigation with the code `item-modified`, referencing the Measurement version after the patch has been applied.\r\n- The operation will set assessor values (assessor, assessorOrganization and assessorOther). If the user is of type PRACTITIONER, assessor and assessorOrganization will be set. If the user is of type PATIENT, assessorOther will be set`.\r\n"] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "set-measurement-validity"] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "ClinicalImpression" ;
+     fhir:index 0
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "clinicalImpression" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The ClinicalImpression resource representing the measurement, with versioned/unversioned references to the Measurement that's either being invalidated, or where the invalidation is being retracted." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "ClinicalImpression" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

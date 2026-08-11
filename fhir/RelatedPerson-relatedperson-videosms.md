@@ -1,4 +1,4 @@
-# RelatedPerson with video-appointment SMS reminder telecom - eHealth Infrastructure v10.0.0
+# RelatedPerson with video-appointment SMS reminder telecom - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -10,7 +10,7 @@ Profile: [ehealth-relatedperson](StructureDefinition-ehealth-relatedperson.md)
 
 **active**: true
 
-**patient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official, ))](Patient-102.md)
+**patient**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))](Patient-102.md)
 
 **relationship**: spouse
 

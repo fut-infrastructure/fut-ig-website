@@ -1,4 +1,4 @@
-# Retrieve count of assignments for material - eHealth Infrastructure v10.0.0
+# Retrieve count of assignments for material - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-assigned-material-count | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:assigned-material-count |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-assigned-material-count | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:assigned-material-count |
 
  
 This operation counts the number of material assignments (`ehealth-material-communication resources`) for a given `ehealth-documentreference` from the Plan service. This is done by performing an internal search using the given ehealth-documentReference, date and status parameters. Regardless of the given parameters, only `ehealth-material-communication` resources referring to an active `ehealth-episodeofcare` are counted. The group-by-careteam parameter determines whether a simple '_summary=count' search is performed or if all results should be fetched to extract and count based on participant CareTeam references. 
@@ -100,12 +100,12 @@ Example of output with group-by-careTeam as true:
   "resourceType" : "OperationDefinition",
   "id" : "-s-assigned-material-count",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-assigned-material-count",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "assigned-material-count",
   "title" : "Retrieve count of assignments for material",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# Overview usage mode - eHealth Infrastructure v10.0.0
+# Overview usage mode - eHealth Infrastructure v10.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-overviewUsageMode | *Version*:10.0.0 |
-| Active as of 2026-08-06 | *Computable Name*:ehealth-overviewUsageMode |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-overviewUsageMode | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:ehealth-overviewUsageMode |
 
 Identifies whether the specified element and/or results of the element should appear in overview or table presentation.
 
@@ -44,11 +44,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-overviewUsag
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-overviewUsageMode",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-overviewUsageMode",
-  "version" : "10.0.0",
+  "version" : "10.0.1",
   "name" : "ehealth-overviewUsageMode",
   "title" : "Overview usage mode",
   "status" : "active",
-  "date" : "2026-08-06T13:29:38+00:00",
+  "date" : "2026-08-11T06:44:23+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

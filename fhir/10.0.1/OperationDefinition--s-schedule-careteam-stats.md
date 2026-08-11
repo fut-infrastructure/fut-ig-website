@@ -1,0 +1,96 @@
+# Schedule careteam stats - eHealth Infrastructure v10.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Schedule careteam stats**
+
+## OperationDefinition: Schedule careteam stats 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-careteam-stats | *Version*:10.0.1 |
+| Active as of 2026-08-11 | *Computable Name*:schedule-careteam-stats |
+
+ 
+
+### Report Contents
+
+ 
+This report contains counts of resources associated with CareTeams: 
+* EpisodeOfCare
+* CarePlan
+* This report is grouped by CareTeam. Each group is returned in a separate JSon file.
+* organization: Filter on CareTeam.managingOrganization match
+* Output can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.
+ 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-schedule-careteam-stats",
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-careteam-stats",
+  "version" : "10.0.1",
+  "name" : "schedule-careteam-stats",
+  "title" : "Schedule careteam stats",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-08-11T06:32:53+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "### Report Contents\nThis report contains counts of resources associated with CareTeams:\n- EpisodeOfCare\n- CarePlan\n- Task: Count for each task category\n### Grouping \nThis report is grouped by CareTeam. Each group is returned in a separate JSon file.\n### Parameters\n- organization: Filter on CareTeam.managingOrganization match\n- period: Filter on:\n    - CarePlan.period overlap for CarePlans\n    - EpisodeOfCare.period overlap for EpisodeOfCare\n    - Task.authoredOn inside period for Tasks\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files corresponding to the report groups.\n### Example output\nEHealthCareTeam is a Fhir resource. See the implementation guide for details\n\n    {\n        'EHealthCareTeam': {\n            'resourceType': 'CareTeam',\n            'id': '12958',\n            'meta': {\n                'versionId': '1',\n                'profile': ['http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careteam']\n            },\n            'identifier': [{\n                    'id': '59f70e4e-1c31-4647-8c91-404939b6b14e',\n                    'system': 'urn:ietf:rfc:3986'\n                }\n            ],\n            'status': 'active',\n            'name': '0cea5c11-af39-4e5c-8733-9f532ea9961a',\n            'reasonCode': [{\n                    'coding': [{\n                            'system': 'http://ehealth.sundhed.dk/cs/conditions',\n                            'code': 'TBD'\n                        }\n                    ]\n                }\n            ],\n            'managingOrganization': [{\n                    'reference': 'https://organization.local.ehealth.sundhed.dk/fhir/Organization/66642'\n                }\n            ]\n        },\n        'CareTeamSummary': {\n            'episodeOfCareCount': 2,\n            'carePlanCount': 6,\n            'taskCountByCategory': {\n                'MissingMeasurementResolving': 2\n            }\n        }\n    }",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "affectsState" : true,
+  "code" : "schedule-careteam-stats",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "anonymization",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "This parameter is used to control if the report should be anonymized or not. If the value is set to NONE (no anonymization) and the user lacks the required permission, an exception is thrown.",
+    "type" : "string"
+  },
+  {
+    "name" : "organization",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Filter on CareTeam.managingOrganization match",
+    "type" : "Reference"
+  },
+  {
+    "name" : "period",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Filter on: CarePlan.period overlap for CarePlans, EpisodeOfCare.period overlap for EpisodeOfCare, Task.authoredOn inside period for Tasks",
+    "type" : "Period"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "type" : "Binary"
+  }]
+}
+
+```
