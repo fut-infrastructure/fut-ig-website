@@ -1,4 +1,4 @@
-# Answer condition - eHealth Infrastructure v10.0.1
+# Answer condition - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-answer-Condition | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-answer-Condition |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-answer-Condition | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-answer-Condition |
 
 Defines the Answer condition for an answer option in the questionnaire.
 
@@ -44,11 +44,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-answer-Condi
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-answer-Condition",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-answer-Condition",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-answer-Condition",
   "title" : "Answer condition",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

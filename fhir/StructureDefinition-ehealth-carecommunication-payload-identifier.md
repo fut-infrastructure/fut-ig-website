@@ -1,4 +1,4 @@
-# Identifier Extension - eHealth Infrastructure v10.0.1
+# Identifier Extension - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication-payload-identifier | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-carecommunication-payload-identifier |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication-payload-identifier | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-carecommunication-payload-identifier |
 
 Extension to hold an Identifier for a payload. Identifier.value shall be a UUID v4 in URN form (urn:uuid:).
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-carecommunic
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-carecommunication-payload-identifier",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication-payload-identifier",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-carecommunication-payload-identifier",
   "title" : "Identifier Extension",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# ICD-11 for Mortality and Morbidity Statistics - eHealth Infrastructure v10.0.1
+# ICD-11 for Mortality and Morbidity Statistics - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://id.who.int/icd/release/11/mms | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ICD-11 for Mortality and Morbidity Statistics |
+| *Official URL*:http://id.who.int/icd/release/11/mms | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ICD-11 for Mortality and Morbidity Statistics |
 | **Copyright/Legal**: WHO 2020. See ICD-11 license at https://icd.who.int/en/docs/ICD11-license.pdf | |
 
  
@@ -17,7 +17,7 @@ ICD-11 for Mortality and Morbidity Statistics, FHIR representation based on ICD-
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [bodyUsageContextSiteTeleWound](ValueSet-usage-context-body-site-tele-wound.md)
+* [Usage Context for Tele Wound Body Site](ValueSet-usage-context-body-site-tele-wound.md)
 
 
 
@@ -28,11 +28,11 @@ ICD-11 for Mortality and Morbidity Statistics, FHIR representation based on ICD-
   "resourceType" : "CodeSystem",
   "id" : "ICD-11-MMS-2025-01",
   "url" : "http://id.who.int/icd/release/11/mms",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ICD-11 for Mortality and Morbidity Statistics",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

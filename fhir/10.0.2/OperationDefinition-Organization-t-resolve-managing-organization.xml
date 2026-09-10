@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="Organization-t-resolve-managing-organization"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition Organization-t-resolve-managing-organization</b></p><a name="Organization-t-resolve-managing-organization"> </a><a name="hcOrganization-t-resolve-managing-organization"> </a><p>URL: [base]/Organization/$resolve-managing-organization</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>organization</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Mandatory reference to the organisation to resolve the data-controller authority from.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></td><td/><td/></tr></table></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/Organization-t-resolve-managing-organization"/>
+  <version value="10.0.2"/>
+  <name value="resolve-managing-organization"/>
+  <title value="Resolve managing organization (data controller)"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-09-10T10:04:36+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="Given an organisation, returns the corresponding root authority (the GDPR data controller) by traversing the SOR / FK Organisation hierarchy upwards via Organization.partOf.&#xD;&#xA;## Input&#xD;&#xA;A single mandatory reference 'organization' to the organisation to resolve from.&#xD;&#xA;## Output&#xD;&#xA;The resolved authority Organization (a municipality or a region).&#xD;&#xA;An OperationOutcome with HTTP 404 is returned when no authority can be resolved for the organisation."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="false"/>
+  <code value="resolve-managing-organization"/>
+  <resource value="Organization"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="organization"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Mandatory reference to the organisation to resolve the data-controller authority from."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Organization"/>
+  </parameter>
+</OperationDefinition>

@@ -1,4 +1,4 @@
-# eHealth CareCommunication Category codes - eHealth Infrastructure v10.0.1
+# eHealth CareCommunication Category codes - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,15 +8,15 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-carecommunication-category | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:EhealthCareCommunicationCategoryCS |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-carecommunication-category | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:EhealthCareCommunicationCategoryCS |
 
  
 The set of CareCommunication category code. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EhealthCareCommunicationCategoryVS](ValueSet-ehealth-carecommunication-category.md)
+* [eHealth CareCommunication Categories](ValueSet-ehealth-carecommunication-category.md)
 
 
 
@@ -27,11 +27,11 @@ The set of CareCommunication category code.
   "resourceType" : "CodeSystem",
   "id" : "ehealth-carecommunication-category",
   "url" : "http://ehealth.sundhed.dk/cs/ehealth-carecommunication-category",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "EhealthCareCommunicationCategoryCS",
   "title" : "eHealth CareCommunication Category codes",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

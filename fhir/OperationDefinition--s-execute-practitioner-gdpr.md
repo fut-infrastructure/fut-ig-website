@@ -1,4 +1,4 @@
-# Execute practitioner GDPR - eHealth Infrastructure v10.0.1
+# Execute practitioner GDPR - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-practitioner-gdpr | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:execute-practitioner-gdpr |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-practitioner-gdpr | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:execute-practitioner-gdpr |
 
  
 
@@ -44,12 +44,12 @@ This report contains all information related to the specified Practitioner
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-practitioner-gdpr",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-practitioner-gdpr",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "execute-practitioner-gdpr",
   "title" : "Execute practitioner GDPR",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# reindex - eHealth Infrastructure v10.0.1
+# reindex - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-reindex | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:reindex |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-reindex | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:reindex |
 
 
 
@@ -20,11 +20,11 @@
   "resourceType" : "OperationDefinition",
   "id" : "-s-reindex",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-reindex",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "reindex",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# ehealth-deviceusestatement - eHealth Infrastructure v10.0.1
+# ehealth-deviceusestatement - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-deviceusestatement |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-deviceusestatement |
 
 # Introduction
 
@@ -61,10 +61,10 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-deviceusesta
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-deviceusestatement",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-deviceusestatement",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-deviceusestatement",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

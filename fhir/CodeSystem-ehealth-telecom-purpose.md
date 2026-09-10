@@ -1,4 +1,4 @@
-# eHealth Telecom Purpose codes - eHealth Infrastructure v10.0.1
+# eHealth Telecom Purpose codes - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,15 +8,15 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/telecom-purpose | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:EhealthTelecomPurposeCS |
+| *Official URL*:http://ehealth.sundhed.dk/cs/telecom-purpose | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:EhealthTelecomPurposeCS |
 
  
 Codes indicating the purpose of a telecom contact point. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EhealthTelecomPurposeVS](ValueSet-ehealth-telecom-purpose.md)
+* [eHealth Telecom Purpose](ValueSet-ehealth-telecom-purpose.md)
 
 
 
@@ -27,11 +27,11 @@ Codes indicating the purpose of a telecom contact point.
   "resourceType" : "CodeSystem",
   "id" : "ehealth-telecom-purpose",
   "url" : "http://ehealth.sundhed.dk/cs/telecom-purpose",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "EhealthTelecomPurposeCS",
   "title" : "eHealth Telecom Purpose codes",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

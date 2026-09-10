@@ -1,4 +1,4 @@
-# eHealth CareCommunication Attachment MIME Types - eHealth Infrastructure v10.0.1
+# eHealth CareCommunication Attachment MIME Types - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-carecommunication-mimetypes | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:EhealthCareCommunicationMimeTypesVS |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-carecommunication-mimetypes | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:EhealthCareCommunicationMimeTypesVS |
 
  
 Allowed MIME types for attachments in eHealth CareCommunication messages. Mirrors MedCom's medcom-core-attachmentMimeTypes ValueSet. 
@@ -46,11 +46,11 @@ Allowed MIME types for attachments in eHealth CareCommunication messages. Mirror
   "resourceType" : "ValueSet",
   "id" : "ehealth-carecommunication-mimetypes",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-carecommunication-mimetypes",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "EhealthCareCommunicationMimeTypesVS",
   "title" : "eHealth CareCommunication Attachment MIME Types",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

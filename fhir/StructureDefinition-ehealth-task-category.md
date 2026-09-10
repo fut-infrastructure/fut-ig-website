@@ -1,4 +1,4 @@
-# Task category - eHealth Infrastructure v10.0.1
+# Task category - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task-category | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-task-category |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task-category | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-task-category |
 
 Category of task.
 
@@ -44,11 +44,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-task-categor
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-task-category",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-task-category",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-task-category",
   "title" : "Task category",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

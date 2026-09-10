@@ -1,4 +1,4 @@
-# Create a careplan - eHealth Infrastructure v10.0.1
+# Create a careplan - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-apply | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:apply |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-apply | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:apply |
 
  
 Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. 
@@ -35,12 +35,12 @@ Create a careplan with service requests for a specific episodeOfCare using the P
   "resourceType" : "OperationDefinition",
   "id" : "PlanDefinition-i-apply",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/PlanDefinition-i-apply",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "apply",
   "title" : "Create a careplan",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

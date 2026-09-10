@@ -1,4 +1,4 @@
-# eHealth Message Author - eHealth Infrastructure v10.0.1
+# eHealth Message Author - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message-author | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-message-author |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message-author | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-message-author |
 
 Records the attorney (RelatedPerson) who authored a message on behalf of the grantor patient, for cases where the physical author is not the same as Communication.sender. When a RELATED_PERSON user sends a message, Communication.sender must still reference the grantor patient, and this extension must reference the acting RelatedPerson. In future, the target list may be extended to include Practitioner references (e.g. for messages sent by a CareTeam member), but for now only RelatedPerson is supported.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-message-auth
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-message-author",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message-author",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-message-author",
   "title" : "eHealth Message Author",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

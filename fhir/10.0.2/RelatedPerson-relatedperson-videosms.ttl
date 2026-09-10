@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/RelatedPerson/relatedperson-videosms> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "relatedperson-videosms"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson relatedperson-videosms</b></p><a name=\"relatedperson-videosms\"> </a><a name=\"hcrelatedperson-videosms\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-relatedperson.html\">ehealth-relatedperson</a></p></div><p><b>active</b>: true</p><p><b>patient</b>: <a href=\"Patient-102.html\">Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode SPS}\">spouse</span></p><p><b>name</b>: RelatedPerson Test (Official)</p><p><b>telecom</b>: +4512345678</p></div>"
+  ] ;
+  fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:RelatedPerson.patient [
+     fhir:link <http://ehealth.sundhed.dk/fhir/Patient/102> ;
+     fhir:Reference.reference [ fhir:value "Patient/102" ]
+  ] ;
+  fhir:RelatedPerson.relationship [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "SPS" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Test" ] ;
+     fhir:HumanName.given [
+       fhir:value "RelatedPerson" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:RelatedPerson.telecom [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-telecom-purpose" ] ;
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/telecom-purpose" ] ;
+         fhir:Coding.code [ fhir:value "video-appointment-reminder-sms" ]
+       ]
+     ] ;
+     fhir:ContactPoint.system [ fhir:value "sms" ] ;
+     fhir:ContactPoint.value [ fhir:value "+4512345678" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/RelatedPerson/relatedperson-videosms.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,4 +1,4 @@
-# Invalidate / Retract Invalidation of a Measurement - eHealth Infrastructure v10.0.1
+# Invalidate / Retract Invalidation of a Measurement - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:set-measurement-validity |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:set-measurement-validity |
 
  
 This operation is used to invalidate or retract an invalidation of a Measurement. 
@@ -46,12 +46,12 @@ The input parameter is a ClinicalImpression resource with the following values:
   "resourceType" : "OperationDefinition",
   "id" : "ClinicalImpression-t-set-measurement-validity",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ClinicalImpression-t-set-measurement-validity",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "set-measurement-validity",
   "title" : "Invalidate / Retract Invalidation of a Measurement",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

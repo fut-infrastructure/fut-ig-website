@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/RelatedPerson/relatedperson01> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "relatedperson01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.versionId [ fhir:value "1" ] ;
+     fhir:Meta.lastUpdated [ fhir:value "2021-07-15T07:08:53.568+00:00"^^xsd:dateTime ] ;
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson relatedperson01</b></p><a name=\"relatedperson01\"> </a><a name=\"hcrelatedperson01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Last updated: 2021-07-15 07:08:53+0000</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ehealth-relatedperson.html\">ehealth-relatedperson</a></p></div><p><b>Patient contact note</b>: This is a contact note</p><p><b>identifier</b>: <a href=\"http://hl7.dk/fhir/core/3.6.0/NamingSystem-cpr.html\" title=\"The Danish civil registration system (&quot;CPR&quot;) encompasses basic personal data about anyone with a civil registration number. A civil registration number shall be allocated to anyone who: 1) is registered in the national register in Denmark on the grounds of birth or relocation from abroad; 2) is included under Arbejdsmarkedets TillægsPension (ATP); 3) according to the tax authorities, is required to have a civil registration number for the purpose of tax processing in Denmark.\">DK Central Person Registry (CPR)</a>/0501792275</p><p><b>active</b>: true</p><p><b>patient</b>: <a href=\"Patient-102.html\">Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official, ))</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode POWATT}\">power of attorney</span>, <span title=\"Codes:{http://ehealth.sundhed.dk/cs/poa-privilege urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1}\">urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1</span></p><p><b>name</b>: RelatedPerson Test (Official)</p><p><b>address</b>: Mønsgade 20 5. tv Aarhus 8000 Danmark (home)</p><p><b>period</b>: 2026-03-24 --&gt; (ongoing)</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient-contactnote" ] ;
+     fhir:Extension.valueString [ fhir:value "This is a contact note" ]
+  ] ;
+  fhir:RelatedPerson.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.208.176.1.2" ] ;
+     fhir:Identifier.value [ fhir:value "0501792275" ]
+  ] ;
+  fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:RelatedPerson.patient [
+     fhir:link <http://ehealth.sundhed.dk/fhir/Patient/102> ;
+     fhir:Reference.reference [ fhir:value "Patient/102" ]
+  ] ;
+  fhir:RelatedPerson.relationship [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "POWATT" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/poa-privilege" ] ;
+       fhir:Coding.code [ fhir:value "urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Test" ] ;
+     fhir:HumanName.given [
+       fhir:value "RelatedPerson" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:RelatedPerson.address [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.dk/fhir/core/StructureDefinition/dk-core-municipalityCodes" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.dk/fhir/core/CodeSystem/dk-core-municipality-codes" ] ;
+           fhir:Coding.code [ fhir:value "0330" ]
+         ]
+       ]
+     ] ;
+     fhir:Address.use [ fhir:value "home" ] ;
+     fhir:Address.line [
+       fhir:value "Mønsgade 20 5. tv" ;
+       fhir:index 0
+     ] ;
+     fhir:Address.city [ fhir:value "Aarhus" ] ;
+     fhir:Address.postalCode [ fhir:value "8000" ] ;
+     fhir:Address.country [ fhir:value "Danmark" ]
+  ] ;
+  fhir:RelatedPerson.period [
+     fhir:Period.start [ fhir:value "2026-03-24"^^xsd:date ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/RelatedPerson/relatedperson01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

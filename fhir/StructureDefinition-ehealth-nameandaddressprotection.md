@@ -1,4 +1,4 @@
-# Name and address protection - eHealth Infrastructure v10.0.1
+# Name and address protection - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-nameandaddressprotection | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-nameandaddressprotection |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-nameandaddressprotection | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-nameandaddressprotection |
 
 Period of name and address protection. Patients with name and address protection are marked with security label ‘restricted’ (R in http://hl7.org/fhir/v3/Confidentiality).
 
@@ -43,11 +43,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-nameandaddre
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-nameandaddressprotection",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-nameandaddressprotection",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-nameandaddressprotection",
   "title" : "Name and address protection",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# Get organization information for a healthcare provider with provider number - eHealth Infrastructure v10.0.1
+# Get organization information for a healthcare provider with provider number - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Organization-t-get-general-practitioner-info | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:get-general-practitioner-info |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Organization-t-get-general-practitioner-info | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:get-general-practitioner-info |
 
  
 The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. When multiple Organization resources have the same provider number, the shared parent Organization is returned. An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice. 
@@ -23,12 +23,12 @@ The operation resolves the input organization(s) to the shared organization for 
   "resourceType" : "OperationDefinition",
   "id" : "Organization-t-get-general-practitioner-info",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Organization-t-get-general-practitioner-info",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "get-general-practitioner-info",
   "title" : "Get organization information for a healthcare provider with provider number",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

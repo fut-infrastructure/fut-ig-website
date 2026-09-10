@@ -1,0 +1,71 @@
+# Create a careplan - eHealth Infrastructure v10.0.2
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Create a careplan**
+
+## OperationDefinition: Create a careplan 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:apply |
+
+ 
+Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "-s-apply",
+  "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply",
+  "version" : "10.0.2",
+  "name" : "apply",
+  "title" : "Create a careplan",
+  "status" : "active",
+  "kind" : "operation",
+  "date" : "2026-09-10T10:04:36+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "affectsState" : false,
+  "code" : "apply",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "planDefinition",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The PlanDefinition to be applied as the basis for the careplan.",
+    "type" : "string"
+  },
+  {
+    "name" : "episodeOfCare",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The episodeOfCare for which the plan is being applied.",
+    "type" : "string"
+  }]
+}
+
+```

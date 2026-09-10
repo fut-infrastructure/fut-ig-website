@@ -1,4 +1,4 @@
-# Transform from QFDD - eHealth Infrastructure v10.0.1
+# Transform from QFDD - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-from-QFDD | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:transform-from-QFDD |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-from-QFDD | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:transform-from-QFDD |
 
  
 Transforms the DK-HL7 Questionnaire Form Definition Document (QFDD) to an eHealth Questionnaire resource. The input FHIR DocumentReference contains QFDD XML for the DK-HL7 Questionnaire Form Definition Document. The returned Bundle contains the eHealth Questionnaire and Composition resource which reference the returned eHealth Questionnaire. 
@@ -23,12 +23,12 @@ Transforms the DK-HL7 Questionnaire Form Definition Document (QFDD) to an eHealt
   "resourceType" : "OperationDefinition",
   "id" : "-s-transform-from-QFDD",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-from-QFDD",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "transform-from-QFDD",
   "title" : "Transform from QFDD",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

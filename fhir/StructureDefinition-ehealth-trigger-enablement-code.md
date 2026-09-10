@@ -1,4 +1,4 @@
-# triggerEnablementCode - eHealth Infrastructure v10.0.1
+# triggerEnablementCode - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-trigger-enablement-code |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-trigger-enablement-code |
 
 Controls whether this ServiceRequest will react to trigger conditions expressed in other activities of the plan.
 
@@ -44,11 +44,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-trigger-enab
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-trigger-enablement-code",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-trigger-enablement-code",
   "title" : "triggerEnablementCode",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

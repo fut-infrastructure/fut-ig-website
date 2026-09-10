@@ -1,4 +1,4 @@
-# Telecom purpose - eHealth Infrastructure v10.0.1
+# Telecom purpose - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-telecom-purpose | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-telecom-purpose |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-telecom-purpose | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-telecom-purpose |
 
 The purpose of a telecom contact point on a RelatedPerson.
 
@@ -45,11 +45,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-telecom-purp
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-telecom-purpose",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-telecom-purpose",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-telecom-purpose",
   "title" : "Telecom purpose",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

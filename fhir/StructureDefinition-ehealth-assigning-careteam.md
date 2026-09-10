@@ -1,4 +1,4 @@
-# Assigning careteam - eHealth Infrastructure v10.0.1
+# Assigning careteam - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-assigning-careteam | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-assigning-careteam |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-assigning-careteam | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-assigning-careteam |
 
 **Context of Use**
 
@@ -41,11 +41,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-assigning-ca
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-assigning-careteam",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-assigning-careteam",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-assigning-careteam",
   "title" : "Assigning careteam",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

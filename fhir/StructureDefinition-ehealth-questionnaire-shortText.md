@@ -1,4 +1,4 @@
-# Short text - eHealth Infrastructure v10.0.1
+# Short text - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-shortText | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-questionnaire-shortText |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-shortText | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-questionnaire-shortText |
 
 Short text for questionnaires
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-questionnair
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-shortText",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-shortText",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-questionnaire-shortText",
   "title" : "Short text",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

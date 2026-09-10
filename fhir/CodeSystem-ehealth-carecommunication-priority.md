@@ -1,4 +1,4 @@
-# eHealth CareCommunication Priority codes - eHealth Infrastructure v10.0.1
+# eHealth CareCommunication Priority codes - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,15 +8,15 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-carecommunication-priority | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:EhealthCareCommunicationPriorityCS |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-carecommunication-priority | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:EhealthCareCommunicationPriorityCS |
 
  
 The set of CareCommunication priority code. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EhealthCareCommunicationPriorityVS](ValueSet-ehealth-carecommunication-priority.md)
+* [eHealth CareCommunication Priorities](ValueSet-ehealth-carecommunication-priority.md)
 
 
 
@@ -27,11 +27,11 @@ The set of CareCommunication priority code.
   "resourceType" : "CodeSystem",
   "id" : "ehealth-carecommunication-priority",
   "url" : "http://ehealth.sundhed.dk/cs/ehealth-carecommunication-priority",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "EhealthCareCommunicationPriorityCS",
   "title" : "eHealth CareCommunication Priority codes",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

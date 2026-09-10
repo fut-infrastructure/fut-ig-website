@@ -1,4 +1,4 @@
-# Copyright item indicator - eHealth Infrastructure v10.0.1
+# Copyright item indicator - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-item-is-copyright | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-questionnaire-item-is-copyright |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-item-is-copyright | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-questionnaire-item-is-copyright |
 
 Indicates that the item is part of a copyright structure (CDA Document sharing - QFDD/QRD)
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-questionnair
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-item-is-copyright",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-item-is-copyright",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-questionnaire-item-is-copyright",
   "title" : "Copyright item indicator",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

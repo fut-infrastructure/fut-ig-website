@@ -1,4 +1,4 @@
-# Aggregate Group ID - eHealth Infrastructure v10.0.1
+# Aggregate Group ID - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-group-id | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-aggregate-group-id |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-group-id | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-aggregate-group-id |
 
 Id that link a group of measurements together by an aggregate group id, intended use is for Aggregated Triage.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-aggregate-gr
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-aggregate-group-id",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-group-id",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-aggregate-group-id",
   "title" : "Aggregate Group ID",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

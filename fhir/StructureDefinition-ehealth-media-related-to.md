@@ -1,4 +1,4 @@
-# Related to - eHealth Infrastructure v10.0.1
+# Related to - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-related-to | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-media-related-to |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-related-to | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-media-related-to |
 
 Related to other media.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-media-relate
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-media-related-to",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-related-to",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-media-related-to",
   "title" : "Related to",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

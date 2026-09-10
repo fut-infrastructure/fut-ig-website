@@ -1,4 +1,4 @@
-# Resolved timing - eHealth Infrastructure v10.0.1
+# Resolved timing - eHealth Infrastructure v10.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing | *Version*:10.0.1 |
-| Active as of 2026-08-11 | *Computable Name*:ehealth-resolved-timing |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing | *Version*:10.0.2 |
+| Active as of 2026-09-10 | *Computable Name*:ehealth-resolved-timing |
 
 Resolved timing reflects whether a measurement (Observation, QuestionnaireResponse or Media) has been performed ad-hoc or as fulfillment of a measurement regime time slot in which case the extent of the time slot is given by start and end. If the measurement regime has a form for which a time slot cannot be resolved or determining is/was not supported, the type unresolved is used.
 
@@ -44,11 +44,11 @@ Other representations of profile: [CSV](StructureDefinition-ehealth-resolved-tim
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-resolved-timing",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-resolved-timing",
-  "version" : "10.0.1",
+  "version" : "10.0.2",
   "name" : "ehealth-resolved-timing",
   "title" : "Resolved timing",
   "status" : "active",
-  "date" : "2026-08-11T06:44:23+00:00",
+  "date" : "2026-09-10T10:12:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
