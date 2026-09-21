@@ -54,7 +54,6 @@ jobs:
           echo "Removed ${removed} files"
           after=$(size_mib)
           echo "Size after prune: ${after} MiB"
-          # 9716 MiB deployed (Aug 2026), 10273 MiB was refused (Sep 2026)
           if [ "${after}" -gt 9700 ]; then
             echo "::error::Deploy content is ${after} MiB, above the ~9700 MiB GitHub Pages limit. Archive old IG versions or prune more."
             exit 1
