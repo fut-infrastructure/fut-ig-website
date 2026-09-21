@@ -33,6 +33,37 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # GitHub Pages refuses deployments whose content exceeds 10 GB (uncompressed).
+      # The IG publisher leaves build-time artifacts in every version folder that no
+      # published page links to. They are removed from the runner workspace only, the
+      # repository itself is untouched, so the deployed site stays below the limit.
+      # Kept on purpose: qa.html, qa-tx.html, qa-txservers.html, qa-ipreview.html
+      # (reachable from the page footer), package.tgz, *.zip downloads, *.ttl.
+      - name: Prune publisher build artifacts from the deploy content
+        run: |
+          echo "Size before prune: $(du -sm --apparent-size --exclude=.git . | cut -f1) MiB"
+          find . -path ./.git -prune -o -type f \( \
+              -name 'package.db' \
+              -o -name 'expansions.json' -o -name 'expansions.xml' \
+              -o -name 'validator*.pack' \
+              -o -name 'excels.zip' \
+              -o -name 'all-profiles.csv' \
+              -o -name '*.json1' -o -name '*.json2' \
+              -o -name '*.xml1' -o -name '*.xml2' \
+              -o -name 'qa.min.html' -o -name 'qa.xml' -o -name 'qa.txt' \
+              -o -name 'qa.compare.txt' -o -name 'qa-eslintcompact.txt' \
+              -o -name 'qa-time-report.json' -o -name 'qa-time-report.tsv' \
+            \) -print -delete | wc -l | xargs -I{} echo "Removed {} files"
+          size_mib=$(du -sm --apparent-size --exclude=.git . | cut -f1)
+          echo "Size after prune: ${size_mib} MiB"
+          # The limit appears to be 10 GiB on the uncompressed tar (file bytes + ~300 MiB of tar
+          # headers for ~300k files). Empirically 9716 MiB of file bytes (Aug 2026) deployed and
+          # 10273 MiB (Sep 2026) was refused. Fail early with a clear message instead of the
+          # generic deploy-pages error.
+          if [ "${size_mib}" -gt 9700 ]; then
+            echo "::error::Deploy content is ${size_mib} MiB, above the ~9700 MiB GitHub Pages limit. Archive old IG versions or prune more before deploying."
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
