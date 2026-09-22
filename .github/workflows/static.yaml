@@ -39,7 +39,7 @@ jobs:
         run: |
           size_mib() { du -sm --apparent-size --exclude=.git . | cut -f1; }
           echo "Size before prune: $(size_mib) MiB"
-          removed=$(find . -path ./.git -prune -o -type f \( \
+          removed=$(find . -not -path './.git/*' -type f \( \
               -name 'package.db' \
               -o -name 'expansions.json' -o -name 'expansions.xml' \
               -o -name 'validator*.pack' \
