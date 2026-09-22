@@ -33,6 +33,31 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Drop IG publisher build outputs that no page links to, so the site stays below the 10 GB Pages limit
+      # https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
+      - name: Prune publisher build artifacts
+        run: |
+          size_mib() { du -sm --apparent-size --exclude=.git . | cut -f1; }
+          echo "Size before prune: $(size_mib) MiB"
+          removed=$(find . -path ./.git -prune -o -type f \( \
+              -name 'package.db' \
+              -o -name 'expansions.json' -o -name 'expansions.xml' \
+              -o -name 'validator*.pack' \
+              -o -name 'excels.zip' \
+              -o -name 'all-profiles.csv' \
+              -o -name '*.json1' -o -name '*.json2' \
+              -o -name '*.xml1' -o -name '*.xml2' \
+              -o -name 'qa.min.html' -o -name 'qa.xml' -o -name 'qa.txt' \
+              -o -name 'qa.compare.txt' -o -name 'qa-eslintcompact.txt' \
+              -o -name 'qa-time-report.json' -o -name 'qa-time-report.tsv' \
+            \) -print -delete | wc -l)
+          echo "Removed ${removed} files"
+          after=$(size_mib)
+          echo "Size after prune: ${after} MiB"
+          if [ "${after}" -gt 9700 ]; then
+            echo "::error::Deploy content is ${after} MiB, above the ~9700 MiB GitHub Pages limit. Archive old IG versions or prune more."
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
