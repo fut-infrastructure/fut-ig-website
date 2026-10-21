@@ -1,0 +1,3528 @@
+﻿{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "measurement",
+    "license": {
+      "name": "Creative Commons Zero v1.0 Universal",
+      "url": "http://spdx.org/licenses/CC0-1.0.html"
+    },
+    "version": "11.0.0",
+    "contact": {
+      "name": "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+      "url": "http://ehealth.sundhed.dk"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://measurement.devtest.systematic-ehealth.com/fhir",
+      "description": "eHealth measurement service"
+    }
+  ],
+  "externalDocs": {
+    "url": "http://ehealth.sundhed.dk/fhir/CapabilityStatement/measurement",
+    "description": "FHIR CapabilityStatement"
+  },
+  "paths": {
+    "/metadata": {
+      "summary": "Access to the Server\u0027s Capability Statement",
+      "description": "All FHIR Servers return a CapabilityStatement that describes what services they perform",
+      "get": {
+        "summary": "Return the server\u0027s capability statement",
+        "operationId": "metadata",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the capbility statement",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/CapabilityStatement"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/CapabilityStatement.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Binary/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Binary",
+      "description": "Access to services to manage the state of a single resource of type Binary",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readBinary",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Binary"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Binary.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Binary/{rid}/_history/{hid}": {
+      "summary": "Read a past version of resource instance of type Binary",
+      "description": "Access a to specified previous version of a single resource of type Binary",
+      "get": {
+        "summary": "Read a past state of the resource",
+        "operationId": "vreadBinary",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag for that version",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Binary"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Binary.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/hid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Communication": {
+      "summary": "Manager for resources of type Communication",
+      "description": "The Manager for resources of type Communication: provides services to manage the collection of all the Communication instances",
+      "get": {
+        "summary": "Search all resources of type Communication based on a set of criteria",
+        "operationId": "searchCommunication",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Only return resources which were last updated as specified by the given range",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "_tag",
+            "in": "query",
+            "description": "Search for resources which have the given tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "episodeOfCare",
+            "in": "query",
+            "description": "Episode associated with communication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "Unique identifier",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recipient",
+            "in": "query",
+            "description": "Message recipient",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recipientCareTeam",
+            "in": "query",
+            "description": "Recipient care team",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sender",
+            "in": "query",
+            "description": "Message sender",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "senderCareTeam",
+            "in": "query",
+            "description": "Sender care team",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "Focus of message",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a new resource",
+        "operationId": "createCommunication",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Communication"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Communication.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Communication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Communication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Communication/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Communication",
+      "description": "Access to services to manage the state of a single resource of type Communication",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readCommunication",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Communication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Communication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Change the current state of the resource by providing a patch - a series of change commands",
+        "operationId": "patchCommunication",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Communication"
+              }
+            },
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/xml-patch+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Communication.xsd"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being patched",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Communication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Communication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Communication/{rid}/_history/{hid}": {
+      "summary": "Read a past version of resource instance of type Communication",
+      "description": "Access a to specified previous version of a single resource of type Communication",
+      "get": {
+        "summary": "Read a past state of the resource",
+        "operationId": "vreadCommunication",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag for that version",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Communication"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Communication.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/hid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Media": {
+      "summary": "manage the collection of resources of type Media",
+      "description": "Access to services to manage the collection of all resources of type Media",
+      "get": {
+        "summary": "Search all resources of type Media based on a set of criteria",
+        "operationId": "searchMedia",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          },
+          {
+            "name": "_content",
+            "in": "query",
+            "description": "Search the contents of the resource\u0027s data using a fulltext search",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_filter",
+            "in": "query",
+            "description": "Search the contents of the resource\u0027s data using a filter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "The ID of the resource",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Only return resources which were last updated as specified by the given range",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "_tag",
+            "in": "query",
+            "description": "Search for resources which have the given tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "based-on",
+            "in": "query",
+            "description": "Procedure that caused this media to be created",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "created",
+            "in": "query",
+            "description": "When Media was collected",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "episodeOfCare",
+            "in": "query",
+            "description": "Episode associated with media",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "Identifier(s) for the image",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "qualityCode",
+            "in": "query",
+            "description": "Quality code of the media",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "qualityType",
+            "in": "query",
+            "description": "Quality type of the media",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "relatedTo",
+            "in": "query",
+            "description": "Media related to",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resolvedTimingEnd",
+            "in": "query",
+            "description": "Resolved Timing end",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "resolvedTimingServiceRequestVersionId",
+            "in": "query",
+            "description": "Resolved Timing serviceRequestVersionID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resolvedTimingStart",
+            "in": "query",
+            "description": "Resolved Timing start",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "resolvedTimingType",
+            "in": "query",
+            "description": "Resolved Timing type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "series",
+            "in": "query",
+            "description": "Series ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "Who/What this Media is a record of",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "photo | video | audio",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "usageMode",
+            "in": "query",
+            "description": "Usage mode",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/Media/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Media",
+      "description": "Access to services to manage the state of a single resource of type Media",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readMedia",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Media"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Media.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update the current state of the resource",
+        "operationId": "updateMedia",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Media"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Media.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Media"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Media.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Change the current state of the resource by providing a patch - a series of change commands",
+        "operationId": "patchMedia",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Media"
+              }
+            },
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/xml-patch+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Media.xsd"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being patched",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Media"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Media.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Media/{rid}/_history/{hid}": {
+      "summary": "Read a past version of resource instance of type Media",
+      "description": "Access a to specified previous version of a single resource of type Media",
+      "get": {
+        "summary": "Read a past state of the resource",
+        "operationId": "vreadMedia",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag for that version",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Media"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Media.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/hid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Observation": {
+      "summary": "manage the collection of resources of type Observation",
+      "description": "Access to services to manage the collection of all resources of type Observation",
+      "get": {
+        "summary": "Search all resources of type Observation based on a set of criteria",
+        "operationId": "searchObservation",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          },
+          {
+            "name": "_content",
+            "in": "query",
+            "description": "Search the contents of the resource\u0027s data using a fulltext search",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_filter",
+            "in": "query",
+            "description": "Search the contents of the resource\u0027s data using a filter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "The ID of the resource",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Only return resources which were last updated as specified by the given range",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "_tag",
+            "in": "query",
+            "description": "Search for resources which have the given tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_text",
+            "in": "query",
+            "description": "Search the contents of the resource\u0027s narrative using a fulltext search",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "based-on",
+            "in": "query",
+            "description": "Reference to the test or procedure request.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "description": "The code of the observation type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Obtained date/time. If the obtained element is a period, a date that falls in the period",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "episodeOfCare",
+            "in": "query",
+            "description": "Episode associated with observation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The unique id for a particular observation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "patient",
+            "in": "query",
+            "description": "The subject that the observation is about (if patient)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "qualityCode",
+            "in": "query",
+            "description": "The quality code of the observation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "qualityType",
+            "in": "query",
+            "description": "The quality type of the observation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resolvedTimingEnd",
+            "in": "query",
+            "description": "Resolved Timing end",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "resolvedTimingServiceRequestVersionId",
+            "in": "query",
+            "description": "Resolved Timing serviceRequestVersionID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resolvedTimingStart",
+            "in": "query",
+            "description": "Resolved Timing start",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "resolvedTimingType",
+            "in": "query",
+            "description": "Resolved Timing type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "The subject that the observation is about",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/Observation/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Observation",
+      "description": "Access to services to manage the state of a single resource of type Observation",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readObservation",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Observation"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Observation.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Change the current state of the resource by providing a patch - a series of change commands",
+        "operationId": "patchObservation",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Observation"
+              }
+            },
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/xml-patch+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Observation.xsd"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being patched",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Observation"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Observation.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Observation/{rid}/_history/{hid}": {
+      "summary": "Read a past version of resource instance of type Observation",
+      "description": "Access a to specified previous version of a single resource of type Observation",
+      "get": {
+        "summary": "Read a past state of the resource",
+        "operationId": "vreadObservation",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag for that version",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Observation"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Observation.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/hid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/OperationDefinition/{rid}": {
+      "summary": "Read/Write/etc resource instance of type OperationDefinition",
+      "description": "Access to services to manage the state of a single resource of type OperationDefinition",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readOperationDefinition",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationDefinition"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationDefinition.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Provenance": {
+      "summary": "manage the collection of resources of type Provenance",
+      "description": "Access to services to manage the collection of all resources of type Provenance",
+      "get": {
+        "summary": "Search all resources of type Provenance based on a set of criteria",
+        "operationId": "searchProvenance",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          },
+          {
+            "name": "_id",
+            "in": "query",
+            "description": "The ID of the resource",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Only return resources which were last updated as specified by the given range",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "agent",
+            "in": "query",
+            "description": "Who participated in the activity",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entity",
+            "in": "query",
+            "description": "Identity of entity",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entity-episodeOfCare",
+            "in": "query",
+            "description": "EpisodeOfCare identity of entity",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entity-serviceRequest",
+            "in": "query",
+            "description": "ServiceRequest identity of entity",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "policy",
+            "in": "query",
+            "description": "Policy or plan the activity was defined by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recorded",
+            "in": "query",
+            "description": "When the activity was recorded / updated",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "Target Reference(s) (usually version specific)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/Provenance/{rid}": {
+      "summary": "Read/Write/etc resource instance of type Provenance",
+      "description": "Access to services to manage the state of a single resource of type Provenance",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readProvenance",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Provenance"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Provenance.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Provenance/{rid}/_history/{hid}": {
+      "summary": "Read a past version of resource instance of type Provenance",
+      "description": "Access a to specified previous version of a single resource of type Provenance",
+      "get": {
+        "summary": "Read a past state of the resource",
+        "operationId": "vreadProvenance",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag for that version",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Provenance"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Provenance.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/hid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/QuestionnaireResponse": {
+      "summary": "Manager for resources of type QuestionnaireResponse",
+      "description": "The Manager for resources of type QuestionnaireResponse: provides services to manage the collection of all the QuestionnaireResponse instances",
+      "get": {
+        "summary": "Search all resources of type QuestionnaireResponse based on a set of criteria",
+        "operationId": "searchQuestionnaireResponse",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Bundle"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Bundle.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          },
+          {
+            "name": "_filter",
+            "in": "query",
+            "description": "Search the contents of the resource\u0027s data using a filter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "_lastUpdated",
+            "in": "query",
+            "description": "Only return resources which were last updated as specified by the given range",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "_tag",
+            "in": "query",
+            "description": "Search for resources which have the given tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authored",
+            "in": "query",
+            "description": "When the questionnaire response was last changed",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "based-on",
+            "in": "query",
+            "description": "Plan/proposal/order fulfilled by this questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "effectivePeriodEnd",
+            "in": "query",
+            "description": "Effective Period end",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "effectivePeriodStart",
+            "in": "query",
+            "description": "Effective Period start",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "episodeOfCare",
+            "in": "query",
+            "description": "Episode associated with questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The unique identifier for the questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "qualityCode",
+            "in": "query",
+            "description": "The quality code of the questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "qualityType",
+            "in": "query",
+            "description": "The quality type of the questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "questionnaire",
+            "in": "query",
+            "description": "The questionnaire the answers are provided for",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resolvedTimingEnd",
+            "in": "query",
+            "description": "Resolved Timing end",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "resolvedTimingServiceRequestVersionId",
+            "in": "query",
+            "description": "Resolved Timing serviceRequestVersionID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resolvedTimingStart",
+            "in": "query",
+            "description": "Resolved Timing start",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "resolvedTimingType",
+            "in": "query",
+            "description": "Resolved Timing type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "The status of the questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "The subject of the questionnaire response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a new resource",
+        "operationId": "createQuestionnaireResponse",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/QuestionnaireResponse/{rid}": {
+      "summary": "Read/Write/etc resource instance of type QuestionnaireResponse",
+      "description": "Access to services to manage the state of a single resource of type QuestionnaireResponse",
+      "get": {
+        "summary": "Read the current state of the resource",
+        "operationId": "readQuestionnaireResponse",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update the current state of the resource",
+        "operationId": "updateQuestionnaireResponse",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being updated",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      },
+      "patch": {
+        "summary": "Change the current state of the resource by providing a patch - a series of change commands",
+        "operationId": "patchQuestionnaireResponse",
+        "requestBody": {
+          "description": "The new state of the resource",
+          "required": true,
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+              }
+            },
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/xml-patch+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned after being patched",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/QuestionnaireResponse/{rid}/_history/{hid}": {
+      "summary": "Read a past version of resource instance of type QuestionnaireResponse",
+      "description": "Access a to specified previous version of a single resource of type QuestionnaireResponse",
+      "get": {
+        "summary": "Read a past state of the resource",
+        "operationId": "vreadQuestionnaireResponse",
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "the resource being returned",
+            "headers": {
+              "ETag": {
+                "description": "Version from Resource.meta.version as a weak ETag for that version",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/QuestionnaireResponse"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/QuestionnaireResponse.xsd"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/rid"
+          },
+          {
+            "$ref": "#/components/parameters/hid"
+          },
+          {
+            "$ref": "#/components/parameters/summary"
+          },
+          {
+            "$ref": "#/components/parameters/format"
+          },
+          {
+            "$ref": "#/components/parameters/pretty"
+          },
+          {
+            "$ref": "#/components/parameters/elements"
+          }
+        ]
+      }
+    },
+    "/Binary/$expunge": {
+      "summary": "Operation $expunge on type Binary",
+      "description": "Operation $expunge on type Binary",
+      "post": {
+        "summary": "$expunge on type Binary",
+        "operationId": "op-expunge-Binary",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Communication/$validate": {
+      "summary": "Operation $validate on type Communication",
+      "description": "Operation $validate on type Communication",
+      "post": {
+        "summary": "$validate on type Communication",
+        "operationId": "op-validate-Communication",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Media/$validate": {
+      "summary": "Operation $validate on type Media",
+      "description": "Operation $validate on type Media",
+      "post": {
+        "summary": "$validate on type Media",
+        "operationId": "op-validate-Media",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Media/$get-data": {
+      "summary": "Operation $get-data on type Media",
+      "description": "Operation $get-data on type Media",
+      "post": {
+        "summary": "$get-data on type Media",
+        "description": "The get-data operation returns a media content matching the uuid provided.\n\n\n### Parameter description\n- uuid: The uuid of the media to return\n\n\n### Request header description\n- ehealth-thumbnail-size: The size of thumbnail to return instead of original content. If thumbnails are not supported for the media, the original content is returned\n\n\n### Output description\nThe result of this operation returns a Binary containing the media found from the provided uuid",
+        "operationId": "op-get-data-Media",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Observation/$validate": {
+      "summary": "Operation $validate on type Observation",
+      "description": "Operation $validate on type Observation",
+      "post": {
+        "summary": "$validate on type Observation",
+        "operationId": "op-validate-Observation",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/QuestionnaireResponse/$validate": {
+      "summary": "Operation $validate on type QuestionnaireResponse",
+      "description": "Operation $validate on type QuestionnaireResponse",
+      "post": {
+        "summary": "$validate on type QuestionnaireResponse",
+        "operationId": "op-validate-QuestionnaireResponse",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$reindex": {
+      "summary": "System level operation $reindex",
+      "description": "Operation $reindex invoked at the system level",
+      "post": {
+        "summary": "$reindex (system)",
+        "operationId": "op-reindex-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$hapi.fhir.reindex-status": {
+      "summary": "System level operation $hapi.fhir.reindex-status",
+      "description": "Operation $hapi.fhir.reindex-status invoked at the system level",
+      "post": {
+        "summary": "$hapi.fhir.reindex-status (system)",
+        "operationId": "op-hapi.fhir.reindex-status-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$migrate": {
+      "summary": "System level operation $migrate",
+      "description": "Operation $migrate invoked at the system level",
+      "post": {
+        "summary": "$migrate (system)",
+        "description": "Data migration",
+        "operationId": "op-migrate-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$search-measurements": {
+      "summary": "System level operation $search-measurements",
+      "description": "Operation $search-measurements invoked at the system level",
+      "post": {
+        "summary": "$search-measurements (system)",
+        "description": "The search-measurements operation searches for bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.\n\n\n### Parameter description\n- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).\n- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).\n- device: Find resource(s) referring the specified device - Reference(eHealth Device | eHealth DeviceMetric).\n- period: Resource(s) must have either an instant or time period within or overlapping the given period. The used instant/time period varies with resource as follows: Element effective for eHealth Observation; Element authored for eHealth QuestionnaireResponse; Element occurrence for eHealth Media.\n- based-on: Resources(s) must be based on any of the specified procedure requests - Reference(eHealth ServiceRequest).\n- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.\n\n\n\"period\" must always be specified.\n\nAdditionally at least \"patient\" or \"episodeOfCare\" must be specified.\n\n### Output description\n\nThe result of this operation will return a Bundle with a list of nested Bundles having resources matching the search parameters.\n\nEach of the nested bundles will contain the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources.\n\nIf a eHealth QuestionnaireResponse is part of the nested bundle the referenced eHealth Questionnaire will also be included in the nested bundle.\n\nRelated resources are the set of resources created by a single invocation of the submit-measurement operation.",
+        "operationId": "op-search-measurements-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$search-measurements-bundle-limit": {
+      "summary": "System level operation $search-measurements-bundle-limit",
+      "description": "Operation $search-measurements-bundle-limit invoked at the system level",
+      "post": {
+        "summary": "$search-measurements-bundle-limit (system)",
+        "description": "The search-measurements-bundle-limit operation searches for a number of bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.\n\n\n### Parameter description\n- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).\n- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).\n- count: The number of bundles to return, max allowed value is 100 - Integer.\n- start: Based on the effective time of measurement, please see \u003ca href\u003d\u0027https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-observation-definitions.html#key_Observation.effective[x]\u0027\u003eObservation.effective[x]\u003c/a\u003e , \u003ca href\u003d\u0027https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-questionnaireresponse.html#effective-period\u0027\u003eQuestionnaireResponse.effective-period\u003c/a\u003e , and \u003ca href\u003d\u0027https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-media-definitions.html#key_Media.created[x]\u0027\u003eMedia.created[x]\u003c/a\u003e. If QuestionnaireResponse.effectivePeriod is missing, authored is used instead. If provided, the operation will search for observation, media and QuestionnaireResponse resource(s) with a clinical effective time after this time. The result bundles will be sorted in ascending order - DateTime.\n- end: Based on the effective time of measurement, please see \u003ca href\u003d\u0027https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-observation-definitions.html#key_Observation.effective[x]\u0027\u003eObservation.effective[x]\u003c/a\u003e , \u003ca href\u003d\u0027https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-questionnaireresponse.html#effective-period\u0027\u003eQuestionnaireResponse.effective-period\u003c/a\u003e , and \u003ca href\u003d\u0027https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-media-definitions.html#key_Media.created[x]\u0027\u003eMedia.created[x]\u003c/a\u003e. If QuestionnaireResponse.effectivePeriod is missing, authored is used instead. If provided, the operation will search for observation, media and QuestionnaireResponse resource(s) with a clinical effective time before this time. The result bundles will be sorted in descending order - DateTime.\n- based-on: Resources(s) must be based on any of the specified service requests - Reference(eHealth ServiceRequest).\n- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.\n\n\nOne of either \"start\" or \"end\", along with the \"count\" parameter must always be specified.\n\nAdditionally at least \"patient\" or \"episodeOfCare\" or \"based-on\" must be specified.\n\n### Output description\n\nThe result of this operation returns a Bundle with a list of nested Bundles having resources matching the search parameters. The number of nested Bundles depends on the count parameter.\n\nEach of the nested bundles contains the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources, from the same submission request.\n\nRelated resources are the set of resources created by a single invocation of the submit-measurement operation.",
+        "operationId": "op-search-measurements-bundle-limit-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$submit-measurement": {
+      "summary": "System level operation $submit-measurement",
+      "description": "Operation $submit-measurement invoked at the system level",
+      "post": {
+        "summary": "$submit-measurement (system)",
+        "description": "The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted. \n\nMedia resource inline content in `content.data` will be stored outside the resource, and the `content.url` for retrieval is set on the resource. Image content is anonymized by removing sensitive metadate before storage. Image content is processed to generate thumbnail representations in the thumbnail element. \n\n\n### Parameter description\nmeasurement: Bundle containing:\n- 0..* Observation (ehealth-observation profile)\n- 0..* QuestionnaireResponse (ehealth-questionnaireresponse profile)\n- 0..* Media (ehealth-media profile)\n- 0..* Provenance (ehealth-provenance profile). Each Provenance (which is intended for capturing reuse of measurement(s) – as described in the eHealth Observation profile introduction) must refer to other resources in the Bundle as target in the format \"urn:oid:\u003cthe oid\u003e\" or \"urn:uuid:\u003cthe uuid\u003e.\".\n\nAll resources in the Bundle must refer to the same Patient and EpisodeOfCare.\nAll measurement resources in the Bundle must have status either `completed` or `final` (`completed` in case of Media/QuestionnaireResponse and `final` in case of Observation).\nAll resources in the Bundle as well as the created Provenance will receive any missing system tags (ehealth-system CodeSystem) provided by the referenced EpisodeOfCare.\nThe request will be denied if any resource in the Bundle contains a system tag, which is not present on the referenced EpisodeOfCare\n\n\n### Output description\nThe returned Bundle contains references to the stored input resources where the id has been substituted.\n\neHealth infrastructure will substitute the id when saving the resources in a single transaction.",
+        "operationId": "op-submit-measurement-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$export-poll-status": {
+      "summary": "System level operation $export-poll-status",
+      "description": "Operation $export-poll-status invoked at the system level",
+      "post": {
+        "summary": "$export-poll-status (system)",
+        "description": "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the \u0027_jobId\u0027 is returned in the \u0027Content-Location\u0027 response header when initiating the export. A \u0027GET\u0027 request to the polling location will return \u0027202 Accepted\u0027 with a response header \u0027X-Progress\u0027 containing a status message for the progress of the export job. When the job has finished, the polling location will return \u0027200 OK\u0027, and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A \u0027DELETE\u0027 request can be used to cancel the export. If the export has already finished, the delete will return \u0027404 Not Found\u0027, else the export job will be cancelled and a \u0027202 Accepted\u0027 is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the \u0027Content-Location\u0027 header when initiating the export",
+        "operationId": "op-export-poll-status-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$export": {
+      "summary": "System level operation $export",
+      "description": "Operation $export invoked at the system level",
+      "post": {
+        "summary": "$export (system)",
+        "description": "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the \u0027_type\u0027 parameter, and the \u0027_since\u0027 parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header \u0027Prefer: respond-async\u0027, and will return \u0027202 Accepted\u0027 with a polling location in the response header \u0027Content-Location\u0027. The polling location is for the endpoint \u0027$export-poll-status\u0027 and has the export job ID as parameter \u0027_jobId\u0027.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is \u0027application/fhir+ndjson\u0027\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension \u0027https://hapifhir.org/NamingSystem/bulk-export-identifier\u0027\n## Polling status of export\nSubsequent GET requests to the polling location will return \u0027202 Accepted\u0027 with a response header \u0027X-Progress\u0027 containing a status message for the progress of the export job. When the job has finished, the polling location will return \u0027200 OK\u0027, and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours.",
+        "operationId": "op-export-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$meta": {
+      "summary": "System level operation $meta",
+      "description": "Operation $meta invoked at the system level",
+      "post": {
+        "summary": "$meta (system)",
+        "operationId": "op-meta-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$get-resource-counts": {
+      "summary": "System level operation $get-resource-counts",
+      "description": "Operation $get-resource-counts invoked at the system level",
+      "post": {
+        "summary": "$get-resource-counts (system)",
+        "description": "Provides the number of resources currently stored on the server, broken down by resource type",
+        "operationId": "op-get-resource-counts-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/$expunge": {
+      "summary": "System level operation $expunge",
+      "description": "Operation $expunge invoked at the system level",
+      "post": {
+        "summary": "$expunge (system)",
+        "operationId": "op-expunge-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "rid": {
+        "name": "rid",
+        "in": "path",
+        "description": "id of the resource (\u003dResource.id)",
+        "required": true,
+        "allowEmptyValue": false,
+        "style": "simple",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "hid": {
+        "name": "hid",
+        "in": "path",
+        "description": "id of the history entry (\u003dResource.meta.versionId)",
+        "required": true,
+        "allowEmptyValue": false,
+        "style": "simple",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "summary": {
+        "name": "_summary",
+        "in": "query",
+        "description": "Requests the server to return a designated subset of the resource",
+        "allowEmptyValue": true,
+        "style": "form",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "true",
+            "text",
+            "data",
+            "count",
+            "false"
+          ]
+        }
+      },
+      "format": {
+        "name": "_format",
+        "in": "query",
+        "description": "Specify alternative response formats by their MIME-types (when a client is unable acccess accept: header)",
+        "allowEmptyValue": true,
+        "style": "form",
+        "schema": {
+          "type": "string",
+          "format": "mime-type"
+        }
+      },
+      "pretty": {
+        "name": "_pretty",
+        "in": "query",
+        "description": "Ask for a pretty printed response for human convenience",
+        "allowEmptyValue": true,
+        "style": "form",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "elements": {
+        "name": "_elements",
+        "in": "query",
+        "description": "Requests the server to return a collection of elements from the resource",
+        "allowEmptyValue": true,
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "array",
+          "format": "string",
+          "items": {
+            "format": "string"
+          }
+        }
+      },
+      "count": {
+        "name": "_count",
+        "in": "query",
+        "description": "The maximum number of search results on a page. The server is not bound to return the number requested, but cannot return more",
+        "schema": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

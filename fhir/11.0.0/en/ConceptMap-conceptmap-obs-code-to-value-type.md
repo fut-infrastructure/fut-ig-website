@@ -1,0 +1,338 @@
+# conceptmap-obs-code-to-value-type - eHealth Infrastructure v11.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **conceptmap-obs-code-to-value-type**
+
+## ConceptMap: conceptmap-obs-code-to-value-type 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type | *Version*:11.0.0 |
+| Active as of 2020-11-26 | *Computable Name*:conceptmap-obs-code-to-value-type |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ConceptMap",
+  "id" : "conceptmap-obs-code-to-value-type",
+  "url" : "http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type",
+  "version" : "11.0.0",
+  "name" : "conceptmap-obs-code-to-value-type",
+  "title" : "conceptmap-obs-code-to-value-type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2020-11-26",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "sourceUri" : "http://ehealth.sundhed.dk/vs/observation-codes",
+  "targetUri" : "http://hl7.org/fhir/ValueSet/data-types",
+  "group" : [{
+    "source" : "urn:oid:1.2.208.176.2.1",
+    "target" : "http://hl7.org/fhir/data-types",
+    "element" : [{
+      "code" : "DNK05463",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05465",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05467",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05469",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05472",
+      "display" : "Blodtryk systolisk;Arm",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05473",
+      "display" : "Blodtryk diastolisk;Arm",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU02193",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU03011",
+      "display" : "Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU21692",
+      "display" : "Hjerte—Systole; frekv. = ? × 1/min",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU03804",
+      "display" : "Pt—Legeme; masse = ? kg",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU27281",
+      "display" : "Pt—Legeme; massekoefficient(masse/kvadreret højde) = ? kg/m²",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU03794",
+      "display" : "Pt—Legeme; højde = ? m",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU08676",
+      "display" : "Pt—Legeme; temp. = ? °C",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.184.100.8",
+    "target" : "http://hl7.org/fhir/data-types",
+    "element" : [{
+      "code" : "MCS88015",
+      "display" : "FEV1;Lunge",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88016",
+      "display" : "FVC;Lunge",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88017",
+      "display" : "FEV1/FVC;Lunge",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88021",
+      "display" : "MRC skala;Pt(KOL)",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88023",
+      "display" : "FEV1 af forventet værdi;Pt(KOL)",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88050",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88137",
+      "display" : "CAT score;Pt",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88192",
+      "display" : "Skridt per dag;Pt",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88193",
+      "display" : "Skridt per uge;Pt",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88194",
+      "display" : "Skridt;Pt",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88214",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "http://loinc.org",
+    "target" : "http://hl7.org/fhir/data-types",
+    "element" : [{
+      "code" : "39126-8",
+      "display" : "Length of Wound",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "39125-0",
+      "display" : "Width of Wound",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "39127-6",
+      "display" : "Depth of Wound",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "89260-4",
+      "display" : "Area of wound",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "94083-3",
+      "display" : "Wound volume",
+      "target" : [{
+        "code" : "decimal",
+        "display" : "decimal",
+        "equivalence" : "specializes"
+      }]
+    }]
+  }]
+}
+
+```

@@ -1,0 +1,98 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ehealth-relatedperson-create-managed"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition ehealth-relatedperson-create-managed</b></p><a name=\"ehealth-relatedperson-create-managed\"> </a><a name=\"hcehealth-relatedperson-create-managed\"> </a><p>URL: [base]/RelatedPerson/$create-managed-related-person</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>cpr</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td/><td><div><p>The CPR number of the related person whose master data is seeded from the national registry. Uses the CPR system urn:oid:1.2.208.176.1.2.</p>\n</div></td></tr><tr><td>IN</td><td>patient</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/references.html#Reference\">Reference</a></td><td/><td><div><p>Reference to the patient the related person is related to.</p>\n</div></td></tr><tr><td>IN</td><td>relationship</td><td/><td>1..*</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td/><td><div><p>One or more relationships the related person has to the patient. Bound to the RelationshipTypes value set. POWATT and PARAUTH are rejected.</p>\n</div></td></tr><tr><td>IN</td><td>tag</td><td/><td>0..*</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#Coding\">Coding</a></td><td/><td><div><p>Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/relatedperson.html\">RelatedPerson</a></td><td/><td><div><p>The managed RelatedPerson resource that has been created on the server.</p>\n</div></td></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed"] ;
+  fhir:OperationDefinition.version [ fhir:value "11.0.0"] ;
+  fhir:OperationDefinition.name [ fhir:value "Create Managed Related Person"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-07-21"^^xsd:date] ;
+  fhir:OperationDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, and any tags to apply. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation."] ;
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.code [ fhir:value "create-managed-related-person"] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "RelatedPerson" ;
+     fhir:index -1
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index -1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "cpr" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The CPR number of the related person whose master data is seeded from the national registry. Uses the CPR system urn:oid:1.2.208.176.1.2." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Identifier" ]
+  ], [
+     fhir:index -1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "patient" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Reference to the patient the related person is related to." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Reference" ]
+  ], [
+     fhir:index -1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "relationship" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "One or more relationships the related person has to the patient. Bound to the RelationshipTypes value set. POWATT and PARAUTH are rejected." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "CodeableConcept" ]
+  ], [
+     fhir:index -1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "tag" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "*" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index -1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The managed RelatedPerson resource that has been created on the server." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "RelatedPerson" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

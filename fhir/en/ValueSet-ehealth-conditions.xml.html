@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Conditions - XML Representation - eHealth Infrastructure v11.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+    <link rel="stylesheet" href="assets/css/project.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/fut.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+    <script src="assets/js/direction-management.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"105.362"}
+    h3,h4,h5,h6{--heading-prefix:"105.362"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+        
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="https://www.rm.dk/sundhed/faginfo/Systemforvaltning/">
+            <img src="assets/images/fut.png" alt="Visit the Project website" height="60"/>
+          </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="search.html"><img src="assets/images/search.png" alt="Search this FHIR IG"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">eHealth Infrastructure</span>
+            <br/>
+            <span style="display:inline-block;"><a name="l146">​</a>11.0.0 - 
+
+
+
+  <img src="assets/images/dnk.svg" alt="Denmark flag" title="Denmark" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">General guidance</a>
+  </li>
+  <li>
+    <a href="multitenancy.html">Multitenancy</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles and extensions</a>
+      </li>
+      <li>
+        <a href="searchparams.html">Search Parameters</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
+      <li>
+        <a href="example-operations.html">Operation examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts Summary</a>
+  </li>
+  <li>
+    <a href="terminology.html">Terminology</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Events
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="event-messages.html">Event message types</a>
+      </li>
+      <li>
+        <a href="service-event-tables.html">Service event messages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="error-messages.html">Error Messsages</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Capability Statements
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-careplan.html">CarePlan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-device.html">Device service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-query.html">DocumentQuery service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-document-transformation.html">DocumentTransformation service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-library.html">Library service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-measurement.html">Measurement service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-organization.html">Organization service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-patient.html">Patient service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-plan.html">Plan service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-questionnaire.html">Questionnaire service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-reporting.html">Reporting service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-task.html">Task service</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-terminology.html">Terminology service</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+
+              
+
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Conditions</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+  <!-- layouts\layout-instance-format -->
+<div style="counter-reset: section 7" class="col-12">
+  <!-- ReleaseHeader --><p id="publish-box">This page is part of the FUT Infrastructure (v11.0.0: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="ValueSet-ehealth-conditions.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-conditions.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-ehealth-conditions.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+
+<h2 id="root">: Conditions</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+
+            as of 
+2019-02-08
+
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="ValueSet-ehealth-conditions.xml" no-download="true">Raw xml</a> | <a href="ValueSet-ehealth-conditions.xml">Download</a></p>
+
+    <!-- insert intro if present -->
+  
+
+
+
+  <pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="xml" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet">ValueSet</a> xmlns="http://hl7.org/fhir"&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#ValueSet.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>="ehealth-conditions"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#ValueSet.language">language</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="en"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#ValueSet.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="extensions"/&gt;
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;p class="res-header-id"&gt;&lt;b&gt;Generated Narrative: ValueSet ehealth-conditions&lt;/b&gt;&lt;/p&gt;&lt;a name="ehealth-conditions"&gt; &lt;/a&gt;&lt;a name="hcehealth-conditions"&gt; &lt;/a&gt;&lt;p&gt;This value set includes codes based on the following rules:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Include these codes as defined in &lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html"&gt;&lt;code&gt;urn:oid:1.2.208.176.2.4&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt;&lt;table class="none"&gt;&lt;tr&gt;&lt;td style="white-space:nowrap"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-ALAL03"&gt;ALAL03&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Psykiske lidelser og adfærdsmæssige forstyrrelser&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE10"&gt;DE10&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Type 1-diabetes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DE11"&gt;DE11&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Type 2-diabetes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF00"&gt;DF00&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Demens ved Alzheimers sygdom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF10"&gt;DF10&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Psykiske lidelser og adfærdsmæssige forstyrrelser forårsaget af brug af alkohol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF20"&gt;DF20&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Skizofreni&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF30"&gt;DF30&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Manisk enkeltepisode&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF320"&gt;DF320&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Depressiv enkeltepisode af lettere grad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF321"&gt;DF321&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Depressiv enkeltepisode af moderat grad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF330"&gt;DF330&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Periodisk depression i episode af lettere grad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF331"&gt;DF331&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Periodisk depression i episode af moderat grad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF40"&gt;DF40&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Fobiske angsttilstande&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF400"&gt;DF400&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Agorafobi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF4000"&gt;DF4000&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Agorafobi uden panikangst&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF4001"&gt;DF4001&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Agorafobi med panikangst&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF401"&gt;DF401&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Socialfobi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF402"&gt;DF402&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Enkelfobi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF410"&gt;DF410&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Panikangst&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF50"&gt;DF50&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Spiseforstyrrelser&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF60"&gt;DF60&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Specifikke forstyrrelser af personlighedsstrukturen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF70"&gt;DF70&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Mental retardering af lettere grad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF80"&gt;DF80&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Specifikke udviklingsforstyrrelser af tale og sprog&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF90"&gt;DF90&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Hyperkinetiske forstyrrelser&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF99"&gt;DF99&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Ikke nærmere specificerede psykiske lidelser&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DF999"&gt;DF999&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Psykisk lidelse eller forstyrrelse UNS&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DG20"&gt;DG20&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Parkinsons sygdom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DG834B"&gt;DG834B&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Neurogen claudicatio intermittens&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI20"&gt;DI20&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Angina pectoris&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI25"&gt;DI25&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Kronisk iskæmisk hjertesygdom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI340"&gt;DI340&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Mitralinsufficiens&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI350"&gt;DI350&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Aortastenose&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI48"&gt;DI48&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Atrieflagren og atrieflimren&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI50"&gt;DI50&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Hjertesvigt&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI511A"&gt;DI511A&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Mitralklapinsufficiens ved chordaruptur&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI719A"&gt;DI719A&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Dilateret aorta&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DI739A"&gt;DI739A&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Claudicatio intermittens&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DJ44"&gt;DJ44&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Kronisk obstruktiv lungesygdom&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DJ45"&gt;DJ45&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Astma&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM16"&gt;DM16&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Slidgigt i hofte&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM17"&gt;DM17&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Slidgigt i knæ&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DM54"&gt;DM54&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Rygsmerter&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DQ231"&gt;DQ231&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Medfødt aortaklapinsufficiens&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DQ231A"&gt;DQ231A&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Valvula aortae bicuspidalis&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DQ251"&gt;DQ251&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Coarctatio aortae&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ032"&gt;DZ032&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Observation pga. mistanke om psykisk lidelse eller adfærdsforstyrrelse&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ718"&gt;DZ718&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Anden rådgivning&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ76"&gt;DZ76&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Personer i kontakt med sundhedsvæsenet af andre årsager&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-urn-oid-1.2.208.176.2.4.html#urn-oid-1.2.208.176.2.4-DZ952"&gt;DZ952&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Tilstand med kunstig hjerteklap&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;li&gt;Include these codes as defined in &lt;a href="http://www.snomed.org/"&gt;&lt;code&gt;http://snomed.info/sct&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated. No matching Code System found"&gt; version Not Stated (use latest from terminology server)&lt;/span&gt;&lt;table class="none"&gt;&lt;tr&gt;&lt;td style="white-space:nowrap"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="http://snomed.info/id/413307004"&gt;413307004&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Mental health problem&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;li&gt;Include codes from&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt; where concept  is-a &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-F"&gt;F&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Include codes from&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt; where concept  is-a &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-J1"&gt;J1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Include codes from&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt; where concept  is-a &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-J2"&gt;J2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Include codes from&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt; where concept  is-a &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-J3"&gt;J3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Include codes from&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt; where concept  is-a &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-J4"&gt;J4&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Include codes from&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt; where concept  is-a &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-J5"&gt;J5&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Include these codes as defined in &lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html"&gt;&lt;code&gt;http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII&lt;/code&gt;&lt;/a&gt;&lt;span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"&gt; version &amp;#x1F4E6;11.0.0&lt;/span&gt;&lt;table class="none"&gt;&lt;tr&gt;&lt;td style="white-space:nowrap"&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-I3.464"&gt;I3.4&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Problemer med overvægt&lt;/td&gt;&lt;td&gt;Brug for støtte til at håndtere overvægt.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-I6.464"&gt;I6.4&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Mentale problemer&lt;/td&gt;&lt;td&gt;Brug for støtte til at håndtere psykiske og psykiatriske symptomer.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-I7.462"&gt;I7.2&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Cirkulationsproblemer&lt;/td&gt;&lt;td&gt;Brug for støtte til håndtering af cardio-vaskulære problemer.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a href="CodeSystem-kl.dk-fhir-common-caresocial-CodeSystem-FSIII.html#kl.dk-fhir-common-caresocial-CodeSystem-FSIII-I9.463"&gt;I9.3&lt;/a&gt;&lt;/td&gt;&lt;td style="color: #cccccc"&gt;Kroniske smerter&lt;/td&gt;&lt;td&gt;Brug for støtte til at håndtere kroniske smerter.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/li&gt;&lt;li&gt;Import all the codes that are contained in &lt;a href="ValueSet-ehealth-wound-conditions.html"&gt;Wound Conditions&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#ValueSet.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://ehealth.sundhed.dk/vs/conditions"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="11.0.0"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Conditions"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Conditions"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="active"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">experimental</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2019-02-08T00:00:00+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">publisher</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Den telemedicinske infrastruktur (eHealth Infrastructure)"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Den telemedicinske infrastruktur (eHealth Infrastructure)"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="url"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="http://ehealth.sundhed.dk"/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.description">description</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="Conditions."/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="urn:iso:std:iso:3166"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DK"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Denmark"/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.jurisdiction">jurisdiction</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose">compose</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="urn:oid:1.2.208.176.2.4"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="ALAL03"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DE10"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DE11"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF00"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF10"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF20"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF30"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF320"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF321"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF330"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF331"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF40"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF400"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF4000"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF4001"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF401"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF402"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF410"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF50"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF60"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF70"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF80"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF90"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF99"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DF999"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DG20"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DG834B"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI20"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI25"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI340"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI350"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI48"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI50"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI511A"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI719A"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DI739A"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DJ44"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DJ45"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DM16"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DM17"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DM54"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DQ231"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DQ231A"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DQ251"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DZ032"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DZ718"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DZ76"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="DZ952"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://snomed.info/sct"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="413307004"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.property">property</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="concept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.op">op</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="is-a"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="F"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.property">property</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="concept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.op">op</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="is-a"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="J1"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.property">property</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="concept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.op">op</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="is-a"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="J2"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.property">property</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="concept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.op">op</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="is-a"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="J3"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.property">property</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="concept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.op">op</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="is-a"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="J4"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.property">property</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="concept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.op">op</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="is-a"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="J5"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.filter">filter</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="I3.4"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="I6.4"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="I7.2"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="I9.3"/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.valueSet">valueSet</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://ehealth.sundhed.dk/vs/wound-conditions"/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose">compose</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet">ValueSet</a>&gt;</code></pre>
+
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+  <script src="assets/js/flags.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container"></div>    <!-- container -->
+
+      <div class="inner-wrapper"></div>
+        <p></p>
+
+
+
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  
+          Package dk.ehealth.sundhed.fhir.ig.core#11.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Wed, Oct 21, 2026 13:41+0000">2026-10-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+            <div style="color: #33333">
+	Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+	<a style="color: #81BEF7" href="qa.html">QA Report</a> | 
+	<a style="color: #81BEF7" href="changelog.html">Change log</a>
+	  <!-- <a style="color: #81BEF7" target="_blank" href="http://ehealth.sundhed.dk/fhir/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> | -->
+	<a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html">
+		<img src="cc0.png" alt="CC0" style="border-style: none;"/>
+	</a>
+
+
+	</div>
+	<div>
+	</div>
+</div>
+          
+        
+          <!-- /inner-wrapper -->
+        <!-- /container -->
+  
+</html>

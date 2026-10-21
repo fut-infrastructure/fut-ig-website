@@ -6,7 +6,7 @@
       "name": "Creative Commons Zero v1.0 Universal",
       "url": "http://spdx.org/licenses/CC0-1.0.html"
     },
-    "version": "10.0.2",
+    "version": "11.0.0",
     "contact": {
       "name": "Den telemedicinske infrastruktur (eHealth Infrastructure)",
       "url": "http://ehealth.sundhed.dk"
@@ -787,7 +787,7 @@
           {
             "name": "payload",
             "in": "query",
-            "description": "Search for MaterialCommunication which are associated to the given status",
+            "description": "Search for MaterialCommunication which are associated to the given payload content (DocumentReference)",
             "schema": {
               "type": "string"
             }
@@ -4052,6 +4052,14 @@
             }
           },
           {
+            "name": "_tag",
+            "in": "query",
+            "description": "Search for resources which have the given tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "authored",
             "in": "query",
             "description": "Date request signed",
@@ -4095,7 +4103,7 @@
           {
             "name": "episodeOfCare",
             "in": "query",
-            "description": "episodeOfCare",
+            "description": "EpisodeOfCare. Supports the chained search episodeOfCare.team for the CareTeam of the EpisodeOfCare",
             "schema": {
               "type": "string"
             }
@@ -4109,11 +4117,46 @@
             }
           },
           {
+            "name": "instantiates-canonical",
+            "in": "query",
+            "description": "Instantiates FHIR protocol or definition",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "intent",
             "in": "query",
             "description": "proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "occurrenceDateTime",
+            "in": "query",
+            "description": "Point in time of the occurrence (occurrenceDateTime)",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "occurrencePeriod",
+            "in": "query",
+            "description": "Period of the occurrence (occurrencePeriod)",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
+            "name": "occurrencePeriodEnd",
+            "in": "query",
+            "description": "End date of the occurrence period (occurrencePeriod.end)",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
             }
           },
           {
@@ -5391,12 +5434,69 @@
         }
       }
     },
+    "/$get-performer-activities": {
+      "summary": "System level operation $get-performer-activities",
+      "description": "Operation $get-performer-activities invoked at the system level",
+      "post": {
+        "summary": "$get-performer-activities (system)",
+        "description": "This operation returns the overview of the activities a given performer is expected to carry out on behalf of a given patient, within a time period and optionally filtered by EpisodeOfCare, Condition code(s) and tag(s).\r\n\r\nIt is the counterpart of $get-patient-procedures, which reports the activities the patient performs themselves. Where $get-patient-procedures excludes any activity carrying a performer other than the patient, this operation reports exactly those activities, for one performer at a time.\r\n\r\nOnly a RelatedPerson performer is supported. The performer type is declared as Reference(RelatedPerson | Patient | Practitioner) to match ServiceRequest.performer, but any other type is rejected.\r\n## Input\r\nThe operation has five mandatory inputs: a Patient reference, a performer reference, a start date, an end date and the extra flag. Additionally it has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n\r\nEvery reference input - patient, performer and episodeOfCare - must be given as an absolute reference, since each names a resource served by another service in the platform. A relative reference such as Patient/123 is not matched against the stored references and yields no activities.\r\n### Patient reference\r\nMandatory reference for the Patient whose care pathways, plans, activities and measurement data form the basis of the overview.\r\n### Performer reference\r\nMandatory reference for the person recorded as performer on the activities. Only RelatedPerson is supported.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest. Start may not be after end, the period may not begin further back than the configured measurement age limit, and it may not end further ahead than the configured activity horizon. A request outside either limit is rejected.\r\n### Extra boolean\r\nMandatory. Set to true if rows should be included for activities flagged as extra, i.e. where measurement data may be submitted on request or on the person\u0027s own initiative. Whether the ServiceRequest is included when extra is true is based on the ServiceRequest.includeAsExtra field.\r\n### EpisodeOfCare list\r\nOptional. If EpisodeOfCare are provided, activities must belong to one of the stated EpisodeOfCare. Supplying both episodeOfCare and conditionCode is rejected; supplying neither considers every episode of care of the patient.\r\n### Condition Coding list\r\nOptional. If Condition Coding are provided, activities must come from a CarePlan carrying one of the stated condition codes. Note that the code is matched against the condition of the CarePlan the activity belongs to, unlike $get-patient-procedures where it is matched against the conditions of the EpisodeOfCare. Supplying both conditionCode and episodeOfCare is rejected.\r\n\r\nA caller whose security context names an EpisodeOfCare must supply that episode as the episodeOfCare parameter, and therefore cannot use conditionCode: the two filters are mutually exclusive. Such a caller is already confined to a single episode of care, and narrows the result by tag or by period instead. conditionCode is available to callers whose context names no EpisodeOfCare.\r\n### Tag Coding list\r\nOptional. If tag Coding are provided, the activities considered are those carrying a co-existence tag matching at least one of the codes in the list. Note that the tag is matched on the activity itself, unlike $get-patient-procedures where it is matched on the EpisodeOfCare.\r\n## Output\r\nFor valid inputs, the server computes and returns a Bundle containing a Parameters resource with the resolved measurement regimes and the associated counts, the ServiceRequest referenced in the Parameters, and an OperationOutcome describing any encountered warnings.\r\n\r\nUnlike $get-patient-procedures, the Bundle carries no CarePlan resource: the performer is given the activities they are to perform and nothing further of the patient\u0027s plan. The CarePlan and PlanDefinition are still referenced on each row, so the user system can tell which activities belong to the same plan and determine seamless activity groups.\r\n### Output Parameters\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value.\r\n\r\n### Columns\r\n\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- CarePlan: Reference to the CarePlan the activity belongs to. The resource itself is not included in the Bundle.\r\n- PlanDefinition: Reference to the plan template the CarePlan was created from. The resource itself is not included in the Bundle.\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurrencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated.",
+        "operationId": "op-get-performer-activities-system",
+        "requestBody": {
+          "description": "Operation parameters",
+          "required": false,
+          "content": {
+            "application/fhir+json": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+              }
+            },
+            "application/fhir+xml": {
+              "schema": {
+                "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/$get-patient-procedures": {
       "summary": "System level operation $get-patient-procedures",
       "description": "Operation $get-patient-procedures invoked at the system level",
       "post": {
         "summary": "$get-patient-procedures (system)",
-        "description": "This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.\r\n## Input\r\nThe operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n### Patient reference\r\nMandatory reference for the Patient which the procedure overview is computed for.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.\r\n### EpisodeOfCare list\r\nThe list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.\r\n### Condition Coding list\r\nThe list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Tag Coding list\r\nThe list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Extra boolean\r\nThis is an optional parameter that can be set to true if activities allowing \u0027Extra\u0027 submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.\r\n## Output\r\nFor valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.\r\n### Output Parameters\r\nThe output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. \r\n\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value \r\n```\r\nExample:\r\n\u0027resource\u0027: {\r\n    \u0027resourceType\u0027: \u0027Parameters\u0027,\r\n    \u0027parameter\u0027: [{\r\n            \u0027name\u0027: \u0027item_1\u0027,\r\n            \u0027part\u0027: [{\r\n                    \u0027name\u0027: \u0027CarePlan\u0027,\r\n                    \u0027valueReference\u0027: {\r\n                        \u0027reference\u0027: \u0027https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581\u0027\r\n                    }\r\n            }]\r\n    }]\r\n}\r\n ```\r\n\r\n### Columns\r\n\r\n- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurrencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated.",
+        "description": "This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. ServiceRequests whose performer is present and references anyone other than the Patient (for instance a RelatedPerson) are excluded from the overview; ServiceRequests without a performer are included, the Patient being the assumed performer. Activities assigned to a RelatedPerson are reported by $get-performer-activities instead. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.\r\n## Input\r\nThe operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n### Patient reference\r\nMandatory reference for the Patient which the procedure overview is computed for.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.\r\n### EpisodeOfCare list\r\nThe list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.\r\n### Condition Coding list\r\nThe list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Tag Coding list\r\nThe list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Extra boolean\r\nThis is an optional parameter that can be set to true if activities allowing \u0027Extra\u0027 submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.\r\n## Output\r\nFor valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.\r\n### Output Parameters\r\nThe output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. \r\n\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value \r\n```\r\nExample:\r\n\u0027resource\u0027: {\r\n    \u0027resourceType\u0027: \u0027Parameters\u0027,\r\n    \u0027parameter\u0027: [{\r\n            \u0027name\u0027: \u0027item_1\u0027,\r\n            \u0027part\u0027: [{\r\n                    \u0027name\u0027: \u0027CarePlan\u0027,\r\n                    \u0027valueReference\u0027: {\r\n                        \u0027reference\u0027: \u0027https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581\u0027\r\n                    }\r\n            }]\r\n    }]\r\n}\r\n ```\r\n\r\n### Columns\r\n\r\n- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurrencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated.",
         "operationId": "op-get-patient-procedures-system",
         "requestBody": {
           "description": "Operation parameters",

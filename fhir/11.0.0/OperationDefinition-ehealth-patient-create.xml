@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ehealth-patient-create"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition ehealth-patient-create</b></p><a name="ehealth-patient-create"> </a><a name="hcehealth-patient-create"> </a><p>URL: [base]/Patient/$createPatient</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>crn</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>The social security number of the person on which this operation is executed.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></td><td/><td><div><p>The Patient resource that has been created on the server or an already created patient</p>
+</div></td></tr></table><div><p>See the wiki for examples on how to use the operation.</p>
+</div></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-patient-create"/>
+  <version value="11.0.0"/>
+  <name value="Create Patient"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2019-02-02"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="Creates a Patient resource on the server and returns it in the response. If the patient already exists, it is returned instead. If the CPR number does not match a patient on the service, looks up the CPR in the national registry and finds any potential prior CPRs used by the person. If a prior CPR number matches a patient on the service, updates the patient with national data, and returns a patient with the newest data. NOTE: This means that the returned patient can have a different identifier than the one used for the request. If no prior CPR matches, creates a new patient using national data. If the CPR is invalid, i.e. does not correspond to a patient on the national registry, it errors. &#xD;&#xA;&#xD;&#xA;### Note&#xD;&#xA;This operation is currently the only way to create Patient resources in the eHealth Infrastructure, as it ensures that the correct bindings from national registers"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <code value="createPatient"/>
+  <comment value="See the wiki for examples on how to use the operation."/>
+  <resource value="Patient"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="crn"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The social security number of the person on which this operation is executed."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The Patient resource that has been created on the server or an already created patient"/>
+    <type value="Patient"/>
+  </parameter>
+</OperationDefinition>

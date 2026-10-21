@@ -1,0 +1,69 @@
+# Media Usage Mode - eHealth Infrastructure v11.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Media Usage Mode**
+
+## ValueSet: Media Usage Mode 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/vs/media-usage-mode | *Version*:11.0.0 |
+| Active as of 2024-10-28 | *Computable Name*:MediaUsageMode |
+
+ 
+Media Usage Mode 
+
+ **References** 
+
+* [Usage mode](StructureDefinition-ehealth-media-usage-mode.md)
+
+### Logical Definition (CLD)
+
+ 
+
+### Expansion
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ValueSet",
+  "id" : "ehealth-media-usage-mode",
+  "url" : "http://ehealth.sundhed.dk/vs/media-usage-mode",
+  "version" : "11.0.0",
+  "name" : "MediaUsageMode",
+  "title" : "Media Usage Mode",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-10-28T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Media Usage Mode",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://ehealth.sundhed.dk/cs/media-usage-mode"
+    }]
+  }
+}
+
+```

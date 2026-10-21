@@ -3,7 +3,7 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
   <id value="organization"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement organization</b></p><a name="organization"> </a><a name="hcorganization"> </a><h2 id="title"/><ul><li>Implementation Guide Version: 10.0.2 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Published on: 2026-08-03 02:37:22+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><p>This CapabilityStatement instantiates the CapabilityStatement <code>http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data</code></p><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="row"><div class="col-12"><span class="lead">Summary of System-wide Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$reindex</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$hapi.fhir.reindex-status</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$migrate</td><td><div><p>Data migration</p>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CapabilityStatement organization</b></p><a name="organization"> </a><a name="hcorganization"> </a><h2 id="title"/><ul><li>Implementation Guide Version: 11.0.0 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <code>application/fhir+xml</code>, <code>xml</code>, <code>application/fhir+json</code>, <code>json</code>, <code>application/x-turtle</code>, <code>ttl</code>, <code>html/json</code>, <code>html/xml</code>, <code>html/turtle</code></li><li>Published on: 2026-10-16 09:31:17+0000 </li><li>Published by: Den telemedicinske infrastruktur (eHealth Infrastructure) </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><p>This CapabilityStatement instantiates the CapabilityStatement <code>http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data</code></p><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>server</code></h3></div><div class="panel-body"><div class="row"><div class="col-12"><span class="lead">Summary of System-wide Operations</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Operation</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td>$reindex</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$hapi.fhir.reindex-status</td><td><div/></td></tr><tr><td><b>SHALL</b></td><td>$migrate</td><td><div><p>Data migration</p>
 </div></td></tr><tr><td><b>SHALL</b></td><td>$persist-login</td><td><div><p>This operation persists login information into CareTeams and PractitionerRoles
 The following elements of each careteam are mandatory:</p>
 <ul>
@@ -110,9 +110,11 @@ The following elements of each PractitionerRole are mandatory:</p>
 <p>The resolved authority Organization (a municipality or a region).
 An OperationOutcome with HTTP 404 is returned when no authority can be resolved for the organisation.</p>
 </div></td></tr><tr><td><b>SHALL</b></td><td>$get-general-practitioner-info</td><td><div><p>The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number.
-The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned.
+The Organization returned depends on how many Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned.
 When multiple Organization resources have the same provider number, the shared parent Organization is returned.
-An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers.
+If no shared parent Organization exists, the newest Organization is returned.
+Active Organization resources are preferred. When no active Organization has the provider number, inactive Organization resources are considered as a fallback.
+An OperationOutcome with an explicit error is returned in case the provider number is not exactly 6 digits, in case the input organizations have different provider numbers, or in case no Organization has the provider number.
 A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice.</p>
 </div></td></tr><tr><td><b>SHALL</b></td><td>$traverse-to-sor</td><td><div><p>Traverse upforwards to the first SOR organization
 Http response code 404 will be returned if no related SOR organization could be found</p>
@@ -176,10 +178,10 @@ Http response code 404 will be returned if no related SOR organization could be 
 </div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization"/>
-  <version value="10.0.2"/>
+  <version value="11.0.0"/>
   <name value="organization"/>
   <status value="active"/>
-  <date value="2026-08-03T02:37:22.259+00:00"/>
+  <date value="2026-10-16T09:31:17.302+00:00"/>
   <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
   <contact>
     <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
@@ -199,7 +201,7 @@ Http response code 404 will be returned if no related SOR organization could be 
   <instantiates value="http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"/>
   <software>
     <name value="organization"/>
-    <version value="1.28.0"/>
+    <version value="1.31.0"/>
   </software>
   <implementation>
     <description value="eHealth organization service"/>
@@ -608,7 +610,7 @@ Http response code 404 will be returned if no related SOR organization could be 
       <operation>
         <name value="get-general-practitioner-info"/>
         <definition value="https://organization.devtest.systematic-ehealth.com/fhir/OperationDefinition/Organization-t-get-general-practitioner-info"/>
-        <documentation value="The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. &#xA;The Organization returned depends on how many active Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. &#xA;When multiple Organization resources have the same provider number, the shared parent Organization is returned. &#xA;An OperationOutcome with an explicit error is returned in case multiple organizations share the provider number but do not have a shared parent, or in case input organizations have different provider numbers. &#xA;A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice."/>
+        <documentation value="The operation resolves the input organization(s) to the shared organization for the one or more organizations that have the given provider number. &#xA;The Organization returned depends on how many Organization exist in the service with that provider number. When a single Organization has the provider number that Organization is returned. &#xA;When multiple Organization resources have the same provider number, the shared parent Organization is returned. &#xA;If no shared parent Organization exists, the newest Organization is returned. &#xA;Active Organization resources are preferred. When no active Organization has the provider number, inactive Organization resources are considered as a fallback. &#xA;An OperationOutcome with an explicit error is returned in case the provider number is not exactly 6 digits, in case the input organizations have different provider numbers, or in case no Organization has the provider number. &#xA;A typical use of the operation is to get name, address and telecom details for a general practitioner. Many provider numbers are assigned to a single organization but some provider numbers are shared by multiple entities (organizations) within in a common practice."/>
       </operation>
       <operation>
         <name value="traverse-to-sor"/>
