@@ -1,4 +1,4 @@
-# Care Plan Status - eHealth Infrastructure v11.0.0
+# Care Plan Status - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/care-plan-status | *Version*:11.0.0 | |
+| *Official URL*:http://hl7.org/fhir/care-plan-status | *Version*:11.0.1 | |
 | Active as of 2019-10-24 | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 2 | *Computable Name*:Care Plan Status |
 
  
@@ -46,7 +46,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueCode" : "pc"
   }],
   "url" : "http://hl7.org/fhir/care-plan-status",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "Care Plan Status",
   "title" : "Care Plan Status",
   "status" : "active",

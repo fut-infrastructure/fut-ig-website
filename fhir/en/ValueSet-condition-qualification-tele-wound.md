@@ -1,4 +1,4 @@
-# Condition Qualification for Tele Wound - eHealth Infrastructure v11.0.0
+# Condition Qualification for Tele Wound - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/condition-qualification-tele-wound | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/condition-qualification-tele-wound | *Version*:11.0.1 |
 | Active as of 2026-01-19 | *Computable Name*:conditionQualificationTeleWound |
 
  
@@ -37,7 +37,7 @@ Value set of condition qualifications for tele wound domain.
   "resourceType" : "ValueSet",
   "id" : "condition-qualification-tele-wound",
   "url" : "http://ehealth.sundhed.dk/vs/condition-qualification-tele-wound",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "conditionQualificationTeleWound",
   "title" : "Condition Qualification for Tele Wound",
   "status" : "active",

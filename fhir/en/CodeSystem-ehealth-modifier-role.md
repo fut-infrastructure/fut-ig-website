@@ -1,4 +1,4 @@
-# Modifier Role - eHealth Infrastructure v11.0.0
+# Modifier Role - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/modifier-role | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/modifier-role | *Version*:11.0.1 |
 | Active as of 2019-01-29 | *Computable Name*:ModifierRole |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-modifier-role",
   "url" : "http://ehealth.sundhed.dk/cs/modifier-role",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ModifierRole",
   "title" : "Modifier Role",
   "status" : "active",

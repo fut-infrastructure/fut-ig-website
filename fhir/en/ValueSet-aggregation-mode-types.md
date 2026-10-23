@@ -1,4 +1,4 @@
-# Aggregation Mode Types - eHealth Infrastructure v11.0.0
+# Aggregation Mode Types - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/aggregation-mode-types | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/aggregation-mode-types | *Version*:11.0.1 |
 | Active as of 2026-06-18 | *Computable Name*:AggregationModeTypes |
 
  
@@ -37,7 +37,7 @@ Aggregation Mode
   "resourceType" : "ValueSet",
   "id" : "aggregation-mode-types",
   "url" : "http://ehealth.sundhed.dk/vs/aggregation-mode-types",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "AggregationModeTypes",
   "title" : "Aggregation Mode Types",
   "status" : "active",

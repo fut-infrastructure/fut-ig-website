@@ -1,4 +1,4 @@
-# RegionalSubdivisionCodes - eHealth Infrastructure v11.0.0
+# RegionalSubdivisionCodes - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/regional-subdivision-codes | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/regional-subdivision-codes | *Version*:11.0.1 |
 | Active as of 2019-02-02 | *Computable Name*:RegionalSubdivisionCodes |
 
  
@@ -39,7 +39,7 @@ No Expansion for this valueset (Unknown Code System)
   "resourceType" : "ValueSet",
   "id" : "regional-subdivision-codes",
   "url" : "http://ehealth.sundhed.dk/vs/regional-subdivision-codes",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "RegionalSubdivisionCodes",
   "status" : "active",
   "experimental" : true,

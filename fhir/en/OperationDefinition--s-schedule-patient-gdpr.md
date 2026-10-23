@@ -1,4 +1,4 @@
-# Schedule patient GDPR - eHealth Infrastructure v11.0.0
+# Schedule patient GDPR - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-patient-gdpr | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:schedule-patient-gdpr |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-patient-gdpr | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:schedule-patient-gdpr |
 
  
 
@@ -46,12 +46,12 @@ None. This report returns a single JSon file.
   "resourceType" : "OperationDefinition",
   "id" : "-s-schedule-patient-gdpr",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-patient-gdpr",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "schedule-patient-gdpr",
   "title" : "Schedule patient GDPR",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

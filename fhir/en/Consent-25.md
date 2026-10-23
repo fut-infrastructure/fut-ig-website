@@ -1,4 +1,4 @@
-# Consent/25 - patient's consent to a related person contributing to the episode of care (RPCTEOC) - eHealth Infrastructure v11.0.0
+# Consent/25 - patient's consent to a related person contributing to the episode of care (RPCTEOC) - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

@@ -1,4 +1,4 @@
-# Appointment Service Type - eHealth Infrastructure v11.0.0
+# Appointment Service Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/appointment-servicetype | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/appointment-servicetype | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:AppointmentServiceType |
 
  
@@ -40,7 +40,7 @@ Appointment service type
   "resourceType" : "ValueSet",
   "id" : "ehealth-appointment-servicetype",
   "url" : "http://ehealth.sundhed.dk/vs/appointment-servicetype",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "AppointmentServiceType",
   "title" : "Appointment Service Type",
   "status" : "active",

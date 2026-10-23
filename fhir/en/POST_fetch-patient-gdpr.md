@@ -1,4 +1,4 @@
-# POST Fetch Patient Gdpr - eHealth Infrastructure v11.0.0
+# POST Fetch Patient Gdpr - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **POST Fetch Patient Gdpr**

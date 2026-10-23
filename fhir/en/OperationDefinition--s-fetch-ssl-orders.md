@@ -1,4 +1,4 @@
-# Fetch ssl orders - eHealth Infrastructure v11.0.0
+# Fetch ssl orders - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-ssl-orders | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:fetch-ssl-orders |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-ssl-orders | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:fetch-ssl-orders |
 
  
 
@@ -40,12 +40,12 @@ This report contains SSL Orders
   "resourceType" : "OperationDefinition",
   "id" : "-s-fetch-ssl-orders",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-ssl-orders",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "fetch-ssl-orders",
   "title" : "Fetch ssl orders",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

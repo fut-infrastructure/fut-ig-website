@@ -1,4 +1,4 @@
-# Ydernummer - eHealth Infrastructure v11.0.0
+# Ydernummer - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ydernummer | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ydernummer | *Version*:11.0.1 |
 | Active as of 1990-01-01 | *Computable Name*:Ydernummer |
 
  
@@ -28,7 +28,7 @@ The Danish Health Authority and Danish Regions can identify doctors' names etc. 
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.0"
+    "valueString" : "11.0.1"
   }],
   "name" : "Ydernummer",
   "status" : "active",

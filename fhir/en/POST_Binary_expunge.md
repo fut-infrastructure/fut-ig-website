@@ -1,4 +1,4 @@
-# POST Binary Expunge - eHealth Infrastructure v11.0.0
+# POST Binary Expunge - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **POST Binary Expunge**

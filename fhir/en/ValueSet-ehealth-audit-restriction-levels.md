@@ -1,4 +1,4 @@
-# Audit Restriction Levels - eHealth Infrastructure v11.0.0
+# Audit Restriction Levels - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/audit-restriction-levels | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/audit-restriction-levels | *Version*:11.0.1 |
 | Active as of 2025-04-02 | *Computable Name*:auditRestrictionLevels |
 
  **References** 
@@ -34,7 +34,7 @@
   "resourceType" : "ValueSet",
   "id" : "ehealth-audit-restriction-levels",
   "url" : "http://ehealth.sundhed.dk/vs/audit-restriction-levels",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "auditRestrictionLevels",
   "title" : "Audit Restriction Levels",
   "status" : "active",

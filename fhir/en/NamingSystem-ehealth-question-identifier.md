@@ -1,4 +1,4 @@
-# eHealthQuestionIdentifier - eHealth Infrastructure v11.0.0
+# eHealthQuestionIdentifier - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-question-identifier | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-question-identifier | *Version*:11.0.1 |
 | Active as of 2020-04-17 | *Computable Name*:eHealthQuestionIdentifier |
 
  
@@ -28,7 +28,7 @@ The eHealth Question Identifier is assigned to questions (not to be confused wit
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.0"
+    "valueString" : "11.0.1"
   }],
   "name" : "eHealthQuestionIdentifier",
   "status" : "active",

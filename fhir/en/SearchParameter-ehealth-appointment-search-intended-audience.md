@@ -1,4 +1,4 @@
-# intended-audience - eHealth Infrastructure v11.0.0
+# intended-audience - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/intended-audience | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/intended-audience | *Version*:11.0.1 |
 | Active as of 2021-05-06 | *Computable Name*:intended-audience |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding intended audience on Appointment
   "resourceType" : "SearchParameter",
   "id" : "ehealth-appointment-search-intended-audience",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/intended-audience",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "intended-audience",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",

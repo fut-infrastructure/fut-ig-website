@@ -1,4 +1,4 @@
-# POST Schedule Measurement Stats - eHealth Infrastructure v11.0.0
+# POST Schedule Measurement Stats - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **POST Schedule Measurement Stats**

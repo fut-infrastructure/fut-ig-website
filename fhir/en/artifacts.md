@@ -1,4 +1,4 @@
-# Artifacts Summary - eHealth Infrastructure v11.0.0
+# Artifacts Summary - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**

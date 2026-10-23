@@ -1,4 +1,4 @@
-# GET Apply Search - eHealth Infrastructure v11.0.0
+# GET Apply Search - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **GET Apply Search**

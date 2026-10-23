@@ -1,0 +1,729 @@
+# measurement - eHealth Infrastructure v11.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **measurement**
+
+## CapabilityStatement: measurement 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/measurement | *Version*:11.0.1 |
+| Active as of 2026-10-16 | *Computable Name*:measurement |
+
+ [Raw OpenAPI-Swagger Definition file](../measurement.openapi.json) | [Download](../measurement.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "measurement",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/measurement",
+  "version" : "11.0.1",
+  "name" : "measurement",
+  "status" : "active",
+  "date" : "2026-10-16T09:33:32.963+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "measurement",
+    "version" : "1.36.0"
+  },
+  "implementation" : {
+    "description" : "eHealth measurement service",
+    "url" : "https://measurement.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Communication:episodeOfCare",
+      "Communication:recipient",
+      "Communication:recipientCareTeam",
+      "Communication:sender",
+      "Communication:senderCareTeam",
+      "Communication:subject",
+      "Media:based-on",
+      "Media:episodeOfCare",
+      "Media:relatedTo",
+      "Media:subject",
+      "Observation:based-on",
+      "Observation:episodeOfCare",
+      "Observation:patient",
+      "Observation:subject",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:entity-episodeOfCare",
+      "Provenance:entity-serviceRequest",
+      "Provenance:target",
+      "QuestionnaireResponse:based-on",
+      "QuestionnaireResponse:episodeOfCare",
+      "QuestionnaireResponse:questionnaire",
+      "QuestionnaireResponse:subject"],
+      "operation" : [{
+        "name" : "expunge",
+        "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "type" : "Communication",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "searchRevInclude" : ["Communication:episodeOfCare",
+      "Communication:recipient",
+      "Communication:recipientCareTeam",
+      "Communication:sender",
+      "Communication:senderCareTeam",
+      "Communication:subject",
+      "Media:based-on",
+      "Media:episodeOfCare",
+      "Media:relatedTo",
+      "Media:subject",
+      "Observation:based-on",
+      "Observation:episodeOfCare",
+      "Observation:patient",
+      "Observation:subject",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:entity-episodeOfCare",
+      "Provenance:entity-serviceRequest",
+      "Provenance:target",
+      "QuestionnaireResponse:based-on",
+      "QuestionnaireResponse:episodeOfCare",
+      "QuestionnaireResponse:questionnaire",
+      "QuestionnaireResponse:subject"],
+      "searchParam" : [{
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Episode associated with communication"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Unique identifier"
+      },
+      {
+        "name" : "recipient",
+        "type" : "reference",
+        "documentation" : "Message recipient"
+      },
+      {
+        "name" : "recipientCareTeam",
+        "type" : "reference",
+        "documentation" : "Recipient care team"
+      },
+      {
+        "name" : "sender",
+        "type" : "reference",
+        "documentation" : "Message sender"
+      },
+      {
+        "name" : "senderCareTeam",
+        "type" : "reference",
+        "documentation" : "Sender care team"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Focus of message"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "Media",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      }],
+      "conditionalUpdate" : true,
+      "searchInclude" : ["Media:relatedTo"],
+      "searchRevInclude" : ["Media:relatedTo", "Provenance:target"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "based-on",
+        "type" : "reference",
+        "documentation" : "Procedure that caused this media to be created"
+      },
+      {
+        "name" : "created",
+        "type" : "date",
+        "documentation" : "When Media was collected"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Episode associated with media"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Identifier(s) for the image"
+      },
+      {
+        "name" : "qualityCode",
+        "type" : "token",
+        "documentation" : "Quality code of the media"
+      },
+      {
+        "name" : "qualityType",
+        "type" : "token",
+        "documentation" : "Quality type of the media"
+      },
+      {
+        "name" : "relatedTo",
+        "type" : "reference",
+        "documentation" : "Media related to"
+      },
+      {
+        "name" : "resolvedTimingEnd",
+        "type" : "date",
+        "documentation" : "Resolved Timing end"
+      },
+      {
+        "name" : "resolvedTimingServiceRequestVersionId",
+        "type" : "token",
+        "documentation" : "Resolved Timing serviceRequestVersionID"
+      },
+      {
+        "name" : "resolvedTimingStart",
+        "type" : "date",
+        "documentation" : "Resolved Timing start"
+      },
+      {
+        "name" : "resolvedTimingType",
+        "type" : "token",
+        "documentation" : "Resolved Timing type"
+      },
+      {
+        "name" : "series",
+        "type" : "string",
+        "documentation" : "Series ID"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Who/What this Media is a record of"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "photo | video | audio"
+      },
+      {
+        "name" : "usageMode",
+        "type" : "token",
+        "documentation" : "Usage mode"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "get-data",
+        "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Media-t-get-data",
+        "documentation" : "The get-data operation returns a media content matching the uuid provided.\n\n\n### Parameter description\n- uuid: The uuid of the media to return\n\n\n### Request header description\n- ehealth-thumbnail-size: The size of thumbnail to return instead of original content. If thumbnails are not supported for the media, the original content is returned\n\n\n### Output description\nThe result of this operation returns a Binary containing the media found from the provided uuid"
+      }]
+    },
+    {
+      "type" : "Observation",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      }],
+      "searchRevInclude" : ["Provenance:target"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "based-on",
+        "type" : "reference",
+        "documentation" : "Reference to the test or procedure request."
+      },
+      {
+        "name" : "code",
+        "type" : "token",
+        "documentation" : "The code of the observation type"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "Obtained date/time. If the obtained element is a period, a date that falls in the period"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Episode associated with observation"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "The unique id for a particular observation"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "The subject that the observation is about (if patient)"
+      },
+      {
+        "name" : "qualityCode",
+        "type" : "token",
+        "documentation" : "The quality code of the observation"
+      },
+      {
+        "name" : "qualityType",
+        "type" : "token",
+        "documentation" : "The quality type of the observation"
+      },
+      {
+        "name" : "resolvedTimingEnd",
+        "type" : "date",
+        "documentation" : "Resolved Timing end"
+      },
+      {
+        "name" : "resolvedTimingServiceRequestVersionId",
+        "type" : "token",
+        "documentation" : "Resolved Timing serviceRequestVersionID"
+      },
+      {
+        "name" : "resolvedTimingStart",
+        "type" : "date",
+        "documentation" : "Resolved Timing start"
+      },
+      {
+        "name" : "resolvedTimingType",
+        "type" : "token",
+        "documentation" : "Resolved Timing type"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "The subject that the observation is about"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Communication:episodeOfCare",
+      "Communication:recipient",
+      "Communication:recipientCareTeam",
+      "Communication:sender",
+      "Communication:senderCareTeam",
+      "Communication:subject",
+      "Media:based-on",
+      "Media:episodeOfCare",
+      "Media:relatedTo",
+      "Media:subject",
+      "Observation:based-on",
+      "Observation:episodeOfCare",
+      "Observation:patient",
+      "Observation:subject",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:entity-episodeOfCare",
+      "Provenance:entity-serviceRequest",
+      "Provenance:target",
+      "QuestionnaireResponse:based-on",
+      "QuestionnaireResponse:episodeOfCare",
+      "QuestionnaireResponse:questionnaire",
+      "QuestionnaireResponse:subject"]
+    },
+    {
+      "type" : "Provenance",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["Provenance:target"],
+      "searchRevInclude" : ["Communication:episodeOfCare",
+      "Communication:recipient",
+      "Communication:recipientCareTeam",
+      "Communication:sender",
+      "Communication:senderCareTeam",
+      "Communication:subject",
+      "Media:based-on",
+      "Media:episodeOfCare",
+      "Media:relatedTo",
+      "Media:subject",
+      "Observation:based-on",
+      "Observation:episodeOfCare",
+      "Observation:patient",
+      "Observation:subject",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:entity-episodeOfCare",
+      "Provenance:entity-serviceRequest",
+      "Provenance:target",
+      "QuestionnaireResponse:based-on",
+      "QuestionnaireResponse:episodeOfCare",
+      "QuestionnaireResponse:questionnaire",
+      "QuestionnaireResponse:subject"],
+      "searchParam" : [{
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "agent",
+        "type" : "reference",
+        "documentation" : "Who participated in the activity"
+      },
+      {
+        "name" : "entity",
+        "type" : "reference",
+        "documentation" : "Identity of entity"
+      },
+      {
+        "name" : "entity-episodeOfCare",
+        "type" : "reference",
+        "documentation" : "EpisodeOfCare identity of entity"
+      },
+      {
+        "name" : "entity-serviceRequest",
+        "type" : "reference",
+        "documentation" : "ServiceRequest identity of entity"
+      },
+      {
+        "name" : "policy",
+        "type" : "uri",
+        "documentation" : "Policy or plan the activity was defined by"
+      },
+      {
+        "name" : "recorded",
+        "type" : "date",
+        "documentation" : "When the activity was recorded / updated"
+      },
+      {
+        "name" : "target",
+        "type" : "reference",
+        "documentation" : "Target Reference(s) (usually version specific)"
+      }]
+    },
+    {
+      "type" : "QuestionnaireResponse",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchRevInclude" : ["Provenance:target"],
+      "searchParam" : [{
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "authored",
+        "type" : "date",
+        "documentation" : "When the questionnaire response was last changed"
+      },
+      {
+        "name" : "based-on",
+        "type" : "reference",
+        "documentation" : "Plan/proposal/order fulfilled by this questionnaire response"
+      },
+      {
+        "name" : "effectivePeriodEnd",
+        "type" : "date",
+        "documentation" : "Effective Period end"
+      },
+      {
+        "name" : "effectivePeriodStart",
+        "type" : "date",
+        "documentation" : "Effective Period start"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Episode associated with questionnaire response"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "The unique identifier for the questionnaire response"
+      },
+      {
+        "name" : "qualityCode",
+        "type" : "token",
+        "documentation" : "The quality code of the questionnaire response"
+      },
+      {
+        "name" : "qualityType",
+        "type" : "token",
+        "documentation" : "The quality type of the questionnaire response"
+      },
+      {
+        "name" : "questionnaire",
+        "type" : "reference",
+        "documentation" : "The questionnaire the answers are provided for"
+      },
+      {
+        "name" : "resolvedTimingEnd",
+        "type" : "date",
+        "documentation" : "Resolved Timing end"
+      },
+      {
+        "name" : "resolvedTimingServiceRequestVersionId",
+        "type" : "token",
+        "documentation" : "Resolved Timing serviceRequestVersionID"
+      },
+      {
+        "name" : "resolvedTimingStart",
+        "type" : "date",
+        "documentation" : "Resolved Timing start"
+      },
+      {
+        "name" : "resolvedTimingType",
+        "type" : "token",
+        "documentation" : "Resolved Timing type"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The status of the questionnaire response"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "The subject of the questionnaire response"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    }],
+    "operation" : [{
+      "name" : "reindex",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "hapi.fhir.reindex-status",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-hapi.fhir.reindex-status"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+      "documentation" : "Data migration"
+    },
+    {
+      "name" : "search-measurements",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-search-measurements",
+      "documentation" : "The search-measurements operation searches for bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.\n\n\n### Parameter description\n- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).\n- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).\n- device: Find resource(s) referring the specified device - Reference(eHealth Device | eHealth DeviceMetric).\n- period: Resource(s) must have either an instant or time period within or overlapping the given period. The used instant/time period varies with resource as follows: Element effective for eHealth Observation; Element authored for eHealth QuestionnaireResponse; Element occurrence for eHealth Media.\n- based-on: Resources(s) must be based on any of the specified procedure requests - Reference(eHealth ServiceRequest).\n- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.\n\n\n\"period\" must always be specified.\n\nAdditionally at least \"patient\" or \"episodeOfCare\" must be specified.\n\n### Output description\n\nThe result of this operation will return a Bundle with a list of nested Bundles having resources matching the search parameters.\n\nEach of the nested bundles will contain the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources.\n\nIf a eHealth QuestionnaireResponse is part of the nested bundle the referenced eHealth Questionnaire will also be included in the nested bundle.\n\nRelated resources are the set of resources created by a single invocation of the submit-measurement operation."
+    },
+    {
+      "name" : "search-measurements-bundle-limit",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-search-measurements-bundle-limit",
+      "documentation" : "The search-measurements-bundle-limit operation searches for a number of bundles of related resources having Observations, Media or QuestionnaireResponses matching the search criteria.\n\n\n### Parameter description\n- patient: Find resource(s) referring the specified patient - Reference(eHealth Patient).\n- episodeOfCare: Find resource(s) referring the specified episode of care - Reference(eHealth EpisodeOfCare).\n- count: The number of bundles to return, max allowed value is 100 - Integer.\n- start: Based on the effective time of measurement, please see <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-observation-definitions.html#key_Observation.effective[x]'>Observation.effective[x]</a> , <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-questionnaireresponse.html#effective-period'>QuestionnaireResponse.effective-period</a> , and <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-media-definitions.html#key_Media.created[x]'>Media.created[x]</a>. If QuestionnaireResponse.effectivePeriod is missing, authored is used instead. If provided, the operation will search for observation, media and QuestionnaireResponse resource(s) with a clinical effective time after this time. The result bundles will be sorted in ascending order - DateTime.\n- end: Based on the effective time of measurement, please see <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-observation-definitions.html#key_Observation.effective[x]'>Observation.effective[x]</a> , <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-questionnaireresponse.html#effective-period'>QuestionnaireResponse.effective-period</a> , and <a href='https://ehealth.sundhed.dk/fhir/StructureDefinition-ehealth-media-definitions.html#key_Media.created[x]'>Media.created[x]</a>. If QuestionnaireResponse.effectivePeriod is missing, authored is used instead. If provided, the operation will search for observation, media and QuestionnaireResponse resource(s) with a clinical effective time before this time. The result bundles will be sorted in descending order - DateTime.\n- based-on: Resources(s) must be based on any of the specified service requests - Reference(eHealth ServiceRequest).\n- _tag: When specified, resource(s) must have at least one of the specified tags in meta data - for instance a Coding(ehealth-system CodeSystem) or on token form: http://ehealth.sundhed.dk/cs/ehealth-system|xa. Note that the _tag functions as an optional filter, not as a selection criteria in the way the other parameters work.\n\n\nOne of either \"start\" or \"end\", along with the \"count\" parameter must always be specified.\n\nAdditionally at least \"patient\" or \"episodeOfCare\" or \"based-on\" must be specified.\n\n### Output description\n\nThe result of this operation returns a Bundle with a list of nested Bundles having resources matching the search parameters. The number of nested Bundles depends on the count parameter.\n\nEach of the nested bundles contains the full set of related eHealth Observation, eHealth Media, eHealth QuestionnaireResponse and eHealth Provenance resources, from the same submission request.\n\nRelated resources are the set of resources created by a single invocation of the submit-measurement operation."
+    },
+    {
+      "name" : "submit-measurement",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-submit-measurement",
+      "documentation" : "The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted. \n\nMedia resource inline content in `content.data` will be stored outside the resource, and the `content.url` for retrieval is set on the resource. Image content is anonymized by removing sensitive metadate before storage. Image content is processed to generate thumbnail representations in the thumbnail element. \n\n\n### Parameter description\nmeasurement: Bundle containing:\n- 0..* Observation (ehealth-observation profile)\n- 0..* QuestionnaireResponse (ehealth-questionnaireresponse profile)\n- 0..* Media (ehealth-media profile)\n- 0..* Provenance (ehealth-provenance profile). Each Provenance (which is intended for capturing reuse of measurement(s) – as described in the eHealth Observation profile introduction) must refer to other resources in the Bundle as target in the format \"urn:oid:<the oid>\" or \"urn:uuid:<the uuid>.\".\n\nAll resources in the Bundle must refer to the same Patient and EpisodeOfCare.\nAll measurement resources in the Bundle must have status either `completed` or `final` (`completed` in case of Media/QuestionnaireResponse and `final` in case of Observation).\nAll resources in the Bundle as well as the created Provenance will receive any missing system tags (ehealth-system CodeSystem) provided by the referenced EpisodeOfCare.\nThe request will be denied if any resource in the Bundle contains a system tag, which is not present on the referenced EpisodeOfCare\n\n\n### Output description\nThe returned Bundle contains references to the stored input resources where the id has been substituted.\n\neHealth infrastructure will substitute the id when saving the resources in a single transaction."
+    },
+    {
+      "name" : "export-poll-status",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export-poll-status",
+      "documentation" : "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the '_jobId' is returned in the 'Content-Location' response header when initiating the export. A 'GET' request to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A 'DELETE' request can be used to cancel the export. If the export has already finished, the delete will return '404 Not Found', else the export job will be cancelled and a '202 Accepted' is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the 'Content-Location' header when initiating the export"
+    },
+    {
+      "name" : "export",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export",
+      "documentation" : "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header 'Prefer: respond-async', and will return '202 Accepted' with a polling location in the response header 'Content-Location'. The polling location is for the endpoint '$export-poll-status' and has the export job ID as parameter '_jobId'.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'\n## Polling status of export\nSubsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours."
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://measurement.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

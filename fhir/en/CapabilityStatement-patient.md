@@ -1,4 +1,4 @@
-# patient - eHealth Infrastructure v11.0.0
+# patient - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient | *Version*:11.0.1 |
 | Active as of 2026-02-25 | *Computable Name*:patient |
 
  [Raw OpenAPI-Swagger Definition file](../patient.openapi.json) | [Download](../patient.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "patient",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "patient",
   "status" : "active",
   "date" : "2026-02-25T23:20:08.891+00:00",

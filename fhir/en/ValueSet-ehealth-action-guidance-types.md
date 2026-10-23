@@ -1,4 +1,4 @@
-# Action guidance types - eHealth Infrastructure v11.0.0
+# Action guidance types - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/action-guidance-types | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/action-guidance-types | *Version*:11.0.1 |
 | Active as of 2021-10-14 | *Computable Name*:ActionGuidanceTypes |
 
  
@@ -37,7 +37,7 @@ Action guidance types
   "resourceType" : "ValueSet",
   "id" : "ehealth-action-guidance-types",
   "url" : "http://ehealth.sundhed.dk/vs/action-guidance-types",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ActionGuidanceTypes",
   "title" : "Action guidance types",
   "status" : "active",

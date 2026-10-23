@@ -1,4 +1,4 @@
-# eHealth Message Channel codes - eHealth Infrastructure v11.0.0
+# eHealth Message Channel codes - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-message-channel | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:EhealthMessageChannelCS |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-message-channel | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:EhealthMessageChannelCS |
 
  
 Codes indicating the channel used to send a message. 
@@ -31,11 +31,11 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-message-channel",
   "url" : "http://ehealth.sundhed.dk/cs/ehealth-message-channel",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "EhealthMessageChannelCS",
   "title" : "eHealth Message Channel codes",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

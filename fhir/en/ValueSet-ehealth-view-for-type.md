@@ -1,4 +1,4 @@
-# View For Type - eHealth Infrastructure v11.0.0
+# View For Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/view-for-type | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/view-for-type | *Version*:11.0.1 |
 | Active as of 2021-10-20 | *Computable Name*:ViewType |
 
  
@@ -37,7 +37,7 @@ View for types
   "resourceType" : "ValueSet",
   "id" : "ehealth-view-for-type",
   "url" : "http://ehealth.sundhed.dk/vs/view-for-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ViewType",
   "title" : "View For Type",
   "status" : "active",

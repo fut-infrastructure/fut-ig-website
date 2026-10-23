@@ -1,4 +1,4 @@
-# Address Use - eHealth Infrastructure v11.0.0
+# Address Use - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/address-use | *Version*:11.0.0 | |
+| *Official URL*:http://hl7.org/fhir/address-use | *Version*:11.0.1 | |
 | * Standards status: *[Normative](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 5 | *Computable Name*:AddressUse |
 
  
@@ -47,7 +47,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueInteger" : 5
   }],
   "url" : "http://hl7.org/fhir/address-use",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "AddressUse",
   "title" : "Address Use",
   "status" : "active",

@@ -1,4 +1,4 @@
-# RelatedPerson with video-appointment SMS reminder telecom - eHealth Infrastructure v11.0.0
+# RelatedPerson with video-appointment SMS reminder telecom - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

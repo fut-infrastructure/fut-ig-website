@@ -1,4 +1,4 @@
-# task - eHealth Infrastructure v11.0.0
+# task - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/task | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/task | *Version*:11.0.1 |
 | Active as of 2026-10-16 | *Computable Name*:task |
 
  [Raw OpenAPI-Swagger Definition file](../task.openapi.json) | [Download](../task.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "task",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/task",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "task",
   "status" : "active",
   "date" : "2026-10-16T09:31:16.688+00:00",

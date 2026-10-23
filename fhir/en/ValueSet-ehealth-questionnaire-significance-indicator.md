@@ -1,4 +1,4 @@
-# Questionnaire Item Significance Indicator - eHealth Infrastructure v11.0.0
+# Questionnaire Item Significance Indicator - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-item-significance-indicator | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-item-significance-indicator | *Version*:11.0.1 |
 | Active as of 2021-09-16 | *Computable Name*:QuestionnaireItemSignificanceIndicator |
 
  
@@ -37,7 +37,7 @@ Questionnaire Significance Item Indicator value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-questionnaire-significance-indicator",
   "url" : "http://ehealth.sundhed.dk/vs/questionnaire-item-significance-indicator",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "QuestionnaireItemSignificanceIndicator",
   "title" : "Questionnaire Item Significance Indicator",
   "status" : "active",

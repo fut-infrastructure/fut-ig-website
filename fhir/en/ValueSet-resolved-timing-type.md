@@ -1,4 +1,4 @@
-# Resolved Timing Type - eHealth Infrastructure v11.0.0
+# Resolved Timing Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/resolved-timing-type | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/resolved-timing-type | *Version*:11.0.1 |
 | Active as of 2021-02-26 | *Computable Name*:ResolvedTimingType |
 
  
@@ -37,7 +37,7 @@ Value set for resolved timing type.
   "resourceType" : "ValueSet",
   "id" : "resolved-timing-type",
   "url" : "http://ehealth.sundhed.dk/vs/resolved-timing-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ResolvedTimingType",
   "title" : "Resolved Timing Type",
   "status" : "active",

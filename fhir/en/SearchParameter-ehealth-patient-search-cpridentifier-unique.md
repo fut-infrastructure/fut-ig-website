@@ -1,4 +1,4 @@
-# patientCPRIdentifierUnique - eHealth Infrastructure v11.0.0
+# patientCPRIdentifierUnique - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifierUnique | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifierUnique | *Version*:11.0.1 |
 | Active as of 2022-11-15 | *Computable Name*:patientCPRIdentifierUnique |
 
  
@@ -27,7 +27,7 @@ Uniqueness constraint on search parameter patientCPRIdentifier
     "valueBoolean" : true
   }],
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifierUnique",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "patientCPRIdentifierUnique",
   "status" : "active",
   "date" : "2022-11-15T08:31:20+00:00",

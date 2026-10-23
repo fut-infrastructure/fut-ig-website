@@ -1,4 +1,4 @@
-# Submit measurement - eHealth Infrastructure v11.0.0
+# Submit measurement - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:submit-measurement |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:submit-measurement |
 
  
 The submit-measurement operation provides a single measurement in the form of a Bundle of Observation, QuestionnaireResponse and Media for storage and, subsequently, further processing in the eHealth Infrastructure. A Provenance resource is implicitly created by the infrastructure referencing input Bundle resources as target, thereby relating the resources that were submitted. 
@@ -41,12 +41,12 @@ eHealth infrastructure will substitute the id when saving the resources in a sin
   "resourceType" : "OperationDefinition",
   "id" : "-s-submit-measurement",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "submit-measurement",
   "title" : "Submit measurement",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

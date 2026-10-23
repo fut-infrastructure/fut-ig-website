@@ -1,4 +1,4 @@
-# POST Schedule Patient Total - eHealth Infrastructure v11.0.0
+# POST Schedule Patient Total - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **POST Schedule Patient Total**

@@ -1,4 +1,4 @@
-# Appointment Reason - eHealth Infrastructure v11.0.0
+# Appointment Reason - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/appointment-reason | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/appointment-reason | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:AppointmentReason |
 
  
@@ -40,7 +40,7 @@ Appointment reason
   "resourceType" : "ValueSet",
   "id" : "ehealth-appointment-reason",
   "url" : "http://ehealth.sundhed.dk/vs/appointment-reason",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "AppointmentReason",
   "title" : "Appointment Reason",
   "status" : "active",

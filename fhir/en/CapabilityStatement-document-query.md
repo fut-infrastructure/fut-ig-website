@@ -1,4 +1,4 @@
-# document-query - eHealth Infrastructure v11.0.0
+# document-query - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-query | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-query | *Version*:11.0.1 |
 | Active as of 2026-10-16 | *Computable Name*:document-query |
 
  [Raw OpenAPI-Swagger Definition file](../document-query.openapi.json) | [Download](../document-query.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "document-query",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-query",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "document-query",
   "status" : "active",
   "date" : "2026-10-16T09:29:56.752+00:00",

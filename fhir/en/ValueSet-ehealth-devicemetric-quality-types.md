@@ -1,4 +1,4 @@
-# DeviceMetric Quality Types - eHealth Infrastructure v11.0.0
+# DeviceMetric Quality Types - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/devicemetric-quality-types | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/devicemetric-quality-types | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:DeviceMetricQualityTypes |
 
  
@@ -39,7 +39,7 @@ Device Metric Quality Types value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-devicemetric-quality-types",
   "url" : "http://ehealth.sundhed.dk/vs/devicemetric-quality-types",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DeviceMetricQualityTypes",
   "title" : "DeviceMetric Quality Types",
   "status" : "active",

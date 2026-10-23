@@ -1,4 +1,4 @@
-# eHealth Environment - eHealth Infrastructure v11.0.0
+# eHealth Environment - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-environment | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-environment | *Version*:11.0.1 |
 | Active as of 2021-02-23 | *Computable Name*:eHealth Environment |
 
  
@@ -28,7 +28,7 @@ The eHealth Environment is assigned to PlanDefinition, ActivityDefinition and Qu
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.0"
+    "valueString" : "11.0.1"
   }],
   "name" : "eHealth Environment",
   "status" : "active",

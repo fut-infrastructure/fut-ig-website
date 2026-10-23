@@ -1,4 +1,4 @@
-# Message Medium - eHealth Infrastructure v11.0.0
+# Message Medium - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/message-medium | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/message-medium | *Version*:11.0.1 |
 | Active as of 2019-01-29 | *Computable Name*:MessageMedium |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-message-medium",
   "url" : "http://ehealth.sundhed.dk/cs/message-medium",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "MessageMedium",
   "title" : "Message Medium",
   "status" : "active",

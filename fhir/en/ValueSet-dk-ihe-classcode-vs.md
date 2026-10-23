@@ -1,4 +1,4 @@
-# DK_IHE_ClassCode_VS - eHealth Infrastructure v11.0.0
+# DK_IHE_ClassCode_VS - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-classcode-vs | *Version*:11.0.0 |
+| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-classcode-vs | *Version*:11.0.1 |
 | Active as of 2019-12-11 | *Computable Name*:DK_IHE_ClassCode_VS |
 
  
@@ -37,7 +37,7 @@ Value set for the classCode attribute.
   "resourceType" : "ValueSet",
   "id" : "dk-ihe-classcode-vs",
   "url" : "http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-classcode-vs",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DK_IHE_ClassCode_VS",
   "title" : "DK_IHE_ClassCode_VS",
   "status" : "active",

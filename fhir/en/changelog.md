@@ -1,4 +1,4 @@
-# Changelog - eHealth Infrastructure v11.0.0
+# Changelog - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **Changelog**
@@ -6,6 +6,12 @@
 ## Changelog
 
 This is the log of changes made to the eHealth Implementation Guide.
+
+## 11.0.1 (2026-11-04)
+
+### General changes
+
+* Fixed drop down menus in page render
 
 ## 11.0.0 (2026-11-04)
 

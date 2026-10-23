@@ -1,4 +1,4 @@
-# Device calibration actor - eHealth Infrastructure v11.0.0
+# Device calibration actor - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/device-calibration-actor | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/device-calibration-actor | *Version*:11.0.1 |
 | Active as of 2019-09-16 | *Computable Name*:DeviceCalibrationActor |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-device-calibration-actor",
   "url" : "http://ehealth.sundhed.dk/cs/device-calibration-actor",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DeviceCalibrationActor",
   "title" : "Device calibration actor",
   "status" : "active",

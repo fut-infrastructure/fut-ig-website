@@ -1,4 +1,4 @@
-# Administrative Status - eHealth Infrastructure v11.0.0
+# Administrative Status - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/administrative-status | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/administrative-status | *Version*:11.0.1 |
 | Active as of 2019-08-05 | *Computable Name*:AdministrativeStatus |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-administrative-status",
   "url" : "http://ehealth.sundhed.dk/cs/administrative-status",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "AdministrativeStatus",
   "title" : "Administrative Status",
   "status" : "active",

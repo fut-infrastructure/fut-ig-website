@@ -1,4 +1,4 @@
-# SorOrganizationType - eHealth Infrastructure v11.0.0
+# SorOrganizationType - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/sor-organization-type | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/sor-organization-type | *Version*:11.0.1 |
 | Active as of 2019-05-27 | *Computable Name*:SorOrganizationType |
 
  
@@ -37,7 +37,7 @@ Value set used for indicating the organization type for organizations from Sor
   "resourceType" : "ValueSet",
   "id" : "ehealth-sor-organization-type",
   "url" : "http://ehealth.sundhed.dk/vs/sor-organization-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "SorOrganizationType",
   "title" : "SorOrganizationType",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Device Safety - eHealth Infrastructure v11.0.0
+# Device Safety - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-safety | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-safety | *Version*:11.0.1 |
 | Active as of 2019-09-16 | *Computable Name*:DeviceSafety |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-safety",
   "url" : "http://ehealth.sundhed.dk/vs/device-safety",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DeviceSafety",
   "title" : "Device Safety",
   "status" : "active",

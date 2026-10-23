@@ -1,4 +1,4 @@
-# Document Type - eHealth Infrastructure v11.0.0
+# Document Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/document-type | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/document-type | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:DocumentType |
 
  
@@ -38,7 +38,7 @@ Document Type value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-document-type",
   "url" : "http://ehealth.sundhed.dk/vs/document-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DocumentType",
   "title" : "Document Type",
   "status" : "active",

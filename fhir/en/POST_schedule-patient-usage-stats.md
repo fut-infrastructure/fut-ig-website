@@ -1,4 +1,4 @@
-# POST Schedule Patient Usage Stats - eHealth Infrastructure v11.0.0
+# POST Schedule Patient Usage Stats - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **POST Schedule Patient Usage Stats**

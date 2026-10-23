@@ -1,4 +1,4 @@
-# ActivityDefinition code to Observation code - eHealth Infrastructure v11.0.0
+# ActivityDefinition code to Observation code - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-observation-code | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-observation-code | *Version*:11.0.1 |
 | Active as of 2020-03-13 | *Computable Name*:activitydefinition-code-to-observation-code |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-observation-code",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-observation-code",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "activitydefinition-code-to-observation-code",
   "title" : "ActivityDefinition code to Observation code",
   "status" : "active",

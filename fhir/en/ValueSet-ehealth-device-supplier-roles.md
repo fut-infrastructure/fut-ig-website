@@ -1,4 +1,4 @@
-# Device Supplier Roles - eHealth Infrastructure v11.0.0
+# Device Supplier Roles - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-supplier-roles | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-supplier-roles | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:DeviceSupplierRoles |
 
  
@@ -37,7 +37,7 @@ Device Supplier Roles value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-supplier-roles",
   "url" : "http://ehealth.sundhed.dk/vs/device-supplier-roles",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DeviceSupplierRoles",
   "title" : "Device Supplier Roles",
   "status" : "active",

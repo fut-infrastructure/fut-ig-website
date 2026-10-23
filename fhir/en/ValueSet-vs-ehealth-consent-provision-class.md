@@ -1,4 +1,4 @@
-# Consent Provision Class - eHealth Infrastructure v11.0.0
+# Consent Provision Class - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class | *Version*:11.0.1 |
 | Active as of 2025-12-16 | *Computable Name*:ConsentProvisionClass |
 
  
@@ -37,7 +37,7 @@ Value set of provision class for consent.
   "resourceType" : "ValueSet",
   "id" : "vs-ehealth-consent-provision-class",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-consent-provision-class",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ConsentProvisionClass",
   "title" : "Consent Provision Class",
   "status" : "active",

@@ -1,0 +1,123 @@
+# eHealth Usage Contxt Type - eHealth Infrastructure v11.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **eHealth Usage Contxt Type**
+
+## CodeSystem: eHealth Usage Contxt Type 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-usage-context-type | *Version*:11.0.1 |
+| Active as of 2020-11-20 | *Computable Name*:eHealthUsageContextType |
+
+ 
+Usage Context type 
+
+This Code system is referenced in the definition of the following value sets:
+
+* [eHealth Usage Context Type](ValueSet-ehealth-usage-context-type.md)
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ehealth-usage-context-type",
+  "url" : "http://ehealth.sundhed.dk/cs/ehealth-usage-context-type",
+  "version" : "11.0.1",
+  "name" : "eHealthUsageContextType",
+  "title" : "eHealth Usage Contxt Type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2020-11-20T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Usage Context type",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "concept" : [{
+    "code" : "activity",
+    "display" : "activity type",
+    "definition" : "The type of activity in which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Type af aktivitet i hvilken det er relevant at benytte det modul/element/ressource, der har nærværende brugskontekst (UsageContext)."
+    }]
+  },
+  {
+    "code" : "supports",
+    "display" : "supports",
+    "definition" : "The type of activity supported by a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Type af aktivitet understøttet af det modul/element/ressource, der har nærværende brugskontekst (UsageContext)."
+    }]
+  },
+  {
+    "code" : "range",
+    "display" : "range",
+    "definition" : "The type of reference range with which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/reference-range-type value set",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Type af grænseværdi med hvilken det er relevant at benytte det modul/element/ressource, der har nærværende brugskontekst (UsageContext)."
+    }]
+  },
+  {
+    "code" : "questionnaire-related",
+    "display" : "questionnaire related",
+    "definition" : "The type of questionnaire element with which it is relevant to use a coded values/id registries having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/questionnaire-elements value set",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Type af spørgeskemaelement med hvilken det er relevant at benytte kodede værdier/id register, der har nærværende brugskontekst (UsageContext)."
+    }]
+  },
+  {
+    "code" : "system-treatment-area",
+    "display" : "system treatment area",
+    "definition" : "The coexistence-tag for which the treatment area collection ValueSet is relevant. For this context type, the value should be a code taken from the http://ehealth.sundhed.dk/vs/ehealth-system value set",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Markering af hvilket sameksistens-tag den pågældende samling af behandlingsområder er tilknyttet."
+    }]
+  },
+  {
+    "code" : "condition-qualification",
+    "display" : "condition qualification",
+    "definition" : "Qualification of condition. For this context type, the value shall be a code from http://ehealth.sundhed.dk/vs/condition-qualification",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Kvalificering af diagnose"
+    }]
+  },
+  {
+    "code" : "body-site",
+    "display" : "body site",
+    "definition" : "Placement on the body. For this context type, the value shall be a code from http://ehealth.sundhed.dk/vs/usage-context-body-site",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Placering på kroppen"
+    }]
+  }]
+}
+
+```

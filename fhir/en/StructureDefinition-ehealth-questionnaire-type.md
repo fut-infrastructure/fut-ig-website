@@ -1,4 +1,4 @@
-# Questionnaire type - eHealth Infrastructure v11.0.0
+# Questionnaire type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-type | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:ehealth-questionnaire-type |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-type | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:ehealth-questionnaire-type |
 
 Concept that represents the overall questionnaire
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-questionn
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-type",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ehealth-questionnaire-type",
   "title" : "Questionnaire type",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

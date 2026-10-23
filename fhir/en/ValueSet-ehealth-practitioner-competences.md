@@ -1,4 +1,4 @@
-# Practitioner Competences - eHealth Infrastructure v11.0.0
+# Practitioner Competences - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/practitioner-competences | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/practitioner-competences | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:PractitionerCompetences |
 
  
@@ -37,7 +37,7 @@ Practitioner Competences
   "resourceType" : "ValueSet",
   "id" : "ehealth-practitioner-competences",
   "url" : "http://ehealth.sundhed.dk/vs/practitioner-competences",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "PractitionerCompetences",
   "title" : "Practitioner Competences",
   "status" : "active",

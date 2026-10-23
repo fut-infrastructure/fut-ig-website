@@ -1,4 +1,4 @@
-# Document Class - eHealth Infrastructure v11.0.0
+# Document Class - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/document-class | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/document-class | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:DocumentClass |
 
  
@@ -38,7 +38,7 @@ Document Class value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-document-class",
   "url" : "http://ehealth.sundhed.dk/vs/document-class",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "DocumentClass",
   "title" : "Document Class",
   "status" : "active",

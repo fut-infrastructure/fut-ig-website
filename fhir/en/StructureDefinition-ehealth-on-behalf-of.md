@@ -1,4 +1,4 @@
-# On behalf of - eHealth Infrastructure v11.0.0
+# On behalf of - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-on-behalf-of | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:ehealth-on-behalf-of |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-on-behalf-of | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:ehealth-on-behalf-of |
 
 On behalf of
 
@@ -41,11 +41,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-on-behalf
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-on-behalf-of",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-on-behalf-of",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ehealth-on-behalf-of",
   "title" : "On behalf of",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

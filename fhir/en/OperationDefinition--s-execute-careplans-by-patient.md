@@ -1,4 +1,4 @@
-# Execute careplans by patient - eHealth Infrastructure v11.0.0
+# Execute careplans by patient - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplans-by-patient | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:execute-careplans-by-patient |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplans-by-patient | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:execute-careplans-by-patient |
 
  
 
@@ -40,12 +40,12 @@ This report contains the following resources:
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-careplans-by-patient",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplans-by-patient",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "execute-careplans-by-patient",
   "title" : "Execute careplans by patient",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

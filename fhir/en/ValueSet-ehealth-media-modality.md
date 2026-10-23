@@ -1,4 +1,4 @@
-# Media modality - eHealth Infrastructure v11.0.0
+# Media modality - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/media-modality | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/media-modality | *Version*:11.0.1 |
 | Active as of 2024-10-21 | *Computable Name*:MediaModality |
 
  
@@ -39,7 +39,7 @@ No Expansion for this valueset (not supported by Publication Tooling)
   "resourceType" : "ValueSet",
   "id" : "ehealth-media-modality",
   "url" : "http://ehealth.sundhed.dk/vs/media-modality",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "MediaModality",
   "title" : "Media modality",
   "status" : "active",

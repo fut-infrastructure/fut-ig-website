@@ -1,4 +1,4 @@
-# Media investigation item - eHealth Infrastructure v11.0.0
+# Media investigation item - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-mediaInvestigationItem | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:ehealth-clinicalimpression-mediaInvestigationItem |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-mediaInvestigationItem | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:ehealth-clinicalimpression-mediaInvestigationItem |
 
 Investigation item for Media resources so they can be approved.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-clinicali
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-clinicalimpression-mediaInvestigationItem",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-mediaInvestigationItem",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ehealth-clinicalimpression-mediaInvestigationItem",
   "title" : "Media investigation item",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

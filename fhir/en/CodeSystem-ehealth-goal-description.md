@@ -1,4 +1,4 @@
-# Goal Description - eHealth Infrastructure v11.0.0
+# Goal Description - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/goal-description | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/goal-description | *Version*:11.0.1 |
 | Active as of 2021-01-13 | *Computable Name*:GoalDescription |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-goal-description",
   "url" : "http://ehealth.sundhed.dk/cs/goal-description",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "GoalDescription",
   "title" : "Goal Description",
   "status" : "active",

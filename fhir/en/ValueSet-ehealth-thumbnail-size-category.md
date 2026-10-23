@@ -1,4 +1,4 @@
-# Thumbnail Size Category - eHealth Infrastructure v11.0.0
+# Thumbnail Size Category - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/thumbnail-size-category | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/thumbnail-size-category | *Version*:11.0.1 |
 | Active as of 2024-10-28 | *Computable Name*:ThumbnailSizeCategory |
 
  
@@ -37,7 +37,7 @@ Thumbnail size is a value set with the available sizes of low resolution media r
   "resourceType" : "ValueSet",
   "id" : "ehealth-thumbnail-size-category",
   "url" : "http://ehealth.sundhed.dk/vs/thumbnail-size-category",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ThumbnailSizeCategory",
   "title" : "Thumbnail Size Category",
   "status" : "active",

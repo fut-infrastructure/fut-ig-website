@@ -1,4 +1,4 @@
-# ServiceRequest status history - eHealth Infrastructure v11.0.0
+# ServiceRequest status history - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:ehealth-servicerequest-statusHistory |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:ehealth-servicerequest-statusHistory |
 
 **Context of Use**
 
@@ -38,11 +38,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-servicere
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-servicerequest-statusHistory",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ehealth-servicerequest-statusHistory",
   "title" : "ServiceRequest status history",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

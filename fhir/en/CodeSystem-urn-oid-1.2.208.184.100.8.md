@@ -1,4 +1,4 @@
-# MedCom Measurement CodeSystem - eHealth Infrastructure v11.0.0
+# MedCom Measurement CodeSystem - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:urn:oid:1.2.208.184.100.8 | *Version*:11.0.0 |
+| *Official URL*:urn:oid:1.2.208.184.100.8 | *Version*:11.0.1 |
 | Active as of 2025-05-21 | *Computable Name*:MedComMeasurementCodeSystem |
 | *Other Identifiers:*OID:1.2.208.184.100.8 | |
 
@@ -38,7 +38,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.208.184.100.8"
   }],
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "MedComMeasurementCodeSystem",
   "title" : "MedCom Measurement CodeSystem",
   "status" : "active",

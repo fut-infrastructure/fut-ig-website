@@ -1,4 +1,4 @@
-# Condition Qualification - eHealth Infrastructure v11.0.0
+# Condition Qualification - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/condition-qualification | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/condition-qualification | *Version*:11.0.1 |
 | Active as of 2026-01-19 | *Computable Name*:conditionQualification |
 
  
@@ -37,7 +37,7 @@ Value set of condition qualifications
   "resourceType" : "ValueSet",
   "id" : "vs-condition-qualification",
   "url" : "http://ehealth.sundhed.dk/vs/condition-qualification",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "conditionQualification",
   "title" : "Condition Qualification",
   "status" : "active",

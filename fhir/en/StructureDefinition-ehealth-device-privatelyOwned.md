@@ -1,4 +1,4 @@
-# Privately owned - eHealth Infrastructure v11.0.0
+# Privately owned - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device-privatelyOwned | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:ehealth-device-privatelyOwned |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device-privatelyOwned | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:ehealth-device-privatelyOwned |
 
 True if this device is privately owned (BYOD - Bring you own device).
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-device-pr
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-device-privatelyOwned",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-device-privatelyOwned",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ehealth-device-privatelyOwned",
   "title" : "Privately owned",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

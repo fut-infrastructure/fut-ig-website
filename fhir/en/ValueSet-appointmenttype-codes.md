@@ -1,4 +1,4 @@
-# Appointment Type Codes - eHealth Infrastructure v11.0.0
+# Appointment Type Codes - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/appointmenttype-codes | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/appointmenttype-codes | *Version*:11.0.1 |
 | Active as of 2019-02-02 | *Computable Name*:AppointmentTypeCodes |
 
  
@@ -40,7 +40,7 @@ Appointment type codes used by the system
   "resourceType" : "ValueSet",
   "id" : "appointmenttype-codes",
   "url" : "http://ehealth.sundhed.dk/vs/appointmenttype-codes",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "AppointmentTypeCodes",
   "title" : "Appointment Type Codes",
   "status" : "active",

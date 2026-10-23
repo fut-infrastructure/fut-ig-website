@@ -1,4 +1,4 @@
-# POST Search Measurements Bundle Limit - eHealth Infrastructure v11.0.0
+# POST Search Measurements Bundle Limit - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * **POST Search Measurements Bundle Limit**

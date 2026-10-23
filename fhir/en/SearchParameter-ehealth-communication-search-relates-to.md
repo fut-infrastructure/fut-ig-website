@@ -1,4 +1,4 @@
-# communicationRelatesTo - eHealth Infrastructure v11.0.0
+# communicationRelatesTo - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/relatesTo | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/relatesTo | *Version*:11.0.1 |
 | Active as of 2024-07-26 | *Computable Name*:communicationRelatesTo |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding communication based on either participant or episod
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-relates-to",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/relatesTo",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "communicationRelatesTo",
   "status" : "active",
   "date" : "2024-07-26T12:44:20+00:00",

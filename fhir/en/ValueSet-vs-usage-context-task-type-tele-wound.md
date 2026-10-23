@@ -1,4 +1,4 @@
-# Usage Context for Tele Wound Task Type - eHealth Infrastructure v11.0.0
+# Usage Context for Tele Wound Task Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-task-type-tele-wound | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-task-type-tele-wound | *Version*:11.0.1 |
 | Active as of 2026-01-19 | *Computable Name*:usageContextTaskTypeTeleWound |
 
  
@@ -37,7 +37,7 @@ Value set of task types for the Tele Wound domain.
   "resourceType" : "ValueSet",
   "id" : "vs-usage-context-task-type-tele-wound",
   "url" : "http://ehealth.sundhed.dk/vs/usage-context-task-type-tele-wound",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "usageContextTaskTypeTeleWound",
   "title" : "Usage Context for Tele Wound Task Type ",
   "status" : "active",

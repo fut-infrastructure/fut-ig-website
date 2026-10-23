@@ -1,4 +1,4 @@
-# Usage Context Task Type - eHealth Infrastructure v11.0.0
+# Usage Context Task Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-task-type | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-task-type | *Version*:11.0.1 |
 | Active as of 2026-01-19 | *Computable Name*:usageContextTaskType |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "vs-usage-context-task-type",
   "url" : "http://ehealth.sundhed.dk/vs/usage-context-task-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "usageContextTaskType",
   "title" : "Usage Context Task Type",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Questionnaire linkage item - eHealth Infrastructure v11.0.0
+# Questionnaire linkage item - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnairelinkage-item | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:ehealth-questionnairelinkage-item |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnairelinkage-item | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:ehealth-questionnairelinkage-item |
 
 A group of questions, across the questionnaires participating in the linkage, that are considered clinically meaningful to juxtapose (for example a patient's answer shown side by side with a relative's answer to the corresponding question). A group may span two or more questionnaires, need not cover all questionnaires in the linkage, and may link questions within a single questionnaire (for example across business versions).
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-questionn
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnairelinkage-item",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnairelinkage-item",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ehealth-questionnairelinkage-item",
   "title" : "Questionnaire linkage item",
   "status" : "active",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

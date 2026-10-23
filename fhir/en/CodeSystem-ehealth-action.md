@@ -1,4 +1,4 @@
-# Action - eHealth Infrastructure v11.0.0
+# Action - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/action | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/action | *Version*:11.0.1 |
 | Active as of 2021-10-22 | *Computable Name*:Action |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-action",
   "url" : "http://ehealth.sundhed.dk/cs/action",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "Action",
   "title" : "Action",
   "status" : "active",

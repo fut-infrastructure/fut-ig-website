@@ -1,4 +1,4 @@
-# eHealth Usage Contxt Type - eHealth Infrastructure v11.0.0
+# eHealth Usage Contxt Type - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-usage-context-type | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-usage-context-type | *Version*:11.0.1 |
 | Active as of 2020-11-20 | *Computable Name*:eHealthUsageContextType |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-usage-context-type",
   "url" : "http://ehealth.sundhed.dk/cs/ehealth-usage-context-type",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "eHealthUsageContextType",
   "title" : "eHealth Usage Contxt Type",
   "status" : "active",

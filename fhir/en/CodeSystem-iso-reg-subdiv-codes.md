@@ -1,4 +1,4 @@
-# Regional subdivision codes - eHealth Infrastructure v11.0.0
+# Regional subdivision codes - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://www.iso.org/obp/ui/#iso:code:3166:DK | *Version*:11.0.0 |
+| *Official URL*:https://www.iso.org/obp/ui/#iso:code:3166:DK | *Version*:11.0.1 |
 | Active as of 2019-02-02 | *Computable Name*:Regional subdivision codes |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "iso-reg-subdiv-codes",
   "url" : "https://www.iso.org/obp/ui/#iso:code:3166:DK",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "Regional subdivision codes",
   "title" : "Regional subdivision codes",
   "status" : "active",

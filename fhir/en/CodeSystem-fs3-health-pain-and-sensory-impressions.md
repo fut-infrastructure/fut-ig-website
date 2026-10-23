@@ -1,4 +1,4 @@
-# FS III, Smerter og sanseindtryk - eHealth Infrastructure v11.0.0
+# FS III, Smerter og sanseindtryk - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-pain-and-sensory-impressions | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-pain-and-sensory-impressions | *Version*:11.0.1 |
 | Active as of 2019-02-02 | *Computable Name*:FS III, Smerter og sanseindtryk |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "fs3-health-pain-and-sensory-impressions",
   "url" : "http://ehealth.sundhed.dk/cs/fs3-health-pain-and-sensory-impressions",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "FS III, Smerter og sanseindtryk",
   "title" : "FS III, Smerter og sanseindtryk",
   "status" : "active",

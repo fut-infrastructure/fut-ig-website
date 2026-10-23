@@ -1,4 +1,4 @@
-# plan - eHealth Infrastructure v11.0.0
+# plan - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/plan | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/plan | *Version*:11.0.1 |
 | Active as of 2026-10-16 | *Computable Name*:plan |
 
  [Raw OpenAPI-Swagger Definition file](../plan.openapi.json) | [Download](../plan.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "plan",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/plan",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "plan",
   "status" : "active",
   "date" : "2026-10-16T09:30:32.236+00:00",

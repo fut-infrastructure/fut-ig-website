@@ -1,4 +1,4 @@
-# Consent/24 - related person's consent to processing of their information (PORPI) - eHealth Infrastructure v11.0.0
+# Consent/24 - related person's consent to processing of their information (PORPI) - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

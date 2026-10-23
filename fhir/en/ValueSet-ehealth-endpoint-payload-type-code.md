@@ -1,4 +1,4 @@
-# Endpoint Payload Type Code - eHealth Infrastructure v11.0.0
+# Endpoint Payload Type Code - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/endpoint-payload-type-code | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/endpoint-payload-type-code | *Version*:11.0.1 |
 | Active as of 2025-11-07 | *Computable Name*:EndpointPayloadTypeCode |
 
  
@@ -39,7 +39,7 @@ No Expansion for this valueset (Unsupported Code System Version)
   "resourceType" : "ValueSet",
   "id" : "ehealth-endpoint-payload-type-code",
   "url" : "http://ehealth.sundhed.dk/vs/endpoint-payload-type-code",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "EndpointPayloadTypeCode",
   "title" : "Endpoint Payload Type Code",
   "status" : "active",
@@ -64,7 +64,7 @@ No Expansion for this valueset (Unsupported Code System Version)
   "compose" : {
     "include" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-      "version" : "11.0.0",
+      "version" : "11.0.1",
       "concept" : [{
         "code" : "unsupported"
       }]

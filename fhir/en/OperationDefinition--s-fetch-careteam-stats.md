@@ -1,4 +1,4 @@
-# Fetch careteam stats - eHealth Infrastructure v11.0.0
+# Fetch careteam stats - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:fetch-careteam-stats |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:fetch-careteam-stats |
 
  
 
@@ -33,12 +33,12 @@ This report contains counts of resources associated with CareTeams:
   "resourceType" : "OperationDefinition",
   "id" : "-s-fetch-careteam-stats",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-careteam-stats",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "fetch-careteam-stats",
   "title" : "Fetch careteam stats",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

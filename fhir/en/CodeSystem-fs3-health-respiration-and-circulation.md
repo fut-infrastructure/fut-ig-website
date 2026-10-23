@@ -1,4 +1,4 @@
-# FS III, Respiration og cirkulation - eHealth Infrastructure v11.0.0
+# FS III, Respiration og cirkulation - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-respiration-and-circulation | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-respiration-and-circulation | *Version*:11.0.1 |
 | Active as of 2019-02-02 | *Computable Name*:FS III, Respiration og cirkulation |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "fs3-health-respiration-and-circulation",
   "url" : "http://ehealth.sundhed.dk/cs/fs3-health-respiration-and-circulation",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "FS III, Respiration og cirkulation",
   "title" : "FS III, Respiration og cirkulation",
   "status" : "active",

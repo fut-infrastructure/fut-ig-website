@@ -1,4 +1,4 @@
-# CareTeam Category - eHealth Infrastructure v11.0.0
+# CareTeam Category - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/careteam-category | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/careteam-category | *Version*:11.0.1 |
 | Active as of 2019-02-08 | *Computable Name*:CareTeamCategory |
 
  
@@ -42,7 +42,7 @@
   "resourceType" : "ValueSet",
   "id" : "ehealth-careteam-category",
   "url" : "http://ehealth.sundhed.dk/vs/careteam-category",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "CareTeamCategory",
   "title" : "CareTeam Category",
   "status" : "active",

@@ -1,4 +1,4 @@
-# message01 - eHealth Infrastructure v11.0.0
+# message01 - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

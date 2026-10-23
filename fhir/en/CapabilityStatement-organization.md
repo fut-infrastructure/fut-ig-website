@@ -1,4 +1,4 @@
-# organization - eHealth Infrastructure v11.0.0
+# organization - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization | *Version*:11.0.1 |
 | Active as of 2026-10-16 | *Computable Name*:organization |
 
  [Raw OpenAPI-Swagger Definition file](../organization.openapi.json) | [Download](../organization.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "organization",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/organization",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "organization",
   "status" : "active",
   "date" : "2026-10-16T09:31:17.302+00:00",

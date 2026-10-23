@@ -1,4 +1,4 @@
-# Fetch patient devices - eHealth Infrastructure v11.0.0
+# Fetch patient devices - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-devices | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:fetch-patient-devices |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-devices | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:fetch-patient-devices |
 
  
 
@@ -39,12 +39,12 @@ This report contains Device information for each EpisodeOfCare:
   "resourceType" : "OperationDefinition",
   "id" : "-s-fetch-patient-devices",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-devices",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "fetch-patient-devices",
   "title" : "Fetch patient devices",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

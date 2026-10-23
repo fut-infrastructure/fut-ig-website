@@ -1,4 +1,4 @@
-# Create a clone of a Questionnaire - eHealth Infrastructure v11.0.0
+# Create a clone of a Questionnaire - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone | *Version*:11.0.0 |
-| Active as of 2026-10-21 | *Computable Name*:create-clone |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone | *Version*:11.0.1 |
+| Active as of 2026-10-23 | *Computable Name*:create-clone |
 
  
 
@@ -43,12 +43,12 @@ Bundle containing all resources that were created during the operation.
   "resourceType" : "OperationDefinition",
   "id" : "Questionnaire-i-create-clone",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Questionnaire-i-create-clone",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "create-clone",
   "title" : "Create a clone of a Questionnaire",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-21T13:41:32+00:00",
+  "date" : "2026-10-23T09:30:26+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

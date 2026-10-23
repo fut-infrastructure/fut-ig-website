@@ -1,4 +1,4 @@
-# Sygdoms- og diagnosekoder - eHealth Infrastructure v11.0.0
+# Sygdoms- og diagnosekoder - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/health-conditions | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/health-conditions | *Version*:11.0.1 |
 | Active as of 2022-01-14 | *Computable Name*:Health_conditions |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-health-conditions",
   "url" : "http://ehealth.sundhed.dk/vs/health-conditions",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "Health_conditions",
   "title" : "Sygdoms- og diagnosekoder",
   "status" : "active",

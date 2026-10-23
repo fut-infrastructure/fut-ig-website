@@ -1,4 +1,4 @@
-# terminology - eHealth Infrastructure v11.0.0
+# terminology - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/terminology | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/terminology | *Version*:11.0.1 |
 | Active as of 2026-10-16 | *Computable Name*:terminology |
 
  [Raw OpenAPI-Swagger Definition file](../terminology.openapi.json) | [Download](../terminology.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "terminology",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/terminology",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "terminology",
   "status" : "active",
   "date" : "2026-10-16T09:38:49.920+00:00",

@@ -1,4 +1,4 @@
-# Activitydefinition-code to do reminder - eHealth Infrastructure v11.0.0
+# Activitydefinition-code to do reminder - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder | *Version*:11.0.1 |
 | Active as of 2023-06-28 | *Computable Name*:activitydefinition-code-to-do-reminder |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall be subjected to producing reminders o
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-do-reminder",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "activitydefinition-code-to-do-reminder",
   "title" : "Activitydefinition-code to do reminder",
   "status" : "active",

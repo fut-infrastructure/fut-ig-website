@@ -1,4 +1,4 @@
-# ClinicalImpression Decision Codes - eHealth Infrastructure v11.0.0
+# ClinicalImpression Decision Codes - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/clinicalimpression-decision-codes | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/clinicalimpression-decision-codes | *Version*:11.0.1 |
 | Active as of 2019-09-23 | *Computable Name*:ClinicalImpressionDecisionCodes |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-clinicalimpression-decision-codes",
   "url" : "http://ehealth.sundhed.dk/cs/clinicalimpression-decision-codes",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "ClinicalImpressionDecisionCodes",
   "title" : "ClinicalImpression Decision Codes",
   "status" : "active",

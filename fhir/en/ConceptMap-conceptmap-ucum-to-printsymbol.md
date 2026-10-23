@@ -1,4 +1,4 @@
-# UCUM code to PrintSymbol mapping - eHealth Infrastructure v11.0.0
+# UCUM code to PrintSymbol mapping - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol | *Version*:11.0.1 |
 | Active as of 2020-08-31 | *Computable Name*:conceptmap-ucum-to-printsymbol |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "conceptmap-ucum-to-printsymbol",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/conceptmap-ucum-to-printsymbol",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "conceptmap-ucum-to-printsymbol",
   "title" : "UCUM code to PrintSymbol mapping",
   "status" : "active",

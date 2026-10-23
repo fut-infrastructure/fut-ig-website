@@ -1,4 +1,4 @@
-# questionnaire - eHealth Infrastructure v11.0.0
+# questionnaire - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/questionnaire | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/questionnaire | *Version*:11.0.1 |
 | Active as of 2026-10-16 | *Computable Name*:questionnaire |
 
  [Raw OpenAPI-Swagger Definition file](../questionnaire.openapi.json) | [Download](../questionnaire.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "questionnaire",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/questionnaire",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "questionnaire",
   "status" : "active",
   "date" : "2026-10-16T09:29:54.469+00:00",

@@ -1,4 +1,4 @@
-# appointmentGroupId - eHealth Infrastructure v11.0.0
+# appointmentGroupId - eHealth Infrastructure v11.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/groupId | *Version*:11.0.0 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/groupId | *Version*:11.0.1 |
 | Active as of 2021-05-06 | *Computable Name*:appointmentGroupId |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding resources based on group id
   "resourceType" : "SearchParameter",
   "id" : "ehealth-appointment-search-groupId",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/groupId",
-  "version" : "11.0.0",
+  "version" : "11.0.1",
   "name" : "appointmentGroupId",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",
