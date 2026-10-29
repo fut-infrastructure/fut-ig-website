@@ -1,4 +1,4 @@
-# Consent Provision Code - eHealth Infrastructure v11.0.1
+# Consent Provision Code - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code | *Version*:11.0.2 |
 | Active as of 2025-12-16 | *Computable Name*:ConsentProvisionCode |
 
  
@@ -37,7 +37,7 @@ Value set of provision codes for consent.
   "resourceType" : "ValueSet",
   "id" : "vs-ehealth-consent-provision-code",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-consent-provision-code",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ConsentProvisionCode",
   "title" : "Consent Provision Code",
   "status" : "active",

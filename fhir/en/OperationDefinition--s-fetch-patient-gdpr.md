@@ -1,4 +1,4 @@
-# Fetch patient GDPR - eHealth Infrastructure v11.0.1
+# Fetch patient GDPR - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-gdpr | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:fetch-patient-gdpr |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-gdpr | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:fetch-patient-gdpr |
 
  
 
@@ -46,12 +46,12 @@ None. This report returns a single JSon file.
   "resourceType" : "OperationDefinition",
   "id" : "-s-fetch-patient-gdpr",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-gdpr",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "fetch-patient-gdpr",
   "title" : "Fetch patient GDPR",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

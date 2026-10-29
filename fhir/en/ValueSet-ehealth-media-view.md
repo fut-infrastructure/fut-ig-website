@@ -1,4 +1,4 @@
-# Media view - eHealth Infrastructure v11.0.1
+# Media view - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/media-view | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/media-view | *Version*:11.0.2 |
 | Active as of 2024-10-21 | *Computable Name*:MediaView |
 
  
@@ -37,7 +37,7 @@ Media view
   "resourceType" : "ValueSet",
   "id" : "ehealth-media-view",
   "url" : "http://ehealth.sundhed.dk/vs/media-view",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "MediaView",
   "title" : "Media view",
   "status" : "active",

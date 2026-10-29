@@ -1,0 +1,708 @@
+# questionnaire - eHealth Infrastructure v11.0.2
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **questionnaire**
+
+## CapabilityStatement: questionnaire 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/questionnaire | *Version*:11.0.2 |
+| Active as of 2026-10-16 | *Computable Name*:questionnaire |
+
+ [Raw OpenAPI-Swagger Definition file](../questionnaire.openapi.json) | [Download](../questionnaire.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "questionnaire",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/questionnaire",
+  "version" : "11.0.2",
+  "name" : "questionnaire",
+  "status" : "active",
+  "date" : "2026-10-16T09:29:54.469+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "questionnaire",
+    "version" : "2.21.0"
+  },
+  "implementation" : {
+    "description" : "eHealth questionnaire service",
+    "url" : "https://questionnaire.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "type" : "Basic",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Basic",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Basic:actionGuidanceForReference",
+      "Basic:intendedAudience",
+      "Basic:questionnaireLinkageFor",
+      "Basic:reference",
+      "Basic:viewForReference",
+      "Questionnaire:reference",
+      "StructureDefinition:valueset"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "actionGuidanceForReference",
+        "type" : "reference",
+        "documentation" : "Action guidance for reference"
+      },
+      {
+        "name" : "actionGuidanceForType",
+        "type" : "token",
+        "documentation" : "The action guidance for type"
+      },
+      {
+        "name" : "actionGuidanceType",
+        "type" : "token",
+        "documentation" : "The action guidance type"
+      },
+      {
+        "name" : "code",
+        "type" : "token",
+        "documentation" : "The code"
+      },
+      {
+        "name" : "context",
+        "type" : "token",
+        "documentation" : "A use context assigned to the action guidance"
+      },
+      {
+        "name" : "context-type",
+        "type" : "token",
+        "documentation" : "A type of use context assigned to the action guidance"
+      },
+      {
+        "name" : "context-type-value",
+        "type" : "composite",
+        "documentation" : "A use context type and value assigned to the action guidance"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "The identifier"
+      },
+      {
+        "name" : "intendedAudience",
+        "type" : "reference",
+        "documentation" : "The intended audience"
+      },
+      {
+        "name" : "questionnaireLinkageFor",
+        "type" : "reference",
+        "documentation" : "Questionnaire participating in the questionnaire linkage"
+      },
+      {
+        "name" : "recommendation",
+        "type" : "token",
+        "documentation" : "The recommendation"
+      },
+      {
+        "name" : "reference",
+        "type" : "reference",
+        "documentation" : "The modifier reference"
+      },
+      {
+        "name" : "role",
+        "type" : "token",
+        "documentation" : "The modifier role"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "The title (startsWith matching)"
+      },
+      {
+        "name" : "viewForReference",
+        "type" : "reference",
+        "documentation" : "View for reference"
+      },
+      {
+        "name" : "viewForType",
+        "type" : "token",
+        "documentation" : "The view for type"
+      },
+      {
+        "name" : "viewType",
+        "type" : "token",
+        "documentation" : "The view type"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Basic:actionGuidanceForReference",
+      "Basic:intendedAudience",
+      "Basic:questionnaireLinkageFor",
+      "Basic:reference",
+      "Basic:viewForReference",
+      "Questionnaire:reference",
+      "StructureDefinition:valueset"],
+      "operation" : [{
+        "name" : "expunge",
+        "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Basic:actionGuidanceForReference",
+      "Basic:intendedAudience",
+      "Basic:questionnaireLinkageFor",
+      "Basic:reference",
+      "Basic:viewForReference",
+      "Questionnaire:reference",
+      "StructureDefinition:valueset"]
+    },
+    {
+      "type" : "Questionnaire",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Basic:actionGuidanceForReference",
+      "Basic:intendedAudience",
+      "Basic:questionnaireLinkageFor",
+      "Basic:reference",
+      "Basic:viewForReference",
+      "Questionnaire:reference",
+      "StructureDefinition:valueset"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "base",
+        "type" : "token",
+        "documentation" : "Base of resource"
+      },
+      {
+        "name" : "baseEnvironment",
+        "type" : "token",
+        "documentation" : "Base Environment of resource"
+      },
+      {
+        "name" : "code",
+        "type" : "token",
+        "documentation" : "A code that corresponds to one of its items in the questionnaire"
+      },
+      {
+        "name" : "context",
+        "type" : "token",
+        "documentation" : "A use context assigned to the questionnaire"
+      },
+      {
+        "name" : "context-type",
+        "type" : "token",
+        "documentation" : "A type of use context assigned to the questionnaire"
+      },
+      {
+        "name" : "context-type-value",
+        "type" : "composite",
+        "documentation" : "A use context type and value assigned to the questionnaire"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "The questionnaire publication date"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "The description of the questionnaire"
+      },
+      {
+        "name" : "effective",
+        "type" : "date",
+        "documentation" : "The time during which the questionnaire is intended to be in use"
+      },
+      {
+        "name" : "ehealthPredecessor",
+        "type" : "token",
+        "documentation" : "Predecessor of resource"
+      },
+      {
+        "name" : "employeeTitle",
+        "type" : "string",
+        "documentation" : "Title intended for clinicians"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External identifier for the questionnaire"
+      },
+      {
+        "name" : "jurisdiction",
+        "type" : "token",
+        "documentation" : "Intended jurisdiction for the questionnaire"
+      },
+      {
+        "name" : "name",
+        "type" : "string",
+        "documentation" : "Computationally friendly name of the questionnaire"
+      },
+      {
+        "name" : "publisher",
+        "type" : "string",
+        "documentation" : "Name of the publisher of the questionnaire"
+      },
+      {
+        "name" : "reference",
+        "type" : "reference",
+        "documentation" : "Modifier reference"
+      },
+      {
+        "name" : "role",
+        "type" : "token",
+        "documentation" : "Modifier role"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status of the questionnaire"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "The human-friendly name of the questionnaire"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "Questionnaire type"
+      },
+      {
+        "name" : "url",
+        "type" : "uri",
+        "documentation" : "The uri that identifies the questionnaire"
+      },
+      {
+        "name" : "version",
+        "type" : "token",
+        "documentation" : "The business version of the questionnaire"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "create-clone",
+        "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Questionnaire-i-create-clone",
+        "documentation" : "### Input\n- resourceId: reference to the Questionnaire resource that should be cloned\n- clone-operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone"
+      }]
+    },
+    {
+      "type" : "StructureDefinition",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "conditionalDelete" : "single",
+      "searchInclude" : ["*", "StructureDefinition:valueset"],
+      "searchRevInclude" : ["Basic:actionGuidanceForReference",
+      "Basic:intendedAudience",
+      "Basic:questionnaireLinkageFor",
+      "Basic:reference",
+      "Basic:viewForReference",
+      "Questionnaire:reference",
+      "StructureDefinition:valueset"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_source",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given source value (Resource.meta.source)"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "abstract",
+        "type" : "token",
+        "documentation" : "Whether the structure is abstract"
+      },
+      {
+        "name" : "base",
+        "type" : "uri",
+        "documentation" : "Definition that this type is constrained/specialized from"
+      },
+      {
+        "name" : "base-path",
+        "type" : "token",
+        "documentation" : "Path that identifies the base element"
+      },
+      {
+        "name" : "context-type",
+        "type" : "token",
+        "documentation" : "resource | datatype | extension"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "The structure definition publication date"
+      },
+      {
+        "name" : "derivation",
+        "type" : "token",
+        "documentation" : "specialization | constraint - How relates to base definition"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "The description of the structure definition"
+      },
+      {
+        "name" : "experimental",
+        "type" : "token",
+        "documentation" : "For testing purposes, not real usage"
+      },
+      {
+        "name" : "ext-context",
+        "type" : "string",
+        "documentation" : "Where the extension can be used in instances"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External identifier for the structure definition"
+      },
+      {
+        "name" : "jurisdiction",
+        "type" : "token",
+        "documentation" : "Intended jurisdiction for the structure definition"
+      },
+      {
+        "name" : "keyword",
+        "type" : "token",
+        "documentation" : "A code for the profile"
+      },
+      {
+        "name" : "kind",
+        "type" : "token",
+        "documentation" : "primitive-type | complex-type | resource | logical"
+      },
+      {
+        "name" : "name",
+        "type" : "string",
+        "documentation" : "Computationally friendly name of the structure definition"
+      },
+      {
+        "name" : "path",
+        "type" : "token",
+        "documentation" : "A path that is constrained in the profile"
+      },
+      {
+        "name" : "publisher",
+        "type" : "string",
+        "documentation" : "Name of the publisher of the structure definition"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status of the structure definition"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "The human-friendly name of the structure definition"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "Type defined or constrained by this structure"
+      },
+      {
+        "name" : "url",
+        "type" : "uri",
+        "documentation" : "The uri that identifies the structure definition"
+      },
+      {
+        "name" : "valueset",
+        "type" : "reference",
+        "documentation" : "A vocabulary binding reference"
+      },
+      {
+        "name" : "version",
+        "type" : "token",
+        "documentation" : "The business version of the structure definition"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    }],
+    "operation" : [{
+      "name" : "reindex",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "hapi.fhir.reindex-status",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-hapi.fhir.reindex-status"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+      "documentation" : "Data migration"
+    },
+    {
+      "name" : "export-poll-status",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export-poll-status",
+      "documentation" : "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the '_jobId' is returned in the 'Content-Location' response header when initiating the export. A 'GET' request to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A 'DELETE' request can be used to cancel the export. If the export has already finished, the delete will return '404 Not Found', else the export job will be cancelled and a '202 Accepted' is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the 'Content-Location' header when initiating the export"
+    },
+    {
+      "name" : "export",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export",
+      "documentation" : "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header 'Prefer: respond-async', and will return '202 Accepted' with a polling location in the response header 'Content-Location'. The polling location is for the endpoint '$export-poll-status' and has the export job ID as parameter '_jobId'.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'\n## Polling status of export\nSubsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours."
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://questionnaire.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

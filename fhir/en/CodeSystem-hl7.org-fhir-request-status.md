@@ -1,4 +1,4 @@
-# Request Status - eHealth Infrastructure v11.0.1
+# Request Status - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/request-status | *Version*:11.0.1 | |
+| *Official URL*:http://hl7.org/fhir/request-status | *Version*:11.0.2 | |
 | * Standards status: *[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 4 | *Computable Name*:RequestStatus |
 
  
@@ -43,7 +43,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueInteger" : 4
   }],
   "url" : "http://hl7.org/fhir/request-status",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "RequestStatus",
   "title" : "Request Status",
   "status" : "active",

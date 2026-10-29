@@ -1,4 +1,4 @@
-# Official Address - eHealth Infrastructure v11.0.1
+# Official Address - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/StructureDefinition/address-official | *Version*:11.0.1 | |
+| *Official URL*:http://hl7.org/fhir/StructureDefinition/address-official | *Version*:11.0.2 | |
 | * Standards status: *[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 1 | *Computable Name*:OfficialAddress |
 | *Other Identifiers:*OID:2.16.840.1.113883.4.642.5.1657 | | |
 
@@ -61,7 +61,7 @@ Other representations of profile: [CSV](../StructureDefinition-address-official.
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:2.16.840.1.113883.4.642.5.1657"
   }],
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "OfficialAddress",
   "title" : "Official Address",
   "status" : "active",

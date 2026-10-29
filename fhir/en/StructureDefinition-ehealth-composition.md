@@ -1,4 +1,4 @@
-# ehealth-composition - eHealth Infrastructure v11.0.1
+# ehealth-composition - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-composition |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-composition |
 
 # Introduction
 
@@ -45,10 +45,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-compositi
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-composition",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-composition",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

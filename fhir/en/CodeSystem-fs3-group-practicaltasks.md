@@ -1,4 +1,4 @@
-# FS III, Praktiske opgaver - eHealth Infrastructure v11.0.1
+# FS III, Praktiske opgaver - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-group-practicaltasks | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-group-practicaltasks | *Version*:11.0.2 |
 | Active as of 2019-02-02 | *Computable Name*:FS III, Praktiske opgaver |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "fs3-group-practicaltasks",
   "url" : "http://ehealth.sundhed.dk/cs/fs3-group-practicaltasks",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "FS III, Praktiske opgaver",
   "title" : "FS III, Praktiske opgaver",
   "status" : "active",

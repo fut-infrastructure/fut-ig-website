@@ -1,4 +1,4 @@
-# Material Registration Participant Function - eHealth Infrastructure v11.0.1
+# Material Registration Participant Function - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/material-registration-participant-function | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/material-registration-participant-function | *Version*:11.0.2 |
 | Active as of 2025-07-07 | *Computable Name*:MaterialRegistrationParticipantFunction |
 
  
@@ -37,7 +37,7 @@ The function of the participant in material registration (author / editor).
   "resourceType" : "ValueSet",
   "id" : "material-registration-participant-function",
   "url" : "http://ehealth.sundhed.dk/vs/material-registration-participant-function",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "MaterialRegistrationParticipantFunction",
   "title" : "Material Registration Participant Function",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Consent Policy - eHealth Infrastructure v11.0.1
+# Consent Policy - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-policy | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-policy | *Version*:11.0.2 |
 | Active as of 2025-12-16 | *Computable Name*:ConsentPolicy |
 
  
@@ -37,7 +37,7 @@ Value set of policy for consent.
   "resourceType" : "ValueSet",
   "id" : "vs-ehealth-consent-policy",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-consent-policy",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ConsentPolicy",
   "title" : "Consent Policy",
   "status" : "active",

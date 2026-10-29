@@ -1,4 +1,4 @@
-# POST Get Performer Activities - eHealth Infrastructure v11.0.1
+# POST Get Performer Activities - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **POST Get Performer Activities**

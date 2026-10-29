@@ -1,4 +1,4 @@
-# CareTeam/42 - eHealth Infrastructure v11.0.1
+# CareTeam/42 - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

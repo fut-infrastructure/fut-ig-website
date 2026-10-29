@@ -1,4 +1,4 @@
-# Observation method - eHealth Infrastructure v11.0.1
+# Observation method - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation-method | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-observation-method |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation-method | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-observation-method |
 
 The method of acquiring the value of an observation.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-observati
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-observation-method",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation-method",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-observation-method",
   "title" : "Observation method",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

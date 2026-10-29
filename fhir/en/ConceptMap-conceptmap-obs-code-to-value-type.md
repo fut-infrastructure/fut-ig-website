@@ -1,4 +1,4 @@
-# conceptmap-obs-code-to-value-type - eHealth Infrastructure v11.0.1
+# conceptmap-obs-code-to-value-type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type | *Version*:11.0.2 |
 | Active as of 2020-11-26 | *Computable Name*:conceptmap-obs-code-to-value-type |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "conceptmap-obs-code-to-value-type",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "conceptmap-obs-code-to-value-type",
   "title" : "conceptmap-obs-code-to-value-type",
   "status" : "active",

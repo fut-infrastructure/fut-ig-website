@@ -1,4 +1,4 @@
-# ehealth-auditevent - eHealth Infrastructure v11.0.1
+# ehealth-auditevent - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-auditevent | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-auditevent |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-auditevent | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-auditevent |
 
 # Logging model
 
@@ -326,10 +326,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-auditeven
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-auditevent",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-auditevent",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-auditevent",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

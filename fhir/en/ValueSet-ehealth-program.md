@@ -1,4 +1,4 @@
-# eHealth Program - eHealth Infrastructure v11.0.1
+# eHealth Program - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-program | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-program | *Version*:11.0.2 |
 | Active as of 2024-11-28 | *Computable Name*:eHealthProgram |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-program",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-program",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "eHealthProgram",
   "title" : "eHealth Program",
   "status" : "active",

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ehealth-relatedperson-create-managed"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition ehealth-relatedperson-create-managed</b></p><a name="ehealth-relatedperson-create-managed"> </a><a name="hcehealth-relatedperson-create-managed"> </a><p>URL: [base]/RelatedPerson/$create-managed-related-person</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>cpr</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>The CPR number of the related person whose master data is seeded from the national registry. Uses the CPR system urn:oid:1.2.208.176.1.2.</p>
+</div></td></tr><tr><td>IN</td><td>patient</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Reference to the patient the related person is related to.</p>
+</div></td></tr><tr><td>IN</td><td>relationship</td><td/><td>1..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td/><td><div><p>One or more relationships the related person has to the patient. Bound to the RelationshipTypes value set. POWATT and PARAUTH are rejected.</p>
+</div></td></tr><tr><td>IN</td><td>tag</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td><div><p>Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/relatedperson.html">RelatedPerson</a></td><td/><td><div><p>The managed RelatedPerson resource that has been created on the server.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed"/>
+  <version value="11.0.2"/>
+  <name value="Create Managed Related Person"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <date value="2026-07-21"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, and any tags to apply. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DK"/>
+      <display value="Denmark"/>
+    </coding>
+  </jurisdiction>
+  <code value="create-managed-related-person"/>
+  <resource value="RelatedPerson"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="cpr"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The CPR number of the related person whose master data is seeded from the national registry. Uses the CPR system urn:oid:1.2.208.176.1.2."/>
+    <type value="Identifier"/>
+  </parameter>
+  <parameter>
+    <name value="patient"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Reference to the patient the related person is related to."/>
+    <type value="Reference"/>
+  </parameter>
+  <parameter>
+    <name value="relationship"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="*"/>
+    <documentation value="One or more relationships the related person has to the patient. Bound to the RelationshipTypes value set. POWATT and PARAUTH are rejected."/>
+    <type value="CodeableConcept"/>
+  </parameter>
+  <parameter>
+    <name value="tag"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution."/>
+    <type value="Coding"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The managed RelatedPerson resource that has been created on the server."/>
+    <type value="RelatedPerson"/>
+  </parameter>
+</OperationDefinition>

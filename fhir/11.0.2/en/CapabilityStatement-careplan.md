@@ -1,0 +1,1577 @@
+# careplan - eHealth Infrastructure v11.0.2
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **careplan**
+
+## CapabilityStatement: careplan 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/careplan | *Version*:11.0.2 |
+| Active as of 2026-10-16 | *Computable Name*:careplan |
+
+ [Raw OpenAPI-Swagger Definition file](../careplan.openapi.json) | [Download](../careplan.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "careplan",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/careplan",
+  "version" : "11.0.2",
+  "name" : "careplan",
+  "status" : "active",
+  "date" : "2026-10-16T09:33:53.692+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "careplan",
+    "version" : "1.45.0"
+  },
+  "implementation" : {
+    "description" : "eHealth careplan service",
+    "url" : "https://careplan.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "operation" : [{
+        "name" : "expunge",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "type" : "CarePlan",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "conditionalUpdate" : true,
+      "searchInclude" : ["CarePlan:activity-reference",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:part-of"],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "searchParam" : [{
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "activity-reference",
+        "type" : "reference",
+        "documentation" : "Activity details defined in specific resource"
+      },
+      {
+        "name" : "care-team",
+        "type" : "reference",
+        "documentation" : "Who's involved in plan?"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Type of plan"
+      },
+      {
+        "name" : "condition",
+        "type" : "reference",
+        "documentation" : "Health issues this plan addresses"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "Time period plan covers"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "EpisodeOfCare"
+      },
+      {
+        "name" : "goal",
+        "type" : "reference",
+        "documentation" : "Goal of the care plan"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External Ids for this plan"
+      },
+      {
+        "name" : "instantiates-canonical",
+        "type" : "reference",
+        "documentation" : "Instantiates FHIR protocol or definition"
+      },
+      {
+        "name" : "part-of",
+        "type" : "reference",
+        "documentation" : "Part of referenced CarePlan"
+      },
+      {
+        "name" : "participant-actor",
+        "type" : "reference",
+        "documentation" : "Reference to the participant"
+      },
+      {
+        "name" : "participant-function",
+        "type" : "token",
+        "documentation" : "The role of the participant"
+      },
+      {
+        "name" : "participant-function-actor",
+        "type" : "composite",
+        "documentation" : "A Participant with a specific function and actor"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Who care plan is for"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "draft | active | suspended | completed | entered-in-error | cancelled | unknown"
+      },
+      {
+        "name" : "status-history-end-time",
+        "type" : "date",
+        "documentation" : "end time of historic status change"
+      },
+      {
+        "name" : "status-history-start-time",
+        "type" : "date",
+        "documentation" : "start time of historic status change"
+      },
+      {
+        "name" : "status-history-status",
+        "type" : "token",
+        "documentation" : "status of historic status change"
+      },
+      {
+        "name" : "status-scheduled-status",
+        "type" : "token",
+        "documentation" : "Scheduled status for status change"
+      },
+      {
+        "name" : "status-scheduled-time",
+        "type" : "date",
+        "documentation" : "Scheduled time for status change"
+      },
+      {
+        "name" : "team-scheduled-time",
+        "type" : "date",
+        "documentation" : "Scheduled time for team change"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "update-care-teams",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams",
+        "documentation" : "The operation modifies the care team assignment of the care plan and all of its sub plans."
+      },
+      {
+        "name" : "suggest-care-teams",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/CarePlan-i-suggest-care-teams",
+        "documentation" : "Suggest care teams matching the conditions required by the care plan on either a regional or a municipality level. The suggested care teams has reason codes matching all the conditions addressed by the care plan and has a managing organization matching the input region code or municipality code. One of region code or municipality code must be input. If both region code and municipality code is input, then the municipality code is ignored. Return a bundle with matching care teams and their managing organizations."
+      }]
+    },
+    {
+      "type" : "Communication",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-material-communication",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchParam" : [{
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "Search for MaterialCommunication with the given _id"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Search for MaterialCommunication share the following category(s)"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Search for MaterialCommunication which are associated to the given EpisodeOfCare"
+      },
+      {
+        "name" : "participant-actor",
+        "type" : "reference",
+        "documentation" : "Search for MaterialCommunication which are associated to the given participant actor"
+      },
+      {
+        "name" : "participant-function",
+        "type" : "token",
+        "documentation" : "Search for MaterialCommunication which are associated to the given participant function"
+      },
+      {
+        "name" : "participant-function-actor",
+        "type" : "composite",
+        "documentation" : "A Participant with a specific function and actor"
+      },
+      {
+        "name" : "payload",
+        "type" : "reference",
+        "documentation" : "Search for MaterialCommunication which are associated to the given payload content (DocumentReference)"
+      },
+      {
+        "name" : "period",
+        "type" : "date",
+        "documentation" : "Search for MaterialCommunication which are associated to the given period"
+      },
+      {
+        "name" : "periodEnd",
+        "type" : "date",
+        "documentation" : "Search for MaterialCommunication which are associated to the given period end"
+      },
+      {
+        "name" : "periodStart",
+        "type" : "date",
+        "documentation" : "Search for MaterialCommunication which are associated to the given period start"
+      },
+      {
+        "name" : "recipient",
+        "type" : "reference",
+        "documentation" : "Search for MaterialCommunication which are associated to the given recipient"
+      },
+      {
+        "name" : "sent",
+        "type" : "date",
+        "documentation" : "Search for MaterialCommunication which are associated to the given sent date"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "Search for MaterialCommunication which are associated to the given status"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Search for MaterialCommunication which are associated to the given subject"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "CommunicationRequest",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication-request",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["CommunicationRequest:based-on",
+      "CommunicationRequest:context"],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "authored",
+        "type" : "date",
+        "documentation" : "When request transitioned to being actionable"
+      },
+      {
+        "name" : "based-on",
+        "type" : "reference",
+        "documentation" : "Fulfills plan or proposal"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Message category"
+      },
+      {
+        "name" : "encounter",
+        "type" : "reference",
+        "documentation" : "Encounter leading to message"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Episode leading to message"
+      },
+      {
+        "name" : "group-identifier",
+        "type" : "token",
+        "documentation" : "Composite request this is part of"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Unique identifier"
+      },
+      {
+        "name" : "medium",
+        "type" : "token",
+        "documentation" : "A channel of communication"
+      },
+      {
+        "name" : "occurrence",
+        "type" : "date",
+        "documentation" : "When scheduled"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Focus of message"
+      },
+      {
+        "name" : "priority",
+        "type" : "token",
+        "documentation" : "Message urgency"
+      },
+      {
+        "name" : "reasonCode",
+        "type" : "token",
+        "documentation" : "ReasonCode"
+      },
+      {
+        "name" : "recipient",
+        "type" : "reference",
+        "documentation" : "Message recipient"
+      },
+      {
+        "name" : "replaces",
+        "type" : "reference",
+        "documentation" : "Request(s) replaced by this request"
+      },
+      {
+        "name" : "requester",
+        "type" : "reference",
+        "documentation" : "Individual making the request"
+      },
+      {
+        "name" : "sender",
+        "type" : "reference",
+        "documentation" : "Message sender"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "draft | active | suspended | cancelled | completed | entered-in-error | unknown"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Focus of message"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "Condition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Condition",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "Consent",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "searchParam" : [{
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "actor",
+        "type" : "reference",
+        "documentation" : "Resource for the actor (or group, by role)"
+      },
+      {
+        "name" : "affiliation",
+        "type" : "reference",
+        "documentation" : "Affiliation to resources the consent is affiliated with, for instance EpisodeOfCare and CarePlan"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Classification of the consent statement - for indexing/retrieval"
+      },
+      {
+        "name" : "data",
+        "type" : "reference",
+        "documentation" : "The actual data reference"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Identifier for this record (external references)"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Who the consent applies to"
+      },
+      {
+        "name" : "period",
+        "type" : "date",
+        "documentation" : "Period that this consent applies"
+      },
+      {
+        "name" : "policy",
+        "type" : "uri",
+        "documentation" : "Policies covered by the consent"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "draft | proposed | active | rejected | inactive | entered-in-error"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "DocumentReference",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "searchParam" : [{
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Categorization of document"
+      },
+      {
+        "name" : "contenttype",
+        "type" : "token",
+        "documentation" : "Document referenced"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "When this document reference was created"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "Human-readable description"
+      },
+      {
+        "name" : "encounter",
+        "type" : "reference",
+        "documentation" : "Context of the document content"
+      },
+      {
+        "name" : "intendedOrganization",
+        "type" : "reference",
+        "documentation" : "The organization intended to use this resource"
+      },
+      {
+        "name" : "modifier_role_reference",
+        "type" : "reference",
+        "documentation" : "Reference to modifier organization"
+      },
+      {
+        "name" : "modifier_role_role",
+        "type" : "token",
+        "documentation" : "Role of organization related to modification of the DocumentReference"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "current | superseded | entered-in-error"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Who/what is the subject of the document"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "Kind of document (LOINC if possible)"
+      },
+      {
+        "name" : "use-context-context",
+        "type" : "token",
+        "documentation" : "The context that the content is intended to support"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "EpisodeOfCare",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      }],
+      "searchInclude" : ["EpisodeOfCare:condition"],
+      "searchRevInclude" : ["CarePlan:episodeOfCare"],
+      "searchParam" : [{
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "condition",
+        "type" : "reference",
+        "documentation" : "Conditions/problems/diagnoses this episode of care is for"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Business Identifier(s) relevant for this EpisodeOfCare"
+      },
+      {
+        "name" : "participant-actor",
+        "type" : "reference",
+        "documentation" : "The reference to the actor"
+      },
+      {
+        "name" : "participant-function",
+        "type" : "token",
+        "documentation" : "The role of the participant"
+      },
+      {
+        "name" : "participant-function-actor",
+        "type" : "composite",
+        "documentation" : "A Participant with a specific function and actor"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "The patient who is the focus of this episode of care"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status of the Episode of Care as provided (does not check the status history collection)"
+      },
+      {
+        "name" : "status-scheduled-time",
+        "type" : "date",
+        "documentation" : "Scheduled time for status change"
+      },
+      {
+        "name" : "team",
+        "type" : "reference",
+        "documentation" : "The list of practitioners that may be facilitating this episode of care for specific purposes."
+      },
+      {
+        "name" : "team-scheduled-time",
+        "type" : "date",
+        "documentation" : "Scheduled time for team change"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "update-care-teams",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/CarePlanEpisodeOfCare-i-update-care-teams",
+        "documentation" : "Modify the care team assignment of the episode of care and all care plans that has the episode of care as context."
+      },
+      {
+        "name" : "is-context-allowed",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed",
+        "documentation" : "Checks that it is allowed to set an EpisodeOfCare as context.\r\nIf the user requesting context is a patient, then the patient input parameter should be specified.\r\nIf the user requesting context is a practitioner, then the careTeam input parameter should be specified.\r\nThrows an exception if it is not allowed to select the Episode Of Care context.\r\n## Output\r\nFor valid Episode of Care is returned references that cause the Episode of Care to be valid context. \r\nFor a practitioner, two output parameters will be returned on success:\r\n- CareTeam: The Careteam that gave access\r\n- EpisodeOfCare/CarePlan: The EpisodeOfCare or CarePlan that referenced the CareTeam"
+      }]
+    },
+    {
+      "type" : "Goal",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*", "Goal:patient", "Goal:subject"],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_source",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given source value (Resource.meta.source)"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "addresses",
+        "type" : "reference",
+        "documentation" : "What the goal addresses"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "E.g. Treatment, dietary, behavioral, etc."
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External Ids for this goal"
+      },
+      {
+        "name" : "lifecycle-status",
+        "type" : "token",
+        "documentation" : "proposed | accepted | planned | in-progress | on-target | ahead-of-target | behind-target | sustaining | achieved | on-hold | cancelled | entered-in-error | rejected"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Who this goal is intended for"
+      },
+      {
+        "name" : "start-date",
+        "type" : "date",
+        "documentation" : "When goal pursuit begins"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Who this goal is intended for"
+      },
+      {
+        "name" : "target-date",
+        "type" : "date",
+        "documentation" : "Reach goal on or before"
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"]
+    },
+    {
+      "type" : "Provenance",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchRevInclude" : ["CarePlan:activity-reference",
+      "CarePlan:care-team",
+      "CarePlan:condition",
+      "CarePlan:episodeOfCare",
+      "CarePlan:goal",
+      "CarePlan:instantiates-canonical",
+      "CarePlan:part-of",
+      "CarePlan:participant-actor",
+      "CarePlan:patient",
+      "Communication:episodeOfCare",
+      "Communication:participant-actor",
+      "Communication:payload",
+      "Communication:recipient",
+      "Communication:subject",
+      "CommunicationRequest:based-on",
+      "CommunicationRequest:encounter",
+      "CommunicationRequest:episodeOfCare",
+      "CommunicationRequest:patient",
+      "CommunicationRequest:recipient",
+      "CommunicationRequest:replaces",
+      "CommunicationRequest:requester",
+      "CommunicationRequest:sender",
+      "CommunicationRequest:subject",
+      "Consent:actor",
+      "Consent:affiliation",
+      "Consent:data",
+      "Consent:patient",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:subject",
+      "EpisodeOfCare:condition",
+      "EpisodeOfCare:participant-actor",
+      "EpisodeOfCare:patient",
+      "EpisodeOfCare:team",
+      "Goal:addresses",
+      "Goal:patient",
+      "Goal:subject",
+      "Provenance:target",
+      "ServiceRequest:based-on",
+      "ServiceRequest:encounter",
+      "ServiceRequest:episodeOfCare",
+      "ServiceRequest:instantiates-canonical",
+      "ServiceRequest:patient",
+      "ServiceRequest:performer",
+      "ServiceRequest:replaces",
+      "ServiceRequest:requester",
+      "ServiceRequest:subject"],
+      "searchParam" : [{
+        "name" : "target",
+        "type" : "reference",
+        "documentation" : "Target Reference(s) (usually version specific)"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "ServiceRequest",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "conditionalUpdate" : true,
+      "searchInclude" : ["ServiceRequest:episodeOfCare"],
+      "searchRevInclude" : ["CarePlan:activity-reference", "Goal:addresses"],
+      "searchParam" : [{
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "authored",
+        "type" : "date",
+        "documentation" : "Date request signed"
+      },
+      {
+        "name" : "based-on",
+        "type" : "reference",
+        "documentation" : "What request fulfills"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Classification of service"
+      },
+      {
+        "name" : "code",
+        "type" : "token",
+        "documentation" : "What is being requested/ordered"
+      },
+      {
+        "name" : "encounter",
+        "type" : "reference",
+        "documentation" : "An encounter in which this request is made"
+      },
+      {
+        "name" : "episodeOfCare",
+        "type" : "reference",
+        "documentation" : "EpisodeOfCare. Supports the chained search episodeOfCare.team for the CareTeam of the EpisodeOfCare"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Identifiers assigned to this order"
+      },
+      {
+        "name" : "instantiates-canonical",
+        "type" : "reference",
+        "documentation" : "Instantiates FHIR protocol or definition"
+      },
+      {
+        "name" : "intent",
+        "type" : "token",
+        "documentation" : "proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option"
+      },
+      {
+        "name" : "occurrenceDateTime",
+        "type" : "date",
+        "documentation" : "Point in time of the occurrence (occurrenceDateTime)"
+      },
+      {
+        "name" : "occurrencePeriod",
+        "type" : "date",
+        "documentation" : "Period of the occurrence (occurrencePeriod)"
+      },
+      {
+        "name" : "occurrencePeriodEnd",
+        "type" : "date",
+        "documentation" : "End date of the occurrence period (occurrencePeriod.end)"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Search by subject - a patient"
+      },
+      {
+        "name" : "performer",
+        "type" : "reference",
+        "documentation" : "Requested performer"
+      },
+      {
+        "name" : "replaces",
+        "type" : "reference",
+        "documentation" : "What request replaces"
+      },
+      {
+        "name" : "requester",
+        "type" : "reference",
+        "documentation" : "Who/what is requesting service"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Search by subject"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    }],
+    "interaction" : [{
+      "code" : "transaction"
+    }],
+    "operation" : [{
+      "name" : "reindex",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "hapi.fhir.reindex-status",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-hapi.fhir.reindex-status"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+      "documentation" : "Data migration"
+    },
+    {
+      "name" : "assigned-material-count",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-assigned-material-count",
+      "documentation" : "This operation counts the number of material assignments (``ehealth-material-communication resources``) for a given ``ehealth-documentreference`` from the Plan service. This is done by performing an internal search using the given ehealth-documentReference, date and status parameters. Regardless of the given parameters, only ``ehealth-material-communication`` resources referring to an active ``ehealth-episodeofcare`` are counted. The group-by-careteam parameter determines whether a simple '_summary=count' search is performed or if all results should be fetched to extract and count based on participant CareTeam references.\r\n\r\n## Input\r\nThe operation has two mandatory input parameters:\r\n - An EHealthDocumentReference reference\r\n - One or more status codes\r\n\r\nAdditionally, there are two optional input parameters:\r\n - A boolean indicating whether to group the result by participant CareTeam references\r\n - A date parameter\r\n\r\n### EHealthDocumentReference reference\r\nA mandatory reference to an EHealthDocumentReference (general-material) in the plan service. Only ``ehealth-material-communication`` resources with the given reference in ``Communication.payload.content`` are counted.\r\n\r\n### Group-by-careTeam boolean\r\nThe group-by-careTeam parameter is optional. When not supplied by the user, it is assumed false. When it is set to true, the operation returns a count per CareTeam referenced as a participant in the matching ehealth-material-communication resources.\r\n\r\n### Date\r\nThe date parameter is optional, however, the count is always filtered by a date. If one is not given by the user, the date of execution is used instead. Only ``ehealth-material-communication`` resources whose ``Communication.period`` contains the used date are counted.\r\n\r\n### Status code list\r\nAt least one ``status`` code must be supplied by the user. Only ``ehealth-material-communications`` with one of the supplied status codes in ``Communication.status`` will be counted.\r\n\r\n## Output\r\nWhen supplied with valid inputs, the operation will return a Bundle resource with a single Parameters resource in its ``Bundle.entry`` list. The Parameters resource format depends on whether the group-by-careTeam parameter was true.\r\n\r\n### Output Parameters\r\nIf group-by-careTeam was false or not present. The Parameters resource will only contain a single parameter, named ``total`` with the value being the count of the ``ehealth-material-communication`` resources found to satisfy the given parameters.\r\n\r\nExample of output with group-by-careTeam as false or not present:\r\n```\r\n\"resource\": {\r\n    \"resourceType\": \"Parameters\",\r\n    \"parameter\": [{\r\n            \"name\": \"total\",\r\n            \"valueInteger\": 42\r\n            }]\r\n    }]\r\n}\r\n```\r\n\r\nIf group-by-careTeam was true, the Parameters resource will contain a parameter for each CareTeam that is referenced in ``Communication.participant.actor`` in any of the matching ``ehealth-material-communication`` resources. The name of each parameter will be the reference value (CareTeam/[id]) of the CareTeam and the value will be the count of matching ``ehealth-material-communication`` resources that reference that CareTeam. It is worth noting that if an ``ehealth-material-communication`` has two (or more) distinct participant CareTeams, this will add to the count of each of them.\r\n\r\nExample of output with group-by-careTeam as true:\r\n```\r\n\"resource\": {\r\n    \"resourceType\": \"Parameters\",\r\n    \"parameter\": [{\r\n            \"name\": \"CareTeam/123\",\r\n            \"valueInteger\": 5\r\n            },\r\n            {\r\n            \"name\": \"CareTeam/456\",\r\n            \"valueInteger\": 7\r\n            }]\r\n    }]\r\n}\r\n```"
+    },
+    {
+      "name" : "get-performer-activities",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-performer-activities",
+      "documentation" : "This operation returns the overview of the activities a given performer is expected to carry out on behalf of a given patient, within a time period and optionally filtered by EpisodeOfCare, Condition code(s) and tag(s).\r\n\r\nIt is the counterpart of $get-patient-procedures, which reports the activities the patient performs themselves. Where $get-patient-procedures excludes any activity carrying a performer other than the patient, this operation reports exactly those activities, for one performer at a time.\r\n\r\nOnly a RelatedPerson performer is supported. The performer type is declared as Reference(RelatedPerson | Patient | Practitioner) to match ServiceRequest.performer, but any other type is rejected.\r\n## Input\r\nThe operation has five mandatory inputs: a Patient reference, a performer reference, a start date, an end date and the extra flag. Additionally it has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n\r\nEvery reference input - patient, performer and episodeOfCare - must be given as an absolute reference, since each names a resource served by another service in the platform. A relative reference such as Patient/123 is not matched against the stored references and yields no activities.\r\n### Patient reference\r\nMandatory reference for the Patient whose care pathways, plans, activities and measurement data form the basis of the overview.\r\n### Performer reference\r\nMandatory reference for the person recorded as performer on the activities. Only RelatedPerson is supported.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest. Start may not be after end, the period may not begin further back than the configured measurement age limit, and it may not end further ahead than the configured activity horizon. A request outside either limit is rejected.\r\n### Extra boolean\r\nMandatory. Set to true if rows should be included for activities flagged as extra, i.e. where measurement data may be submitted on request or on the person's own initiative. Whether the ServiceRequest is included when extra is true is based on the ServiceRequest.includeAsExtra field.\r\n### EpisodeOfCare list\r\nOptional. If EpisodeOfCare are provided, activities must belong to one of the stated EpisodeOfCare. Supplying both episodeOfCare and conditionCode is rejected; supplying neither considers every episode of care of the patient.\r\n### Condition Coding list\r\nOptional. If Condition Coding are provided, activities must come from a CarePlan carrying one of the stated condition codes. Note that the code is matched against the condition of the CarePlan the activity belongs to, unlike $get-patient-procedures where it is matched against the conditions of the EpisodeOfCare. Supplying both conditionCode and episodeOfCare is rejected.\r\n\r\nA caller whose security context names an EpisodeOfCare must supply that episode as the episodeOfCare parameter, and therefore cannot use conditionCode: the two filters are mutually exclusive. Such a caller is already confined to a single episode of care, and narrows the result by tag or by period instead. conditionCode is available to callers whose context names no EpisodeOfCare.\r\n### Tag Coding list\r\nOptional. If tag Coding are provided, the activities considered are those carrying a co-existence tag matching at least one of the codes in the list. Note that the tag is matched on the activity itself, unlike $get-patient-procedures where it is matched on the EpisodeOfCare.\r\n## Output\r\nFor valid inputs, the server computes and returns a Bundle containing a Parameters resource with the resolved measurement regimes and the associated counts, the ServiceRequest referenced in the Parameters, and an OperationOutcome describing any encountered warnings.\r\n\r\nUnlike $get-patient-procedures, the Bundle carries no CarePlan resource: the performer is given the activities they are to perform and nothing further of the patient's plan. The CarePlan and PlanDefinition are still referenced on each row, so the user system can tell which activities belong to the same plan and determine seamless activity groups.\r\n### Output Parameters\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value.\r\n\r\n### Columns\r\n\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- CarePlan: Reference to the CarePlan the activity belongs to. The resource itself is not included in the Bundle.\r\n- PlanDefinition: Reference to the plan template the CarePlan was created from. The resource itself is not included in the Bundle.\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurrencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated."
+    },
+    {
+      "name" : "get-patient-procedures",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-patient-procedures",
+      "documentation" : "This operation returns an overview of patient activities within a time period and filtered by either EpisodeOfCare or Condition code(s). On success, the returned Bundle contains a Parameters structure detailing the count of measurements received and expected. This is done per ServiceRequest with status active for those part of a CarePlan with status active related to eligible EpisodeOfCare resources. Eligible EpisodeOfCare are those with status active that refer to the given Patient and are either given as EpisodeOfCare reference in input or are referencing a Condition with a condition code that matches at least one of the Condition codes possibly given as input. ServiceRequests whose performer is present and references anyone other than the Patient (for instance a RelatedPerson) are excluded from the overview; ServiceRequests without a performer are included, the Patient being the assumed performer. Activities assigned to a RelatedPerson are reported by $get-performer-activities instead. The measurement regime expressed in ServiceRequest.occurrence[x] is, when possible, resolved to time slot(s) corresponding to datetime/period where an action is supposed to take place, typically performed by the Patient. When the occurrenceTiming variant is used, resolved time slots overlapping with the input time periode are considered. For occurrenceTiming expression which are either adhoc or unresolved, the effective datetime/period of a measurement is considered when checked for overlap with input time period.\r\n## Input\r\nThe operation has three mandatory inputs, a Patient reference, a start date and an end date. Additionally the operation has three optional inputs: a list of reference(s) to EpisodeOfCare, a list of Codings for Condition and a list of Codings for tags.\r\n### Patient reference\r\nMandatory reference for the Patient which the procedure overview is computed for.\r\n### Start and end datetimes\r\nStart and end datetime are both mandatory, and together specify the period of interest in the patient procedure overview. As stated above, for resolvable past and future time slots as well as adhoc and unresolved timings there must overlap with this period.\r\n### EpisodeOfCare list\r\nThe list of EpisodeOfCare references is optional. If EpisodeOfCare are provided, these will be used to further filter which active EpisodeOfCare, CarePlan and ServiceRequest are considered for the patient procedure overview.\r\n### Condition Coding list\r\nThe list of Coding for Condition is optional. If Condition Coding are provided, the EpisodeOfCare considered are those referring to a Condition matching at least one of the codes in the list. As above, the EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Tag Coding list\r\nThe list of Coding for tags is optional. If tag Coding are provided, the EpisodeOfCare considered are those including a tag matching at least one of the codes in the list. As above, both the Condition (one or more) and EpisodeOfCare (one or more) considered further determines which active EpisodeOfCare, CarePlan and ServiceRequest are considered.\r\n### Extra boolean\r\nThis is an optional parameter that can be set to true if activities allowing 'Extra' submissions should be included in the response. Whether the ServiceRequest is included when Extra paremeter is set to true, is based on the ServiceRequest.includeAsExtra field.\r\n## Output\r\nFor valid inputs, the server will compute and return a Bundle. The Bundle contains a Parameters resource with resolved measurement regimes and associated counts of measurement submitted and counts expected. Such counts are also included in the Parameters structure when the measurement regime is either adhoc or unresolved. In addition, the Bundle contains CarePlan and ServiceRequest referenced in the Parameters. The Bundle can contain an OperationOutcome describing any encountered warnings.\r\n### Output Parameters\r\nThe output contains rows (encoded in parameters) for each matching and active ServiceRequest with resolved timings overlapping with the requested period. \r\n\r\nRows are represented as Parameters.parameter with names: item_1, item_2, etc. Columns are represented as Parameters.parameter.part with name and value \r\n```\r\nExample:\r\n'resource': {\r\n    'resourceType': 'Parameters',\r\n    'parameter': [{\r\n            'name': 'item_1',\r\n            'part': [{\r\n                    'name': 'CarePlan',\r\n                    'valueReference': {\r\n                        'reference': 'https://careplan.devtest.systematic-ehealth.com/fhir/CarePlan/164581'\r\n                    }\r\n            }]\r\n    }]\r\n}\r\n ```\r\n\r\n### Columns\r\n\r\n- CarePlan: Reference to the CarePlan that the ServiceRequest belongs to.\r\n- ServiceRequest: Reference to the ServiceRequest.\r\n- ServiceRequestVersionId: The version of the ServiceRequest (version specified at time of submit-measurement or the current version (for expected activities)).\r\n- Activity: Description of the planned activity.\r\n- ResolvedTimingStart: A planned start time for the activity in the requested period.\r\n- ResolvedTimingEnd: A planned end time for the activity in the requested period. May be identical to start if no duration is specified in the measurement regime.\r\n- TotalSubmitted: The number of measurements already submitted for this ServiceRequest and resolved timing.\r\n- SubmittedTimely: The number of measurements where the measurement time matches the resolved timing.\r\n- TimingType:\r\n    * Resolved: a measurement regime that is supported by the infrastructure and where resolved timing and requested number of measurements can be calculated.\r\n    * Unresolved: a measurement regime that is not supported by the infrastructure. Resolved Timing Start, end, submitted timely and Occurrences requested will be empty.\r\n    * Adhoc: A ServiceRequest without a measurement regime or a measurement regime stating ad-hoc.\r\n    * Extra: The service request may be performed outside the resolved timing.\r\n- OccurrencesRequested: Expected number of measurements.\r\n- TotalInvalidated: Number of measurements which are invalidated."
+    },
+    {
+      "name" : "create-episode-of-care",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-create-episode-of-care",
+      "documentation" : "This operation persists an EpisodeOfCare based on the transient value of an EpisodeOfCare provided in the input.\r\n## Input\r\nThe input is a Bundle which must contain exactly one EpisodeOfCare, conditions referenced in diagnosis list and at least one Provenance resource. All Provenances in the input must have the EpisodeOfCare as target. At least one Provenance must be interpreted into a 'Privacy-provenance' (see below).\r\n### The EpisodeOfCare resource\r\nThe EpisodeOfCare has to have `PLANNED` status \r\nThe 'id' property of the EpisodeOfCare will be reassigned by the server, but can be referenced by other resources in the same bundle. \r\nThe GDPR Data Controller (Danish: 'Dataansvarlig') of the EpisodeOfCare is provided through the 'ehealth-managing-organization' extension (managingOrganizations), where each entry holds the responsible organisation and the period during which it held that responsibility. The standard 'managingOrganization' property is no longer used (cardinality 0..0).\r\n### The privacy-Provenance resource\r\nA privacy-Provenance is a Provenance resource characterized by having at least one entry in Provenance.policy which data are transported, stored, or processed in the system. Possible values are:\r\n- 'http://ehealth.sundhed.dk/policy/dk/sundhedsloven'\r\n- 'http://ehealth.sundhed.dk/policy/dk/serviceloven'\r\n- 'http://ehealth.sundhed.dk/policy/dk/aeldreloven'\r\n### Diagnosis referenced Condition resource\r\nFor any diagnosis listed, the referenced Condition must be concerning the same Patient as the EpisodeOfCare.\r\n### Treatment area validation\r\nWhen creating an EpisodeOfCare, the infrastructure validates that all diagnoses (referenced Condition.code) are within the treatment area of the telemedicine solution tied to the EpisodeOfCare.The telemedicine solution is determined by inspecting the incoming security token of the practitioner creating the EpisodeOfCare (coexistence-tag in scope claim).The treatment areas are defined by each telemedicine solution having a ValueSet determining the allowed Condition.code.The treatment area ValueSets are characterized by having a useContext with 'system-treatment-area' context code, and using the coexistence-tag as the value (see https://ehealth.sundhed.dk/fhir/ValueSet-ehealth-usage-context-type.html).\r\n## Output\r\nFor valid inputs, the server will create, persist and return a new EpisodeOfCare, client-supplied provenances, conditions and origin-provenance carrying a server-assigned ids.\r\nTo get resources bodies in the output the request header has to contain parameter ```Prefer: return=representation```.\r\n## Validation\r\n- Patient.deceased must be false to create episode of care\r\n### The origin-Provenance resource\r\nWhenever an EpisodeOfCare is created, the server automatically creates an 'origin' Provenance resource point to it (in addition to the client-supplied Privacy-Provenance). This Origin-Provenance resource is filled with data from the JWT access token in order to record the origin of the EpisodeOfCare resource. For instance agent.whoReference points to a resource which is created as a shadow identity from the JWT token."
+    },
+    {
+      "name" : "apply",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-apply",
+      "documentation" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction."
+    },
+    {
+      "name" : "export-poll-status",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export-poll-status",
+      "documentation" : "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the '_jobId' is returned in the 'Content-Location' response header when initiating the export. A 'GET' request to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A 'DELETE' request can be used to cancel the export. If the export has already finished, the delete will return '404 Not Found', else the export job will be cancelled and a '202 Accepted' is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the 'Content-Location' header when initiating the export"
+    },
+    {
+      "name" : "export",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export",
+      "documentation" : "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header 'Prefer: respond-async', and will return '202 Accepted' with a polling location in the response header 'Content-Location'. The polling location is for the endpoint '$export-poll-status' and has the export job ID as parameter '_jobId'.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'\n## Polling status of export\nSubsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours."
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://careplan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

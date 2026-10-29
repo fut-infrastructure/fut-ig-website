@@ -1,4 +1,4 @@
-# FSIII - eHealth Infrastructure v11.0.1
+# FSIII - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII | *Version*:11.0.1 |
+| *Official URL*:http://kl.dk/fhir/common/caresocial/CodeSystem/FSIII | *Version*:11.0.2 |
 | Active as of 2022-01-10 | *Computable Name*:FSIII |
 | *Other Identifiers:*urn:oid#urn:oid:1.2.208.176.2.21 | |
 
@@ -37,7 +37,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:oid",
     "value" : "urn:oid:1.2.208.176.2.21"
   }],
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "FSIII",
   "title" : "FSIII",
   "status" : "active",

@@ -1,4 +1,4 @@
-# topic - eHealth Infrastructure v11.0.1
+# topic - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/topic | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/topic | *Version*:11.0.2 |
 | Active as of 2026-02-02 | *Computable Name*:topic |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding communication based on topic
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-topic",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/topic",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "topic",
   "status" : "active",
   "date" : "2026-02-02T12:00:00+00:00",

@@ -1,4 +1,4 @@
-# ICD-11 for Mortality and Morbidity Statistics - Danish Supplement - eHealth Infrastructure v11.0.1
+# ICD-11 for Mortality and Morbidity Statistics - Danish Supplement - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/icd/release/11/mms/supplement | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/icd/release/11/mms/supplement | *Version*:11.0.2 |
 | Active as of 2026-02-10 | *Computable Name*:ICD-11 MMS Danish Supplement |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth.sundhed.dk-ICD-11-MMS-supplement",
   "url" : "http://ehealth.sundhed.dk/icd/release/11/mms/supplement",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ICD-11 MMS Danish Supplement",
   "title" : "ICD-11 for Mortality and Morbidity Statistics - Danish Supplement",
   "status" : "active",

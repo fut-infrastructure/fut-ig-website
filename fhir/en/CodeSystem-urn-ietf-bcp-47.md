@@ -1,4 +1,4 @@
-# Common Codes from BCP-47 - eHealth Infrastructure v11.0.1
+# Common Codes from BCP-47 - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:urn:ietf:bcp:47 | *Version*:11.0.1 |
+| *Official URL*:urn:ietf:bcp:47 | *Version*:11.0.2 |
 | Active as of 2020-02-07 | *Computable Name*:Common Codes from BCP-47 |
 
  
@@ -35,7 +35,7 @@ This Code system is referenced in the definition of the following value sets:
     "lastUpdated" : "2021-02-08T08:13:46.414+00:00"
   },
   "url" : "urn:ietf:bcp:47",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Common Codes from BCP-47",
   "title" : "Common Codes from BCP-47",
   "status" : "active",

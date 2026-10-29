@@ -1,4 +1,4 @@
-# relatedperson01 - eHealth Infrastructure v11.0.1
+# relatedperson01 - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -10,14 +10,14 @@ version: 1; Last updated: 2021-07-15 07:08:53+0000
 
 Profile: [ehealth-relatedperson](StructureDefinition-ehealth-relatedperson.md)
 
-RelatedPerson Test (official) - power of attorney, urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1 (urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#0501792275)
+RelatedPerson Test (official) - power of attorney, urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1 (urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#0501792275)
 
 -------
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Active: | true | Valid Period: | 2026-03-24 --> (ongoing) |
-| Patient: | [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official))](Patient-102.md) | | |
+| Patient: | [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official))](Patient-102.md) | | |
 | Relationship: | * power of attorney
 * urn:dk:sundhed:ehealth:futtest:role:PowerOfAttorney:v1
  | | |

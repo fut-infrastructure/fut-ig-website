@@ -1,4 +1,4 @@
-# Managing organization - eHealth Infrastructure v11.0.1
+# Managing organization - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-managing-organization | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-managing-organization |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-managing-organization | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-managing-organization |
 
 An organization that has assumed responsibility for the episode of care during a given period. Replaces the standard EpisodeOfCare.managingOrganization to allow multiple managing organizations over time.
 
@@ -41,11 +41,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-managing-
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-managing-organization",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-managing-organization",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-managing-organization",
   "title" : "Managing organization",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

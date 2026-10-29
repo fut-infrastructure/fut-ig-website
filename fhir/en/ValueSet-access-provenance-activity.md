@@ -1,4 +1,4 @@
-# AccessProvenance Activity - eHealth Infrastructure v11.0.1
+# AccessProvenance Activity - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/access-provenance-activity | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/access-provenance-activity | *Version*:11.0.2 |
 | Active as of 2026-01-08 | *Computable Name*:AccessProvenanceActivity |
 
  
@@ -37,7 +37,7 @@ AccessProvenance Activity
   "resourceType" : "ValueSet",
   "id" : "access-provenance-activity",
   "url" : "http://ehealth.sundhed.dk/vs/access-provenance-activity",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "AccessProvenanceActivity",
   "title" : "AccessProvenance Activity",
   "status" : "active",

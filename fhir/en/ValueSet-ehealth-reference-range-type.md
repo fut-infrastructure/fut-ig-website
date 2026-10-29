@@ -1,4 +1,4 @@
-# Reference Range Type - eHealth Infrastructure v11.0.1
+# Reference Range Type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/reference-range-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/reference-range-type | *Version*:11.0.2 |
 | Active as of 2019-02-08 | *Computable Name*:ReferenceRangeType |
 
  
@@ -38,7 +38,7 @@ Reference Range type value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-reference-range-type",
   "url" : "http://ehealth.sundhed.dk/vs/reference-range-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ReferenceRangeType",
   "title" : "Reference Range Type",
   "status" : "active",

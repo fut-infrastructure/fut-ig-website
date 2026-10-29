@@ -1,4 +1,4 @@
-# FS III, Psykosociale forhold - eHealth Infrastructure v11.0.1
+# FS III, Psykosociale forhold - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-psychosocial-conditions | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-psychosocial-conditions | *Version*:11.0.2 |
 | Active as of 2019-02-02 | *Computable Name*:FS III, Psykosociale forhold |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "fs3-health-psychosocial-conditions",
   "url" : "http://ehealth.sundhed.dk/cs/fs3-health-psychosocial-conditions",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "FS III, Psykosociale forhold",
   "title" : "FS III, Psykosociale forhold",
   "status" : "active",

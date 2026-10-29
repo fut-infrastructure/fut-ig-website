@@ -1,4 +1,4 @@
-# Changelog - eHealth Infrastructure v11.0.1
+# Changelog - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **Changelog**
@@ -6,6 +6,14 @@
 ## Changelog
 
 This is the log of changes made to the eHealth Implementation Guide.
+
+## 11.0.2 (2026-11-04)
+
+### Search parameters
+
+* Added search parameter `relatedPersonCPRIdentifier` (CPR identifier) on RelatedPerson
+* Added search parameter `relatedPersonRelationshipParauth` (relationship code `PARAUTH`) on RelatedPerson
+* Added an uniqueness constraint `relatedPersonCPRIdentifierPatientParauthUnique`: a patient can have at most one RelatedPerson with a given CPR identifier and the relationship code `PARAUTH`. **Note for vendors:** creating a second such RelatedPerson is rejected with HTTP 409 (Conflict).
 
 ## 11.0.1 (2026-11-04)
 

@@ -1,4 +1,4 @@
-# communicationCategory - eHealth Infrastructure v11.0.1
+# communicationCategory - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/category | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/category | *Version*:11.0.2 |
 | Active as of 2021-05-06 | *Computable Name*:communicationCategory |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding communication based on the category code
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-communicationCategory",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/category",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "communicationCategory",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",

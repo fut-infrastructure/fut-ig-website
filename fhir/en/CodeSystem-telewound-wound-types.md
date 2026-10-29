@@ -1,4 +1,4 @@
-# Wound types - eHealth Infrastructure v11.0.1
+# Wound types - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:https://rn.dk/telemedicinsk-saarvurdering/fosa/terminologi/saar-typer | *Version*:11.0.1 |
+| *Official URL*:https://rn.dk/telemedicinsk-saarvurdering/fosa/terminologi/saar-typer | *Version*:11.0.2 |
 | Active as of 2026-03-25 | *Computable Name*:WoundTypes |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "telewound-wound-types",
   "url" : "https://rn.dk/telemedicinsk-saarvurdering/fosa/terminologi/saar-typer",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "WoundTypes",
   "title" : "Wound types",
   "status" : "active",

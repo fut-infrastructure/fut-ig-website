@@ -1,4 +1,4 @@
-# Consent/25 - patient's consent to a related person contributing to the episode of care (RPCTEOC) - eHealth Infrastructure v11.0.1
+# Consent/25 - patient's consent to a related person contributing to the episode of care (RPCTEOC) - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -13,9 +13,9 @@ Profile: [ehealth-consent](StructureDefinition-ehealth-consent.md)
 ### Participants
 
 * **Role**: Patient
-  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official))](Patient-102.md)
+  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official))](Patient-102.md)
 * **Role**: Party
-  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official))](Patient-102.md)
+  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official))](Patient-102.md)
 * **Role**: Manager
   * **Details**: [Organization/1](Organization/1)
 

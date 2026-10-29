@@ -1,4 +1,4 @@
-# SOR Organization Specialty - eHealth Infrastructure v11.0.1
+# SOR Organization Specialty - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/sor-organization-specialty | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/sor-organization-specialty | *Version*:11.0.2 |
 | Active as of 2019-06-11 | *Computable Name*:SorOrganizationSpecialty |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-sor-organization-specialty",
   "url" : "http://ehealth.sundhed.dk/cs/sor-organization-specialty",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "SorOrganizationSpecialty",
   "title" : "SOR Organization Specialty",
   "status" : "active",

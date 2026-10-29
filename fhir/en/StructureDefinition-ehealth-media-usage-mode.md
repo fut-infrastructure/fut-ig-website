@@ -1,4 +1,4 @@
-# Usage mode - eHealth Infrastructure v11.0.1
+# Usage mode - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-media-usage-mode |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-media-usage-mode |
 
 Usage mode of the media.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-media-usa
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-media-usage-mode",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-media-usage-mode",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-media-usage-mode",
   "title" : "Usage mode",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

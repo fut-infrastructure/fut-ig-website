@@ -1,4 +1,4 @@
-# assessor-other - eHealth Infrastructure v11.0.1
+# assessor-other - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-other | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-clinicalimpression-assessor-other |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-other | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-clinicalimpression-assessor-other |
 
 The patient or the related person performing the assessment.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-clinicali
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-clinicalimpression-assessor-other",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-assessor-other",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-clinicalimpression-assessor-other",
   "title" : "assessor-other",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

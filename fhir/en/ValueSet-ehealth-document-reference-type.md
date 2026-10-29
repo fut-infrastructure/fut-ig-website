@@ -1,4 +1,4 @@
-# EHealthDocumentReference Type - eHealth Infrastructure v11.0.1
+# EHealthDocumentReference Type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-document-reference-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-document-reference-type | *Version*:11.0.2 |
 | Active as of 2025-09-02 | *Computable Name*:EHealthDocumentReferenceType |
 
  
@@ -37,7 +37,7 @@ EHealthDocumentReference Type ValueSet
   "resourceType" : "ValueSet",
   "id" : "ehealth-document-reference-type",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-document-reference-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "EHealthDocumentReferenceType",
   "title" : "EHealthDocumentReference Type",
   "status" : "active",

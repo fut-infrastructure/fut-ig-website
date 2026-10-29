@@ -1,4 +1,4 @@
-# eHealth Property - eHealth Infrastructure v11.0.1
+# eHealth Property - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-property | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-property | *Version*:11.0.2 |
 | Active as of 2025-03-05 | *Computable Name*:eHealthProperty |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-property",
   "url" : "http://ehealth.sundhed.dk/cs/ehealth-property",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "eHealthProperty",
   "title" : "eHealth Property",
   "status" : "active",

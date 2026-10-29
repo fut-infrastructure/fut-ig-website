@@ -1,4 +1,4 @@
-# Organization Type - eHealth Infrastructure v11.0.1
+# Organization Type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/organization-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/organization-type | *Version*:11.0.2 |
 | Active as of 2019-05-27 | *Computable Name*:OrganizationType |
 
  
@@ -37,7 +37,7 @@ Value set used for indicating the organization type
   "resourceType" : "ValueSet",
   "id" : "ehealth-organization-type",
   "url" : "http://ehealth.sundhed.dk/vs/organization-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "OrganizationType",
   "title" : "Organization Type",
   "status" : "active",

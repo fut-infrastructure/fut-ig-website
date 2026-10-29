@@ -1,4 +1,4 @@
-# Danish SNOMED CT Extension - eHealth Infrastructure v11.0.1
+# Danish SNOMED CT Extension - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://snomed.info/sct/554471000005108/version/20180331 | *Version*:11.0.1 |
+| *Official URL*:http://snomed.info/sct/554471000005108/version/20180331 | *Version*:11.0.2 |
 | Active as of 2019-12-27 | *Computable Name*:Danish-SNOMED-CT-Extension |
 | *Other Identifiers:*OID:2.16.840.1.113883.6.96 | |
 
@@ -37,7 +37,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:2.16.840.1.113883.6.96"
   }],
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Danish-SNOMED-CT-Extension",
   "title" : "Danish SNOMED CT Extension",
   "status" : "active",

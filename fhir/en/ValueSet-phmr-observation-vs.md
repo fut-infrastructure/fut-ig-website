@@ -1,4 +1,4 @@
-# MedCom PHMR Observation ValueSet - eHealth Infrastructure v11.0.1
+# MedCom PHMR Observation ValueSet - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://medcom.dk/terminologi/phmr-observation-vs | *Version*:11.0.1 |
+| *Official URL*:http://medcom.dk/terminologi/phmr-observation-vs | *Version*:11.0.2 |
 | Active as of 2025-05-13 | *Computable Name*:MedComPHMRObservationValueSet |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "phmr-observation-vs",
   "url" : "http://medcom.dk/terminologi/phmr-observation-vs",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "MedComPHMRObservationValueSet",
   "title" : "MedCom PHMR Observation ValueSet",
   "status" : "active",

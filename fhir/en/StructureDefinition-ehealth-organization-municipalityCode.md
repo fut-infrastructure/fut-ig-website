@@ -1,4 +1,4 @@
-# Municipality Code - eHealth Infrastructure v11.0.1
+# Municipality Code - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-municipalityCode | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-organization-municipalityCode |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-municipalityCode | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-organization-municipalityCode |
 
 The organization's municipality code in the Danish 'Det Centrale Personregister'
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-organizat
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-organization-municipalityCode",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-municipalityCode",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-organization-municipalityCode",
   "title" : "Municipality Code",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

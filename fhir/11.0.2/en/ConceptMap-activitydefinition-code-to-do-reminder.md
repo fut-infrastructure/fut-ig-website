@@ -1,0 +1,505 @@
+# Activitydefinition-code to do reminder - eHealth Infrastructure v11.0.2
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Activitydefinition-code to do reminder**
+
+## ConceptMap: Activitydefinition-code to do reminder 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder | *Version*:11.0.2 |
+| Active as of 2023-06-28 | *Computable Name*:activitydefinition-code-to-do-reminder |
+
+ 
+The map controls whether an activity shall be subjected to producing reminders or not. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ConceptMap",
+  "id" : "activitydefinition-code-to-do-reminder",
+  "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder",
+  "version" : "11.0.2",
+  "name" : "activitydefinition-code-to-do-reminder",
+  "title" : "Activitydefinition-code to do reminder",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-06-28T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "The map controls whether an activity shall be subjected to producing reminders or not.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "sourceUri" : "http://ehealth.sundhed.dk/vs/activitydefinition-code",
+  "targetUri" : "http://terminology.hl7.org/ValueSet/v2-0136",
+  "group" : [{
+    "source" : "http://ehealth.sundhed.dk/cs/activitydefinition-code",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "TBD",
+      "display" : "Example value - Under construction",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "229057006",
+      "display" : "Møder",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "229058001",
+      "display" : "Sagskonferencer",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "409073007",
+      "display" : "Instruktion",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "273586006",
+      "display" : "Master Questionnaire",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "HA",
+      "display" : "Head activity",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "SQ",
+      "display" : "Situation quality assessment",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "QR",
+      "display" : "Usage quality assessment",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "SDG",
+      "display" : "Same device group",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.1",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "DNK05463",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05465",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05467",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05469",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05472",
+      "display" : "Blodtryk systolisk;Arm",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05473",
+      "display" : "Blodtryk diastolisk;Arm",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU02193",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU03011",
+      "display" : "Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU21692",
+      "display" : "Hjerte—Systole; frekv. = ? × 1/min",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU03804",
+      "display" : "Pt—Legeme; masse = ? kg",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU27281",
+      "display" : "Pt—Legeme; massekoefficient(masse/kvadreret højde) = ? kg/m²",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU03794",
+      "display" : "Pt—Legeme; højde = ? m",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU08676",
+      "display" : "Pt—Legeme; temp. = ? °C",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.184.100.8",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "MCS88015",
+      "display" : "FEV1;Lunge",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88016",
+      "display" : "FVC;Lunge",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88017",
+      "display" : "FEV1/FVC;Lunge",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88021",
+      "display" : "MRC skala;Pt(KOL)",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88023",
+      "display" : "FEV1 af forventet værdi;Pt(KOL)",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88050",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88137",
+      "display" : "CAT score;Pt",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88192",
+      "display" : "Skridt per dag;Pt",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88193",
+      "display" : "Skridt per uge;Pt",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88194",
+      "display" : "Skridt;Pt",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88214",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.4",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "ZZ3170",
+      "display" : "Hjemmeblodtryksmåling udført af patienten",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://snomed.info/sct",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "445988008",
+      "display" : "Assessment using health assessment questionnaire (procedure)",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "229057006",
+      "display" : "Meetings (procedure)",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "273586006",
+      "display" : "Master questionnaire",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "409073007",
+      "display" : "Instruction",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "446080005",
+      "display" : "Photography of wound",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://loinc.org",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "72287-6",
+      "display" : "Wound size panel",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "39126-8",
+      "display" : "Length of Wound",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "39125-0",
+      "display" : "Width of Wound",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "39127-6",
+      "display" : "Depth of Wound",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "89260-4",
+      "display" : "Area of wound",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "94083-3",
+      "display" : "Wound volume",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.4",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "ALCA00",
+      "display" : "fysisk fremmøde",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "ALCA03",
+      "display" : "virtuel kontakt",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "ZZ7011",
+      "display" : "Klinisk foto",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  }]
+}
+
+```

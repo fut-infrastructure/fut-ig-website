@@ -1,4 +1,4 @@
-# Questionnaire Item Control - eHealth Infrastructure v11.0.1
+# Questionnaire Item Control - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-item-control | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-item-control | *Version*:11.0.2 |
 | Active as of 2021-09-10 | *Computable Name*:QuestionnaireItemControl |
 
  
@@ -37,7 +37,7 @@ Questionnaire Item Control value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-questionnaire-item-control",
   "url" : "http://ehealth.sundhed.dk/vs/questionnaire-item-control",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "QuestionnaireItemControl",
   "title" : "Questionnaire Item Control",
   "status" : "active",

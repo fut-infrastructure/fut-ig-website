@@ -10,11 +10,11 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.core",
   "language" : "en",
   "url" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "eHealth Infrastructure",
   "title" : "eHealth Infrastructure",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -42,7 +42,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -52,7 +52,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   },
   {
     "id" : "hl7_fhir_dk_core",
@@ -9020,6 +9020,54 @@
       },
       "name" : "relatedperson01",
       "exampleCanonical" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-ehealth-relatedperson-search-cpridentifier.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/ehealth-relatedperson-search-cpridentifier"
+      },
+      "name" : "relatedPersonCPRIdentifier",
+      "description" : "Search parameter for RelatedPerson DK-Core CPR identifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-ehealth-relatedperson-cpridentifier-patient-parauth-unique.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/ehealth-relatedperson-cpridentifier-patient-parauth-unique"
+      },
+      "name" : "relatedPersonCPRIdentifierPatientParauthUnique",
+      "description" : "Uniqueness constraint: a patient can have at most one RelatedPerson with a given CPR identifier and the relationship code PARAUTH.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-ehealth-relatedperson-search-relationship-parauth.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/ehealth-relatedperson-search-relationship-parauth"
+      },
+      "name" : "relatedPersonRelationshipParauth",
+      "description" : "Search parameter for the relationship code PARAUTH (parental authority) on a RelatedPerson. Component of the uniqueness constraint relatedPersonCPRIdentifierPatientParauthUnique.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

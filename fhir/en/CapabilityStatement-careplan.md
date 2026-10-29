@@ -1,4 +1,4 @@
-# careplan - eHealth Infrastructure v11.0.1
+# careplan - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/careplan | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/careplan | *Version*:11.0.2 |
 | Active as of 2026-10-16 | *Computable Name*:careplan |
 
  [Raw OpenAPI-Swagger Definition file](../careplan.openapi.json) | [Download](../careplan.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "careplan",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/careplan",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "careplan",
   "status" : "active",
   "date" : "2026-10-16T09:33:53.692+00:00",

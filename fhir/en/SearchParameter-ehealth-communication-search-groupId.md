@@ -1,4 +1,4 @@
-# communicationGroupId - eHealth Infrastructure v11.0.1
+# communicationGroupId - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/groupId | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/groupId | *Version*:11.0.2 |
 | Active as of 2021-05-06 | *Computable Name*:communicationGroupId |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding resources based on group id
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-groupId",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/groupId",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "communicationGroupId",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",

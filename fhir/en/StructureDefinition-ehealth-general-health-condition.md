@@ -1,4 +1,4 @@
-# General health condition - eHealth Infrastructure v11.0.1
+# General health condition - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-general-health-condition | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-general-health-condition |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-general-health-condition | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-general-health-condition |
 
 Describes the general health condition of a patient using FSIII concepts (see http://www.fs3.nu/filer/Dokumenter/Metode/FSIII-Guide-til-helbredstilstande.pdf)
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-general-h
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-general-health-condition",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-general-health-condition",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-general-health-condition",
   "title" : "General health condition",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

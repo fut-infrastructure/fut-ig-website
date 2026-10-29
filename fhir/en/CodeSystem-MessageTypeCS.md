@@ -1,4 +1,4 @@
-# Message Type CodeSystem - eHealth Infrastructure v11.0.1
+# Message Type CodeSystem - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/message-type | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:MessageTypeCS |
+| *Official URL*:http://ehealth.sundhed.dk/cs/message-type | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:MessageTypeCS |
 
  
 Allowed codes for message type. 
@@ -31,11 +31,11 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "MessageTypeCS",
   "url" : "http://ehealth.sundhed.dk/cs/message-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "MessageTypeCS",
   "title" : "Message Type CodeSystem",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

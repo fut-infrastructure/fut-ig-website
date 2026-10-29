@@ -1,4 +1,4 @@
-# Treatment Area Collection xd - eHealth Infrastructure v11.0.1
+# Treatment Area Collection xd - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-treatment-area-collection-xd | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-treatment-area-collection-xd | *Version*:11.0.2 |
 | Active as of 2026-10-19 | *Computable Name*:TreatmentAreaCollection_xd |
 | **Usage**: system treatment area: xd | |
 
@@ -38,7 +38,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-treatment-areas-xd",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-treatment-area-collection-xd",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "TreatmentAreaCollection_xd",
   "title" : "Treatment Area Collection xd",
   "status" : "active",

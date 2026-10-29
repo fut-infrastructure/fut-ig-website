@@ -1,4 +1,4 @@
-# Reference Range Type - eHealth Infrastructure v11.0.1
+# Reference Range Type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/reference-range-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/reference-range-type | *Version*:11.0.2 |
 | Active as of 2021-01-13 | *Computable Name*:ReferenceRangeType |
 | *Other Identifiers:*OID:1.2.208.176.7.200.1 | |
 
@@ -37,7 +37,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.208.176.7.200.1"
   }],
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ReferenceRangeType",
   "title" : "Reference Range Type",
   "status" : "active",

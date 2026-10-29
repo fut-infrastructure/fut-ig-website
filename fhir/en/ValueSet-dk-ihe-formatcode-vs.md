@@ -1,4 +1,4 @@
-# DK_IHE_FormatCode_VS - eHealth Infrastructure v11.0.1
+# DK_IHE_FormatCode_VS - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-formatcode-vs | *Version*:11.0.1 |
+| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-formatcode-vs | *Version*:11.0.2 |
 | Active as of 2019-12-11 | *Computable Name*:DK_IHE_FormatCode_VS |
 
  
@@ -37,7 +37,7 @@ Value set for document format code used in national Document sharing.
   "resourceType" : "ValueSet",
   "id" : "dk-ihe-formatcode-vs",
   "url" : "http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-formatcode-vs",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "DK_IHE_FormatCode_VS",
   "title" : "DK_IHE_FormatCode_VS",
   "status" : "active",

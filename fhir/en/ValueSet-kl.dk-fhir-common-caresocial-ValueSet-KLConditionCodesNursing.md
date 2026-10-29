@@ -1,4 +1,4 @@
-# KLTilstandeKoderSygepleje - eHealth Infrastructure v11.0.1
+# KLTilstandeKoderSygepleje - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://kl.dk/fhir/common/caresocial/ValueSet/KLConditionCodesNursing | *Version*:11.0.1 |
+| *Official URL*:http://kl.dk/fhir/common/caresocial/ValueSet/KLConditionCodesNursing | *Version*:11.0.2 |
 | Active as of 2022-01-10 | *Computable Name*:KLConditionCodesNursing |
 
  
@@ -37,7 +37,7 @@ Danish municipality nursing condition codes
   "resourceType" : "ValueSet",
   "id" : "kl.dk-fhir-common-caresocial-ValueSet-KLConditionCodesNursing",
   "url" : "http://kl.dk/fhir/common/caresocial/ValueSet/KLConditionCodesNursing",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "KLConditionCodesNursing",
   "title" : "KLTilstandeKoderSygepleje",
   "status" : "active",

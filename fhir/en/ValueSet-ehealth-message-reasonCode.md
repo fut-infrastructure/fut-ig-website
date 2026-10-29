@@ -1,4 +1,4 @@
-# eHealth Message Reason Code - eHealth Infrastructure v11.0.1
+# eHealth Message Reason Code - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/message-reasonCode | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/message-reasonCode | *Version*:11.0.2 |
 | Active as of 2019-02-08 | *Computable Name*:eHealth Message Reason Code |
 
  
@@ -37,7 +37,7 @@ eHealth Message Reason Code
   "resourceType" : "ValueSet",
   "id" : "ehealth-message-reasonCode",
   "url" : "http://ehealth.sundhed.dk/vs/message-reasonCode",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "eHealth Message Reason Code",
   "status" : "active",
   "experimental" : true,

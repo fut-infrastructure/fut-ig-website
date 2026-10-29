@@ -1,4 +1,4 @@
-# AccessProvenance Agent Role - eHealth Infrastructure v11.0.1
+# AccessProvenance Agent Role - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/access-provenance-agent-role | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/access-provenance-agent-role | *Version*:11.0.2 |
 | Active as of 2026-01-08 | *Computable Name*:AccessProvenanceAgentRole |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "access-provenance-agent-role",
   "url" : "http://ehealth.sundhed.dk/cs/access-provenance-agent-role",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "AccessProvenanceAgentRole",
   "title" : "AccessProvenance Agent Role",
   "status" : "active",

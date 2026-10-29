@@ -1,0 +1,345 @@
+# Observation code to UCUM mapping - eHealth Infrastructure v11.0.2
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Observation code to UCUM mapping**
+
+## ConceptMap: Observation code to UCUM mapping 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum | *Version*:11.0.2 |
+| Active as of 2020-08-31 | *Computable Name*:conceptmap-obs-code-to-ucum |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ConceptMap",
+  "id" : "conceptmap-obs-code-to-ucum",
+  "url" : "http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum",
+  "version" : "11.0.2",
+  "name" : "conceptmap-obs-code-to-ucum",
+  "title" : "Observation code to UCUM mapping",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2020-08-31T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "sourceUri" : "http://ehealth.sundhed.dk/vs/observation-codes",
+  "group" : [{
+    "source" : "urn:oid:1.2.208.176.2.1",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "DNK05463",
+      "target" : [{
+        "code" : "mm[Hg]",
+        "display" : "mm[Hg]",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05465",
+      "target" : [{
+        "code" : "mm[Hg]",
+        "display" : "mm[Hg]",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05467",
+      "target" : [{
+        "code" : "mm[Hg]",
+        "display" : "mm[Hg]",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05469",
+      "target" : [{
+        "code" : "mm[Hg]",
+        "display" : "mm[Hg]",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05472",
+      "display" : "Blodtryk systolisk;Arm",
+      "target" : [{
+        "code" : "mm[Hg]",
+        "display" : "mm[Hg]",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "DNK05473",
+      "display" : "Blodtryk diastolisk;Arm",
+      "target" : [{
+        "code" : "mm[Hg]",
+        "display" : "mm[Hg]",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU02193",
+      "target" : [{
+        "code" : "mmol/L",
+        "display" : "millimole per liter",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU03011",
+      "display" : "Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?",
+      "target" : [{
+        "code" : "%",
+        "display" : "percent",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU21692",
+      "display" : "Hjerte—Systole; frekv. = ? × 1/min",
+      "target" : [{
+        "code" : "1/min",
+        "display" : "one per minute",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU03804",
+      "display" : "Pt—Legeme; masse = ? kg",
+      "target" : [{
+        "code" : "kg",
+        "display" : "kilogram",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU27281",
+      "display" : "Pt—Legeme; massekoefficient(masse/kvadreret højde) = ? kg/m²",
+      "target" : [{
+        "code" : "kg/m2",
+        "display" : "kilogram / (meter ^ 2)",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU03794",
+      "display" : "Pt—Legeme; højde = ? m",
+      "target" : [{
+        "code" : "m",
+        "display" : "meter",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "NPU08676",
+      "display" : "Pt—Legeme; temp. = ? °C",
+      "target" : [{
+        "code" : "Cel",
+        "display" : "degree Celcius",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.184.100.8",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "MCS88015",
+      "display" : "FEV1;Lunge",
+      "target" : [{
+        "code" : "L",
+        "display" : "liter",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88016",
+      "display" : "FVC;Lunge",
+      "target" : [{
+        "code" : "L",
+        "display" : "liter",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88017",
+      "display" : "FEV1/FVC;Lunge",
+      "target" : [{
+        "code" : "{ratio}",
+        "display" : "ratio",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88021",
+      "display" : "MRC skala;Pt(KOL)",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88023",
+      "display" : "FEV1 af forventet værdi;Pt(KOL)",
+      "target" : [{
+        "code" : "%",
+        "display" : "percent",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88137",
+      "display" : "CAT score;Pt",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88192",
+      "display" : "Skridt per dag;Pt",
+      "target" : [{
+        "code" : "/d",
+        "display" : "/d",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88193",
+      "display" : "Skridt per uge;Pt",
+      "target" : [{
+        "code" : "/wk",
+        "display" : "/wk",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MCS88194",
+      "display" : "Skridt;Pt",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.184.100.8",
+    "target" : "http://ehealth.sundhed.dk/cs/ehealth-unit-code",
+    "element" : [{
+      "code" : "MCS88050",
+      "target" : [{
+        "code" : "1/30sec",
+        "display" : "one per 30 seconds",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.184.100.8",
+    "target" : "http://ehealth.sundhed.dk/cs/ehealth-unit-code",
+    "element" : [{
+      "code" : "MCS88214",
+      "target" : [{
+        "code" : "1/60sec",
+        "display" : "one per 60 seconds",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "http://loinc.org",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "39126-8",
+      "display" : "Length of Wound",
+      "target" : [{
+        "code" : "cm",
+        "display" : "centimeter",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "39125-0",
+      "display" : "Width of Wound",
+      "target" : [{
+        "code" : "cm",
+        "display" : "centimeter",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "39127-6",
+      "display" : "Depth of Wound",
+      "target" : [{
+        "code" : "cm",
+        "display" : "centimeter",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "89260-4",
+      "display" : "Area of wound",
+      "target" : [{
+        "code" : "cm2",
+        "display" : "square centimeter",
+        "equivalence" : "specializes"
+      }]
+    },
+    {
+      "code" : "94083-3",
+      "display" : "Wound volume",
+      "target" : [{
+        "code" : "cm3",
+        "display" : "cubic centimeter",
+        "equivalence" : "specializes"
+      }]
+    }]
+  }]
+}
+
+```

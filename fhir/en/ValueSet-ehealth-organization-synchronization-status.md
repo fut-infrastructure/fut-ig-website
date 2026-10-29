@@ -1,4 +1,4 @@
-# Organization Synchronization Status - eHealth Infrastructure v11.0.1
+# Organization Synchronization Status - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/organization-synchronization-status | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/organization-synchronization-status | *Version*:11.0.2 |
 | Active as of 2019-06-24 | *Computable Name*:OrganizationSynchronizationStatus |
 
  
@@ -37,7 +37,7 @@ Value set used for indicating the organization synchronization status
   "resourceType" : "ValueSet",
   "id" : "ehealth-organization-synchronization-status",
   "url" : "http://ehealth.sundhed.dk/vs/organization-synchronization-status",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "OrganizationSynchronizationStatus",
   "title" : "Organization Synchronization Status",
   "status" : "active",

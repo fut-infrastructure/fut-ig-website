@@ -1,4 +1,4 @@
-# HL7 Terminology Maintenance Infrastructure Vocabulary - eHealth Infrastructure v11.0.1
+# HL7 Terminology Maintenance Infrastructure Vocabulary - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://terminology.hl7.org/CodeSystem/hl7TermMaintInfra | *Version*:11.0.1 |
+| *Official URL*:http://terminology.hl7.org/CodeSystem/hl7TermMaintInfra | *Version*:11.0.2 |
 | Active as of 2018-12-15 | *Computable Name*:Hl7TermMaintInfra |
 
  
@@ -32,7 +32,7 @@ This Code system is referenced in the definition of the following value sets:
   "id" : "hl7TermMaintInfra",
   "language" : "en",
   "url" : "http://terminology.hl7.org/CodeSystem/hl7TermMaintInfra",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Hl7TermMaintInfra",
   "title" : "HL7 Terminology Maintenance Infrastructure Vocabulary",
   "status" : "active",

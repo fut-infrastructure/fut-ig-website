@@ -1,4 +1,4 @@
-# Create Patient - eHealth Infrastructure v11.0.1
+# Create Patient - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-patient-create | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-patient-create | *Version*:11.0.2 |
 | Active as of 2019-02-02 | *Computable Name*:Create Patient |
 
  
@@ -28,7 +28,7 @@ This operation is currently the only way to create Patient resources in the eHea
   "resourceType" : "OperationDefinition",
   "id" : "ehealth-patient-create",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-patient-create",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Create Patient",
   "status" : "active",
   "kind" : "operation",

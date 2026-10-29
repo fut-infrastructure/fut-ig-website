@@ -1,4 +1,4 @@
-# DK IHE Format Code CodeSystem - eHealth Infrastructure v11.0.1
+# DK IHE Format Code CodeSystem - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:urn:oid:1.2.208.184.100.10 | *Version*:11.0.1 |
+| *Official URL*:urn:oid:1.2.208.184.100.10 | *Version*:11.0.2 |
 | Active as of 2019-12-11 | *Computable Name*:DK_IHE_FormatCode_CS |
 | *Other Identifiers:*OID:1.2.208.184.100.10 | |
 
@@ -36,7 +36,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.208.184.100.10"
   }],
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "DK_IHE_FormatCode_CS",
   "title" : "DK IHE Format Code CodeSystem",
   "status" : "active",

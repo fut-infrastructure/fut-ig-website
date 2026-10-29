@@ -1,4 +1,4 @@
-# Media Codes - eHealth Infrastructure v11.0.1
+# Media Codes - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/media-codes | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/media-codes | *Version*:11.0.2 |
 | Active as of 2025-01-09 | *Computable Name*:MediaCodes |
 
  
@@ -37,7 +37,7 @@ Media codes value set
   "resourceType" : "ValueSet",
   "id" : "ehealth-media-codes",
   "url" : "http://ehealth.sundhed.dk/vs/media-codes",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "MediaCodes",
   "title" : "Media Codes",
   "status" : "active",

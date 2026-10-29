@@ -1,4 +1,4 @@
-# Questionnaire Elements - eHealth Infrastructure v11.0.1
+# Questionnaire Elements - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-elements | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-elements | *Version*:11.0.2 |
 | Active as of 2023-09-08 | *Computable Name*:Questionnaire_Elements |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-questionnaire-elements",
   "url" : "http://ehealth.sundhed.dk/vs/questionnaire-elements",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Questionnaire_Elements",
   "title" : "Questionnaire Elements",
   "status" : "active",

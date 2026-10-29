@@ -1,4 +1,4 @@
-# Communication Category - eHealth Infrastructure v11.0.1
+# Communication Category - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/communication-category | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/communication-category | *Version*:11.0.2 |
 | Active as of 2019-09-27 | *Computable Name*:CommunicationCategory |
 
  
@@ -37,7 +37,7 @@ Communication Category.
   "resourceType" : "ValueSet",
   "id" : "ehealth-communication-category",
   "url" : "http://ehealth.sundhed.dk/vs/communication-category",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "CommunicationCategory",
   "title" : "Communication Category",
   "status" : "active",

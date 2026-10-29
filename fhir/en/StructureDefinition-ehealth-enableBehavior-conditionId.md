@@ -1,4 +1,4 @@
-# Condition Id - eHealth Infrastructure v11.0.1
+# Condition Id - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-enableBehavior-conditionId | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-enableBehavior-conditionId |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-enableBehavior-conditionId | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-enableBehavior-conditionId |
 
 Id for condition on question.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-enableBeh
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-enableBehavior-conditionId",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-enableBehavior-conditionId",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-enableBehavior-conditionId",
   "title" : "Condition Id",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

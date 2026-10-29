@@ -1,4 +1,4 @@
-# Consent/24 - related person's consent to processing of their information (PORPI) - eHealth Infrastructure v11.0.1
+# Consent/24 - related person's consent to processing of their information (PORPI) - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -13,7 +13,7 @@ Profile: [ehealth-consent](StructureDefinition-ehealth-consent.md)
 ### Participants
 
 * **Role**: Patient
-  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2512489996 (use: official))](Patient-102.md)
+  * **Details**: [Nancy Ann Berggren (official) Unknown, DoB Unknown ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2512489996 (use: official))](Patient-102.md)
 * **Role**: Party
   * **Details**: [RelatedPerson/701](RelatedPerson/701)
 * **Role**: Manager

@@ -1,4 +1,4 @@
-# measurement - eHealth Infrastructure v11.0.1
+# measurement - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/measurement | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/measurement | *Version*:11.0.2 |
 | Active as of 2026-10-16 | *Computable Name*:measurement |
 
  [Raw OpenAPI-Swagger Definition file](../measurement.openapi.json) | [Download](../measurement.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "measurement",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/measurement",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "measurement",
   "status" : "active",
   "date" : "2026-10-16T09:33:32.963+00:00",

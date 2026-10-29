@@ -1,4 +1,4 @@
-# Artifacts Summary - eHealth Infrastructure v11.0.1
+# Artifacts Summary - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **Artifacts Summary**
@@ -1198,6 +1198,9 @@ These define the properties by which a RESTful server can be searched. They can 
 | [ patientCPRIdentifier  ](SearchParameter-ehealth-patient-search-cpridentifier.md) | Search parameter for Patient DK-Core CPR identifier |
 | [ patientCPRIdentifierUnique  ](SearchParameter-ehealth-patient-search-cpridentifier-unique.md) | Uniqueness constraint on search parameter patientCPRIdentifier |
 | [ period  ](SearchParameter-ehealth-communication-search-period.md) | Search parameter for finding communication based on period |
+| [ relatedPersonCPRIdentifier  ](SearchParameter-ehealth-relatedperson-search-cpridentifier.md) | Search parameter for RelatedPerson DK-Core CPR identifier |
+| [ relatedPersonCPRIdentifierPatientParauthUnique  ](SearchParameter-ehealth-relatedperson-cpridentifier-patient-parauth-unique.md) | Uniqueness constraint: a patient can have at most one RelatedPerson with a given CPR identifier and the relationship code PARAUTH. |
+| [ relatedPersonRelationshipParauth  ](SearchParameter-ehealth-relatedperson-search-relationship-parauth.md) | Search parameter for the relationship code PARAUTH (parental authority) on a RelatedPerson. Component of the uniqueness constraint relatedPersonCPRIdentifierPatientParauthUnique. |
 | [ responsible  ](SearchParameter-ehealth-appointment-search-responsible.md) | Search parameter for finding responsible entity on Appointment |
 | [ restrictionCategory  ](SearchParameter-ehealth-communication-search-restrictionCategory.md) | Search parameter for finding communication based on restriction category |
 | [ threadId  ](SearchParameter-ehealth-communication-search-threadId.md) | Search parameter for finding communication based on thread id |

@@ -1,4 +1,4 @@
-# Activitydefinition-code to measurement resource type - eHealth Infrastructure v11.0.1
+# Activitydefinition-code to measurement resource type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type | *Version*:11.0.2 |
 | Active as of 2023-06-28 | *Computable Name*:activitydefinition-code-to-measurement-resource-type |
 
  
@@ -23,7 +23,7 @@ The map controls what type of measurement resource is expected for a given activ
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-measurement-resource-type",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "activitydefinition-code-to-measurement-resource-type",
   "title" : "Activitydefinition-code to measurement resource type",
   "status" : "active",

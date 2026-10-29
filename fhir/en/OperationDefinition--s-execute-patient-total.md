@@ -1,4 +1,4 @@
-# Execute patient total - eHealth Infrastructure v11.0.1
+# Execute patient total - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-total | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:execute-patient-total |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-total | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:execute-patient-total |
 
  
 
@@ -47,12 +47,12 @@ This report is grouped by EpsiodeOfCare. Each group is returned in a separate JS
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-patient-total",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-patient-total",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "execute-patient-total",
   "title" : "Execute patient total",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

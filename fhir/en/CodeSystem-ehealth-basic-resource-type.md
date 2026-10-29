@@ -1,4 +1,4 @@
-# Basic resource type - eHealth Infrastructure v11.0.1
+# Basic resource type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/basic-resource-type | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/basic-resource-type | *Version*:11.0.2 |
 | Active as of 2021-10-15 | *Computable Name*:BasicResourceType |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-basic-resource-type",
   "url" : "http://ehealth.sundhed.dk/cs/basic-resource-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "BasicResourceType",
   "title" : "Basic resource type",
   "status" : "active",

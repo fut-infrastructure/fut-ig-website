@@ -1,4 +1,4 @@
-# library - eHealth Infrastructure v11.0.1
+# library - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/library | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/library | *Version*:11.0.2 |
 | Active as of 2026-10-16 | *Computable Name*:library |
 
  [Raw OpenAPI-Swagger Definition file](../library.openapi.json) | [Download](../library.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "library",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/library",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "library",
   "status" : "active",
   "date" : "2026-10-16T09:29:48.178+00:00",

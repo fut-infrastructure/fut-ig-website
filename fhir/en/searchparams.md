@@ -1,4 +1,4 @@
-# Searchparams - eHealth Infrastructure v11.0.1
+# Searchparams - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **Searchparams**
@@ -31,5 +31,8 @@ Below is a selected list of such search parameters.
 * [topic](SearchParameter-ehealth-communication-search-topic.md)
 * [patientCPRIdentifierUnique](SearchParameter-ehealth-patient-search-cpridentifier-unique.md)
 * [patientCPRIdentifier](SearchParameter-ehealth-patient-search-cpridentifier.md)
+* [relatedPersonCPRIdentifierPatientParauthUnique](SearchParameter-ehealth-relatedperson-cpridentifier-patient-parauth-unique.md)
+* [relatedPersonCPRIdentifier](SearchParameter-ehealth-relatedperson-search-cpridentifier.md)
 * [date](SearchParameter-ehealth-relatedperson-search-date.md)
+* [relatedPersonRelationshipParauth](SearchParameter-ehealth-relatedperson-search-relationship-parauth.md)
 

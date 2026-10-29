@@ -1,4 +1,4 @@
-# Policies for provenances - eHealth Infrastructure v11.0.1
+# Policies for provenances - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-provenance-policies | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-provenance-policies | *Version*:11.0.2 |
 | Active as of 2019-02-02 | *Computable Name*:Policies for provenances |
 
  
@@ -37,7 +37,7 @@ Policies under which data can be provided
   "resourceType" : "ValueSet",
   "id" : "ehealth-provenance-policies",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-provenance-policies",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Policies for provenances",
   "title" : "Policies for provenances",
   "status" : "active",

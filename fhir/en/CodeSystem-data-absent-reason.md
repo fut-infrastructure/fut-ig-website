@@ -1,4 +1,4 @@
-# DataAbsentReason - eHealth Infrastructure v11.0.1
+# DataAbsentReason - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://terminology.hl7.org/CodeSystem/data-absent-reason | *Version*:11.0.1 |
+| *Official URL*:http://terminology.hl7.org/CodeSystem/data-absent-reason | *Version*:11.0.2 |
 | Active as of 2023-04-24 | *Computable Name*:DataAbsentReason |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "data-absent-reason",
   "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "DataAbsentReason",
   "title" : "DataAbsentReason",
   "status" : "active",

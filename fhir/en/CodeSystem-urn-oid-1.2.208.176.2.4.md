@@ -1,4 +1,4 @@
-# Sundhedsvæsenets klassifikationssystem (SKS) - eHealth Infrastructure v11.0.1
+# Sundhedsvæsenets klassifikationssystem (SKS) - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:urn:oid:1.2.208.176.2.4 | *Version*:11.0.1 |
+| *Official URL*:urn:oid:1.2.208.176.2.4 | *Version*:11.0.2 |
 | Active as of 2019-12-13 | *Computable Name*:SKS |
 | *Other Identifiers:*OID:1.2.208.176.2.4 | |
 
@@ -47,7 +47,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.208.176.2.4"
   }],
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "SKS",
   "title" : "Sundhedsvæsenets klassifikationssystem (SKS)",
   "status" : "active",

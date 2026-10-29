@@ -1,4 +1,4 @@
-# Error Messages - eHealth Infrastructure v11.0.1
+# Error Messages - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **Error Messages**

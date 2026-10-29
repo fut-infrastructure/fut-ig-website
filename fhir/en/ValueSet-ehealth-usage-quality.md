@@ -1,4 +1,4 @@
-# Usage Quality - eHealth Infrastructure v11.0.1
+# Usage Quality - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-quality | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-quality | *Version*:11.0.2 |
 | Active as of 2019-02-13 | *Computable Name*:UsageQuality |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-usage-quality",
   "url" : "http://ehealth.sundhed.dk/vs/usage-quality",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "UsageQuality",
   "title" : "Usage Quality",
   "status" : "active",

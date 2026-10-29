@@ -1,4 +1,4 @@
-# Modified role - eHealth Infrastructure v11.0.1
+# Modified role - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-modifier-role |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-modifier-role |
 
 This is a modifier role that can hold a role and a reference to the item who has the role. Ex. owner + a reference to the owner organization.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-modifier-
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-modifier-role",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-modifier-role",
   "title" : "Modified role",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

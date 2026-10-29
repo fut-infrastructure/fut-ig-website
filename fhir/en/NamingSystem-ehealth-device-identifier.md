@@ -1,4 +1,4 @@
-# eHealth Device Identifier - eHealth Infrastructure v11.0.1
+# eHealth Device Identifier - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-device-identifier | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-device-identifier | *Version*:11.0.2 |
 | Active as of 2020-02-18 | *Computable Name*:eHealth Device Identifier |
 
  
@@ -28,7 +28,7 @@ An identifier of a device used in eHealth
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.1"
+    "valueString" : "11.0.2"
   }],
   "name" : "eHealth Device Identifier",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Document Category - eHealth Infrastructure v11.0.1
+# Document Category - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/document-category | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/document-category | *Version*:11.0.2 |
 | Active as of 2025-09-02 | *Computable Name*:DocumentCategory |
 
  
@@ -37,7 +37,7 @@ Document Category value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-document-category",
   "url" : "http://ehealth.sundhed.dk/vs/document-category",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "DocumentCategory",
   "title" : "Document Category",
   "status" : "active",

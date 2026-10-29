@@ -1,0 +1,411 @@
+# Activitydefinition-code to measurement resource type - eHealth Infrastructure v11.0.2
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Activitydefinition-code to measurement resource type**
+
+## ConceptMap: Activitydefinition-code to measurement resource type 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type | *Version*:11.0.2 |
+| Active as of 2023-06-28 | *Computable Name*:activitydefinition-code-to-measurement-resource-type |
+
+ 
+The map controls what type of measurement resource is expected for a given activity code. 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ConceptMap",
+  "id" : "activitydefinition-code-to-measurement-resource-type",
+  "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type",
+  "version" : "11.0.2",
+  "name" : "activitydefinition-code-to-measurement-resource-type",
+  "title" : "Activitydefinition-code to measurement resource type",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-06-28T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "The map controls what type of measurement resource is expected for a given activity code.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "sourceUri" : "http://ehealth.sundhed.dk/vs/activitydefinition-code",
+  "targetUri" : "http://hl7.org/fhir/ValueSet/resource-types",
+  "group" : [{
+    "source" : "http://ehealth.sundhed.dk/cs/activitydefinition-code",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "273586006",
+      "display" : "Master Questionnaire",
+      "target" : [{
+        "code" : "QuestionnaireResponse",
+        "display" : "QuestionnaireResponse",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "SQ",
+      "display" : "Situation quality assessment",
+      "target" : [{
+        "code" : "QuestionnaireResponse",
+        "display" : "QuestionnaireResponse",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "QR",
+      "display" : "Usage quality assessment",
+      "target" : [{
+        "code" : "QuestionnaireResponse",
+        "display" : "QuestionnaireResponse",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.1",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "DNK05463",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05465",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05467",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05469",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05472",
+      "display" : "Blodtryk systolisk;Arm",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "DNK05473",
+      "display" : "Blodtryk diastolisk;Arm",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU02193",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU03011",
+      "display" : "Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU21692",
+      "display" : "Hjerte—Systole; frekv. = ? × 1/min",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU03804",
+      "display" : "Pt—Legeme; masse = ? kg",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU27281",
+      "display" : "Pt—Legeme; massekoefficient(masse/kvadreret højde) = ? kg/m²",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU03794",
+      "display" : "Pt—Legeme; højde = ? m",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "NPU08676",
+      "display" : "Pt—Legeme; temp. = ? °C",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.184.100.8",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "MCS88015",
+      "display" : "FEV1;Lunge",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88016",
+      "display" : "FVC;Lunge",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88017",
+      "display" : "FEV1/FVC;Lunge",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88021",
+      "display" : "MRC skala;Pt(KOL)",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88023",
+      "display" : "FEV1 af forventet værdi;Pt(KOL)",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88050",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88137",
+      "display" : "CAT score;Pt",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88192",
+      "display" : "Skridt per dag;Pt",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88193",
+      "display" : "Skridt per uge;Pt",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88194",
+      "display" : "Skridt;Pt",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MCS88214",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.4",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "ZZ3170",
+      "display" : "Hjemmeblodtryksmåling udført af patienten",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "ZZ7011",
+      "display" : "Klinisk foto",
+      "target" : [{
+        "code" : "Media",
+        "display" : "Media",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://snomed.info/sct",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "445988008",
+      "display" : "Assessment using health assessment questionnaire (procedure)",
+      "target" : [{
+        "code" : "QuestionnaireResponse",
+        "display" : "QuestionnaireResponse",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "273586006",
+      "display" : "Master questionnaire",
+      "target" : [{
+        "code" : "QuestionnaireResponse",
+        "display" : "QuestionnaireResponse",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "446080005",
+      "display" : "Photography of wound",
+      "target" : [{
+        "code" : "Media",
+        "display" : "Media",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://loinc.org",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "72287-6",
+      "display" : "Wound size panel",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "39126-8",
+      "display" : "Length of Wound",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "39125-0",
+      "display" : "Width of Wound",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "39127-6",
+      "display" : "Depth of Wound",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "89260-4",
+      "display" : "Area of wound",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "94083-3",
+      "display" : "Wound volume",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  }]
+}
+
+```

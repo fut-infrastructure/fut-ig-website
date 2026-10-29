@@ -1,4 +1,4 @@
-# Device Calibration Actor - eHealth Infrastructure v11.0.1
+# Device Calibration Actor - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-calibration-actor | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-calibration-actor | *Version*:11.0.2 |
 | Active as of 2019-09-16 | *Computable Name*:DeviceCalibrationActor |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-calibration-actor",
   "url" : "http://ehealth.sundhed.dk/vs/device-calibration-actor",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "DeviceCalibrationActor",
   "title" : "Device Calibration Actor",
   "status" : "active",

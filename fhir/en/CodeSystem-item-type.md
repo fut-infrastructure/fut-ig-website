@@ -1,4 +1,4 @@
-# Questionnaire Item Type - eHealth Infrastructure v11.0.1
+# Questionnaire Item Type - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/item-type | *Version*:11.0.1 | |
+| *Official URL*:http://hl7.org/fhir/item-type | *Version*:11.0.2 | |
 | Active as of 2019-10-24 | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 3 | *Computable Name*:Questionnaire Item Type |
 
  
@@ -46,7 +46,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueCode" : "fhir"
   }],
   "url" : "http://hl7.org/fhir/item-type",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "Questionnaire Item Type",
   "title" : "Questionnaire Item Type",
   "status" : "active",

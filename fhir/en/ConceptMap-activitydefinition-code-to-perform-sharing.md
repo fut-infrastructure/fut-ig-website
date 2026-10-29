@@ -1,4 +1,4 @@
-# Activitydefinition-code-to-perform-sharing - eHealth Infrastructure v11.0.1
+# Activitydefinition-code-to-perform-sharing - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing | *Version*:11.0.2 |
 | Active as of 2023-12-14 | *Computable Name*:activitydefinition-code-to-perform-sharing |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-perform-sharing",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "activitydefinition-code-to-perform-sharing",
   "title" : "Activitydefinition-code-to-perform-sharing",
   "status" : "active",

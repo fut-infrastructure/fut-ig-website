@@ -1,4 +1,4 @@
-# POST Fetch Careplan Duration Stats - eHealth Infrastructure v11.0.1
+# POST Fetch Careplan Duration Stats - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **POST Fetch Careplan Duration Stats**

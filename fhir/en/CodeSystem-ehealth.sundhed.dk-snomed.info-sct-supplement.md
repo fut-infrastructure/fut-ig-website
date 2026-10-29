@@ -1,4 +1,4 @@
-# SNOMED CT Code System Supplement - eHealth Infrastructure v11.0.1
+# SNOMED CT Code System Supplement - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/snomed.info/sct/supplement | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/snomed.info/sct/supplement | *Version*:11.0.2 |
 | Active as of 2025-01-06 | *Computable Name*:SNOMED CT Supplement |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth.sundhed.dk-snomed.info-sct-supplement",
   "url" : "http://ehealth.sundhed.dk/snomed.info/sct/supplement",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "SNOMED CT Supplement",
   "title" : "SNOMED CT Code System Supplement",
   "status" : "active",

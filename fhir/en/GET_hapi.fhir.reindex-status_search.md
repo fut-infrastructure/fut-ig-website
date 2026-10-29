@@ -1,4 +1,4 @@
-# GET Hapi Fhir Reindex Status Search - eHealth Infrastructure v11.0.1
+# GET Hapi Fhir Reindex Status Search - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * **GET Hapi Fhir Reindex Status Search**

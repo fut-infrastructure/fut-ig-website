@@ -1,4 +1,4 @@
-# intendedQuestionnaireLinkage - eHealth Infrastructure v11.0.1
+# intendedQuestionnaireLinkage - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedQuestionnaireLinkage | *Version*:11.0.1 |
-| Active as of 2026-10-23 | *Computable Name*:ehealth-intendedQuestionnaireLinkage |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedQuestionnaireLinkage | *Version*:11.0.2 |
+| Active as of 2026-10-29 | *Computable Name*:ehealth-intendedQuestionnaireLinkage |
 
 References the QuestionnaireLinkage(s) intended to be used when presenting the questionnaire responses of the action/service request, e.g. for cross-questionnaire or cross-version comparison. On PlanDefinition.action (any nesting level) it designates the linkages recommended by the plan template author; $apply copies it to the created ServiceRequest.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-intendedQ
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-intendedQuestionnaireLinkage",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedQuestionnaireLinkage",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "ehealth-intendedQuestionnaireLinkage",
   "title" : "intendedQuestionnaireLinkage",
   "status" : "active",
-  "date" : "2026-10-23T09:30:26+00:00",
+  "date" : "2026-10-29T09:18:06+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

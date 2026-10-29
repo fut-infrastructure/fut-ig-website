@@ -1,4 +1,4 @@
-# import - eHealth Infrastructure v11.0.1
+# import - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-import | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-import | *Version*:11.0.2 |
 | Active as of 2021-05-06 | *Computable Name*:import |
 
  
@@ -23,7 +23,7 @@ Import terminology resources
   "resourceType" : "OperationDefinition",
   "id" : "-s-import",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-import",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "import",
   "status" : "active",
   "kind" : "operation",

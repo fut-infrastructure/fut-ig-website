@@ -1,4 +1,4 @@
-# Ehealth System - eHealth Infrastructure v11.0.1
+# Ehealth System - eHealth Infrastructure v11.0.2
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-system | *Version*:11.0.1 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/ehealth-system | *Version*:11.0.2 |
 | Active as of 2022-09-29 | *Computable Name*:EhealthSystem |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-system",
   "url" : "http://ehealth.sundhed.dk/cs/ehealth-system",
-  "version" : "11.0.1",
+  "version" : "11.0.2",
   "name" : "EhealthSystem",
   "title" : "Ehealth System",
   "status" : "active",
