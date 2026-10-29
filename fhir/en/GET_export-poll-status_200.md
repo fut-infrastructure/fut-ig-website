@@ -1,4 +1,4 @@
-# GET Export Poll Status 200 - eHealth Infrastructure v11.0.2
+# GET Export Poll Status 200 - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * **GET Export Poll Status 200**

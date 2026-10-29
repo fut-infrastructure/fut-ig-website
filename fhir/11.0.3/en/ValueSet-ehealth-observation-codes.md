@@ -1,0 +1,199 @@
+# Observation Codes - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Observation Codes**
+
+## ValueSet: Observation Codes (Experimental) 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/vs/observation-codes | *Version*:11.0.3 |
+| Active as of 2019-02-08 | *Computable Name*:ObservationCodes |
+
+ 
+Observation codes value set. 
+
+ **References** 
+
+* Included into [Activity Definition Code](ValueSet-ehealth-activitydefinition-code.md)
+* Included into [ClinicalImpression Finding Codes](ValueSet-ehealth-clinicalimpression-finding-codes.md)
+* Included into [Goal Target Measure](ValueSet-goal-target-measure.md)
+* Included into [Reference Range Type](ValueSet-ehealth-reference-range-type.md)
+* [ehealth-observation](StructureDefinition-ehealth-observation.md)
+
+### Logical Definition (CLD)
+
+ 
+
+### Expansion
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ValueSet",
+  "id" : "ehealth-observation-codes",
+  "url" : "http://ehealth.sundhed.dk/vs/observation-codes",
+  "version" : "11.0.3",
+  "name" : "ObservationCodes",
+  "title" : "Observation Codes",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2019-02-08T00:00:00+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Observation codes value set.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "urn:oid:1.2.208.176.2.1",
+      "concept" : [{
+        "code" : "DNK05463"
+      },
+      {
+        "code" : "DNK05465"
+      },
+      {
+        "code" : "DNK05467"
+      },
+      {
+        "code" : "DNK05469"
+      },
+      {
+        "code" : "DNK05472"
+      },
+      {
+        "code" : "DNK05473"
+      },
+      {
+        "code" : "NPU02193"
+      },
+      {
+        "code" : "NPU03011"
+      },
+      {
+        "code" : "NPU21692"
+      },
+      {
+        "code" : "NPU03804"
+      },
+      {
+        "code" : "NPU27281"
+      },
+      {
+        "code" : "NPU03794"
+      },
+      {
+        "code" : "NPU08676"
+      }]
+    },
+    {
+      "system" : "urn:oid:1.2.208.184.100.8",
+      "concept" : [{
+        "code" : "MCS88015"
+      },
+      {
+        "code" : "MCS88016"
+      },
+      {
+        "code" : "MCS88017"
+      },
+      {
+        "code" : "MCS88021"
+      },
+      {
+        "code" : "MCS88023"
+      },
+      {
+        "code" : "MCS88050"
+      },
+      {
+        "code" : "MCS88137"
+      },
+      {
+        "code" : "MCS88192"
+      },
+      {
+        "code" : "MCS88193"
+      },
+      {
+        "code" : "MCS88194"
+      },
+      {
+        "code" : "MCS88214"
+      }]
+    },
+    {
+      "system" : "urn:oid:1.2.208.176.2.4",
+      "concept" : [{
+        "code" : "ZZ3170"
+      },
+      {
+        "code" : "ZZ5048"
+      }]
+    },
+    {
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "72287-6"
+      },
+      {
+        "code" : "39126-8"
+      },
+      {
+        "code" : "39125-0"
+      },
+      {
+        "code" : "39127-6"
+      },
+      {
+        "code" : "89260-4"
+      },
+      {
+        "code" : "94083-3"
+      }]
+    },
+    {
+      "system" : "http://ehealth.sundhed.dk/cs/mds-codes",
+      "concept" : [{
+        "code" : "MDS-UPDRS-I"
+      },
+      {
+        "code" : "MDS-UPDRS-IA"
+      },
+      {
+        "code" : "MDS-UPDRS-IB"
+      },
+      {
+        "code" : "MDS-UPDRS-II"
+      },
+      {
+        "code" : "MDS-UPDRS-III"
+      },
+      {
+        "code" : "MDS-UPDRS-IV"
+      }]
+    }]
+  }
+}
+
+```

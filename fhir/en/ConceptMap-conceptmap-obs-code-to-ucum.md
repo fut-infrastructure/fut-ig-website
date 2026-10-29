@@ -1,4 +1,4 @@
-# Observation code to UCUM mapping - eHealth Infrastructure v11.0.2
+# Observation code to UCUM mapping - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum | *Version*:11.0.3 |
 | Active as of 2020-08-31 | *Computable Name*:conceptmap-obs-code-to-ucum |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "conceptmap-obs-code-to-ucum",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "conceptmap-obs-code-to-ucum",
   "title" : "Observation code to UCUM mapping",
   "status" : "active",
@@ -337,6 +337,77 @@
         "code" : "cm3",
         "display" : "cubic centimeter",
         "equivalence" : "specializes"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.4",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "ZZ5048",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "http://ehealth.sundhed.dk/cs/mds-codes",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "MDS-UPDRS-I",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IA",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IB",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-II",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-III",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IV",
+      "target" : [{
+        "code" : "{Number}",
+        "display" : "Number",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
       }]
     }]
   }]

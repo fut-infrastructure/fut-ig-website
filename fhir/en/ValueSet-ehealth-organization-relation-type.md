@@ -1,4 +1,4 @@
-# Organization Relation Type - eHealth Infrastructure v11.0.2
+# Organization Relation Type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/organization-relation-type | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/organization-relation-type | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:OrganizationRelationType |
 
  
@@ -37,7 +37,7 @@ How Organizations are related.
   "resourceType" : "ValueSet",
   "id" : "ehealth-organization-relation-type",
   "url" : "http://ehealth.sundhed.dk/vs/organization-relation-type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "OrganizationRelationType",
   "title" : "Organization Relation Type",
   "status" : "active",

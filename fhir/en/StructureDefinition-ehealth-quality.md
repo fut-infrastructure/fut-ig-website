@@ -1,4 +1,4 @@
-# Quality - eHealth Infrastructure v11.0.2
+# Quality - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-quality |
 
 Minimum required or actually assessed quality values. The qualityType element states the type of quality. For different values of qualityType the required or assessed quality value (qualityCode) must be from different value sets. The relation between qualityType and allowed value sets are defined in the definition of value set http://ehealth.sundhed.dk/vs/quality-types.
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-quality.c
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-quality",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-quality",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-quality",
   "title" : "Quality",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

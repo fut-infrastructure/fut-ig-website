@@ -1,4 +1,4 @@
-# FS III, Udskillelse af affaldsstoffer - eHealth Infrastructure v11.0.2
+# FS III, Udskillelse af affaldsstoffer - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-excretion-of-waste-materials | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/fs3-health-excretion-of-waste-materials | *Version*:11.0.3 |
 | Active as of 2019-02-02 | *Computable Name*:FS III, Udskillelse af affaldsstoffer |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "fs3-health-excretion-of-waste-materials",
   "url" : "http://ehealth.sundhed.dk/cs/fs3-health-excretion-of-waste-materials",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "FS III, Udskillelse af affaldsstoffer",
   "title" : "FS III, Udskillelse af affaldsstoffer",
   "status" : "active",

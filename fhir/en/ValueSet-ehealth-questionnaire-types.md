@@ -1,4 +1,4 @@
-# Questionnaire Types - eHealth Infrastructure v11.0.2
+# Questionnaire Types - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-types | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-types | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:QuestionnaireTypes |
 
  
@@ -37,7 +37,7 @@ Questionnaire type value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-questionnaire-types",
   "url" : "http://ehealth.sundhed.dk/vs/questionnaire-types",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "QuestionnaireTypes",
   "title" : "Questionnaire Types",
   "status" : "active",

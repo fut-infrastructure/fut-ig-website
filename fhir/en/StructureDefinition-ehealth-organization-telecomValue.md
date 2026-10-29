@@ -1,4 +1,4 @@
-# Telecom Value - eHealth Infrastructure v11.0.2
+# Telecom Value - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomValue | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomValue | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-organization-telecomValue |
 
 The actual contact point details (i.e. phone number or email address)
@@ -41,11 +41,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-organizat
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-organization-telecomValue",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-telecomValue",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-organization-telecomValue",
   "title" : "Telecom Value",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

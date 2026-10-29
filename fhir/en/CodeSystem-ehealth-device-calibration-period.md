@@ -1,4 +1,4 @@
-# Device calibration period - eHealth Infrastructure v11.0.2
+# Device calibration period - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/device-calibration-period | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/device-calibration-period | *Version*:11.0.3 |
 | Active as of 2019-09-16 | *Computable Name*:DeviceCalibrationPeriod |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-device-calibration-period",
   "url" : "http://ehealth.sundhed.dk/cs/device-calibration-period",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "DeviceCalibrationPeriod",
   "title" : "Device calibration period",
   "status" : "active",

@@ -1,4 +1,4 @@
-# aggregateId - eHealth Infrastructure v11.0.2
+# aggregateId - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-id | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-id | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-aggregate-id |
 
 An optional identifier used to associate this ServiceRequest with an aggregate or grouping context.
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-aggregate
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-aggregate-id",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-aggregate-id",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-aggregate-id",
   "title" : "aggregateId",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

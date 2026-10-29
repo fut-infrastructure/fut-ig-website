@@ -1,4 +1,4 @@
-# Is context allowed - eHealth Infrastructure v11.0.2
+# Is context allowed - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:is-context-allowed |
 
  
@@ -31,12 +31,12 @@ For valid Episode of Care is returned references that cause the Episode of Care 
   "resourceType" : "OperationDefinition",
   "id" : "EpisodeOfCare-i-is-context-allowed",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/EpisodeOfCare-i-is-context-allowed",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "is-context-allowed",
   "title" : "Is context allowed",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# eHealth Usage Context Type - eHealth Infrastructure v11.0.2
+# eHealth Usage Context Type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-usage-context-type | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-usage-context-type | *Version*:11.0.3 |
 | Active as of 2020-11-20 | *Computable Name*:eHealthUsageContextType |
 
  
@@ -53,7 +53,7 @@ The following table supersedes the expansion table below for the following codes
   "resourceType" : "ValueSet",
   "id" : "ehealth-usage-context-type",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-usage-context-type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "eHealthUsageContextType",
   "title" : "eHealth Usage Context Type",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Usage Context Body site - eHealth Infrastructure v11.0.2
+# Usage Context Body site - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-body-site | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-body-site | *Version*:11.0.3 |
 | Active as of 2026-02-09 | *Computable Name*:usageContextBodySite |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "vs-usage-context-body-site",
   "url" : "http://ehealth.sundhed.dk/vs/usage-context-body-site",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "usageContextBodySite",
   "title" : "Usage Context Body site",
   "status" : "active",

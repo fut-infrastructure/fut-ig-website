@@ -1,4 +1,4 @@
-# Measurement Sharing Policies - eHealth Infrastructure v11.0.2
+# Measurement Sharing Policies - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/measurement-sharing-policies | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/measurement-sharing-policies | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:MeasurementSharingPolicies |
 
  
@@ -37,7 +37,7 @@ Policies of sharing submissions with national registers such as KIH.
   "resourceType" : "ValueSet",
   "id" : "ehealth-measurement-sharing-policies",
   "url" : "http://ehealth.sundhed.dk/vs/measurement-sharing-policies",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "MeasurementSharingPolicies",
   "title" : "Measurement Sharing Policies",
   "status" : "active",

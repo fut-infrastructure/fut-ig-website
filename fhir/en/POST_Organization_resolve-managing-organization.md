@@ -1,4 +1,4 @@
-# POST Organization Resolve Managing Organization - eHealth Infrastructure v11.0.2
+# POST Organization Resolve Managing Organization - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * **POST Organization Resolve Managing Organization**

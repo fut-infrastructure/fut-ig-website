@@ -1,4 +1,4 @@
-# relatedPersonRelationshipParauth - eHealth Infrastructure v11.0.2
+# relatedPersonRelationshipParauth - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/relationshipParauth | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/relationshipParauth | *Version*:11.0.3 |
 | Active as of 2026-10-26 | *Computable Name*:relatedPersonRelationshipParauth |
 
  
@@ -23,7 +23,7 @@ Search parameter for the relationship code PARAUTH (parental authority) on a Rel
   "resourceType" : "SearchParameter",
   "id" : "ehealth-relatedperson-search-relationship-parauth",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/relationshipParauth",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "relatedPersonRelationshipParauth",
   "status" : "active",
   "date" : "2026-10-26T00:00:00+00:00",

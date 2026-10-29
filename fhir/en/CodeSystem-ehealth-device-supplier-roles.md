@@ -1,4 +1,4 @@
-# Device Supplier Roles - eHealth Infrastructure v11.0.2
+# Device Supplier Roles - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/device-supplier-roles | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/device-supplier-roles | *Version*:11.0.3 |
 | Active as of 2019-01-29 | *Computable Name*:DeviceSupplierRoles |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-device-supplier-roles",
   "url" : "http://ehealth.sundhed.dk/cs/device-supplier-roles",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "DeviceSupplierRoles",
   "title" : "Device Supplier Roles",
   "status" : "active",

@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/ValueSet/ehealth-usage-context-type> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ehealth-usage-context-type"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ehealth-usage-context-type</b></p><a name=\"ehealth-usage-context-type\"> </a><a name=\"hcehealth-usage-context-type\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-usage-context-type.html\"><code>http://terminology.hl7.org/CodeSystem/usage-context-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to 2.0.1, the version found through the package references\"> version ?2.0.1</span></li><li>Include all codes defined in <a href=\"CodeSystem-ehealth-usage-context-type.html\"><code>http://ehealth.sundhed.dk/cs/ehealth-usage-context-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?11.0.3</span></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "http://ehealth.sundhed.dk/vs/ehealth-usage-context-type"] ;
+  fhir:ValueSet.version [ fhir:value "11.0.3"] ;
+  fhir:ValueSet.name [ fhir:value "eHealthUsageContextType"] ;
+  fhir:ValueSet.title [ fhir:value "eHealth Usage Context Type"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2020-11-20T00:00:00+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "The following table supersedes the expansion table below for the following codes:\n\n| Code                    | System                                                   | Display                 | Definition                                                                                                                                                                                                                                                                                                        |\n|-------------------------|----------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| focus                   | http://terminology.hl7.org/CodeSystem/usage-context-type | Clinical Focus          | The clinical concept(s) addressed by the artifact/element. For example, disease, diagnostic test interpretation, medication ordering as in http://ehealth.sundhed.dk/vs/conditions                                                                                                                                |\n| program                 | http://terminology.hl7.org/CodeSystem/usage-context-type | Program                 | A program/project of work for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/ehealth-program                                                                                                                                                                                             |\n| task                    | http://terminology.hl7.org/CodeSystem/usage-context-type | Task                    | A task type for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/usage-context-task-type                                                                                                                                                                                                         |\n| workflow                | http://terminology.hl7.org/CodeSystem/usage-context-type | Workflow                | A workflow for which this artifact/element is applicable. http://ehealth.sundhed.dk/vs/usage-context-workflow                                                                                                                                                                                                           |\n| activity                | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | Activity Type           | The type of activity in which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.                           |\n| supports                | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | Supports                | The type of activity supported by a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/activitydefinition-code value set.                                             |\n| range                   | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | Range                   | The type of reference range with which it is relevant to use a module/element having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/reference-range-type value set.                     |\n| questionnaire-related   | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | Questionnaire Related   | The type of questionnaire element with which it is relevant to use a coded values/id registries having this use context (see http://hl7.org/fhir/metadatatypes.html#UsageContext). For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/questionnaire-elements value set. |\n| system-treatment-area   | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | System Treatment Area   | The coexistence tag for which the treatment areas ValueSet is relevant. For this context type, the value shall be a code taken from the http://ehealth.sundhed.dk/vs/ehealth-system value set.                                                                                                                    |\n| condition-qualification | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | Condition Qualification | A condition qualification for which this artifact/element is applicable. For this context type, the value shall be a code from the value set http://ehealth.sundhed.dk/vs/condition-qualification.                                                                                                                |\n| body-site               | http://ehealth.sundhed.dk/cs/ehealth-usage-context-type  | Body Site               | A placement on the body for which this artifact/element is applicable. For this context type, the value shall be a code from the value set http://ehealth.sundhed.dk/vs/usage-context-body-site.                                                                                                                                |"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-usage-context-type" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/ValueSet/ehealth-usage-context-type.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

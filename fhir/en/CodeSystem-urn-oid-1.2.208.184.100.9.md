@@ -1,4 +1,4 @@
-# DK IHE ClassCode CS - eHealth Infrastructure v11.0.2
+# DK IHE ClassCode CS - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:urn:oid:1.2.208.184.100.9 | *Version*:11.0.2 |
+| *Official URL*:urn:oid:1.2.208.184.100.9 | *Version*:11.0.3 |
 | Active as of 2019-12-11 | *Computable Name*:DK_IHE_ClassCode_CS |
 | *Other Identifiers:*OID:1.2.208.184.100.9 | |
 
@@ -36,7 +36,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.208.184.100.9"
   }],
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "DK_IHE_ClassCode_CS",
   "title" : "DK IHE ClassCode CS",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Modifier Role - eHealth Infrastructure v11.0.2
+# Modifier Role - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/modifier-role | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/modifier-role | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:ModifierRole |
 
  
@@ -37,7 +37,7 @@ Value set of plan definition modifier role codes.
   "resourceType" : "ValueSet",
   "id" : "ehealth-modifier-role",
   "url" : "http://ehealth.sundhed.dk/vs/modifier-role",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ModifierRole",
   "title" : "Modifier Role",
   "status" : "active",

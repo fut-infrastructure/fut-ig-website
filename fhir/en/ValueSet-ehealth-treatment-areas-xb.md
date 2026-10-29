@@ -1,4 +1,4 @@
-# Treatment Area Collection xb - eHealth Infrastructure v11.0.2
+# Treatment Area Collection xb - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-treatment-area-collection-xb | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-treatment-area-collection-xb | *Version*:11.0.3 |
 | Active as of 2026-09-10 | *Computable Name*:TreatmentAreaCollection_xb |
 | **Usage**: system treatment area: xb | |
 
@@ -38,7 +38,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-treatment-areas-xb",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-treatment-area-collection-xb",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "TreatmentAreaCollection_xb",
   "title" : "Treatment Area Collection xb",
   "status" : "active",

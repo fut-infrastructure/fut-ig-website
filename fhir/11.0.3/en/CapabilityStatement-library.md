@@ -1,0 +1,314 @@
+# library - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **library**
+
+## CapabilityStatement: library 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/library | *Version*:11.0.3 |
+| Active as of 2026-10-16 | *Computable Name*:library |
+
+ [Raw OpenAPI-Swagger Definition file](../library.openapi.json) | [Download](../library.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "library",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/library",
+  "version" : "11.0.3",
+  "name" : "library",
+  "status" : "active",
+  "date" : "2026-10-16T09:29:48.178+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "library",
+    "version" : "1.27.0"
+  },
+  "implementation" : {
+    "description" : "eHealth library service",
+    "url" : "https://library.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Library:composed-of",
+      "Library:depends-on",
+      "Library:derived-from",
+      "Library:predecessor",
+      "Library:successor"],
+      "operation" : [{
+        "name" : "expunge",
+        "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "type" : "Library",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-library",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*",
+      "Library:composed-of",
+      "Library:depends-on",
+      "Library:derived-from",
+      "Library:predecessor",
+      "Library:successor"],
+      "searchRevInclude" : ["Library:composed-of",
+      "Library:depends-on",
+      "Library:derived-from",
+      "Library:predecessor",
+      "Library:successor"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "aggregation_mode",
+        "type" : "token",
+        "documentation" : "Aggregation mode of the library"
+      },
+      {
+        "name" : "composed-of",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "The library publication date"
+      },
+      {
+        "name" : "depends-on",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "derived-from",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "The description of the library"
+      },
+      {
+        "name" : "effective",
+        "type" : "date",
+        "documentation" : "The time during which the library is intended to be in use"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External identifier for the library"
+      },
+      {
+        "name" : "jurisdiction",
+        "type" : "token",
+        "documentation" : "Intended jurisdiction for the library"
+      },
+      {
+        "name" : "name",
+        "type" : "string",
+        "documentation" : "Computationally friendly name of the library"
+      },
+      {
+        "name" : "predecessor",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "publisher",
+        "type" : "string",
+        "documentation" : "Name of the publisher of the library"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status of the library"
+      },
+      {
+        "name" : "successor",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "The human-friendly name of the library"
+      },
+      {
+        "name" : "topic",
+        "type" : "token",
+        "documentation" : "Topics associated with the module"
+      },
+      {
+        "name" : "url",
+        "type" : "uri",
+        "documentation" : "The uri that identifies the library"
+      },
+      {
+        "name" : "version",
+        "type" : "token",
+        "documentation" : "The business version of the library"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/Library-it-validate"
+      },
+      {
+        "name" : "evaluate",
+        "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/Library-it-evaluate",
+        "documentation" : "This operation evaluates parameters passed as input against the decision support rule identified by the Library resource. It returns the computed clinical decision support result and/or errors. The Library resource identifies the clinical decision rule and define its parameters.\n\nThe operation is idempotent.\n### Input\n- 1..1 Parameters: HL7 FHIR [Parameters](https://www.hl7.org/fhir/stu3/parameters.html) resource containing input parameters for the clinical decision support computation.This should either be a QuestionnaireResponse or an Observation for evaluation.\n\n### Output\nUpon success this operation returns an GuidanceResponse resource containing the decision support result."
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Library:composed-of",
+      "Library:depends-on",
+      "Library:derived-from",
+      "Library:predecessor",
+      "Library:successor"]
+    }],
+    "operation" : [{
+      "name" : "reindex",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "hapi.fhir.reindex-status",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-hapi.fhir.reindex-status"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+      "documentation" : "Data migration"
+    },
+    {
+      "name" : "export-poll-status",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export-poll-status",
+      "documentation" : "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the '_jobId' is returned in the 'Content-Location' response header when initiating the export. A 'GET' request to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A 'DELETE' request can be used to cancel the export. If the export has already finished, the delete will return '404 Not Found', else the export job will be cancelled and a '202 Accepted' is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the 'Content-Location' header when initiating the export"
+    },
+    {
+      "name" : "export",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export",
+      "documentation" : "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header 'Prefer: respond-async', and will return '202 Accepted' with a polling location in the response header 'Content-Location'. The polling location is for the endpoint '$export-poll-status' and has the export job ID as parameter '_jobId'.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'\n## Polling status of export\nSubsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours."
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://library.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

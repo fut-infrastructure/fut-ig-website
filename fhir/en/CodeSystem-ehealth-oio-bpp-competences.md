@@ -1,4 +1,4 @@
-# OIO-BPP Competences - eHealth Infrastructure v11.0.2
+# OIO-BPP Competences - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/oio-bpp-competences | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/oio-bpp-competences | *Version*:11.0.3 |
 | Active as of 2019-12-02 | *Computable Name*:OIOBPPCompetences |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-oio-bpp-competences",
   "url" : "http://ehealth.sundhed.dk/cs/oio-bpp-competences",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "OIOBPPCompetences",
   "title" : "OIO-BPP Competences",
   "status" : "active",

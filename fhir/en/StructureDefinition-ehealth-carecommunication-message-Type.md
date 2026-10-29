@@ -1,4 +1,4 @@
-# Message type - eHealth Infrastructure v11.0.2
+# Message type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication-message-Type | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication-message-Type | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-carecommunication-message-Type |
 
 The type of the message. inResponseTo is only allowed when the type is reply-message.
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-carecommu
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-carecommunication-message-Type",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication-message-Type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-carecommunication-message-Type",
   "title" : "Message type",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

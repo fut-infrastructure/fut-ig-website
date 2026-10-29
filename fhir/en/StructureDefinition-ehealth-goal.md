@@ -1,4 +1,4 @@
-# ehealth-goal - eHealth Infrastructure v11.0.2
+# ehealth-goal - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-goal |
 
 # Introduction
@@ -51,10 +51,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-goal.csv)
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-goal",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-goal",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-goal",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

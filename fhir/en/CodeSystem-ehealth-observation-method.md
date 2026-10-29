@@ -1,4 +1,4 @@
-# Observation Method - eHealth Infrastructure v11.0.2
+# Observation Method - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/observation-method | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/observation-method | *Version*:11.0.3 |
 | Active as of 2024-10-28 | *Computable Name*:observationMethod |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-observation-method",
   "url" : "http://ehealth.sundhed.dk/cs/observation-method",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "observationMethod",
   "title" : "Observation Method",
   "status" : "active",

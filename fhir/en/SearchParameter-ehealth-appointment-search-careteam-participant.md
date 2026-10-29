@@ -1,4 +1,4 @@
-# careteamParticipant - eHealth Infrastructure v11.0.2
+# careteamParticipant - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/careteamParticipant | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/careteamParticipant | *Version*:11.0.3 |
 | Active as of 2021-05-06 | *Computable Name*:careteamParticipant |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding appointments based on careteam participants
   "resourceType" : "SearchParameter",
   "id" : "ehealth-appointment-search-careteam-participant",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/careteamParticipant",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "careteamParticipant",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",

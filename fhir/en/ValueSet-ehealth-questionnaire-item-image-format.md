@@ -1,4 +1,4 @@
-# Questionnaire Item Image Format - eHealth Infrastructure v11.0.2
+# Questionnaire Item Image Format - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-item-image-format | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/questionnaire-item-image-format | *Version*:11.0.3 |
 | Active as of 2021-09-16 | *Computable Name*:QuestionnaireItemImageFormat |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-questionnaire-item-image-format",
   "url" : "http://ehealth.sundhed.dk/vs/questionnaire-item-image-format",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "QuestionnaireItemImageFormat",
   "title" : "Questionnaire Item Image Format",
   "status" : "active",

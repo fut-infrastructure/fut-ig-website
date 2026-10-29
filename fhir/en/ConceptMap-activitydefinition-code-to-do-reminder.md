@@ -1,4 +1,4 @@
-# Activitydefinition-code to do reminder - eHealth Infrastructure v11.0.2
+# Activitydefinition-code to do reminder - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder | *Version*:11.0.3 |
 | Active as of 2023-06-28 | *Computable Name*:activitydefinition-code-to-do-reminder |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall be subjected to producing reminders o
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-do-reminder",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "activitydefinition-code-to-do-reminder",
   "title" : "Activitydefinition-code to do reminder",
   "status" : "active",
@@ -360,6 +360,14 @@ The map controls whether an activity shall be subjected to producing reminders o
         "display" : "Yes",
         "equivalence" : "relatedto"
       }]
+    },
+    {
+      "code" : "ZZ5048",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
     }]
   },
   {
@@ -493,6 +501,58 @@ The map controls whether an activity shall be subjected to producing reminders o
     {
       "code" : "ZZ7011",
       "display" : "Klinisk foto",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://ehealth.sundhed.dk/cs/mds-codes",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "MDS-UPDRS-I",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IA",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IB",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-II",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-III",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IV",
       "target" : [{
         "code" : "Y",
         "display" : "Yes",

@@ -1,4 +1,4 @@
-# eHealth Property - eHealth Infrastructure v11.0.2
+# eHealth Property - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-property | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-property | *Version*:11.0.3 |
 | Active as of 2025-03-05 | *Computable Name*:eHealthProperty |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-property",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-property",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "eHealthProperty",
   "title" : "eHealth Property",
   "status" : "active",

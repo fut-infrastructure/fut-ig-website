@@ -1,4 +1,4 @@
-# Participant Function - eHealth Infrastructure v11.0.2
+# Participant Function - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/participant-function | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/participant-function | *Version*:11.0.3 |
 | Active as of 2024-09-02 | *Computable Name*:ParticipantFunction |
 
  
@@ -38,7 +38,7 @@ The function of the participant (primay / secondary contact).
   "resourceType" : "ValueSet",
   "id" : "participant-function",
   "url" : "http://ehealth.sundhed.dk/vs/participant-function",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ParticipantFunction",
   "title" : "Participant Function",
   "status" : "active",

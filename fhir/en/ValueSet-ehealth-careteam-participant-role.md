@@ -1,4 +1,4 @@
-# CareTeam Participant Role - eHealth Infrastructure v11.0.2
+# CareTeam Participant Role - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/careteam-participant-role | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/careteam-participant-role | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:CareTeamParticipantRole |
 
  
@@ -38,7 +38,7 @@ Care Team Participant Role.
   "resourceType" : "ValueSet",
   "id" : "ehealth-careteam-participant-role",
   "url" : "http://ehealth.sundhed.dk/vs/careteam-participant-role",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "CareTeamParticipantRole",
   "title" : "CareTeam Participant Role",
   "status" : "active",

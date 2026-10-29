@@ -1,4 +1,4 @@
-# Tilstandskoder - eHealth Infrastructure v11.0.2
+# Tilstandskoder - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/condition-conditions | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/condition-conditions | *Version*:11.0.3 |
 | Active as of 2022-01-14 | *Computable Name*:Condition_Conditions |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-condition-conditions",
   "url" : "http://ehealth.sundhed.dk/vs/condition-conditions",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "Condition_Conditions",
   "title" : "Tilstandskoder",
   "status" : "active",

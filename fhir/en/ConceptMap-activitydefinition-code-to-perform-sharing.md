@@ -1,4 +1,4 @@
-# Activitydefinition-code-to-perform-sharing - eHealth Infrastructure v11.0.2
+# Activitydefinition-code-to-perform-sharing - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing | *Version*:11.0.3 |
 | Active as of 2023-12-14 | *Computable Name*:activitydefinition-code-to-perform-sharing |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-perform-sharing",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "activitydefinition-code-to-perform-sharing",
   "title" : "Activitydefinition-code-to-perform-sharing",
   "status" : "active",
@@ -380,6 +380,14 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
       }]
     },
     {
+      "code" : "ZZ5048",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
       "code" : "ZZ7011",
       "display" : "Klinisk foto",
       "target" : [{
@@ -492,6 +500,58 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
       "target" : [{
         "code" : "Y",
         "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://ehealth.sundhed.dk/cs/mds-codes",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "MDS-UPDRS-I",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IA",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IB",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-II",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-III",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IV",
+      "target" : [{
+        "code" : "N",
+        "display" : "No",
         "equivalence" : "relatedto"
       }]
     }]

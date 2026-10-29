@@ -1,4 +1,4 @@
-# reporting - eHealth Infrastructure v11.0.2
+# reporting - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/reporting | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/reporting | *Version*:11.0.3 |
 | Active as of 2026-10-16 | *Computable Name*:reporting |
 
  [Raw OpenAPI-Swagger Definition file](../reporting.openapi.json) | [Download](../reporting.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "reporting",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/reporting",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "reporting",
   "status" : "active",
   "date" : "2026-10-16T09:33:30.895+00:00",

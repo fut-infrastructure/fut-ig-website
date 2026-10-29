@@ -1,4 +1,4 @@
-# Practice Setting Codes - eHealth Infrastructure v11.0.2
+# Practice Setting Codes - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/practice-setting-codes | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/practice-setting-codes | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:PracticeSettingCodes |
 
  
@@ -37,7 +37,7 @@ Value set used for indicating the specialty for organizations.
   "resourceType" : "ValueSet",
   "id" : "ehealth-practice-setting-codes",
   "url" : "http://ehealth.sundhed.dk/vs/practice-setting-codes",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "PracticeSettingCodes",
   "title" : "Practice Setting Codes",
   "status" : "active",

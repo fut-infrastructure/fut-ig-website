@@ -1,4 +1,4 @@
-# Resolved Timing Type - eHealth Infrastructure v11.0.2
+# Resolved Timing Type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/resolved-timing-type | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/resolved-timing-type | *Version*:11.0.3 |
 | Active as of 2021-02-26 | *Computable Name*:ResolvedTimingType |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "resolved-timing-type",
   "url" : "http://ehealth.sundhed.dk/cs/resolved-timing-type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ResolvedTimingType",
   "title" : "Resolved Timing Type",
   "status" : "active",

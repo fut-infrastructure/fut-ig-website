@@ -1,4 +1,4 @@
-# Consent Scope - eHealth Infrastructure v11.0.2
+# Consent Scope - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-scope | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-consent-scope | *Version*:11.0.3 |
 | Active as of 2025-12-16 | *Computable Name*:ConsentScope |
 
  
@@ -37,7 +37,7 @@ Value set of scope for consent.
   "resourceType" : "ValueSet",
   "id" : "vs-ehealth-consent-scope",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-consent-scope",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ConsentScope",
   "title" : "Consent Scope",
   "status" : "active",

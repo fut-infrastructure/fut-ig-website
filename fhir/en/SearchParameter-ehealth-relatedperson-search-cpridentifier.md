@@ -1,4 +1,4 @@
-# relatedPersonCPRIdentifier - eHealth Infrastructure v11.0.2
+# relatedPersonCPRIdentifier - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifier | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifier | *Version*:11.0.3 |
 | Active as of 2026-10-26 | *Computable Name*:relatedPersonCPRIdentifier |
 
  
@@ -23,7 +23,7 @@ Search parameter for RelatedPerson DK-Core CPR identifier
   "resourceType" : "SearchParameter",
   "id" : "ehealth-relatedperson-search-cpridentifier",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifier",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "relatedPersonCPRIdentifier",
   "status" : "active",
   "date" : "2026-10-26T00:00:00+00:00",

@@ -10,11 +10,11 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.core",
   "language" : "en",
   "url" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "eHealth Infrastructure",
   "title" : "eHealth Infrastructure",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -6417,6 +6417,22 @@
       },
       "name" : "intendedQuestionnaireLinkage",
       "description" : "References the QuestionnaireLinkage(s) intended to be used when presenting the questionnaire responses of the action/service request, e.g. for cross-questionnaire or cross-version comparison. On PlanDefinition.action (any nesting level) it designates the linkages recommended by the plan template author; $apply copies it to the created ServiceRequest.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-mds-codes.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/mds-codes"
+      },
+      "name" : "International Parkinson and Movement Disorder Society (MDS) Codes",
+      "description" : "MDS Codes by Christopher G. Goetz, MD and Nancy LaPelle, PhD",
       "exampleBoolean" : false
     },
     {

@@ -1,4 +1,4 @@
-# Usage Context for Tele Wound Workflow - eHealth Infrastructure v11.0.2
+# Usage Context for Tele Wound Workflow - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-workflow-tele-wound | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-workflow-tele-wound | *Version*:11.0.3 |
 | Active as of 2026-01-19 | *Computable Name*:usageContextWorkflowTeleWound |
 
  
@@ -37,7 +37,7 @@ Value set of workflows for Tele Wound
   "resourceType" : "ValueSet",
   "id" : "vs-usage-context-workflow-tele-wound",
   "url" : "http://ehealth.sundhed.dk/vs/usage-context-workflow-tele-wound",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "usageContextWorkflowTeleWound",
   "title" : "Usage Context for Tele Wound Workflow ",
   "status" : "active",

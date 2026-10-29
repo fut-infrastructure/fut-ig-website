@@ -1,4 +1,4 @@
-# Power of Attorney Privilege - eHealth Infrastructure v11.0.2
+# Power of Attorney Privilege - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/poa-privilege | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/poa-privilege | *Version*:11.0.3 |
 | Active as of 2026-03-24 | *Computable Name*:PoAPrivilege |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-poa-privilege",
   "url" : "http://ehealth.sundhed.dk/cs/poa-privilege",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "PoAPrivilege",
   "title" : "Power of Attorney Privilege",
   "status" : "active",

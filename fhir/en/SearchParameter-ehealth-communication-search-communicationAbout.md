@@ -1,4 +1,4 @@
-# communicationAbout - eHealth Infrastructure v11.0.2
+# communicationAbout - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/about | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/about | *Version*:11.0.3 |
 | Active as of 2022-08-09 | *Computable Name*:communicationAbout |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding communication based on about
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-communicationAbout",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/about",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "communicationAbout",
   "status" : "active",
   "date" : "2022-08-09T12:05:00+00:00",

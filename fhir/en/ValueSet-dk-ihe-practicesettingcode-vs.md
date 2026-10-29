@@ -1,4 +1,4 @@
-# DK_IHE_practiceSettingCode_VS - eHealth Infrastructure v11.0.2
+# DK_IHE_practiceSettingCode_VS - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-practicesettingcode-vs | *Version*:11.0.2 |
+| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-practicesettingcode-vs | *Version*:11.0.3 |
 | Active as of 2019-12-11 | *Computable Name*:DK_IHE_practiceSettingCode_VS |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "dk-ihe-practicesettingcode-vs",
   "url" : "http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-practicesettingcode-vs",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "DK_IHE_practiceSettingCode_VS",
   "title" : "DK_IHE_practiceSettingCode_VS",
   "status" : "active",

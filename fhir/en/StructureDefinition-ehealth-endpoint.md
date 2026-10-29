@@ -1,4 +1,4 @@
-# ehealth-endpoint - eHealth Infrastructure v11.0.2
+# ehealth-endpoint - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-endpoint | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-endpoint | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-endpoint |
 
 **Usages:**
@@ -34,10 +34,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-endpoint.
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-endpoint",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-endpoint",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-endpoint",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

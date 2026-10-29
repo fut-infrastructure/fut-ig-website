@@ -1,4 +1,4 @@
-# relatedPersonCPRIdentifierPatientParauthUnique - eHealth Infrastructure v11.0.2
+# relatedPersonCPRIdentifierPatientParauthUnique - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifierPatientParauthUnique | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifierPatientParauthUnique | *Version*:11.0.3 |
 | Active as of 2026-10-26 | *Computable Name*:relatedPersonCPRIdentifierPatientParauthUnique |
 
  
@@ -27,7 +27,7 @@ Uniqueness constraint: a patient can have at most one RelatedPerson with a given
     "valueBoolean" : true
   }],
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifierPatientParauthUnique",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "relatedPersonCPRIdentifierPatientParauthUnique",
   "status" : "active",
   "date" : "2026-10-26T00:00:00+00:00",

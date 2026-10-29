@@ -1,4 +1,4 @@
-# Retrieve and transform APD document - eHealth Infrastructure v11.0.2
+# Retrieve and transform APD document - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Bundle-t-retrieve-and-transform-APD | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Bundle-t-retrieve-and-transform-APD | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:retrieve-and-transform-APD |
 
  
@@ -23,12 +23,12 @@ Retrieves a DK-HL7 Appointment (APD) XML document from national document sharing
   "resourceType" : "OperationDefinition",
   "id" : "Bundle-t-retrieve-and-transform-APD",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Bundle-t-retrieve-and-transform-APD",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "retrieve-and-transform-APD",
   "title" : "Retrieve and transform APD document",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

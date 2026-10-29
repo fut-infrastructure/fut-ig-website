@@ -1,4 +1,4 @@
-# Create Managed Related Person - eHealth Infrastructure v11.0.2
+# Create Managed Related Person - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed | *Version*:11.0.3 |
 | Active as of 2026-07-21 | *Computable Name*:Create Managed Related Person |
 
  
@@ -23,7 +23,7 @@ Creates a managed RelatedPerson resource on the server and returns it. The relat
   "resourceType" : "OperationDefinition",
   "id" : "ehealth-relatedperson-create-managed",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "Create Managed Related Person",
   "status" : "active",
   "kind" : "operation",

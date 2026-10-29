@@ -1,4 +1,4 @@
-# Get patient procedures - eHealth Infrastructure v11.0.2
+# Get patient procedures - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-patient-procedures | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-patient-procedures | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:get-patient-procedures |
 
  
@@ -109,12 +109,12 @@ Example:
   "resourceType" : "OperationDefinition",
   "id" : "-s-get-patient-procedures",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-patient-procedures",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "get-patient-procedures",
   "title" : "Get patient procedures",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

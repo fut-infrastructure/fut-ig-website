@@ -1,4 +1,4 @@
-# Submit measurement - eHealth Infrastructure v11.0.2
+# Submit measurement - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:submit-measurement |
 
  
@@ -41,12 +41,12 @@ eHealth infrastructure will substitute the id when saving the resources in a sin
   "resourceType" : "OperationDefinition",
   "id" : "-s-submit-measurement",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-submit-measurement",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "submit-measurement",
   "title" : "Submit measurement",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

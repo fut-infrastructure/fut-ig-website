@@ -1,4 +1,4 @@
-# Send message - eHealth Infrastructure v11.0.2
+# Send message - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:Appointment-send-message |
 
  
@@ -23,12 +23,12 @@ Sends a message to a [RelatedPerson](StructureDefinition-ehealth-relatedperson.m
   "resourceType" : "OperationDefinition",
   "id" : "Appointment-send-message",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-send-message",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "Appointment-send-message",
   "title" : "Send message",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

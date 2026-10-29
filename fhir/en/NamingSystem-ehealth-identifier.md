@@ -1,4 +1,4 @@
-# eHealthIdentifier - eHealth Infrastructure v11.0.2
+# eHealthIdentifier - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-identifier | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/ehealth-identifier | *Version*:11.0.3 |
 | Active as of 2020-01-07 | *Computable Name*:eHealthIdentifier |
 
  
@@ -28,7 +28,7 @@ The eHealth Identifier is assigned to certain domain resources in the eHealth In
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.2"
+    "valueString" : "11.0.3"
   }],
   "name" : "eHealthIdentifier",
   "status" : "active",

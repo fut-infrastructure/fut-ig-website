@@ -1,4 +1,4 @@
-# Export Appointment to iCal - eHealth Infrastructure v11.0.2
+# Export Appointment to iCal - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-appointment-toical | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-appointment-toical | *Version*:11.0.3 |
 | Active as of 2019-02-02 | *Computable Name*:Export Appointment to iCal |
 
  
@@ -23,7 +23,7 @@ This operation exports the Appointment to an iCal [RFC-5545](https://tools.ietf.
   "resourceType" : "OperationDefinition",
   "id" : "ehealth-appointment-toical",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-appointment-toical",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "Export Appointment to iCal",
   "status" : "active",
   "kind" : "operation",

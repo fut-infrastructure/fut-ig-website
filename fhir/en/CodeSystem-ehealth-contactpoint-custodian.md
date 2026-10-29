@@ -1,4 +1,4 @@
-# ContactPoint Custodian - eHealth Infrastructure v11.0.2
+# ContactPoint Custodian - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/contactpoint-custodian | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/contactpoint-custodian | *Version*:11.0.3 |
 | Active as of 2019-01-29 | *Computable Name*:ContactPointCustodian |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-contactpoint-custodian",
   "url" : "http://ehealth.sundhed.dk/cs/contactpoint-custodian",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ContactPointCustodian",
   "title" : "ContactPoint Custodian",
   "status" : "active",

@@ -1,0 +1,82 @@
+# POST Execute Patient Usage Stats - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* **POST Execute Patient Usage Stats**
+
+## POST Execute Patient Usage Stats
+
+`POST [base]/$execute-patient-usage-stats`
+
+**Request Headers**
+
+```
+Authorization: Bearer eyJhbGciOiJub25lIn0.eyJ1c2VyX2lkIjoiZmJmNzY5ZmMtNzEzMS00YWQ2LTgyZjEtMjU1Mzc5ODNmNmI1IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInJlcG9ydC1ub24tYW5vbnltaXplZCIsIiRmZXRjaC1wYXRpZW50LXVzYWdlLXN0YXRzIiwiQmluYXJ5LnJlYWQiXX0sInVzZXJfdHlwZSI6IlBSQUNUSVRJT05FUiJ9.
+Accept: application/fhir+json;q=1.0, application/json+fhir;q=0.9
+User-Agent: HAPI-FHIR/8.6.5 (FHIR Client; FHIR 4.0.1/R4; apache)
+Accept-Encoding: gzip
+Content-Type: application/fhir+json; charset=UTF-8
+
+```
+
+**Body**:
+
+```
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "anonymization",
+      "valueString": "None"
+    }
+  ]
+}
+
+```
+
+**Response Headers**
+
+```
+date: Thu, 16 Apr 2026 11:44:12 GMT
+x-request-id: 9ac596fa-9782-9550-bb72-d1acbefe6c11
+server: istio-envoy
+x-envoy-upstream-service-time: 189
+expires: 0
+x-frame-options: DENY
+pragma: no-cache
+last-modified: Thu, 16 Apr 2026 11:44:11 GMT
+x-content-type-options: nosniff
+x-xss-protection: 0
+x-b3-traceid: ae93f4149513bc872eaf68c48b5e7ff7
+x-powered-by: HAPI FHIR 8.6.5 REST Server (FHIR Server; FHIR 4.0.1/R4)
+content-location: https://reporting.cit-reporting-1313.local/fhir/Binary/1003/_history/1
+content-type: application/fhir+json; charset=UTF-8
+location: https://reporting.cit-reporting-1313.local/fhir/Binary/1003/_history/1
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+
+```
+
+**Response**
+
+```
+{
+  "resourceType": "Binary",
+  "id": "1003",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2026-04-16T11:44:11.919+00:00",
+    "source": "#9ac596fa-9782-9550-bb72-d1acbefe6c11",
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/Binary"
+    ]
+  },
+  "contentType": "text/plain",
+  "securityContext": {
+    "identifier": {
+      "value": "fbf769fc-7131-4ad6-82f1-25537983f6b5"
+    }
+  },
+  "data": "Kk5PVCBHRU5FUkFURUQgWUVUKg=="
+}
+
+```
+

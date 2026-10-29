@@ -1,4 +1,4 @@
-# Get performer activities - eHealth Infrastructure v11.0.2
+# Get performer activities - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-performer-activities | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-performer-activities | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:get-performer-activities |
 
  
@@ -74,12 +74,12 @@ A user system should look up columns by `part.name` rather than by position, and
   "resourceType" : "OperationDefinition",
   "id" : "-s-get-performer-activities",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-performer-activities",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "get-performer-activities",
   "title" : "Get performer activities",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

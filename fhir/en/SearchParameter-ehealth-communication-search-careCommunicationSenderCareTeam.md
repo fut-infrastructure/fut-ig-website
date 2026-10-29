@@ -1,4 +1,4 @@
-# careCommunicationSenderCareTeam - eHealth Infrastructure v11.0.2
+# careCommunicationSenderCareTeam - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careCommunicationSenderCareTeam | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careCommunicationSenderCareTeam | *Version*:11.0.3 |
 | Active as of 2026-06-16 | *Computable Name*:careCommunicationSenderCareTeam |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding CareCommunication based on the sending CareTeam (th
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-careCommunicationSenderCareTeam",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careCommunicationSenderCareTeam",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "careCommunicationSenderCareTeam",
   "status" : "active",
   "date" : "2026-06-16T00:00:00+00:00",

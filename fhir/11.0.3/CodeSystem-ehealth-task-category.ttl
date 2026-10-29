@@ -1,0 +1,229 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/ehealth-task-category> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ehealth-task-category"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem ehealth-task-category</b></p><a name=\"ehealth-task-category\"> </a><a name=\"hcehealth-task-category\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>URI</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>Deprecated</td><td>deprecated</td><td>http://hl7.org/fhir/concept-properties#deprecated</td><td>dateTime</td><td>Indicates that the concept is deprecated and should not be used</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>http://ehealth.sundhed.dk/cs/task-category</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td><td><b>Deprecated</b></td><td><b>Dansk (Danish, da)</b></td></tr><tr><td style=\"white-space:nowrap\">TBD<a name=\"ehealth-task-category-TBD\"> </a></td><td>Example value - Under construction</td><td>Example value - Under construction</td><td>2020-02-27</td><td/></tr><tr><td style=\"white-space:nowrap\">MissingMeasurementResolving<a name=\"ehealth-task-category-MissingMeasurementResolving\"> </a></td><td>Need resolving of why scheduled measurement has not been submitted</td><td>Need resolving of why scheduled measurement has not been submitted</td><td/><td>Undersøg hvorfor der ikke er indsendt Måledata (måling og/eller spørgeskemabesvarelse).</td></tr><tr><td style=\"white-space:nowrap\">UnexpectedMeasurementResolving<a name=\"ehealth-task-category-UnexpectedMeasurementResolving\"> </a></td><td>Need resolving of why unexpected measurement was submitted</td><td>Need resolving of why unexpected measurement was submitted</td><td/><td>Undersøg hvorfor der uventet er indsendt Måledata (måling og/eller spørgeskemabesvarelse).</td></tr><tr><td style=\"white-space:nowrap\">MeasurementForAssessment<a name=\"ehealth-task-category-MeasurementForAssessment\"> </a></td><td>Need assessment of measurement</td><td>Need assessment of measurement</td><td/><td>Måledata (måling og/eller spørgeskemabesvarelse) er modtaget og klar til vurdering</td></tr><tr><td style=\"white-space:nowrap\">OpenSSLOrder<a name=\"ehealth-task-category-OpenSSLOrder\"> </a></td><td>Need processing of open SSL order</td><td>Need processing of open SSL order</td><td/><td>Behandling af åben SSL bestilling</td></tr><tr><td style=\"white-space:nowrap\">CalibrationNeeded<a name=\"ehealth-task-category-CalibrationNeeded\"> </a></td><td>Device in need of calibration</td><td>Device in need of calibration</td><td/><td>Måleudstyr har behov for kalibrering</td></tr><tr><td style=\"white-space:nowrap\">MeasurementForAssessmentFailureInAutoProcessing<a name=\"ehealth-task-category-MeasurementForAssessmentFailureInAutoProcessing\"> </a></td><td>Measurement Assessment failure during automated processing</td><td>Measurement Assessment failure during automated processing</td><td/><td>Indsendte måledata (måling og/eller spørgeskemabesvarelse) kunne ikke vurderes af systemet. Du skal selv vurdere måledata.</td></tr><tr><td style=\"white-space:nowrap\">LibraryUseMismatchFixingNeeded<a name=\"ehealth-task-category-LibraryUseMismatchFixingNeeded\"> </a></td><td>Input and rule did not match</td><td>Input and rule did not match</td><td/><td>Input og regel passer ikke sammen</td></tr><tr><td style=\"white-space:nowrap\">RefRangeNeeded<a name=\"ehealth-task-category-RefRangeNeeded\"> </a></td><td>Missing reference range required for automated processing</td><td>Missing reference range required for automated processing</td><td/><td>Opsætning af grænseværdi mangler, hvilket er nødvendig for at systemet kan foretage vurdering</td></tr><tr><td style=\"white-space:nowrap\">RefRangeFixingNeeded<a name=\"ehealth-task-category-RefRangeFixingNeeded\"> </a></td><td>Reference range required for automated processing needs fixing</td><td>Reference range required for automated processing needs fixing</td><td/><td>Grænseværdiopsætning er forkert og justering er nødvendig for at systemet kan foretage vurdering</td></tr><tr><td style=\"white-space:nowrap\">RefBaseNeeded<a name=\"ehealth-task-category-RefBaseNeeded\"> </a></td><td>Missing in force reference base required for automatic processing</td><td>Missing in force reference base required for automatic processing</td><td/><td>Der mangler en referenceværdi for at måledata (måling eller spørgeskemabesvarelse) kan vurderes af systemet</td></tr><tr><td style=\"white-space:nowrap\">RefBaseFixingNeeded<a name=\"ehealth-task-category-RefBaseFixingNeeded\"> </a></td><td>In force reference base required for automatic processing needs fixing</td><td>In force reference base required for automatic processing needs fixing</td><td/><td>Referenceværdi er forkert og justering er nødvendig for at systemet kan foretage vurdering</td></tr><tr><td style=\"white-space:nowrap\">RequiredQuestionAnswerMissing<a name=\"ehealth-task-category-RequiredQuestionAnswerMissing\"> </a></td><td>Missing question answers required for automated processing</td><td>Missing question answers required for automated processing</td><td/><td>Spørgsmål mangler besvarelse i spørgeskemabesvarelse for at vurdering af spørgeskemabesvarelse kan foretages af systemet</td></tr><tr><td style=\"white-space:nowrap\">ExpectedDelivery<a name=\"ehealth-task-category-ExpectedDelivery\"> </a></td><td>Delivery expected</td><td>Delivery expected</td><td/><td>Forventet levering</td></tr><tr><td style=\"white-space:nowrap\">MeasurementForAssessmentNotTriaged<a name=\"ehealth-task-category-MeasurementForAssessmentNotTriaged\"> </a></td><td>Need assessment of measurement where triage was not performed during automated processing</td><td>Need assessment of measurement where triage was not performed during automated processing</td><td/><td>Indsendte måledata (måling og/eller spørgeskemabesvarelse) er ikke vurderet af systemet. Du skal selv vurdere måledata.</td></tr><tr><td style=\"white-space:nowrap\">MeasurementForAssessmentAbsentValue<a name=\"ehealth-task-category-MeasurementForAssessmentAbsentValue\"> </a></td><td>Need assessment of measurement with absent value</td><td>Need assessment of measurement with absent value</td><td/><td>Indsendte måledata (måling) har fravær af målt værdi.</td></tr><tr><td style=\"white-space:nowrap\">HandoverNegotiation<a name=\"ehealth-task-category-HandoverNegotiation\"> </a></td><td>Need negotiation for handover of CarePlans between CareTeams</td><td>Need negotiation for handover of CarePlans between CareTeams</td><td/><td>Forhandlingsprocess for overdragelse af plan(er) mellem behandlerteams</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "http://ehealth.sundhed.dk/cs/task-category"] ;
+  fhir:CodeSystem.version [ fhir:value "11.0.3"] ;
+  fhir:CodeSystem.name [ fhir:value "TaskCategory"] ;
+  fhir:CodeSystem.title [ fhir:value "Task Category"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2019-01-29T00:00:00+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Task Category"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DK" ] ;
+       fhir:Coding.display [ fhir:value "Denmark" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.property [
+     fhir:index 0 ;
+     fhir:CodeSystem.property.code [ fhir:value "deprecated" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://hl7.org/fhir/concept-properties#deprecated" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "Indicates that the concept is deprecated and should not be used" ] ;
+     fhir:CodeSystem.property.type [ fhir:value "dateTime" ]
+  ] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "TBD" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Example value - Under construction" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Example value - Under construction" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "deprecated" ] ;
+       fhir:CodeSystem.concept.property.valueDateTime [ fhir:value "2020-02-27"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "MissingMeasurementResolving" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need resolving of why scheduled measurement has not been submitted" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need resolving of why scheduled measurement has not been submitted" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Undersøg hvorfor der ikke er indsendt Måledata (måling og/eller spørgeskemabesvarelse)." ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "UnexpectedMeasurementResolving" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need resolving of why unexpected measurement was submitted" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need resolving of why unexpected measurement was submitted" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Undersøg hvorfor der uventet er indsendt Måledata (måling og/eller spørgeskemabesvarelse)." ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "MeasurementForAssessment" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need assessment of measurement" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need assessment of measurement" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Måledata (måling og/eller spørgeskemabesvarelse) er modtaget og klar til vurdering" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "OpenSSLOrder" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need processing of open SSL order" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need processing of open SSL order" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Behandling af åben SSL bestilling" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CalibrationNeeded" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Device in need of calibration" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Device in need of calibration" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Måleudstyr har behov for kalibrering" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "MeasurementForAssessmentFailureInAutoProcessing" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Measurement Assessment failure during automated processing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Measurement Assessment failure during automated processing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Indsendte måledata (måling og/eller spørgeskemabesvarelse) kunne ikke vurderes af systemet. Du skal selv vurdere måledata." ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:CodeSystem.concept.code [ fhir:value "LibraryUseMismatchFixingNeeded" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Input and rule did not match" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Input and rule did not match" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Input og regel passer ikke sammen" ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:CodeSystem.concept.code [ fhir:value "RefRangeNeeded" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Missing reference range required for automated processing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Missing reference range required for automated processing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Opsætning af grænseværdi mangler, hvilket er nødvendig for at systemet kan foretage vurdering" ]
+     ]
+  ], [
+     fhir:index 9 ;
+     fhir:CodeSystem.concept.code [ fhir:value "RefRangeFixingNeeded" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Reference range required for automated processing needs fixing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Reference range required for automated processing needs fixing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Grænseværdiopsætning er forkert og justering er nødvendig for at systemet kan foretage vurdering" ]
+     ]
+  ], [
+     fhir:index 10 ;
+     fhir:CodeSystem.concept.code [ fhir:value "RefBaseNeeded" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Missing in force reference base required for automatic processing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Missing in force reference base required for automatic processing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Der mangler en referenceværdi for at måledata (måling eller spørgeskemabesvarelse) kan vurderes af systemet" ]
+     ]
+  ], [
+     fhir:index 11 ;
+     fhir:CodeSystem.concept.code [ fhir:value "RefBaseFixingNeeded" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "In force reference base required for automatic processing needs fixing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "In force reference base required for automatic processing needs fixing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Referenceværdi er forkert og justering er nødvendig for at systemet kan foretage vurdering" ]
+     ]
+  ], [
+     fhir:index 12 ;
+     fhir:CodeSystem.concept.code [ fhir:value "RequiredQuestionAnswerMissing" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Missing question answers required for automated processing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Missing question answers required for automated processing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Spørgsmål mangler besvarelse i spørgeskemabesvarelse for at vurdering af spørgeskemabesvarelse kan foretages af systemet" ]
+     ]
+  ], [
+     fhir:index 13 ;
+     fhir:CodeSystem.concept.code [ fhir:value "ExpectedDelivery" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Delivery expected" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Delivery expected" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Forventet levering" ]
+     ]
+  ], [
+     fhir:index 14 ;
+     fhir:CodeSystem.concept.code [ fhir:value "MeasurementForAssessmentNotTriaged" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need assessment of measurement where triage was not performed during automated processing" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need assessment of measurement where triage was not performed during automated processing" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Indsendte måledata (måling og/eller spørgeskemabesvarelse) er ikke vurderet af systemet. Du skal selv vurdere måledata." ]
+     ]
+  ], [
+     fhir:index 15 ;
+     fhir:CodeSystem.concept.code [ fhir:value "MeasurementForAssessmentAbsentValue" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need assessment of measurement with absent value" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need assessment of measurement with absent value" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Indsendte måledata (måling) har fravær af målt værdi." ]
+     ]
+  ], [
+     fhir:index 16 ;
+     fhir:CodeSystem.concept.code [ fhir:value "HandoverNegotiation" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Need negotiation for handover of CarePlans between CareTeams" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Need negotiation for handover of CarePlans between CareTeams" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "da" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Forhandlingsprocess for overdragelse af plan(er) mellem behandlerteams" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/fhir/CodeSystem/ehealth-task-category.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,4 +1,4 @@
-# Address Type - eHealth Infrastructure v11.0.2
+# Address Type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/address-type | *Version*:11.0.2 | |
+| *Official URL*:http://hl7.org/fhir/address-type | *Version*:11.0.3 | |
 | * Standards status: *[Normative](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 5 | *Computable Name*:AddressType |
 
  
@@ -47,7 +47,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueInteger" : 5
   }],
   "url" : "http://hl7.org/fhir/address-type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "AddressType",
   "title" : "Address Type",
   "status" : "active",

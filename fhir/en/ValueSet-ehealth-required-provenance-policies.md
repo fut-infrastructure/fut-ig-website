@@ -1,4 +1,4 @@
-# Required policies for provenances - eHealth Infrastructure v11.0.2
+# Required policies for provenances - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-required-provenance-policies | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-required-provenance-policies | *Version*:11.0.3 |
 | Active as of 2025-09-30 | *Computable Name*:Required policies for provenances |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-required-provenance-policies",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-required-provenance-policies",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "Required policies for provenances",
   "title" : "Required policies for provenances",
   "status" : "active",

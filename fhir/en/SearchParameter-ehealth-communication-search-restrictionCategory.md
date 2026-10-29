@@ -1,4 +1,4 @@
-# restrictionCategory - eHealth Infrastructure v11.0.2
+# restrictionCategory - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/restrictionCategory | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/restrictionCategory | *Version*:11.0.3 |
 | Active as of 2021-05-06 | *Computable Name*:restrictionCategory |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding communication based on restriction category
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-restrictionCategory",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/restrictionCategory",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "restrictionCategory",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",

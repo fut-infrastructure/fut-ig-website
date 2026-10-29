@@ -1,4 +1,4 @@
-# Get media data - eHealth Infrastructure v11.0.2
+# Get media data - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Media-t-get-data | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/Media-t-get-data | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:get-data |
 
  
@@ -40,12 +40,12 @@ The result of this operation returns a Binary containing the media found from th
   "resourceType" : "OperationDefinition",
   "id" : "Media-t-get-data",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/Media-t-get-data",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "get-data",
   "title" : "Get media data",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

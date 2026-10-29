@@ -1,4 +1,4 @@
-# ehealth-group-appointment - eHealth Infrastructure v11.0.2
+# ehealth-group-appointment - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-appointment | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-appointment | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-group-appointment |
 
 # Extra Validation Constraints
@@ -46,10 +46,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-group-app
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-group-appointment",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-appointment",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-group-appointment",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

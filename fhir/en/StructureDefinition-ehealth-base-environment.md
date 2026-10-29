@@ -1,4 +1,4 @@
-# Base environment - eHealth Infrastructure v11.0.2
+# Base environment - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-base-environment |
 
 Base environment
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-base-envi
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-base-environment",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-base-environment",
   "title" : "Base environment",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

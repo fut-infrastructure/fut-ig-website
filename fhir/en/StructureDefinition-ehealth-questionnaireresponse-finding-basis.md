@@ -1,4 +1,4 @@
-# Questionnaire response finding basis - eHealth Infrastructure v11.0.2
+# Questionnaire response finding basis - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse-finding-basis | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse-finding-basis | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-questionnaireresponse-finding-basis |
 
 Basis for the overall clinical impression finding of the questionnaire response
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-questionn
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaireresponse-finding-basis",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaireresponse-finding-basis",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-questionnaireresponse-finding-basis",
   "title" : "Questionnaire response finding basis",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

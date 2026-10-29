@@ -1,4 +1,4 @@
-# ehealth-observation-wound-dimensions - eHealth Infrastructure v11.0.2
+# ehealth-observation-wound-dimensions - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation-wound-dimensions | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation-wound-dimensions | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-observation-wound-dimensions |
 
 # Introduction
@@ -60,10 +60,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-observati
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-observation-wound-dimensions",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-observation-wound-dimensions",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-observation-wound-dimensions",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

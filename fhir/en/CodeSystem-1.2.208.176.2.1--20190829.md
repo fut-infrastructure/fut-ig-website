@@ -1,4 +1,4 @@
-# NPU DK - eHealth Infrastructure v11.0.2
+# NPU DK - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:urn:oid:1.2.208.176.2.1 | *Version*:11.0.2 |
+| *Official URL*:urn:oid:1.2.208.176.2.1 | *Version*:11.0.3 |
 | Active as of 2019-12-18 | *Computable Name*:npu-dk |
 | *Other Identifiers:*OID:1.2.208.176.2.1 | |
 
@@ -39,7 +39,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.208.176.2.1"
   }],
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "npu-dk",
   "title" : "NPU DK",
   "status" : "active",

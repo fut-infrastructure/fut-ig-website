@@ -1,4 +1,4 @@
-# document-transformation - eHealth Infrastructure v11.0.2
+# document-transformation - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-transformation | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-transformation | *Version*:11.0.3 |
 | Active as of 2026-10-16 | *Computable Name*:document-transformation |
 
  [Raw OpenAPI-Swagger Definition file](../document-transformation.openapi.json) | [Download](../document-transformation.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "document-transformation",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-transformation",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "document-transformation",
   "status" : "active",
   "date" : "2026-10-16T09:31:48.358+00:00",

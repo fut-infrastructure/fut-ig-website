@@ -1,4 +1,4 @@
-# conceptmap-obs-code-to-value-type - eHealth Infrastructure v11.0.2
+# conceptmap-obs-code-to-value-type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type | *Version*:11.0.3 |
 | Active as of 2020-11-26 | *Computable Name*:conceptmap-obs-code-to-value-type |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "conceptmap-obs-code-to-value-type",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "conceptmap-obs-code-to-value-type",
   "title" : "conceptmap-obs-code-to-value-type",
   "status" : "active",
@@ -330,6 +330,77 @@
         "code" : "decimal",
         "display" : "decimal",
         "equivalence" : "specializes"
+      }]
+    }]
+  },
+  {
+    "source" : "urn:oid:1.2.208.176.2.4",
+    "target" : "http://hl7.org/fhir/data-types",
+    "element" : [{
+      "code" : "ZZ5048",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    }]
+  },
+  {
+    "source" : "http://ehealth.sundhed.dk/cs/mds-codes",
+    "target" : "http://hl7.org/fhir/data-types",
+    "element" : [{
+      "code" : "MDS-UPDRS-I",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IA",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IB",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-II",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-III",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IV",
+      "target" : [{
+        "code" : "integer",
+        "display" : "integer",
+        "equivalence" : "specializes",
+        "comment" : "Should really be specializes but igpublisher turns into narrower (which requires a comment)"
       }]
     }]
   }]

@@ -1,0 +1,997 @@
+# plan - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **plan**
+
+## CapabilityStatement: plan 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/plan | *Version*:11.0.3 |
+| Active as of 2026-10-16 | *Computable Name*:plan |
+
+ [Raw OpenAPI-Swagger Definition file](../plan.openapi.json) | [Download](../plan.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "plan",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/plan",
+  "version" : "11.0.3",
+  "name" : "plan",
+  "status" : "active",
+  "date" : "2026-10-16T09:30:32.236+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "plan",
+    "version" : "2.22.0"
+  },
+  "implementation" : {
+    "description" : "eHealth plan service",
+    "url" : "https://plan.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "type" : "ActivityDefinition",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-activitydefinition",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["ActivityDefinition:composed-of",
+      "ActivityDefinition:depends-on",
+      "ActivityDefinition:derived-from",
+      "ActivityDefinition:predecessor",
+      "ActivityDefinition:successor"],
+      "searchRevInclude" : ["ActivityDefinition:composed-of",
+      "ActivityDefinition:depends-on",
+      "ActivityDefinition:derived-from",
+      "ActivityDefinition:intendedAudience",
+      "ActivityDefinition:modifier_role_reference",
+      "ActivityDefinition:predecessor",
+      "ActivityDefinition:successor",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject",
+      "PlanDefinition:composed-of",
+      "PlanDefinition:definition",
+      "PlanDefinition:depends-on",
+      "PlanDefinition:derived-from",
+      "PlanDefinition:documentation",
+      "PlanDefinition:intendedAudience",
+      "PlanDefinition:modifier_role_reference",
+      "PlanDefinition:predecessor",
+      "PlanDefinition:successor"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_source",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given source value (Resource.meta.source)"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "base",
+        "type" : "token",
+        "documentation" : "Base of resource"
+      },
+      {
+        "name" : "baseEnvironment",
+        "type" : "token",
+        "documentation" : "Base Environment of resource"
+      },
+      {
+        "name" : "composed-of",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "context",
+        "type" : "token",
+        "documentation" : "A use context assigned to the activity definition"
+      },
+      {
+        "name" : "context-quantity",
+        "type" : "quantity",
+        "documentation" : "A quantity- or range-valued use context assigned to the activity definition"
+      },
+      {
+        "name" : "context-type",
+        "type" : "token",
+        "documentation" : "A type of use context assigned to the activity definition"
+      },
+      {
+        "name" : "context-type-value",
+        "type" : "composite",
+        "documentation" : "A use context type and value assigned to the activity definition"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "The activity definition publication date"
+      },
+      {
+        "name" : "depends-on",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "derived-from",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "The description of the activity definition"
+      },
+      {
+        "name" : "effective",
+        "type" : "date",
+        "documentation" : "The time during which the activity definition is intended to be in use"
+      },
+      {
+        "name" : "ehealthPredecessor",
+        "type" : "token",
+        "documentation" : "Predecessor of resource"
+      },
+      {
+        "name" : "employeeTitle",
+        "type" : "string",
+        "documentation" : "Title intented for clinicians"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External identifier for the activity definition"
+      },
+      {
+        "name" : "intendedAudience",
+        "type" : "reference",
+        "documentation" : "The intended audience of the plan definition"
+      },
+      {
+        "name" : "jurisdiction",
+        "type" : "token",
+        "documentation" : "Intended jurisdiction for the activity definition"
+      },
+      {
+        "name" : "modifier_role_reference",
+        "type" : "reference",
+        "documentation" : "Reference to either Organization, CareTeam, Practitioner"
+      },
+      {
+        "name" : "modifier_role_role",
+        "type" : "token",
+        "documentation" : "Role of Organization, CareTeam, Practitioner"
+      },
+      {
+        "name" : "name",
+        "type" : "string",
+        "documentation" : "Computationally friendly name of the activity definition"
+      },
+      {
+        "name" : "predecessor",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "publisher",
+        "type" : "string",
+        "documentation" : "Name of the publisher of the activity definition"
+      },
+      {
+        "name" : "recommendation",
+        "type" : "token",
+        "documentation" : "Recommendation for the plan definition"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status of the activity definition"
+      },
+      {
+        "name" : "successor",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "The human-friendly name of the activity definition"
+      },
+      {
+        "name" : "topic",
+        "type" : "token",
+        "documentation" : "Topics associated with the module"
+      },
+      {
+        "name" : "url",
+        "type" : "uri",
+        "documentation" : "The uri that identifies the activity definition"
+      },
+      {
+        "name" : "version",
+        "type" : "token",
+        "documentation" : "The business version of the activity definition"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "create-clone",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone",
+        "documentation" : "### Input\n- resourceId: reference to the ActivityDefinition resource that should be cloned\n- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned \n- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.\n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone"
+      }]
+    },
+    {
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["ActivityDefinition:composed-of",
+      "ActivityDefinition:depends-on",
+      "ActivityDefinition:derived-from",
+      "ActivityDefinition:intendedAudience",
+      "ActivityDefinition:modifier_role_reference",
+      "ActivityDefinition:predecessor",
+      "ActivityDefinition:successor",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject",
+      "PlanDefinition:composed-of",
+      "PlanDefinition:definition",
+      "PlanDefinition:depends-on",
+      "PlanDefinition:derived-from",
+      "PlanDefinition:documentation",
+      "PlanDefinition:intendedAudience",
+      "PlanDefinition:modifier_role_reference",
+      "PlanDefinition:predecessor",
+      "PlanDefinition:successor"],
+      "operation" : [{
+        "name" : "expunge",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "type" : "DocumentReference",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-documentreference",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject"],
+      "searchRevInclude" : ["ActivityDefinition:composed-of",
+      "ActivityDefinition:depends-on",
+      "ActivityDefinition:derived-from",
+      "ActivityDefinition:intendedAudience",
+      "ActivityDefinition:modifier_role_reference",
+      "ActivityDefinition:predecessor",
+      "ActivityDefinition:successor",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject",
+      "PlanDefinition:composed-of",
+      "PlanDefinition:definition",
+      "PlanDefinition:depends-on",
+      "PlanDefinition:derived-from",
+      "PlanDefinition:documentation",
+      "PlanDefinition:intendedAudience",
+      "PlanDefinition:modifier_role_reference",
+      "PlanDefinition:predecessor",
+      "PlanDefinition:successor"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_source",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given source value (Resource.meta.source)"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "authenticator",
+        "type" : "reference",
+        "documentation" : "Who/what authenticated the document"
+      },
+      {
+        "name" : "author",
+        "type" : "reference",
+        "documentation" : "Who and/or what authored the document"
+      },
+      {
+        "name" : "category",
+        "type" : "token",
+        "documentation" : "Categorization of document"
+      },
+      {
+        "name" : "contenttype",
+        "type" : "token",
+        "documentation" : "Mime type of the content, with charset etc."
+      },
+      {
+        "name" : "custodian",
+        "type" : "reference",
+        "documentation" : "Organization which maintains the document"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "When this document reference was created"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "Human-readable description"
+      },
+      {
+        "name" : "encounter",
+        "type" : "reference",
+        "documentation" : "Context of the document  content"
+      },
+      {
+        "name" : "event",
+        "type" : "token",
+        "documentation" : "Main clinical acts documented"
+      },
+      {
+        "name" : "facility",
+        "type" : "token",
+        "documentation" : "Kind of facility where patient was seen"
+      },
+      {
+        "name" : "format",
+        "type" : "token",
+        "documentation" : "Format/content rules for the document"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Master Version Specific Identifier"
+      },
+      {
+        "name" : "intendedOrganization",
+        "type" : "reference",
+        "documentation" : "The Organization which is intended to use the DocumentReference"
+      },
+      {
+        "name" : "language",
+        "type" : "token",
+        "documentation" : "Human language of the content (BCP-47)"
+      },
+      {
+        "name" : "location",
+        "type" : "uri",
+        "documentation" : "Uri where the data can be found"
+      },
+      {
+        "name" : "modifier_role_reference",
+        "type" : "reference",
+        "documentation" : "Reference to modifier Organization"
+      },
+      {
+        "name" : "modifier_role_role",
+        "type" : "token",
+        "documentation" : "Role of Organization related to modification of the DocumentReference"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Who/what is the subject of the document"
+      },
+      {
+        "name" : "period",
+        "type" : "date",
+        "documentation" : "Time of service that is being documented"
+      },
+      {
+        "name" : "related",
+        "type" : "reference",
+        "documentation" : "Related identifiers or resources"
+      },
+      {
+        "name" : "relatesto",
+        "type" : "reference",
+        "documentation" : "Target of the relationship"
+      },
+      {
+        "name" : "relation",
+        "type" : "token",
+        "documentation" : "replaces | transforms | signs | appends"
+      },
+      {
+        "name" : "relationship",
+        "type" : "composite",
+        "documentation" : "Combination of relation and relatesTo"
+      },
+      {
+        "name" : "security-label",
+        "type" : "token",
+        "documentation" : "Document security-tags"
+      },
+      {
+        "name" : "setting",
+        "type" : "token",
+        "documentation" : "Additional details about where the content was created (e.g. clinical specialty)"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "current | superseded | entered-in-error"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Who/what is the subject of the document"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "Kind of document (LOINC if possible)"
+      },
+      {
+        "name" : "use-context-context",
+        "type" : "token",
+        "documentation" : "A use context assigned to the DocumentReference"
+      },
+      {
+        "name" : "use-context-context-type",
+        "type" : "token",
+        "documentation" : "A type of use context assigned to the DocumentReference"
+      },
+      {
+        "name" : "use-context-context-type-value",
+        "type" : "composite",
+        "documentation" : "A use context type and value assigned to the DocumentReference"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["ActivityDefinition:composed-of",
+      "ActivityDefinition:depends-on",
+      "ActivityDefinition:derived-from",
+      "ActivityDefinition:intendedAudience",
+      "ActivityDefinition:modifier_role_reference",
+      "ActivityDefinition:predecessor",
+      "ActivityDefinition:successor",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject",
+      "PlanDefinition:composed-of",
+      "PlanDefinition:definition",
+      "PlanDefinition:depends-on",
+      "PlanDefinition:derived-from",
+      "PlanDefinition:documentation",
+      "PlanDefinition:intendedAudience",
+      "PlanDefinition:modifier_role_reference",
+      "PlanDefinition:predecessor",
+      "PlanDefinition:successor"]
+    },
+    {
+      "type" : "PlanDefinition",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition",
+      "interaction" : [{
+        "code" : "update"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*",
+      "PlanDefinition:composed-of",
+      "PlanDefinition:definition",
+      "PlanDefinition:depends-on",
+      "PlanDefinition:derived-from",
+      "PlanDefinition:documentation",
+      "PlanDefinition:predecessor",
+      "PlanDefinition:successor"],
+      "searchRevInclude" : ["ActivityDefinition:composed-of",
+      "ActivityDefinition:depends-on",
+      "ActivityDefinition:derived-from",
+      "ActivityDefinition:intendedAudience",
+      "ActivityDefinition:modifier_role_reference",
+      "ActivityDefinition:predecessor",
+      "ActivityDefinition:successor",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:intendedOrganization",
+      "DocumentReference:modifier_role_reference",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject",
+      "PlanDefinition:composed-of",
+      "PlanDefinition:definition",
+      "PlanDefinition:depends-on",
+      "PlanDefinition:derived-from",
+      "PlanDefinition:documentation",
+      "PlanDefinition:intendedAudience",
+      "PlanDefinition:modifier_role_reference",
+      "PlanDefinition:predecessor",
+      "PlanDefinition:successor"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_source",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given source value (Resource.meta.source)"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "base",
+        "type" : "token",
+        "documentation" : "Base of resource"
+      },
+      {
+        "name" : "baseEnvironment",
+        "type" : "token",
+        "documentation" : "Base Environment of resource"
+      },
+      {
+        "name" : "composed-of",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "context",
+        "type" : "token",
+        "documentation" : "A use context assigned to the plan definition"
+      },
+      {
+        "name" : "context-quantity",
+        "type" : "quantity",
+        "documentation" : "A quantity- or range-valued use context assigned to the plan definition"
+      },
+      {
+        "name" : "context-type",
+        "type" : "token",
+        "documentation" : "A type of use context assigned to the plan definition"
+      },
+      {
+        "name" : "context-type-value",
+        "type" : "composite",
+        "documentation" : "A use context type and value assigned to the plan definition"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "The plan definition publication date"
+      },
+      {
+        "name" : "definition",
+        "type" : "reference",
+        "documentation" : "Activity or plan definitions used by plan definition"
+      },
+      {
+        "name" : "depends-on",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "derived-from",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "The description of the plan definition"
+      },
+      {
+        "name" : "documentation",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "effective",
+        "type" : "date",
+        "documentation" : "The time during which the plan definition is intended to be in use"
+      },
+      {
+        "name" : "ehealthPredecessor",
+        "type" : "token",
+        "documentation" : "Predecessor of resource"
+      },
+      {
+        "name" : "employeeTitle",
+        "type" : "string",
+        "documentation" : "Title intented for clinicians"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "External identifier for the plan definition"
+      },
+      {
+        "name" : "intendedAudience",
+        "type" : "reference",
+        "documentation" : "The intended audience of the plan definition"
+      },
+      {
+        "name" : "jurisdiction",
+        "type" : "token",
+        "documentation" : "Intended jurisdiction for the plan definition"
+      },
+      {
+        "name" : "modifier_role_reference",
+        "type" : "reference",
+        "documentation" : "Reference to either Organization, CareTeam, Practitioner"
+      },
+      {
+        "name" : "modifier_role_role",
+        "type" : "token",
+        "documentation" : "Role of Organization, CareTeam, Practitioner"
+      },
+      {
+        "name" : "name",
+        "type" : "string",
+        "documentation" : "Computationally friendly name of the plan definition"
+      },
+      {
+        "name" : "predecessor",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "publisher",
+        "type" : "string",
+        "documentation" : "Name of the publisher of the plan definition"
+      },
+      {
+        "name" : "recommendation",
+        "type" : "token",
+        "documentation" : "Recommendation for the plan definition"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "The current status of the plan definition"
+      },
+      {
+        "name" : "successor",
+        "type" : "reference",
+        "documentation" : "What resource is being referenced"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "The human-friendly name of the plan definition"
+      },
+      {
+        "name" : "topic",
+        "type" : "token",
+        "documentation" : "Topics associated with the module"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "The type of artifact the plan (e.g. order-set, eca-rule, protocol)"
+      },
+      {
+        "name" : "url",
+        "type" : "uri",
+        "documentation" : "The uri that identifies the plan definition"
+      },
+      {
+        "name" : "version",
+        "type" : "token",
+        "documentation" : "The business version of the plan definition"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "import",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-t-import",
+        "documentation" : "Import a Plandefinition\n### Parameters\n- planDefinitionPackage: Binary package produced by the export operation\n### Output\nBundle containing the created resources. PlanDefinitions, ActivityDefinitions, and Questionnaires will be created. Imports QFFD DocumentReference into Document-Transformation service.Libraries and Organizations are used to find the corresponding resources on the target system."
+      },
+      {
+        "name" : "export",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-is-export",
+        "documentation" : "Export a PlanDefinition.\n### Export Contents\nThe export contains the PlanDefinition including referenced resources:- PlanDefinitions\n- ActivityDefinitions\n- Questionnaires\n- Libraries\n- Organizations\n- DocumentReference + QFDD\n\nEach resource is returned in a separate JSon file.\n### Parameters\n- exclude: references to ActivityDefinitions or PlanDefinitions to exclude from the export.\n### Output\nOutput can be found in Binary.content. This is a Base64 encoded .zip file containing JSon files.\nAll returned objects are Fhir resources. See the implementation guide for details"
+      },
+      {
+        "name" : "create-clone",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/ActivityDefinitionPlanDefinition-i-create-clone",
+        "documentation" : "### Input\n- resourceId: reference to the PlanDefinition resource that should be cloned\n- clone_operation: minor-version/major-version/copy Coding from codesystem: http://ehealth.sundhed.dk/cs/ehealth-clone-operation \n- default-clone-behavior: true/false. False signifies deep-clone mode where the list of deep-clone-references determine which resources should be cloned \n- deep-clone-references: References to resources to create as new resources rather than referencing the existing ones.\n\n### Output\nBundle containing all resources that were created during the operation.\n\n### Validation\n- New business versions require that the user has modifier-role: owner or co-author for the resource\n- New copy does not require that the user has a modifier-role.\n- New business version can be made only when no draft resource exists (having identical base identifier).\n- Read/search/create privileges are required for the resource types affected by $create-clone"
+      },
+      {
+        "name" : "apply",
+        "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-i-apply",
+        "documentation" : "Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template.\n### HTTP Methods\n- If using POST the operation will persist resources and return the careplan.\n- If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction.\n### Parameters\n- episodeOfCare: Reference(EpisodeOfCare) - The episode of care for which the plan is being applied.\n### Output\nCarePlan or Bundle of transient CarePlan and ServiceRequest resources."
+      }]
+    }],
+    "operation" : [{
+      "name" : "reindex",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "hapi.fhir.reindex-status",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-hapi.fhir.reindex-status"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+      "documentation" : "Data migration"
+    },
+    {
+      "name" : "export-poll-status",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export-poll-status",
+      "documentation" : "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the '_jobId' is returned in the 'Content-Location' response header when initiating the export. A 'GET' request to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A 'DELETE' request can be used to cancel the export. If the export has already finished, the delete will return '404 Not Found', else the export job will be cancelled and a '202 Accepted' is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the 'Content-Location' header when initiating the export"
+    },
+    {
+      "name" : "export",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/PlanDefinition-is-export",
+      "documentation" : "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header 'Prefer: respond-async', and will return '202 Accepted' with a polling location in the response header 'Content-Location'. The polling location is for the endpoint '$export-poll-status' and has the export job ID as parameter '_jobId'.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'\n## Polling status of export\nSubsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours."
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://plan.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

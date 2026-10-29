@@ -1,4 +1,4 @@
-# Activitydefinition-code to do missing measurement - eHealth Infrastructure v11.0.2
+# Activitydefinition-code to do missing measurement - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement | *Version*:11.0.3 |
 | Active as of 2022-10-17 | *Computable Name*:activitydefinition-code-to-do-missing-measurement |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall be subjected to missing measurements 
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-do-missing-measurement",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "activitydefinition-code-to-do-missing-measurement",
   "title" : "Activitydefinition-code to do missing measurement",
   "status" : "active",
@@ -360,6 +360,14 @@ The map controls whether an activity shall be subjected to missing measurements 
         "display" : "Yes",
         "equivalence" : "relatedto"
       }]
+    },
+    {
+      "code" : "ZZ5048",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
     }]
   },
   {
@@ -493,6 +501,58 @@ The map controls whether an activity shall be subjected to missing measurements 
     {
       "code" : "ZZ7011",
       "display" : "Klinisk foto",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://ehealth.sundhed.dk/cs/mds-codes",
+    "target" : "http://terminology.hl7.org/CodeSystem/v2-0136",
+    "element" : [{
+      "code" : "MDS-UPDRS-I",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IA",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IB",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-II",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-III",
+      "target" : [{
+        "code" : "Y",
+        "display" : "Yes",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IV",
       "target" : [{
         "code" : "Y",
         "display" : "Yes",

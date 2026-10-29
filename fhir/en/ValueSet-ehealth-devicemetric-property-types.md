@@ -1,4 +1,4 @@
-# DeviceMetricPropertyTypes - eHealth Infrastructure v11.0.2
+# DeviceMetricPropertyTypes - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/devicemetric-property-types | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/devicemetric-property-types | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:DeviceMetricPropertyTypes |
 
  
@@ -37,7 +37,7 @@ Device Metric Property Types value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-devicemetric-property-types",
   "url" : "http://ehealth.sundhed.dk/vs/devicemetric-property-types",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "DeviceMetricPropertyTypes",
   "title" : "DeviceMetricPropertyTypes",
   "status" : "active",

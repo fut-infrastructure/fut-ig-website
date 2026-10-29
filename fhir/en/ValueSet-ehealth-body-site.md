@@ -1,4 +1,4 @@
-# Body site - eHealth Infrastructure v11.0.2
+# Body site - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/body-site | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/body-site | *Version*:11.0.3 |
 | Active as of 2024-10-21 | *Computable Name*:BodySite |
 
  
@@ -37,7 +37,7 @@ Body site
   "resourceType" : "ValueSet",
   "id" : "ehealth-body-site",
   "url" : "http://ehealth.sundhed.dk/vs/body-site",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "BodySite",
   "title" : "Body site",
   "status" : "active",

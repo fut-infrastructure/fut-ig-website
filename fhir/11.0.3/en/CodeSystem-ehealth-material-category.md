@@ -1,0 +1,70 @@
+# Material Category - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Material Category**
+
+## CodeSystem: Material Category 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/cs/material-category | *Version*:11.0.3 |
+| Active as of 2025-09-02 | *Computable Name*:MaterialCategory |
+
+ 
+Material Category 
+
+This Code system is referenced in the definition of the following value sets:
+
+* [Document Category](ValueSet-ehealth-document-category.md)
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "ehealth-material-category",
+  "url" : "http://ehealth.sundhed.dk/cs/material-category",
+  "version" : "11.0.3",
+  "name" : "MaterialCategory",
+  "title" : "Material Category",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2025-09-02",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Material Category",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "concept" : [{
+    "code" : "general-material",
+    "display" : "General Material",
+    "definition" : "Material containing general purpose information without patient specific information."
+  },
+  {
+    "code" : "patient-specific-material",
+    "display" : "Patient Specific Material",
+    "definition" : "Material containing patient specific information."
+  }]
+}
+
+```

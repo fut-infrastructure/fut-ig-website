@@ -1,4 +1,4 @@
-# Device Use Reason - eHealth Infrastructure v11.0.2
+# Device Use Reason - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-use-reason | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-use-reason | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:DeviceUseReason |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-use-reason",
   "url" : "http://ehealth.sundhed.dk/vs/device-use-reason",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "DeviceUseReason",
   "title" : "Device Use Reason",
   "status" : "active",

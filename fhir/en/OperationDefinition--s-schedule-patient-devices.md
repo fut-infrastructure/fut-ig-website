@@ -1,4 +1,4 @@
-# Schedule patient devices - eHealth Infrastructure v11.0.2
+# Schedule patient devices - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-patient-devices | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-patient-devices | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:schedule-patient-devices |
 
  
@@ -39,12 +39,12 @@ This report contains Device information for each EpisodeOfCare:
   "resourceType" : "OperationDefinition",
   "id" : "-s-schedule-patient-devices",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-patient-devices",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "schedule-patient-devices",
   "title" : "Schedule patient devices",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

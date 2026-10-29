@@ -1,4 +1,4 @@
-# Changelog - eHealth Infrastructure v11.0.2
+# Changelog - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * **Changelog**
@@ -6,6 +6,28 @@
 ## Changelog
 
 This is the log of changes made to the eHealth Implementation Guide.
+
+## 11.0.3 (2026-11-04)
+
+### Code systems
+
+* Added CodeSystem `http://ehealth.sundhed.dk/cs/mds-codes` regarding `International Parkinson and Movement Disorder Society (MDS)`.
+* Added `ZZ5048` (Hoehn og Yahr scale (HY)) to CodeSystem `urn-oid-1.2.208.176.2.4`. 
+
+### ValueSets
+
+ 
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/vs/observation-codes`. 
+
+### ConceptMaps
+
+ 
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement`.
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-reminder`.
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type`.
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing`.
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-ucum`.
+* Added `ZZ5048` and MDS codes to `http://ehealth.sundhed.dk/ConceptMap/conceptmap-obs-code-to-value-type`.
 
 ## 11.0.2 (2026-11-04)
 

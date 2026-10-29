@@ -1,4 +1,4 @@
-# RelationshipTypes - eHealth Infrastructure v11.0.2
+# RelationshipTypes - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/relatedperson-relationshiptype | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/relatedperson-relationshiptype | *Version*:11.0.3 |
 | Active as of 2019-02-02 | *Computable Name*:RelationshipTypes |
 
  
@@ -37,7 +37,7 @@ A set of codes that can be used to indicate the relationship between a Patient a
   "resourceType" : "ValueSet",
   "id" : "relatedperson-relationshiptype",
   "url" : "http://ehealth.sundhed.dk/vs/relatedperson-relationshiptype",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "RelationshipTypes",
   "status" : "active",
   "experimental" : true,

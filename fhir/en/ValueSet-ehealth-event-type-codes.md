@@ -1,4 +1,4 @@
-# Event Type Codes - eHealth Infrastructure v11.0.2
+# Event Type Codes - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/event-type-codes | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/event-type-codes | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:EventTypeCodes |
 
  
@@ -38,7 +38,7 @@ Event type codes value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-event-type-codes",
   "url" : "http://ehealth.sundhed.dk/vs/event-type-codes",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "EventTypeCodes",
   "title" : "Event Type Codes",
   "status" : "active",

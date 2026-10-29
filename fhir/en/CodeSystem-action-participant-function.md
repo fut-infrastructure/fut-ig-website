@@ -1,4 +1,4 @@
-# Action Participant Function - eHealth Infrastructure v11.0.2
+# Action Participant Function - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/action-participant-function | *Version*:11.0.2 | |
+| *Official URL*:http://hl7.org/fhir/action-participant-function | *Version*:11.0.3 | |
 | * Standards status: *[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 3 | *Computable Name*:ActionParticipantFunction |
 | *Other Identifiers:*OID:2.16.840.1.113883.4.642.4.1946 | | |
 
@@ -48,7 +48,7 @@ This Code system is referenced in the definition of the following value sets:
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:2.16.840.1.113883.4.642.4.1946"
   }],
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ActionParticipantFunction",
   "title" : "Action Participant Function",
   "status" : "active",

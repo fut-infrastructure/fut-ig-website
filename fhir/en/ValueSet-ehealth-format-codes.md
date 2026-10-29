@@ -1,4 +1,4 @@
-# FormatCodes - eHealth Infrastructure v11.0.2
+# FormatCodes - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/format-codes | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/format-codes | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:FormatCodes |
 
  
@@ -37,7 +37,7 @@ Format Codes value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-format-codes",
   "url" : "http://ehealth.sundhed.dk/vs/format-codes",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "FormatCodes",
   "title" : "FormatCodes",
   "status" : "active",

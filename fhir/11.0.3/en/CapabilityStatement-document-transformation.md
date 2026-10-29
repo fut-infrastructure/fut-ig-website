@@ -1,0 +1,627 @@
+# document-transformation - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **document-transformation**
+
+## CapabilityStatement: document-transformation 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-transformation | *Version*:11.0.3 |
+| Active as of 2026-10-16 | *Computable Name*:document-transformation |
+
+ [Raw OpenAPI-Swagger Definition file](../document-transformation.openapi.json) | [Download](../document-transformation.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "document-transformation",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/document-transformation",
+  "version" : "11.0.3",
+  "name" : "document-transformation",
+  "status" : "active",
+  "date" : "2026-10-16T09:31:48.358+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "document-transformation",
+    "version" : "1.37.0"
+  },
+  "implementation" : {
+    "description" : "eHealth document-transformation service",
+    "url" : "https://document-transformation.devtest.systematic-ehealth.com/fhir"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "rest" : [{
+    "mode" : "server",
+    "resource" : [{
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Composition:attester",
+      "Composition:author",
+      "Composition:encounter",
+      "Composition:entry",
+      "Composition:patient",
+      "Composition:related-ref",
+      "Composition:subject",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:related-ref",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject"],
+      "operation" : [{
+        "name" : "expunge",
+        "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "type" : "Composition",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-composition",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["Composition:related-ref"],
+      "searchRevInclude" : ["Composition:attester",
+      "Composition:author",
+      "Composition:encounter",
+      "Composition:entry",
+      "Composition:patient",
+      "Composition:related-ref",
+      "Composition:subject",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:related-ref",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "attester",
+        "type" : "reference",
+        "documentation" : "Who attested the composition"
+      },
+      {
+        "name" : "author",
+        "type" : "reference",
+        "documentation" : "Who and/or what authored the composition"
+      },
+      {
+        "name" : "class",
+        "type" : "token",
+        "documentation" : "Categorization of Composition"
+      },
+      {
+        "name" : "confidentiality",
+        "type" : "token",
+        "documentation" : "As defined by affinity domain"
+      },
+      {
+        "name" : "context",
+        "type" : "token",
+        "documentation" : "Code(s) that apply to the event being documented"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "Composition editing time"
+      },
+      {
+        "name" : "encounter",
+        "type" : "reference",
+        "documentation" : "Context of the Composition"
+      },
+      {
+        "name" : "entry",
+        "type" : "reference",
+        "documentation" : "A reference to data that supports this section"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Logical identifier of composition (version-independent)"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Who and/or what the composition is about"
+      },
+      {
+        "name" : "period",
+        "type" : "date",
+        "documentation" : "The period covered by the documentation"
+      },
+      {
+        "name" : "related-id",
+        "type" : "token",
+        "documentation" : "Target of the relationship"
+      },
+      {
+        "name" : "related-ref",
+        "type" : "reference",
+        "documentation" : "Target of the relationship"
+      },
+      {
+        "name" : "section",
+        "type" : "token",
+        "documentation" : "Classification of section (recommended)"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "preliminary | final | amended | entered-in-error"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Who and/or what the composition is about"
+      },
+      {
+        "name" : "title",
+        "type" : "string",
+        "documentation" : "Human Readable name/title"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "Kind of composition (LOINC if possible)"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/CompositionDocumentReference-it-validate"
+      }]
+    },
+    {
+      "type" : "DocumentReference",
+      "profile" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-transformation-documentreference",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "create"
+      }],
+      "conditionalCreate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["DocumentReference:relatesto"],
+      "searchRevInclude" : ["Composition:attester",
+      "Composition:author",
+      "Composition:encounter",
+      "Composition:entry",
+      "Composition:patient",
+      "Composition:related-ref",
+      "Composition:subject",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:related-ref",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject"],
+      "searchParam" : [{
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_id",
+        "type" : "token",
+        "documentation" : "The ID of the resource"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_lastUpdated",
+        "type" : "date",
+        "documentation" : "Only return resources which were last updated as specified by the given range"
+      },
+      {
+        "name" : "_profile",
+        "type" : "uri",
+        "documentation" : "Search for resources which have the given profile"
+      },
+      {
+        "name" : "_security",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given security labels"
+      },
+      {
+        "name" : "_tag",
+        "type" : "token",
+        "documentation" : "Search for resources which have the given tag"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "authenticator",
+        "type" : "reference",
+        "documentation" : "Who/what authenticated the document"
+      },
+      {
+        "name" : "author",
+        "type" : "reference",
+        "documentation" : "Who and/or what authored the document"
+      },
+      {
+        "name" : "class",
+        "type" : "token",
+        "documentation" : "Categorization of document"
+      },
+      {
+        "name" : "custodian",
+        "type" : "reference",
+        "documentation" : "Organization which maintains the document"
+      },
+      {
+        "name" : "date",
+        "type" : "date",
+        "documentation" : "Document creation time"
+      },
+      {
+        "name" : "description",
+        "type" : "string",
+        "documentation" : "Human-readable description (title)"
+      },
+      {
+        "name" : "documentSharingState",
+        "type" : "token",
+        "documentation" : "Sharing State of the Document"
+      },
+      {
+        "name" : "encounter",
+        "type" : "reference",
+        "documentation" : "Context of the document  content"
+      },
+      {
+        "name" : "event",
+        "type" : "token",
+        "documentation" : "Main clinical acts documented"
+      },
+      {
+        "name" : "facility",
+        "type" : "token",
+        "documentation" : "Kind of facility where patient was seen"
+      },
+      {
+        "name" : "format",
+        "type" : "token",
+        "documentation" : "Format/content rules for the document"
+      },
+      {
+        "name" : "identifier",
+        "type" : "token",
+        "documentation" : "Master Version Specific Identifier"
+      },
+      {
+        "name" : "indexed",
+        "type" : "date",
+        "documentation" : "When this document reference was created"
+      },
+      {
+        "name" : "language",
+        "type" : "token",
+        "documentation" : "Human language of the content (BCP-47)"
+      },
+      {
+        "name" : "location",
+        "type" : "uri",
+        "documentation" : "Uri where the data can be found"
+      },
+      {
+        "name" : "masterIdentifier",
+        "type" : "token",
+        "documentation" : "Master identifier"
+      },
+      {
+        "name" : "patient",
+        "type" : "reference",
+        "documentation" : "Who/what is the subject of the document"
+      },
+      {
+        "name" : "period",
+        "type" : "date",
+        "documentation" : "Time of service that is being documented"
+      },
+      {
+        "name" : "related",
+        "type" : "reference",
+        "documentation" : "Related identifiers or resources"
+      },
+      {
+        "name" : "related-id",
+        "type" : "token",
+        "documentation" : "Identifier of related objects or events"
+      },
+      {
+        "name" : "related-ref",
+        "type" : "reference",
+        "documentation" : "Related Resource"
+      },
+      {
+        "name" : "relatesto",
+        "type" : "reference",
+        "documentation" : "Target of the relationship"
+      },
+      {
+        "name" : "relation",
+        "type" : "token",
+        "documentation" : "replaces | transforms | signs | appends"
+      },
+      {
+        "name" : "relationship",
+        "type" : "composite",
+        "documentation" : "Combination of relation and relatesTo"
+      },
+      {
+        "name" : "securitylabel",
+        "type" : "token",
+        "documentation" : "Document security-tags"
+      },
+      {
+        "name" : "setting",
+        "type" : "token",
+        "documentation" : "Additional details about where the content was created (e.g. clinical specialty)"
+      },
+      {
+        "name" : "status",
+        "type" : "token",
+        "documentation" : "current | superseded | entered-in-error"
+      },
+      {
+        "name" : "subject",
+        "type" : "reference",
+        "documentation" : "Who/what is the subject of the document"
+      },
+      {
+        "name" : "type",
+        "type" : "token",
+        "documentation" : "Kind of document (LOINC if possible)"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/CompositionDocumentReference-it-validate"
+      },
+      {
+        "name" : "deprecate-document",
+        "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/DocumentReference-t-deprecate-document",
+        "documentation" : "Deprecates a shared document. The operation takes a documentIdentifier and cpr-number as parameters and finds the DocumentReference with the corresponding masterIdentifier. masterIdentifier should be unique for DocumentReference so if less than 0 or more than 1 are found the operation throws and exception. If the found documentReference has a patient which cpr number matches the provided value the document is deprecated. iti-57 is used to deprecate the document on XDS. On successthe documentReference status is updated to superseded and updated in the database."
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Composition:attester",
+      "Composition:author",
+      "Composition:encounter",
+      "Composition:entry",
+      "Composition:patient",
+      "Composition:related-ref",
+      "Composition:subject",
+      "DocumentReference:authenticator",
+      "DocumentReference:author",
+      "DocumentReference:custodian",
+      "DocumentReference:encounter",
+      "DocumentReference:patient",
+      "DocumentReference:related",
+      "DocumentReference:related-ref",
+      "DocumentReference:relatesto",
+      "DocumentReference:subject"]
+    }],
+    "operation" : [{
+      "name" : "reindex",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "hapi.fhir.reindex-status",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-hapi.fhir.reindex-status"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-migrate",
+      "documentation" : "Data migration"
+    },
+    {
+      "name" : "upload-QFDD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-upload-QFDD",
+      "documentation" : "Uploads an DK-HL7 Questionnaire Form Definition Document (QFDD). The input FHIR DocumentReference must be of type QFDD (74468-0) and the status set to current. Include an attachment which contains the base64 encoded QFDD XML document with contentType application/xml. The QFDD XML document must contain a unique id which is used as the the masterIdentifier in the DocumentReference. The returned FHIR DocumentReference contains a masterIdentifier, a type and the description all pulled from the attachment."
+    },
+    {
+      "name" : "transform-to-QRD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-to-QRD",
+      "documentation" : "Transforms a FHIR QuestionnaireResponse (ehealth-questionnaireresponse profile) resource to a DK-HL7 Questionnaire Response Document (QRD) XML document. The input FHIR Bundle contains FHIR Composition (ehealth-composition profile) resource referencing a FHIR QuestionnaireResponse resource. a FHIR Questionnaire resource. The bundle must also contain a FHIR DocumentReference containing a QFDD xml file (base64 encoded)The returned FHIR DocumentReference contains the QRD XML document adhering to the DK-HL7 Questionnaire Response Document profile."
+    },
+    {
+      "name" : "transform-to-QFDD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-to-QFDD",
+      "documentation" : "Transforms an eHealth Questionnaire resource to the DK-HL7 Questionnaire Form Definition Document (QFDD). The input Bundle contains an eHealth Questionnaire and Composition resource which reference the returned eHealth Questionnaire. The returned Bundle in case of no validation errors contains the FHIR DocumentReference containing the QFDD XML for the DK-HL7 Questionnaire Form Definition Document and an OperationOutcome will possible warnings. In case of validation errors the Bundle will only contain an OperationOutcome with the validation errors/warnings."
+    },
+    {
+      "name" : "transform-to-PHMR",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-to-PHMR",
+      "documentation" : "Transforms a FHIR Observation (ehealth-observation profile) resource to a DK-HL7 Personal Health Monitoring Report (PHMR) XML document. The input FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing one or more FHIR Observation (ehealth-observation profile) resources and referenced resources such as FHIR Organization. The returned FHIR DocumentReference contains the PHMR XML document adhering to the DK-HL7 Personal Health Monitoring Report profile."
+    },
+    {
+      "name" : "transform-to-APD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-to-APD",
+      "documentation" : "Transforms a FHIR Appointment (ehealth-appointment profile) resource to a DK-HL7 Appointment Document (APD) XML document. The input FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing a FHIR Appointment (ehealth-appointment profile) resource and referenced resources such as FHIR Organization. The returned FHIR DocumentReference contains the APD XML document adhering to the DK-HL7 Appointment Document profile."
+    },
+    {
+      "name" : "transform-from-QRD-based-on-questionnaire",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-from-QRD-based-on-questionnaire",
+      "documentation" : "Transforms a DK-HL7 Questionnaire Response Document (QRD) XML document to a FHIR QuestionnaireResponse (ehealth-questionnaireresponse profile) resource. The input bundle must contain the QRD XML document adhering to the DK-HL7 Questionnaire Response Document profile. And a FHIR Questionnaire resource. The returned FHIR Bundle contains FHIR Composition (ehealth-composition profile) resource referencing a FHIR QuestionnaireResponse (ehealth-documentreference profile) resource."
+    },
+    {
+      "name" : "transform-from-QRD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-from-QRD",
+      "documentation" : "Transforms a DK-HL7 Questionnaire Response Document (QRD) XML document to a FHIR QuestionnaireResponse (ehealth-questionnaireresponse profile) resource. The input FHIR DocumentReference contains the QRD XML document adhering to the DK-HL7 Questionnaire Response Document profile. The returned FHIR Bundle contains FHIR Composition (ehealth-composition profile) resource referencing a FHIR QuestionnaireResponse (ehealth-documentreference profile) resource."
+    },
+    {
+      "name" : "transform-from-QFDD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-from-QFDD",
+      "documentation" : "Transforms the DK-HL7 Questionnaire Form Definition Document (QFDD) to an eHealth Questionnaire resource. The input FHIR DocumentReference contains QFDD XML for the DK-HL7 Questionnaire Form Definition Document. The returned Bundle contains the eHealth Questionnaire and Composition resource which reference the returned eHealth Questionnaire."
+    },
+    {
+      "name" : "transform-from-PHMR",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-from-PHMR",
+      "documentation" : "Transforms a DK-HL7 Personal Health Monitoring Report (PHMR) XML document to FHIR Observation (ehealth-observation profile) resource. The input FHIR DocumentReference contains the PHMR XML document adhering to the DK-HL7 Personal Health Monitoring Report profile The returned FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing.one or more FHIR Observation (ehealth-observation profile) resources and referenced resources such as FHIR Organization."
+    },
+    {
+      "name" : "transform-from-APD",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-transform-from-APD",
+      "documentation" : "Transforms a DK-HL7 Appointment Document (APD) XML document to a FHIR Appointment (ehealth-appointment profile) resource. The input FHIR DocumentReference (ehealth-documentreference profile) contains the APD XML document. The caller must ensure that the APD XML document is valid and adheres to the DK-HL7 Appointment Document profile. The returned FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing a FHIR Appointment (ehealth-appointment profile) resource."
+    },
+    {
+      "name" : "export-poll-status",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export-poll-status",
+      "documentation" : "Operation for polling the status of a previously initiated FHIR Bulk Data System Level Export. A complete URL including the '_jobId' is returned in the 'Content-Location' response header when initiating the export. A 'GET' request to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk data files. A 'DELETE' request can be used to cancel the export. If the export has already finished, the delete will return '404 Not Found', else the export job will be cancelled and a '202 Accepted' is returned with an operation outcome response.\n### Parameters\n- _jobId: the job ID for the Bulk Export job which was returned in the 'Content-Location' header when initiating the export"
+    },
+    {
+      "name" : "export",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-export",
+      "documentation" : "FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html).\n## Initiation of export\nThe initiation of an export must specify the request header 'Prefer: respond-async', and will return '202 Accepted' with a polling location in the response header 'Content-Location'. The polling location is for the endpoint '$export-poll-status' and has the export job ID as parameter '_jobId'.\n### Parameters\n- _outputFormat: Optional parameter to specify the output format of the exported files. Default is 'application/fhir+ndjson'\n- _type: Optional parameter to specify a comma separated list of resource types to be included in the export. If not provided, all resource types will be included.\n- _since: Optional parameter to specify a time. Only resources that have been created or modified after this time will be included in the export (i.e., if Resource.meta.lastUpdated is later than the supplied _since time).\n- _until: Optional parameter to specify a time. Only resources that have been created or modified before this time will be included in the export (i.e., if Resource.meta.lastUpdated is earlier than the supplied _until time).\n- _typeFilter: Optional parameter to apply search filter of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied when searching resources.\n- _typePostFetchFilterUrl: Optional parameter to apply filtering of resources for export. It is a string of comma-delimited FHIR REST search queries in the format [resourceType]?[parameters]. The filter will be applied on resources after being fetched from the database.\n- _includeHistory: Optional parameter to specify whether historical versions of resources should be included in the export. Default is false.\n- _exportId: Optional parameter to specify a client provided identifier for the export. Resulting exported files (Binary) will be labeled with the identifer in meta extension 'https://hapifhir.org/NamingSystem/bulk-export-identifier'\n## Polling status of export\nSubsequent GET requests to the polling location will return '202 Accepted' with a response header 'X-Progress' containing a status message for the progress of the export job. When the job has finished, the polling location will return '200 OK', and the contents of the body will be a JSON object providing metadata and links to the generated bulk export data files.\n## Retrieving exported files\nThe JSON object returned when the export job is complete will contain a list of files (Binary resources) available for download. Each file can be retrieved using a standard HTTP GET request to the provided URL. The security context of the Binary resources resulting from the export is the user that initiated the export. The files can therefore only be retrieved by the same user.\n### Retention of exported files\nThe exported files are retained for a limited time after which they are deleted. The retention time is a server configuration with default 2 hours."
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://document-transformation.devtest.systematic-ehealth.com/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

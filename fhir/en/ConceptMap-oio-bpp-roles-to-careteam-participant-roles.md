@@ -1,4 +1,4 @@
-# OIO BPP roles to eHealth CareTeam participant role mapping - eHealth Infrastructure v11.0.2
+# OIO BPP roles to eHealth CareTeam participant role mapping - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles | *Version*:11.0.3 |
 | Active as of 2019-12-02 | *Computable Name*:OIOBPPRoleToCareTeamParticipantRoleMapping |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "oio-bpp-roles-to-careteam-participant-roles",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/oio-bpp-roles-to-careteam-participant-roles",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "OIOBPPRoleToCareTeamParticipantRoleMapping",
   "title" : "OIO BPP roles to eHealth CareTeam participant role mapping",
   "status" : "active",

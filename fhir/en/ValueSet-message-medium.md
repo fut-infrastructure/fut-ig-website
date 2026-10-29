@@ -1,4 +1,4 @@
-# MessageMedium - eHealth Infrastructure v11.0.2
+# MessageMedium - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/message-medium | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/message-medium | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:MessageMedium |
 
  
@@ -38,7 +38,7 @@ The set of possible message types
   "resourceType" : "ValueSet",
   "id" : "message-medium",
   "url" : "http://ehealth.sundhed.dk/vs/message-medium",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "MessageMedium",
   "status" : "active",
   "experimental" : true,

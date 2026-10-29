@@ -1,4 +1,4 @@
-# communicationParticipant - eHealth Infrastructure v11.0.2
+# communicationParticipant - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/participant | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/participant | *Version*:11.0.3 |
 | Active as of 2024-01-30 | *Computable Name*:communicationParticipant |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding communication based on participant
   "resourceType" : "SearchParameter",
   "id" : "ehealth-communication-search-participant",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/participant",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "communicationParticipant",
   "status" : "active",
   "date" : "2024-01-30T12:40:20+00:00",

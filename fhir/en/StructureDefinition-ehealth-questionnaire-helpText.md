@@ -1,4 +1,4 @@
-# Help text - eHealth Infrastructure v11.0.2
+# Help text - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-helpText | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-helpText | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-questionnaire-helpText |
 
 Help text for questions. xhtml contains an equivalent of the text string, but includes additional XHTML markup, such as bold, italics, styles, tables, etc. Existing restrictions on XHTML content apply. Note that using markdown allows for greater flexibility of display.
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-questionn
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-helpText",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-helpText",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-questionnaire-helpText",
   "title" : "Help text",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

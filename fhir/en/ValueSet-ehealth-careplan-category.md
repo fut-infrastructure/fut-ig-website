@@ -1,4 +1,4 @@
-# Careplan Category - eHealth Infrastructure v11.0.2
+# Careplan Category - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/careplan-category | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/careplan-category | *Version*:11.0.3 |
 | Active as of 2019-02-08 | *Computable Name*:CareplanCategory |
 
  
@@ -37,7 +37,7 @@ Careplan Category.
   "resourceType" : "ValueSet",
   "id" : "ehealth-careplan-category",
   "url" : "http://ehealth.sundhed.dk/vs/careplan-category",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "CareplanCategory",
   "title" : "Careplan Category",
   "status" : "active",

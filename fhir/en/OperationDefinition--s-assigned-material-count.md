@@ -1,4 +1,4 @@
-# Retrieve count of assignments for material - eHealth Infrastructure v11.0.2
+# Retrieve count of assignments for material - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-assigned-material-count | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-assigned-material-count | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:assigned-material-count |
 
  
@@ -100,12 +100,12 @@ Example of output with group-by-careTeam as true:
   "resourceType" : "OperationDefinition",
   "id" : "-s-assigned-material-count",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-assigned-material-count",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "assigned-material-count",
   "title" : "Retrieve count of assignments for material",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

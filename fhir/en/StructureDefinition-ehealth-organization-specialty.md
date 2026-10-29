@@ -1,4 +1,4 @@
-# Organization specialty - eHealth Infrastructure v11.0.2
+# Organization specialty - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-specialty | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-specialty | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:ehealth-organization-specialty |
 
 The specialty of the organization
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-organizat
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-organization-specialty",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-organization-specialty",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "ehealth-organization-specialty",
   "title" : "Organization specialty",
   "status" : "active",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,0 +1,3241 @@
+# patient - eHealth Infrastructure v11.0.3
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **patient**
+
+## CapabilityStatement: patient 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient | *Version*:11.0.3 |
+| Active as of 2026-02-25 | *Computable Name*:patient |
+
+ [Raw OpenAPI-Swagger Definition file](../patient.openapi.json) | [Download](../patient.openapi.json) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CapabilityStatement",
+  "id" : "patient",
+  "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient",
+  "version" : "11.0.3",
+  "name" : "patient",
+  "status" : "active",
+  "date" : "2026-02-25T23:20:08.891+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DK",
+      "display" : "Denmark"
+    }]
+  }],
+  "kind" : "instance",
+  "instantiates" : ["http://hl7.org/fhir/uv/bulkdata/CapabilityStatement/bulk-data"],
+  "software" : {
+    "name" : "patient",
+    "version" : "9.2.2"
+  },
+  "implementation" : {
+    "description" : "eHealth Patient service",
+    "url" : "https://patient.ehealth.sundhed.dk/fhir/"
+  },
+  "fhirVersion" : "4.0.1",
+  "format" : ["application/fhir+xml",
+  "xml",
+  "application/fhir+json",
+  "json",
+  "application/x-turtle",
+  "ttl",
+  "html/json",
+  "html/xml",
+  "html/turtle"],
+  "patchFormat" : ["application/json-patch+json"],
+  "rest" : [{
+    "mode" : "server",
+    "security" : {
+      "extension" : [{
+        "extension" : [{
+          "url" : "token",
+          "valueUri" : "https://saml.ehealth.sundhed.dk/auth/realms/ehealth/protocol/openid-connect/token"
+        },
+        {
+          "url" : "authorize",
+          "valueUri" : "https://saml.ehealth.sundhed.dk/auth/realms/ehealth/protocol/openid-connect/auth"
+        },
+        {
+          "url" : "revoke",
+          "valueUri" : "https://saml.ehealth.sundhed.dk/auth/realms/ehealth/protocol/openid-connect/revoke"
+        }],
+        "url" : "http://ehealth.sundhed.dk/security/oauth-uris"
+      }],
+      "service" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/restful-security-service",
+          "display" : "OAuth"
+        }]
+      }]
+    },
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 54666
+      }],
+      "type" : "Appointment",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Appointment",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-appointment",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-appointment",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-group-videoappointment",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-videoappointment"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "create"
+      },
+      {
+        "code" : "update"
+      },
+      {
+        "code" : "patch"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "searchInclude" : ["*", "Appointment:actor", "Appointment:patient"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-date",
+        "type" : "date",
+        "documentation" : "Appointment date/time."
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "specialty",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-specialty",
+        "type" : "token",
+        "documentation" : "The specialty of a practitioner that would be required to perform the service requested in this appointment"
+      },
+      {
+        "name" : "service-category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-service-category",
+        "type" : "token",
+        "documentation" : "A broad categorization of the service that is to be performed during this appointment"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "slot",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-slot",
+        "type" : "reference",
+        "documentation" : "The slots that this appointment is filling"
+      },
+      {
+        "name" : "reason-code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-reason-code",
+        "type" : "token",
+        "documentation" : "Coded reason this appointment is scheduled"
+      },
+      {
+        "name" : "based-on",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-based-on",
+        "type" : "reference",
+        "documentation" : "The service request this appointment is allocated to assess"
+      },
+      {
+        "name" : "appointmentGroupId",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/groupId",
+        "type" : "string",
+        "documentation" : "Search parameter for finding resources based on group id"
+      },
+      {
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-patient",
+        "type" : "reference",
+        "documentation" : "One of the individuals of the appointment is this patient"
+      },
+      {
+        "name" : "responsible",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/responsible",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding responsible entity on Appointment"
+      },
+      {
+        "name" : "supporting-info",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-supporting-info",
+        "type" : "reference",
+        "documentation" : "Additional information to support the appointment"
+      },
+      {
+        "name" : "careteamParticipant",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/careteamParticipant",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding appointments based on careteam participants"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-identifier",
+        "type" : "token",
+        "documentation" : "An Identifier of the Appointment"
+      },
+      {
+        "name" : "practitioner",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-practitioner",
+        "type" : "reference",
+        "documentation" : "One of the individuals of the appointment is this practitioner"
+      },
+      {
+        "name" : "appointment-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-appointment-type",
+        "type" : "token",
+        "documentation" : "The style of appointment or patient that has been booked in the slot (not service type)"
+      },
+      {
+        "name" : "part-status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-part-status",
+        "type" : "token",
+        "documentation" : "The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests."
+      },
+      {
+        "name" : "service-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-service-type",
+        "type" : "token",
+        "documentation" : "The specific service that is to be performed during this appointment"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "actor",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-actor",
+        "type" : "reference",
+        "documentation" : "Any one of the individuals participating in the appointment"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "intended-audience",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/intended-audience",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding intended audience on Appointment"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "reason-reference",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-reason-reference",
+        "type" : "reference",
+        "documentation" : "Reason the appointment is to take place (resource)"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "location",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-location",
+        "type" : "reference",
+        "documentation" : "This location is listed in the participants of the appointment"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Appointment-status",
+        "type" : "token",
+        "documentation" : "The overall status of the appointment"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "exportAsiCal",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Appointment-i-exportAsiCal"
+      },
+      {
+        "name" : "meta-delete",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-i-meta-delete"
+      },
+      {
+        "name" : "meta-add",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-i-meta-add"
+      },
+      {
+        "name" : "meta",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-its-meta"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 16168
+      }],
+      "type" : "Binary",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Binary",
+      "interaction" : [{
+        "code" : "search-type"
+      },
+      {
+        "code" : "update"
+      },
+      {
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "history-type"
+      },
+      {
+        "code" : "history-instance"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "create"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "_language",
+        "type" : "token",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "_list",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a list"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "meta-delete",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-i-meta-delete",
+        "documentation" : "Delete tags, profiles, and/or security labels from a resource"
+      },
+      {
+        "name" : "meta-add",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-i-meta-add",
+        "documentation" : "Add tags, profiles, and/or security labels to a resource"
+      },
+      {
+        "name" : "meta",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-its-meta",
+        "documentation" : "Request a list of tags, profiles, and security labels for a specfic resource instance"
+      },
+      {
+        "name" : "expunge",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Binary-its-expunge"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 161
+      }],
+      "type" : "CodeSystem",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/CodeSystem",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      }],
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "CodeSystem:supplements",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-date",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The capability statement publication date\r\n* [CodeSystem](codesystem.html): The code system publication date\r\n* [CompartmentDefinition](compartmentdefinition.html): The compartment definition publication date\r\n* [ConceptMap](conceptmap.html): The concept map publication date\r\n* [GraphDefinition](graphdefinition.html): The graph definition publication date\r\n* [ImplementationGuide](implementationguide.html): The implementation guide publication date\r\n* [MessageDefinition](messagedefinition.html): The message definition publication date\r\n* [NamingSystem](namingsystem.html): The naming system publication date\r\n* [OperationDefinition](operationdefinition.html): The operation definition publication date\r\n* [SearchParameter](searchparameter.html): The search parameter publication date\r\n* [StructureDefinition](structuredefinition.html): The structure definition publication date\r\n* [StructureMap](structuremap.html): The structure map publication date\r\n* [TerminologyCapabilities](terminologycapabilities.html): The terminology capabilities publication date\r\n* [ValueSet](valueset.html): The value set publication date\r\n"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/CodeSystem-code",
+        "type" : "token",
+        "documentation" : "A code defined in the code system"
+      },
+      {
+        "name" : "context-type-value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-value",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and value assigned to the value set\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "jurisdiction",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-jurisdiction",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Intended jurisdiction for the capability statement\r\n* [CodeSystem](codesystem.html): Intended jurisdiction for the code system\r\n* [ConceptMap](conceptmap.html): Intended jurisdiction for the concept map\r\n* [GraphDefinition](graphdefinition.html): Intended jurisdiction for the graph definition\r\n* [ImplementationGuide](implementationguide.html): Intended jurisdiction for the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Intended jurisdiction for the message definition\r\n* [NamingSystem](namingsystem.html): Intended jurisdiction for the naming system\r\n* [OperationDefinition](operationdefinition.html): Intended jurisdiction for the operation definition\r\n* [SearchParameter](searchparameter.html): Intended jurisdiction for the search parameter\r\n* [StructureDefinition](structuredefinition.html): Intended jurisdiction for the structure definition\r\n* [StructureMap](structuremap.html): Intended jurisdiction for the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Intended jurisdiction for the terminology capabilities\r\n* [ValueSet](valueset.html): Intended jurisdiction for the value set\r\n"
+      },
+      {
+        "name" : "description",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-description",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The description of the capability statement\r\n* [CodeSystem](codesystem.html): The description of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The description of the compartment definition\r\n* [ConceptMap](conceptmap.html): The description of the concept map\r\n* [GraphDefinition](graphdefinition.html): The description of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The description of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The description of the message definition\r\n* [NamingSystem](namingsystem.html): The description of the naming system\r\n* [OperationDefinition](operationdefinition.html): The description of the operation definition\r\n* [SearchParameter](searchparameter.html): The description of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The description of the structure definition\r\n* [StructureMap](structuremap.html): The description of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The description of the terminology capabilities\r\n* [ValueSet](valueset.html): The description of the value set\r\n"
+      },
+      {
+        "name" : "context-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A type of use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A type of use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A type of use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A type of use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A type of use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A type of use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A type of use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A type of use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A type of use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A type of use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A type of use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A type of use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A type of use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A type of use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "language",
+        "definition" : "http://hl7.org/fhir/SearchParameter/CodeSystem-language",
+        "type" : "token",
+        "documentation" : "A language in which a designation is provided"
+      },
+      {
+        "name" : "title",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-title",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The human-friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): The human-friendly name of the code system\r\n* [ConceptMap](conceptmap.html): The human-friendly name of the concept map\r\n* [ImplementationGuide](implementationguide.html): The human-friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The human-friendly name of the message definition\r\n* [OperationDefinition](operationdefinition.html): The human-friendly name of the operation definition\r\n* [StructureDefinition](structuredefinition.html): The human-friendly name of the structure definition\r\n* [StructureMap](structuremap.html): The human-friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The human-friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): The human-friendly name of the value set\r\n"
+      },
+      {
+        "name" : "context-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-quantity",
+        "type" : "quantity",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A quantity- or range-valued use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A quantity- or range-valued use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A quantity- or range-valued use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A quantity- or range-valued use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A quantity- or range-valued use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A quantity- or range-valued use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A quantity- or range-valued use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A quantity- or range-valued use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A quantity- or range-valued use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A quantity- or range-valued use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A quantity- or range-valued use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A quantity- or range-valued use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A quantity- or range-valued use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A quantity- or range-valued use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context-type-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-quantity",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and quantity- or range-based value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and quantity- or range-based value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and quantity- or range-based value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and quantity- or range-based value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and quantity- or range-based value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and quantity- or range-based value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and quantity- or range-based value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and quantity- or range-based value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and quantity- or range-based value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and quantity- or range-based value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and quantity- or range-based value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and quantity- or range-based value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and quantity- or range-based value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and quantity- or range-based value assigned to the value set\r\n"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-identifier",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CodeSystem](codesystem.html): External identifier for the code system\r\n* [ConceptMap](conceptmap.html): External identifier for the concept map\r\n* [MessageDefinition](messagedefinition.html): External identifier for the message definition\r\n* [StructureDefinition](structuredefinition.html): External identifier for the structure definition\r\n* [StructureMap](structuremap.html): External identifier for the structure map\r\n* [ValueSet](valueset.html): External identifier for the value set\r\n"
+      },
+      {
+        "name" : "content-mode",
+        "definition" : "http://hl7.org/fhir/SearchParameter/CodeSystem-content-mode",
+        "type" : "token",
+        "documentation" : "not-present | example | fragment | complete | supplement"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "version",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-version",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The business version of the capability statement\r\n* [CodeSystem](codesystem.html): The business version of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The business version of the compartment definition\r\n* [ConceptMap](conceptmap.html): The business version of the concept map\r\n* [GraphDefinition](graphdefinition.html): The business version of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The business version of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The business version of the message definition\r\n* [OperationDefinition](operationdefinition.html): The business version of the operation definition\r\n* [SearchParameter](searchparameter.html): The business version of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The business version of the structure definition\r\n* [StructureMap](structuremap.html): The business version of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The business version of the terminology capabilities\r\n* [ValueSet](valueset.html): The business version of the value set\r\n"
+      },
+      {
+        "name" : "url",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-url",
+        "type" : "uri",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The uri that identifies the capability statement\r\n* [CodeSystem](codesystem.html): The uri that identifies the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The uri that identifies the compartment definition\r\n* [ConceptMap](conceptmap.html): The uri that identifies the concept map\r\n* [GraphDefinition](graphdefinition.html): The uri that identifies the graph definition\r\n* [ImplementationGuide](implementationguide.html): The uri that identifies the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The uri that identifies the message definition\r\n* [OperationDefinition](operationdefinition.html): The uri that identifies the operation definition\r\n* [SearchParameter](searchparameter.html): The uri that identifies the search parameter\r\n* [StructureDefinition](structuredefinition.html): The uri that identifies the structure definition\r\n* [StructureMap](structuremap.html): The uri that identifies the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The uri that identifies the terminology capabilities\r\n* [ValueSet](valueset.html): The uri that identifies the value set\r\n"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "supplements",
+        "definition" : "http://hl7.org/fhir/SearchParameter/CodeSystem-supplements",
+        "type" : "reference",
+        "documentation" : "Find code system supplements for the referenced code system"
+      },
+      {
+        "name" : "system",
+        "definition" : "http://hl7.org/fhir/SearchParameter/CodeSystem-system",
+        "type" : "uri",
+        "documentation" : "The system for any codes defined by this code system (same as 'url')"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-name",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Computationally friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): Computationally friendly name of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Computationally friendly name of the compartment definition\r\n* [ConceptMap](conceptmap.html): Computationally friendly name of the concept map\r\n* [GraphDefinition](graphdefinition.html): Computationally friendly name of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Computationally friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Computationally friendly name of the message definition\r\n* [NamingSystem](namingsystem.html): Computationally friendly name of the naming system\r\n* [OperationDefinition](operationdefinition.html): Computationally friendly name of the operation definition\r\n* [SearchParameter](searchparameter.html): Computationally friendly name of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Computationally friendly name of the structure definition\r\n* [StructureMap](structuremap.html): Computationally friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Computationally friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): Computationally friendly name of the value set\r\n"
+      },
+      {
+        "name" : "publisher",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-publisher",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Name of the publisher of the capability statement\r\n* [CodeSystem](codesystem.html): Name of the publisher of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Name of the publisher of the compartment definition\r\n* [ConceptMap](conceptmap.html): Name of the publisher of the concept map\r\n* [GraphDefinition](graphdefinition.html): Name of the publisher of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Name of the publisher of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Name of the publisher of the message definition\r\n* [NamingSystem](namingsystem.html): Name of the publisher of the naming system\r\n* [OperationDefinition](operationdefinition.html): Name of the publisher of the operation definition\r\n* [SearchParameter](searchparameter.html): Name of the publisher of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Name of the publisher of the structure definition\r\n* [StructureMap](structuremap.html): Name of the publisher of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Name of the publisher of the terminology capabilities\r\n* [ValueSet](valueset.html): Name of the publisher of the value set\r\n"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-status",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The current status of the capability statement\r\n* [CodeSystem](codesystem.html): The current status of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The current status of the compartment definition\r\n* [ConceptMap](conceptmap.html): The current status of the concept map\r\n* [GraphDefinition](graphdefinition.html): The current status of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The current status of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The current status of the message definition\r\n* [NamingSystem](namingsystem.html): The current status of the naming system\r\n* [OperationDefinition](operationdefinition.html): The current status of the operation definition\r\n* [SearchParameter](searchparameter.html): The current status of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The current status of the structure definition\r\n* [StructureMap](structuremap.html): The current status of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The current status of the terminology capabilities\r\n* [ValueSet](valueset.html): The current status of the value set\r\n"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "subsumes",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/CodeSystem-t-subsumes"
+      },
+      {
+        "name" : "lookup",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/CodeSystem-t-lookup"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 471699
+      }],
+      "type" : "Communication",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Communication",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-communication",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-material-communication",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-message",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-carecommunication"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "create"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "delete"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["*",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:encounter",
+      "Communication:episodeOfCare",
+      "Communication:instantiates-canonical",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Communication:patient",
+      "Communication:recipient",
+      "Communication:sender",
+      "Communication:subject"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "administrativeStatus",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/administrativeStatus",
+        "type" : "token",
+        "documentation" : "Search parameter for finding communication based on administrative status"
+      },
+      {
+        "name" : "subject",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-subject",
+        "type" : "reference",
+        "documentation" : "Focus of message"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "part-of",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-part-of",
+        "type" : "reference",
+        "documentation" : "Part of this action"
+      },
+      {
+        "name" : "medium",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-medium",
+        "type" : "token",
+        "documentation" : "A channel of communication"
+      },
+      {
+        "name" : "on-behalf-of",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/on-behalf-of",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on on-behalf-of"
+      },
+      {
+        "name" : "threadId",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/threadId",
+        "type" : "string",
+        "documentation" : "Search parameter for finding communication based on thread id"
+      },
+      {
+        "name" : "topic",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-topic",
+        "type" : "token",
+        "documentation" : "Search parameter to enable filtering ehealth-message Communications by topic"
+      },
+      {
+        "name" : "communicationRelatesTo",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/relatesTo",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on either participant or episode of care"
+      },
+      {
+        "name" : "based-on",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-based-on",
+        "type" : "reference",
+        "documentation" : "Request fulfilled by this communication"
+      },
+      {
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-patient",
+        "type" : "reference",
+        "documentation" : "Focus of message"
+      },
+      {
+        "name" : "instantiates-uri",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-instantiates-uri",
+        "type" : "uri",
+        "documentation" : "Instantiates external protocol or definition"
+      },
+      {
+        "name" : "communicationAbout",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/about",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on about"
+      },
+      {
+        "name" : "episodeOfCare",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/episodeOfCare",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on episodeOfCare"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-identifier",
+        "type" : "token",
+        "documentation" : "Unique identifier"
+      },
+      {
+        "name" : "period",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/period",
+        "type" : "date",
+        "documentation" : "Search parameter for finding communication based on period"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "communicationParticipant",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/participant",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on participant"
+      },
+      {
+        "name" : "instantiates-canonical",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-instantiates-canonical",
+        "type" : "reference",
+        "documentation" : "Instantiates FHIR protocol or definition"
+      },
+      {
+        "name" : "communicationCategory",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/category",
+        "type" : "token",
+        "documentation" : "Search parameter for finding communication based on the category code"
+      },
+      {
+        "name" : "received",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-received",
+        "type" : "date",
+        "documentation" : "When received"
+      },
+      {
+        "name" : "encounter",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-encounter",
+        "type" : "reference",
+        "documentation" : "Encounter created as part of"
+      },
+      {
+        "name" : "careTeamRecipient",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careTeamRecipient",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on CareTeam recipient"
+      },
+      {
+        "name" : "communicationGroupId",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/groupId",
+        "type" : "string",
+        "documentation" : "Search parameter for finding resources based on group id"
+      },
+      {
+        "name" : "sent",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-sent",
+        "type" : "date",
+        "documentation" : "When sent"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "careCommunicationSenderPractitioner",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careCommunicationSenderPractitioner",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding CareCommunication based on the sending Practitioner"
+      },
+      {
+        "name" : "careCommunicationSenderCareTeam",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careCommunicationSenderCareTeam",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding CareCommunication based on the sending CareTeam"
+      },
+      {
+        "name" : "careTeamSender",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/careTeamSender",
+        "type" : "reference",
+        "documentation" : "Search parameter for finding communication based on CareTeam sender"
+      },
+      {
+        "name" : "sender",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-sender",
+        "type" : "reference",
+        "documentation" : "Message sender"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "recipient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-recipient",
+        "type" : "reference",
+        "documentation" : "Message recipient"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-category",
+        "type" : "token",
+        "documentation" : "Message category"
+      },
+      {
+        "name" : "restrictionCategory",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Communication/restrictionCategory",
+        "type" : "token",
+        "documentation" : "Search parameter for finding communication based on restriction category"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Communication-status",
+        "type" : "token",
+        "documentation" : "preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 8
+      }],
+      "type" : "Consent",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Consent",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-access-consent",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-consent"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "create"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "update"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["*",
+      "Consent:actor",
+      "Consent:consentor",
+      "Consent:data",
+      "Consent:organization",
+      "Consent:patient",
+      "Consent:source-reference"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Consent:source-reference",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-date",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [AllergyIntolerance](allergyintolerance.html): Date first version of the resource instance was recorded\r\n* [CarePlan](careplan.html): Time period plan covers\r\n* [CareTeam](careteam.html): Time period team covers\r\n* [ClinicalImpression](clinicalimpression.html): When the assessment was documented\r\n* [Composition](composition.html): Composition editing time\r\n* [Consent](consent.html): When this Consent was created or indexed\r\n* [DiagnosticReport](diagnosticreport.html): The clinically relevant time of the report\r\n* [Encounter](encounter.html): A date within the period the Encounter lasted\r\n* [EpisodeOfCare](episodeofcare.html): The provided date search value falls within the episode of care's period\r\n* [FamilyMemberHistory](familymemberhistory.html): When history was recorded or last updated\r\n* [Flag](flag.html): Time period when flag is active\r\n* [Immunization](immunization.html): Vaccination  (non)-Administration Date\r\n* [List](list.html): When the list was prepared\r\n* [Observation](observation.html): Obtained date/time. If the obtained element is a period, a date that falls in the period\r\n* [Procedure](procedure.html): When the procedure was performed\r\n* [RiskAssessment](riskassessment.html): When was assessment made?\r\n* [SupplyRequest](supplyrequest.html): When the request was made\r\n"
+      },
+      {
+        "name" : "_language",
+        "type" : "token",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "data",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-data",
+        "type" : "reference",
+        "documentation" : "The actual data reference"
+      },
+      {
+        "name" : "purpose",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-purpose",
+        "type" : "token",
+        "documentation" : "Context of activities covered by this rule"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "source-reference",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-source-reference",
+        "type" : "reference",
+        "documentation" : "Search by reference to a Consent, DocumentReference, Contract  or QuestionnaireResponse"
+      },
+      {
+        "name" : "_list",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a list"
+      },
+      {
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-patient",
+        "type" : "reference",
+        "documentation" : "Multiple Resources: \r\n\r\n* [AllergyIntolerance](allergyintolerance.html): Who the sensitivity is for\r\n* [CarePlan](careplan.html): Who the care plan is for\r\n* [CareTeam](careteam.html): Who care team is for\r\n* [ClinicalImpression](clinicalimpression.html): Patient or group assessed\r\n* [Composition](composition.html): Who and/or what the composition is about\r\n* [Condition](condition.html): Who has the condition?\r\n* [Consent](consent.html): Who the consent applies to\r\n* [DetectedIssue](detectedissue.html): Associated patient\r\n* [DeviceRequest](devicerequest.html): Individual the service is ordered for\r\n* [DeviceUseStatement](deviceusestatement.html): Search by subject - a patient\r\n* [DiagnosticReport](diagnosticreport.html): The subject of the report if a patient\r\n* [DocumentManifest](documentmanifest.html): The subject of the set of documents\r\n* [DocumentReference](documentreference.html): Who/what is the subject of the document\r\n* [Encounter](encounter.html): The patient or group present at the encounter\r\n* [EpisodeOfCare](episodeofcare.html): The patient who is the focus of this episode of care\r\n* [FamilyMemberHistory](familymemberhistory.html): The identity of a subject to list family member history items for\r\n* [Flag](flag.html): The identity of a subject to list flags for\r\n* [Goal](goal.html): Who this goal is intended for\r\n* [ImagingStudy](imagingstudy.html): Who the study is about\r\n* [Immunization](immunization.html): The patient for the vaccination record\r\n* [List](list.html): If all resources have the same subject\r\n* [MedicationAdministration](medicationadministration.html): The identity of a patient to list administrations  for\r\n* [MedicationDispense](medicationdispense.html): The identity of a patient to list dispenses  for\r\n* [MedicationRequest](medicationrequest.html): Returns prescriptions for a specific patient\r\n* [MedicationStatement](medicationstatement.html): Returns statements for a specific patient.\r\n* [NutritionOrder](nutritionorder.html): The identity of the person who requires the diet, formula or nutritional supplement\r\n* [Observation](observation.html): The subject that the observation is about (if patient)\r\n* [Procedure](procedure.html): Search by subject - a patient\r\n* [RiskAssessment](riskassessment.html): Who/what does assessment apply to?\r\n* [ServiceRequest](servicerequest.html): Search by subject - a patient\r\n* [SupplyDelivery](supplydelivery.html): Patient for whom the item is supplied\r\n* [VisionPrescription](visionprescription.html): The identity of a patient to list dispenses for\r\n"
+      },
+      {
+        "name" : "scope",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-scope",
+        "type" : "token",
+        "documentation" : "Which of the four areas this resource covers (extensible)"
+      },
+      {
+        "name" : "action",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-action",
+        "type" : "token",
+        "documentation" : "Actions controlled by this rule"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/clinical-identifier",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [AllergyIntolerance](allergyintolerance.html): External ids for this item\r\n* [CarePlan](careplan.html): External Ids for this plan\r\n* [CareTeam](careteam.html): External Ids for this team\r\n* [Composition](composition.html): Version-independent identifier for the Composition\r\n* [Condition](condition.html): A unique identifier of the condition record\r\n* [Consent](consent.html): Identifier for this record (external references)\r\n* [DetectedIssue](detectedissue.html): Unique id for the detected issue\r\n* [DeviceRequest](devicerequest.html): Business identifier for request/order\r\n* [DiagnosticReport](diagnosticreport.html): An identifier for the report\r\n* [DocumentManifest](documentmanifest.html): Unique Identifier for the set of documents\r\n* [DocumentReference](documentreference.html): Master Version Specific Identifier\r\n* [Encounter](encounter.html): Identifier(s) by which this encounter is known\r\n* [EpisodeOfCare](episodeofcare.html): Business Identifier(s) relevant for this EpisodeOfCare\r\n* [FamilyMemberHistory](familymemberhistory.html): A search by a record identifier\r\n* [Goal](goal.html): External Ids for this goal\r\n* [ImagingStudy](imagingstudy.html): Identifiers for the Study, such as DICOM Study Instance UID and Accession number\r\n* [Immunization](immunization.html): Business identifier\r\n* [List](list.html): Business identifier\r\n* [MedicationAdministration](medicationadministration.html): Return administrations with this external identifier\r\n* [MedicationDispense](medicationdispense.html): Returns dispenses with this external identifier\r\n* [MedicationRequest](medicationrequest.html): Return prescriptions with this external identifier\r\n* [MedicationStatement](medicationstatement.html): Return statements with this external identifier\r\n* [NutritionOrder](nutritionorder.html): Return nutrition orders with this external identifier\r\n* [Observation](observation.html): The unique id for a particular observation\r\n* [Procedure](procedure.html): A unique identifier for a procedure\r\n* [RiskAssessment](riskassessment.html): Unique identifier for the assessment\r\n* [ServiceRequest](servicerequest.html): Identifiers assigned to this order\r\n* [SupplyDelivery](supplydelivery.html): External identifier\r\n* [SupplyRequest](supplyrequest.html): Business Identifier for SupplyRequest\r\n* [VisionPrescription](visionprescription.html): Return prescriptions with this external identifier\r\n"
+      },
+      {
+        "name" : "period",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-period",
+        "type" : "date",
+        "documentation" : "Timeframe for this rule"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "actor",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-actor",
+        "type" : "reference",
+        "documentation" : "Resource for the actor (or group, by role)"
+      },
+      {
+        "name" : "security-label",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-security-label",
+        "type" : "token",
+        "documentation" : "Security Labels that define affected resources"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "organization",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-organization",
+        "type" : "reference",
+        "documentation" : "Custodian of the consent"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "consentor",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-consentor",
+        "type" : "reference",
+        "documentation" : "Who is agreeing to the policy and rules"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "category",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-category",
+        "type" : "token",
+        "documentation" : "Classification of the consent statement - for indexing/retrieval"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Consent-status",
+        "type" : "token",
+        "documentation" : "draft | proposed | active | rejected | inactive | entered-in-error"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "type" : "Group",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Group",
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*", "Group:managing-entity", "Group:member"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Communication:recipient",
+      "Communication:subject",
+      "Consent:actor",
+      "Consent:data",
+      "Consent:patient",
+      "Group:member",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "actual",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-actual",
+        "type" : "token",
+        "documentation" : "Descriptive or actual"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-identifier",
+        "type" : "token",
+        "documentation" : "Unique id"
+      },
+      {
+        "name" : "managing-entity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-managing-entity",
+        "type" : "reference",
+        "documentation" : "Entity that is the custodian of the Group's definition"
+      },
+      {
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-code",
+        "type" : "token",
+        "documentation" : "The kind of resources contained"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-type",
+        "type" : "token",
+        "documentation" : "The type of resources the group contains"
+      },
+      {
+        "name" : "characteristic",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-characteristic",
+        "type" : "token",
+        "documentation" : "Kind of characteristic"
+      },
+      {
+        "name" : "characteristic-value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-characteristic-value",
+        "type" : "composite",
+        "documentation" : "A composite of both characteristic and value"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "member",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-member",
+        "type" : "reference",
+        "documentation" : "Reference to the group member"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "exclude",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-exclude",
+        "type" : "token",
+        "documentation" : "Group includes or excludes"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Group-value",
+        "type" : "token",
+        "documentation" : "Value held by characteristic"
+      }],
+      "operation" : [{
+        "name" : "export",
+        "definition" : "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/group-export"
+      }]
+    },
+    {
+      "type" : "OperationDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/OperationDefinition",
+      "interaction" : [{
+        "code" : "read"
+      }],
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*",
+      "OperationDefinition:base",
+      "OperationDefinition:input-profile",
+      "OperationDefinition:output-profile"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:instantiates-canonical",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "OperationDefinition:base",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-date",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The capability statement publication date\r\n* [CodeSystem](codesystem.html): The code system publication date\r\n* [CompartmentDefinition](compartmentdefinition.html): The compartment definition publication date\r\n* [ConceptMap](conceptmap.html): The concept map publication date\r\n* [GraphDefinition](graphdefinition.html): The graph definition publication date\r\n* [ImplementationGuide](implementationguide.html): The implementation guide publication date\r\n* [MessageDefinition](messagedefinition.html): The message definition publication date\r\n* [NamingSystem](namingsystem.html): The naming system publication date\r\n* [OperationDefinition](operationdefinition.html): The operation definition publication date\r\n* [SearchParameter](searchparameter.html): The search parameter publication date\r\n* [StructureDefinition](structuredefinition.html): The structure definition publication date\r\n* [StructureMap](structuremap.html): The structure map publication date\r\n* [TerminologyCapabilities](terminologycapabilities.html): The terminology capabilities publication date\r\n* [ValueSet](valueset.html): The value set publication date\r\n"
+      },
+      {
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-code",
+        "type" : "token",
+        "documentation" : "Name used to invoke the operation"
+      },
+      {
+        "name" : "instance",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-instance",
+        "type" : "token",
+        "documentation" : "Invoke on an instance?"
+      },
+      {
+        "name" : "context-type-value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-value",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and value assigned to the value set\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "jurisdiction",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-jurisdiction",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Intended jurisdiction for the capability statement\r\n* [CodeSystem](codesystem.html): Intended jurisdiction for the code system\r\n* [ConceptMap](conceptmap.html): Intended jurisdiction for the concept map\r\n* [GraphDefinition](graphdefinition.html): Intended jurisdiction for the graph definition\r\n* [ImplementationGuide](implementationguide.html): Intended jurisdiction for the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Intended jurisdiction for the message definition\r\n* [NamingSystem](namingsystem.html): Intended jurisdiction for the naming system\r\n* [OperationDefinition](operationdefinition.html): Intended jurisdiction for the operation definition\r\n* [SearchParameter](searchparameter.html): Intended jurisdiction for the search parameter\r\n* [StructureDefinition](structuredefinition.html): Intended jurisdiction for the structure definition\r\n* [StructureMap](structuremap.html): Intended jurisdiction for the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Intended jurisdiction for the terminology capabilities\r\n* [ValueSet](valueset.html): Intended jurisdiction for the value set\r\n"
+      },
+      {
+        "name" : "description",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-description",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The description of the capability statement\r\n* [CodeSystem](codesystem.html): The description of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The description of the compartment definition\r\n* [ConceptMap](conceptmap.html): The description of the concept map\r\n* [GraphDefinition](graphdefinition.html): The description of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The description of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The description of the message definition\r\n* [NamingSystem](namingsystem.html): The description of the naming system\r\n* [OperationDefinition](operationdefinition.html): The description of the operation definition\r\n* [SearchParameter](searchparameter.html): The description of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The description of the structure definition\r\n* [StructureMap](structuremap.html): The description of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The description of the terminology capabilities\r\n* [ValueSet](valueset.html): The description of the value set\r\n"
+      },
+      {
+        "name" : "context-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A type of use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A type of use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A type of use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A type of use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A type of use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A type of use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A type of use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A type of use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A type of use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A type of use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A type of use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A type of use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A type of use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A type of use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "title",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-title",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The human-friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): The human-friendly name of the code system\r\n* [ConceptMap](conceptmap.html): The human-friendly name of the concept map\r\n* [ImplementationGuide](implementationguide.html): The human-friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The human-friendly name of the message definition\r\n* [OperationDefinition](operationdefinition.html): The human-friendly name of the operation definition\r\n* [StructureDefinition](structuredefinition.html): The human-friendly name of the structure definition\r\n* [StructureMap](structuremap.html): The human-friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The human-friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): The human-friendly name of the value set\r\n"
+      },
+      {
+        "name" : "type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-type",
+        "type" : "token",
+        "documentation" : "Invoke at the type level?"
+      },
+      {
+        "name" : "context-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-quantity",
+        "type" : "quantity",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A quantity- or range-valued use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A quantity- or range-valued use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A quantity- or range-valued use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A quantity- or range-valued use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A quantity- or range-valued use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A quantity- or range-valued use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A quantity- or range-valued use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A quantity- or range-valued use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A quantity- or range-valued use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A quantity- or range-valued use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A quantity- or range-valued use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A quantity- or range-valued use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A quantity- or range-valued use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A quantity- or range-valued use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "output-profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-output-profile",
+        "type" : "reference",
+        "documentation" : "Validation information for out parameters"
+      },
+      {
+        "name" : "context",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context-type-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-quantity",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and quantity- or range-based value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and quantity- or range-based value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and quantity- or range-based value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and quantity- or range-based value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and quantity- or range-based value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and quantity- or range-based value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and quantity- or range-based value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and quantity- or range-based value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and quantity- or range-based value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and quantity- or range-based value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and quantity- or range-based value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and quantity- or range-based value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and quantity- or range-based value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and quantity- or range-based value assigned to the value set\r\n"
+      },
+      {
+        "name" : "kind",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-kind",
+        "type" : "token",
+        "documentation" : "operation | query"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "version",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-version",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The business version of the capability statement\r\n* [CodeSystem](codesystem.html): The business version of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The business version of the compartment definition\r\n* [ConceptMap](conceptmap.html): The business version of the concept map\r\n* [GraphDefinition](graphdefinition.html): The business version of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The business version of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The business version of the message definition\r\n* [OperationDefinition](operationdefinition.html): The business version of the operation definition\r\n* [SearchParameter](searchparameter.html): The business version of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The business version of the structure definition\r\n* [StructureMap](structuremap.html): The business version of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The business version of the terminology capabilities\r\n* [ValueSet](valueset.html): The business version of the value set\r\n"
+      },
+      {
+        "name" : "url",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-url",
+        "type" : "uri",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The uri that identifies the capability statement\r\n* [CodeSystem](codesystem.html): The uri that identifies the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The uri that identifies the compartment definition\r\n* [ConceptMap](conceptmap.html): The uri that identifies the concept map\r\n* [GraphDefinition](graphdefinition.html): The uri that identifies the graph definition\r\n* [ImplementationGuide](implementationguide.html): The uri that identifies the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The uri that identifies the message definition\r\n* [OperationDefinition](operationdefinition.html): The uri that identifies the operation definition\r\n* [SearchParameter](searchparameter.html): The uri that identifies the search parameter\r\n* [StructureDefinition](structuredefinition.html): The uri that identifies the structure definition\r\n* [StructureMap](structuremap.html): The uri that identifies the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The uri that identifies the terminology capabilities\r\n* [ValueSet](valueset.html): The uri that identifies the value set\r\n"
+      },
+      {
+        "name" : "input-profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-input-profile",
+        "type" : "reference",
+        "documentation" : "Validation information for in parameters"
+      },
+      {
+        "name" : "system",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-system",
+        "type" : "token",
+        "documentation" : "Invoke at the system level?"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-name",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Computationally friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): Computationally friendly name of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Computationally friendly name of the compartment definition\r\n* [ConceptMap](conceptmap.html): Computationally friendly name of the concept map\r\n* [GraphDefinition](graphdefinition.html): Computationally friendly name of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Computationally friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Computationally friendly name of the message definition\r\n* [NamingSystem](namingsystem.html): Computationally friendly name of the naming system\r\n* [OperationDefinition](operationdefinition.html): Computationally friendly name of the operation definition\r\n* [SearchParameter](searchparameter.html): Computationally friendly name of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Computationally friendly name of the structure definition\r\n* [StructureMap](structuremap.html): Computationally friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Computationally friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): Computationally friendly name of the value set\r\n"
+      },
+      {
+        "name" : "publisher",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-publisher",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Name of the publisher of the capability statement\r\n* [CodeSystem](codesystem.html): Name of the publisher of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Name of the publisher of the compartment definition\r\n* [ConceptMap](conceptmap.html): Name of the publisher of the concept map\r\n* [GraphDefinition](graphdefinition.html): Name of the publisher of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Name of the publisher of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Name of the publisher of the message definition\r\n* [NamingSystem](namingsystem.html): Name of the publisher of the naming system\r\n* [OperationDefinition](operationdefinition.html): Name of the publisher of the operation definition\r\n* [SearchParameter](searchparameter.html): Name of the publisher of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Name of the publisher of the structure definition\r\n* [StructureMap](structuremap.html): Name of the publisher of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Name of the publisher of the terminology capabilities\r\n* [ValueSet](valueset.html): Name of the publisher of the value set\r\n"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-status",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The current status of the capability statement\r\n* [CodeSystem](codesystem.html): The current status of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The current status of the compartment definition\r\n* [ConceptMap](conceptmap.html): The current status of the concept map\r\n* [GraphDefinition](graphdefinition.html): The current status of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The current status of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The current status of the message definition\r\n* [NamingSystem](namingsystem.html): The current status of the naming system\r\n* [OperationDefinition](operationdefinition.html): The current status of the operation definition\r\n* [SearchParameter](searchparameter.html): The current status of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The current status of the structure definition\r\n* [StructureMap](structuremap.html): The current status of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The current status of the terminology capabilities\r\n* [ValueSet](valueset.html): The current status of the value set\r\n"
+      },
+      {
+        "name" : "base",
+        "definition" : "http://hl7.org/fhir/SearchParameter/OperationDefinition-base",
+        "type" : "reference",
+        "documentation" : "Marks this as a profile of the base"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 1199
+      }],
+      "type" : "Patient",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Patient",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrs-patient",
+      "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "patch"
+      }],
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*", "Patient:link"],
+      "searchRevInclude" : ["Appointment:actor",
+      "Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:patient",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Communication:patient",
+      "Communication:recipient",
+      "Communication:sender",
+      "Communication:subject",
+      "Consent:actor",
+      "Consent:consentor",
+      "Consent:data",
+      "Consent:patient",
+      "Group:member",
+      "Patient:link",
+      "Person:link",
+      "Person:patient",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:patient",
+      "Provenance:target",
+      "RelatedPerson:patient"],
+      "searchParam" : [{
+        "name" : "birthdate",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-birthdate",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): The patient's date of birth\r\n* [Person](person.html): The person's date of birth\r\n* [RelatedPerson](relatedperson.html): The Related Person's date of birth\r\n"
+      },
+      {
+        "name" : "deceased",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-deceased",
+        "type" : "token",
+        "documentation" : "This patient has been marked as deceased, or as a death date entered"
+      },
+      {
+        "name" : "address-state",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-state",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A state specified in an address\r\n* [Person](person.html): A state specified in an address\r\n* [Practitioner](practitioner.html): A state specified in an address\r\n* [RelatedPerson](relatedperson.html): A state specified in an address\r\n"
+      },
+      {
+        "name" : "gender",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-gender",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): Gender of the patient\r\n* [Person](person.html): The gender of the person\r\n* [Practitioner](practitioner.html): Gender of the practitioner\r\n* [RelatedPerson](relatedperson.html): Gender of the related person\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "link",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-link",
+        "type" : "reference",
+        "documentation" : "All patients linked to the given patient"
+      },
+      {
+        "name" : "patientCPRIdentifier",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifier",
+        "type" : "token",
+        "documentation" : "Search parameter for Patient DK-Core CPR identifier"
+      },
+      {
+        "name" : "language",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-language",
+        "type" : "token",
+        "documentation" : "Language code (irrespective of use value)"
+      },
+      {
+        "name" : "address-country",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-country",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A country specified in an address\r\n* [Person](person.html): A country specified in an address\r\n* [Practitioner](practitioner.html): A country specified in an address\r\n* [RelatedPerson](relatedperson.html): A country specified in an address\r\n"
+      },
+      {
+        "name" : "death-date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-death-date",
+        "type" : "date",
+        "documentation" : "The date of death has been provided and satisfies this search value"
+      },
+      {
+        "name" : "phonetic",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-phonetic",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A portion of either family or given name using some kind of phonetic matching algorithm\r\n* [Person](person.html): A portion of name using some kind of phonetic matching algorithm\r\n* [Practitioner](practitioner.html): A portion of either family or given name using some kind of phonetic matching algorithm\r\n* [RelatedPerson](relatedperson.html): A portion of name using some kind of phonetic matching algorithm\r\n"
+      },
+      {
+        "name" : "telecom",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-telecom",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): The value in any kind of telecom details of the patient\r\n* [Person](person.html): The value in any kind of contact\r\n* [Practitioner](practitioner.html): The value in any kind of contact\r\n* [PractitionerRole](practitionerrole.html): The value in any kind of contact\r\n* [RelatedPerson](relatedperson.html): The value in any kind of contact\r\n"
+      },
+      {
+        "name" : "address-city",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-city",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A city specified in an address\r\n* [Person](person.html): A city specified in an address\r\n* [Practitioner](practitioner.html): A city specified in an address\r\n* [RelatedPerson](relatedperson.html): A city specified in an address\r\n"
+      },
+      {
+        "name" : "email",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-email",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A value in an email contact\r\n* [Person](person.html): A value in an email contact\r\n* [Practitioner](practitioner.html): A value in an email contact\r\n* [PractitionerRole](practitionerrole.html): A value in an email contact\r\n* [RelatedPerson](relatedperson.html): A value in an email contact\r\n"
+      },
+      {
+        "name" : "given",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-given",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A portion of the given name of the patient\r\n* [Practitioner](practitioner.html): A portion of the given name\r\n"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-identifier",
+        "type" : "token",
+        "documentation" : "A patient identifier"
+      },
+      {
+        "name" : "patientCPRIdentifierUnique",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifierUnique",
+        "type" : "token",
+        "documentation" : "Uniqueness constraint on search parameter patientCPRIdentifier"
+      },
+      {
+        "name" : "address",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [Person](person.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [Practitioner](practitioner.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [RelatedPerson](relatedperson.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n"
+      },
+      {
+        "name" : "general-practitioner",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-general-practitioner",
+        "type" : "reference",
+        "documentation" : "Patient's nominated general practitioner, not the organization that manages the record"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "active",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-active",
+        "type" : "token",
+        "documentation" : "Whether the patient record is active"
+      },
+      {
+        "name" : "address-postalcode",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-postalcode",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A postalCode specified in an address\r\n* [Person](person.html): A postal code specified in an address\r\n* [Practitioner](practitioner.html): A postalCode specified in an address\r\n* [RelatedPerson](relatedperson.html): A postal code specified in an address\r\n"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "phone",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-phone",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A value in a phone contact\r\n* [Person](person.html): A value in a phone contact\r\n* [Practitioner](practitioner.html): A value in a phone contact\r\n* [PractitionerRole](practitionerrole.html): A value in a phone contact\r\n* [RelatedPerson](relatedperson.html): A value in a phone contact\r\n"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "organization",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-organization",
+        "type" : "reference",
+        "documentation" : "The organization that is the custodian of the patient record"
+      },
+      {
+        "name" : "address-use",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-use",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A use code specified in an address\r\n* [Person](person.html): A use code specified in an address\r\n* [Practitioner](practitioner.html): A use code specified in an address\r\n* [RelatedPerson](relatedperson.html): A use code specified in an address\r\n"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Patient-name",
+        "type" : "string",
+        "documentation" : "A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "family",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-family",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A portion of the family name of the patient\r\n* [Practitioner](practitioner.html): A portion of the family name\r\n"
+      }],
+      "operation" : [{
+        "name" : "export",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/GroupPatient-its-export"
+      },
+      {
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "updatePatientWithSKRSData",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Patient-t-updatePatientWithSKRSData"
+      },
+      {
+        "name" : "createPatient",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Patient-t-createPatient"
+      }]
+    },
+    {
+      "type" : "Person",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Person",
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*",
+      "Person:link",
+      "Person:organization",
+      "Person:patient",
+      "Person:practitioner",
+      "Person:relatedperson"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Person:link",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "birthdate",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-birthdate",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): The patient's date of birth\r\n* [Person](person.html): The person's date of birth\r\n* [RelatedPerson](relatedperson.html): The Related Person's date of birth\r\n"
+      },
+      {
+        "name" : "address-state",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-state",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A state specified in an address\r\n* [Person](person.html): A state specified in an address\r\n* [Practitioner](practitioner.html): A state specified in an address\r\n* [RelatedPerson](relatedperson.html): A state specified in an address\r\n"
+      },
+      {
+        "name" : "gender",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-gender",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): Gender of the patient\r\n* [Person](person.html): The gender of the person\r\n* [Practitioner](practitioner.html): Gender of the practitioner\r\n* [RelatedPerson](relatedperson.html): Gender of the related person\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "link",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-link",
+        "type" : "reference",
+        "documentation" : "Any link has this Patient, Person, RelatedPerson or Practitioner reference"
+      },
+      {
+        "name" : "address-country",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-country",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A country specified in an address\r\n* [Person](person.html): A country specified in an address\r\n* [Practitioner](practitioner.html): A country specified in an address\r\n* [RelatedPerson](relatedperson.html): A country specified in an address\r\n"
+      },
+      {
+        "name" : "phonetic",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-phonetic",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A portion of either family or given name using some kind of phonetic matching algorithm\r\n* [Person](person.html): A portion of name using some kind of phonetic matching algorithm\r\n* [Practitioner](practitioner.html): A portion of either family or given name using some kind of phonetic matching algorithm\r\n* [RelatedPerson](relatedperson.html): A portion of name using some kind of phonetic matching algorithm\r\n"
+      },
+      {
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-patient",
+        "type" : "reference",
+        "documentation" : "The Person links to this Patient"
+      },
+      {
+        "name" : "telecom",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-telecom",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): The value in any kind of telecom details of the patient\r\n* [Person](person.html): The value in any kind of contact\r\n* [Practitioner](practitioner.html): The value in any kind of contact\r\n* [PractitionerRole](practitionerrole.html): The value in any kind of contact\r\n* [RelatedPerson](relatedperson.html): The value in any kind of contact\r\n"
+      },
+      {
+        "name" : "address-city",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-city",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A city specified in an address\r\n* [Person](person.html): A city specified in an address\r\n* [Practitioner](practitioner.html): A city specified in an address\r\n* [RelatedPerson](relatedperson.html): A city specified in an address\r\n"
+      },
+      {
+        "name" : "email",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-email",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A value in an email contact\r\n* [Person](person.html): A value in an email contact\r\n* [Practitioner](practitioner.html): A value in an email contact\r\n* [PractitionerRole](practitionerrole.html): A value in an email contact\r\n* [RelatedPerson](relatedperson.html): A value in an email contact\r\n"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-identifier",
+        "type" : "token",
+        "documentation" : "A person Identifier"
+      },
+      {
+        "name" : "address",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [Person](person.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [Practitioner](practitioner.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [RelatedPerson](relatedperson.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n"
+      },
+      {
+        "name" : "practitioner",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-practitioner",
+        "type" : "reference",
+        "documentation" : "The Person links to this Practitioner"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "relatedperson",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-relatedperson",
+        "type" : "reference",
+        "documentation" : "The Person links to this RelatedPerson"
+      },
+      {
+        "name" : "address-postalcode",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-postalcode",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A postalCode specified in an address\r\n* [Person](person.html): A postal code specified in an address\r\n* [Practitioner](practitioner.html): A postalCode specified in an address\r\n* [RelatedPerson](relatedperson.html): A postal code specified in an address\r\n"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "phone",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-phone",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A value in a phone contact\r\n* [Person](person.html): A value in a phone contact\r\n* [Practitioner](practitioner.html): A value in a phone contact\r\n* [PractitionerRole](practitionerrole.html): A value in a phone contact\r\n* [RelatedPerson](relatedperson.html): A value in a phone contact\r\n"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "organization",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-organization",
+        "type" : "reference",
+        "documentation" : "The organization at which this person record is being managed"
+      },
+      {
+        "name" : "address-use",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-use",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A use code specified in an address\r\n* [Person](person.html): A use code specified in an address\r\n* [Practitioner](practitioner.html): A use code specified in an address\r\n* [RelatedPerson](relatedperson.html): A use code specified in an address\r\n"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Person-name",
+        "type" : "string",
+        "documentation" : "A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      }],
+      "operation" : [{
+        "name" : "match",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Person-t-match"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 6
+      }],
+      "type" : "Provenance",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/Provenance",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-access-provenance",
+      "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "create"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "update"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["*",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:location",
+      "Provenance:patient",
+      "Provenance:target"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "_language",
+        "type" : "token",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "agent-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-agent-type",
+        "type" : "token",
+        "documentation" : "How the agent participated"
+      },
+      {
+        "name" : "agent",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-agent",
+        "type" : "reference",
+        "documentation" : "Who participated"
+      },
+      {
+        "name" : "signature-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-signature-type",
+        "type" : "token",
+        "documentation" : "Indication of the reason the entity signed the object(s)"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "recorded",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-recorded",
+        "type" : "date",
+        "documentation" : "When the activity was recorded / updated"
+      },
+      {
+        "name" : "when",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-when",
+        "type" : "date",
+        "documentation" : "When the activity occurred"
+      },
+      {
+        "name" : "target",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-target",
+        "type" : "reference",
+        "documentation" : "Target Reference(s) (usually version specific)"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_list",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a list"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-patient",
+        "type" : "reference",
+        "documentation" : "Target Reference(s) (usually version specific)"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "location",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-location",
+        "type" : "reference",
+        "documentation" : "Where the activity occurred, if relevant"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "agent-role",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-agent-role",
+        "type" : "token",
+        "documentation" : "What the agents role was"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "entity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Provenance-entity",
+        "type" : "reference",
+        "documentation" : "Identity of entity"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 5077
+      }],
+      "type" : "RelatedPerson",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "create"
+      },
+      {
+        "code" : "delete"
+      },
+      {
+        "code" : "patch"
+      },
+      {
+        "code" : "update"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "conditionalUpdate" : true,
+      "conditionalDelete" : "multiple",
+      "searchInclude" : ["*", "RelatedPerson:patient"],
+      "searchRevInclude" : ["Appointment:actor",
+      "Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Communication:recipient",
+      "Communication:sender",
+      "Consent:actor",
+      "Consent:consentor",
+      "Consent:data",
+      "Group:managing-entity",
+      "Patient:link",
+      "Person:link",
+      "Person:relatedperson",
+      "Provenance:agent",
+      "Provenance:entity",
+      "Provenance:target"],
+      "searchParam" : [{
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "birthdate",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-birthdate",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): The patient's date of birth\r\n* [Person](person.html): The person's date of birth\r\n* [RelatedPerson](relatedperson.html): The Related Person's date of birth\r\n"
+      },
+      {
+        "name" : "address-state",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-state",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A state specified in an address\r\n* [Person](person.html): A state specified in an address\r\n* [Practitioner](practitioner.html): A state specified in an address\r\n* [RelatedPerson](relatedperson.html): A state specified in an address\r\n"
+      },
+      {
+        "name" : "gender",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-gender",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): Gender of the patient\r\n* [Person](person.html): The gender of the person\r\n* [Practitioner](practitioner.html): Gender of the practitioner\r\n* [RelatedPerson](relatedperson.html): Gender of the related person\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "address-country",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-country",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A country specified in an address\r\n* [Person](person.html): A country specified in an address\r\n* [Practitioner](practitioner.html): A country specified in an address\r\n* [RelatedPerson](relatedperson.html): A country specified in an address\r\n"
+      },
+      {
+        "name" : "phonetic",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-phonetic",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A portion of either family or given name using some kind of phonetic matching algorithm\r\n* [Person](person.html): A portion of name using some kind of phonetic matching algorithm\r\n* [Practitioner](practitioner.html): A portion of either family or given name using some kind of phonetic matching algorithm\r\n* [RelatedPerson](relatedperson.html): A portion of name using some kind of phonetic matching algorithm\r\n"
+      },
+      {
+        "name" : "patient",
+        "definition" : "http://hl7.org/fhir/SearchParameter/RelatedPerson-patient",
+        "type" : "reference",
+        "documentation" : "The patient this related person is related to"
+      },
+      {
+        "name" : "telecom",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-telecom",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): The value in any kind of telecom details of the patient\r\n* [Person](person.html): The value in any kind of contact\r\n* [Practitioner](practitioner.html): The value in any kind of contact\r\n* [PractitionerRole](practitionerrole.html): The value in any kind of contact\r\n* [RelatedPerson](relatedperson.html): The value in any kind of contact\r\n"
+      },
+      {
+        "name" : "address-city",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-city",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A city specified in an address\r\n* [Person](person.html): A city specified in an address\r\n* [Practitioner](practitioner.html): A city specified in an address\r\n* [RelatedPerson](relatedperson.html): A city specified in an address\r\n"
+      },
+      {
+        "name" : "relationship",
+        "definition" : "http://hl7.org/fhir/SearchParameter/RelatedPerson-relationship",
+        "type" : "token",
+        "documentation" : "The relationship between the patient and the relatedperson"
+      },
+      {
+        "name" : "relatedPersonCPRIdentifier",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifier",
+        "type" : "token",
+        "documentation" : "Search parameter for RelatedPerson DK-Core CPR identifier"
+      },
+      {
+        "name" : "relatedPersonRelationshipParauth",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/relationshipParauth",
+        "type" : "token",
+        "documentation" : "Search parameter for the relationship code PARAUTH (parental authority) on a RelatedPerson"
+      },
+      {
+        "name" : "relatedPersonCPRIdentifierPatientParauthUnique",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifierPatientParauthUnique",
+        "type" : "composite",
+        "documentation" : "Uniqueness constraint: a patient can have at most one RelatedPerson with a given CPR identifier and the relationship code PARAUTH"
+      },
+      {
+        "name" : "email",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-email",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A value in an email contact\r\n* [Person](person.html): A value in an email contact\r\n* [Practitioner](practitioner.html): A value in an email contact\r\n* [PractitionerRole](practitionerrole.html): A value in an email contact\r\n* [RelatedPerson](relatedperson.html): A value in an email contact\r\n"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/RelatedPerson-identifier",
+        "type" : "token",
+        "documentation" : "An Identifier of the RelatedPerson"
+      },
+      {
+        "name" : "address",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [Person](person.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [Practitioner](practitioner.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n* [RelatedPerson](relatedperson.html): A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text\r\n"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "active",
+        "definition" : "http://hl7.org/fhir/SearchParameter/RelatedPerson-active",
+        "type" : "token",
+        "documentation" : "Indicates if the related person record is active"
+      },
+      {
+        "name" : "address-postalcode",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-postalcode",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A postalCode specified in an address\r\n* [Person](person.html): A postal code specified in an address\r\n* [Practitioner](practitioner.html): A postalCode specified in an address\r\n* [RelatedPerson](relatedperson.html): A postal code specified in an address\r\n"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "phone",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-phone",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A value in a phone contact\r\n* [Person](person.html): A value in a phone contact\r\n* [Practitioner](practitioner.html): A value in a phone contact\r\n* [PractitionerRole](practitionerrole.html): A value in a phone contact\r\n* [RelatedPerson](relatedperson.html): A value in a phone contact\r\n"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "address-use",
+        "definition" : "http://hl7.org/fhir/SearchParameter/individual-address-use",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [Patient](patient.html): A use code specified in an address\r\n* [Person](person.html): A use code specified in an address\r\n* [Practitioner](practitioner.html): A use code specified in an address\r\n* [RelatedPerson](relatedperson.html): A use code specified in an address\r\n"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/RelatedPerson-name",
+        "type" : "string",
+        "documentation" : "A server defined search that may match any of the string fields in the HumanName, including family, give, prefix, suffix, suffix, and/or text"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "updateRelatedPersonWithSKRSData",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/RelatedPerson-t-updateRelatedPersonWithSKRSData"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 23
+      }],
+      "type" : "SearchParameter",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/SearchParameter",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      }],
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*", "SearchParameter:component"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target",
+      "SearchParameter:component",
+      "SearchParameter:derived-from"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-date",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The capability statement publication date\r\n* [CodeSystem](codesystem.html): The code system publication date\r\n* [CompartmentDefinition](compartmentdefinition.html): The compartment definition publication date\r\n* [ConceptMap](conceptmap.html): The concept map publication date\r\n* [GraphDefinition](graphdefinition.html): The graph definition publication date\r\n* [ImplementationGuide](implementationguide.html): The implementation guide publication date\r\n* [MessageDefinition](messagedefinition.html): The message definition publication date\r\n* [NamingSystem](namingsystem.html): The naming system publication date\r\n* [OperationDefinition](operationdefinition.html): The operation definition publication date\r\n* [SearchParameter](searchparameter.html): The search parameter publication date\r\n* [StructureDefinition](structuredefinition.html): The structure definition publication date\r\n* [StructureMap](structuremap.html): The structure map publication date\r\n* [TerminologyCapabilities](terminologycapabilities.html): The terminology capabilities publication date\r\n* [ValueSet](valueset.html): The value set publication date\r\n"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/SearchParameter-code",
+        "type" : "token",
+        "documentation" : "Code used in URL"
+      },
+      {
+        "name" : "context-type-value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-value",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and value assigned to the value set\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "jurisdiction",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-jurisdiction",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Intended jurisdiction for the capability statement\r\n* [CodeSystem](codesystem.html): Intended jurisdiction for the code system\r\n* [ConceptMap](conceptmap.html): Intended jurisdiction for the concept map\r\n* [GraphDefinition](graphdefinition.html): Intended jurisdiction for the graph definition\r\n* [ImplementationGuide](implementationguide.html): Intended jurisdiction for the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Intended jurisdiction for the message definition\r\n* [NamingSystem](namingsystem.html): Intended jurisdiction for the naming system\r\n* [OperationDefinition](operationdefinition.html): Intended jurisdiction for the operation definition\r\n* [SearchParameter](searchparameter.html): Intended jurisdiction for the search parameter\r\n* [StructureDefinition](structuredefinition.html): Intended jurisdiction for the structure definition\r\n* [StructureMap](structuremap.html): Intended jurisdiction for the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Intended jurisdiction for the terminology capabilities\r\n* [ValueSet](valueset.html): Intended jurisdiction for the value set\r\n"
+      },
+      {
+        "name" : "description",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-description",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The description of the capability statement\r\n* [CodeSystem](codesystem.html): The description of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The description of the compartment definition\r\n* [ConceptMap](conceptmap.html): The description of the concept map\r\n* [GraphDefinition](graphdefinition.html): The description of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The description of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The description of the message definition\r\n* [NamingSystem](namingsystem.html): The description of the naming system\r\n* [OperationDefinition](operationdefinition.html): The description of the operation definition\r\n* [SearchParameter](searchparameter.html): The description of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The description of the structure definition\r\n* [StructureMap](structuremap.html): The description of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The description of the terminology capabilities\r\n* [ValueSet](valueset.html): The description of the value set\r\n"
+      },
+      {
+        "name" : "derived-from",
+        "definition" : "http://hl7.org/fhir/SearchParameter/SearchParameter-derived-from",
+        "type" : "reference",
+        "documentation" : "Original definition for the search parameter"
+      },
+      {
+        "name" : "context-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A type of use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A type of use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A type of use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A type of use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A type of use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A type of use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A type of use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A type of use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A type of use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A type of use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A type of use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A type of use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A type of use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A type of use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/SearchParameter-type",
+        "type" : "token",
+        "documentation" : "number | date | string | token | reference | composite | quantity | uri | special"
+      },
+      {
+        "name" : "context-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-quantity",
+        "type" : "quantity",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A quantity- or range-valued use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A quantity- or range-valued use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A quantity- or range-valued use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A quantity- or range-valued use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A quantity- or range-valued use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A quantity- or range-valued use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A quantity- or range-valued use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A quantity- or range-valued use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A quantity- or range-valued use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A quantity- or range-valued use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A quantity- or range-valued use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A quantity- or range-valued use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A quantity- or range-valued use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A quantity- or range-valued use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context-type-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-quantity",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and quantity- or range-based value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and quantity- or range-based value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and quantity- or range-based value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and quantity- or range-based value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and quantity- or range-based value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and quantity- or range-based value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and quantity- or range-based value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and quantity- or range-based value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and quantity- or range-based value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and quantity- or range-based value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and quantity- or range-based value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and quantity- or range-based value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and quantity- or range-based value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and quantity- or range-based value assigned to the value set\r\n"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "sp-unique-url",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/SearchParameter/url-unique",
+        "type" : "composite",
+        "documentation" : "Search parameter for making a SearchParameter unique by URL"
+      },
+      {
+        "name" : "version",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-version",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The business version of the capability statement\r\n* [CodeSystem](codesystem.html): The business version of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The business version of the compartment definition\r\n* [ConceptMap](conceptmap.html): The business version of the concept map\r\n* [GraphDefinition](graphdefinition.html): The business version of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The business version of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The business version of the message definition\r\n* [OperationDefinition](operationdefinition.html): The business version of the operation definition\r\n* [SearchParameter](searchparameter.html): The business version of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The business version of the structure definition\r\n* [StructureMap](structuremap.html): The business version of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The business version of the terminology capabilities\r\n* [ValueSet](valueset.html): The business version of the value set\r\n"
+      },
+      {
+        "name" : "url",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/SearchParameter/url",
+        "type" : "uri",
+        "documentation" : "Search parameter for finding a searchparameter by URL"
+      },
+      {
+        "name" : "target",
+        "definition" : "http://hl7.org/fhir/SearchParameter/SearchParameter-target",
+        "type" : "token",
+        "documentation" : "Types of resource (if a resource reference)"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "component",
+        "definition" : "http://hl7.org/fhir/SearchParameter/SearchParameter-component",
+        "type" : "reference",
+        "documentation" : "Defines how the part works"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-name",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Computationally friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): Computationally friendly name of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Computationally friendly name of the compartment definition\r\n* [ConceptMap](conceptmap.html): Computationally friendly name of the concept map\r\n* [GraphDefinition](graphdefinition.html): Computationally friendly name of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Computationally friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Computationally friendly name of the message definition\r\n* [NamingSystem](namingsystem.html): Computationally friendly name of the naming system\r\n* [OperationDefinition](operationdefinition.html): Computationally friendly name of the operation definition\r\n* [SearchParameter](searchparameter.html): Computationally friendly name of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Computationally friendly name of the structure definition\r\n* [StructureMap](structuremap.html): Computationally friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Computationally friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): Computationally friendly name of the value set\r\n"
+      },
+      {
+        "name" : "publisher",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-publisher",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Name of the publisher of the capability statement\r\n* [CodeSystem](codesystem.html): Name of the publisher of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Name of the publisher of the compartment definition\r\n* [ConceptMap](conceptmap.html): Name of the publisher of the concept map\r\n* [GraphDefinition](graphdefinition.html): Name of the publisher of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Name of the publisher of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Name of the publisher of the message definition\r\n* [NamingSystem](namingsystem.html): Name of the publisher of the naming system\r\n* [OperationDefinition](operationdefinition.html): Name of the publisher of the operation definition\r\n* [SearchParameter](searchparameter.html): Name of the publisher of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Name of the publisher of the structure definition\r\n* [StructureMap](structuremap.html): Name of the publisher of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Name of the publisher of the terminology capabilities\r\n* [ValueSet](valueset.html): Name of the publisher of the value set\r\n"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-status",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The current status of the capability statement\r\n* [CodeSystem](codesystem.html): The current status of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The current status of the compartment definition\r\n* [ConceptMap](conceptmap.html): The current status of the concept map\r\n* [GraphDefinition](graphdefinition.html): The current status of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The current status of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The current status of the message definition\r\n* [NamingSystem](namingsystem.html): The current status of the naming system\r\n* [OperationDefinition](operationdefinition.html): The current status of the operation definition\r\n* [SearchParameter](searchparameter.html): The current status of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The current status of the structure definition\r\n* [StructureMap](structuremap.html): The current status of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The current status of the terminology capabilities\r\n* [ValueSet](valueset.html): The current status of the value set\r\n"
+      },
+      {
+        "name" : "base",
+        "definition" : "http://hl7.org/fhir/SearchParameter/SearchParameter-base",
+        "type" : "token",
+        "documentation" : "The resource type(s) this search parameter applies to"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 188
+      }],
+      "type" : "StructureDefinition",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/StructureDefinition",
+      "supportedProfile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-definedquestion"],
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      },
+      {
+        "code" : "create"
+      }],
+      "versioning" : "versioned-update",
+      "conditionalCreate" : true,
+      "searchInclude" : ["*", "StructureDefinition:valueset"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "OperationDefinition:input-profile",
+      "OperationDefinition:output-profile",
+      "Provenance:entity",
+      "Provenance:target",
+      "StructureDefinition:base"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-date",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The capability statement publication date\r\n* [CodeSystem](codesystem.html): The code system publication date\r\n* [CompartmentDefinition](compartmentdefinition.html): The compartment definition publication date\r\n* [ConceptMap](conceptmap.html): The concept map publication date\r\n* [GraphDefinition](graphdefinition.html): The graph definition publication date\r\n* [ImplementationGuide](implementationguide.html): The implementation guide publication date\r\n* [MessageDefinition](messagedefinition.html): The message definition publication date\r\n* [NamingSystem](namingsystem.html): The naming system publication date\r\n* [OperationDefinition](operationdefinition.html): The operation definition publication date\r\n* [SearchParameter](searchparameter.html): The search parameter publication date\r\n* [StructureDefinition](structuredefinition.html): The structure definition publication date\r\n* [StructureMap](structuremap.html): The structure map publication date\r\n* [TerminologyCapabilities](terminologycapabilities.html): The terminology capabilities publication date\r\n* [ValueSet](valueset.html): The value set publication date\r\n"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "context-type-value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-value",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and value assigned to the value set\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "jurisdiction",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-jurisdiction",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Intended jurisdiction for the capability statement\r\n* [CodeSystem](codesystem.html): Intended jurisdiction for the code system\r\n* [ConceptMap](conceptmap.html): Intended jurisdiction for the concept map\r\n* [GraphDefinition](graphdefinition.html): Intended jurisdiction for the graph definition\r\n* [ImplementationGuide](implementationguide.html): Intended jurisdiction for the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Intended jurisdiction for the message definition\r\n* [NamingSystem](namingsystem.html): Intended jurisdiction for the naming system\r\n* [OperationDefinition](operationdefinition.html): Intended jurisdiction for the operation definition\r\n* [SearchParameter](searchparameter.html): Intended jurisdiction for the search parameter\r\n* [StructureDefinition](structuredefinition.html): Intended jurisdiction for the structure definition\r\n* [StructureMap](structuremap.html): Intended jurisdiction for the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Intended jurisdiction for the terminology capabilities\r\n* [ValueSet](valueset.html): Intended jurisdiction for the value set\r\n"
+      },
+      {
+        "name" : "description",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-description",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The description of the capability statement\r\n* [CodeSystem](codesystem.html): The description of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The description of the compartment definition\r\n* [ConceptMap](conceptmap.html): The description of the concept map\r\n* [GraphDefinition](graphdefinition.html): The description of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The description of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The description of the message definition\r\n* [NamingSystem](namingsystem.html): The description of the naming system\r\n* [OperationDefinition](operationdefinition.html): The description of the operation definition\r\n* [SearchParameter](searchparameter.html): The description of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The description of the structure definition\r\n* [StructureMap](structuremap.html): The description of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The description of the terminology capabilities\r\n* [ValueSet](valueset.html): The description of the value set\r\n"
+      },
+      {
+        "name" : "context-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A type of use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A type of use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A type of use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A type of use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A type of use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A type of use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A type of use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A type of use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A type of use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A type of use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A type of use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A type of use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A type of use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A type of use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "experimental",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-experimental",
+        "type" : "token",
+        "documentation" : "For testing purposes, not real usage"
+      },
+      {
+        "name" : "title",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-title",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The human-friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): The human-friendly name of the code system\r\n* [ConceptMap](conceptmap.html): The human-friendly name of the concept map\r\n* [ImplementationGuide](implementationguide.html): The human-friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The human-friendly name of the message definition\r\n* [OperationDefinition](operationdefinition.html): The human-friendly name of the operation definition\r\n* [StructureDefinition](structuredefinition.html): The human-friendly name of the structure definition\r\n* [StructureMap](structuremap.html): The human-friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The human-friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): The human-friendly name of the value set\r\n"
+      },
+      {
+        "name" : "type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-type",
+        "type" : "uri",
+        "documentation" : "Type defined or constrained by this structure"
+      },
+      {
+        "name" : "context-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-quantity",
+        "type" : "quantity",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A quantity- or range-valued use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A quantity- or range-valued use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A quantity- or range-valued use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A quantity- or range-valued use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A quantity- or range-valued use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A quantity- or range-valued use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A quantity- or range-valued use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A quantity- or range-valued use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A quantity- or range-valued use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A quantity- or range-valued use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A quantity- or range-valued use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A quantity- or range-valued use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A quantity- or range-valued use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A quantity- or range-valued use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "path",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-path",
+        "type" : "token",
+        "documentation" : "A path that is constrained in the StructureDefinition"
+      },
+      {
+        "name" : "context",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "base-path",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-base-path",
+        "type" : "token",
+        "documentation" : "Path that identifies the base element"
+      },
+      {
+        "name" : "sd-unique-url",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/StructureDefinition/url-unique",
+        "type" : "composite",
+        "documentation" : "Search parameter for making a structureDefinition unique by URL"
+      },
+      {
+        "name" : "keyword",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-keyword",
+        "type" : "token",
+        "documentation" : "A code for the StructureDefinition"
+      },
+      {
+        "name" : "context-type-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-quantity",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and quantity- or range-based value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and quantity- or range-based value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and quantity- or range-based value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and quantity- or range-based value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and quantity- or range-based value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and quantity- or range-based value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and quantity- or range-based value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and quantity- or range-based value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and quantity- or range-based value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and quantity- or range-based value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and quantity- or range-based value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and quantity- or range-based value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and quantity- or range-based value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and quantity- or range-based value assigned to the value set\r\n"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-identifier",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CodeSystem](codesystem.html): External identifier for the code system\r\n* [ConceptMap](conceptmap.html): External identifier for the concept map\r\n* [MessageDefinition](messagedefinition.html): External identifier for the message definition\r\n* [StructureDefinition](structuredefinition.html): External identifier for the structure definition\r\n* [StructureMap](structuremap.html): External identifier for the structure map\r\n* [ValueSet](valueset.html): External identifier for the value set\r\n"
+      },
+      {
+        "name" : "valueset",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-valueset",
+        "type" : "reference",
+        "documentation" : "A vocabulary binding reference"
+      },
+      {
+        "name" : "kind",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-kind",
+        "type" : "token",
+        "documentation" : "primitive-type | complex-type | resource | logical"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "abstract",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-abstract",
+        "type" : "token",
+        "documentation" : "Whether the structure is abstract"
+      },
+      {
+        "name" : "version",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-version",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The business version of the capability statement\r\n* [CodeSystem](codesystem.html): The business version of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The business version of the compartment definition\r\n* [ConceptMap](conceptmap.html): The business version of the concept map\r\n* [GraphDefinition](graphdefinition.html): The business version of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The business version of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The business version of the message definition\r\n* [OperationDefinition](operationdefinition.html): The business version of the operation definition\r\n* [SearchParameter](searchparameter.html): The business version of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The business version of the structure definition\r\n* [StructureMap](structuremap.html): The business version of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The business version of the terminology capabilities\r\n* [ValueSet](valueset.html): The business version of the value set\r\n"
+      },
+      {
+        "name" : "url",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/StructureDefinition/url",
+        "type" : "uri",
+        "documentation" : "Search parameter for finding a structureDefinition by URL"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "ext-context",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-ext-context",
+        "type" : "token",
+        "documentation" : "The system is the URL for the context-type: e.g. http://hl7.org/fhir/extension-context-type#element|CodeableConcept.text"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-name",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Computationally friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): Computationally friendly name of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Computationally friendly name of the compartment definition\r\n* [ConceptMap](conceptmap.html): Computationally friendly name of the concept map\r\n* [GraphDefinition](graphdefinition.html): Computationally friendly name of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Computationally friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Computationally friendly name of the message definition\r\n* [NamingSystem](namingsystem.html): Computationally friendly name of the naming system\r\n* [OperationDefinition](operationdefinition.html): Computationally friendly name of the operation definition\r\n* [SearchParameter](searchparameter.html): Computationally friendly name of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Computationally friendly name of the structure definition\r\n* [StructureMap](structuremap.html): Computationally friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Computationally friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): Computationally friendly name of the value set\r\n"
+      },
+      {
+        "name" : "publisher",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-publisher",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Name of the publisher of the capability statement\r\n* [CodeSystem](codesystem.html): Name of the publisher of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Name of the publisher of the compartment definition\r\n* [ConceptMap](conceptmap.html): Name of the publisher of the concept map\r\n* [GraphDefinition](graphdefinition.html): Name of the publisher of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Name of the publisher of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Name of the publisher of the message definition\r\n* [NamingSystem](namingsystem.html): Name of the publisher of the naming system\r\n* [OperationDefinition](operationdefinition.html): Name of the publisher of the operation definition\r\n* [SearchParameter](searchparameter.html): Name of the publisher of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Name of the publisher of the structure definition\r\n* [StructureMap](structuremap.html): Name of the publisher of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Name of the publisher of the terminology capabilities\r\n* [ValueSet](valueset.html): Name of the publisher of the value set\r\n"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "derivation",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-derivation",
+        "type" : "token",
+        "documentation" : "specialization | constraint - How relates to base definition"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-status",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The current status of the capability statement\r\n* [CodeSystem](codesystem.html): The current status of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The current status of the compartment definition\r\n* [ConceptMap](conceptmap.html): The current status of the concept map\r\n* [GraphDefinition](graphdefinition.html): The current status of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The current status of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The current status of the message definition\r\n* [NamingSystem](namingsystem.html): The current status of the naming system\r\n* [OperationDefinition](operationdefinition.html): The current status of the operation definition\r\n* [SearchParameter](searchparameter.html): The current status of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The current status of the structure definition\r\n* [StructureMap](structuremap.html): The current status of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The current status of the terminology capabilities\r\n* [ValueSet](valueset.html): The current status of the value set\r\n"
+      },
+      {
+        "name" : "base",
+        "definition" : "http://hl7.org/fhir/SearchParameter/StructureDefinition-base",
+        "type" : "reference",
+        "documentation" : "Definition that this type is constrained/specialized from"
+      }],
+      "operation" : [{
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      },
+      {
+        "name" : "snapshot",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/StructureDefinition-it-snapshot"
+      },
+      {
+        "name" : "generateSnapshot",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/StructureDefinition-t-generateSnapshot"
+      }]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7api.sourceforge.net/hapi-fhir/res/extdefs.html#resourceCount",
+        "valueDecimal" : 145
+      }],
+      "type" : "ValueSet",
+      "profile" : "http://hl7.org/fhir/StructureDefinition/ValueSet",
+      "interaction" : [{
+        "code" : "vread"
+      },
+      {
+        "code" : "read"
+      },
+      {
+        "code" : "search-type"
+      }],
+      "versioning" : "versioned-update",
+      "searchInclude" : ["*"],
+      "searchRevInclude" : ["Appointment:careteamParticipant",
+      "Appointment:intended-audience",
+      "Appointment:responsible",
+      "Appointment:supporting-info",
+      "Communication:based-on",
+      "Communication:careTeamRecipient",
+      "Communication:careCommunicationSenderPractitioner",
+      "Communication:careCommunicationSenderCareTeam",
+      "Communication:careTeamSender",
+      "Communication:communicationAbout",
+      "Communication:communicationParticipant",
+      "Communication:communicationRelatesTo",
+      "Communication:episodeOfCare",
+      "Communication:on-behalf-of",
+      "Communication:part-of",
+      "Consent:data",
+      "Provenance:entity",
+      "Provenance:target",
+      "StructureDefinition:valueset"],
+      "searchParam" : [{
+        "name" : "date",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-date",
+        "type" : "date",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The capability statement publication date\r\n* [CodeSystem](codesystem.html): The code system publication date\r\n* [CompartmentDefinition](compartmentdefinition.html): The compartment definition publication date\r\n* [ConceptMap](conceptmap.html): The concept map publication date\r\n* [GraphDefinition](graphdefinition.html): The graph definition publication date\r\n* [ImplementationGuide](implementationguide.html): The implementation guide publication date\r\n* [MessageDefinition](messagedefinition.html): The message definition publication date\r\n* [NamingSystem](namingsystem.html): The naming system publication date\r\n* [OperationDefinition](operationdefinition.html): The operation definition publication date\r\n* [SearchParameter](searchparameter.html): The search parameter publication date\r\n* [StructureDefinition](structuredefinition.html): The structure definition publication date\r\n* [StructureMap](structuremap.html): The structure map publication date\r\n* [TerminologyCapabilities](terminologycapabilities.html): The terminology capabilities publication date\r\n* [ValueSet](valueset.html): The value set publication date\r\n"
+      },
+      {
+        "name" : "_language",
+        "type" : "string",
+        "documentation" : "The language of the resource"
+      },
+      {
+        "name" : "code",
+        "definition" : "http://hl7.org/fhir/SearchParameter/ValueSet-code",
+        "type" : "token",
+        "documentation" : "This special parameter searches for codes in the value set. See additional notes on the ValueSet resource"
+      },
+      {
+        "name" : "context-type-value",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-value",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and value assigned to the value set\r\n"
+      },
+      {
+        "name" : "_lastUpdated",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+        "type" : "date",
+        "documentation" : "When the resource version last changed"
+      },
+      {
+        "name" : "jurisdiction",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-jurisdiction",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Intended jurisdiction for the capability statement\r\n* [CodeSystem](codesystem.html): Intended jurisdiction for the code system\r\n* [ConceptMap](conceptmap.html): Intended jurisdiction for the concept map\r\n* [GraphDefinition](graphdefinition.html): Intended jurisdiction for the graph definition\r\n* [ImplementationGuide](implementationguide.html): Intended jurisdiction for the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Intended jurisdiction for the message definition\r\n* [NamingSystem](namingsystem.html): Intended jurisdiction for the naming system\r\n* [OperationDefinition](operationdefinition.html): Intended jurisdiction for the operation definition\r\n* [SearchParameter](searchparameter.html): Intended jurisdiction for the search parameter\r\n* [StructureDefinition](structuredefinition.html): Intended jurisdiction for the structure definition\r\n* [StructureMap](structuremap.html): Intended jurisdiction for the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Intended jurisdiction for the terminology capabilities\r\n* [ValueSet](valueset.html): Intended jurisdiction for the value set\r\n"
+      },
+      {
+        "name" : "description",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-description",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The description of the capability statement\r\n* [CodeSystem](codesystem.html): The description of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The description of the compartment definition\r\n* [ConceptMap](conceptmap.html): The description of the concept map\r\n* [GraphDefinition](graphdefinition.html): The description of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The description of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The description of the message definition\r\n* [NamingSystem](namingsystem.html): The description of the naming system\r\n* [OperationDefinition](operationdefinition.html): The description of the operation definition\r\n* [SearchParameter](searchparameter.html): The description of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The description of the structure definition\r\n* [StructureMap](structuremap.html): The description of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The description of the terminology capabilities\r\n* [ValueSet](valueset.html): The description of the value set\r\n"
+      },
+      {
+        "name" : "context-type",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A type of use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A type of use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A type of use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A type of use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A type of use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A type of use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A type of use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A type of use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A type of use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A type of use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A type of use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A type of use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A type of use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A type of use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "title",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-title",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The human-friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): The human-friendly name of the code system\r\n* [ConceptMap](conceptmap.html): The human-friendly name of the concept map\r\n* [ImplementationGuide](implementationguide.html): The human-friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The human-friendly name of the message definition\r\n* [OperationDefinition](operationdefinition.html): The human-friendly name of the operation definition\r\n* [StructureDefinition](structuredefinition.html): The human-friendly name of the structure definition\r\n* [StructureMap](structuremap.html): The human-friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The human-friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): The human-friendly name of the value set\r\n"
+      },
+      {
+        "name" : "reference",
+        "definition" : "http://hl7.org/fhir/SearchParameter/ValueSet-reference",
+        "type" : "uri",
+        "documentation" : "A code system included or excluded in the value set or an imported value set"
+      },
+      {
+        "name" : "context-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-quantity",
+        "type" : "quantity",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A quantity- or range-valued use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A quantity- or range-valued use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A quantity- or range-valued use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A quantity- or range-valued use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A quantity- or range-valued use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A quantity- or range-valued use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A quantity- or range-valued use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A quantity- or range-valued use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A quantity- or range-valued use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A quantity- or range-valued use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A quantity- or range-valued use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A quantity- or range-valued use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A quantity- or range-valued use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A quantity- or range-valued use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context assigned to the value set\r\n"
+      },
+      {
+        "name" : "context-type-quantity",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-context-type-quantity",
+        "type" : "composite",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): A use context type and quantity- or range-based value assigned to the capability statement\r\n* [CodeSystem](codesystem.html): A use context type and quantity- or range-based value assigned to the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): A use context type and quantity- or range-based value assigned to the compartment definition\r\n* [ConceptMap](conceptmap.html): A use context type and quantity- or range-based value assigned to the concept map\r\n* [GraphDefinition](graphdefinition.html): A use context type and quantity- or range-based value assigned to the graph definition\r\n* [ImplementationGuide](implementationguide.html): A use context type and quantity- or range-based value assigned to the implementation guide\r\n* [MessageDefinition](messagedefinition.html): A use context type and quantity- or range-based value assigned to the message definition\r\n* [NamingSystem](namingsystem.html): A use context type and quantity- or range-based value assigned to the naming system\r\n* [OperationDefinition](operationdefinition.html): A use context type and quantity- or range-based value assigned to the operation definition\r\n* [SearchParameter](searchparameter.html): A use context type and quantity- or range-based value assigned to the search parameter\r\n* [StructureDefinition](structuredefinition.html): A use context type and quantity- or range-based value assigned to the structure definition\r\n* [StructureMap](structuremap.html): A use context type and quantity- or range-based value assigned to the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): A use context type and quantity- or range-based value assigned to the terminology capabilities\r\n* [ValueSet](valueset.html): A use context type and quantity- or range-based value assigned to the value set\r\n"
+      },
+      {
+        "name" : "identifier",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-identifier",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CodeSystem](codesystem.html): External identifier for the code system\r\n* [ConceptMap](conceptmap.html): External identifier for the concept map\r\n* [MessageDefinition](messagedefinition.html): External identifier for the message definition\r\n* [StructureDefinition](structuredefinition.html): External identifier for the structure definition\r\n* [StructureMap](structuremap.html): External identifier for the structure map\r\n* [ValueSet](valueset.html): External identifier for the value set\r\n"
+      },
+      {
+        "name" : "_security",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-security",
+        "type" : "token",
+        "documentation" : "Security Labels applied to this resource"
+      },
+      {
+        "name" : "version",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-version",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The business version of the capability statement\r\n* [CodeSystem](codesystem.html): The business version of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The business version of the compartment definition\r\n* [ConceptMap](conceptmap.html): The business version of the concept map\r\n* [GraphDefinition](graphdefinition.html): The business version of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The business version of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The business version of the message definition\r\n* [OperationDefinition](operationdefinition.html): The business version of the operation definition\r\n* [SearchParameter](searchparameter.html): The business version of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The business version of the structure definition\r\n* [StructureMap](structuremap.html): The business version of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The business version of the terminology capabilities\r\n* [ValueSet](valueset.html): The business version of the value set\r\n"
+      },
+      {
+        "name" : "url",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-url",
+        "type" : "uri",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The uri that identifies the capability statement\r\n* [CodeSystem](codesystem.html): The uri that identifies the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The uri that identifies the compartment definition\r\n* [ConceptMap](conceptmap.html): The uri that identifies the concept map\r\n* [GraphDefinition](graphdefinition.html): The uri that identifies the graph definition\r\n* [ImplementationGuide](implementationguide.html): The uri that identifies the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The uri that identifies the message definition\r\n* [OperationDefinition](operationdefinition.html): The uri that identifies the operation definition\r\n* [SearchParameter](searchparameter.html): The uri that identifies the search parameter\r\n* [StructureDefinition](structuredefinition.html): The uri that identifies the structure definition\r\n* [StructureMap](structuremap.html): The uri that identifies the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The uri that identifies the terminology capabilities\r\n* [ValueSet](valueset.html): The uri that identifies the value set\r\n"
+      },
+      {
+        "name" : "expansion",
+        "definition" : "http://hl7.org/fhir/SearchParameter/ValueSet-expansion",
+        "type" : "uri",
+        "documentation" : "Identifies the value set expansion (business identifier)"
+      },
+      {
+        "name" : "_filter",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a filter"
+      },
+      {
+        "name" : "_profile",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-profile",
+        "type" : "uri",
+        "documentation" : "Profiles this resource claims to conform to"
+      },
+      {
+        "name" : "_tag",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-tag",
+        "type" : "token",
+        "documentation" : "Tags applied to this resource"
+      },
+      {
+        "name" : "_has",
+        "type" : "string",
+        "documentation" : "Return resources linked to by the given target"
+      },
+      {
+        "name" : "name",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-name",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Computationally friendly name of the capability statement\r\n* [CodeSystem](codesystem.html): Computationally friendly name of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Computationally friendly name of the compartment definition\r\n* [ConceptMap](conceptmap.html): Computationally friendly name of the concept map\r\n* [GraphDefinition](graphdefinition.html): Computationally friendly name of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Computationally friendly name of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Computationally friendly name of the message definition\r\n* [NamingSystem](namingsystem.html): Computationally friendly name of the naming system\r\n* [OperationDefinition](operationdefinition.html): Computationally friendly name of the operation definition\r\n* [SearchParameter](searchparameter.html): Computationally friendly name of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Computationally friendly name of the structure definition\r\n* [StructureMap](structuremap.html): Computationally friendly name of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Computationally friendly name of the terminology capabilities\r\n* [ValueSet](valueset.html): Computationally friendly name of the value set\r\n"
+      },
+      {
+        "name" : "publisher",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-publisher",
+        "type" : "string",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): Name of the publisher of the capability statement\r\n* [CodeSystem](codesystem.html): Name of the publisher of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): Name of the publisher of the compartment definition\r\n* [ConceptMap](conceptmap.html): Name of the publisher of the concept map\r\n* [GraphDefinition](graphdefinition.html): Name of the publisher of the graph definition\r\n* [ImplementationGuide](implementationguide.html): Name of the publisher of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): Name of the publisher of the message definition\r\n* [NamingSystem](namingsystem.html): Name of the publisher of the naming system\r\n* [OperationDefinition](operationdefinition.html): Name of the publisher of the operation definition\r\n* [SearchParameter](searchparameter.html): Name of the publisher of the search parameter\r\n* [StructureDefinition](structuredefinition.html): Name of the publisher of the structure definition\r\n* [StructureMap](structuremap.html): Name of the publisher of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): Name of the publisher of the terminology capabilities\r\n* [ValueSet](valueset.html): Name of the publisher of the value set\r\n"
+      },
+      {
+        "name" : "_source",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-source",
+        "type" : "uri",
+        "documentation" : "Identifies where the resource comes from"
+      },
+      {
+        "name" : "_id",
+        "definition" : "http://hl7.org/fhir/SearchParameter/Resource-id",
+        "type" : "token",
+        "documentation" : "Logical id of this artifact"
+      },
+      {
+        "name" : "_content",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's data using a fulltext search"
+      },
+      {
+        "name" : "_text",
+        "type" : "string",
+        "documentation" : "Search the contents of the resource's narrative using a fulltext search"
+      },
+      {
+        "name" : "status",
+        "definition" : "http://hl7.org/fhir/SearchParameter/conformance-status",
+        "type" : "token",
+        "documentation" : "Multiple Resources: \r\n\r\n* [CapabilityStatement](capabilitystatement.html): The current status of the capability statement\r\n* [CodeSystem](codesystem.html): The current status of the code system\r\n* [CompartmentDefinition](compartmentdefinition.html): The current status of the compartment definition\r\n* [ConceptMap](conceptmap.html): The current status of the concept map\r\n* [GraphDefinition](graphdefinition.html): The current status of the graph definition\r\n* [ImplementationGuide](implementationguide.html): The current status of the implementation guide\r\n* [MessageDefinition](messagedefinition.html): The current status of the message definition\r\n* [NamingSystem](namingsystem.html): The current status of the naming system\r\n* [OperationDefinition](operationdefinition.html): The current status of the operation definition\r\n* [SearchParameter](searchparameter.html): The current status of the search parameter\r\n* [StructureDefinition](structuredefinition.html): The current status of the structure definition\r\n* [StructureMap](structuremap.html): The current status of the structure map\r\n* [TerminologyCapabilities](terminologycapabilities.html): The current status of the terminology capabilities\r\n* [ValueSet](valueset.html): The current status of the value set\r\n"
+      }],
+      "operation" : [{
+        "name" : "validate-code",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/ValueSet-it-validate-code"
+      },
+      {
+        "name" : "invalidate-expansion",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/ValueSet-i-invalidate-expansion"
+      },
+      {
+        "name" : "expand",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/ValueSet-it-expand"
+      },
+      {
+        "name" : "validate",
+        "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Multi-it-validate"
+      }]
+    }],
+    "operation" : [{
+      "name" : "export-poll-status",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/-s-export-poll-status"
+    },
+    {
+      "name" : "export",
+      "definition" : "http://hl7.org/fhir/uv/bulkdata/OperationDefinition/export"
+    },
+    {
+      "name" : "migrate",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/-s-migrate"
+    },
+    {
+      "name" : "reindex",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/-s-reindex"
+    },
+    {
+      "name" : "process-message",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/-s-process-message"
+    },
+    {
+      "name" : "meta",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/AppointmentBinary-its-meta"
+    },
+    {
+      "name" : "get-resource-counts",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-resource-counts",
+      "documentation" : "Provides the number of resources currently stored on the server, broken down by resource type"
+    },
+    {
+      "name" : "expunge",
+      "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/Binary-its-expunge"
+    }]
+  }]
+}
+
+```

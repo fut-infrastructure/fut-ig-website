@@ -1,4 +1,4 @@
-# Sundhedsvæsenets Organisationsregister (SOR) - eHealth Infrastructure v11.0.2
+# Sundhedsvæsenets Organisationsregister (SOR) - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/sor | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/sor | *Version*:11.0.3 |
 | Active as of 2017-01-01 | *Computable Name*:Sundhedsvæsenets Organisationsregister (SOR) |
 
  
@@ -28,7 +28,7 @@ SOR is provided by the Danish Health Data Authority under the Danish Ministry of
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.2"
+    "valueString" : "11.0.3"
   }],
   "name" : "Sundhedsvæsenets Organisationsregister (SOR)",
   "status" : "active",

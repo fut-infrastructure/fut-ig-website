@@ -1,4 +1,4 @@
-# GET Binary Export - eHealth Infrastructure v11.0.2
+# GET Binary Export - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * **GET Binary Export**

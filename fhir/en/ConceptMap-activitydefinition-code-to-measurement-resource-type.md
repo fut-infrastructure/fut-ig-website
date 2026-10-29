@@ -1,4 +1,4 @@
-# Activitydefinition-code to measurement resource type - eHealth Infrastructure v11.0.2
+# Activitydefinition-code to measurement resource type - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type | *Version*:11.0.3 |
 | Active as of 2023-06-28 | *Computable Name*:activitydefinition-code-to-measurement-resource-type |
 
  
@@ -23,7 +23,7 @@ The map controls what type of measurement resource is expected for a given activ
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-measurement-resource-type",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-measurement-resource-type",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "activitydefinition-code-to-measurement-resource-type",
   "title" : "Activitydefinition-code to measurement resource type",
   "status" : "active",
@@ -308,6 +308,14 @@ The map controls what type of measurement resource is expected for a given activ
       }]
     },
     {
+      "code" : "ZZ5048",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
       "code" : "ZZ7011",
       "display" : "Klinisk foto",
       "target" : [{
@@ -399,6 +407,58 @@ The map controls what type of measurement resource is expected for a given activ
     {
       "code" : "94083-3",
       "display" : "Wound volume",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    }]
+  },
+  {
+    "source" : "http://ehealth.sundhed.dk/cs/mds-codes",
+    "target" : "http://hl7.org/fhir/resource-types",
+    "element" : [{
+      "code" : "MDS-UPDRS-I",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IA",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IB",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-II",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-III",
+      "target" : [{
+        "code" : "Observation",
+        "display" : "Observation",
+        "equivalence" : "relatedto"
+      }]
+    },
+    {
+      "code" : "MDS-UPDRS-IV",
       "target" : [{
         "code" : "Observation",
         "display" : "Observation",

@@ -1,4 +1,4 @@
-# Suggest care teams - eHealth Infrastructure v11.0.2
+# Suggest care teams - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams | *Version*:11.0.3 |
 | Active as of 2026-10-29 | *Computable Name*:suggest-care-teams |
 
  
@@ -23,12 +23,12 @@ Suggest care teams matching the conditions required by the care plan on either a
   "resourceType" : "OperationDefinition",
   "id" : "CarePlan-i-suggest-care-teams",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/CarePlan-i-suggest-care-teams",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "suggest-care-teams",
   "title" : "Suggest care teams",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T09:18:06+00:00",
+  "date" : "2026-10-29T11:52:17+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

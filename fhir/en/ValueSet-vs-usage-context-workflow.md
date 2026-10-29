@@ -1,4 +1,4 @@
-# Usage Context Workflow - eHealth Infrastructure v11.0.2
+# Usage Context Workflow - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-workflow | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-workflow | *Version*:11.0.3 |
 | Active as of 2026-01-19 | *Computable Name*:usageContextWorkflow |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "vs-usage-context-workflow",
   "url" : "http://ehealth.sundhed.dk/vs/usage-context-workflow",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "usageContextWorkflow",
   "title" : "Usage Context Workflow",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Overview usage mode - eHealth Infrastructure v11.0.2
+# Overview usage mode - eHealth Infrastructure v11.0.3
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/overviewUsageMode | *Version*:11.0.2 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/overviewUsageMode | *Version*:11.0.3 |
 | Active as of 2022-03-17 | *Computable Name*:overviewUsageMode |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-overviewUsageMode",
   "url" : "http://ehealth.sundhed.dk/cs/overviewUsageMode",
-  "version" : "11.0.2",
+  "version" : "11.0.3",
   "name" : "overviewUsageMode",
   "title" : "Overview usage mode",
   "status" : "active",
