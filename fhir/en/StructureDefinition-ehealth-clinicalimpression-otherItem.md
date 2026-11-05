@@ -1,4 +1,4 @@
-# Other item - eHealth Infrastructure v11.0.3
+# Other item - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-otherItem | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-clinicalimpression-otherItem |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-otherItem | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-clinicalimpression-otherItem |
 
 Investigation item for Aggregated Triage resources so they can be approved.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-clinicali
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-clinicalimpression-otherItem",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-otherItem",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-clinicalimpression-otherItem",
   "title" : "Other item",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# Person name lookup - eHealth Infrastructure v11.0.3
+# Person name lookup - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-person-match | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-person-match | *Version*:11.0.4 |
 | Active as of 2019-10-16 | *Computable Name*:Person name lookup |
 
  
@@ -23,7 +23,7 @@ This operation is used to lookup a citizen. It first attempts lookup on the serv
   "resourceType" : "OperationDefinition",
   "id" : "ehealth-person-match",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-person-match",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "Person name lookup",
   "status" : "active",
   "kind" : "operation",

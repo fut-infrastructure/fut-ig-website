@@ -1,4 +1,4 @@
-# Fetch patient total - eHealth Infrastructure v11.0.3
+# Fetch patient total - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-total | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:fetch-patient-total |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-total | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:fetch-patient-total |
 
  
 
@@ -47,12 +47,12 @@ This report is grouped by EpsiodeOfCare. Each group is returned in a separate JS
   "resourceType" : "OperationDefinition",
   "id" : "-s-fetch-patient-total",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-fetch-patient-total",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "fetch-patient-total",
   "title" : "Fetch patient total",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

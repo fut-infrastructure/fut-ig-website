@@ -6,7 +6,7 @@
       "name": "Creative Commons Zero v1.0 Universal",
       "url": "http://spdx.org/licenses/CC0-1.0.html"
     },
-    "version": "11.0.3",
+    "version": "11.0.4",
     "contact": {
       "name": "Den telemedicinske infrastruktur (eHealth Infrastructure)",
       "url": "http://ehealth.sundhed.dk"
@@ -4700,6 +4700,15 @@
             }
           },
           {
+            "name": "date",
+            "in": "query",
+            "description": "Search parameter for finding related persons based on period",
+            "schema": {
+              "type": "string",
+              "pattern": "([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\\.[0-9]+)?(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?"
+            }
+          },
+          {
             "name": "relatedPersonCPRIdentifier",
             "in": "query",
             "description": "Search parameter for RelatedPerson DK-Core CPR identifier",
@@ -7982,6 +7991,47 @@
             }
           }
         },
+        "responses": {
+          "default": {
+            "description": "Error, with details",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/OperationOutcome"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/OperationOutcome.xsd"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Operation response",
+            "content": {
+              "application/fhir+json": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/fhir.schema.json#/definitions/Parameters"
+                }
+              },
+              "application/fhir+xml": {
+                "schema": {
+                  "$ref": "https://hl7.org/fhir/R4/Parameters.xsd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RelatedPerson/$create-managed-related-person": {
+      "summary": "Operation $create-managed-related-person on type RelatedPerson",
+      "description": "Operation $create-managed-related-person on type RelatedPerson",
+      "get": {
+        "summary": "$create-managed-related-person on type RelatedPerson",
+        "description": "Creates a managed RelatedPerson resource on the server and returns it. The related person\u0027s master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security \u003d http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, any tags to apply, and optionally the period the RelatedPerson is active for. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation.",
+        "operationId": "op-create-managed-related-person-RelatedPerson",
         "responses": {
           "default": {
             "description": "Error, with details",

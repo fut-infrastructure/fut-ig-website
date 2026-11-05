@@ -1,4 +1,4 @@
-# Days Of Week - eHealth Infrastructure v11.0.3
+# Days Of Week - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/days-of-week | *Version*:11.0.3 | |
+| *Official URL*:http://hl7.org/fhir/days-of-week | *Version*:11.0.4 | |
 | * Standards status: *[Normative](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 5 | *Computable Name*:DaysOfWeek |
 
  
@@ -47,7 +47,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueInteger" : 5
   }],
   "url" : "http://hl7.org/fhir/days-of-week",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "DaysOfWeek",
   "title" : "Days Of Week",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Answer significance - eHealth Infrastructure v11.0.3
+# Answer significance - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-answerSignificance | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-questionnaire-answerSignificance |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-answerSignificance | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-questionnaire-answerSignificance |
 
 Defines the Answer significance for an answer option in the questionnaire.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-questionn
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnaire-answerSignificance",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnaire-answerSignificance",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-questionnaire-answerSignificance",
   "title" : "Answer significance",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

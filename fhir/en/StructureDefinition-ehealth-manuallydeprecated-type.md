@@ -1,4 +1,4 @@
-# Ehealth Document manually deprecated - eHealth Infrastructure v11.0.3
+# Ehealth Document manually deprecated - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-manuallydeprecated-type | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-manuallydeprecated-type |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-manuallydeprecated-type | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-manuallydeprecated-type |
 
 Ehealth Document manually deprecated
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-manuallyd
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-manuallydeprecated-type",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-manuallydeprecated-type",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-manuallydeprecated-type",
   "title" : "Ehealth Document manually deprecated",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

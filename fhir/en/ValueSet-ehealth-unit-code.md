@@ -1,4 +1,4 @@
-# eHealthUnitCodes - eHealth Infrastructure v11.0.3
+# eHealthUnitCodes - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-unit-code | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-unit-code | *Version*:11.0.4 |
 | Active as of 2020-10-19 | *Computable Name*:eHealthUnitCodes |
 
  
@@ -37,7 +37,7 @@ Value set of Unit Codes
   "resourceType" : "ValueSet",
   "id" : "ehealth-unit-code",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-unit-code",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "eHealthUnitCodes",
   "title" : "eHealthUnitCodes",
   "status" : "active",

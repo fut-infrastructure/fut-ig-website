@@ -1,4 +1,4 @@
-# Topic Type - eHealth Infrastructure v11.0.3
+# Topic Type - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/topic-type | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/topic-type | *Version*:11.0.4 |
 | Active as of 2019-01-29 | *Computable Name*:TopicType |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-topic-type",
   "url" : "http://ehealth.sundhed.dk/cs/topic-type",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "TopicType",
   "title" : "Topic Type",
   "status" : "active",

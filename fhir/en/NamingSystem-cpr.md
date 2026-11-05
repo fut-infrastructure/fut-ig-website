@@ -1,4 +1,4 @@
-# Danish civil registration system - CPR - eHealth Infrastructure v11.0.3
+# Danish civil registration system - CPR - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/cpr | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/NamingSystem/cpr | *Version*:11.0.4 |
 | Active as of 1968-04-02 | *Computable Name*:Danish civil registration system - CPR |
 
  
@@ -28,7 +28,7 @@ The Danish civil registration system ("CPR") encompasses basic personal data abo
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
-    "valueString" : "11.0.3"
+    "valueString" : "11.0.4"
   }],
   "name" : "Danish civil registration system - CPR",
   "status" : "active",

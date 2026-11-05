@@ -1,4 +1,4 @@
-# Usage Context for Tele Wound Body Site - eHealth Infrastructure v11.0.3
+# Usage Context for Tele Wound Body Site - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-body-site-tele-wound | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/usage-context-body-site-tele-wound | *Version*:11.0.4 |
 | Active as of 2026-01-19 | *Computable Name*:bodyUsageContextSiteTeleWound |
 
  
@@ -37,7 +37,7 @@ Value set of body site for tele wound domain.
   "resourceType" : "ValueSet",
   "id" : "usage-context-body-site-tele-wound",
   "url" : "http://ehealth.sundhed.dk/vs/usage-context-body-site-tele-wound",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "bodyUsageContextSiteTeleWound",
   "title" : "Usage Context for Tele Wound Body Site",
   "status" : "active",

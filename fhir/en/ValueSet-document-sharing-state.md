@@ -1,4 +1,4 @@
-# Document Sharing State - eHealth Infrastructure v11.0.3
+# Document Sharing State - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/document-sharing-state | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/document-sharing-state | *Version*:11.0.4 |
 | Active as of 2024-12-03 | *Computable Name*:DocumentSharingState |
 
  
@@ -37,7 +37,7 @@ Document Sharing State
   "resourceType" : "ValueSet",
   "id" : "document-sharing-state",
   "url" : "http://ehealth.sundhed.dk/vs/document-sharing-state",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "DocumentSharingState",
   "title" : "Document Sharing State",
   "status" : "active",

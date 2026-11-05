@@ -1,4 +1,4 @@
-# Create Managed Related Person - eHealth Infrastructure v11.0.3
+# Create Managed Related Person - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,11 +8,11 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed | *Version*:11.0.4 |
 | Active as of 2026-07-21 | *Computable Name*:Create Managed Related Person |
 
  
-Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, and any tags to apply. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation. 
+Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, any tags to apply, and optionally the period the RelatedPerson is active for. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation. 
 
 
 
@@ -23,7 +23,7 @@ Creates a managed RelatedPerson resource on the server and returns it. The relat
   "resourceType" : "OperationDefinition",
   "id" : "ehealth-relatedperson-create-managed",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "Create Managed Related Person",
   "status" : "active",
   "kind" : "operation",
@@ -36,7 +36,7 @@ Creates a managed RelatedPerson resource on the server and returns it. The relat
       "value" : "http://ehealth.sundhed.dk"
     }]
   }],
-  "description" : "Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, and any tags to apply. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation.",
+  "description" : "Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, any tags to apply, and optionally the period the RelatedPerson is active for. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -80,6 +80,14 @@ Creates a managed RelatedPerson resource on the server and returns it. The relat
     "max" : "*",
     "documentation" : "Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution.",
     "type" : "Coding"
+  },
+  {
+    "name" : "period",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "The period which the RelatedPerson is active for. When the RelatedPerson is created, `active` is set from the period: it is true when today (Danish time) lies within the period, where an absent start or end leaves that side open.",
+    "type" : "Period"
   },
   {
     "name" : "return",

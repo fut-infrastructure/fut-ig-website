@@ -1,4 +1,4 @@
-# Purpose - eHealth Infrastructure v11.0.3
+# Purpose - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-purpose | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-purpose |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-purpose | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-purpose |
 
 Why this is defined
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-purpose.c
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-purpose",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-purpose",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-purpose",
   "title" : "Purpose",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

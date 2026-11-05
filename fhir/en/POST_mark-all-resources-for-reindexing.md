@@ -1,4 +1,4 @@
-# POST Mark All Resources for Reindexing - eHealth Infrastructure v11.0.3
+# POST Mark All Resources for Reindexing - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * **POST Mark All Resources for Reindexing**

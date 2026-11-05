@@ -1,4 +1,4 @@
-# Media Usage Mode - eHealth Infrastructure v11.0.3
+# Media Usage Mode - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/media-usage-mode | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/media-usage-mode | *Version*:11.0.4 |
 | Active as of 2024-10-28 | *Computable Name*:MediaUsageMode |
 
  
@@ -37,7 +37,7 @@ Media Usage Mode
   "resourceType" : "ValueSet",
   "id" : "ehealth-media-usage-mode",
   "url" : "http://ehealth.sundhed.dk/vs/media-usage-mode",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "MediaUsageMode",
   "title" : "Media Usage Mode",
   "status" : "active",

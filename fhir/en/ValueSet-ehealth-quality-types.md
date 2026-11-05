@@ -1,4 +1,4 @@
-# Quality Types - eHealth Infrastructure v11.0.3
+# Quality Types - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/quality-types | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/quality-types | *Version*:11.0.4 |
 | Active as of 2019-02-08 | *Computable Name*:QualityTypes |
 
  
@@ -37,7 +37,7 @@ Types of quality; e.g. situation quality, usability quality, device quality.
   "resourceType" : "ValueSet",
   "id" : "ehealth-quality-types",
   "url" : "http://ehealth.sundhed.dk/vs/quality-types",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "QualityTypes",
   "title" : "Quality Types",
   "status" : "active",

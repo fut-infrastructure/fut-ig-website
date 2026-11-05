@@ -1,4 +1,4 @@
-# Wound Conditions - eHealth Infrastructure v11.0.3
+# Wound Conditions - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/wound-conditions | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/wound-conditions | *Version*:11.0.4 |
 | Active as of 2026-02-10 | *Computable Name*:WoundConditions |
 
  
@@ -37,7 +37,7 @@ Wound conditions.
   "resourceType" : "ValueSet",
   "id" : "ehealth-wound-conditions",
   "url" : "http://ehealth.sundhed.dk/vs/wound-conditions",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "WoundConditions",
   "title" : "Wound Conditions",
   "status" : "active",

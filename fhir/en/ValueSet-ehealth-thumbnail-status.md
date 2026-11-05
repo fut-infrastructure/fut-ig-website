@@ -1,4 +1,4 @@
-# Thumbnail Status - eHealth Infrastructure v11.0.3
+# Thumbnail Status - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/thumbnail-status | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/thumbnail-status | *Version*:11.0.4 |
 | Active as of 2024-10-28 | *Computable Name*:ThumbnailStatus |
 
  
@@ -37,7 +37,7 @@ Thumbnail status is a value set for the status of low resolution media represent
   "resourceType" : "ValueSet",
   "id" : "ehealth-thumbnail-status",
   "url" : "http://ehealth.sundhed.dk/vs/thumbnail-status",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ThumbnailStatus",
   "title" : "Thumbnail Status",
   "status" : "active",

@@ -1,4 +1,4 @@
-# MessageCategory - eHealth Infrastructure v11.0.3
+# MessageCategory - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/message-category | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/message-category | *Version*:11.0.4 |
 | Active as of 2019-02-08 | *Computable Name*:MessageCategory |
 
  
@@ -38,7 +38,7 @@ The set of possible message types
   "resourceType" : "ValueSet",
   "id" : "message-category",
   "url" : "http://ehealth.sundhed.dk/vs/message-category",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "MessageCategory",
   "status" : "active",
   "experimental" : true,

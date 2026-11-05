@@ -1,4 +1,4 @@
-# Device Types - eHealth Infrastructure v11.0.3
+# Device Types - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-types | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-types | *Version*:11.0.4 |
 | Active as of 2019-02-08 | *Computable Name*:DeviceTypes |
 
  
@@ -38,7 +38,7 @@ Device Types value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-types",
   "url" : "http://ehealth.sundhed.dk/vs/device-types",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "DeviceTypes",
   "title" : "Device Types",
   "status" : "active",

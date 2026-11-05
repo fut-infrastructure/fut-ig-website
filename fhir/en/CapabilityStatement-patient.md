@@ -1,4 +1,4 @@
-# patient - eHealth Infrastructure v11.0.3
+# patient - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient | *Version*:11.0.4 |
 | Active as of 2026-02-25 | *Computable Name*:patient |
 
  [Raw OpenAPI-Swagger Definition file](../patient.openapi.json) | [Download](../patient.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "patient",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/patient",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "patient",
   "status" : "active",
   "date" : "2026-02-25T23:20:08.891+00:00",
@@ -2356,6 +2356,12 @@
         "documentation" : "The relationship between the patient and the relatedperson"
       },
       {
+        "name" : "date",
+        "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/date",
+        "type" : "date",
+        "documentation" : "Search parameter for finding related persons based on period"
+      },
+      {
         "name" : "relatedPersonCPRIdentifier",
         "definition" : "http://ehealth.sundhed.dk/fhir/SearchParameter/RelatedPerson/cprIdentifier",
         "type" : "token",
@@ -2473,6 +2479,11 @@
       {
         "name" : "updateRelatedPersonWithSKRSData",
         "definition" : "https://patient.ehealth.sundhed.dk/fhir/OperationDefinition/RelatedPerson-t-updateRelatedPersonWithSKRSData"
+      },
+      {
+        "name" : "create-managed-related-person",
+        "definition" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed",
+        "documentation" : "Creates a managed RelatedPerson seeded from the national registry"
       }]
     },
     {

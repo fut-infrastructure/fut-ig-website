@@ -1,4 +1,4 @@
-# Trigger Enablement Code - eHealth Infrastructure v11.0.3
+# Trigger Enablement Code - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/trigger-enablement-code | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/trigger-enablement-code | *Version*:11.0.4 |
 | Active as of 2021-10-22 | *Computable Name*:triggerEnablementCode |
 
  
@@ -37,7 +37,7 @@ ServiceRequest trigger enablement value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-trigger-enablement-code",
   "url" : "http://ehealth.sundhed.dk/vs/trigger-enablement-code",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "triggerEnablementCode",
   "title" : "Trigger Enablement Code",
   "status" : "active",

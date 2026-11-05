@@ -1,4 +1,4 @@
-# device - eHealth Infrastructure v11.0.3
+# device - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/device | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/CapabilityStatement/device | *Version*:11.0.4 |
 | Active as of 2026-10-16 | *Computable Name*:device |
 
  [Raw OpenAPI-Swagger Definition file](../device.openapi.json) | [Download](../device.openapi.json) 
@@ -22,7 +22,7 @@
   "resourceType" : "CapabilityStatement",
   "id" : "device",
   "url" : "http://ehealth.sundhed.dk/fhir/CapabilityStatement/device",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "device",
   "status" : "active",
   "date" : "2026-10-16T09:31:53.578+00:00",

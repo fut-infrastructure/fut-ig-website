@@ -1,4 +1,4 @@
-# responsible - eHealth Infrastructure v11.0.3
+# responsible - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/responsible | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/responsible | *Version*:11.0.4 |
 | Active as of 2021-05-06 | *Computable Name*:responsible |
 
  
@@ -23,7 +23,7 @@ Search parameter for finding responsible entity on Appointment
   "resourceType" : "SearchParameter",
   "id" : "ehealth-appointment-search-responsible",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Appointment/responsible",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "responsible",
   "status" : "active",
   "date" : "2021-05-06T08:31:20+00:00",

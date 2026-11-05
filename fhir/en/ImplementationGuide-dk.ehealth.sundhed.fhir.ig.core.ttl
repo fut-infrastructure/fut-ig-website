@@ -14,11 +14,11 @@
      fhir:Narrative.div "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide dk.ehealth.sundhed.fhir.ig.core</b></p><a name=\"dk.ehealth.sundhed.fhir.ig.core\"> </a><a name=\"hcdk.ehealth.sundhed.fhir.ig.core\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>eHealth Infrastructure</h2><p>The official URL for this implementation guide is: </p><pre>http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core</pre><div><p>The Danish eHealth Infrastructure Implementation Guide defines a set of FHIR profiles with extensions and bindings needed to create interoperable, quality-focused applications.</p>\n</div></div>"
   ] ;
   fhir:ImplementationGuide.url [ fhir:value "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core"] ;
-  fhir:ImplementationGuide.version [ fhir:value "11.0.3"] ;
+  fhir:ImplementationGuide.version [ fhir:value "11.0.4"] ;
   fhir:ImplementationGuide.name [ fhir:value "eHealth Infrastructure"] ;
   fhir:ImplementationGuide.title [ fhir:value "eHealth Infrastructure"] ;
   fhir:ImplementationGuide.status [ fhir:value "active"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-29T11:52:17+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-05T08:53:52+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -2298,7 +2298,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/ehealth-relatedperson-create-managed" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Create Managed Related Person" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, and any tags to apply. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, any tags to apply, and optionally the period the RelatedPerson is active for. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;

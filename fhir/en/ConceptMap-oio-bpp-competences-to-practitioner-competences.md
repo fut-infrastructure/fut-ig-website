@@ -1,4 +1,4 @@
-# OIO BPP competences to eHealth Practitioner competences role mapping - eHealth Infrastructure v11.0.3
+# OIO BPP competences to eHealth Practitioner competences role mapping - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/oio-bpp-competences-to-practitioner-competences | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/oio-bpp-competences-to-practitioner-competences | *Version*:11.0.4 |
 | Active as of 2019-12-02 | *Computable Name*:OIOBPPCompetencesToPractitionerCompetencesMapping |
 
 
@@ -20,7 +20,7 @@
   "resourceType" : "ConceptMap",
   "id" : "oio-bpp-competences-to-practitioner-competences",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/oio-bpp-competences-to-practitioner-competences",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "OIOBPPCompetencesToPractitionerCompetencesMapping",
   "title" : "OIO BPP competences to eHealth Practitioner competences role mapping",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Device Calibration Period - eHealth Infrastructure v11.0.3
+# Device Calibration Period - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-calibration-period | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-calibration-period | *Version*:11.0.4 |
 | Active as of 2019-09-16 | *Computable Name*:DeviceCalibrationPeriod |
 
  
@@ -37,7 +37,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-calibration-period",
   "url" : "http://ehealth.sundhed.dk/vs/device-calibration-period",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "DeviceCalibrationPeriod",
   "title" : "Device Calibration Period",
   "status" : "active",

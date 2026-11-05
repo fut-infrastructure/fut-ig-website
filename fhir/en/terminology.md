@@ -1,4 +1,4 @@
-# Terminology - eHealth Infrastructure v11.0.3
+# Terminology - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * **Terminology**

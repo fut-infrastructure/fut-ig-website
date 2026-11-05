@@ -1,4 +1,4 @@
-# Device Platform - eHealth Infrastructure v11.0.3
+# Device Platform - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/device-platform | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/device-platform | *Version*:11.0.4 |
 | Active as of 2026-05-07 | *Computable Name*:DevicePlatform |
 
  
@@ -37,7 +37,7 @@ Device Platform value set.
   "resourceType" : "ValueSet",
   "id" : "ehealth-device-platform",
   "url" : "http://ehealth.sundhed.dk/vs/device-platform",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "DevicePlatform",
   "title" : "Device Platform",
   "status" : "active",

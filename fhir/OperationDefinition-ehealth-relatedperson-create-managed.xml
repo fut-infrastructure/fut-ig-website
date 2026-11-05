@@ -7,11 +7,12 @@
 </div></td></tr><tr><td>IN</td><td>patient</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></td><td/><td><div><p>Reference to the patient the related person is related to.</p>
 </div></td></tr><tr><td>IN</td><td>relationship</td><td/><td>1..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td/><td><div><p>One or more relationships the related person has to the patient. Bound to the RelationshipTypes value set. POWATT and PARAUTH are rejected.</p>
 </div></td></tr><tr><td>IN</td><td>tag</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td/><td><div><p>Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution.</p>
+</div></td></tr><tr><td>IN</td><td>period</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#Period">Period</a></td><td/><td><div><p>The period which the RelatedPerson is active for. When the RelatedPerson is created, <code>active</code> is set from the period: it is true when today (Danish time) lies within the period, where an absent start or end leaves that side open.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/relatedperson.html">RelatedPerson</a></td><td/><td><div><p>The managed RelatedPerson resource that has been created on the server.</p>
 </div></td></tr></table></div>
   </text>
   <url value="http://ehealth.sundhed.dk/fhir/OperationDefinition/ehealth-relatedperson-create-managed"/>
-  <version value="11.0.3"/>
+  <version value="11.0.4"/>
   <name value="Create Managed Related Person"/>
   <status value="active"/>
   <kind value="operation"/>
@@ -24,7 +25,7 @@
       <value value="http://ehealth.sundhed.dk"/>
     </telecom>
   </contact>
-  <description value="Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, and any tags to apply. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation."/>
+  <description value="Creates a managed RelatedPerson resource on the server and returns it. The related person's master data (official name, gender, date of birth, home address, and name and address protection) is seeded from the national registry using the supplied CPR number, and the resource is marked with `meta.security = http://ehealth.sundhed.dk/cs/data-governance|managed` so that the infrastructure keeps its master data synchronized and locked against client edits. The caller supplies the patient the related person is related to, one or more relationships, any tags to apply, and optionally the period the RelatedPerson is active for. The operation is not idempotent: each call creates a new RelatedPerson, and multiple managed RelatedPerson resources may exist for the same related-person CPR and patient. The relationship codes POWATT (power of attorney holder) and PARAUTH (holder of parental authority) are reserved for related persons that the infrastructure creates automatically and are rejected by this operation."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -68,6 +69,14 @@
     <max value="*"/>
     <documentation value="Tags to apply to the created RelatedPerson, including the co-existence tag identifying the client solution."/>
     <type value="Coding"/>
+  </parameter>
+  <parameter>
+    <name value="period"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The period which the RelatedPerson is active for. When the RelatedPerson is created, `active` is set from the period: it is true when today (Danish time) lies within the period, where an absent start or end leaves that side open."/>
+    <type value="Period"/>
   </parameter>
   <parameter>
     <name value="return"/>

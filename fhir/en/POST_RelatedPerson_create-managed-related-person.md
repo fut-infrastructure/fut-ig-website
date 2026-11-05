@@ -1,4 +1,4 @@
-# POST Related Person Create Managed Related Person - eHealth Infrastructure v11.0.3
+# POST Related Person Create Managed Related Person - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * **POST Related Person Create Managed Related Person**
@@ -7,9 +7,9 @@
 
 `POST [base]/RelatedPerson/$create-managed-related-person`
 
-The caller supplies the related person's CPR number, the Patient reference, at least one relationship, and optional co-existence tags. The service seeds the related person's master data from the national registry and marks the created resource as managed.
+The caller supplies the related person's CPR number, the Patient reference, at least one relationship, optional co-existence tags, and an optional period the related person is active for. The service seeds the related person's master data from the national registry and marks the created resource as managed.
 
-**Request Headers**
+`RelatedPerson.active` is set from the period: it is true when today lies within the period, and an absent start or end leaves that side open. **Request Headers**
 
 ```
 Authorization: ******
@@ -54,6 +54,13 @@ Content-Type: application/fhir+json; charset=UTF-8
       "valueCoding": {
         "system": "http://ehealth.sundhed.dk/cs/ehealth-system",
         "code": "xa"
+      }
+    },
+    {
+      "name": "period",
+      "valuePeriod": {
+        "start": "2026-01-01",
+        "end": "2026-12-31"
       }
     }
   ]
@@ -100,6 +107,10 @@ Content-Type: application/fhir+json; charset=UTF-8
     }
   ],
   "active": true,
+  "period": {
+    "start": "2026-01-01",
+    "end": "2026-12-31"
+  },
   "patient": {
     "reference": "Patient/123"
   },

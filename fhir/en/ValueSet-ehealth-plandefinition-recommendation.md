@@ -1,4 +1,4 @@
-# PlanDefinition Recommendation - eHealth Infrastructure v11.0.3
+# PlanDefinition Recommendation - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/plandefinition-recommendation | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/plandefinition-recommendation | *Version*:11.0.4 |
 | Active as of 2019-02-08 | *Computable Name*:PlanDefinitionRecommendation |
 
  
@@ -37,7 +37,7 @@ Value set of plan definition recommendation codes.
   "resourceType" : "ValueSet",
   "id" : "ehealth-plandefinition-recommendation",
   "url" : "http://ehealth.sundhed.dk/vs/plandefinition-recommendation",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "PlanDefinitionRecommendation",
   "title" : "PlanDefinition Recommendation",
   "status" : "active",

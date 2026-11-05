@@ -1,4 +1,4 @@
-# Publication Status - eHealth Infrastructure v11.0.3
+# Publication Status - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/publication-status | *Version*:11.0.3 | |
+| *Official URL*:http://hl7.org/fhir/publication-status | *Version*:11.0.4 | |
 | * Standards status: *[Normative](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 5 | *Computable Name*:PublicationStatus |
 
  
@@ -43,7 +43,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueInteger" : 5
   }],
   "url" : "http://hl7.org/fhir/publication-status",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "PublicationStatus",
   "title" : "Publication Status",
   "status" : "active",

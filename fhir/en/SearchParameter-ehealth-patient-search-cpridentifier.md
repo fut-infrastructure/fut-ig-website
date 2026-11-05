@@ -1,4 +1,4 @@
-# patientCPRIdentifier - eHealth Infrastructure v11.0.3
+# patientCPRIdentifier - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifier | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifier | *Version*:11.0.4 |
 | Active as of 2022-11-15 | *Computable Name*:patientCPRIdentifier |
 
  
@@ -23,7 +23,7 @@ Search parameter for Patient DK-Core CPR identifier
   "resourceType" : "SearchParameter",
   "id" : "ehealth-patient-search-cpridentifier",
   "url" : "http://ehealth.sundhed.dk/fhir/SearchParameter/Patient/cprIdentifier",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "patientCPRIdentifier",
   "status" : "active",
   "date" : "2022-11-15T08:31:20+00:00",

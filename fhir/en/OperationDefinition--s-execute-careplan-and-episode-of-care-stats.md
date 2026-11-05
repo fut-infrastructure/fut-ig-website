@@ -1,4 +1,4 @@
-# Execute careplan and episode of care stats - eHealth Infrastructure v11.0.3
+# Execute careplan and episode of care stats - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplan-and-episode-of-care-stats | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:execute-careplan-and-episode-of-care-stats |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplan-and-episode-of-care-stats | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:execute-careplan-and-episode-of-care-stats |
 
  
 
@@ -70,12 +70,12 @@ The ConditionCode is a Fhir CodeableConcept. See the implementation guide for de
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-careplan-and-episode-of-care-stats",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-careplan-and-episode-of-care-stats",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "execute-careplan-and-episode-of-care-stats",
   "title" : "Execute careplan and episode of care stats",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

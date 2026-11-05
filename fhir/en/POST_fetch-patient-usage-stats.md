@@ -1,4 +1,4 @@
-# POST Fetch Patient Usage Stats - eHealth Infrastructure v11.0.3
+# POST Fetch Patient Usage Stats - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * **POST Fetch Patient Usage Stats**

@@ -1,4 +1,4 @@
-# DK_IHE_EventCodeLists_VS - eHealth Infrastructure v11.0.3
+# DK_IHE_EventCodeLists_VS - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-eventcodelists-vs | *Version*:11.0.3 |
+| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-eventcodelists-vs | *Version*:11.0.4 |
 | Active as of 2025-03-07 | *Computable Name*:DK_IHE_EventCodeLists_VS |
 
  
@@ -37,7 +37,7 @@ Event codes used in DK IHE Document sharing. The codes shall be NPU or procedure
   "resourceType" : "ValueSet",
   "id" : "dk-ihe-eventcodelists-vs",
   "url" : "http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-eventcodelists-vs",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "DK_IHE_EventCodeLists_VS",
   "title" : "DK_IHE_EventCodeLists_VS",
   "status" : "active",

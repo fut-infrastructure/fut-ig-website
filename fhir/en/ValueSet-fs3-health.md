@@ -1,4 +1,4 @@
-# FS III, helbredstilstande - eHealth Infrastructure v11.0.3
+# FS III, helbredstilstande - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/fs3-health | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/fs3-health | *Version*:11.0.4 |
 | Active as of 2019-02-08 | *Computable Name*:FS III, helbredstilstande |
 
  
@@ -37,7 +37,7 @@ FS III, helbredstilstande
   "resourceType" : "ValueSet",
   "id" : "fs3-health",
   "url" : "http://ehealth.sundhed.dk/vs/fs3-health",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "FS III, helbredstilstande",
   "status" : "active",
   "experimental" : true,

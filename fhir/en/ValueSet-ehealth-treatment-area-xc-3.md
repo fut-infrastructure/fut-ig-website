@@ -1,4 +1,4 @@
-# Z-diagnoser (treatment area) - eHealth Infrastructure v11.0.3
+# Z-diagnoser (treatment area) - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-treatment-area-xc-3 | *Version*:11.0.3 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-treatment-area-xc-3 | *Version*:11.0.4 |
 | Active as of 2026-01-09 | *Computable Name*:ZDiagnosis |
 
  
@@ -37,7 +37,7 @@ Treatment area for Z-diagnosis conditions (xc).
   "resourceType" : "ValueSet",
   "id" : "ehealth-treatment-area-xc-3",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-treatment-area-xc-3",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ZDiagnosis",
   "title" : "Z-diagnoser (treatment area)",
   "status" : "active",

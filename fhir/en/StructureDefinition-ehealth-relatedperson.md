@@ -1,4 +1,4 @@
-# ehealth-relatedperson - eHealth Infrastructure v11.0.3
+# ehealth-relatedperson - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-relatedperson |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-relatedperson |
 
 # Introduction
 
@@ -32,7 +32,13 @@ For a managed RelatedPerson the following fields are maintained by the infrastru
 * `address` where `use = home`
 * name and address protection, expressed as `meta.security = R`
 
-All other fields remain editable by client systems, including nicknames, temporary addresses, `active`, `period`, and `relationship`.
+All other fields remain editable by client systems, including nicknames, temporary addresses, `active`, `period`, and `relationship`. The exception is a RelatedPerson with the relationship `POWATT` or `PARAUTH`, who are entirely controlled by the infrastructure (see [Relationship](#relationship)).
+
+### Active and period
+
+When a managed RelatedPerson is created with the `$create-managed-related-person` operation, `active` is set from `period`: it is true when today lies within the period, and an absent start or end leaves that side open. Afterwards the client system maintains `active` and `period`.
+
+A citizen can log in as a managed related person (with tasks) through a client solution when the RelatedPerson carries the client solution's co-existence tag, is active, has an active Patient, and has a current `period`. RelatedPersons with the relationship `POWATT` or `PARAUTH` are not part of this login.
 
 ## Relationship
 
@@ -65,10 +71,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-relatedpe
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-relatedperson",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-relatedperson",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-relatedperson",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

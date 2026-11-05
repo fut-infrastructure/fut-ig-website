@@ -1,4 +1,4 @@
-# VMR URI - eHealth Infrastructure v11.0.3
+# VMR URI - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-vmr-uri | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-vmr-uri |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-vmr-uri | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-vmr-uri |
 
 Virtual Meeting Room URI that can be used in eg. webRTC clients. Is provided by the service, not the client, and may not be updated.
 
@@ -41,11 +41,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-vmr-uri.c
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-vmr-uri",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-vmr-uri",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-vmr-uri",
   "title" : "VMR URI",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

@@ -1,4 +1,4 @@
-# FHIR Bulk Data System Level Export - eHealth Infrastructure v11.0.3
+# FHIR Bulk Data System Level Export - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-export | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:export |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-export | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:export |
 
  
 FHIR Operation to initiate an export of data from a FHIR server. The type of resources returned can be restricted using the '_type' parameter, and the '_since' parameter can be used to restrict resources to be only included if changed since the supplied time. The FHIR server support invocation of this operation using the [FHIR Asynchronous Request Pattern](http://hl7.org/fhir/R4/async.html). 
@@ -47,12 +47,12 @@ The initiation of an export must specify the request header 'Prefer: respond-asy
   "resourceType" : "OperationDefinition",
   "id" : "-s-export",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-export",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "export",
   "title" : "FHIR Bulk Data System Level Export",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

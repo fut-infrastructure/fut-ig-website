@@ -1,4 +1,4 @@
-# Guest PIN code - eHealth Infrastructure v11.0.3
+# Guest PIN code - eHealth Infrastructure v11.0.4
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-host-pin-code | *Version*:11.0.3 |
-| Active as of 2026-10-29 | *Computable Name*:ehealth-host-pin-code |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-host-pin-code | *Version*:11.0.4 |
+| Active as of 2026-11-05 | *Computable Name*:ehealth-host-pin-code |
 
 The PIN code to be used to gain access to a video meeting. Is provided by the service, not the client, and is not updateable. Host PIN must be used in order to start the meeting
 
@@ -41,11 +41,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-host-pin-
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-host-pin-code",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-host-pin-code",
-  "version" : "11.0.3",
+  "version" : "11.0.4",
   "name" : "ehealth-host-pin-code",
   "title" : "Guest PIN code",
   "status" : "active",
-  "date" : "2026-10-29T11:52:17+00:00",
+  "date" : "2026-11-05T08:53:52+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
