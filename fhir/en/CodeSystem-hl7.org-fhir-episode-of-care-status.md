@@ -1,4 +1,4 @@
-# Episode Of Care Status - eHealth Infrastructure v11.0.4
+# Episode Of Care Status - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.org/fhir/episode-of-care-status | *Version*:11.0.4 | |
+| *Official URL*:http://hl7.org/fhir/episode-of-care-status | *Version*:11.0.5 | |
 | * Standards status: *[Trial-use](http://hl7.org/fhir/R4/versions.html#std-process) | [Maturity Level](http://hl7.org/fhir/versions.html#maturity): 2 | *Computable Name*:EpisodeOfCareStatus |
 
  
@@ -43,7 +43,7 @@ This Code system is referenced in the definition of the following value sets:
     "valueInteger" : 2
   }],
   "url" : "http://hl7.org/fhir/episode-of-care-status",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "EpisodeOfCareStatus",
   "title" : "Episode Of Care Status",
   "status" : "active",

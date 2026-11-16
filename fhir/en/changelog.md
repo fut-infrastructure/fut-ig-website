@@ -1,4 +1,4 @@
-# Changelog - eHealth Infrastructure v11.0.4
+# Changelog - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **Changelog**
@@ -6,6 +6,13 @@
 ## Changelog
 
 This is the log of changes made to the eHealth Implementation Guide.
+
+## 11.0.5 (2026-11-16)
+
+### Code systems
+
+* Added danish designations to CodeSystem `http://ehealth.sundhed.dk/cs/plandefinition-recommendation`.
+* Added `FeedbackNeeded` (Need feedback to patient on submitted response) and `AssessmentNeeded` (Need assessment by practitioner) to CodeSystem `http://ehealth.sundhed.dk/cs/task-category`.
 
 ## 11.0.4 (2026-11-04)
 

@@ -10,11 +10,11 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.core",
   "language" : "en",
   "url" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "eHealth Infrastructure",
   "title" : "eHealth Infrastructure",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

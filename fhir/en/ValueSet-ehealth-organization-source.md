@@ -1,4 +1,4 @@
-# Organization Source - eHealth Infrastructure v11.0.4
+# Organization Source - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/organization-source | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/organization-source | *Version*:11.0.5 |
 | Active as of 2019-06-11 | *Computable Name*:OrganizationSource |
 
  
@@ -37,7 +37,7 @@ Value set used for indicating the organization source
   "resourceType" : "ValueSet",
   "id" : "ehealth-organization-source",
   "url" : "http://ehealth.sundhed.dk/vs/organization-source",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "OrganizationSource",
   "title" : "Organization Source",
   "status" : "active",

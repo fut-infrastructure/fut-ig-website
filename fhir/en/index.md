@@ -1,4 +1,4 @@
-# Home - eHealth Infrastructure v11.0.4
+# Home - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:eHealth Infrastructure |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:eHealth Infrastructure |
 
 ### Introduction
 

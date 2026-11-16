@@ -1,4 +1,4 @@
-# ClinicalImpression Investigation Item Codes - eHealth Infrastructure v11.0.4
+# ClinicalImpression Investigation Item Codes - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes | *Version*:11.0.5 |
 | Active as of 2024-01-29 | *Computable Name*:ClinicalImpressionInvestigationItemCodes |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-clinicalimpression-investigation-item-codes",
   "url" : "http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ClinicalImpressionInvestigationItemCodes",
   "title" : "ClinicalImpression Investigation Item Codes",
   "status" : "active",

@@ -1,4 +1,4 @@
-# State of the document sharing - eHealth Infrastructure v11.0.4
+# State of the document sharing - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-document-sharing-state | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-document-sharing-state |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-document-sharing-state | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-document-sharing-state |
 
 Where in the sharing process the document is, and the reason why
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-document-
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-document-sharing-state",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-document-sharing-state",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-document-sharing-state",
   "title" : "State of the document sharing",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

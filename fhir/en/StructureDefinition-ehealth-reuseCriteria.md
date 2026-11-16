@@ -1,4 +1,4 @@
-# Reuse criteria - eHealth Infrastructure v11.0.4
+# Reuse criteria - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-reuseCriteria | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-reuseCriteria |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-reuseCriteria | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-reuseCriteria |
 
 Defines if and when a response can be reused
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-reuseCrit
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-reuseCriteria",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-reuseCriteria",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-reuseCriteria",
   "title" : "Reuse criteria",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

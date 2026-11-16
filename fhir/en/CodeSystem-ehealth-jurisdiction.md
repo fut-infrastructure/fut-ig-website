@@ -1,4 +1,4 @@
-# Jurisdiction - eHealth Infrastructure v11.0.4
+# Jurisdiction - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/jurisdiction | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/jurisdiction | *Version*:11.0.5 |
 | Active as of 2019-12-16 | *Computable Name*:Jurisdiction |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-jurisdiction",
   "url" : "http://ehealth.sundhed.dk/cs/jurisdiction",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "Jurisdiction",
   "title" : "Jurisdiction",
   "status" : "active",

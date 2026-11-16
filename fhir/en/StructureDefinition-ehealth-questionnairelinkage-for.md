@@ -1,4 +1,4 @@
-# Questionnaire linkage for - eHealth Infrastructure v11.0.4
+# Questionnaire linkage for - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnairelinkage-for | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-questionnairelinkage-for |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnairelinkage-for | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-questionnairelinkage-for |
 
 A questionnaire participating in the linkage, given as a normal (not version-specific) reference. Each questionnaire business version is a separate Questionnaire resource, so two versions of the same questionnaire may both participate in a linkage by referencing both resources. The reference SHOULD carry the referenced questionnaire's business identifier in Reference.identifier as an environment-independent handle.
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-questionn
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-questionnairelinkage-for",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-questionnairelinkage-for",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-questionnairelinkage-for",
   "title" : "Questionnaire linkage for",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

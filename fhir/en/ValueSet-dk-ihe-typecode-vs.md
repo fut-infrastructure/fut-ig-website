@@ -1,4 +1,4 @@
-# DK_IHE_TypeCode_VS - eHealth Infrastructure v11.0.4
+# DK_IHE_TypeCode_VS - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-typecode-vs | *Version*:11.0.4 |
+| *Official URL*:http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-typecode-vs | *Version*:11.0.5 |
 | Active as of 2019-12-11 | *Computable Name*:DK_IHE_TypeCode_VS |
 
  
@@ -37,7 +37,7 @@ Value set for the typeCode attribute. The typeCode specifies the precise type of
   "resourceType" : "ValueSet",
   "id" : "dk-ihe-typecode-vs",
   "url" : "http://sundhedsdatastyrelsen.dk/terminologi/dk-ihe-typecode-vs",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "DK_IHE_TypeCode_VS",
   "title" : "DK_IHE_TypeCode_VS",
   "status" : "active",

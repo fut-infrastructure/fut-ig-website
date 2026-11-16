@@ -1,4 +1,4 @@
-# Activitydefinition-code-to-perform-sharing - eHealth Infrastructure v11.0.4
+# Activitydefinition-code-to-perform-sharing - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing | *Version*:11.0.5 |
 | Active as of 2023-12-14 | *Computable Name*:activitydefinition-code-to-perform-sharing |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-perform-sharing",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-perform-sharing",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "activitydefinition-code-to-perform-sharing",
   "title" : "Activitydefinition-code-to-perform-sharing",
   "status" : "active",
@@ -382,8 +382,8 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
     {
       "code" : "ZZ5048",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     },
@@ -510,48 +510,48 @@ The map controls whether an activity shall have sharingApprovalPolicy or not
     "element" : [{
       "code" : "MDS-UPDRS-I",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     },
     {
       "code" : "MDS-UPDRS-IA",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     },
     {
       "code" : "MDS-UPDRS-IB",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     },
     {
       "code" : "MDS-UPDRS-II",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     },
     {
       "code" : "MDS-UPDRS-III",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     },
     {
       "code" : "MDS-UPDRS-IV",
       "target" : [{
-        "code" : "N",
-        "display" : "No",
+        "code" : "Y",
+        "display" : "Yes",
         "equivalence" : "relatedto"
       }]
     }]

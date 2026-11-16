@@ -1,4 +1,4 @@
-# POST Binary Retrieve Document - eHealth Infrastructure v11.0.4
+# POST Binary Retrieve Document - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **POST Binary Retrieve Document**

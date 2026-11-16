@@ -1,4 +1,4 @@
-# POST Execute Patient Usage Stats - eHealth Infrastructure v11.0.4
+# POST Execute Patient Usage Stats - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **POST Execute Patient Usage Stats**

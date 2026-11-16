@@ -1,4 +1,4 @@
-# Get Report Job Status - eHealth Infrastructure v11.0.4
+# Get Report Job Status - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-report-job-status | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:get-report-job-status |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-report-job-status | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:get-report-job-status |
 
  
 
@@ -37,12 +37,12 @@ The output is a Bundle containing Parameters resources for each scheduled report
   "resourceType" : "OperationDefinition",
   "id" : "-s-get-report-job-status",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-get-report-job-status",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "get-report-job-status",
   "title" : "Get Report Job Status",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

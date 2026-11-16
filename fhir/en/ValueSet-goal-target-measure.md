@@ -1,4 +1,4 @@
-# Goal Target Measure - eHealth Infrastructure v11.0.4
+# Goal Target Measure - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/goal-target-measure | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/goal-target-measure | *Version*:11.0.5 |
 | Active as of 2021-01-13 | *Computable Name*:GoalTargetMeasure |
 
  
@@ -37,7 +37,7 @@ Value set for goal target measure.
   "resourceType" : "ValueSet",
   "id" : "goal-target-measure",
   "url" : "http://ehealth.sundhed.dk/vs/goal-target-measure",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "GoalTargetMeasure",
   "title" : "Goal Target Measure",
   "status" : "active",

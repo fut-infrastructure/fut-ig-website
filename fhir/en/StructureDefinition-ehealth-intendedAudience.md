@@ -1,4 +1,4 @@
-# Intended audience - eHealth Infrastructure v11.0.4
+# Intended audience - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-intendedAudience |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-intendedAudience |
 
 Specifies that the resource is only intended for use in the specified organisations. Leave blank if the resource is intended for global use.
 
@@ -42,11 +42,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-intendedA
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-intendedAudience",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-intendedAudience",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-intendedAudience",
   "title" : "Intended audience",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

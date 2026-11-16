@@ -1,4 +1,4 @@
-# Create a careplan - eHealth Infrastructure v11.0.4
+# Create a careplan - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:apply |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:apply |
 
  
 Create a careplan with service requests for a specific episodeOfCare using the PlanDefinition as a template. If using POST the operation will persist resources and return the careplan. If using GET the operation will return transient resources in a transaction bundle. The bundle with transient careplan and servicerequest resources can then be modified before being persisted using a FHIR transaction. 
@@ -23,12 +23,12 @@ Create a careplan with service requests for a specific episodeOfCare using the P
   "resourceType" : "OperationDefinition",
   "id" : "-s-apply",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-apply",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "apply",
   "title" : "Create a careplan",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

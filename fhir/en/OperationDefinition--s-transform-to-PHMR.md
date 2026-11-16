@@ -1,4 +1,4 @@
-# Transform to PHMR - eHealth Infrastructure v11.0.4
+# Transform to PHMR - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-to-PHMR | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:transform-to-PHMR |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-to-PHMR | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:transform-to-PHMR |
 
  
 Transforms a FHIR Observation (ehealth-observation profile) resource to a DK-HL7 Personal Health Monitoring Report (PHMR) XML document. The input FHIR Bundle contains a FHIR Composition (ehealth-composition profile) resource referencing one or more FHIR Observation (ehealth-observation profile) resources and referenced resources such as FHIR Organization. The returned FHIR DocumentReference contains the PHMR XML document adhering to the DK-HL7 Personal Health Monitoring Report profile. 
@@ -23,12 +23,12 @@ Transforms a FHIR Observation (ehealth-observation profile) resource to a DK-HL7
   "resourceType" : "OperationDefinition",
   "id" : "-s-transform-to-PHMR",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-transform-to-PHMR",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "transform-to-PHMR",
   "title" : "Transform to PHMR",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

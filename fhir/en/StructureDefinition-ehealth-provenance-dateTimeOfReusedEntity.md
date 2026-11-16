@@ -1,4 +1,4 @@
-# Date/time of re-used entity - eHealth Infrastructure v11.0.4
+# Date/time of re-used entity - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance-dateTimeOfReusedEntity | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-provenance-dateTimeOfReusedEntity |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance-dateTimeOfReusedEntity | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-provenance-dateTimeOfReusedEntity |
 
 Contains date and time of Reused Entity
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-provenanc
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-provenance-dateTimeOfReusedEntity",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-provenance-dateTimeOfReusedEntity",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-provenance-dateTimeOfReusedEntity",
   "title" : "Date/time of re-used entity",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

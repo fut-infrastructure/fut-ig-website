@@ -1,4 +1,4 @@
-# Practitioner/107302 - eHealth Infrastructure v11.0.4
+# Practitioner/107302 - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

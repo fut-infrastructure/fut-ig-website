@@ -1,4 +1,4 @@
-# Profiles - eHealth Infrastructure v11.0.4
+# Profiles - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **Profiles**

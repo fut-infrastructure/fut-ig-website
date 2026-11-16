@@ -1,4 +1,4 @@
-# Task Category - eHealth Infrastructure v11.0.4
+# Task Category - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/task-category | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/task-category | *Version*:11.0.5 |
 | Active as of 2019-01-29 | *Computable Name*:TaskCategory |
 
  
@@ -32,7 +32,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-task-category",
   "url" : "http://ehealth.sundhed.dk/cs/task-category",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "TaskCategory",
   "title" : "Task Category",
   "status" : "active",
@@ -213,6 +213,24 @@ This Code system is referenced in the definition of the following value sets:
     "designation" : [{
       "language" : "da",
       "value" : "Forhandlingsprocess for overdragelse af plan(er) mellem behandlerteams"
+    }]
+  },
+  {
+    "code" : "FeedbackNeeded",
+    "display" : "Need feedback to patient on submitted response",
+    "definition" : "Need feedback to patient on submitted response",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Borger har indsendt en besvarelse, som afventer feedback fra behandler"
+    }]
+  },
+  {
+    "code" : "AssessmentNeeded",
+    "display" : "Need assessment by practitioner",
+    "definition" : "Need assessment by practitioner",
+    "designation" : [{
+      "language" : "da",
+      "value" : "Opgave til vurdering af behandler."
     }]
   }]
 }

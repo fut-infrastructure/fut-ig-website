@@ -1,4 +1,4 @@
-# Title - eHealth Infrastructure v11.0.4
+# Title - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-basic-title | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-basic-title |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-basic-title | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-basic-title |
 
 Name for this (human friendly)
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-basic-tit
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-basic-title",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-basic-title",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-basic-title",
   "title" : "Title",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

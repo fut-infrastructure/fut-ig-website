@@ -1,4 +1,4 @@
-# Execute measurement stats - eHealth Infrastructure v11.0.4
+# Execute measurement stats - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-measurement-stats | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:execute-measurement-stats |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-measurement-stats | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:execute-measurement-stats |
 
  
 
@@ -33,12 +33,12 @@ This report contains counts of Measurements for each EpisodeOfCare:
   "resourceType" : "OperationDefinition",
   "id" : "-s-execute-measurement-stats",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-execute-measurement-stats",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "execute-measurement-stats",
   "title" : "Execute measurement stats",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

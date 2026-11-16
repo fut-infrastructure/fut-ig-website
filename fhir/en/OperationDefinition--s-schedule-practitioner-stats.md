@@ -1,4 +1,4 @@
-# Schedule practitioner stats - eHealth Infrastructure v11.0.4
+# Schedule practitioner stats - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-practitioner-stats | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:schedule-practitioner-stats |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-practitioner-stats | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:schedule-practitioner-stats |
 
  
 
@@ -35,12 +35,12 @@ This report contains counts of practitioners associated with Organizations and C
   "resourceType" : "OperationDefinition",
   "id" : "-s-schedule-practitioner-stats",
   "url" : "http://ehealth.sundhed.dk/fhir/OperationDefinition/-s-schedule-practitioner-stats",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "schedule-practitioner-stats",
   "title" : "Schedule practitioner stats",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

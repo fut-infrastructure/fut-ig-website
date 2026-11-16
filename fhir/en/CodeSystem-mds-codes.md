@@ -1,4 +1,4 @@
-# International Parkinson and Movement Disorder Society (MDS) Codes - eHealth Infrastructure v11.0.4
+# International Parkinson and Movement Disorder Society (MDS) Codes - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/mds-codes | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/mds-codes | *Version*:11.0.5 |
 | Active as of 2026-10-29 | *Computable Name*:MDSCodes |
 | **Copyright/Legal**: Copyright © (2026) International Parkinson and Movement Disorder Society (MDS). All rights reserved. Adapted and used with permission of MDS. This derivative of the MDS-Unified Parkinson's Disease Rating Scale ("MDS-UPDRS") has not been validated or tested for reliability | |
 
@@ -32,7 +32,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "mds-codes",
   "url" : "http://ehealth.sundhed.dk/cs/mds-codes",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "MDSCodes",
   "title" : "International Parkinson and Movement Disorder Society (MDS) Codes",
   "status" : "active",

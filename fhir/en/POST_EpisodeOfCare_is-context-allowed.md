@@ -1,4 +1,4 @@
-# POST Episode Of Care Is Context Allowed - eHealth Infrastructure v11.0.4
+# POST Episode Of Care Is Context Allowed - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **POST Episode Of Care Is Context Allowed**

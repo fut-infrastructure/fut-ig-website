@@ -1,4 +1,4 @@
-# ehealth-skrs-patient - eHealth Infrastructure v11.0.4
+# ehealth-skrs-patient - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrs-patient | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-skrs-patient |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrs-patient | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-skrs-patient |
 
 **Usages:**
 
@@ -35,10 +35,10 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-skrs-pati
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-skrs-patient",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-skrs-patient",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-skrs-patient",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

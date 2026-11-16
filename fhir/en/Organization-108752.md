@@ -1,4 +1,4 @@
-# Organization/108752 - eHealth Infrastructure v11.0.4
+# Organization/108752 - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

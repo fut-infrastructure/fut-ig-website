@@ -1,4 +1,4 @@
-# Priority - eHealth Infrastructure v11.0.4
+# Priority - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/priority | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/vs/priority | *Version*:11.0.5 |
 | Active as of 2023-02-27 | *Computable Name*:Priority |
 
  
@@ -37,7 +37,7 @@ Practitioner roles
   "resourceType" : "ValueSet",
   "id" : "ehealth-priority",
   "url" : "http://ehealth.sundhed.dk/vs/priority",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "Priority",
   "title" : "Priority",
   "status" : "active",

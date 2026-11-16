@@ -1,4 +1,4 @@
-# POST Schedule Patient Gdpr - eHealth Infrastructure v11.0.4
+# POST Schedule Patient Gdpr - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **POST Schedule Patient Gdpr**

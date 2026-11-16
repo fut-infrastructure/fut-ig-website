@@ -1,4 +1,4 @@
-# Team schedule - eHealth Infrastructure v11.0.4
+# Team schedule - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-teamschedule | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:ehealth-teamschedule |
+| *Official URL*:http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-teamschedule | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:ehealth-teamschedule |
 
 Scheduled team change
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](../StructureDefinition-ehealth-teamsched
   "resourceType" : "StructureDefinition",
   "id" : "ehealth-teamschedule",
   "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-teamschedule",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "ehealth-teamschedule",
   "title" : "Team schedule",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

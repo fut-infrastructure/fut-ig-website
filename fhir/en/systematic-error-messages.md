@@ -1,4 +1,4 @@
-# Systematic Error Messages - eHealth Infrastructure v11.0.4
+# Systematic Error Messages - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * **Systematic Error Messages**

@@ -1,4 +1,4 @@
-# PlanDefinition Recommendation - eHealth Infrastructure v11.0.4
+# PlanDefinition Recommendation - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/cs/plandefinition-recommendation | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/cs/plandefinition-recommendation | *Version*:11.0.5 |
 | Active as of 2019-01-29 | *Computable Name*:PlanDefinitionRecommendation |
 
  
@@ -31,7 +31,7 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "ehealth-plandefinition-recommendation",
   "url" : "http://ehealth.sundhed.dk/cs/plandefinition-recommendation",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "PlanDefinitionRecommendation",
   "title" : "PlanDefinition Recommendation",
   "status" : "active",
@@ -73,42 +73,106 @@ This Code system is referenced in the definition of the following value sets:
   {
     "code" : "Mandatory",
     "display" : "Mandatory",
-    "definition" : "Mandatory"
+    "definition" : "Mandatory",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Mandatory"
+    },
+    {
+      "language" : "da",
+      "value" : "Obligatorisk"
+    }]
   },
   {
     "code" : "Recommended",
     "display" : "Recommended",
-    "definition" : "Recommended"
+    "definition" : "Recommended",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Recommended"
+    },
+    {
+      "language" : "da",
+      "value" : "Anbefalet"
+    }]
   },
   {
     "code" : "Confirmed",
     "display" : "Confirmed",
-    "definition" : "Confirmed"
+    "definition" : "Confirmed",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Confirmed"
+    },
+    {
+      "language" : "da",
+      "value" : "Bekræftet"
+    }]
   },
   {
     "code" : "NotRecommended",
     "display" : "NotRecommended",
-    "definition" : "NotRecommended"
+    "definition" : "NotRecommended",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Not recommended"
+    },
+    {
+      "language" : "da",
+      "value" : "Frarådes"
+    }]
   },
   {
     "code" : "Applicable",
     "display" : "Applicable",
-    "definition" : "Applicable"
+    "definition" : "Applicable",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Applicable"
+    },
+    {
+      "language" : "da",
+      "value" : "Anvendelig"
+    }]
   },
   {
     "code" : "PhasedOut",
     "display" : "PhasedOut",
-    "definition" : "PhasedOut"
+    "definition" : "PhasedOut",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "PhasedOut"
+    },
+    {
+      "language" : "da",
+      "value" : "Udfaset"
+    }]
   },
   {
     "code" : "Observed",
     "display" : "Observed",
-    "definition" : "Observed"
+    "definition" : "Observed",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Observed"
+    },
+    {
+      "language" : "da",
+      "value" : "Observeres"
+    }]
   },
   {
     "code" : "Planned",
     "display" : "Planned",
-    "definition" : "Planned"
+    "definition" : "Planned",
+    "designation" : [{
+      "language" : "en-US",
+      "value" : "Planned"
+    },
+    {
+      "language" : "da",
+      "value" : "Planlagt"
+    }]
   }]
 }
 

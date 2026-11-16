@@ -1,4 +1,4 @@
-# Activitydefinition-code to do missing measurement - eHealth Infrastructure v11.0.4
+# Activitydefinition-code to do missing measurement - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement | *Version*:11.0.4 |
+| *Official URL*:http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement | *Version*:11.0.5 |
 | Active as of 2022-10-17 | *Computable Name*:activitydefinition-code-to-do-missing-measurement |
 
  
@@ -23,7 +23,7 @@ The map controls whether an activity shall be subjected to missing measurements 
   "resourceType" : "ConceptMap",
   "id" : "activitydefinition-code-to-do-missing-measurement",
   "url" : "http://ehealth.sundhed.dk/ConceptMap/activitydefinition-code-to-do-missing-measurement",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "activitydefinition-code-to-do-missing-measurement",
   "title" : "Activitydefinition-code to do missing measurement",
   "status" : "active",

@@ -1,4 +1,4 @@
-# Message Type ValueSet - eHealth Infrastructure v11.0.4
+# Message Type ValueSet - eHealth Infrastructure v11.0.5
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-carecommunication-message-type | *Version*:11.0.4 |
-| Active as of 2026-11-05 | *Computable Name*:MessageType |
+| *Official URL*:http://ehealth.sundhed.dk/vs/ehealth-carecommunication-message-type | *Version*:11.0.5 |
+| Active as of 2026-11-16 | *Computable Name*:MessageType |
 
  
 Allowed message types: new-message, reply-message, forward-message. 
@@ -37,11 +37,11 @@ Allowed message types: new-message, reply-message, forward-message.
   "resourceType" : "ValueSet",
   "id" : "MessageType",
   "url" : "http://ehealth.sundhed.dk/vs/ehealth-carecommunication-message-type",
-  "version" : "11.0.4",
+  "version" : "11.0.5",
   "name" : "MessageType",
   "title" : "Message Type ValueSet",
   "status" : "active",
-  "date" : "2026-11-05T08:53:52+00:00",
+  "date" : "2026-11-16T14:56:31+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
