@@ -1,0 +1,603 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Patient 04 - FUT test data v0.1.6</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4.4"}
+    h3,h4,h5,h6{--heading-prefix:"4.4"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">FUT test data</span>
+            <br/>
+            <span style="display:inline-block;">0.1.6 - 
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="shared.html">Shared definitions</a>
+  </li>
+  <li>
+    <a href="vendors.html">Vendors</a>
+  </li>
+  <li>
+    <a href="patients.html">Patient data</a>
+  </li>
+  <li>
+    <a href="loading.html">Loading</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='patients.html'><b>Patient data</b></a></li><li><b>Patient 04</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">This page is part of the FUT test data (v0.1.6: Release) based on <a data-no-external="true" href="http://hl7.org/fhir/R4">FHIR (HL7® FHIR® Standard) R4</a>. This is the current published version.  For a full list of available versions, see the <a data-no-external="true" href="http://ehealth.sundhed.dk/testdata/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Patient 04</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#basemanagement" id="markdown-toc-basemanagement">Base.Management</a></li>
+  <li><a href="#clinicalcare-provision" id="markdown-toc-clinicalcare-provision">Clinical.Care Provision</a></li>
+  <li><a href="#clinicaldiagnostics" id="markdown-toc-clinicaldiagnostics">Clinical.Diagnostics</a></li>
+  <li><a href="#clinicalsummary" id="markdown-toc-clinicalsummary">Clinical.Summary</a></li>
+  <li><a href="#foundationsecurity" id="markdown-toc-foundationsecurity">Foundation.Security</a></li>
+  <li><a href="#baseworkflow" id="markdown-toc-baseworkflow">Base.Workflow</a></li>
+</ul>
+
+</div>
+<!-- GENERATED by scripts/make-groups.js — do not hand-edit. -->
+
+<p>The resources recorded for <a href="Patient-p04.html">Patient 04</a>.</p>
+
+<h3 id="basemanagement">Base.Management</h3>
+
+<p>The episode of care the plan is delivered under, and that every record of care refers back to.</p>
+
+<h4 id="episodeofcares">EpisodeOfCares</h4>
+
+<p>The episode everything patient-specific hangs off: the plan is delivered under it, and every measurement and response refers back to it.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="EpisodeOfCare-p04-eoc1.html">Episode of care 1 (completed)</a></td>
+      <td>A completed episode of care, addressing the COPD diagnosis.</td>
+    </tr>
+    <tr>
+      <td><a href="EpisodeOfCare-p04-eoc2.html">Episode of care 2 (active)</a></td>
+      <td>An open episode of care, addressing the COPD diagnosis.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clinicalcare-provision">Clinical.Care Provision</h3>
+
+<p>The plan as delivered to the patient: the care plan, the service requests it consists of, and the care team responsible.</p>
+
+<h4 id="careplans">CarePlans</h4>
+
+<p>The plan definition as delivered to the patient, one per episode. Normally created by $apply, which would also create one ServiceRequest per activity.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CarePlan-p04-cp1.html">Care plan 1 (completed)</a></td>
+      <td>The monitoring plan as delivered under episode of care 1.</td>
+    </tr>
+    <tr>
+      <td><a href="CarePlan-p04-cp2.html">Care plan 2 (active)</a></td>
+      <td>The monitoring plan as delivered under episode of care 2.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="servicerequests">ServiceRequests</h4>
+
+<p>One per activity of a care plan, created by $apply alongside it. A measurement or questionnaire response is submitted against one of these, and the measurement ones carry the reference ranges triage compares a value against.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-closing.html">Closing (scheduled) — completed</a></td>
+      <td>Guidance screen shown after the scheduled round is complete.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-extra-head.html">Head activity (extra) — completed</a></td>
+      <td>The container for the unscheduled branch.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-extra-pulse.html">Pulse (extra) — completed</a></td>
+      <td>The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-extra-questionnaire.html">Questionnaire (extra) — completed</a></td>
+      <td>The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-extra-sat-pulse.html">Saturation and pulse device group (extra) — completed</a></td>
+      <td>Groups the unscheduled saturation and pulse measurements as one device group.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-extra-saturation.html">Oxygen saturation (extra) — completed</a></td>
+      <td>The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-head.html">Head activity (scheduled) — completed</a></td>
+      <td>The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-intro.html">Introduction (scheduled) — completed</a></td>
+      <td>Guidance screen shown at the start of the scheduled measurement round.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-pulse.html">Pulse (scheduled) — completed</a></td>
+      <td>The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-questionnaire.html">Questionnaire (scheduled) — completed</a></td>
+      <td>The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-sat-pulse.html">Saturation and pulse device group (scheduled) — completed</a></td>
+      <td>Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-sat-pulse-intro.html">Saturation and pulse introduction (scheduled) — completed</a></td>
+      <td>Guidance screen introducing the saturation and pulse measurements.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-sat-pulse-prep.html">Saturation and pulse preparation (scheduled) — completed</a></td>
+      <td>Guidance screen telling the patient how to prepare before measuring.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp1-sr-saturation.html">Oxygen saturation (scheduled) — completed</a></td>
+      <td>The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-closing.html">Closing (scheduled)</a></td>
+      <td>Guidance screen shown after the scheduled round is complete.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-extra-head.html">Head activity (extra)</a></td>
+      <td>The container for the unscheduled branch.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-extra-pulse.html">Pulse (extra)</a></td>
+      <td>The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-extra-questionnaire.html">Questionnaire (extra)</a></td>
+      <td>The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-extra-sat-pulse.html">Saturation and pulse device group (extra)</a></td>
+      <td>Groups the unscheduled saturation and pulse measurements as one device group.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-extra-saturation.html">Oxygen saturation (extra)</a></td>
+      <td>The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-head.html">Head activity (scheduled)</a></td>
+      <td>The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-intro.html">Introduction (scheduled)</a></td>
+      <td>Guidance screen shown at the start of the scheduled measurement round.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-pulse.html">Pulse (scheduled)</a></td>
+      <td>The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-questionnaire.html">Questionnaire (scheduled)</a></td>
+      <td>The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-sat-pulse.html">Saturation and pulse device group (scheduled)</a></td>
+      <td>Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-sat-pulse-intro.html">Saturation and pulse introduction (scheduled)</a></td>
+      <td>Guidance screen introducing the saturation and pulse measurements.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-sat-pulse-prep.html">Saturation and pulse preparation (scheduled)</a></td>
+      <td>Guidance screen telling the patient how to prepare before measuring.</td>
+    </tr>
+    <tr>
+      <td><a href="ServiceRequest-p04-cp2-sr-saturation.html">Oxygen saturation (scheduled)</a></td>
+      <td>The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clinicaldiagnostics">Clinical.Diagnostics</h3>
+
+<p>What the patient submitted: the measurements and the questionnaire responses.</p>
+
+<h4 id="observations">Observations</h4>
+
+<p>The measurements submitted, two per submission. Their values are chosen to produce a known triage colour against the reference ranges they carry.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="Observation-p04-cp1-pulse.html">Pulse 118/min (completed episode)</a></td>
+      <td>Pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-p04-cp1-sat.html">Oxygen saturation 84% (completed episode)</a></td>
+      <td>Oxygen saturation submitted under the completed episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-p04-cp2-pulse.html">Pulse 72/min (open episode)</a></td>
+      <td>Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.</td>
+    </tr>
+    <tr>
+      <td><a href="Observation-p04-cp2-sat.html">Oxygen saturation 96% (open episode)</a></td>
+      <td>Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="questionnaireresponses">QuestionnaireResponses</h4>
+
+<p>The questionnaire answered as part of each submission. The answers are chosen to produce a known triage colour through the answer significance the questionnaire defines.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="QuestionnaireResponse-p04-cp1-qr.html">Questionnaire response, exacerbation (completed episode)</a></td>
+      <td>A symptom questionnaire answered under the completed episode. 4 scored answers — 3 red, 1 yellow — so triage returns red and the resulting task is asap.</td>
+    </tr>
+    <tr>
+      <td><a href="QuestionnaireResponse-p04-cp2-qr.html">Questionnaire response, mild symptoms (open episode)</a></td>
+      <td>A symptom questionnaire answered under the open episode. 4 scored answers — 1 yellow, 3 green — so triage returns yellow and the resulting task is urgent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="clinicalsummary">Clinical.Summary</h3>
+
+<p>The clinical record: the diagnosis each episode addresses, and the triage result of each submission. The impressions are not loaded — automated processing creates them, and the ones here record what it should produce.</p>
+
+<h4 id="conditions">Conditions</h4>
+
+<p>The diagnosis the episode addresses, and the reason the plan is in place.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="Condition-p04-eoc1-cond.html">Chronic obstructive pulmonary disease (episode 1)</a></td>
+      <td>The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.</td>
+    </tr>
+    <tr>
+      <td><a href="Condition-p04-eoc2-cond.html">Chronic obstructive pulmonary disease (episode 2)</a></td>
+      <td>The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="clinicalimpressions">ClinicalImpressions</h4>
+
+<p>The triage result for each submitted resource. NOT loaded — automated processing creates these, and the ones here record what it should produce.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="ClinicalImpression-p04-cp1-ci-pulse.html">Triage of pulse 118/min — yellow</a></td>
+      <td>Triage result for the pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.</td>
+    </tr>
+    <tr>
+      <td><a href="ClinicalImpression-p04-cp1-ci-qr.html">Triage of the questionnaire response — red</a></td>
+      <td>Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 3 red, 1 yellow — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.</td>
+    </tr>
+    <tr>
+      <td><a href="ClinicalImpression-p04-cp1-ci-sat.html">Triage of saturation 84% — red</a></td>
+      <td>Triage result for the saturation submitted under the completed episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.</td>
+    </tr>
+    <tr>
+      <td><a href="ClinicalImpression-p04-cp2-ci-pulse.html">Triage of pulse 72/min — green</a></td>
+      <td>Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.</td>
+    </tr>
+    <tr>
+      <td><a href="ClinicalImpression-p04-cp2-ci-qr.html">Triage of the questionnaire response — yellow</a></td>
+      <td>Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 1 yellow, 3 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.</td>
+    </tr>
+    <tr>
+      <td><a href="ClinicalImpression-p04-cp2-ci-sat.html">Triage of saturation 96% — green</a></td>
+      <td>Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="foundationsecurity">Foundation.Security</h3>
+
+<p>One Provenance per submission, naming the resources submitted together. This is what triggers automated processing.</p>
+
+<h4 id="provenances">Provenances</h4>
+
+<p>One per submission, naming the resources submitted together. This is what triggers automated processing, so triage runs because one of these appeared.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="Provenance-p04-cp1-prov.html">Submission under the completed episode</a></td>
+      <td>The submit record for the completed episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.</td>
+    </tr>
+    <tr>
+      <td><a href="Provenance-p04-cp2-prov.html">Submission under the open episode</a></td>
+      <td>The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="baseworkflow">Base.Workflow</h3>
+
+<p>The assessment task raised with each triage result. Not loaded either, and its priority is the triage colour.</p>
+
+<h4 id="tasks">Tasks</h4>
+
+<p>The assessment task raised with each triage result. NOT loaded either; its priority is the triage colour, so red gives asap and yellow urgent.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="Task-p04-cp1-task-pulse.html">Assess pulse triage — urgent</a></td>
+      <td>Task for the yellow pulse result under the completed episode. Priority urgent, because the value fell in a GAL range.</td>
+    </tr>
+    <tr>
+      <td><a href="Task-p04-cp1-task-qr.html">Evaluate questionnaire response triage — asap</a></td>
+      <td>Task for the red questionnaire result under the completed episode. Priority asap, because the highest answer significance was red.</td>
+    </tr>
+    <tr>
+      <td><a href="Task-p04-cp1-task-sat.html">Assess saturation triage — asap</a></td>
+      <td>Task for the red saturation result under the completed episode. Priority asap, because the value fell in a RAL range.</td>
+    </tr>
+    <tr>
+      <td><a href="Task-p04-cp2-task-pulse.html">Assess pulse triage — routine</a></td>
+      <td>Task for the green pulse result under the open episode. Priority routine, because triage returned green.</td>
+    </tr>
+    <tr>
+      <td><a href="Task-p04-cp2-task-qr.html">Evaluate questionnaire response triage — urgent</a></td>
+      <td>Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.</td>
+    </tr>
+    <tr>
+      <td><a href="Task-p04-cp2-task-sat.html">Assess saturation triage — routine</a></td>
+      <td>Task for the green saturation result under the open episode. Priority routine, because triage returned green.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://ehealth.sundhed.dk">Den telemedicinske infrastruktur (eHealth Infrastructure)</a>.  
+          Package dk.ehealth.sundhed.fhir.ig.testdata#0.1.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated <span title="Tue, Nov 24, 2026 14:20+0000">2026-11-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

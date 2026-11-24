@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="http://hl7.org/fhir">
+  <id value="library-questionnaire-triage"/>
+  <meta>
+    <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-library"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">Spørgeskematriagering</td>
+        </tr>
+        
+
+        
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">library-questionnaire-triage</td>
+        </tr>
+        
+
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.1.6</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="Library-library-questionnaire-triage.html">Spørgeskematriagering</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row">
+                <b>
+                    
+                        
+                    
+                </b>
+            </th>
+            <td style="padding-left: 4px;">
+                
+                <p style="margin-bottom: 5px;">
+                    <span>urn:uuid:9971d2b2-dcf4-41f3-a0d9-a3051095254d</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-library-type.html">http://ehealth.sundhed.dk/cs/library-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>automated-processing</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-11-24 14:19:23+0000</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">Den telemedicinske infrastruktur (eHealth Infrastructure)</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Spørgeskematriagering triagerer besvarelserne i et spørgeskema. Triageringsfarven findes ved at se alle spørgsmålsbesvarelser, og den endelige triagering bliver den højest udslagsgivende farve. Således giver én rød besvarelse rød triagering, og hvis der ingen røde besvarelser er, men mindst en gul besvarelse, bliver triageringsfarven gul. Er der ingen røde eller gule besvarelser, bliver triageringsfarven grøn.</p>
+<p>Er der indsendt spørgeskema hvor spørgsmålene ikke er besvaret er triageringsfarven blank. Er der ikke opsat traigeringsindikatorer i spørgeskemaet bliver triageringen blank.</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Purpose: </b></th>
+            <td style="padding-left: 4px;"><div><p>At kunne triagere spørgeskemabesvarelser.</p>
+</div></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Usage: </b></th>
+            <td style="padding-left: 4px;">At kunne triagere spørgeskemabesvarelser.</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+          <th scope="row"><b>Parameters: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              <tr><th><b>Name</b></th><th><b>Type</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>In/Out</b></th></tr>
+              
+                <tr><th/><th>QuestionnaireResponse</th><th/><th/><th>In</th></tr>
+              
+                <tr><th/><th>Questionnaire</th><th/><th/><th>In</th></tr>
+              
+                <tr><th/><th>ServiceRequest</th><th/><th/><th>In</th></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><b>Content: </b> text/plain</th></tr>
+              <tr><td><pre><code>package rules
+import org.hl7.fhir.r4.model.QuestionnaireResponse
+import org.hl7.fhir.r4.model.Questionnaire
+import org.hl7.fhir.r4.model.ServiceRequest
+import org.hl7.fhir.r4.context.SimpleWorkerContext
+import org.hl7.fhir.r4.model.Coding
+import org.hl7.fhir.r4.model.Type
+import com.systematic.ehealth.automatedprocessing.ClinicalImpressionDTO
+import com.systematic.ehealth.automatedprocessing.AnswerSignificanceDTO
+import com.systematic.ehealth.automatedprocessing.TaskDTO
+import com.systematic.ehealth.automatedprocessing.CommunicationDTO
+import com.systematic.ehealth.automatedprocessing.CodingDTO
+import com.systematic.ehealth.exception.MismatchedInputException
+import com.systematic.ehealth.extensions.EHealthQuestionnaireItemComponentExtension
+import com.systematic.ehealth.util.QuestionnaireUtility
+import java.util.ArrayList
+import java.util.Collection
+import java.util.List
+import java.util.Collections
+import org.apache.commons.collections4.MultiValuedMap
+import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
+import com.systematic.ehealth.automatedprocessing.QuestionnaireResponseFindingBasisDTO
+import com.systematic.ehealth.extensions.EHealthQuestionnaireAnswerSignificanceExtension
+import java.util.Map
+import org.hl7.fhir.r4.model.BooleanType
+import com.systematic.ehealth.extensions.EHealthQuestionnaireAnswerConditionExtension
+import org.hl7.fhir.r4.model.DecimalType
+import org.hl7.fhir.r4.model.IntegerType
+import org.hl7.fhir.r4.model.StringType
+import com.systematic.ehealth.automatedprocessing.AnswerConditionDTO
+import com.systematic.ehealth.exception.RuleExecutionException
+
+
+global com.systematic.ehealth.automatedprocessing.AutomatedProcessingDTO ruleResult
+
+
+function String getPriorityFromClinicalFinding(CodingDTO clinicalImpressionFinding) {
+    switch (clinicalImpressionFinding.getCode()) {
+        case &quot;no-answer-significance-defined&quot;:
+        case &quot;no-effective-answer-significance&quot;:
+        case &quot;green&quot;:
+            return &quot;routine&quot;;
+        case &quot;yellow&quot;:
+            return &quot;urgent&quot;;
+        case &quot;red&quot;:
+            return &quot;asap&quot;;
+        default:
+            return null;
+    }
+}
+
+function CodingDTO getClinicalImpressionFinding(List findingBasisList) {
+    if (findingBasisList.isEmpty()) {
+        //Answer significances found, but answers didn't match
+        return new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes&quot;, &quot;no-effective-answer-significance&quot;, &quot;no effective answer significance for answer and question combination&quot;);
+    }
+    boolean yellowAnswerFound = false;
+
+    for (Object findingBasis : findingBasisList) {
+        QuestionnaireResponseFindingBasisDTO findingBasisDTO = (QuestionnaireResponseFindingBasisDTO) findingBasis;
+        String significanceCode = findingBasisDTO.getFinding().getCode();
+        if (significanceCode.equals(&quot;red-question-answer&quot;)) {
+            //Return early when red question answer is found
+            return new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes&quot;, &quot;red&quot;, &quot;Red overall assessment&quot;);
+        }
+
+        if (significanceCode.equals(&quot;yellow-question-answer&quot;)) {
+            yellowAnswerFound = true;
+        }
+    }
+
+    if (yellowAnswerFound) {
+        //Can assume we have returned if red question answer was found
+        return new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes&quot;, &quot;yellow&quot;, &quot;Yellow overall assessment&quot;);
+    }
+
+    //Can assume only green findings, since its not empty, red or yellow.
+    //No answer significances, is handled before this function
+
+    return new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes&quot;, &quot;green&quot;, &quot;Green overall assessment&quot;);
+}
+
+function boolean containsExistsFalseCondition(EHealthQuestionnaireAnswerSignificanceExtension answerSignificance) {
+    for (EHealthQuestionnaireAnswerConditionExtension condition : answerSignificance.getAnswerConditions()) {
+        if (condition.getOperator().hasCode() &amp;&amp;
+            condition.getOperator().getCode().equals(&quot;exists&quot;) &amp;&amp;
+            condition.getValue() instanceof BooleanType &amp;&amp;
+            !((BooleanType) condition.getValue()).booleanValue()) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function AnswerSignificanceDTO createAnswerSignificanceFromExtension(EHealthQuestionnaireAnswerSignificanceExtension extension) {
+    AnswerSignificanceDTO dto = new AnswerSignificanceDTO();
+    dto.setSignificance(new CodingDTO(extension.getSignificance().getSystem(), extension.getSignificance().getCode(), extension.getSignificance().getDisplay()));
+    List&lt;AnswerConditionDTO&gt; conditionDTOs = new ArrayList&lt;&gt;();
+    for (EHealthQuestionnaireAnswerConditionExtension condition :  extension.getAnswerConditions()) {
+        AnswerConditionDTO conditionDTO = new AnswerConditionDTO();
+        if (condition.getValue().getClass().getTypeName().contains(&quot;IntegerType&quot;)) {
+            IntegerType integerValue = (IntegerType) condition.getValue();
+            conditionDTO.setValueInteger(integerValue.getValue());
+        } else if (condition.getValue().getClass().getTypeName().contains(&quot;BooleanType&quot;)) {
+            BooleanType booleanValue = (BooleanType) condition.getValue();
+            conditionDTO.setValueBoolean(booleanValue.getValue());
+        } else if (condition.getValue().getClass().getTypeName().contains(&quot;DecimalType&quot;)) {
+            DecimalType decimalValue = (DecimalType) condition.getValue();
+            conditionDTO.setValueDecimal(decimalValue.getValue().doubleValue());
+        } else if (condition.getValue().getClass().getTypeName().contains(&quot;StringType&quot;)) {
+            StringType stringValue = (StringType) condition.getValue();
+            conditionDTO.setValueString(stringValue.getValue());
+        } else if (condition.getValue().getClass().getTypeName().contains(&quot;Coding&quot;)) {
+            Coding codingValue = (Coding) condition.getValue();
+            conditionDTO.setValueCoding(new CodingDTO(codingValue.getSystem(), codingValue.getCode(), codingValue.getDisplay()));
+        }
+
+        conditionDTO.setOperator(condition.getOperator().getCode());
+        conditionDTOs.add(conditionDTO);
+    }
+
+    dto.setAnswerConditions(conditionDTOs);
+    return dto;
+}
+
+function CodingDTO createFindingCodingFromAnswerSignificance(EHealthQuestionnaireAnswerSignificanceExtension answerSignificance) {
+    CodingDTO finding = new CodingDTO();
+    finding.setSystem(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes&quot;);
+
+    switch (answerSignificance.getSignificance().getCode()) {
+        case &quot;green&quot;:
+            finding.setCode(&quot;green-question-answer&quot;);
+            finding.setDisplay(&quot;green question and answer combination&quot;);
+            break;
+        case &quot;yellow&quot;:
+            finding.setCode(&quot;yellow-question-answer&quot;);
+            finding.setDisplay(&quot;yellow question and answer combination&quot;);
+            break;
+        case &quot;red&quot;:
+            finding.setCode(&quot;red-question-answer&quot;);
+            finding.setDisplay(&quot;red question and answer combination&quot;);
+            break;
+    }
+
+    return finding;
+}
+
+function QuestionnaireResponseFindingBasisDTO createFindingBasisDTO(String linkId, CodingDTO findingCoding, QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent answer, AnswerSignificanceDTO answerSignificanceDTO) {
+    QuestionnaireResponseFindingBasisDTO findingBasisDTO = new QuestionnaireResponseFindingBasisDTO();
+    findingBasisDTO.setLinkId(linkId);
+    findingBasisDTO.setFinding(findingCoding);
+    findingBasisDTO.setAnswerSignificance(answerSignificanceDTO);
+
+    if (answer.hasValueBooleanType()) {
+        findingBasisDTO.setValueBoolean(answer.getValueBooleanType().booleanValue());
+    } else if (answer.hasValueIntegerType()) {
+        findingBasisDTO.setValueInteger(answer.getValueIntegerType().getValue());
+    } else if (answer.hasValueStringType()) {
+        findingBasisDTO.setValueString(answer.getValueStringType().getValueAsString());
+    } else if (answer.hasValueDecimalType()) {
+        findingBasisDTO.setValueDecimal(answer.getValueDecimalType().getValue().doubleValue());
+    } else if (answer.hasValueCoding()) {
+        findingBasisDTO.setValueCoding(new CodingDTO(answer.getValueCoding().getSystem(), answer.getValueCoding().getCode(), answer.getValueCoding().getDisplay()));
+    }
+
+    return findingBasisDTO;
+}
+
+function List getFindingBasisList(MultiValuedMap answerSignificanceMap, MultiValuedMap answerMap) {
+    ArrayList&lt;QuestionnaireResponseFindingBasisDTO&gt; returnList = new ArrayList&lt;&gt;();
+
+    for (Object entry : answerSignificanceMap.entries()) {
+        Map.Entry&lt;String, EHealthQuestionnaireAnswerSignificanceExtension&gt; questionEntry = (Map.Entry&lt;String, EHealthQuestionnaireAnswerSignificanceExtension&gt;) entry;
+        List&lt;QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent&gt; answers = (List&lt;QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent&gt;) answerMap.get(questionEntry.getKey());
+
+        if (containsExistsFalseCondition(questionEntry.getValue())) {
+            //Exists false is special case, where we cant loop through answers
+            if (!answers.isEmpty()) {
+                continue;
+            }
+            returnList.add(new QuestionnaireResponseFindingBasisDTO(questionEntry.getKey(), createFindingCodingFromAnswerSignificance(questionEntry.getValue()), createAnswerSignificanceFromExtension(questionEntry.getValue())));
+        } else {
+            //Other operator cases - loop through answers and check against conditions
+            for (QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent answer : answers) {
+                if (QuestionnaireUtility.compareAnswerAgainstAnswerSignificance(answer, questionEntry.getValue())) {
+                    AnswerSignificanceDTO answerSignificanceDTO = createAnswerSignificanceFromExtension(questionEntry.getValue());
+                    CodingDTO findingCoding = createFindingCodingFromAnswerSignificance(questionEntry.getValue());
+                    returnList.add(createFindingBasisDTO(questionEntry.getKey(), findingCoding, answer, answerSignificanceDTO));
+                }
+            }
+        }
+    }
+    return returnList;
+}
+
+function void gatherLinkedAnswerSignificances(List items, MultiValuedMap answerSignificanceMap) {
+    for (Object item : items) {
+        List&lt;EHealthQuestionnaireAnswerSignificanceExtension&gt; answerSignificances = EHealthQuestionnaireItemComponentExtension.getAnswerSignificance(((Questionnaire.QuestionnaireItemComponent) item));
+        if (answerSignificances != null) {
+            answerSignificanceMap.putAll(((Questionnaire.QuestionnaireItemComponent) item).getLinkId(), answerSignificances);
+        }
+
+        gatherLinkedAnswerSignificances(((Questionnaire.QuestionnaireItemComponent) item).getItem(), answerSignificanceMap);
+    }
+}
+
+function void gatherLinkedAnswerItems(List items, MultiValuedMap answerMap) {
+    for (Object item : items) {
+        List&lt;QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent&gt; answers = ((QuestionnaireResponse.QuestionnaireResponseItemComponent) item).getAnswer();
+        if (answers != null) {
+            answerMap.putAll(((QuestionnaireResponse.QuestionnaireResponseItemComponent) item).getLinkId(), answers);
+            for (QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent answer : answers) {
+                //Answers have nested items
+                gatherLinkedAnswerItems(answer.getItem(), answerMap);
+            }
+        }
+
+        //Items have nested items
+        gatherLinkedAnswerItems(((QuestionnaireResponse.QuestionnaireResponseItemComponent) item).getItem(), answerMap);
+    }
+}
+
+function ClinicalImpressionDTO createClinicalImpression(String description, CodingDTO clinicalImpressionFinding, String priority, List basisFindings) {
+    CodingDTO clinicalImpressionCode = new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-codes&quot;, &quot;TriagingResult&quot;, &quot;Result of triaging&quot;);
+    ClinicalImpressionDTO clinicalImpressionDTO = new ClinicalImpressionDTO(clinicalImpressionCode, description, Collections.singletonList(clinicalImpressionFinding), List.of());
+    clinicalImpressionDTO.setFindingBasis(basisFindings);
+
+    //Determine if triage happened
+    boolean isResponseTriaged = true;
+    if (clinicalImpressionFinding.getCode().equals(&quot;no-effective-answer-significance&quot;) || clinicalImpressionFinding.getCode().equals(&quot;no-answer-significance-defined&quot;)) {
+        isResponseTriaged = false;
+    }
+
+    //Task
+    CodingDTO taskCategory;
+    if (isResponseTriaged) {
+        taskCategory = new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/task-category&quot;, &quot;MeasurementForAssessment&quot;, &quot;Need assessment of measurement&quot;);
+    } else {
+        taskCategory = new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/task-category&quot;, &quot;MeasurementForAssessmentNotTriaged&quot;, &quot;Need assessment of measurement where triage was not performed during automated processing&quot;);
+    }
+    CodingDTO restrictionCategory = new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/restriction-category&quot;, &quot;measurement-monitoring&quot;, &quot;Monitoring of measurement(s)&quot;);
+    TaskDTO task = new TaskDTO(taskCategory, &quot;Spørgeskemabesvarelse til evaluering&quot;, priority, Collections.singletonList(restrictionCategory), Collections.emptyList());
+    clinicalImpressionDTO.setTasks(Collections.singletonList(task));
+
+    return clinicalImpressionDTO;
+}
+
+function void throwMismatchedInputException(String ruleDescription, String focus) {
+    throw new MismatchedInputException(ruleDescription, focus);
+}
+
+rule &quot;QuestionnaireResponseTriageOnAnswerSignificance&quot;
+dialect &quot;java&quot;
+    when
+        $qrs : Collection()
+        $listQrs : ArrayList() from collect (QuestionnaireResponse() from $qrs)
+        $questionnaire : Questionnaire()
+        $serviceRequest : ServiceRequest()
+    then
+        if ($listQrs.isEmpty()) {
+            throwMismatchedInputException(&quot;Manglende input. Forventede én spørgeskemabesvarelse&quot;, $serviceRequest.getId());
+        }
+        if ($listQrs.size() &gt; 1) {
+            throwMismatchedInputException(&quot;Flere input. Forventede én spørgeskemabesvarelse&quot;, $serviceRequest.getId());
+        }
+        QuestionnaireResponse qr = (QuestionnaireResponse)$listQrs.get(0);
+
+        MultiValuedMap&lt;String, EHealthQuestionnaireAnswerSignificanceExtension&gt; answerSignificanceMap = new ArrayListValuedHashMap&lt;&gt;();
+        MultiValuedMap&lt;String, QuestionnaireResponse.QuestionnaireResponseItemAnswerComponent&gt; answerMap = new ArrayListValuedHashMap&lt;&gt;();
+        gatherLinkedAnswerSignificances($questionnaire.getItem(), answerSignificanceMap);
+        gatherLinkedAnswerItems(qr.getItem(), answerMap);
+
+        CodingDTO clinicalImpressionFinding;
+        List&lt;QuestionnaireResponseFindingBasisDTO&gt; findingBasisList = Collections.emptyList();
+
+        if (answerSignificanceMap.isEmpty() || answerSignificanceMap.values().isEmpty()) {
+            clinicalImpressionFinding = new CodingDTO(&quot;http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes&quot;, &quot;no-answer-significance-defined&quot;, &quot;no answer significance defined for question(s)&quot;);
+        } else {
+            findingBasisList = getFindingBasisList(answerSignificanceMap, answerMap);
+            clinicalImpressionFinding = getClinicalImpressionFinding(findingBasisList);
+        }
+
+        String priority = getPriorityFromClinicalFinding(clinicalImpressionFinding);
+        ruleResult.setClinicalImpressions(Collections.singletonList(createClinicalImpression(null, clinicalImpressionFinding, priority, findingBasisList)));
+end;</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+    </table>
+</div>
+</div>
+  </text>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-revision">
+    <valueString value="0"/>
+  </extension>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role">
+    <extension url="reference">
+      <valueReference>
+        <reference value="Organization/org-region-midtjylland"/>
+      </valueReference>
+    </extension>
+    <extension url="role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://ehealth.sundhed.dk/cs/modifier-role"/>
+          <code value="owner"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <url value="http://ehealth.sundhed.dk/testdata/Library/library-questionnaire-triage"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:uuid:9971d2b2-dcf4-41f3-a0d9-a3051095254d"/>
+  </identifier>
+  <version value="0.1.6"/>
+  <name value="questionnaire-response-triage-on-answersignificance"/>
+  <title value="Spørgeskematriagering"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <type>
+    <coding>
+      <system value="http://ehealth.sundhed.dk/cs/library-type"/>
+      <code value="automated-processing"/>
+    </coding>
+  </type>
+  <date value="2026-11-24T14:19:23+00:00"/>
+  <publisher value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+  <contact>
+    <name value="Den telemedicinske infrastruktur (eHealth Infrastructure)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://ehealth.sundhed.dk"/>
+    </telecom>
+  </contact>
+  <description value="Spørgeskematriagering triagerer besvarelserne i et spørgeskema. Triageringsfarven findes ved at se alle spørgsmålsbesvarelser, og den endelige triagering bliver den højest udslagsgivende farve. Således giver én rød besvarelse rød triagering, og hvis der ingen røde besvarelser er, men mindst en gul besvarelse, bliver triageringsfarven gul. Er der ingen røde eller gule besvarelser, bliver triageringsfarven grøn.&#xA;&#xA;Er der indsendt spørgeskema hvor spørgsmålene ikke er besvaret er triageringsfarven blank. Er der ikke opsat traigeringsindikatorer i spørgeskemaet bliver triageringen blank."/>
+  <purpose value="At kunne triagere spørgeskemabesvarelser."/>
+  <usage value="At kunne triagere spørgeskemabesvarelser."/>
+  <parameter>
+    <use value="in"/>
+    <type value="QuestionnaireResponse"/>
+  </parameter>
+  <parameter>
+    <use value="in"/>
+    <type value="Questionnaire"/>
+  </parameter>
+  <parameter>
+    <use value="in"/>
+    <type value="ServiceRequest"/>
+  </parameter>
+  <content>
+    <contentType value="text/plain"/>
+    <data value="cGFja2FnZSBydWxlcw0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5tb2RlbC5RdWVzdGlvbm5haXJlUmVzcG9uc2UNCmltcG9ydCBvcmcuaGw3LmZoaXIucjQubW9kZWwuUXVlc3Rpb25uYWlyZQ0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5tb2RlbC5TZXJ2aWNlUmVxdWVzdA0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5jb250ZXh0LlNpbXBsZVdvcmtlckNvbnRleHQNCmltcG9ydCBvcmcuaGw3LmZoaXIucjQubW9kZWwuQ29kaW5nDQppbXBvcnQgb3JnLmhsNy5maGlyLnI0Lm1vZGVsLlR5cGUNCmltcG9ydCBjb20uc3lzdGVtYXRpYy5laGVhbHRoLmF1dG9tYXRlZHByb2Nlc3NpbmcuQ2xpbmljYWxJbXByZXNzaW9uRFRPDQppbXBvcnQgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5hdXRvbWF0ZWRwcm9jZXNzaW5nLkFuc3dlclNpZ25pZmljYW5jZURUTw0KaW1wb3J0IGNvbS5zeXN0ZW1hdGljLmVoZWFsdGguYXV0b21hdGVkcHJvY2Vzc2luZy5UYXNrRFRPDQppbXBvcnQgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5hdXRvbWF0ZWRwcm9jZXNzaW5nLkNvbW11bmljYXRpb25EVE8NCmltcG9ydCBjb20uc3lzdGVtYXRpYy5laGVhbHRoLmF1dG9tYXRlZHByb2Nlc3NpbmcuQ29kaW5nRFRPDQppbXBvcnQgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5leGNlcHRpb24uTWlzbWF0Y2hlZElucHV0RXhjZXB0aW9uDQppbXBvcnQgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5leHRlbnNpb25zLkVIZWFsdGhRdWVzdGlvbm5haXJlSXRlbUNvbXBvbmVudEV4dGVuc2lvbg0KaW1wb3J0IGNvbS5zeXN0ZW1hdGljLmVoZWFsdGgudXRpbC5RdWVzdGlvbm5haXJlVXRpbGl0eQ0KaW1wb3J0IGphdmEudXRpbC5BcnJheUxpc3QNCmltcG9ydCBqYXZhLnV0aWwuQ29sbGVjdGlvbg0KaW1wb3J0IGphdmEudXRpbC5MaXN0DQppbXBvcnQgamF2YS51dGlsLkNvbGxlY3Rpb25zDQppbXBvcnQgb3JnLmFwYWNoZS5jb21tb25zLmNvbGxlY3Rpb25zNC5NdWx0aVZhbHVlZE1hcA0KaW1wb3J0IG9yZy5hcGFjaGUuY29tbW9ucy5jb2xsZWN0aW9uczQubXVsdGltYXAuQXJyYXlMaXN0VmFsdWVkSGFzaE1hcDsNCmltcG9ydCBjb20uc3lzdGVtYXRpYy5laGVhbHRoLmF1dG9tYXRlZHByb2Nlc3NpbmcuUXVlc3Rpb25uYWlyZVJlc3BvbnNlRmluZGluZ0Jhc2lzRFRPDQppbXBvcnQgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5leHRlbnNpb25zLkVIZWFsdGhRdWVzdGlvbm5haXJlQW5zd2VyU2lnbmlmaWNhbmNlRXh0ZW5zaW9uDQppbXBvcnQgamF2YS51dGlsLk1hcA0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5tb2RlbC5Cb29sZWFuVHlwZQ0KaW1wb3J0IGNvbS5zeXN0ZW1hdGljLmVoZWFsdGguZXh0ZW5zaW9ucy5FSGVhbHRoUXVlc3Rpb25uYWlyZUFuc3dlckNvbmRpdGlvbkV4dGVuc2lvbg0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5tb2RlbC5EZWNpbWFsVHlwZQ0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5tb2RlbC5JbnRlZ2VyVHlwZQ0KaW1wb3J0IG9yZy5obDcuZmhpci5yNC5tb2RlbC5TdHJpbmdUeXBlDQppbXBvcnQgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5hdXRvbWF0ZWRwcm9jZXNzaW5nLkFuc3dlckNvbmRpdGlvbkRUTw0KaW1wb3J0IGNvbS5zeXN0ZW1hdGljLmVoZWFsdGguZXhjZXB0aW9uLlJ1bGVFeGVjdXRpb25FeGNlcHRpb24NCg0KDQpnbG9iYWwgY29tLnN5c3RlbWF0aWMuZWhlYWx0aC5hdXRvbWF0ZWRwcm9jZXNzaW5nLkF1dG9tYXRlZFByb2Nlc3NpbmdEVE8gcnVsZVJlc3VsdA0KDQoNCmZ1bmN0aW9uIFN0cmluZyBnZXRQcmlvcml0eUZyb21DbGluaWNhbEZpbmRpbmcoQ29kaW5nRFRPIGNsaW5pY2FsSW1wcmVzc2lvbkZpbmRpbmcpIHsNCiAgICBzd2l0Y2ggKGNsaW5pY2FsSW1wcmVzc2lvbkZpbmRpbmcuZ2V0Q29kZSgpKSB7DQogICAgICAgIGNhc2UgIm5vLWFuc3dlci1zaWduaWZpY2FuY2UtZGVmaW5lZCI6DQogICAgICAgIGNhc2UgIm5vLWVmZmVjdGl2ZS1hbnN3ZXItc2lnbmlmaWNhbmNlIjoNCiAgICAgICAgY2FzZSAiZ3JlZW4iOg0KICAgICAgICAgICAgcmV0dXJuICJyb3V0aW5lIjsNCiAgICAgICAgY2FzZSAieWVsbG93IjoNCiAgICAgICAgICAgIHJldHVybiAidXJnZW50IjsNCiAgICAgICAgY2FzZSAicmVkIjoNCiAgICAgICAgICAgIHJldHVybiAiYXNhcCI7DQogICAgICAgIGRlZmF1bHQ6DQogICAgICAgICAgICByZXR1cm4gbnVsbDsNCiAgICB9DQp9DQoNCmZ1bmN0aW9uIENvZGluZ0RUTyBnZXRDbGluaWNhbEltcHJlc3Npb25GaW5kaW5nKExpc3QgZmluZGluZ0Jhc2lzTGlzdCkgew0KICAgIGlmIChmaW5kaW5nQmFzaXNMaXN0LmlzRW1wdHkoKSkgew0KICAgICAgICAvL0Fuc3dlciBzaWduaWZpY2FuY2VzIGZvdW5kLCBidXQgYW5zd2VycyBkaWRuJ3QgbWF0Y2gNCiAgICAgICAgcmV0dXJuIG5ldyBDb2RpbmdEVE8oImh0dHA6Ly9laGVhbHRoLnN1bmRoZWQuZGsvY3MvY2xpbmljYWxpbXByZXNzaW9uLWZpbmRpbmctY29kZXMiLCAibm8tZWZmZWN0aXZlLWFuc3dlci1zaWduaWZpY2FuY2UiLCAibm8gZWZmZWN0aXZlIGFuc3dlciBzaWduaWZpY2FuY2UgZm9yIGFuc3dlciBhbmQgcXVlc3Rpb24gY29tYmluYXRpb24iKTsNCiAgICB9DQogICAgYm9vbGVhbiB5ZWxsb3dBbnN3ZXJGb3VuZCA9IGZhbHNlOw0KDQogICAgZm9yIChPYmplY3QgZmluZGluZ0Jhc2lzIDogZmluZGluZ0Jhc2lzTGlzdCkgew0KICAgICAgICBRdWVzdGlvbm5haXJlUmVzcG9uc2VGaW5kaW5nQmFzaXNEVE8gZmluZGluZ0Jhc2lzRFRPID0gKFF1ZXN0aW9ubmFpcmVSZXNwb25zZUZpbmRpbmdCYXNpc0RUTykgZmluZGluZ0Jhc2lzOw0KICAgICAgICBTdHJpbmcgc2lnbmlmaWNhbmNlQ29kZSA9IGZpbmRpbmdCYXNpc0RUTy5nZXRGaW5kaW5nKCkuZ2V0Q29kZSgpOw0KICAgICAgICBpZiAoc2lnbmlmaWNhbmNlQ29kZS5lcXVhbHMoInJlZC1xdWVzdGlvbi1hbnN3ZXIiKSkgew0KICAgICAgICAgICAgLy9SZXR1cm4gZWFybHkgd2hlbiByZWQgcXVlc3Rpb24gYW5zd2VyIGlzIGZvdW5kDQogICAgICAgICAgICByZXR1cm4gbmV3IENvZGluZ0RUTygiaHR0cDovL2VoZWFsdGguc3VuZGhlZC5kay9jcy9jbGluaWNhbGltcHJlc3Npb24tZmluZGluZy1jb2RlcyIsICJyZWQiLCAiUmVkIG92ZXJhbGwgYXNzZXNzbWVudCIpOw0KICAgICAgICB9DQoNCiAgICAgICAgaWYgKHNpZ25pZmljYW5jZUNvZGUuZXF1YWxzKCJ5ZWxsb3ctcXVlc3Rpb24tYW5zd2VyIikpIHsNCiAgICAgICAgICAgIHllbGxvd0Fuc3dlckZvdW5kID0gdHJ1ZTsNCiAgICAgICAgfQ0KICAgIH0NCg0KICAgIGlmICh5ZWxsb3dBbnN3ZXJGb3VuZCkgew0KICAgICAgICAvL0NhbiBhc3N1bWUgd2UgaGF2ZSByZXR1cm5lZCBpZiByZWQgcXVlc3Rpb24gYW5zd2VyIHdhcyBmb3VuZA0KICAgICAgICByZXR1cm4gbmV3IENvZGluZ0RUTygiaHR0cDovL2VoZWFsdGguc3VuZGhlZC5kay9jcy9jbGluaWNhbGltcHJlc3Npb24tZmluZGluZy1jb2RlcyIsICJ5ZWxsb3ciLCAiWWVsbG93IG92ZXJhbGwgYXNzZXNzbWVudCIpOw0KICAgIH0NCg0KICAgIC8vQ2FuIGFzc3VtZSBvbmx5IGdyZWVuIGZpbmRpbmdzLCBzaW5jZSBpdHMgbm90IGVtcHR5LCByZWQgb3IgeWVsbG93Lg0KICAgIC8vTm8gYW5zd2VyIHNpZ25pZmljYW5jZXMsIGlzIGhhbmRsZWQgYmVmb3JlIHRoaXMgZnVuY3Rpb24NCg0KICAgIHJldHVybiBuZXcgQ29kaW5nRFRPKCJodHRwOi8vZWhlYWx0aC5zdW5kaGVkLmRrL2NzL2NsaW5pY2FsaW1wcmVzc2lvbi1maW5kaW5nLWNvZGVzIiwgImdyZWVuIiwgIkdyZWVuIG92ZXJhbGwgYXNzZXNzbWVudCIpOw0KfQ0KDQpmdW5jdGlvbiBib29sZWFuIGNvbnRhaW5zRXhpc3RzRmFsc2VDb25kaXRpb24oRUhlYWx0aFF1ZXN0aW9ubmFpcmVBbnN3ZXJTaWduaWZpY2FuY2VFeHRlbnNpb24gYW5zd2VyU2lnbmlmaWNhbmNlKSB7DQogICAgZm9yIChFSGVhbHRoUXVlc3Rpb25uYWlyZUFuc3dlckNvbmRpdGlvbkV4dGVuc2lvbiBjb25kaXRpb24gOiBhbnN3ZXJTaWduaWZpY2FuY2UuZ2V0QW5zd2VyQ29uZGl0aW9ucygpKSB7DQogICAgICAgIGlmIChjb25kaXRpb24uZ2V0T3BlcmF0b3IoKS5oYXNDb2RlKCkgJiYNCiAgICAgICAgICAgIGNvbmRpdGlvbi5nZXRPcGVyYXRvcigpLmdldENvZGUoKS5lcXVhbHMoImV4aXN0cyIpICYmDQogICAgICAgICAgICBjb25kaXRpb24uZ2V0VmFsdWUoKSBpbnN0YW5jZW9mIEJvb2xlYW5UeXBlICYmDQogICAgICAgICAgICAhKChCb29sZWFuVHlwZSkgY29uZGl0aW9uLmdldFZhbHVlKCkpLmJvb2xlYW5WYWx1ZSgpKSB7DQogICAgICAgICAgICByZXR1cm4gdHJ1ZTsNCiAgICAgICAgfQ0KICAgIH0NCg0KICAgIHJldHVybiBmYWxzZTsNCn0NCg0KZnVuY3Rpb24gQW5zd2VyU2lnbmlmaWNhbmNlRFRPIGNyZWF0ZUFuc3dlclNpZ25pZmljYW5jZUZyb21FeHRlbnNpb24oRUhlYWx0aFF1ZXN0aW9ubmFpcmVBbnN3ZXJTaWduaWZpY2FuY2VFeHRlbnNpb24gZXh0ZW5zaW9uKSB7DQogICAgQW5zd2VyU2lnbmlmaWNhbmNlRFRPIGR0byA9IG5ldyBBbnN3ZXJTaWduaWZpY2FuY2VEVE8oKTsNCiAgICBkdG8uc2V0U2lnbmlmaWNhbmNlKG5ldyBDb2RpbmdEVE8oZXh0ZW5zaW9uLmdldFNpZ25pZmljYW5jZSgpLmdldFN5c3RlbSgpLCBleHRlbnNpb24uZ2V0U2lnbmlmaWNhbmNlKCkuZ2V0Q29kZSgpLCBleHRlbnNpb24uZ2V0U2lnbmlmaWNhbmNlKCkuZ2V0RGlzcGxheSgpKSk7DQogICAgTGlzdDxBbnN3ZXJDb25kaXRpb25EVE8+IGNvbmRpdGlvbkRUT3MgPSBuZXcgQXJyYXlMaXN0PD4oKTsNCiAgICBmb3IgKEVIZWFsdGhRdWVzdGlvbm5haXJlQW5zd2VyQ29uZGl0aW9uRXh0ZW5zaW9uIGNvbmRpdGlvbiA6ICBleHRlbnNpb24uZ2V0QW5zd2VyQ29uZGl0aW9ucygpKSB7DQogICAgICAgIEFuc3dlckNvbmRpdGlvbkRUTyBjb25kaXRpb25EVE8gPSBuZXcgQW5zd2VyQ29uZGl0aW9uRFRPKCk7DQogICAgICAgIGlmIChjb25kaXRpb24uZ2V0VmFsdWUoKS5nZXRDbGFzcygpLmdldFR5cGVOYW1lKCkuY29udGFpbnMoIkludGVnZXJUeXBlIikpIHsNCiAgICAgICAgICAgIEludGVnZXJUeXBlIGludGVnZXJWYWx1ZSA9IChJbnRlZ2VyVHlwZSkgY29uZGl0aW9uLmdldFZhbHVlKCk7DQogICAgICAgICAgICBjb25kaXRpb25EVE8uc2V0VmFsdWVJbnRlZ2VyKGludGVnZXJWYWx1ZS5nZXRWYWx1ZSgpKTsNCiAgICAgICAgfSBlbHNlIGlmIChjb25kaXRpb24uZ2V0VmFsdWUoKS5nZXRDbGFzcygpLmdldFR5cGVOYW1lKCkuY29udGFpbnMoIkJvb2xlYW5UeXBlIikpIHsNCiAgICAgICAgICAgIEJvb2xlYW5UeXBlIGJvb2xlYW5WYWx1ZSA9IChCb29sZWFuVHlwZSkgY29uZGl0aW9uLmdldFZhbHVlKCk7DQogICAgICAgICAgICBjb25kaXRpb25EVE8uc2V0VmFsdWVCb29sZWFuKGJvb2xlYW5WYWx1ZS5nZXRWYWx1ZSgpKTsNCiAgICAgICAgfSBlbHNlIGlmIChjb25kaXRpb24uZ2V0VmFsdWUoKS5nZXRDbGFzcygpLmdldFR5cGVOYW1lKCkuY29udGFpbnMoIkRlY2ltYWxUeXBlIikpIHsNCiAgICAgICAgICAgIERlY2ltYWxUeXBlIGRlY2ltYWxWYWx1ZSA9IChEZWNpbWFsVHlwZSkgY29uZGl0aW9uLmdldFZhbHVlKCk7DQogICAgICAgICAgICBjb25kaXRpb25EVE8uc2V0VmFsdWVEZWNpbWFsKGRlY2ltYWxWYWx1ZS5nZXRWYWx1ZSgpLmRvdWJsZVZhbHVlKCkpOw0KICAgICAgICB9IGVsc2UgaWYgKGNvbmRpdGlvbi5nZXRWYWx1ZSgpLmdldENsYXNzKCkuZ2V0VHlwZU5hbWUoKS5jb250YWlucygiU3RyaW5nVHlwZSIpKSB7DQogICAgICAgICAgICBTdHJpbmdUeXBlIHN0cmluZ1ZhbHVlID0gKFN0cmluZ1R5cGUpIGNvbmRpdGlvbi5nZXRWYWx1ZSgpOw0KICAgICAgICAgICAgY29uZGl0aW9uRFRPLnNldFZhbHVlU3RyaW5nKHN0cmluZ1ZhbHVlLmdldFZhbHVlKCkpOw0KICAgICAgICB9IGVsc2UgaWYgKGNvbmRpdGlvbi5nZXRWYWx1ZSgpLmdldENsYXNzKCkuZ2V0VHlwZU5hbWUoKS5jb250YWlucygiQ29kaW5nIikpIHsNCiAgICAgICAgICAgIENvZGluZyBjb2RpbmdWYWx1ZSA9IChDb2RpbmcpIGNvbmRpdGlvbi5nZXRWYWx1ZSgpOw0KICAgICAgICAgICAgY29uZGl0aW9uRFRPLnNldFZhbHVlQ29kaW5nKG5ldyBDb2RpbmdEVE8oY29kaW5nVmFsdWUuZ2V0U3lzdGVtKCksIGNvZGluZ1ZhbHVlLmdldENvZGUoKSwgY29kaW5nVmFsdWUuZ2V0RGlzcGxheSgpKSk7DQogICAgICAgIH0NCg0KICAgICAgICBjb25kaXRpb25EVE8uc2V0T3BlcmF0b3IoY29uZGl0aW9uLmdldE9wZXJhdG9yKCkuZ2V0Q29kZSgpKTsNCiAgICAgICAgY29uZGl0aW9uRFRPcy5hZGQoY29uZGl0aW9uRFRPKTsNCiAgICB9DQoNCiAgICBkdG8uc2V0QW5zd2VyQ29uZGl0aW9ucyhjb25kaXRpb25EVE9zKTsNCiAgICByZXR1cm4gZHRvOw0KfQ0KDQpmdW5jdGlvbiBDb2RpbmdEVE8gY3JlYXRlRmluZGluZ0NvZGluZ0Zyb21BbnN3ZXJTaWduaWZpY2FuY2UoRUhlYWx0aFF1ZXN0aW9ubmFpcmVBbnN3ZXJTaWduaWZpY2FuY2VFeHRlbnNpb24gYW5zd2VyU2lnbmlmaWNhbmNlKSB7DQogICAgQ29kaW5nRFRPIGZpbmRpbmcgPSBuZXcgQ29kaW5nRFRPKCk7DQogICAgZmluZGluZy5zZXRTeXN0ZW0oImh0dHA6Ly9laGVhbHRoLnN1bmRoZWQuZGsvY3MvY2xpbmljYWxpbXByZXNzaW9uLWZpbmRpbmctY29kZXMiKTsNCg0KICAgIHN3aXRjaCAoYW5zd2VyU2lnbmlmaWNhbmNlLmdldFNpZ25pZmljYW5jZSgpLmdldENvZGUoKSkgew0KICAgICAgICBjYXNlICJncmVlbiI6DQogICAgICAgICAgICBmaW5kaW5nLnNldENvZGUoImdyZWVuLXF1ZXN0aW9uLWFuc3dlciIpOw0KICAgICAgICAgICAgZmluZGluZy5zZXREaXNwbGF5KCJncmVlbiBxdWVzdGlvbiBhbmQgYW5zd2VyIGNvbWJpbmF0aW9uIik7DQogICAgICAgICAgICBicmVhazsNCiAgICAgICAgY2FzZSAieWVsbG93IjoNCiAgICAgICAgICAgIGZpbmRpbmcuc2V0Q29kZSgieWVsbG93LXF1ZXN0aW9uLWFuc3dlciIpOw0KICAgICAgICAgICAgZmluZGluZy5zZXREaXNwbGF5KCJ5ZWxsb3cgcXVlc3Rpb24gYW5kIGFuc3dlciBjb21iaW5hdGlvbiIpOw0KICAgICAgICAgICAgYnJlYWs7DQogICAgICAgIGNhc2UgInJlZCI6DQogICAgICAgICAgICBmaW5kaW5nLnNldENvZGUoInJlZC1xdWVzdGlvbi1hbnN3ZXIiKTsNCiAgICAgICAgICAgIGZpbmRpbmcuc2V0RGlzcGxheSgicmVkIHF1ZXN0aW9uIGFuZCBhbnN3ZXIgY29tYmluYXRpb24iKTsNCiAgICAgICAgICAgIGJyZWFrOw0KICAgIH0NCg0KICAgIHJldHVybiBmaW5kaW5nOw0KfQ0KDQpmdW5jdGlvbiBRdWVzdGlvbm5haXJlUmVzcG9uc2VGaW5kaW5nQmFzaXNEVE8gY3JlYXRlRmluZGluZ0Jhc2lzRFRPKFN0cmluZyBsaW5rSWQsIENvZGluZ0RUTyBmaW5kaW5nQ29kaW5nLCBRdWVzdGlvbm5haXJlUmVzcG9uc2UuUXVlc3Rpb25uYWlyZVJlc3BvbnNlSXRlbUFuc3dlckNvbXBvbmVudCBhbnN3ZXIsIEFuc3dlclNpZ25pZmljYW5jZURUTyBhbnN3ZXJTaWduaWZpY2FuY2VEVE8pIHsNCiAgICBRdWVzdGlvbm5haXJlUmVzcG9uc2VGaW5kaW5nQmFzaXNEVE8gZmluZGluZ0Jhc2lzRFRPID0gbmV3IFF1ZXN0aW9ubmFpcmVSZXNwb25zZUZpbmRpbmdCYXNpc0RUTygpOw0KICAgIGZpbmRpbmdCYXNpc0RUTy5zZXRMaW5rSWQobGlua0lkKTsNCiAgICBmaW5kaW5nQmFzaXNEVE8uc2V0RmluZGluZyhmaW5kaW5nQ29kaW5nKTsNCiAgICBmaW5kaW5nQmFzaXNEVE8uc2V0QW5zd2VyU2lnbmlmaWNhbmNlKGFuc3dlclNpZ25pZmljYW5jZURUTyk7DQoNCiAgICBpZiAoYW5zd2VyLmhhc1ZhbHVlQm9vbGVhblR5cGUoKSkgew0KICAgICAgICBmaW5kaW5nQmFzaXNEVE8uc2V0VmFsdWVCb29sZWFuKGFuc3dlci5nZXRWYWx1ZUJvb2xlYW5UeXBlKCkuYm9vbGVhblZhbHVlKCkpOw0KICAgIH0gZWxzZSBpZiAoYW5zd2VyLmhhc1ZhbHVlSW50ZWdlclR5cGUoKSkgew0KICAgICAgICBmaW5kaW5nQmFzaXNEVE8uc2V0VmFsdWVJbnRlZ2VyKGFuc3dlci5nZXRWYWx1ZUludGVnZXJUeXBlKCkuZ2V0VmFsdWUoKSk7DQogICAgfSBlbHNlIGlmIChhbnN3ZXIuaGFzVmFsdWVTdHJpbmdUeXBlKCkpIHsNCiAgICAgICAgZmluZGluZ0Jhc2lzRFRPLnNldFZhbHVlU3RyaW5nKGFuc3dlci5nZXRWYWx1ZVN0cmluZ1R5cGUoKS5nZXRWYWx1ZUFzU3RyaW5nKCkpOw0KICAgIH0gZWxzZSBpZiAoYW5zd2VyLmhhc1ZhbHVlRGVjaW1hbFR5cGUoKSkgew0KICAgICAgICBmaW5kaW5nQmFzaXNEVE8uc2V0VmFsdWVEZWNpbWFsKGFuc3dlci5nZXRWYWx1ZURlY2ltYWxUeXBlKCkuZ2V0VmFsdWUoKS5kb3VibGVWYWx1ZSgpKTsNCiAgICB9IGVsc2UgaWYgKGFuc3dlci5oYXNWYWx1ZUNvZGluZygpKSB7DQogICAgICAgIGZpbmRpbmdCYXNpc0RUTy5zZXRWYWx1ZUNvZGluZyhuZXcgQ29kaW5nRFRPKGFuc3dlci5nZXRWYWx1ZUNvZGluZygpLmdldFN5c3RlbSgpLCBhbnN3ZXIuZ2V0VmFsdWVDb2RpbmcoKS5nZXRDb2RlKCksIGFuc3dlci5nZXRWYWx1ZUNvZGluZygpLmdldERpc3BsYXkoKSkpOw0KICAgIH0NCg0KICAgIHJldHVybiBmaW5kaW5nQmFzaXNEVE87DQp9DQoNCmZ1bmN0aW9uIExpc3QgZ2V0RmluZGluZ0Jhc2lzTGlzdChNdWx0aVZhbHVlZE1hcCBhbnN3ZXJTaWduaWZpY2FuY2VNYXAsIE11bHRpVmFsdWVkTWFwIGFuc3dlck1hcCkgew0KICAgIEFycmF5TGlzdDxRdWVzdGlvbm5haXJlUmVzcG9uc2VGaW5kaW5nQmFzaXNEVE8+IHJldHVybkxpc3QgPSBuZXcgQXJyYXlMaXN0PD4oKTsNCg0KICAgIGZvciAoT2JqZWN0IGVudHJ5IDogYW5zd2VyU2lnbmlmaWNhbmNlTWFwLmVudHJpZXMoKSkgew0KICAgICAgICBNYXAuRW50cnk8U3RyaW5nLCBFSGVhbHRoUXVlc3Rpb25uYWlyZUFuc3dlclNpZ25pZmljYW5jZUV4dGVuc2lvbj4gcXVlc3Rpb25FbnRyeSA9IChNYXAuRW50cnk8U3RyaW5nLCBFSGVhbHRoUXVlc3Rpb25uYWlyZUFuc3dlclNpZ25pZmljYW5jZUV4dGVuc2lvbj4pIGVudHJ5Ow0KICAgICAgICBMaXN0PFF1ZXN0aW9ubmFpcmVSZXNwb25zZS5RdWVzdGlvbm5haXJlUmVzcG9uc2VJdGVtQW5zd2VyQ29tcG9uZW50PiBhbnN3ZXJzID0gKExpc3Q8UXVlc3Rpb25uYWlyZVJlc3BvbnNlLlF1ZXN0aW9ubmFpcmVSZXNwb25zZUl0ZW1BbnN3ZXJDb21wb25lbnQ+KSBhbnN3ZXJNYXAuZ2V0KHF1ZXN0aW9uRW50cnkuZ2V0S2V5KCkpOw0KDQogICAgICAgIGlmIChjb250YWluc0V4aXN0c0ZhbHNlQ29uZGl0aW9uKHF1ZXN0aW9uRW50cnkuZ2V0VmFsdWUoKSkpIHsNCiAgICAgICAgICAgIC8vRXhpc3RzIGZhbHNlIGlzIHNwZWNpYWwgY2FzZSwgd2hlcmUgd2UgY2FudCBsb29wIHRocm91Z2ggYW5zd2Vycw0KICAgICAgICAgICAgaWYgKCFhbnN3ZXJzLmlzRW1wdHkoKSkgew0KICAgICAgICAgICAgICAgIGNvbnRpbnVlOw0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgcmV0dXJuTGlzdC5hZGQobmV3IFF1ZXN0aW9ubmFpcmVSZXNwb25zZUZpbmRpbmdCYXNpc0RUTyhxdWVzdGlvbkVudHJ5LmdldEtleSgpLCBjcmVhdGVGaW5kaW5nQ29kaW5nRnJvbUFuc3dlclNpZ25pZmljYW5jZShxdWVzdGlvbkVudHJ5LmdldFZhbHVlKCkpLCBjcmVhdGVBbnN3ZXJTaWduaWZpY2FuY2VGcm9tRXh0ZW5zaW9uKHF1ZXN0aW9uRW50cnkuZ2V0VmFsdWUoKSkpKTsNCiAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgIC8vT3RoZXIgb3BlcmF0b3IgY2FzZXMgLSBsb29wIHRocm91Z2ggYW5zd2VycyBhbmQgY2hlY2sgYWdhaW5zdCBjb25kaXRpb25zDQogICAgICAgICAgICBmb3IgKFF1ZXN0aW9ubmFpcmVSZXNwb25zZS5RdWVzdGlvbm5haXJlUmVzcG9uc2VJdGVtQW5zd2VyQ29tcG9uZW50IGFuc3dlciA6IGFuc3dlcnMpIHsNCiAgICAgICAgICAgICAgICBpZiAoUXVlc3Rpb25uYWlyZVV0aWxpdHkuY29tcGFyZUFuc3dlckFnYWluc3RBbnN3ZXJTaWduaWZpY2FuY2UoYW5zd2VyLCBxdWVzdGlvbkVudHJ5LmdldFZhbHVlKCkpKSB7DQogICAgICAgICAgICAgICAgICAgIEFuc3dlclNpZ25pZmljYW5jZURUTyBhbnN3ZXJTaWduaWZpY2FuY2VEVE8gPSBjcmVhdGVBbnN3ZXJTaWduaWZpY2FuY2VGcm9tRXh0ZW5zaW9uKHF1ZXN0aW9uRW50cnkuZ2V0VmFsdWUoKSk7DQogICAgICAgICAgICAgICAgICAgIENvZGluZ0RUTyBmaW5kaW5nQ29kaW5nID0gY3JlYXRlRmluZGluZ0NvZGluZ0Zyb21BbnN3ZXJTaWduaWZpY2FuY2UocXVlc3Rpb25FbnRyeS5nZXRWYWx1ZSgpKTsNCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuTGlzdC5hZGQoY3JlYXRlRmluZGluZ0Jhc2lzRFRPKHF1ZXN0aW9uRW50cnkuZ2V0S2V5KCksIGZpbmRpbmdDb2RpbmcsIGFuc3dlciwgYW5zd2VyU2lnbmlmaWNhbmNlRFRPKSk7DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KICAgIHJldHVybiByZXR1cm5MaXN0Ow0KfQ0KDQpmdW5jdGlvbiB2b2lkIGdhdGhlckxpbmtlZEFuc3dlclNpZ25pZmljYW5jZXMoTGlzdCBpdGVtcywgTXVsdGlWYWx1ZWRNYXAgYW5zd2VyU2lnbmlmaWNhbmNlTWFwKSB7DQogICAgZm9yIChPYmplY3QgaXRlbSA6IGl0ZW1zKSB7DQogICAgICAgIExpc3Q8RUhlYWx0aFF1ZXN0aW9ubmFpcmVBbnN3ZXJTaWduaWZpY2FuY2VFeHRlbnNpb24+IGFuc3dlclNpZ25pZmljYW5jZXMgPSBFSGVhbHRoUXVlc3Rpb25uYWlyZUl0ZW1Db21wb25lbnRFeHRlbnNpb24uZ2V0QW5zd2VyU2lnbmlmaWNhbmNlKCgoUXVlc3Rpb25uYWlyZS5RdWVzdGlvbm5haXJlSXRlbUNvbXBvbmVudCkgaXRlbSkpOw0KICAgICAgICBpZiAoYW5zd2VyU2lnbmlmaWNhbmNlcyAhPSBudWxsKSB7DQogICAgICAgICAgICBhbnN3ZXJTaWduaWZpY2FuY2VNYXAucHV0QWxsKCgoUXVlc3Rpb25uYWlyZS5RdWVzdGlvbm5haXJlSXRlbUNvbXBvbmVudCkgaXRlbSkuZ2V0TGlua0lkKCksIGFuc3dlclNpZ25pZmljYW5jZXMpOw0KICAgICAgICB9DQoNCiAgICAgICAgZ2F0aGVyTGlua2VkQW5zd2VyU2lnbmlmaWNhbmNlcygoKFF1ZXN0aW9ubmFpcmUuUXVlc3Rpb25uYWlyZUl0ZW1Db21wb25lbnQpIGl0ZW0pLmdldEl0ZW0oKSwgYW5zd2VyU2lnbmlmaWNhbmNlTWFwKTsNCiAgICB9DQp9DQoNCmZ1bmN0aW9uIHZvaWQgZ2F0aGVyTGlua2VkQW5zd2VySXRlbXMoTGlzdCBpdGVtcywgTXVsdGlWYWx1ZWRNYXAgYW5zd2VyTWFwKSB7DQogICAgZm9yIChPYmplY3QgaXRlbSA6IGl0ZW1zKSB7DQogICAgICAgIExpc3Q8UXVlc3Rpb25uYWlyZVJlc3BvbnNlLlF1ZXN0aW9ubmFpcmVSZXNwb25zZUl0ZW1BbnN3ZXJDb21wb25lbnQ+IGFuc3dlcnMgPSAoKFF1ZXN0aW9ubmFpcmVSZXNwb25zZS5RdWVzdGlvbm5haXJlUmVzcG9uc2VJdGVtQ29tcG9uZW50KSBpdGVtKS5nZXRBbnN3ZXIoKTsNCiAgICAgICAgaWYgKGFuc3dlcnMgIT0gbnVsbCkgew0KICAgICAgICAgICAgYW5zd2VyTWFwLnB1dEFsbCgoKFF1ZXN0aW9ubmFpcmVSZXNwb25zZS5RdWVzdGlvbm5haXJlUmVzcG9uc2VJdGVtQ29tcG9uZW50KSBpdGVtKS5nZXRMaW5rSWQoKSwgYW5zd2Vycyk7DQogICAgICAgICAgICBmb3IgKFF1ZXN0aW9ubmFpcmVSZXNwb25zZS5RdWVzdGlvbm5haXJlUmVzcG9uc2VJdGVtQW5zd2VyQ29tcG9uZW50IGFuc3dlciA6IGFuc3dlcnMpIHsNCiAgICAgICAgICAgICAgICAvL0Fuc3dlcnMgaGF2ZSBuZXN0ZWQgaXRlbXMNCiAgICAgICAgICAgICAgICBnYXRoZXJMaW5rZWRBbnN3ZXJJdGVtcyhhbnN3ZXIuZ2V0SXRlbSgpLCBhbnN3ZXJNYXApOw0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQoNCiAgICAgICAgLy9JdGVtcyBoYXZlIG5lc3RlZCBpdGVtcw0KICAgICAgICBnYXRoZXJMaW5rZWRBbnN3ZXJJdGVtcygoKFF1ZXN0aW9ubmFpcmVSZXNwb25zZS5RdWVzdGlvbm5haXJlUmVzcG9uc2VJdGVtQ29tcG9uZW50KSBpdGVtKS5nZXRJdGVtKCksIGFuc3dlck1hcCk7DQogICAgfQ0KfQ0KDQpmdW5jdGlvbiBDbGluaWNhbEltcHJlc3Npb25EVE8gY3JlYXRlQ2xpbmljYWxJbXByZXNzaW9uKFN0cmluZyBkZXNjcmlwdGlvbiwgQ29kaW5nRFRPIGNsaW5pY2FsSW1wcmVzc2lvbkZpbmRpbmcsIFN0cmluZyBwcmlvcml0eSwgTGlzdCBiYXNpc0ZpbmRpbmdzKSB7DQogICAgQ29kaW5nRFRPIGNsaW5pY2FsSW1wcmVzc2lvbkNvZGUgPSBuZXcgQ29kaW5nRFRPKCJodHRwOi8vZWhlYWx0aC5zdW5kaGVkLmRrL2NzL2NsaW5pY2FsaW1wcmVzc2lvbi1jb2RlcyIsICJUcmlhZ2luZ1Jlc3VsdCIsICJSZXN1bHQgb2YgdHJpYWdpbmciKTsNCiAgICBDbGluaWNhbEltcHJlc3Npb25EVE8gY2xpbmljYWxJbXByZXNzaW9uRFRPID0gbmV3IENsaW5pY2FsSW1wcmVzc2lvbkRUTyhjbGluaWNhbEltcHJlc3Npb25Db2RlLCBkZXNjcmlwdGlvbiwgQ29sbGVjdGlvbnMuc2luZ2xldG9uTGlzdChjbGluaWNhbEltcHJlc3Npb25GaW5kaW5nKSwgTGlzdC5vZigpKTsNCiAgICBjbGluaWNhbEltcHJlc3Npb25EVE8uc2V0RmluZGluZ0Jhc2lzKGJhc2lzRmluZGluZ3MpOw0KDQogICAgLy9EZXRlcm1pbmUgaWYgdHJpYWdlIGhhcHBlbmVkDQogICAgYm9vbGVhbiBpc1Jlc3BvbnNlVHJpYWdlZCA9IHRydWU7DQogICAgaWYgKGNsaW5pY2FsSW1wcmVzc2lvbkZpbmRpbmcuZ2V0Q29kZSgpLmVxdWFscygibm8tZWZmZWN0aXZlLWFuc3dlci1zaWduaWZpY2FuY2UiKSB8fCBjbGluaWNhbEltcHJlc3Npb25GaW5kaW5nLmdldENvZGUoKS5lcXVhbHMoIm5vLWFuc3dlci1zaWduaWZpY2FuY2UtZGVmaW5lZCIpKSB7DQogICAgICAgIGlzUmVzcG9uc2VUcmlhZ2VkID0gZmFsc2U7DQogICAgfQ0KDQogICAgLy9UYXNrDQogICAgQ29kaW5nRFRPIHRhc2tDYXRlZ29yeTsNCiAgICBpZiAoaXNSZXNwb25zZVRyaWFnZWQpIHsNCiAgICAgICAgdGFza0NhdGVnb3J5ID0gbmV3IENvZGluZ0RUTygiaHR0cDovL2VoZWFsdGguc3VuZGhlZC5kay9jcy90YXNrLWNhdGVnb3J5IiwgIk1lYXN1cmVtZW50Rm9yQXNzZXNzbWVudCIsICJOZWVkIGFzc2Vzc21lbnQgb2YgbWVhc3VyZW1lbnQiKTsNCiAgICB9IGVsc2Ugew0KICAgICAgICB0YXNrQ2F0ZWdvcnkgPSBuZXcgQ29kaW5nRFRPKCJodHRwOi8vZWhlYWx0aC5zdW5kaGVkLmRrL2NzL3Rhc2stY2F0ZWdvcnkiLCAiTWVhc3VyZW1lbnRGb3JBc3Nlc3NtZW50Tm90VHJpYWdlZCIsICJOZWVkIGFzc2Vzc21lbnQgb2YgbWVhc3VyZW1lbnQgd2hlcmUgdHJpYWdlIHdhcyBub3QgcGVyZm9ybWVkIGR1cmluZyBhdXRvbWF0ZWQgcHJvY2Vzc2luZyIpOw0KICAgIH0NCiAgICBDb2RpbmdEVE8gcmVzdHJpY3Rpb25DYXRlZ29yeSA9IG5ldyBDb2RpbmdEVE8oImh0dHA6Ly9laGVhbHRoLnN1bmRoZWQuZGsvY3MvcmVzdHJpY3Rpb24tY2F0ZWdvcnkiLCAibWVhc3VyZW1lbnQtbW9uaXRvcmluZyIsICJNb25pdG9yaW5nIG9mIG1lYXN1cmVtZW50KHMpIik7DQogICAgVGFza0RUTyB0YXNrID0gbmV3IFRhc2tEVE8odGFza0NhdGVnb3J5LCAiU3DDuHJnZXNrZW1hYmVzdmFyZWxzZSB0aWwgZXZhbHVlcmluZyIsIHByaW9yaXR5LCBDb2xsZWN0aW9ucy5zaW5nbGV0b25MaXN0KHJlc3RyaWN0aW9uQ2F0ZWdvcnkpLCBDb2xsZWN0aW9ucy5lbXB0eUxpc3QoKSk7DQogICAgY2xpbmljYWxJbXByZXNzaW9uRFRPLnNldFRhc2tzKENvbGxlY3Rpb25zLnNpbmdsZXRvbkxpc3QodGFzaykpOw0KDQogICAgcmV0dXJuIGNsaW5pY2FsSW1wcmVzc2lvbkRUTzsNCn0NCg0KZnVuY3Rpb24gdm9pZCB0aHJvd01pc21hdGNoZWRJbnB1dEV4Y2VwdGlvbihTdHJpbmcgcnVsZURlc2NyaXB0aW9uLCBTdHJpbmcgZm9jdXMpIHsNCiAgICB0aHJvdyBuZXcgTWlzbWF0Y2hlZElucHV0RXhjZXB0aW9uKHJ1bGVEZXNjcmlwdGlvbiwgZm9jdXMpOw0KfQ0KDQpydWxlICJRdWVzdGlvbm5haXJlUmVzcG9uc2VUcmlhZ2VPbkFuc3dlclNpZ25pZmljYW5jZSINCmRpYWxlY3QgImphdmEiDQogICAgd2hlbg0KICAgICAgICAkcXJzIDogQ29sbGVjdGlvbigpDQogICAgICAgICRsaXN0UXJzIDogQXJyYXlMaXN0KCkgZnJvbSBjb2xsZWN0IChRdWVzdGlvbm5haXJlUmVzcG9uc2UoKSBmcm9tICRxcnMpDQogICAgICAgICRxdWVzdGlvbm5haXJlIDogUXVlc3Rpb25uYWlyZSgpDQogICAgICAgICRzZXJ2aWNlUmVxdWVzdCA6IFNlcnZpY2VSZXF1ZXN0KCkNCiAgICB0aGVuDQogICAgICAgIGlmICgkbGlzdFFycy5pc0VtcHR5KCkpIHsNCiAgICAgICAgICAgIHRocm93TWlzbWF0Y2hlZElucHV0RXhjZXB0aW9uKCJNYW5nbGVuZGUgaW5wdXQuIEZvcnZlbnRlZGUgw6luIHNww7hyZ2Vza2VtYWJlc3ZhcmVsc2UiLCAkc2VydmljZVJlcXVlc3QuZ2V0SWQoKSk7DQogICAgICAgIH0NCiAgICAgICAgaWYgKCRsaXN0UXJzLnNpemUoKSA+IDEpIHsNCiAgICAgICAgICAgIHRocm93TWlzbWF0Y2hlZElucHV0RXhjZXB0aW9uKCJGbGVyZSBpbnB1dC4gRm9ydmVudGVkZSDDqW4gc3DDuHJnZXNrZW1hYmVzdmFyZWxzZSIsICRzZXJ2aWNlUmVxdWVzdC5nZXRJZCgpKTsNCiAgICAgICAgfQ0KICAgICAgICBRdWVzdGlvbm5haXJlUmVzcG9uc2UgcXIgPSAoUXVlc3Rpb25uYWlyZVJlc3BvbnNlKSRsaXN0UXJzLmdldCgwKTsNCg0KICAgICAgICBNdWx0aVZhbHVlZE1hcDxTdHJpbmcsIEVIZWFsdGhRdWVzdGlvbm5haXJlQW5zd2VyU2lnbmlmaWNhbmNlRXh0ZW5zaW9uPiBhbnN3ZXJTaWduaWZpY2FuY2VNYXAgPSBuZXcgQXJyYXlMaXN0VmFsdWVkSGFzaE1hcDw+KCk7DQogICAgICAgIE11bHRpVmFsdWVkTWFwPFN0cmluZywgUXVlc3Rpb25uYWlyZVJlc3BvbnNlLlF1ZXN0aW9ubmFpcmVSZXNwb25zZUl0ZW1BbnN3ZXJDb21wb25lbnQ+IGFuc3dlck1hcCA9IG5ldyBBcnJheUxpc3RWYWx1ZWRIYXNoTWFwPD4oKTsNCiAgICAgICAgZ2F0aGVyTGlua2VkQW5zd2VyU2lnbmlmaWNhbmNlcygkcXVlc3Rpb25uYWlyZS5nZXRJdGVtKCksIGFuc3dlclNpZ25pZmljYW5jZU1hcCk7DQogICAgICAgIGdhdGhlckxpbmtlZEFuc3dlckl0ZW1zKHFyLmdldEl0ZW0oKSwgYW5zd2VyTWFwKTsNCg0KICAgICAgICBDb2RpbmdEVE8gY2xpbmljYWxJbXByZXNzaW9uRmluZGluZzsNCiAgICAgICAgTGlzdDxRdWVzdGlvbm5haXJlUmVzcG9uc2VGaW5kaW5nQmFzaXNEVE8+IGZpbmRpbmdCYXNpc0xpc3QgPSBDb2xsZWN0aW9ucy5lbXB0eUxpc3QoKTsNCg0KICAgICAgICBpZiAoYW5zd2VyU2lnbmlmaWNhbmNlTWFwLmlzRW1wdHkoKSB8fCBhbnN3ZXJTaWduaWZpY2FuY2VNYXAudmFsdWVzKCkuaXNFbXB0eSgpKSB7DQogICAgICAgICAgICBjbGluaWNhbEltcHJlc3Npb25GaW5kaW5nID0gbmV3IENvZGluZ0RUTygiaHR0cDovL2VoZWFsdGguc3VuZGhlZC5kay9jcy9jbGluaWNhbGltcHJlc3Npb24tZmluZGluZy1jb2RlcyIsICJuby1hbnN3ZXItc2lnbmlmaWNhbmNlLWRlZmluZWQiLCAibm8gYW5zd2VyIHNpZ25pZmljYW5jZSBkZWZpbmVkIGZvciBxdWVzdGlvbihzKSIpOw0KICAgICAgICB9IGVsc2Ugew0KICAgICAgICAgICAgZmluZGluZ0Jhc2lzTGlzdCA9IGdldEZpbmRpbmdCYXNpc0xpc3QoYW5zd2VyU2lnbmlmaWNhbmNlTWFwLCBhbnN3ZXJNYXApOw0KICAgICAgICAgICAgY2xpbmljYWxJbXByZXNzaW9uRmluZGluZyA9IGdldENsaW5pY2FsSW1wcmVzc2lvbkZpbmRpbmcoZmluZGluZ0Jhc2lzTGlzdCk7DQogICAgICAgIH0NCg0KICAgICAgICBTdHJpbmcgcHJpb3JpdHkgPSBnZXRQcmlvcml0eUZyb21DbGluaWNhbEZpbmRpbmcoY2xpbmljYWxJbXByZXNzaW9uRmluZGluZyk7DQogICAgICAgIHJ1bGVSZXN1bHQuc2V0Q2xpbmljYWxJbXByZXNzaW9ucyhDb2xsZWN0aW9ucy5zaW5nbGV0b25MaXN0KGNyZWF0ZUNsaW5pY2FsSW1wcmVzc2lvbihudWxsLCBjbGluaWNhbEltcHJlc3Npb25GaW5kaW5nLCBwcmlvcml0eSwgZmluZGluZ0Jhc2lzTGlzdCkpKTsNCmVuZDs="/>
+  </content>
+</Library>
