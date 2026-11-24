@@ -1,0 +1,136 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/ClinicalImpression/p06-cp1-ci-sat> a fhir:ClinicalImpression ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "p06-cp1-ci-sat"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression" ;
+       fhir:index -1 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+       fhir:Coding.code [ fhir:value "${COEXISTENCE_TAG}" ]
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ClinicalImpression p06-cp1-ci-sat</b></p><a name=\"p06-cp1-ci-sat\"> </a><a name=\"hcp06-cp1-ci-sat\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-clinicalimpression.html\">ehealth-clinicalimpression</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"Bundle-loader-codesystems.html\">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Episode of care</b>: <a href=\"EpisodeOfCare-p06-eoc1.html\">EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-11-03 09:00:00+0000 --&gt; 2026-03-16 12:00:00+0000</a></p><p><b>Careplan</b>: <a href=\"CarePlan-p06-cp1.html\">CarePlan: extension = -&gt;EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-11-03 09:00:00+0000 --&gt; 2026-03-16 12:00:00+0000,,,,; instantiatesCanonical = http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition; status = completed; intent = order; period = 2025-11-03 09:05:00+0000 --&gt; (ongoing)</a></p><p><b>Decision context</b>: <a href=\"#hcp06-cp1-ci-sat/p06-cp1-dc-sat\">Parameters: library, fact</a></p><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/clinicalimpression-codes TriagingResult}\">Result of triaging</span></p><p><b>description</b>: Automatisk processering grundet måling modtaget</p><p><b>subject</b>: <a href=\"Patient-p06.html\">Andreas Bonde (official) Male, DoB: 1996-07-12 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1207969563 (use: official))</a></p><p><b>effective</b>: 2026-01-22 08:30:10+0000</p><p><b>date</b>: 2026-01-22 08:30:10+0000</p><h3>Investigations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Item</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes item-for-investigation}\">Item for investigation</span></td><td><a href=\"Observation-p06-cp1-sat.html\">Observation Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</a></td></tr></table><blockquote><p><b>finding</b></p><p><b>itemCodeableConcept</b>: <span title=\"Codes:{urn:oid:1.2.208.176.2.1 NPU03011}, {http://snomed.info/sct 442082004}\">Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</span></p></blockquote><blockquote><p><b>finding</b></p><p><b>itemCodeableConcept</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes green}\">Green overall assessment</span></p></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Parameters #p06-cp1-dc-sat</b></p><a name=\"p06-cp1-ci-sat/p06-cp1-dc-sat\"> </a><a name=\"hcp06-cp1-ci-sat/p06-cp1-dc-sat\"> </a><h2>Parameters</h2><table class=\"grid\"><tr><td>library</td><td><a href=\"Library-library-observation-absolute-triage.html\">Måling Absolut Grænseværdier Triagering</a></td></tr><tr><td>fact</td><td><a href=\"ServiceRequest-p06-cp1-sr-extra-saturation.html\">ServiceRequest Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</a></td></tr></table></blockquote></div>"
+  ] ;
+  fhir:DomainResource.contained [
+     a fhir:Parameters ;
+     fhir:index -1 ;
+     fhir:Resource.id [ fhir:value "p06-cp1-dc-sat" ] ;
+     fhir:Parameters.parameter [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "library" ] ;
+       fhir:Parameters.parameter.valueReference [
+         fhir:link <http://ehealth.sundhed.dk/testdata/Library/library-observation-absolute-triage> ;
+         fhir:Reference.reference [ fhir:value "Library/library-observation-absolute-triage" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "fact" ] ;
+       fhir:Parameters.parameter.valueReference [
+         fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p06-cp1-sr-extra-saturation> ;
+         fhir:Reference.reference [ fhir:value "ServiceRequest/p06-cp1-sr-extra-saturation" ]
+       ]
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/EpisodeOfCare/p06-eoc1> ;
+       fhir:Reference.reference [ fhir:value "EpisodeOfCare/p06-eoc1" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-careplan" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/CarePlan/p06-cp1> ;
+       fhir:Reference.reference [ fhir:value "CarePlan/p06-cp1" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decisionContext" ] ;
+     fhir:Extension.valueReference [
+       fhir:Reference.reference [ fhir:value "#p06-cp1-dc-sat" ]
+     ]
+  ] ;
+  fhir:ClinicalImpression.status [ fhir:value "completed"] ;
+  fhir:ClinicalImpression.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/clinicalimpression-codes" ] ;
+       fhir:Coding.code [ fhir:value "TriagingResult" ] ;
+       fhir:Coding.display [ fhir:value "Result of triaging" ]
+     ]
+  ] ;
+  fhir:ClinicalImpression.description [ fhir:value "Automatisk processering grundet måling modtaget"] ;
+  fhir:ClinicalImpression.subject [
+     fhir:link <http://ehealth.sundhed.dk/testdata/Patient/p06> ;
+     fhir:Reference.reference [ fhir:value "Patient/p06" ]
+  ] ;
+  fhir:ClinicalImpression.effectiveDateTime [ fhir:value "2026-01-22T08:30:10+00:00"^^xsd:dateTime] ;
+  fhir:ClinicalImpression.date [ fhir:value "2026-01-22T08:30:10+00:00"^^xsd:dateTime] ;
+  fhir:ClinicalImpression.investigation [
+     fhir:index -1 ;
+     fhir:ClinicalImpression.investigation.code [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes" ] ;
+         fhir:Coding.code [ fhir:value "item-for-investigation" ] ;
+         fhir:Coding.display [ fhir:value "Item for investigation" ]
+       ]
+     ] ;
+     fhir:ClinicalImpression.investigation.item [
+       fhir:index -1 ;
+       fhir:link <http://ehealth.sundhed.dk/testdata/Observation/p06-cp1-sat> ;
+       fhir:Reference.reference [ fhir:value "Observation/p06-cp1-sat" ]
+     ]
+  ] ;
+  fhir:ClinicalImpression.finding [
+     fhir:index -1 ;
+     fhir:ClinicalImpression.finding.itemCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "urn:oid:1.2.208.176.2.1" ] ;
+         fhir:Coding.code [ fhir:value "NPU03011" ] ;
+         fhir:Coding.display [ fhir:value "Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?" ]
+       ], [
+         fhir:index -1 ;
+         a sct:442082004 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "442082004" ] ;
+         fhir:Coding.display [ fhir:value "Measurement finding within reference range" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:ClinicalImpression.finding.itemCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes" ] ;
+         fhir:Coding.code [ fhir:value "green" ] ;
+         fhir:Coding.display [ fhir:value "Green overall assessment" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/ClinicalImpression/p06-cp1-ci-sat.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

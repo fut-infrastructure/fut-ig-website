@@ -1,4 +1,4 @@
-# KOL care team for fob - FUT test data v0.1.6
+# KOL care team for fob - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -10,7 +10,7 @@ Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefin
 
 **useContext**: [Program](http://terminology.hl7.org/7.5.0/CodeSystem-usage-context-type.html) = FOB
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.3.0/NamingSystem-uri.html)/urn:uuid:5e7c232f-f94a-47f9-b792-2620caaed4ec (use: official)
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:uuid:5e7c232f-f94a-47f9-b792-2620caaed4ec (use: official)
 
 **status**: Active
 

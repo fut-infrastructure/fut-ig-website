@@ -1,4 +1,4 @@
-# Pulse - FUT test data v0.1.6
+# Pulse - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-pulse | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-pulse | *Version*:0.2.0 |
 | Active as of 2026-11-24 | *Computable Name*: |
 | *Other Identifiers:*UUID:fab3ffd6-b78e-4783-8f5c-b5a253bb1991 | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
@@ -16,11 +16,11 @@
 * **Code: **: **Id: **
   * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min: ad-pulse
 * **Code: **: **Version: **
-  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min: 0.1.6
+  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min: 0.2.0
 * **Code: **: ** **
   * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min:  urn:uuid:fab3ffd6-b78e-4783-8f5c-b5a253bb1991 
 * **Code: **: **Date (date last changed): **
-  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min: 2026-11-24 14:20:56+0000
+  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min: 2026-11-24 14:40:18+0000
 * **Code: **: **Publisher (steward): **
   * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU21692**display: **Hjerte—Systole; frekv. = ? × 1/min: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Topic: **
@@ -226,10 +226,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:fab3ffd6-b78e-4783-8f5c-b5a253bb1991"
   }],
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "title" : "Puls",
   "status" : "active",
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

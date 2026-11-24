@@ -1,4 +1,4 @@
-# Episode of care 3 (active) - FUT test data v0.1.6
+# Episode of care 3 (active) - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

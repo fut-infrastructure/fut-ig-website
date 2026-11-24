@@ -10,11 +10,11 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.testdata",
   "language" : "en",
   "url" : "http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata",
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "name" : "FUTTestData",
   "title" : "FUT test data",
   "status" : "draft",
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

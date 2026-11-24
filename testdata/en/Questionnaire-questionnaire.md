@@ -1,4 +1,4 @@
-# COPD questionnaire - FUT test data v0.1.6
+# COPD questionnaire - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/Questionnaire/questionnaire | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/Questionnaire/questionnaire | *Version*:0.2.0 |
 | Active as of 2026-11-24 | *Computable Name*: |
 | *Other Identifiers:*UUID:453c523b-78a0-41f3-bc02-b4e0ee4f4710 | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
@@ -113,10 +113,10 @@ Test spørgeskema
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:453c523b-78a0-41f3-bc02-b4e0ee4f4710"
   }],
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "title" : "KOL spørgeskema",
   "status" : "active",
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

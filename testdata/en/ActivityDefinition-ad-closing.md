@@ -1,4 +1,4 @@
-# Closing - FUT test data v0.1.6
+# Closing - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-closing | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-closing | *Version*:0.2.0 |
 | Active as of 2026-11-24 | *Computable Name*: |
 | *Other Identifiers:*UUID:a10b1a43-be04-490e-bd03-b2de793846c8 | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
@@ -16,11 +16,11 @@
 * **Code: **: **Id: **
   * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: ad-closing
 * **Code: **: **Version: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 0.1.6
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 0.2.0
 * **Code: **: ** **
   * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007:  urn:uuid:a10b1a43-be04-490e-bd03-b2de793846c8 
 * **Code: **: **Date (date last changed): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 2026-11-24 14:20:56+0000
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 2026-11-24 14:40:18+0000
 * **Code: **: **Publisher (steward): **
   * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Topic: **
@@ -95,10 +95,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:a10b1a43-be04-490e-bd03-b2de793846c8"
   }],
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "title" : "Afrunding",
   "status" : "active",
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

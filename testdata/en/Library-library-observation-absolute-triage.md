@@ -1,4 +1,4 @@
-# observation-absolute-range-triage - FUT test data v0.1.6
+# observation-absolute-range-triage - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/Library/library-observation-absolute-triage | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/Library/library-observation-absolute-triage | *Version*:0.2.0 |
 | Active as of 2026-11-24 | *Computable Name*:observation-absolute-range-triage |
 | *Other Identifiers:*UUID:63f0b086-f94d-4cbc-ab0e-f01eb6c27f43 | |
 
@@ -55,7 +55,7 @@ Triagering af måling i forhold til absolutte grænseværdier.
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:63f0b086-f94d-4cbc-ab0e-f01eb6c27f43"
   }],
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "name" : "observation-absolute-range-triage",
   "title" : "Måling Absolut Grænseværdier Triagering",
   "status" : "active",
@@ -66,7 +66,7 @@ Triagering af måling i forhold til absolutte grænseværdier.
       "code" : "automated-processing"
     }]
   },
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

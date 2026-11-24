@@ -1,0 +1,10555 @@
+# Resource FUT test data
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "dk.ehealth.sundhed.fhir.ig.testdata",
+  "language" : "en",
+  "url" : "http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata",
+  "version" : "0.2.0",
+  "name" : "FUTTestData",
+  "title" : "FUT test data",
+  "status" : "draft",
+  "date" : "2026-11-24T14:38:40+00:00",
+  "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+  "contact" : [{
+    "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://ehealth.sundhed.dk"
+    }]
+  }],
+  "description" : "Test data resources for the Danish eHealth Infrastructure, defined in FSH against the profiles of its Implementation Guide.",
+  "packageId" : "dk.ehealth.sundhed.fhir.ig.testdata",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "7.5.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.4.0"
+  },
+  {
+    "id" : "dk_ehealth_sundhed_fhir_ig_core",
+    "uri" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
+    "packageId" : "dk.ehealth.sundhed.fhir.ig.core",
+    "version" : "11.0.1"
+  },
+  {
+    "id" : "hl7_fhir_dk_core",
+    "uri" : "http://hl7.dk/fhir/core/ImplementationGuide/hl7.fhir.dk.core",
+    "packageId" : "hl7.fhir.dk.core",
+    "version" : "3.6.0"
+  },
+  {
+    "id" : "hl7_fhir_uv_sdc",
+    "uri" : "http://hl7.org/fhir/uv/sdc/ImplementationGuide/sdc",
+    "packageId" : "hl7.fhir.uv.sdc",
+    "version" : "2.7.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.3.0"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2026+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "release"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://ehealth.sundhed.dk/testdata/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "i18n-default-lang"
+      },
+      {
+        "url" : "value",
+        "valueString" : "en"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "grouping" : [{
+      "id" : "BaseIndividuals",
+      "name" : "Base.Individuals",
+      "description" : "The people the test data is about."
+    },
+    {
+      "id" : "BaseEntities",
+      "name" : "Base.Entities",
+      "description" : "Organizations the definitions refer to."
+    },
+    {
+      "id" : "BaseManagement",
+      "name" : "Base.Management",
+      "description" : "The episode of care the plan is delivered under, and that every record of care refers back to."
+    },
+    {
+      "id" : "ClinicalCareProvision",
+      "name" : "Clinical.Care Provision",
+      "description" : "The plan as delivered to the patient: the care plan, the service requests it consists of, and the care team responsible."
+    },
+    {
+      "id" : "ClinicalDiagnostics",
+      "name" : "Clinical.Diagnostics",
+      "description" : "What the patient submitted: the measurements and the questionnaire responses."
+    },
+    {
+      "id" : "ClinicalSummary",
+      "name" : "Clinical.Summary",
+      "description" : "The clinical record: the diagnosis each episode addresses, and the triage result of each submission. The impressions are not loaded — automated processing creates them, and the ones here record what it should produce."
+    },
+    {
+      "id" : "FoundationSecurity",
+      "name" : "Foundation.Security",
+      "description" : "One Provenance per submission, naming the resources submitted together. This is what triggers automated processing."
+    },
+    {
+      "id" : "BaseWorkflow",
+      "name" : "Base.Workflow",
+      "description" : "The assessment task raised with each triage result. Not loaded either, and its priority is the triage colour."
+    },
+    {
+      "id" : "SpecializedDefinitionalArtifacts",
+      "name" : "Specialized.Definitional Artifacts",
+      "description" : "The plan, the activities it is built from, the questionnaire and the automated-processing rules."
+    },
+    {
+      "id" : "FoundationOther",
+      "name" : "Foundation.Other",
+      "description" : "Settings the loader reads before it loads anything. Not test data, and not created on the target."
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p01.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p01"
+      },
+      "name" : "Patient 01",
+      "description" : "Test patient 01, CPR 0508754760.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p02.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p02"
+      },
+      "name" : "Patient 02",
+      "description" : "Test patient 02, CPR 1501989971.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p03.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p03"
+      },
+      "name" : "Patient 03",
+      "description" : "Test patient 03, CPR 2412589206.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p04.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p04"
+      },
+      "name" : "Patient 04",
+      "description" : "Test patient 04, CPR 1311633801.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p05.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p05"
+      },
+      "name" : "Patient 05",
+      "description" : "Test patient 05, CPR 0512894992.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p06.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p06"
+      },
+      "name" : "Patient 06",
+      "description" : "Test patient 06, CPR 1207969563.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p07.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p07"
+      },
+      "name" : "Patient 07",
+      "description" : "Test patient 07, CPR 1509829345.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p08.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p08"
+      },
+      "name" : "Patient 08",
+      "description" : "Test patient 08, CPR 1512543258.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p09.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p09"
+      },
+      "name" : "Patient 09",
+      "description" : "Test patient 09, CPR 1905839388.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-p10.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/p10"
+      },
+      "name" : "Patient 10",
+      "description" : "Test patient 10, CPR 0510049527.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-practitioner-placeholder.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/practitioner-placeholder"
+      },
+      "name" : "Practitioner (placeholder)",
+      "description" : "Stands in for a practitioner on the care team the scenario runs under. The loader substitutes a real one.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-practitioner-xa.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/practitioner-xa"
+      },
+      "name" : "Practitioner telma",
+      "description" : "Practitioner for telma, assigned on a care team for telma.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-practitioner-xb.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/practitioner-xb"
+      },
+      "name" : "Practitioner kpro",
+      "description" : "Practitioner for kpro, assigned on a care team for kpro.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-practitioner-xc.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/practitioner-xc"
+      },
+      "name" : "Practitioner fob",
+      "description" : "Practitioner for fob, assigned on a care team for fob.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-practitioner-xd.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/practitioner-xd"
+      },
+      "name" : "Practitioner telesaar",
+      "description" : "Practitioner for telesaar, assigned on a care team for telesaar.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseIndividuals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-org-region-midtjylland.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/org-region-midtjylland"
+      },
+      "name" : "Region Midtjylland",
+      "description" : "Owner of the plan, its activities, the questionnaire and the automated-processing rules.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseEntities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-org-region-nordjylland.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/org-region-nordjylland"
+      },
+      "name" : "Region Nordjylland",
+      "description" : "Managing organization for the episodes of care and the care teams that deliver the monitoring.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseEntities"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p01-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p01-eoc1"
+      },
+      "name" : "Episode of care (completed)",
+      "description" : "A completed episode of care for the same patient and the same COPD diagnosis, which ran for about four and a half months and closed well before the open one opened. Shows the closed period and the full status history that a finished episode carries.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p01-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p01-eoc2"
+      },
+      "name" : "Episode of care",
+      "description" : "The open episode of care the monitoring plan is delivered under, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p02-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p02-eoc1"
+      },
+      "name" : "Episode of care 1 (completed)",
+      "description" : "A completed episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p02-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p02-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p03-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p03-eoc1"
+      },
+      "name" : "Episode of care 1 (completed)",
+      "description" : "A completed episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p03-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p03-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p04-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p04-eoc1"
+      },
+      "name" : "Episode of care 1 (completed)",
+      "description" : "A completed episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p04-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p04-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p05-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p05-eoc1"
+      },
+      "name" : "Episode of care 1 (completed)",
+      "description" : "A completed episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p05-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p05-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p06-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p06-eoc1"
+      },
+      "name" : "Episode of care 1 (completed)",
+      "description" : "A completed episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p06-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p06-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p07-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p07-eoc1"
+      },
+      "name" : "Episode of care 1 (completed)",
+      "description" : "A completed episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p07-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p07-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p08-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p08-eoc1"
+      },
+      "name" : "Episode of care 1 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p09-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p09-eoc1"
+      },
+      "name" : "Episode of care 1 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p10-eoc1.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p10-eoc1"
+      },
+      "name" : "Episode of care 1 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p10-eoc2.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p10-eoc2"
+      },
+      "name" : "Episode of care 2 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p10-eoc3.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p10-eoc3"
+      },
+      "name" : "Episode of care 3 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "EpisodeOfCare"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "EpisodeOfCare-p10-eoc4.html"
+      }],
+      "reference" : {
+        "reference" : "EpisodeOfCare/p10-eoc4"
+      },
+      "name" : "Episode of care 4 (active)",
+      "description" : "An open episode of care, addressing the COPD diagnosis.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseManagement"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p01-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p01-cp1"
+      },
+      "name" : "Care plan (completed)",
+      "description" : "The monitoring plan as delivered under the completed episode of care. Status completed, with the full status history and — following the environment's behaviour — a period that is left open.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p01-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p01-cp2"
+      },
+      "name" : "Care plan (active)",
+      "description" : "The monitoring plan as delivered under the open episode of care. Normally created by $apply, which would also create one ServiceRequest per activity.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p02-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p02-cp1"
+      },
+      "name" : "Care plan 1 (completed)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p02-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p02-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p03-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p03-cp1"
+      },
+      "name" : "Care plan 1 (completed)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p03-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p03-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p04-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p04-cp1"
+      },
+      "name" : "Care plan 1 (completed)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p04-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p04-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p05-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p05-cp1"
+      },
+      "name" : "Care plan 1 (completed)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p05-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p05-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p06-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p06-cp1"
+      },
+      "name" : "Care plan 1 (completed)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p06-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p06-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p07-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p07-cp1"
+      },
+      "name" : "Care plan 1 (completed)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p07-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p07-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p08-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p08-cp1"
+      },
+      "name" : "Care plan 1 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p09-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p09-cp1"
+      },
+      "name" : "Care plan 1 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p10-cp1.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p10-cp1"
+      },
+      "name" : "Care plan 1 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 1.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p10-cp2.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p10-cp2"
+      },
+      "name" : "Care plan 2 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 2.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p10-cp3.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p10-cp3"
+      },
+      "name" : "Care plan 3 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 3.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CarePlan"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CarePlan-p10-cp4.html"
+      }],
+      "reference" : {
+        "reference" : "CarePlan/p10-cp4"
+      },
+      "name" : "Care plan 4 (active)",
+      "description" : "The monitoring plan as delivered under episode of care 4.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p01-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p01-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p02-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p02-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p03-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p03-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p04-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p04-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p05-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p05-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p06-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled) — completed",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra) — completed",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra) — completed",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra) — completed",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra) — completed",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra) — completed",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled) — completed",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled) — completed",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled) — completed",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled) — completed",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled) — completed",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled) — completed",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled) — completed",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled) — completed",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p07-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p07-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p08-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p08-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p09-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p09-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp1-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp1-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp2-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp2-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp3-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp3-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-closing"
+      },
+      "name" : "Closing (scheduled)",
+      "description" : "Guidance screen shown after the scheduled round is complete.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-extra-head"
+      },
+      "name" : "Head activity (extra)",
+      "description" : "The container for the unscheduled branch.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-extra-pulse"
+      },
+      "name" : "Pulse (extra)",
+      "description" : "The unscheduled pulse measurement, with the same four absolute reference ranges as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-extra-questionnaire"
+      },
+      "name" : "Questionnaire (extra)",
+      "description" : "The unscheduled symptom questionnaire. This is the request a test questionnaire response is most easily submitted against, since it is not bound to a window.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-extra-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (extra)",
+      "description" : "Groups the unscheduled saturation and pulse measurements as one device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-extra-saturation"
+      },
+      "name" : "Oxygen saturation (extra)",
+      "description" : "The unscheduled oxygen saturation measurement, with the same absolute reference ranges as the scheduled one. A submission against this request can be made at any time.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-head.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-head"
+      },
+      "name" : "Head activity (scheduled)",
+      "description" : "The container for the scheduled branch. Nothing is submitted against it; it groups the activities below.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-intro"
+      },
+      "name" : "Introduction (scheduled)",
+      "description" : "Guidance screen shown at the start of the scheduled measurement round.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-pulse"
+      },
+      "name" : "Pulse (scheduled)",
+      "description" : "The scheduled pulse measurement. Carries four absolute reference ranges, so both a low and a high value triage red: red at or below 50/min and at or above 130/min, yellow in between.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-questionnaire"
+      },
+      "name" : "Questionnaire (scheduled)",
+      "description" : "The scheduled symptom questionnaire. A questionnaire response is submitted against this request and triaged on its answer significance.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-sat-pulse"
+      },
+      "name" : "Saturation and pulse device group (scheduled)",
+      "description" : "Groups the saturation and pulse measurements as one device group, so both are taken from the same device in one go.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-sat-pulse-intro"
+      },
+      "name" : "Saturation and pulse introduction (scheduled)",
+      "description" : "Guidance screen introducing the saturation and pulse measurements.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-sat-pulse-prep"
+      },
+      "name" : "Saturation and pulse preparation (scheduled)",
+      "description" : "Guidance screen telling the patient how to prepare before measuring.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ServiceRequest-p10-cp4-sr-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/p10-cp4-sr-saturation"
+      },
+      "name" : "Oxygen saturation (scheduled)",
+      "description" : "The scheduled oxygen saturation measurement. Carries the absolute reference ranges its triage rule compares a submitted value against: red at or below 85%, yellow from 85% to 88%.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CareTeam-careteam-placeholder.html"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/careteam-placeholder"
+      },
+      "name" : "KOL care team (placeholder)",
+      "description" : "Stands in for the care team the scenario runs under. The loader substitutes a real one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CareTeam-careteam-xa.html"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/careteam-xa"
+      },
+      "name" : "KOL care team for telma",
+      "description" : "The care team responsible for the COPD monitoring under telma.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CareTeam-careteam-xb.html"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/careteam-xb"
+      },
+      "name" : "KOL care team for kpro",
+      "description" : "The care team responsible for the COPD monitoring under kpro.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CareTeam-careteam-xc.html"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/careteam-xc"
+      },
+      "name" : "KOL care team for fob",
+      "description" : "The care team responsible for the COPD monitoring under fob.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CareTeam"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CareTeam-careteam-xd.html"
+      }],
+      "reference" : {
+        "reference" : "CareTeam/careteam-xd"
+      },
+      "name" : "KOL care team for telesaar",
+      "description" : "The care team responsible for the COPD monitoring under telesaar.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalCareProvision"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p01-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p01-cp1-pulse"
+      },
+      "name" : "Pulse 118/min (completed episode)",
+      "description" : "Pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p01-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p01-cp1-sat"
+      },
+      "name" : "Oxygen saturation 84% (completed episode)",
+      "description" : "Oxygen saturation submitted under the completed episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p01-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p01-cp2-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p01-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p01-cp2-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p02-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p02-cp1-pulse"
+      },
+      "name" : "Pulse 72/min (completed episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the completed episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p02-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p02-cp1-sat"
+      },
+      "name" : "Oxygen saturation 96% (completed episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the completed episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p02-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p02-cp2-pulse"
+      },
+      "name" : "Pulse 118/min (open episode)",
+      "description" : "Pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p02-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p02-cp2-sat"
+      },
+      "name" : "Oxygen saturation 84% (open episode)",
+      "description" : "Oxygen saturation submitted under the open episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p03-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p03-cp1-pulse"
+      },
+      "name" : "Pulse 72/min (completed episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the completed episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p03-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p03-cp1-sat"
+      },
+      "name" : "Oxygen saturation 96% (completed episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the completed episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p03-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p03-cp2-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p03-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p03-cp2-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p04-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p04-cp1-pulse"
+      },
+      "name" : "Pulse 118/min (completed episode)",
+      "description" : "Pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p04-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p04-cp1-sat"
+      },
+      "name" : "Oxygen saturation 84% (completed episode)",
+      "description" : "Oxygen saturation submitted under the completed episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p04-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p04-cp2-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p04-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p04-cp2-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p05-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p05-cp1-pulse"
+      },
+      "name" : "Pulse 72/min (completed episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the completed episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p05-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p05-cp1-sat"
+      },
+      "name" : "Oxygen saturation 96% (completed episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the completed episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p05-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p05-cp2-pulse"
+      },
+      "name" : "Pulse 118/min (open episode)",
+      "description" : "Pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p05-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p05-cp2-sat"
+      },
+      "name" : "Oxygen saturation 84% (open episode)",
+      "description" : "Oxygen saturation submitted under the open episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p06-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p06-cp1-pulse"
+      },
+      "name" : "Pulse 72/min (completed episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the completed episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p06-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p06-cp1-sat"
+      },
+      "name" : "Oxygen saturation 96% (completed episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the completed episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p06-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p06-cp2-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p06-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p06-cp2-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p07-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p07-cp1-pulse"
+      },
+      "name" : "Pulse 118/min (completed episode)",
+      "description" : "Pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p07-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p07-cp1-sat"
+      },
+      "name" : "Oxygen saturation 84% (completed episode)",
+      "description" : "Oxygen saturation submitted under the completed episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p07-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p07-cp2-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p07-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p07-cp2-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p08-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p08-cp1-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p08-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p08-cp1-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p09-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p09-cp1-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p09-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p09-cp1-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp1-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp1-pulse"
+      },
+      "name" : "Pulse 118/min (open episode)",
+      "description" : "Pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp1-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp1-sat"
+      },
+      "name" : "Oxygen saturation 84% (open episode)",
+      "description" : "Oxygen saturation submitted under the open episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp2-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp2-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp2-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp2-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp3-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp3-pulse"
+      },
+      "name" : "Pulse 118/min (open episode)",
+      "description" : "Pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so triage returns yellow and raises a task with priority urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp3-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp3-sat"
+      },
+      "name" : "Oxygen saturation 84% (open episode)",
+      "description" : "Oxygen saturation submitted under the open episode. 84% is at or below the red absolute range of 85%, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp4-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp4-pulse"
+      },
+      "name" : "Pulse 72/min (open episode)",
+      "description" : "Pulse submitted against the unscheduled branch of the open episode's care plan. 72/min falls between the low and high ranges, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-p10-cp4-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/p10-cp4-sat"
+      },
+      "name" : "Oxygen saturation 96% (open episode)",
+      "description" : "Oxygen saturation submitted against the unscheduled branch of the open episode's care plan. 96% is above every absolute range, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p01-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p01-cp1-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode during an exacerbation. Breathlessness 'En del' and greenish sputum both carry red significance, so triage returns red and raises a task with priority asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p01-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p01-cp2-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode with no symptoms reported. Every answer carries green significance, so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p02-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p02-cp1-qr"
+      },
+      "name" : "Questionnaire response, mild symptoms (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode. 4 scored answers — 1 yellow, 3 green — so triage returns yellow and the resulting task is urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p02-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p02-cp2-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 5 scored answers — 4 red, 1 yellow — so triage returns red and the resulting task is asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p03-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p03-cp1-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode. 4 scored answers — 4 green — so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p03-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p03-cp2-qr"
+      },
+      "name" : "Questionnaire response, mild symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 1 yellow, 3 green — so triage returns yellow and the resulting task is urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p04-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p04-cp1-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode. 4 scored answers — 3 red, 1 yellow — so triage returns red and the resulting task is asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p04-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p04-cp2-qr"
+      },
+      "name" : "Questionnaire response, mild symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 1 yellow, 3 green — so triage returns yellow and the resulting task is urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p05-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p05-cp1-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode. 4 scored answers — 4 green — so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p05-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p05-cp2-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 5 scored answers — 3 red, 1 yellow, 1 green — so triage returns red and the resulting task is asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p06-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p06-cp1-qr"
+      },
+      "name" : "Questionnaire response, mild symptoms (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode. 4 scored answers — 3 yellow, 1 green — so triage returns yellow and the resulting task is urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p06-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p06-cp2-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 4 green — so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p07-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p07-cp1-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (completed episode)",
+      "description" : "A symptom questionnaire answered under the completed episode. 4 scored answers — 3 red, 1 yellow — so triage returns red and the resulting task is asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p07-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p07-cp2-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 4 green — so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p08-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p08-cp1-qr"
+      },
+      "name" : "Questionnaire response, mild symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 5 scored answers — 1 yellow, 4 green — so triage returns yellow and the resulting task is urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p09-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p09-cp1-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 4 green — so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p10-cp1-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p10-cp1-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 5 scored answers — 1 red, 3 yellow, 1 green — so triage returns red and the resulting task is asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p10-cp2-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p10-cp2-qr"
+      },
+      "name" : "Questionnaire response, mild symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 1 yellow, 3 green — so triage returns yellow and the resulting task is urgent.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p10-cp3-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p10-cp3-qr"
+      },
+      "name" : "Questionnaire response, exacerbation (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 3 red, 1 green — so triage returns red and the resulting task is asap.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-p10-cp4-qr.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/p10-cp4-qr"
+      },
+      "name" : "Questionnaire response, no symptoms (open episode)",
+      "description" : "A symptom questionnaire answered under the open episode. 4 scored answers — 4 green — so triage returns green and the resulting task is routine.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalDiagnostics"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p01-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p01-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (completed episode)",
+      "description" : "The COPD diagnosis as recorded under the completed episode of care. The same diagnosis as the other Condition: each episode carries its own, because a Condition can reference only one episode.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p01-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p01-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease",
+      "description" : "The COPD diagnosis the episode of care addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p02-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p02-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p02-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p02-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p03-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p03-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p03-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p03-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p04-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p04-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p04-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p04-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p05-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p05-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p05-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p05-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p06-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p06-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p06-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p06-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p07-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p07-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p07-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p07-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p08-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p08-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p09-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p09-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p10-eoc1-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p10-eoc1-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 1)",
+      "description" : "The COPD diagnosis episode of care 1 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p10-eoc2-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p10-eoc2-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 2)",
+      "description" : "The COPD diagnosis episode of care 2 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p10-eoc3-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p10-eoc3-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 3)",
+      "description" : "The COPD diagnosis episode of care 3 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-p10-eoc4-cond.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/p10-eoc4-cond"
+      },
+      "name" : "Chronic obstructive pulmonary disease (episode 4)",
+      "description" : "The COPD diagnosis episode of care 4 addresses and the monitoring plan responds to.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p01-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p01-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p01-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p01-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. Five scored answers, three red and two yellow; the rule takes the highest, so the overall assessment is red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p01-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p01-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the completed episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p01-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p01-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p01-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p01-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. Four scored answers, all green, so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p01-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p01-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p02-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p02-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the completed episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p02-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p02-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — yellow",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 1 yellow, 3 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p02-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p02-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the completed episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p02-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p02-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p02-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p02-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 5 scored answers — 4 red, 1 yellow — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p02-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p02-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the open episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p03-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p03-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the completed episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p03-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p03-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 4 green — so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p03-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p03-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the completed episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p03-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p03-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p03-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p03-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — yellow",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 1 yellow, 3 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p03-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p03-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p04-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p04-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p04-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p04-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 3 red, 1 yellow — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p04-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p04-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the completed episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p04-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p04-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p04-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p04-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — yellow",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 1 yellow, 3 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p04-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p04-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p05-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p05-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the completed episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p05-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p05-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 4 green — so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p05-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p05-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the completed episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p05-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p05-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p05-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p05-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 5 scored answers — 3 red, 1 yellow, 1 green — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p05-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p05-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the open episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p06-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p06-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the completed episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p06-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p06-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — yellow",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 3 yellow, 1 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p06-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p06-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the completed episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p06-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p06-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p06-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p06-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 4 green — so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p06-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p06-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p07-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p07-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the completed episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p07-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p07-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the completed episode. 4 scored answers — 3 red, 1 yellow — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p07-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p07-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the completed episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p07-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p07-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p07-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p07-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 4 green — so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p07-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p07-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p08-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p08-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p08-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p08-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — yellow",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 5 scored answers — 1 yellow, 4 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p08-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p08-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p09-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p09-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p09-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p09-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 4 green — so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p09-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p09-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp1-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp1-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp1-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp1-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 5 scored answers — 1 red, 3 yellow, 1 green — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp1-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp1-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the open episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp2-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp2-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp2-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp2-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — yellow",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 1 yellow, 3 green — so the overall assessment is yellow. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp2-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp2-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp3-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp3-ci-pulse"
+      },
+      "name" : "Triage of pulse 118/min — yellow",
+      "description" : "Triage result for the pulse submitted under the open episode. 118/min falls in the upper yellow range of 110 to 130, so the finding is 'outside reference range' with the GAL coding, and the overall assessment yellow.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp3-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp3-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — red",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 3 red, 1 green — so the overall assessment is red. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp3-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp3-ci-sat"
+      },
+      "name" : "Triage of saturation 84% — red",
+      "description" : "Triage result for the saturation submitted under the open episode. 84% is at or below the red alarm range of 85%, so the finding is 'outside reference range' with the RAL coding, and the overall assessment red.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp4-ci-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp4-ci-pulse"
+      },
+      "name" : "Triage of pulse 72/min — green",
+      "description" : "Triage result for the pulse submitted under the open episode. 72/min falls between the low and high alarm ranges, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp4-ci-qr.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp4-ci-qr"
+      },
+      "name" : "Triage of the questionnaire response — green",
+      "description" : "Triage result for the questionnaire response submitted under the open episode. 4 scored answers — 4 green — so the overall assessment is green. Carries no description: the questionnaire rule does not set one.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ClinicalImpression"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ClinicalImpression-p10-cp4-ci-sat.html"
+      }],
+      "reference" : {
+        "reference" : "ClinicalImpression/p10-cp4-ci-sat"
+      },
+      "name" : "Triage of saturation 96% — green",
+      "description" : "Triage result for the saturation submitted under the open episode. 96% is within every absolute range, so the finding is 'within reference range' and the overall assessment green.",
+      "exampleBoolean" : true,
+      "groupingId" : "ClinicalSummary"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p01-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p01-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p01-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p01-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p02-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p02-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p02-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p02-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p03-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p03-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p03-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p03-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p04-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p04-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p04-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p04-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p05-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p05-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p05-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p05-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p06-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p06-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p06-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p06-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p07-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p07-cp1-prov"
+      },
+      "name" : "Submission under the completed episode",
+      "description" : "The submit record for the completed episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p07-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p07-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p08-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p08-cp1-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p09-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p09-cp1-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p10-cp1-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p10-cp1-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p10-cp2-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p10-cp2-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p10-cp3-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p10-cp3-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode, made while the plan was still active. Triage should return red for the saturation and the questionnaire, and yellow for the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-p10-cp4-prov.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/p10-cp4-prov"
+      },
+      "name" : "Submission under the open episode",
+      "description" : "The submit record for the open episode: one questionnaire response and two observations, submitted together against the unscheduled branch. This is what triggers automated processing, which should triage all three green with routine tasks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationSecurity"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p01-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p01-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the completed episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p01-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p01-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the completed episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p01-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p01-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the completed episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p01-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p01-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p01-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p01-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p01-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p01-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p02-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p02-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p02-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p02-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — urgent",
+      "description" : "Task for the green questionnaire result under the completed episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p02-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p02-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p02-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p02-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the open episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p02-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p02-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the open episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p02-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p02-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the open episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p03-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p03-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p03-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p03-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the completed episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p03-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p03-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p03-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p03-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p03-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p03-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — urgent",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p03-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p03-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p04-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p04-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the completed episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p04-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p04-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the completed episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p04-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p04-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the completed episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p04-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p04-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p04-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p04-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — urgent",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p04-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p04-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p05-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p05-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p05-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p05-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the completed episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p05-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p05-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p05-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p05-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the open episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p05-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p05-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the open episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p05-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p05-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the open episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p06-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p06-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p06-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p06-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — urgent",
+      "description" : "Task for the green questionnaire result under the completed episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p06-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p06-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the completed episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p06-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p06-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p06-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p06-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p06-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p06-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p07-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p07-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the completed episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p07-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p07-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the completed episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p07-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p07-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the completed episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p07-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p07-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p07-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p07-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p07-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p07-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p08-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p08-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p08-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p08-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — urgent",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p08-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p08-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p09-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p09-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p09-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p09-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p09-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p09-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp1-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp1-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the open episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp1-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp1-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the open episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp1-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp1-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the open episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp2-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp2-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp2-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp2-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — urgent",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp2-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp2-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp3-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp3-task-pulse"
+      },
+      "name" : "Assess pulse triage — urgent",
+      "description" : "Task for the yellow pulse result under the open episode. Priority urgent, because the value fell in a GAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp3-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp3-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — asap",
+      "description" : "Task for the red questionnaire result under the open episode. Priority asap, because the highest answer significance was red.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp3-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp3-task-sat"
+      },
+      "name" : "Assess saturation triage — asap",
+      "description" : "Task for the red saturation result under the open episode. Priority asap, because the value fell in a RAL range.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp4-task-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp4-task-pulse"
+      },
+      "name" : "Assess pulse triage — routine",
+      "description" : "Task for the green pulse result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp4-task-qr.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp4-task-qr"
+      },
+      "name" : "Evaluate questionnaire response triage — routine",
+      "description" : "Task for the green questionnaire result under the open episode. Carries the questionnaire wording rather than the measurement wording.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Task-p10-cp4-task-sat.html"
+      }],
+      "reference" : {
+        "reference" : "Task/p10-cp4-task-sat"
+      },
+      "name" : "Assess saturation triage — routine",
+      "description" : "Task for the green saturation result under the open episode. Priority routine, because triage returned green.",
+      "exampleBoolean" : true,
+      "groupingId" : "BaseWorkflow"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PlanDefinition-plandefinition.html"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/plandefinition"
+      },
+      "name" : "COPD monitoring plan (oxygen saturation, pulse and questionnaire)",
+      "description" : "COPD monitoring plan with a scheduled mon/wed/fri branch and an unscheduled extra branch, each carrying the saturation and pulse device group and the symptom questionnaire. One submission against the extra branch yields one questionnaire response and two observations.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-closing.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-closing"
+      },
+      "name" : "Closing",
+      "description" : "Closing guidance for a scheduled round.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-extra-head.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-extra-head"
+      },
+      "name" : "Extra head activity",
+      "description" : "Container for the unscheduled saturation, pulse and questionnaire.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-extra-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-extra-pulse"
+      },
+      "name" : "Extra pulse",
+      "description" : "Unscheduled heart rate, with the same absolute thresholds as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-extra-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-extra-questionnaire"
+      },
+      "name" : "Extra questionnaire",
+      "description" : "Unscheduled Master Questionnaire activity, composed of the same questionnaire as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-extra-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-extra-sat-pulse"
+      },
+      "name" : "Extra oxygen saturation and pulse (same device group)",
+      "description" : "The unscheduled same-device group.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-extra-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-extra-saturation"
+      },
+      "name" : "Extra oxygen saturation",
+      "description" : "Unscheduled oxygen saturation, with the same absolute thresholds as the scheduled one.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-head.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-head"
+      },
+      "name" : "Head activity",
+      "description" : "Container for the scheduled saturation, pulse and questionnaire.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-intro"
+      },
+      "name" : "Introduction",
+      "description" : "Opening guidance for a scheduled round.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-pulse"
+      },
+      "name" : "Pulse",
+      "description" : "Heart rate, triaged against absolute thresholds: red at or below 50 and at or above 130, yellow either side of the 60-110 green band.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-questionnaire"
+      },
+      "name" : "Questionnaire",
+      "description" : "Master Questionnaire activity presenting the symptom questionnaire, the single questionnaire of this plan.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-sat-pulse.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-sat-pulse"
+      },
+      "name" : "Oxygen saturation and pulse (same device group)",
+      "description" : "The same-device group: one pulse oximeter, one patient action, two values. Its children are the saturation and the pulse.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-sat-pulse-intro.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-sat-pulse-intro"
+      },
+      "name" : "Oxygen saturation and pulse measurement",
+      "description" : "Guidance shown before the saturation and pulse measurement: warm the hands, and what the reading involves.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-sat-pulse-prep.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-sat-pulse-prep"
+      },
+      "name" : "Preparation",
+      "description" : "Immediate preparation: sit still for five minutes beforehand and keep the hand steady during the reading.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-ad-saturation.html"
+      }],
+      "reference" : {
+        "reference" : "ActivityDefinition/ad-saturation"
+      },
+      "name" : "Oxygen saturation",
+      "description" : "Oxygen saturation, triaged against absolute thresholds: red at or below 85%, yellow up to 88%, green above.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Questionnaire-questionnaire.html"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/questionnaire"
+      },
+      "name" : "COPD questionnaire",
+      "description" : "COPD symptom questionnaire: treatment status, three symptom scales, sputum colour and a conditional comment. Eighteen answer-significance mappings across green, yellow and red.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Library"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Library-library-observation-absolute-triage.html"
+      }],
+      "reference" : {
+        "reference" : "Library/library-observation-absolute-triage"
+      },
+      "name" : "observation-absolute-range-triage",
+      "description" : "Triages a submitted observation against absolute thresholds expressed in the observation's own unit. Reads the reference ranges from the observation it is given, so a measurement must carry them to be assessed; a GAL range yields a yellow assessment and a RAL range a red one.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Library"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Library-library-questionnaire-triage.html"
+      }],
+      "reference" : {
+        "reference" : "Library/library-questionnaire-triage"
+      },
+      "name" : "questionnaire-response-triage-on-answersignificance",
+      "description" : "Triages a submitted questionnaire response by matching each answer against the answer-significance mappings on the questionnaire, and recording one finding basis per answered question alongside the overall assessment.",
+      "exampleBoolean" : true,
+      "groupingId" : "SpecializedDefinitionalArtifacts"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-loader-settings.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/loader-settings"
+      },
+      "name" : "Loader settings",
+      "description" : "Read by the loader, never loaded. anchorDate is the day the scenario is written for: it maps to the load date, and every date in the data shifts by the same number of days. Table pairing the coexistence tag with the programme it runs: the loader substitutes ${COEXISTENCE_TAG} and ${EHEALTH_PROGRAM} together, making one copy of the vendor-scoped data per vendor listed here.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationOther"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-loader-codesystems.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/loader-codesystems"
+      },
+      "name" : "Loader code systems",
+      "description" : "Read by the loader, never loaded. The ehealth-system and ehealth-program CodeSystems of dk.ehealth.sundhed.fhir.ig.core: the loader checks the coexistence tags against them, and adds any codes the terminology service lacks.",
+      "exampleBoolean" : true,
+      "groupingId" : "FoundationOther"
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "shared.html"
+        }],
+        "nameUrl" : "shared.html",
+        "title" : "Shared definitions",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "vendors.html"
+        }],
+        "nameUrl" : "vendors.html",
+        "title" : "Vendors",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "vendor-xa.html"
+          }],
+          "nameUrl" : "vendor-xa.html",
+          "title" : "Vendor xa",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "vendor-xb.html"
+          }],
+          "nameUrl" : "vendor-xb.html",
+          "title" : "Vendor xb",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "vendor-xc.html"
+          }],
+          "nameUrl" : "vendor-xc.html",
+          "title" : "Vendor xc",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "vendor-xd.html"
+          }],
+          "nameUrl" : "vendor-xd.html",
+          "title" : "Vendor xd",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "patients.html"
+        }],
+        "nameUrl" : "patients.html",
+        "title" : "Patient data",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-01.html"
+          }],
+          "nameUrl" : "patient-01.html",
+          "title" : "Patient 01",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-02.html"
+          }],
+          "nameUrl" : "patient-02.html",
+          "title" : "Patient 02",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-03.html"
+          }],
+          "nameUrl" : "patient-03.html",
+          "title" : "Patient 03",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-04.html"
+          }],
+          "nameUrl" : "patient-04.html",
+          "title" : "Patient 04",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-05.html"
+          }],
+          "nameUrl" : "patient-05.html",
+          "title" : "Patient 05",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-06.html"
+          }],
+          "nameUrl" : "patient-06.html",
+          "title" : "Patient 06",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-07.html"
+          }],
+          "nameUrl" : "patient-07.html",
+          "title" : "Patient 07",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-08.html"
+          }],
+          "nameUrl" : "patient-08.html",
+          "title" : "Patient 08",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-09.html"
+          }],
+          "nameUrl" : "patient-09.html",
+          "title" : "Patient 09",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient-10.html"
+          }],
+          "nameUrl" : "patient-10.html",
+          "title" : "Patient 10",
+          "generation" : "markdown"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "loading.html"
+        }],
+        "nameUrl" : "loading.html",
+        "title" : "Loading",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "downloads.html"
+        }],
+        "nameUrl" : "downloads.html",
+        "title" : "Downloads",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}
+
+```

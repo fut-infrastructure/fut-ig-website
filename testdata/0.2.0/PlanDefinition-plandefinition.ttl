@@ -1,0 +1,549 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "plandefinition"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-plandefinition>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">plandefinition</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-plandefinition.html\">Målinger og spørgeskema (iltmætning, puls og spørgeskema)</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.2.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        \n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>urn:uuid:b7510240-987f-4ec9-8436-a0af44bbe271</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">Målinger og spørgeskema (iltmætning, puls og spørgeskema)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2026-11-24 14:38:40+0000</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">Den telemedicinske infrastruktur (eHealth Infrastructure)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>focus</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Purpose: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>Spørgeskema samt iltmætning og puls, planlagt og ekstra.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Målinger og spørgeskema:</b> \n                            \n                            <br/>\n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Introduktion:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ad-intro.html\">Introduktion</a><br/>\n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Måling af iltmætning og puls:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ad-sat-pulse-intro.html\">Måling af iltmætning og puls</a><br/>\n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Forberedelse:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ad-sat-pulse-prep.html\">Forberedelse</a><br/>\n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Iltmætning og pulsmåling:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Additional sub-actions not displayed</i>\n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Spørgeskema om tilstand og symptomer:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ad-questionnaire.html\">Spørgeskema om tilstand og symptomer</a><br/>\n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Afrunding:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ad-closing.html\">Afrunding</a><br/>\n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Ekstra målinger og spørgeskema:</b> \n                            \n                            <br/>\n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Iltmætning og pulsmåling:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Additional sub-actions not displayed</i>\n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        <b> Spørgeskema om tilstand og symptomer:</b>\n                                        \n                                        \n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ad-extra-questionnaire.html\">Spørgeskema om tilstand og symptomer</a><br/>\n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "reference" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <http://ehealth.sundhed.dk/testdata/Organization/org-region-midtjylland> ;
+         fhir:Reference.reference [ fhir:value "Organization/org-region-midtjylland" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "role" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/modifier-role" ] ;
+           fhir:Coding.code [ fhir:value "owner" ]
+         ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-modifier-role" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+       fhir:Identifier.value [ fhir:value "urn:uuid:cab889d1-e01e-4d38-9a5d-ed050722a6b3" ] ;
+       fhir:Identifier.assigner [
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "http://ehealth.sundhed.dk/id/ehealth-environment" ] ;
+           fhir:Identifier.value [ fhir:value "dk.ehealth.sundhed.fhir.ig.testdata" ]
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-base-environment" ] ;
+     fhir:Extension.valueIdentifier [
+       fhir:Identifier.system [ fhir:value "http://ehealth.sundhed.dk/id/ehealth-environment" ] ;
+       fhir:Identifier.value [ fhir:value "dk.ehealth.sundhed.fhir.ig.testdata" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-employee-title" ] ;
+     fhir:Extension.valueString [ fhir:value "Målinger og spørgeskema" ]
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+     fhir:Identifier.value [ fhir:value "urn:uuid:b7510240-987f-4ec9-8436-a0af44bbe271" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "0.2.0"] ;
+  fhir:PlanDefinition.title [ fhir:value "Målinger og spørgeskema (iltmætning, puls og spørgeskema)"] ;
+  fhir:PlanDefinition.status [ fhir:value "active"] ;
+  fhir:PlanDefinition.date [ fhir:value "2026-11-24T14:38:40+00:00"^^xsd:dateTime] ;
+  fhir:PlanDefinition.publisher [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Den telemedicinske infrastruktur (eHealth Infrastructure)" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://ehealth.sundhed.dk" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "urn:oid:1.2.208.176.2.4" ] ;
+         fhir:Coding.code [ fhir:value "DJ44" ] ;
+         fhir:Coding.display [ fhir:value "Kronisk obstruktiv lungesygdom" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.purpose [ fhir:value "Spørgeskema samt iltmætning og puls, planlagt og ekstra."] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "d8d2c923-8157-455c-bbd2-f2df7c92e26c" ] ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+     ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Målinger og spørgeskema" ] ;
+     fhir:PlanDefinition.action.timingTiming [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+         fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.dayOfWeek [
+           fhir:value "mon" ;
+           fhir:index 0
+         ], [
+           fhir:value "wed" ;
+           fhir:index 1
+         ], [
+           fhir:value "fri" ;
+           fhir:index 2
+         ] ;
+         fhir:Timing.repeat.timeOfDay [
+           fhir:value "08:00:00"^^xsd:time ;
+           fhir:index 0
+         ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.groupingBehavior [ fhir:value "visual-group" ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-head" ;
+       fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-head>
+     ] ;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "a9c477ac-f301-462c-bcf9-e4e44bfd4320" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Introduktion" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "d8d2c923-8157-455c-bbd2-f2df7c92e26c" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-start" ]
+       ] ;
+       fhir:PlanDefinition.action.timingTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+           fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+           fhir:Timing.repeat.dayOfWeek [
+             fhir:value "mon" ;
+             fhir:index 0
+           ], [
+             fhir:value "wed" ;
+             fhir:index 1
+           ], [
+             fhir:value "fri" ;
+             fhir:index 2
+           ] ;
+           fhir:Timing.repeat.timeOfDay [
+             fhir:value "08:00:00"^^xsd:time ;
+             fhir:index 0
+           ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-intro" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-intro>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "7a482753-5424-4d30-a28a-4ab9c120de47" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Måling af iltmætning og puls" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "a9c477ac-f301-462c-bcf9-e4e44bfd4320" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.timingTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+           fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+           fhir:Timing.repeat.dayOfWeek [
+             fhir:value "mon" ;
+             fhir:index 0
+           ], [
+             fhir:value "wed" ;
+             fhir:index 1
+           ], [
+             fhir:value "fri" ;
+             fhir:index 2
+           ] ;
+           fhir:Timing.repeat.timeOfDay [
+             fhir:value "08:00:00"^^xsd:time ;
+             fhir:index 0
+           ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse-intro" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse-intro>
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "0fa646b6-b48f-4c09-83fa-ff2b33b1763c" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Forberedelse" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "7a482753-5424-4d30-a28a-4ab9c120de47" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.timingTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+           fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+           fhir:Timing.repeat.dayOfWeek [
+             fhir:value "mon" ;
+             fhir:index 0
+           ], [
+             fhir:value "wed" ;
+             fhir:index 1
+           ], [
+             fhir:value "fri" ;
+             fhir:index 2
+           ] ;
+           fhir:Timing.repeat.timeOfDay [
+             fhir:value "08:00:00"^^xsd:time ;
+             fhir:index 0
+           ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse-prep" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse-prep>
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "c8a78fad-4a60-4c0c-85bf-674a6e86d86f" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Iltmætning og pulsmåling" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "0fa646b6-b48f-4c09-83fa-ff2b33b1763c" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.timingTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+           fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+           fhir:Timing.repeat.dayOfWeek [
+             fhir:value "mon" ;
+             fhir:index 0
+           ], [
+             fhir:value "wed" ;
+             fhir:index 1
+           ], [
+             fhir:value "fri" ;
+             fhir:index 2
+           ] ;
+           fhir:Timing.repeat.timeOfDay [
+             fhir:value "08:00:00"^^xsd:time ;
+             fhir:index 0
+           ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse>
+       ] ;
+       fhir:PlanDefinition.action.action [
+         fhir:index 0 ;
+         fhir:Element.id [ fhir:value "701ab1f7-23fe-4ff2-9e4b-d2f2623e22c7" ] ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ] ;
+         fhir:PlanDefinition.action.title [ fhir:value "Iltmætning" ] ;
+         fhir:PlanDefinition.action.relatedAction [
+           fhir:index 0 ;
+           fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "c8a78fad-4a60-4c0c-85bf-674a6e86d86f" ] ;
+           fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-start" ]
+         ] ;
+         fhir:PlanDefinition.action.timingTiming [
+           fhir:Timing.repeat [
+             fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+             fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+             fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+             fhir:Timing.repeat.dayOfWeek [
+               fhir:value "mon" ;
+               fhir:index 0
+             ], [
+               fhir:value "wed" ;
+               fhir:index 1
+             ], [
+               fhir:value "fri" ;
+               fhir:index 2
+             ] ;
+             fhir:Timing.repeat.timeOfDay [
+               fhir:value "08:00:00"^^xsd:time ;
+               fhir:index 0
+             ]
+           ]
+         ] ;
+         fhir:PlanDefinition.action.definitionCanonical [
+           fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-saturation" ;
+           fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-saturation>
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.id [ fhir:value "6a152290-db57-4f13-b7bf-92f09e0f09e7" ] ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ] ;
+         fhir:PlanDefinition.action.title [ fhir:value "Puls" ] ;
+         fhir:PlanDefinition.action.relatedAction [
+           fhir:index 0 ;
+           fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "c8a78fad-4a60-4c0c-85bf-674a6e86d86f" ] ;
+           fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-start" ]
+         ] ;
+         fhir:PlanDefinition.action.timingTiming [
+           fhir:Timing.repeat [
+             fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+             fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+             fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+             fhir:Timing.repeat.dayOfWeek [
+               fhir:value "mon" ;
+               fhir:index 0
+             ], [
+               fhir:value "wed" ;
+               fhir:index 1
+             ], [
+               fhir:value "fri" ;
+               fhir:index 2
+             ] ;
+             fhir:Timing.repeat.timeOfDay [
+               fhir:value "08:00:00"^^xsd:time ;
+               fhir:index 0
+             ]
+           ]
+         ] ;
+         fhir:PlanDefinition.action.definitionCanonical [
+           fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-pulse" ;
+           fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-pulse>
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "5dbb9ca9-01fa-42d5-afcf-b42dff5fc78b" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Spørgeskema om tilstand og symptomer" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "c8a78fad-4a60-4c0c-85bf-674a6e86d86f" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.timingTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+           fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+           fhir:Timing.repeat.dayOfWeek [
+             fhir:value "mon" ;
+             fhir:index 0
+           ], [
+             fhir:value "wed" ;
+             fhir:index 1
+           ], [
+             fhir:value "fri" ;
+             fhir:index 2
+           ] ;
+           fhir:Timing.repeat.timeOfDay [
+             fhir:value "08:00:00"^^xsd:time ;
+             fhir:index 0
+           ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-questionnaire" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-questionnaire>
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.id [ fhir:value "de176506-1b2e-4736-a30f-98839969c5d7" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Afrunding" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "5dbb9ca9-01fa-42d5-afcf-b42dff5fc78b" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.timingTiming [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.duration [ fhir:value "4"^^xsd:decimal ] ;
+           fhir:Timing.repeat.durationUnit [ fhir:value "h" ] ;
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+           fhir:Timing.repeat.dayOfWeek [
+             fhir:value "mon" ;
+             fhir:index 0
+           ], [
+             fhir:value "wed" ;
+             fhir:index 1
+           ], [
+             fhir:value "fri" ;
+             fhir:index 2
+           ] ;
+           fhir:Timing.repeat.timeOfDay [
+             fhir:value "08:00:00"^^xsd:time ;
+             fhir:index 0
+           ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-closing" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-closing>
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.id [ fhir:value "0ee4c15b-a7b1-40dd-9e44-c1c4238a1dda" ] ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+       fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+     ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Ekstra målinger og spørgeskema" ] ;
+     fhir:PlanDefinition.action.groupingBehavior [ fhir:value "visual-group" ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-head" ;
+       fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-head>
+     ] ;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "8d76df58-da9f-4096-8e05-a66ebcc13af4" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Iltmætning og pulsmåling" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "0ee4c15b-a7b1-40dd-9e44-c1c4238a1dda" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-start" ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-sat-pulse" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-sat-pulse>
+       ] ;
+       fhir:PlanDefinition.action.action [
+         fhir:index 0 ;
+         fhir:Element.id [ fhir:value "404a936e-89b2-4a6a-ae55-0a54bcea27db" ] ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ] ;
+         fhir:PlanDefinition.action.title [ fhir:value "Iltmætning" ] ;
+         fhir:PlanDefinition.action.relatedAction [
+           fhir:index 0 ;
+           fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "8d76df58-da9f-4096-8e05-a66ebcc13af4" ] ;
+           fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-start" ]
+         ] ;
+         fhir:PlanDefinition.action.definitionCanonical [
+           fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-saturation" ;
+           fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-saturation>
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.id [ fhir:value "18dc30db-88f6-4235-b08a-4cfabed13ee7" ] ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ] ;
+         fhir:PlanDefinition.action.title [ fhir:value "Puls" ] ;
+         fhir:PlanDefinition.action.relatedAction [
+           fhir:index 0 ;
+           fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "8d76df58-da9f-4096-8e05-a66ebcc13af4" ] ;
+           fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-start" ]
+         ] ;
+         fhir:PlanDefinition.action.definitionCanonical [
+           fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-pulse" ;
+           fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-pulse>
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "53ffbcbf-5467-41ee-82fb-bde6ea4d0d07" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Spørgeskema om tilstand og symptomer" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "8d76df58-da9f-4096-8e05-a66ebcc13af4" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-questionnaire" ;
+         fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-questionnaire>
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

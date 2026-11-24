@@ -1,4 +1,4 @@
-# COPD monitoring plan (oxygen saturation, pulse and questionnaire) - FUT test data v0.1.6
+# COPD monitoring plan (oxygen saturation, pulse and questionnaire) - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition | *Version*:0.2.0 |
 | Active as of 2026-11-24 | *Computable Name*: |
 | *Other Identifiers:*UUID:b7510240-987f-4ec9-8436-a0af44bbe271 | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
@@ -16,13 +16,13 @@
 * **Actions: **: **Url: **
   * : [Målinger og spørgeskema (iltmætning, puls og spørgeskema)](PlanDefinition-plandefinition.md)
 * **Actions: **: **Version: **
-  * : 0.1.6
+  * : 0.2.0
 * **Actions: **: ** **
   * :  urn:uuid:b7510240-987f-4ec9-8436-a0af44bbe271 
 * **Actions: **: **Title: **
   * : Målinger og spørgeskema (iltmætning, puls og spørgeskema)
 * **Actions: **: **Date: **
-  * : 2026-11-24 14:20:56+0000
+  * : 2026-11-24 14:40:18+0000
 * **Actions: **: **Publisher: **
   * : Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Actions: **: **Purpose: **
@@ -86,10 +86,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:b7510240-987f-4ec9-8436-a0af44bbe271"
   }],
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "title" : "Målinger og spørgeskema (iltmætning, puls og spørgeskema)",
   "status" : "active",
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

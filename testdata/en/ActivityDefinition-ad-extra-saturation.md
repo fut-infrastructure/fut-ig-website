@@ -1,4 +1,4 @@
-# Extra oxygen saturation - FUT test data v0.1.6
+# Extra oxygen saturation - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,7 +8,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-saturation | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-saturation | *Version*:0.2.0 |
 | Active as of 2026-11-24 | *Computable Name*: |
 | *Other Identifiers:*UUID:d7cb19bd-e35b-4c1d-bbe7-6255a6be51b7 | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
@@ -16,11 +16,11 @@
 * **Code: **: **Id: **
   * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?: ad-extra-saturation
 * **Code: **: **Version: **
-  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?: 0.1.6
+  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?: 0.2.0
 * **Code: **: ** **
   * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?:  urn:uuid:d7cb19bd-e35b-4c1d-bbe7-6255a6be51b7 
 * **Code: **: **Date (date last changed): **
-  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?: 2026-11-24 14:20:56+0000
+  * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?: 2026-11-24 14:40:18+0000
 * **Code: **: **Publisher (steward): **
   * **system: **[urn:oid:1.2.208.176.2.1](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-1.2.208.176.2.1--20190829.html)**code: **NPU03011**display: **Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Topic: **
@@ -167,10 +167,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:d7cb19bd-e35b-4c1d-bbe7-6255a6be51b7"
   }],
-  "version" : "0.1.6",
+  "version" : "0.2.0",
   "title" : "Iltmætning",
   "status" : "active",
-  "date" : "2026-11-24T14:20:56+00:00",
+  "date" : "2026-11-24T14:40:18+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

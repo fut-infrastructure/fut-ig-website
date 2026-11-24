@@ -1,0 +1,96 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/Parameters/loader-settings> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "loader-settings"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Parameters.parameter [
+     fhir:index -1 ;
+     fhir:Parameters.parameter.name [ fhir:value "anchorDate" ] ;
+     fhir:Parameters.parameter.valueDate [ fhir:value "2026-10-01"^^xsd:date ]
+  ], [
+     fhir:index -1 ;
+     fhir:Parameters.parameter.name [ fhir:value "vendor" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "systemTag" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+         fhir:Coding.code [ fhir:value "xa" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "programme" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-program" ] ;
+         fhir:Coding.code [ fhir:value "telma" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Parameters.parameter.name [ fhir:value "vendor" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "systemTag" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+         fhir:Coding.code [ fhir:value "xb" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "programme" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-program" ] ;
+         fhir:Coding.code [ fhir:value "kpro" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Parameters.parameter.name [ fhir:value "vendor" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "systemTag" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+         fhir:Coding.code [ fhir:value "xc" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "programme" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-program" ] ;
+         fhir:Coding.code [ fhir:value "fob" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Parameters.parameter.name [ fhir:value "vendor" ] ;
+     fhir:Parameters.parameter.part [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "systemTag" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+         fhir:Coding.code [ fhir:value "xd" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Parameters.parameter.name [ fhir:value "programme" ] ;
+       fhir:Parameters.parameter.valueCoding [
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-program" ] ;
+         fhir:Coding.code [ fhir:value "telesaar" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/Parameters/loader-settings.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

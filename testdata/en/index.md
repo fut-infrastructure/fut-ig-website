@@ -1,4 +1,4 @@
-# Home - FUT test data v0.1.6
+# Home - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,7 +7,7 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata | *Version*:0.1.6 |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata | *Version*:0.2.0 |
 | Draft as of 2026-11-24 | *Computable Name*:FUTTestData |
 
 ### FUT test data

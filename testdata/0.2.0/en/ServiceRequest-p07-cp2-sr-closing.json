@@ -1,0 +1,84 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "p07-cp2-sr-closing",
+  "meta" : {
+    "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest"],
+    "tag" : [{
+      "system" : "http://ehealth.sundhed.dk/cs/ehealth-system",
+      "code" : "${COEXISTENCE_TAG}"
+    }]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest p07-cp2-sr-closing</b></p><a name=\"p07-cp2-sr-closing\"> </a><a name=\"hcp07-cp2-sr-closing\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-servicerequest.html\">ehealth-servicerequest</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"Bundle-loader-codesystems.html\">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Episode of care</b>: <a href=\"EpisodeOfCare-p07-eoc2.html\">EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008\u00a0(use:\u00a0official,\u00a0period:\u00a02007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = active; period = 2026-09-28 09:00:00+0000 --&gt; (ongoing)</a></p><p><b>Sharing policy</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/measurement-sharing-policies sharingAllowedDestinationNationalHealthData}\">Sharing is allowed destination national health data</span></p><p><b>includeAsExtra</b>: false</p><p><b>triggerEnablementCode</b>: NO_TRIGGER</p><blockquote><p><b>ServiceRequest status history</b></p><ul><li>status: <span title=\"Codes:{http://hl7.org/fhir/request-status active}\">Active</span></li><li>period: 2026-09-28 09:05:00+0000 --&gt; (ongoing)</li></ul></blockquote><p><b>instantiatesCanonical</b>: <a href=\"ActivityDefinition-ad-closing.html\">Afrunding</a></p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>code</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/activitydefinition-code 409073007}\">Instruktion</span></p><p><b>subject</b>: <a href=\"Patient-p07.html\">Karl Larsen (official) Male, DoB: 1982-09-15 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1509829345\u00a0(use:\u00a0official))</a></p><p><b>occurrence</b>: Duration 4?? , Once</p></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare",
+    "valueReference" : {
+      "reference" : "EpisodeOfCare/p07-eoc2"
+    }
+  },
+  {
+    "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingPolicy",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ehealth.sundhed.dk/cs/measurement-sharing-policies",
+        "code" : "sharingAllowedDestinationNationalHealthData"
+      }]
+    }
+  },
+  {
+    "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code",
+    "valueCode" : "NO_TRIGGER"
+  },
+  {
+    "extension" : [{
+      "url" : "status",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/request-status",
+          "code" : "active"
+        }]
+      }
+    },
+    {
+      "url" : "period",
+      "valuePeriod" : {
+        "start" : "2026-09-28T09:05:00+00:00"
+      }
+    }],
+    "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory"
+  }],
+  "instantiatesCanonical" : ["http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-closing"],
+  "status" : "active",
+  "intent" : "order",
+  "code" : {
+    "coding" : [{
+      "system" : "http://ehealth.sundhed.dk/cs/activitydefinition-code",
+      "code" : "409073007"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/p07"
+  },
+  "occurrenceTiming" : {
+    "repeat" : {
+      "boundsPeriod" : {
+        "start" : "2026-09-28T09:05:00+00:00",
+        "end" : "2099-12-31T23:00:00+00:00"
+      },
+      "duration" : 4,
+      "durationUnit" : "h",
+      "frequency" : 1,
+      "dayOfWeek" : ["mon",
+      "wed",
+      "fri"],
+      "timeOfDay" : ["08:00:00"]
+    }
+  }
+}

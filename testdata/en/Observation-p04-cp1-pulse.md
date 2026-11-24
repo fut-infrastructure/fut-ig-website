@@ -1,4 +1,4 @@
-# Pulse 118/min (completed episode) - FUT test data v0.1.6
+# Pulse 118/min (completed episode) - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

@@ -1,4 +1,4 @@
-# Chronic obstructive pulmonary disease (completed episode) - FUT test data v0.1.6
+# Chronic obstructive pulmonary disease (completed episode) - FUT test data v0.2.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
