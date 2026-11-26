@@ -1,4 +1,4 @@
-# Introduction - FUT test data v0.2.0
+# Introduction - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,25 +8,25 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-intro | *Version*:0.2.0 |
-| Active as of 2026-11-24 | *Computable Name*: |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-intro | *Version*:1.0.0 |
+| Active as of 2026-11-26 | *Computable Name*: |
 | *Other Identifiers:*UUID:bd470b20-6de0-4880-a9a7-5beeef3333ae | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
 
 * **Code: **: **Id: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: ad-intro
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: ad-intro
 * **Code: **: **Version: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 0.2.0
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 1.0.0
 * **Code: **: ** **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007:  urn:uuid:bd470b20-6de0-4880-a9a7-5beeef3333ae 
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007:  urn:uuid:bd470b20-6de0-4880-a9a7-5beeef3333ae 
 * **Code: **: **Date (date last changed): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 2026-11-24 14:40:18+0000
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: 2026-11-26 14:34:07+0000
 * **Code: **: **Publisher (steward): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: Den telemedicinske infrastruktur (eHealth Infrastructure)
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Topic: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: self-treatment
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: self-treatment
 * **Code: **: **Documentation: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: ````Du vil nu blive bedt om at lave forskellige målinger og svare på en række spørgsmål <br> Tryk på "videre" for at gå til første måling````
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **409073007: ````Du vil nu blive bedt om at lave forskellige målinger og svare på en række spørgsmål <br> Tryk på "videre" for at gå til første måling````
 
 
 
@@ -95,10 +95,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:bd470b20-6de0-4880-a9a7-5beeef3333ae"
   }],
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "title" : "Introduktion",
   "status" : "active",
-  "date" : "2026-11-24T14:40:18+00:00",
+  "date" : "2026-11-26T14:34:07+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

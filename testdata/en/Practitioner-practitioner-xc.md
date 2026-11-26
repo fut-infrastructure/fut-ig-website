@@ -1,4 +1,4 @@
-# Practitioner fob - FUT test data v0.2.0
+# Practitioner fob - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example Practitioner: Practitioner fob
 
-Profile: [ehealth-practitioner](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-practitioner.html)
+Profile: [ehealth-practitioner](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-practitioner.html)
 
 Test fob Testesen (urn:oid:0.9.2342.19200300.100.1.1#55c30f5e-efb5-4e84-8212-cbf89477ce46)
 

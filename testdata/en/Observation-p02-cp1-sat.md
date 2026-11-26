@@ -1,4 +1,4 @@
-# Oxygen saturation 96% (completed episode) - FUT test data v0.2.0
+# Oxygen saturation 96% (completed episode) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example Observation: Oxygen saturation 96% (completed episode)
 
-Profile: [ehealth-observation](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-observation.html)
+Profile: [ehealth-observation](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-observation.html)
 
 Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundle-loader-codesystems.md)
 
@@ -16,7 +16,7 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 * serviceRequestVersionId: 1
 * type: Extra
 
-**identifier**: [eHealthIdentifier](http://ehealth.sundhed.dk/fhir/11.0.1/NamingSystem-ehealth-identifier.html)/${SUBMISSION_UUID}
+**identifier**: [eHealthIdentifier](http://ehealth.sundhed.dk/fhir/11.0.5/NamingSystem-ehealth-identifier.html)/${SUBMISSION_UUID}
 
 **basedOn**: [ServiceRequest Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?](ServiceRequest-p02-cp1-sr-extra-saturation.md)
 
@@ -24,11 +24,11 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 
 **code**: Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?
 
-**subject**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1501989971 (use: official))](Patient-p02.md)
+**subject**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1501989971 (use: official))](Patient-p02.md)
 
 **effective**: 2025-09-25 08:30:00+0000
 
-**performer**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1501989971 (use: official))](Patient-p02.md)
+**performer**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1501989971 (use: official))](Patient-p02.md)
 
 **value**: 96 % (Details: UCUM code% = '%')
 

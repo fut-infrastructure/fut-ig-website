@@ -1,4 +1,4 @@
-# Care plan 2 (active) - FUT test data v0.2.0
+# Care plan 2 (active) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example CarePlan: Care plan 2 (active)
 
-Profile: [ehealth-careplan](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-careplan.html)
+Profile: [ehealth-careplan](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-careplan.html)
 
 Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundle-loader-codesystems.md)
 
@@ -30,7 +30,7 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 
 **intent**: Order
 
-**subject**: [Martin Kristensen (official) Male, DoB: 2004-10-05 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#0510049527 (use: official))](Patient-p10.md)
+**subject**: [Martin Kristensen (official) Male, DoB: 2004-10-05 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#0510049527 (use: official))](Patient-p10.md)
 
 **period**: 2026-09-28 09:05:00+0000 --> (ongoing)
 

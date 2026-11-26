@@ -1,4 +1,4 @@
-# Practitioner kpro - FUT test data v0.2.0
+# Practitioner kpro - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example Practitioner: Practitioner kpro
 
-Profile: [ehealth-practitioner](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-practitioner.html)
+Profile: [ehealth-practitioner](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-practitioner.html)
 
 Test kpro Testesen (urn:oid:0.9.2342.19200300.100.1.1#ebf319ef-fcd7-4757-80df-0611f11bb618)
 

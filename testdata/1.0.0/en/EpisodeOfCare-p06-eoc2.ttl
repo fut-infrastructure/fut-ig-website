@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/EpisodeOfCare/p06-eoc2> a fhir:EpisodeOfCare ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "p06-eoc2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare" ;
+       fhir:index -1 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+       fhir:Coding.code [ fhir:value "${COEXISTENCE_TAG}" ]
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: EpisodeOfCare p06-eoc2</b></p><a name=\"p06-eoc2\"> </a><a name=\"hcp06-eoc2\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-episodeofcare.html\">ehealth-episodeofcare</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"Bundle-loader-codesystems.html\">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Caremanager organization</b>: <a href=\"Organization-org-region-nordjylland.html\">Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing)))</a></p><blockquote><p><b>Managing organization</b></p><ul><li>organisation: <a href=\"Organization-org-region-nordjylland.html\">Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing)))</a></li><li>period: 2026-09-29 09:00:00+0000 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Team history</b></p><ul><li>careTeam: <a href=\"CareTeam-careteam-placeholder.html\">CareTeam Telemedicinsk KOL-team</a></li><li>period: 2026-09-29 09:00:00+0000 --&gt; (ongoing)</li></ul></blockquote><p><b>status</b>: Active</p><blockquote><p><b>statusHistory</b></p><p><b>status</b>: Planned</p><p><b>period</b>: 2026-09-29 09:00:00+0000 --&gt; 2026-09-29 09:05:00+0000</p></blockquote><blockquote><p><b>statusHistory</b></p><p><b>status</b>: Active</p><p><b>period</b>: 2026-09-29 09:05:00+0000 --&gt; (ongoing)</p></blockquote><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Condition</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Condition-p06-eoc2-cond.html\">Condition Kronisk obstruktiv lungesygdom</a></td></tr></table><p><b>patient</b>: <a href=\"Patient-p06.html\">Andreas Bonde (official) Male, DoB: 1996-07-12 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1207969563 (use: official))</a></p><p><b>period</b>: 2026-09-29 09:00:00+0000 --&gt; (ongoing)</p><p><b>team</b>: <a href=\"CareTeam-careteam-placeholder.html\">CareTeam Telemedicinsk KOL-team</a></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-episodeofcare-caremanagerOrganization" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/Organization/org-region-nordjylland> ;
+       fhir:Reference.reference [ fhir:value "Organization/org-region-nordjylland" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "organisation" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <http://ehealth.sundhed.dk/testdata/Organization/org-region-nordjylland> ;
+         fhir:Reference.reference [ fhir:value "Organization/org-region-nordjylland" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2026-09-29T09:00:00+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-managing-organization" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "careTeam" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <http://ehealth.sundhed.dk/testdata/CareTeam/careteam-placeholder> ;
+         fhir:Reference.reference [ fhir:value "CareTeam/careteam-placeholder" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2026-09-29T09:00:00+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-teamHistory" ]
+  ] ;
+  fhir:EpisodeOfCare.status [ fhir:value "active"] ;
+  fhir:EpisodeOfCare.statusHistory [
+     fhir:index -1 ;
+     fhir:EpisodeOfCare.statusHistory.status [ fhir:value "planned" ] ;
+     fhir:EpisodeOfCare.statusHistory.period [
+       fhir:Period.start [ fhir:value "2026-09-29T09:00:00+00:00"^^xsd:dateTime ] ;
+       fhir:Period.end [ fhir:value "2026-09-29T09:05:00+00:00"^^xsd:dateTime ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:EpisodeOfCare.statusHistory.status [ fhir:value "active" ] ;
+     fhir:EpisodeOfCare.statusHistory.period [
+       fhir:Period.start [ fhir:value "2026-09-29T09:05:00+00:00"^^xsd:dateTime ]
+     ]
+  ] ;
+  fhir:EpisodeOfCare.diagnosis [
+     fhir:index -1 ;
+     fhir:EpisodeOfCare.diagnosis.condition [
+       fhir:link <http://ehealth.sundhed.dk/testdata/Condition/p06-eoc2-cond> ;
+       fhir:Reference.reference [ fhir:value "Condition/p06-eoc2-cond" ]
+     ]
+  ] ;
+  fhir:EpisodeOfCare.patient [
+     fhir:link <http://ehealth.sundhed.dk/testdata/Patient/p06> ;
+     fhir:Reference.reference [ fhir:value "Patient/p06" ]
+  ] ;
+  fhir:EpisodeOfCare.period [
+     fhir:Period.start [ fhir:value "2026-09-29T09:00:00+00:00"^^xsd:dateTime ]
+  ] ;
+  fhir:EpisodeOfCare.team [
+     fhir:index -1 ;
+     fhir:link <http://ehealth.sundhed.dk/testdata/CareTeam/careteam-placeholder> ;
+     fhir:Reference.reference [ fhir:value "CareTeam/careteam-placeholder" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/EpisodeOfCare/p06-eoc2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

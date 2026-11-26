@@ -1,4 +1,4 @@
-# Episode of care 2 (active) - FUT test data v0.2.0
+# Episode of care 2 (active) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example EpisodeOfCare: Episode of care 2 (active)
 
-Profile: [ehealth-episodeofcare](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-episodeofcare.html)
+Profile: [ehealth-episodeofcare](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-episodeofcare.html)
 
 Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundle-loader-codesystems.md)
 
@@ -33,7 +33,7 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 | - | **Condition** |
 | * | [Condition Kronisk obstruktiv lungesygdom](Condition-p02-eoc2-cond.md) |
 
-**patient**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1501989971 (use: official))](Patient-p02.md)
+**patient**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1501989971 (use: official))](Patient-p02.md)
 
 **period**: 2026-09-29 09:00:00+0000 --> (ongoing)
 

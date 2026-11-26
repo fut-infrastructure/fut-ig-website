@@ -1,4 +1,4 @@
-# KOL care team for telesaar - FUT test data v0.2.0
+# KOL care team for telesaar - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,11 +6,11 @@
 
 ## Example CareTeam: KOL care team for telesaar
 
-Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-careteam.html)
+Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-careteam.html)
 
 **useContext**: [Program](http://terminology.hl7.org/7.5.0/CodeSystem-usage-context-type.html) = Telesår
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:uuid:e5e80e63-4a72-498f-8cc0-f881980fed3e (use: official)
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.0.2/NamingSystem-uri.html)/urn:uuid:e5e80e63-4a72-498f-8cc0-f881980fed3e (use: official)
 
 **status**: Active
 

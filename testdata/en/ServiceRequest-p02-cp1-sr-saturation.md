@@ -1,4 +1,4 @@
-# Oxygen saturation (scheduled) — completed - FUT test data v0.2.0
+# Oxygen saturation (scheduled) — completed - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example ServiceRequest: Oxygen saturation (scheduled) — completed
 
-Profile: [ehealth-servicerequest](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-servicerequest.html)
+Profile: [ehealth-servicerequest](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-servicerequest.html)
 
 Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundle-loader-codesystems.md)
 
@@ -41,7 +41,7 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 
 **code**: Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?
 
-**subject**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1501989971 (use: official))](Patient-p02.md)
+**subject**: [Ulrik Møller (official) Male, DoB: 1998-01-15 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1501989971 (use: official))](Patient-p02.md)
 
 **occurrence**: Duration 4?? , Once
 

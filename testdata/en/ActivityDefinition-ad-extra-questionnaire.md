@@ -1,4 +1,4 @@
-# Extra questionnaire - FUT test data v0.2.0
+# Extra questionnaire - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,28 +8,28 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-questionnaire | *Version*:0.2.0 |
-| Active as of 2026-11-24 | *Computable Name*: |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-questionnaire | *Version*:1.0.0 |
+| Active as of 2026-11-26 | *Computable Name*: |
 | *Other Identifiers:*UUID:77bc2bc0-4d27-4fa6-a5fd-e9d1ac77f9aa | |
 | **Usage**: Clinical Focus: Kronisk obstruktiv lungesygdom | |
 
 * **Code: **: **Id: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: ad-extra-questionnaire
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: ad-extra-questionnaire
 * **Code: **: **Version: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: 0.2.0
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: 1.0.0
 * **Code: **: ** **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006:  urn:uuid:77bc2bc0-4d27-4fa6-a5fd-e9d1ac77f9aa 
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006:  urn:uuid:77bc2bc0-4d27-4fa6-a5fd-e9d1ac77f9aa 
 * **Code: **: **Date (date last changed): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: 2026-11-24 14:40:18+0000
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: 2026-11-26 14:34:07+0000
 * **Code: **: **Publisher (steward): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: Den telemedicinske infrastruktur (eHealth Infrastructure)
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Topic: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: self-treatment
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: self-treatment
 * **Code: **: **Composed Of: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: * 410_KOL spørgeskema `[KOL spørgeskema](Questionnaire-questionnaire.md)`
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: * 410_KOL spørgeskema `[KOL spørgeskema](Questionnaire-questionnaire.md)`
 
 * **Code: **: **Libraries: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: 
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **273586006: 
 | |
 | :--- |
 | [Spørgeskematriagering](Library-library-questionnaire-triage.md) |
@@ -111,10 +111,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:77bc2bc0-4d27-4fa6-a5fd-e9d1ac77f9aa"
   }],
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "title" : "Spørgeskema om tilstand og symptomer",
   "status" : "active",
-  "date" : "2026-11-24T14:40:18+00:00",
+  "date" : "2026-11-26T14:34:07+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

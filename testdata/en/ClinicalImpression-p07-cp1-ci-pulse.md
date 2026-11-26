@@ -1,4 +1,4 @@
-# Triage of pulse 118/min — yellow - FUT test data v0.2.0
+# Triage of pulse 118/min — yellow - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)

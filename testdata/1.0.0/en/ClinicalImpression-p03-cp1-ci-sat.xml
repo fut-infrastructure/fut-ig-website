@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClinicalImpression xmlns="http://hl7.org/fhir">
+  <id value="p03-cp1-ci-sat"/>
+  <meta>
+    <profile value="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"/>
+    <tag>
+      <system value="http://ehealth.sundhed.dk/cs/ehealth-system"/>
+      <code value="${COEXISTENCE_TAG}"/>
+    </tag>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ClinicalImpression p03-cp1-ci-sat</b></p><a name="p03-cp1-ci-sat"> </a><a name="hcp03-cp1-ci-sat"> </a><div style="display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-clinicalimpression.html">ehealth-clinicalimpression</a></p><p style="margin-bottom: 0px">Tag: <a href="Bundle-loader-codesystems.html">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Episode of care</b>: <a href="EpisodeOfCare-p03-eoc1.html">EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-08-04 09:00:00+0000 --&gt; 2025-12-15 12:00:00+0000</a></p><p><b>Careplan</b>: <a href="CarePlan-p03-cp1.html">CarePlan: extension = -&gt;EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-08-04 09:00:00+0000 --&gt; 2025-12-15 12:00:00+0000,,,,; instantiatesCanonical = http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition; status = completed; intent = order; period = 2025-08-04 09:05:00+0000 --&gt; (ongoing)</a></p><p><b>Decision context</b>: <a href="#hcp03-cp1-ci-sat/p03-cp1-dc-sat">Parameters: library, fact</a></p><p><b>status</b>: Completed</p><p><b>code</b>: <span title="Codes:{http://ehealth.sundhed.dk/cs/clinicalimpression-codes TriagingResult}">Result of triaging</span></p><p><b>description</b>: Automatisk processering grundet måling modtaget</p><p><b>subject</b>: <a href="Patient-p03.html">Mette Kristensen (official) Female, DoB: 1958-12-24 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2412589206 (use: official))</a></p><p><b>effective</b>: 2025-10-23 08:30:10+0000</p><p><b>date</b>: 2025-10-23 08:30:10+0000</p><h3>Investigations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Code</b></td><td><b>Item</b></td></tr><tr><td style="display: none">*</td><td><span title="Codes:{http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes item-for-investigation}">Item for investigation</span></td><td><a href="Observation-p03-cp1-sat.html">Observation Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</a></td></tr></table><blockquote><p><b>finding</b></p><p><b>itemCodeableConcept</b>: <span title="Codes:{urn:oid:1.2.208.176.2.1 NPU03011}, {http://snomed.info/sct 442082004}">Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</span></p></blockquote><blockquote><p><b>finding</b></p><p><b>itemCodeableConcept</b>: <span title="Codes:{http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes green}">Green overall assessment</span></p></blockquote><hr/><blockquote><p class="res-header-id"><b>Generated Narrative: Parameters #p03-cp1-dc-sat</b></p><a name="p03-cp1-ci-sat/p03-cp1-dc-sat"> </a><a name="hcp03-cp1-ci-sat/p03-cp1-dc-sat"> </a><h2>Parameters</h2><table class="grid"><tr><td>library</td><td><a href="Library-library-observation-absolute-triage.html">Måling Absolut Grænseværdier Triagering</a></td></tr><tr><td>fact</td><td><a href="ServiceRequest-p03-cp1-sr-extra-saturation.html">ServiceRequest Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</a></td></tr></table></blockquote></div>
+  </text>
+  <contained>
+    <Parameters>
+      <id value="p03-cp1-dc-sat"/>
+      <parameter>
+        <name value="library"/>
+        <valueReference>
+          <reference value="Library/library-observation-absolute-triage"/>
+        </valueReference>
+      </parameter>
+      <parameter>
+        <name value="fact"/>
+        <valueReference>
+          <reference value="ServiceRequest/p03-cp1-sr-extra-saturation"/>
+        </valueReference>
+      </parameter>
+    </Parameters>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare">
+    <valueReference>
+      <reference value="EpisodeOfCare/p03-eoc1"/>
+    </valueReference>
+  </extension>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-careplan">
+    <valueReference>
+      <reference value="CarePlan/p03-cp1"/>
+    </valueReference>
+  </extension>
+  <extension url="http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decisionContext">
+    <valueReference>
+      <reference value="#p03-cp1-dc-sat"/>
+    </valueReference>
+  </extension>
+  <status value="completed"/>
+  <code>
+    <coding>
+      <system value="http://ehealth.sundhed.dk/cs/clinicalimpression-codes"/>
+      <code value="TriagingResult"/>
+      <display value="Result of triaging"/>
+    </coding>
+  </code>
+  <description value="Automatisk processering grundet måling modtaget"/>
+  <subject>
+    <reference value="Patient/p03"/>
+  </subject>
+  <effectiveDateTime value="2025-10-23T08:30:10+00:00"/>
+  <date value="2025-10-23T08:30:10+00:00"/>
+  <investigation>
+    <code>
+      <coding>
+        <system value="http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes"/>
+        <code value="item-for-investigation"/>
+        <display value="Item for investigation"/>
+      </coding>
+    </code>
+    <item>
+      <reference value="Observation/p03-cp1-sat"/>
+    </item>
+  </investigation>
+  <finding>
+    <itemCodeableConcept>
+      <coding>
+        <system value="urn:oid:1.2.208.176.2.1"/>
+        <code value="NPU03011"/>
+        <display value="Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?"/>
+      </coding>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="442082004"/>
+        <display value="Measurement finding within reference range"/>
+      </coding>
+    </itemCodeableConcept>
+  </finding>
+  <finding>
+    <itemCodeableConcept>
+      <coding>
+        <system value="http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes"/>
+        <code value="green"/>
+        <display value="Green overall assessment"/>
+      </coding>
+    </itemCodeableConcept>
+  </finding>
+</ClinicalImpression>

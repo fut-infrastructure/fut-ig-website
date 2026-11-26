@@ -1,4 +1,4 @@
-# Region Midtjylland - FUT test data v0.2.0
+# Region Midtjylland - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example Organization: Region Midtjylland
 
-Profile: [ehealth-organization](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization.html)
+Profile: [ehealth-organization](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization.html)
 
 Region Midtjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6081000016005 (use: official, period: 2007-08-29 00:00:00+0000 --> (ongoing)))
 
@@ -24,11 +24,11 @@ Region Midtjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisat
 * Skottenborg 26 Viborg 8800 DK (work)
 * Skottenborg 26 Viborg 8800 DK (work)
  |
-| [Municipality Code](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-municipalityCode.html) | 0791 |
-| [CVR Number](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-cvrNumber.html) | 29190925 |
-| [Organization Source](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-source.html) | Sundhedsvæsenets Organisationsregister |
-| [Region code](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-regionCode.html) | 1082 |
-| [Organization Synchronization status](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-synchronizationStatus.html) | Eligible for synchronization |
+| [Municipality Code](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-municipalityCode.html) | 0791 |
+| [CVR Number](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-cvrNumber.html) | 29190925 |
+| [Organization Source](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-source.html) | Sundhedsvæsenets Organisationsregister |
+| [Region code](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-regionCode.html) | 1082 |
+| [Organization Synchronization status](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-synchronizationStatus.html) | Eligible for synchronization |
 
 
 

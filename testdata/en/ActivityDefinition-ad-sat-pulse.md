@@ -1,4 +1,4 @@
-# Oxygen saturation and pulse (same device group) - FUT test data v0.2.0
+# Oxygen saturation and pulse (same device group) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,27 +8,27 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse | *Version*:0.2.0 |
-| Active as of 2026-11-24 | *Computable Name*: |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-sat-pulse | *Version*:1.0.0 |
+| Active as of 2026-11-26 | *Computable Name*: |
 | *Other Identifiers:*UUID:272e6a5a-0ba7-4bdd-97fc-439a857cc079 | |
 
  
 Overføres måling ikke via bluetooth, skal du vælge at indtaste målingen manuelt 
 
 * **Code: **: **Id: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: ad-sat-pulse
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: ad-sat-pulse
 * **Code: **: **Version: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: 0.2.0
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: 1.0.0
 * **Code: **: ** **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG:  urn:uuid:272e6a5a-0ba7-4bdd-97fc-439a857cc079 
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG:  urn:uuid:272e6a5a-0ba7-4bdd-97fc-439a857cc079 
 * **Code: **: **Date (date last changed): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: 2026-11-24 14:40:18+0000
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: 2026-11-26 14:34:07+0000
 * **Code: **: **Publisher (steward): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: Den telemedicinske infrastruktur (eHealth Infrastructure)
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Description: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: Overføres måling ikke via bluetooth, skal du vælge at indtaste målingen manuelt
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: Overføres måling ikke via bluetooth, skal du vælge at indtaste målingen manuelt
 * **Code: **: **Topic: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: self-treatment
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **SDG: self-treatment
 
 
 
@@ -97,10 +97,10 @@ Overføres måling ikke via bluetooth, skal du vælge at indtaste målingen manu
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:272e6a5a-0ba7-4bdd-97fc-439a857cc079"
   }],
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "title" : "Iltmætning og pulsmåling",
   "status" : "active",
-  "date" : "2026-11-24T14:40:18+00:00",
+  "date" : "2026-11-26T14:34:07+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

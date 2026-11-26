@@ -1,4 +1,4 @@
-# Patient 06 - FUT test data v0.2.0
+# Patient 06 - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,9 +6,9 @@
 
 ## Example Patient: Patient 06
 
-Profile: [ehealth-patient](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-patient.html)
+Profile: [ehealth-patient](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-patient.html)
 
-Andreas Bonde (official) Male, DoB: 1996-07-12 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#1207969563 (use: official))
+Andreas Bonde (official) Male, DoB: 1996-07-12 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1207969563 (use: official))
 
 -------
 

@@ -1,4 +1,4 @@
-# KOL care team for telma - FUT test data v0.2.0
+# KOL care team for telma - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,11 +6,11 @@
 
 ## Example CareTeam: KOL care team for telma
 
-Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-careteam.html)
+Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-careteam.html)
 
 **useContext**: [Program](http://terminology.hl7.org/7.5.0/CodeSystem-usage-context-type.html) = Telma
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:uuid:a984eae9-1bbe-4c7e-989f-fa9096e38419 (use: official)
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.0.2/NamingSystem-uri.html)/urn:uuid:a984eae9-1bbe-4c7e-989f-fa9096e38419 (use: official)
 
 **status**: Active
 

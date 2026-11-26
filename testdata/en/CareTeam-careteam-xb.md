@@ -1,4 +1,4 @@
-# KOL care team for kpro - FUT test data v0.2.0
+# KOL care team for kpro - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,11 +6,11 @@
 
 ## Example CareTeam: KOL care team for kpro
 
-Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-careteam.html)
+Profile: [ehealth-careteam](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-careteam.html)
 
 **useContext**: [Program](http://terminology.hl7.org/7.5.0/CodeSystem-usage-context-type.html) = Kommunal PRO
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:uuid:f974ea3c-4481-4651-808a-b270ff4795dd (use: official)
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.0.2/NamingSystem-uri.html)/urn:uuid:f974ea3c-4481-4651-808a-b270ff4795dd (use: official)
 
 **status**: Active
 

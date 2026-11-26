@@ -1,4 +1,4 @@
-# Region Nordjylland - FUT test data v0.2.0
+# Region Nordjylland - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example Organization: Region Nordjylland
 
-Profile: [ehealth-organization](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization.html)
+Profile: [ehealth-organization](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization.html)
 
 Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --> (ongoing)))
 
@@ -24,11 +24,11 @@ Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisat
 * Niels Bohrs Vej 30 Aalborg Øst 9220 DK (work)
 * Niels Bohrs Vej 30 Aalborg Øst 9220 DK (work)
  |
-| [Municipality Code](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-municipalityCode.html) | 0851 |
-| [CVR Number](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-cvrNumber.html) | 29190941 |
-| [Organization Source](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-source.html) | Sundhedsvæsenets Organisationsregister |
-| [Region code](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-regionCode.html) | 1081 |
-| [Organization Synchronization status](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-organization-synchronizationStatus.html) | Eligible for synchronization |
+| [Municipality Code](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-municipalityCode.html) | 0851 |
+| [CVR Number](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-cvrNumber.html) | 29190941 |
+| [Organization Source](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-source.html) | Sundhedsvæsenets Organisationsregister |
+| [Region code](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-regionCode.html) | 1081 |
+| [Organization Synchronization status](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-organization-synchronizationStatus.html) | Eligible for synchronization |
 
 
 

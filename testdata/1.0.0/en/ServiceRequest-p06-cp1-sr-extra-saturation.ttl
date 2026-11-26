@@ -1,0 +1,181 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/ServiceRequest/p06-cp1-sr-extra-saturation> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "p06-cp1-sr-extra-saturation"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest" ;
+       fhir:index -1 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+       fhir:Coding.code [ fhir:value "${COEXISTENCE_TAG}" ]
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest p06-cp1-sr-extra-saturation</b></p><a name=\"p06-cp1-sr-extra-saturation\"> </a><a name=\"hcp06-cp1-sr-extra-saturation\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-servicerequest.html\">ehealth-servicerequest</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"Bundle-loader-codesystems.html\">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Episode of care</b>: <a href=\"EpisodeOfCare-p06-eoc1.html\">EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-11-03 09:00:00+0000 --&gt; 2026-03-16 12:00:00+0000</a></p><p><b>Sharing policy</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/measurement-sharing-policies sharingAllowedDestinationNationalHealthData}\">Sharing is allowed destination national health data</span></p><p><b>includeAsExtra</b>: true</p><p><b>triggerEnablementCode</b>: NO_TRIGGER</p><blockquote><p><b>ServiceRequest status history</b></p><ul><li>status: <span title=\"Codes:{http://hl7.org/fhir/request-status completed}\">Completed</span></li><li>period: 2025-11-03 09:05:00+0000 --&gt; (ongoing)</li></ul></blockquote><p><b>Sharing Approval Policy</b>: <span title=\"Codes:{http://ehealth.sundhed.dk/cs/measurement-sharing-approval-policies manual}\">Manual</span></p><blockquote><p><b>Reference range</b></p><ul><li>high: 85 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></li><li>type: <span title=\"Codes:{urn:oid:1.2.208.184.100.1 RAL}, {urn:oid:1.2.208.176.2.1 NPU03011}\">Terapeutiske grænseværdier for RØD alarm</span></li></ul></blockquote><blockquote><p><b>Reference range</b></p><ul><li>low: 85.0000001 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></li><li>high: 88 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></li><li>type: <span title=\"Codes:{urn:oid:1.2.208.184.100.1 GAL}, {urn:oid:1.2.208.176.2.1 NPU03011}\">Terapeutiske grænseværdier for GUL alarm</span></li></ul></blockquote><p><b>instantiatesCanonical</b>: <a href=\"ActivityDefinition-ad-extra-saturation.html\">Iltmætning</a></p><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>code</b>: <span title=\"Codes:{urn:oid:1.2.208.176.2.1 NPU03011}\">Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</span></p><p><b>subject</b>: <a href=\"Patient-p06.html\">Andreas Bonde (official) Male, DoB: 1996-07-12 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1207969563 (use: official))</a></p><p><b>occurrence</b>: Once</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/EpisodeOfCare/p06-eoc1> ;
+       fhir:Reference.reference [ fhir:value "EpisodeOfCare/p06-eoc1" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingPolicy" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/measurement-sharing-policies" ] ;
+         fhir:Coding.code [ fhir:value "sharingAllowedDestinationNationalHealthData" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-include-as-extra" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-trigger-enablement-code" ] ;
+     fhir:Extension.valueCode [ fhir:value "NO_TRIGGER" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "status" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index -1 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/request-status" ] ;
+           fhir:Coding.code [ fhir:value "completed" ]
+         ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2025-11-03T09:05:00+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-servicerequest-statusHistory" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-sharingApprovalPolicy" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/measurement-sharing-approval-policies" ] ;
+         fhir:Coding.code [ fhir:value "manual" ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "high" ] ;
+       fhir:Extension.valueQuantity [
+         fhir:Quantity.value [ fhir:value "85"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "%" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "%" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index -1 ;
+           fhir:Coding.system [ fhir:value "urn:oid:1.2.208.184.100.1" ] ;
+           fhir:Coding.code [ fhir:value "RAL" ]
+         ], [
+           fhir:index -1 ;
+           fhir:Coding.system [ fhir:value "urn:oid:1.2.208.176.2.1" ] ;
+           fhir:Coding.code [ fhir:value "NPU03011" ]
+         ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-referenceRange" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Element.extension [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "low" ] ;
+       fhir:Extension.valueQuantity [
+         fhir:Quantity.value [ fhir:value "85.0000001"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "%" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "%" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "high" ] ;
+       fhir:Extension.valueQuantity [
+         fhir:Quantity.value [ fhir:value "88"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "%" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "%" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index -1 ;
+           fhir:Coding.system [ fhir:value "urn:oid:1.2.208.184.100.1" ] ;
+           fhir:Coding.code [ fhir:value "GAL" ]
+         ], [
+           fhir:index -1 ;
+           fhir:Coding.system [ fhir:value "urn:oid:1.2.208.176.2.1" ] ;
+           fhir:Coding.code [ fhir:value "NPU03011" ]
+         ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-referenceRange" ]
+  ] ;
+  fhir:ServiceRequest.instantiatesCanonical [
+     fhir:value "http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-saturation" ;
+     fhir:index -1 ;
+     fhir:link <http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-saturation>
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "completed"] ;
+  fhir:ServiceRequest.intent [ fhir:value "order"] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:oid:1.2.208.176.2.1" ] ;
+       fhir:Coding.code [ fhir:value "NPU03011" ] ;
+       fhir:Coding.display [ fhir:value "Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:link <http://ehealth.sundhed.dk/testdata/Patient/p06> ;
+     fhir:Reference.reference [ fhir:value "Patient/p06" ]
+  ] ;
+  fhir:ServiceRequest.occurrenceTiming [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.boundsPeriod [
+         fhir:Period.start [ fhir:value "2025-11-03T09:05:00+00:00"^^xsd:dateTime ] ;
+         fhir:Period.end [ fhir:value "2026-03-16T11:55:00+00:00"^^xsd:dateTime ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/ServiceRequest/p06-cp1-sr-extra-saturation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

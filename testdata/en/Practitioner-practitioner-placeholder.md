@@ -1,4 +1,4 @@
-# Practitioner (placeholder) - FUT test data v0.2.0
+# Practitioner (placeholder) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example Practitioner: Practitioner (placeholder)
 
-Profile: [ehealth-practitioner](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-practitioner.html)
+Profile: [ehealth-practitioner](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-practitioner.html)
 
 Test ${EHEALTH_PROGRAM} Testesen (urn:oid:0.9.2342.19200300.100.1.1#${PRACTITIONER_IDENTIFIER})
 

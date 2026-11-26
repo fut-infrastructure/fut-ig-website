@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/Patient/p08> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "p08"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-patient>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient p08</b></p><a name=\"p08\"> </a><a name=\"hcp08\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-patient.html\">ehealth-patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Line Sørensen (official) Female, DoB: 1954-12-15 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1512543258 (use: official))</p><hr/></div>"
+  ] ;
+  fhir:Patient.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.208.176.1.2" ] ;
+     fhir:Identifier.value [ fhir:value "1512543258" ]
+  ] ;
+  fhir:Patient.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Sørensen" ] ;
+     fhir:HumanName.given [
+       fhir:value "Line" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Patient.gender [ fhir:value "female"] ;
+  fhir:Patient.birthDate [ fhir:value "1954-12-15"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/Patient/p08.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

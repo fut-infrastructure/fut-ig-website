@@ -1,4 +1,4 @@
-# Extra head activity - FUT test data v0.2.0
+# Extra head activity - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -8,22 +8,22 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-head | *Version*:0.2.0 |
-| Active as of 2026-11-24 | *Computable Name*: |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ActivityDefinition/ad-extra-head | *Version*:1.0.0 |
+| Active as of 2026-11-26 | *Computable Name*: |
 | *Other Identifiers:*UUID:b4799d74-f74f-4b82-8aa0-8e0d0f806fad | |
 
 * **Code: **: **Id: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: ad-extra-head
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: ad-extra-head
 * **Code: **: **Version: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: 0.2.0
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: 1.0.0
 * **Code: **: ** **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA:  urn:uuid:b4799d74-f74f-4b82-8aa0-8e0d0f806fad 
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA:  urn:uuid:b4799d74-f74f-4b82-8aa0-8e0d0f806fad 
 * **Code: **: **Date (date last changed): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: 2026-11-24 14:40:18+0000
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: 2026-11-26 14:34:07+0000
 * **Code: **: **Publisher (steward): **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: Den telemedicinske infrastruktur (eHealth Infrastructure)
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: Den telemedicinske infrastruktur (eHealth Infrastructure)
 * **Code: **: **Topic: **
-  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.1/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: self-treatment
+  * **system: **[http://ehealth.sundhed.dk/cs/activitydefinition-code](http://ehealth.sundhed.dk/fhir/11.0.5/CodeSystem-ehealth-activitydefinition-code.html)**code: **HA: self-treatment
 
 
 
@@ -92,10 +92,10 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:uuid:b4799d74-f74f-4b82-8aa0-8e0d0f806fad"
   }],
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "title" : "Ekstra målinger og spørgeskema",
   "status" : "active",
-  "date" : "2026-11-24T14:40:18+00:00",
+  "date" : "2026-11-26T14:34:07+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",

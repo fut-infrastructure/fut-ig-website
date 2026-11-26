@@ -1,4 +1,4 @@
-# Shared definitions - FUT test data v0.2.0
+# Shared definitions - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * **Shared definitions**

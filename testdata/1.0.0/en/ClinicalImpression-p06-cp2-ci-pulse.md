@@ -1,0 +1,109 @@
+# Triage of pulse 72/min — green - eHealth Infrastructure Test Data v1.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Triage of pulse 72/min — green**
+
+## Example ClinicalImpression: Triage of pulse 72/min — green
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ClinicalImpression",
+  "id" : "p06-cp2-ci-pulse",
+  "meta" : {
+    "profile" : ["http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression"],
+    "tag" : [{
+      "system" : "http://ehealth.sundhed.dk/cs/ehealth-system",
+      "code" : "${COEXISTENCE_TAG}"
+    }]
+  },
+  "contained" : [{
+    "resourceType" : "Parameters",
+    "id" : "p06-cp2-dc-pulse",
+    "parameter" : [{
+      "name" : "library",
+      "valueReference" : {
+        "reference" : "Library/library-observation-absolute-triage"
+      }
+    },
+    {
+      "name" : "fact",
+      "valueReference" : {
+        "reference" : "ServiceRequest/p06-cp2-sr-extra-pulse"
+      }
+    }]
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare",
+    "valueReference" : {
+      "reference" : "EpisodeOfCare/p06-eoc2"
+    }
+  },
+  {
+    "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-careplan",
+    "valueReference" : {
+      "reference" : "CarePlan/p06-cp2"
+    }
+  },
+  {
+    "url" : "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-clinicalimpression-decisionContext",
+    "valueReference" : {
+      "reference" : "#p06-cp2-dc-pulse"
+    }
+  }],
+  "status" : "completed",
+  "code" : {
+    "coding" : [{
+      "system" : "http://ehealth.sundhed.dk/cs/clinicalimpression-codes",
+      "code" : "TriagingResult",
+      "display" : "Result of triaging"
+    }]
+  },
+  "description" : "Automatisk processering grundet måling modtaget",
+  "subject" : {
+    "reference" : "Patient/p06"
+  },
+  "effectiveDateTime" : "2026-09-30T08:30:10+00:00",
+  "date" : "2026-09-30T08:30:10+00:00",
+  "investigation" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://ehealth.sundhed.dk/cs/clinicalimpression-investigation-item-codes",
+        "code" : "item-for-investigation",
+        "display" : "Item for investigation"
+      }]
+    },
+    "item" : [{
+      "reference" : "Observation/p06-cp2-pulse"
+    }]
+  }],
+  "finding" : [{
+    "itemCodeableConcept" : {
+      "coding" : [{
+        "system" : "urn:oid:1.2.208.176.2.1",
+        "code" : "NPU21692",
+        "display" : "Hjerte—Systole; frekv. = ? × 1/min"
+      },
+      {
+        "system" : "http://snomed.info/sct",
+        "code" : "442082004",
+        "display" : "Measurement finding within reference range"
+      }]
+    }
+  },
+  {
+    "itemCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://ehealth.sundhed.dk/cs/clinicalimpression-finding-codes",
+        "code" : "green",
+        "display" : "Green overall assessment"
+      }]
+    }
+  }]
+}
+
+```

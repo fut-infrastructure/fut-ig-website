@@ -1,4 +1,4 @@
-# Care plan 1 (completed) - FUT test data v0.2.0
+# Care plan 1 (completed) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example CarePlan: Care plan 1 (completed)
 
-Profile: [ehealth-careplan](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-careplan.html)
+Profile: [ehealth-careplan](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-careplan.html)
 
 Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundle-loader-codesystems.md)
 
@@ -34,7 +34,7 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 
 **intent**: Order
 
-**subject**: [Mette Kristensen (official) Female, DoB: 1958-12-24 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#2412589206 (use: official))](Patient-p03.md)
+**subject**: [Mette Kristensen (official) Female, DoB: 1958-12-24 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#2412589206 (use: official))](Patient-p03.md)
 
 **period**: 2025-08-04 09:05:00+0000 --> (ongoing)
 

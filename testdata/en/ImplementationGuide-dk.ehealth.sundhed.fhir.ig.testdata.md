@@ -1,4 +1,4 @@
-# Resource FUT test data
+# Resource eHealth Infrastructure Test Data
 
 
 
@@ -10,11 +10,11 @@
   "id" : "dk.ehealth.sundhed.fhir.ig.testdata",
   "language" : "en",
   "url" : "http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata",
-  "version" : "0.2.0",
-  "name" : "FUTTestData",
-  "title" : "FUT test data",
+  "version" : "1.0.0",
+  "name" : "eHealth Infrastructure Test Data",
+  "title" : "eHealth Infrastructure Test Data",
   "status" : "draft",
-  "date" : "2026-11-24T14:40:18+00:00",
+  "date" : "2026-11-26T14:34:07+00:00",
   "publisher" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
   "contact" : [{
     "name" : "Den telemedicinske infrastruktur (eHealth Infrastructure)",
@@ -51,7 +51,7 @@
     "id" : "dk_ehealth_sundhed_fhir_ig_core",
     "uri" : "http://ehealth.sundhed.dk/fhir/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.core",
     "packageId" : "dk.ehealth.sundhed.fhir.ig.core",
-    "version" : "11.0.1"
+    "version" : "11.0.5"
   },
   {
     "id" : "hl7_fhir_dk_core",

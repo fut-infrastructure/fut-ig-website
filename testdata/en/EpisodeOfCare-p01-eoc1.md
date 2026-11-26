@@ -1,4 +1,4 @@
-# Episode of care (completed) - FUT test data v0.2.0
+# Episode of care (completed) - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -6,7 +6,7 @@
 
 ## Example EpisodeOfCare: Episode of care (completed)
 
-Profile: [ehealth-episodeofcare](http://ehealth.sundhed.dk/fhir/11.0.1/StructureDefinition-ehealth-episodeofcare.html)
+Profile: [ehealth-episodeofcare](http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-episodeofcare.html)
 
 Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundle-loader-codesystems.md)
 
@@ -35,7 +35,7 @@ Tag: [${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})](Bundl
 | - | **Condition** |
 | * | [Condition Kronisk obstruktiv lungesygdom](Condition-p01-eoc1-cond.md) |
 
-**patient**: [Sonja Knudsen (official) Female, DoB: 1975-08-05 ( urn:oid:1.2.208.176.1.2#Danish civil registration system - CPR#0508754760 (use: official))](Patient-p01.md)
+**patient**: [Sonja Knudsen (official) Female, DoB: 1975-08-05 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#0508754760 (use: official))](Patient-p01.md)
 
 **period**: 2025-06-02 09:00:00+0000 --> 2025-10-13 12:00:00+0000
 

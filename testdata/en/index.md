@@ -1,4 +1,4 @@
-# Home - FUT test data v0.2.0
+# Home - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -7,8 +7,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata | *Version*:0.2.0 |
-| Draft as of 2026-11-24 | *Computable Name*:FUTTestData |
+| *Official URL*:http://ehealth.sundhed.dk/testdata/ImplementationGuide/dk.ehealth.sundhed.fhir.ig.testdata | *Version*:1.0.0 |
+| Draft as of 2026-11-26 | *Computable Name*:eHealth Infrastructure Test Data |
 
 ### FUT test data
 

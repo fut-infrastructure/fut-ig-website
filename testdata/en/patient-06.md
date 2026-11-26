@@ -1,4 +1,4 @@
-# Patient 06 - FUT test data v0.2.0
+# Patient 06 - eHealth Infrastructure Test Data v1.0.0
 
 * [**Table of Contents**](toc.md)
 * [**Patient data**](patients.md)

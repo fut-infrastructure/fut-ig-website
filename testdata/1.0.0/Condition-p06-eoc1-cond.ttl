@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/Condition/p06-eoc1-cond> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "p06-eoc1-cond"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-condition>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+       fhir:Coding.code [ fhir:value "${COEXISTENCE_TAG}" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition p06-eoc1-cond</b></p><a name=\"p06-eoc1-cond\"> </a><a name=\"hcp06-eoc1-cond\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-condition.html\">ehealth-condition</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"Bundle-loader-codesystems.html\">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Episode of care</b>: <a href=\"EpisodeOfCare-p06-eoc1.html\">EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-11-03 09:00:00+0000 --&gt; 2026-03-16 12:00:00+0000</a></p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{urn:oid:1.2.208.176.2.4 DJ44}\">Kronisk obstruktiv lungesygdom</span></p><p><b>subject</b>: <a href=\"Patient-p06.html\">Andreas Bonde (official) Male, DoB: 1996-07-12 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1207969563 (use: official))</a></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/EpisodeOfCare/p06-eoc1> ;
+       fhir:Reference.reference [ fhir:value "EpisodeOfCare/p06-eoc1" ]
+     ]
+  ] ;
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+       fhir:Coding.code [ fhir:value "active" ] ;
+       fhir:Coding.display [ fhir:value "Active" ]
+     ]
+  ] ;
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:oid:1.2.208.176.2.4" ] ;
+       fhir:Coding.code [ fhir:value "DJ44" ] ;
+       fhir:Coding.display [ fhir:value "Kronisk obstruktiv lungesygdom" ]
+     ]
+  ] ;
+  fhir:Condition.subject [
+     fhir:link <http://ehealth.sundhed.dk/testdata/Patient/p06> ;
+     fhir:Reference.reference [ fhir:value "Patient/p06" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/Condition/p06-eoc1-cond.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

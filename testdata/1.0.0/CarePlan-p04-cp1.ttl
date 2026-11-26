@@ -1,0 +1,231 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/CarePlan/p04-cp1> a fhir:CarePlan ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "p04-cp1"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan" ;
+       fhir:index 0 ;
+       fhir:link <http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan>
+     ] ;
+     fhir:Meta.tag [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://ehealth.sundhed.dk/cs/ehealth-system" ] ;
+       fhir:Coding.code [ fhir:value "${COEXISTENCE_TAG}" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CarePlan p04-cp1</b></p><a name=\"p04-cp1\"> </a><a name=\"hcp04-cp1\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://ehealth.sundhed.dk/fhir/11.0.5/StructureDefinition-ehealth-careplan.html\">ehealth-careplan</a></p><p style=\"margin-bottom: 0px\">Tag: <a href=\"Bundle-loader-codesystems.html\">${COEXISTENCE_TAG} (Details: EhealthSystem code ${COEXISTENCE_TAG})</a></p></div><p><b>Episode of care</b>: <a href=\"EpisodeOfCare-p04-eoc1.html\">EpisodeOfCare: extension = -&gt;Region Nordjylland (region) (urn:oid:1.2.208.176.1.1#Sundhedsvæsenets Organisationsregister (SOR)#6071000016008 (use: official, period: 2007-08-29 00:00:00+0000 --&gt; (ongoing))),,; status = finished; period = 2025-09-01 09:00:00+0000 --&gt; 2026-01-12 12:00:00+0000</a></p><blockquote><p><b>Careplan status history</b></p><ul><li>status: <span title=\"Codes:{http://hl7.org/fhir/request-status draft}\">Draft</span></li><li>period: 2025-09-01 09:05:00+0000 --&gt; 2025-09-01 09:05:01+0000</li></ul></blockquote><blockquote><p><b>Careplan status history</b></p><ul><li>status: <span title=\"Codes:{http://hl7.org/fhir/request-status active}\">Active</span></li><li>period: 2025-09-01 09:05:01+0000 --&gt; 2026-01-12 11:55:00+0000</li></ul></blockquote><blockquote><p><b>Careplan status history</b></p><ul><li>status: <span title=\"Codes:{http://hl7.org/fhir/request-status completed}\">Completed</span></li><li>period: 2026-01-12 11:55:00+0000 --&gt; (ongoing)</li></ul></blockquote><blockquote><p><b>Team history</b></p><ul><li>careTeam: <a href=\"CareTeam-careteam-placeholder.html\">CareTeam Telemedicinsk KOL-team</a></li><li>period: 2025-09-01 09:05:00+0000 --&gt; 2026-01-12 11:55:00+0000</li></ul></blockquote><p><b>instantiatesCanonical</b>: <a href=\"PlanDefinition-plandefinition.html\">Målinger og spørgeskema (iltmætning, puls og spørgeskema)</a></p><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>subject</b>: <a href=\"Patient-p04.html\">Thomas Bonde (official) Male, DoB: 1963-11-13 ( urn:oid:1.2.208.176.1.2#DK Central Person Registry (CPR)#1311633801 (use: official))</a></p><p><b>period</b>: 2025-09-01 09:05:00+0000 --&gt; (ongoing)</p><p><b>careTeam</b>: <a href=\"CareTeam-careteam-placeholder.html\">CareTeam Telemedicinsk KOL-team</a></p><p><b>addresses</b>: <a href=\"Condition-p04-eoc1-cond.html\">Condition Kronisk obstruktiv lungesygdom</a></p><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-head.html\">ServiceRequest Head activity</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-intro.html\">ServiceRequest Instruktion</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-sat-pulse-intro.html\">ServiceRequest Instruktion</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-sat-pulse-prep.html\">ServiceRequest Instruktion</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-sat-pulse.html\">ServiceRequest Same device group</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-saturation.html\">ServiceRequest Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-pulse.html\">ServiceRequest Hjerte—Systole; frekv. = ? × 1/min</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-questionnaire.html\">ServiceRequest Master Questionnaire</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-closing.html\">ServiceRequest Instruktion</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-extra-head.html\">ServiceRequest Head activity</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-extra-sat-pulse.html\">ServiceRequest Same device group</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-extra-saturation.html\">ServiceRequest Hb(Fe; O2-bind.; aB)—Oxygen(O2); mætn. = ?</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-extra-pulse.html\">ServiceRequest Hjerte—Systole; frekv. = ? × 1/min</a></p></blockquote><blockquote><p><b>activity</b></p><p><b>reference</b>: <a href=\"ServiceRequest-p04-cp1-sr-extra-questionnaire.html\">ServiceRequest Master Questionnaire</a></p></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/EpisodeOfCare/p04-eoc1> ;
+       fhir:Reference.reference [ fhir:value "EpisodeOfCare/p04-eoc1" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "status" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/request-status" ] ;
+           fhir:Coding.code [ fhir:value "draft" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2025-09-01T09:05:00+00:00"^^xsd:dateTime ] ;
+         fhir:Period.end [ fhir:value "2025-09-01T09:05:01+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan-statusHistory" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "status" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/request-status" ] ;
+           fhir:Coding.code [ fhir:value "active" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2025-09-01T09:05:01+00:00"^^xsd:dateTime ] ;
+         fhir:Period.end [ fhir:value "2026-01-12T11:55:00+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan-statusHistory" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "status" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/request-status" ] ;
+           fhir:Coding.code [ fhir:value "completed" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2026-01-12T11:55:00+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-careplan-statusHistory" ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "careTeam" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <http://ehealth.sundhed.dk/testdata/CareTeam/careteam-placeholder> ;
+         fhir:Reference.reference [ fhir:value "CareTeam/careteam-placeholder" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "period" ] ;
+       fhir:Extension.valuePeriod [
+         fhir:Period.start [ fhir:value "2025-09-01T09:05:00+00:00"^^xsd:dateTime ] ;
+         fhir:Period.end [ fhir:value "2026-01-12T11:55:00+00:00"^^xsd:dateTime ]
+       ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://ehealth.sundhed.dk/fhir/StructureDefinition/ehealth-teamHistory" ]
+  ] ;
+  fhir:CarePlan.instantiatesCanonical [
+     fhir:value "http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition" ;
+     fhir:index 0 ;
+     fhir:link <http://ehealth.sundhed.dk/testdata/PlanDefinition/plandefinition>
+  ] ;
+  fhir:CarePlan.status [ fhir:value "completed"] ;
+  fhir:CarePlan.intent [ fhir:value "order"] ;
+  fhir:CarePlan.subject [
+     fhir:link <http://ehealth.sundhed.dk/testdata/Patient/p04> ;
+     fhir:Reference.reference [ fhir:value "Patient/p04" ]
+  ] ;
+  fhir:CarePlan.period [
+     fhir:Period.start [ fhir:value "2025-09-01T09:05:00+00:00"^^xsd:dateTime ]
+  ] ;
+  fhir:CarePlan.careTeam [
+     fhir:index 0 ;
+     fhir:link <http://ehealth.sundhed.dk/testdata/CareTeam/careteam-placeholder> ;
+     fhir:Reference.reference [ fhir:value "CareTeam/careteam-placeholder" ]
+  ] ;
+  fhir:CarePlan.addresses [
+     fhir:index 0 ;
+     fhir:link <http://ehealth.sundhed.dk/testdata/Condition/p04-eoc1-cond> ;
+     fhir:Reference.reference [ fhir:value "Condition/p04-eoc1-cond" ]
+  ] ;
+  fhir:CarePlan.activity [
+     fhir:index 0 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-head> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-head" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-intro> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-intro" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-sat-pulse-intro> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-sat-pulse-intro" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-sat-pulse-prep> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-sat-pulse-prep" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-sat-pulse> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-sat-pulse" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-saturation> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-saturation" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-pulse> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-pulse" ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-questionnaire> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-questionnaire" ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-closing> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-closing" ]
+     ]
+  ], [
+     fhir:index 9 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-extra-head> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-extra-head" ]
+     ]
+  ], [
+     fhir:index 10 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-extra-sat-pulse> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-extra-sat-pulse" ]
+     ]
+  ], [
+     fhir:index 11 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-extra-saturation> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-extra-saturation" ]
+     ]
+  ], [
+     fhir:index 12 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-extra-pulse> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-extra-pulse" ]
+     ]
+  ], [
+     fhir:index 13 ;
+     fhir:CarePlan.activity.reference [
+       fhir:link <http://ehealth.sundhed.dk/testdata/ServiceRequest/p04-cp1-sr-extra-questionnaire> ;
+       fhir:Reference.reference [ fhir:value "ServiceRequest/p04-cp1-sr-extra-questionnaire" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://ehealth.sundhed.dk/testdata/CarePlan/p04-cp1.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
